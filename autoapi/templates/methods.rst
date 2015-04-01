@@ -1,18 +1,17 @@
 {# Identention in this file is important #}
-   {% block methods %}
 
-   {% if methods %}
-   
-   .. rubric:: Methods
+{% if methods %}
 
-   {% for item in methods %}
+.. rubric:: Methods
 
-   .. method:: {{ item.qualifiedName.CSharp }}
+{% for item in methods %}
 
-   .. code-block:: csharp
+.. method:: {{ item.qualifiedName.CSharp }}
 
-	   {{ item.syntax.content.CSharp }}
+.. code-block:: csharp
 
-   {%- endfor %}
-   {% endif %}
-   {% endblock %}
+   {{ item.syntax.content.CSharp }}
+
+{%- endfor %}
+
+{% endif %}
