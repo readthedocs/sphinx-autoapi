@@ -7,8 +7,8 @@ import os
 import sys
 import yaml
 import fnmatch
+import shutil
 from collections import defaultdict
-import traceback
 
 from sphinx.util.osutil import ensuredir
 
@@ -27,8 +27,20 @@ class DotNetMember(object):
     def render(self):
         print "Unknown Type: %s (%s)" % (self.obj['type'], self.obj['name'])
         self.obj['underline'] = len(self.obj['qualifiedName']['CSharp']) * "~"
-        template = env.get_template('member.rst')
+        template = env.get_template('dotnet/member.rst')
         return template.render(**self.obj)
+
+
+class DotNetNamespace(object):
+
+    def __init__(self, name, objs):
+        self.name = name
+        self.objs = objs
+
+    def render(self):
+        template = env.get_template('dotnet/namespace.rst')
+        underline = "=" * len(self.name)
+        return template.render(name=self.name, objs=self.objs, underline=underline)
 
 
 class PythonMember(object):
@@ -128,16 +140,16 @@ class DotNetClass(object):
         self.sort()
 
     def sort(self):
-        for item in self.obj['items']:
+        for item in self.obj.get('items', []):
             if 'type' not in item:
                 print "Missing Type: %s" % item
                 continue
-            self.item_map[item['type']].append(item)
+            self.item_map[item['type']].append(classify(item, 'dotnet'))
 
     def render(self, indent=4):
         # print "Rendering class %s" % self.obj['name']
         self.obj['underline'] = len(self.obj['qualifiedName']['CSharp']) * "#"
-        template = env.get_template('class.rst')
+        template = env.get_template('dotnet/class.rst')
 
         ctx = self.obj
         ctx.update(dict(
@@ -189,21 +201,47 @@ def load_yaml(app):
     if not app.config.autoapi_dir:
         return
     app.env.autoapi_data = []
+    all_yaml = defaultdict(list)
+
+    print "Reading Yaml"
 
     if app.config.autoapi_type == 'dotnet':
         for _file in os.listdir(app.config.autoapi_dir):
             # print "Loading Yaml from %s" % _file
-            to_open = os.path.join(app.env.config.autoapi_dir, _file)
+            to_open = os.path.join(app.config.autoapi_dir, _file)
             app.env.autoapi_data.append(yaml.safe_load(open(to_open, 'r')))
         # Generate RST
         for obj in app.env.autoapi_data:
             # print "Parsing %s" % obj['name']
-            rst = parse(obj, 'dotnet')
-            if rst:
-                path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
-                ensuredir(app.config.autoapi_root)
-                with open(path, 'w+') as fp:
-                    fp.write(rst)
+            obj_name = obj['qualifiedName']['CSharp']
+            namespace = obj_name.split('.')[0]
+            all_yaml[namespace].append(obj)
+            # rst = parse(obj, 'dotnet')
+            # if rst:
+            #     path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
+            #     ensuredir(app.config.autoapi_root)
+            #     with open(path, 'w+') as fp:
+            #         fp.write(rst)
+        for namespace, objs in all_yaml.items():
+            print "Namespace %s" % namespace
+            namespace_obj = DotNetNamespace(namespace, objs)
+            path = os.path.join(app.config.autoapi_root, '%s%s' % (namespace, app.config.source_suffix[0]))
+            ensuredir(app.config.autoapi_root)
+            with open(path, 'w+') as index_file:
+                namespace_rst = namespace_obj.render()
+                if namespace_rst:
+                    index_file.write(namespace_rst)
+                else:
+                    import ipdb; ipdb.set_trace()
+                for obj in objs:
+                    rst = parse(obj, 'dotnet')
+                    # Detail
+                    detail_dir = os.path.join(app.config.autoapi_root, namespace)
+                    ensuredir(detail_dir)
+                    path = os.path.join(detail_dir, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
+                    if rst:
+                        with open(path, 'w+') as detail_file:
+                            detail_file.write(rst)
 
     elif app.config.autoapi_type == 'python':
         for root, dirnames, filenames in os.walk(app.config.autoapi_dir):
@@ -218,7 +256,8 @@ def load_yaml(app):
                 except Exception, e:
                     print "Exception, Keeping going: %s" % to_open
                     print sys.exc_info()
-                    import traceback; traceback.print_exc();
+                    import traceback
+                    traceback.print_exc()
         app.env.autoapi_enabled = True
 
         # Generate RST
@@ -255,12 +294,21 @@ def collect_pages(app):
     yield (os.path.join(app.config.autoapi_root, 'test_insert'), context, 'page.html')
 
 
+def build_finished(app, exception):
+    if not app.config.autoapi_keep_files:
+        if app.verbosity > 1:
+            print "Cleaning autoapi out"
+        shutil.rmtree(app.config.autoapi_root)
+
+
 def setup(app):
     app.connect('doctree-read', doctree_read)
     app.connect('builder-inited', load_yaml)
     app.connect('env-updated', env_updated)
     app.connect('html-collect-pages', collect_pages)
+    app.connect('build-finished', build_finished)
     app.add_config_value('autoapi_type', 'dotnet', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_dir', '', 'html')
+    app.add_config_value('autoapi_keep_files', True, 'html')
