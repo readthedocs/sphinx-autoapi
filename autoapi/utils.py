@@ -2,7 +2,7 @@ from .base import UnknownType
 from .dotnet import (
     DotNetNamespace, DotNetClass, DotNetMethod, DotNetProperty,
     DotNetEnum, DotNetConstructor, DotNetStruct, DotNetInterface,
-    DotNetDelegate
+    DotNetDelegate, DotNetField, DotNetEvent
     )
 from .python import PythonModule, PythonClass, PythonFunction
 
@@ -37,4 +37,8 @@ def classify(obj, obj_type):
             return DotNetInterface(obj)
         if obj['type'] == 'Delegate':
             return DotNetDelegate(obj)
+        if obj['type'] == 'Field':
+            return DotNetField(obj)
+        if obj['type'] == 'Event':
+            return DotNetEvent(obj)
     return UnknownType(obj)

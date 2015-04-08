@@ -1,7 +1,7 @@
-{{ name.CSharp }}
-{{ underline }}
+{{ short_name }}
+{{  "=" * short_name|length }}
 
-.. dn:delegate:: {{ qualifiedName.CSharp }}
+.. dn:delegate:: {{ name }}
 
 	{% if summary %}
 
@@ -12,4 +12,4 @@
 
 	.. code-block:: csharp
 
-	   {{ syntax.content.CSharp }}
+	   {{ syntax }}

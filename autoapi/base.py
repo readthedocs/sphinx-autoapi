@@ -5,7 +5,6 @@ class AutoAPIBase(object):
 
     language = 'base'
     type = 'base'
-    header = '-'
 
     def __init__(self, obj):
         self.obj = obj
@@ -16,7 +15,7 @@ class AutoAPIBase(object):
         template = env.get_template(
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
-        ctx.update(**self.obj)
+        ctx.update(**self.__dict__)
         return template.render(**ctx)
 
 

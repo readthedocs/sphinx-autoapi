@@ -1,18 +1,21 @@
-{{ name.CSharp }} Namespace
-{{ underline }}{{ underline }}
+{{ short_name }} {{ type.title()}}
+{{ "=" * short_name|length }}{{ "=" * type|length }}=
 
 Tree:
 
+{% if children %}
+
 .. toctree::
    :hidden:
-   {% for obj in items %} 
-   /autoapi/{{ obj.type }}/{{ obj.id.split('.')[-1] }} {% endfor %}
+   {% for item in children %} 
+   /autoapi/{{ item.type }}/{{ item.id.split('.')[-1] }} {% endfor %}
 
+{% endif %}
 
 Table:
 
 
-{% if items %}
+{% if children %}
 
 .. list-table:: Classes
    :widths: 20, 80
@@ -20,8 +23,8 @@ Table:
 
    * - Class
      - Description
-{% for obj in items %} {% macro render() %}{{ obj.summary }}{% endmacro %}
-   * - :dn:{{ obj.type.lower().replace('class', 'cls').replace('interface', 'iface') }}:`{{ obj.id }}`
+{% for item in children %} {% macro render() %}{{ item.summary }}{% endmacro %}
+   * - :dn:{{ item.type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del') }}:`{{ item.id }}`
      - {{ render()|indent(7) }}
 {% endfor %}
 

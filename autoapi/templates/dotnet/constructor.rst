@@ -1,4 +1,4 @@
-.. dn:{{ type.lower() }}:: {{ qualifiedName.CSharp }}
+.. dn:{{ type.lower() }}:: {{ name }}
 
 	{% if summary %}
 
@@ -9,4 +9,4 @@
 
 	.. code-block:: csharp
 
-	   {{ syntax.content.CSharp }}
+	   {{ syntax }}

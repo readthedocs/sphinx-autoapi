@@ -10,76 +10,76 @@ class DotNetBase(AutoAPIBase):
 
     def __init__(self, obj):
         super(DotNetBase, self).__init__(obj)
-        self.name = obj['qualifiedName']['CSharp']
-        if hasattr(obj, 'sort'):
+        # Always exist
+        self.id = obj['id']
+        self.type = obj['type']
+        # Use name or id
+        try:
+            self.name = obj['qualifiedName']['CSharp']
+        except:
+            self.name = self.id
+        self.short_name = self.name.split('.')[-1]
+        self.namespace = self.name.split('.')[0]
+
+        # Optional
+        self.summary = obj.get('summary', '')
+        if 'syntax' in obj:
+            self.syntax = obj['syntax']['content']['CSharp']
+        else:
+            self.syntax = ''
+        self.children = obj.get('items', [])
+        if self.children:
+            self.item_map = defaultdict(list)
             self.sort()
 
-    def render(self, ctx=None):
-        if not ctx:
-            ctx = {}
-        added_ctx = {
-            'underline': len(self.name) * self.header
-        }
-        added_ctx.update(**ctx)
-        return super(DotNetBase, self).render(ctx=added_ctx)
+    def sort(self):
+        from .utils import classify
+        for item in self.children:
+            if 'type' not in item:
+                print "Missing Type: %s" % item
+                continue
+            classified = classify(item, 'dotnet')
+            self.item_map[item['type']].append(classified)
 
 
 class DotNetNamespace(DotNetBase):
     type = 'namespace'
-    header = '='
+
 
 class DotNetMethod(DotNetBase):
     type = 'method'
-    header = '-'
+
 
 class DotNetProperty(DotNetBase):
     type = 'property'
-    header = '-'
+
 
 class DotNetEnum(DotNetBase):
     type = 'enum'
-    header = '-'
+
 
 class DotNetStruct(DotNetBase):
     type = 'struct'
-    header = '-'
+
 
 class DotNetConstructor(DotNetBase):
     type = 'constructor'
-    header = '-'
+
 
 class DotNetInterface(DotNetBase):
     type = 'interface'
-    header = '-'
+
 
 class DotNetDelegate(DotNetBase):
     type = 'delegate'
-    header = '-'
 
-class DotNetClass(object):
 
-    def __init__(self, obj):
-        self.obj = obj
-        self.item_map = defaultdict(list)
-        self.sort()
+class DotNetClass(DotNetBase):
+    type = 'class'
 
-    def sort(self):
-        from .utils import classify
-        for item in self.obj.get('items', []):
-            if 'type' not in item:
-                print "Missing Type: %s" % item
-                continue
-            self.item_map[item['type']].append(classify(item, 'dotnet'))
 
-    def render(self, indent=4):
-        # print "Rendering class %s" % self.obj['name']
-        self.obj['underline'] = len(self.obj['qualifiedName']['CSharp']) * "#"
-        template = env.get_template('dotnet/class.rst')
+class DotNetField(DotNetBase):
+    type = 'field'
 
-        ctx = self.obj
-        ctx.update(dict(
-            ctors=self.item_map['Constructor'],
-            methods=self.item_map['Method'],
-            attributes=self.item_map['Property'],
-        ))
-        return template.render(**ctx)
+class DotNetEvent(DotNetBase):
+    type = 'event'

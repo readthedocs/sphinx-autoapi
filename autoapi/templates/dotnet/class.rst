@@ -1,7 +1,7 @@
-{{ name.CSharp }}
-{{ underline }}
+{{ short_name }} {{ type.title()}}
+{{ "=" * (short_name|length + type|length + 1) }}
 
-.. dn:class:: {{ qualifiedName.CSharp }}
+.. dn:class:: {{ name }}
 
 Summary
 -------
@@ -12,51 +12,30 @@ Inheritance Hierarchy
 ---------------------
 
 {% for item in inheritance %}
-* {{ item.id }}
+* :ref:`{{ item.id }}`
 {% endfor %}
 
 Syntax
+------
 
 .. code-block:: csharp
 
-   {{ syntax.content.CSharp }}
+   {{ syntax }}
 
-Class Information
------------------
+{% if item_map %}
 
-   {% if ctors %}
-   
-   {% for ctor in ctors %}
+{% for obj_type, obj_list in item_map.items() %}
 
-   {% macro render() %}{{ ctor.render() }}{% endmacro %}
-   {{ render()|indent(3) }}
-   
-   {%- endfor %}
+{{ obj_type }}
+{{ "-" * obj_type|length }}
 
-   {% endif %}
+{% for obj_item in obj_list %}
+{% macro render() %}{{ obj_item.render() }}{% endmacro %}
+{{ render()|indent(0) }}
+{% endfor %}
 
+{% endfor %}
 
-   {% if methods %}
-   
-   {% for method in methods %}
+{% endif %}
 
-   {% macro render() %}{{ method.render() }}{% endmacro %}
-   {{ render()|indent(3) }}
-   
-   {%- endfor %}
-
-   {% endif %}
-
-
-
-   {% if methods %}
-   
-   {% for method in attributes %}
-
-   {% macro render() %}{{ method.render() }}{% endmacro %}
-   {{ render()|indent(3) }}
-   
-   {%- endfor %}
-
-   {% endif %}
 

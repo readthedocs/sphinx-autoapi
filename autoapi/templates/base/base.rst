@@ -1,11 +1,11 @@
-.. {{ type.lower() }}:: {{ name }}
+.. {{ obj.type.lower() }}:: {{ obj.name }}
 
 	{% if summary %}
 
-	{{ summary }}
+	{{ obj.summary }}
 
 	{% endif %}
 
 	.. code-block:: csharp
 
-	   {{ syntax.content.CSharp }}
+	   {{ obj.syntax.content.CSharp }}
