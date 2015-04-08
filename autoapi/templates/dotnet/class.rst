@@ -1,9 +1,7 @@
 {{ name.CSharp }}
 {{ underline }}
 
-{#
-.. currentmodule:: {{ module }}
-#}
+.. dn:class:: {{ qualifiedName.CSharp }}
 
 Summary
 -------
@@ -25,9 +23,6 @@ Syntax
 
 Class Information
 -----------------
-
-.. dn:class:: {{ qualifiedName.CSharp }}
-
 
    {% if ctors %}
    
