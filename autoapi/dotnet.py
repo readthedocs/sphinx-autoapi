@@ -26,6 +26,7 @@ class DotNetBase(AutoAPIBase):
 
 class DotNetNamespace(DotNetBase):
     type = 'namespace'
+    header = '='
 
     def render(self, **kwargs):
         ret = super(DotNetNamespace, self).render(**kwargs)

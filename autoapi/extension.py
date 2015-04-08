@@ -41,14 +41,15 @@ def load_yaml(app):
                 files_to_read, '[AutoAPI] Reading files... ', darkgreen, len(files_to_read)):
             # print "Loading Yaml from %s" % _file
             to_open = os.path.join(app.config.autoapi_dir, _file)
-            app.env.autoapi_data.append(yaml.safe_load(open(to_open, 'r')))
+            yaml_obj = yaml.safe_load(open(to_open, 'r'))
+            app.env.autoapi_data.append(classify(yaml_obj, 'dotnet'))
 
-        print "Sorting objects"
+        # print "Sorting objects"
         # Sort objects
-        for obj in app.env.autoapi_data:
-            obj_name = obj['qualifiedName']['CSharp']
-            namespace = obj_name.split('.')[0]
-            namespaces[namespace].append(classify(obj, 'dotnet'))
+        # for obj in app.env.autoapi_data:
+            # obj_name = obj['qualifiedName']['CSharp']
+            # namespace = obj_name.split('.')[0]
+            # namespaces[namespace].append(classify(obj, 'dotnet'))
             # rst = parse(obj, 'dotnet')
             # if rst:
             #     path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
@@ -58,18 +59,19 @@ def load_yaml(app):
 
         print "Generating RST"
         # Generate RST
-        for namespace, objs in namespaces.items():
-            path = os.path.join(app.config.autoapi_root, '%s%s' % (namespace, app.config.source_suffix[0]))
+        # for namespace, objs in namespaces.items():
+        for obj in app.env.autoapi_data:
+            # path = os.path.join(app.config.autoapi_root, '%s%s' % (namespace, app.config.source_suffix[0]))
             # namespace_obj = DotNetNamespace(namespace, objs)
             # ensuredir(app.config.autoapi_root)
             # with open(path, 'w+') as index_file:
             #     namespace_rst = namespace_obj.render()
             #     if namespace_rst:
             #         index_file.write(namespace_rst)
-            for obj in objs:
+            # for obj in objs:
                 rst = obj.render()
                 # Detail
-                detail_dir = os.path.join(app.config.autoapi_root, namespace)
+                detail_dir = os.path.join(app.config.autoapi_root, obj.obj['type'])
                 ensuredir(detail_dir)
                 path = os.path.join(detail_dir, '%s%s' % (obj.obj['name']['CSharp'], app.config.source_suffix[0]))
                 if rst:
