@@ -1,4 +1,11 @@
-{# Identention in this file is important #}
+.. {{ type.lower() }}:: {{ name }}
 
-   (Generic Type -- {{ type }})
-   .. {{ type.lower() }}:: {{ name }}
+	{% if summary %}
+
+	{{ summary }}
+
+	{% endif %}
+
+	.. code-block:: csharp
+
+	   {{ syntax.content.CSharp }}

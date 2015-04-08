@@ -17,7 +17,7 @@ class AutoAPIBase(object):
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
         ctx.update(**self.obj)
-        return template.render(ctx)
+        return template.render(**ctx)
 
 
 class UnknownType(AutoAPIBase):

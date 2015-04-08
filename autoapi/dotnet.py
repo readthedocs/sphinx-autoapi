@@ -28,10 +28,33 @@ class DotNetNamespace(DotNetBase):
     type = 'namespace'
     header = '='
 
-    def render(self, **kwargs):
-        ret = super(DotNetNamespace, self).render(**kwargs)
-        # import ipdb; ipdb.set_trace()
-        return ret
+class DotNetMethod(DotNetBase):
+    type = 'method'
+    header = '-'
+
+class DotNetProperty(DotNetBase):
+    type = 'property'
+    header = '-'
+
+class DotNetEnum(DotNetBase):
+    type = 'enum'
+    header = '-'
+
+class DotNetStruct(DotNetBase):
+    type = 'struct'
+    header = '-'
+
+class DotNetConstructor(DotNetBase):
+    type = 'constructor'
+    header = '-'
+
+class DotNetInterface(DotNetBase):
+    type = 'interface'
+    header = '-'
+
+class DotNetDelegate(DotNetBase):
+    type = 'delegate'
+    header = '-'
 
 class DotNetClass(object):
 
