@@ -15,6 +15,7 @@ from sphinx.util.console import bold, darkgreen
 
 from .utils import classify
 from .dotnet import VirtualNamespace
+from .settings import env
 
 from epyparse import parsed
 
@@ -51,7 +52,7 @@ def load_yaml(app):
                     top, mid, last = obj.name.split('.')[0:3]
                     namespaces[top].append(obj)
                     namespaces[top+'.'+mid].append(obj)
-                    namespaces[top+'.'+mid+'.'+last].append(obj)
+                    # namespaces[top+'.'+mid+'.'+last].append(obj)
                 except:
                     traceback.print_exc()
                     pass
@@ -80,9 +81,9 @@ def load_yaml(app):
             # for obj in objs:
             rst = obj.render()
             # Detail
-            detail_dir = os.path.join(app.config.autoapi_root, obj.obj['type'])
+            detail_dir = os.path.join(app.config.autoapi_root, *obj.name.split('.'))
             ensuredir(detail_dir)
-            path = os.path.join(detail_dir, '%s%s' % (obj.obj['name']['CSharp'], app.config.source_suffix[0]))
+            path = os.path.join(detail_dir, '%s%s' % ('index', app.config.source_suffix[0]))
             if rst:
                 with open(path, 'w+') as detail_file:
                     detail_file.write(rst)
@@ -97,6 +98,13 @@ def load_yaml(app):
                 namespace_rst = namespace_obj.render()
                 if namespace_rst:
                     index_file.write(namespace_rst)
+
+        # Write Index
+        top_level_index = os.path.join(app.config.autoapi_root, 'index.rst')
+        with open(top_level_index, 'w+') as top_level_file:
+            content = env.get_template('index.rst')
+            top_level_file.write(content.render())
+
 
     elif app.config.autoapi_type == 'python':
         for root, dirnames, filenames in os.walk(app.config.autoapi_dir):
