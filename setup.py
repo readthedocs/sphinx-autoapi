@@ -2,11 +2,21 @@ import codecs
 try:
     from setuptools import setup, find_packages
     extra_setup = dict(
-        install_requires=['pyyaml'],
+        install_requires=[
+            'PyYAML',
+            'epyparse',
+            'epydoc',
+        ],
     )
 except ImportError:
     from distutils.core import setup
-    extra_setup = {}
+    extra_setup = dict(
+        requires=[
+            'PyYAML',
+            'epyparse',
+            'epydoc',
+        ],
+    )
 
 setup(
     name='sphinx-autoapi',
