@@ -32,6 +32,13 @@ class DotNetBase(AutoAPIBase):
             self.item_map = defaultdict(list)
             self.sort()
 
+    @property
+    def ref_type(self):
+        return self.type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del')
+
+    def to_ref_type(self, _type):
+        return _type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del')
+
     def sort(self):
         from .utils import classify
         for item in self.children:
@@ -81,5 +88,18 @@ class DotNetClass(DotNetBase):
 class DotNetField(DotNetBase):
     type = 'field'
 
+
 class DotNetEvent(DotNetBase):
     type = 'event'
+
+
+class VirtualNamespace(AutoAPIBase):
+    language = 'dotnet'
+    type = 'namespace'
+
+    def __init__(self, name, objs):
+        self.name = self.short_name = name
+        self.children = []
+        self.type = 'namespace'
+        for obj in objs:
+            self.children.append(obj.obj)

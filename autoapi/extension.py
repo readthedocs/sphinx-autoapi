@@ -8,12 +8,13 @@ import yaml
 import fnmatch
 import shutil
 from collections import defaultdict
+import traceback
 
 from sphinx.util.osutil import ensuredir
 from sphinx.util.console import bold, darkgreen
 
 from .utils import classify
-# from .dotnet import DotNetNamespace
+from .dotnet import VirtualNamespace
 
 from epyparse import parsed
 
@@ -42,14 +43,22 @@ def load_yaml(app):
             # print "Loading Yaml from %s" % _file
             to_open = os.path.join(app.config.autoapi_dir, _file)
             yaml_obj = yaml.safe_load(open(to_open, 'r'))
-            app.env.autoapi_data.append(classify(yaml_obj, 'dotnet'))
+            obj = classify(yaml_obj, 'dotnet')
+            app.env.autoapi_data.append(obj)
+            # Add to namespace dict
+            if yaml_obj.get('type') != 'Namespace':
+                try:
+                    top, mid, last = obj.name.split('.')[0:3]
+                    namespaces[top].append(obj)
+                    namespaces[top+'.'+mid].append(obj)
+                    namespaces[top+'.'+mid+'.'+last].append(obj)
+                except:
+                    traceback.print_exc()
+                    pass
 
         # print "Sorting objects"
         # Sort objects
         # for obj in app.env.autoapi_data:
-            # obj_name = obj['qualifiedName']['CSharp']
-            # namespace = obj_name.split('.')[0]
-            # namespaces[namespace].append(classify(obj, 'dotnet'))
             # rst = parse(obj, 'dotnet')
             # if rst:
             #     path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
@@ -69,14 +78,25 @@ def load_yaml(app):
             #     if namespace_rst:
             #         index_file.write(namespace_rst)
             # for obj in objs:
-                rst = obj.render()
-                # Detail
-                detail_dir = os.path.join(app.config.autoapi_root, obj.obj['type'])
-                ensuredir(detail_dir)
-                path = os.path.join(detail_dir, '%s%s' % (obj.obj['name']['CSharp'], app.config.source_suffix[0]))
-                if rst:
-                    with open(path, 'w+') as detail_file:
-                        detail_file.write(rst)
+            rst = obj.render()
+            # Detail
+            detail_dir = os.path.join(app.config.autoapi_root, obj.obj['type'])
+            ensuredir(detail_dir)
+            path = os.path.join(detail_dir, '%s%s' % (obj.obj['name']['CSharp'], app.config.source_suffix[0]))
+            if rst:
+                with open(path, 'w+') as detail_file:
+                    detail_file.write(rst)
+
+        for namespace, objs in namespaces.items():
+            namespace_obj = VirtualNamespace(namespace, objs)
+            ensuredir(app.config.autoapi_root)
+            virtual_dir = os.path.join(app.config.autoapi_root, 'Virtual')
+            ensuredir(virtual_dir)
+            virtual_path = os.path.join(virtual_dir, '%s%s' % (namespace, app.config.source_suffix[0]))
+            with open(virtual_path, 'w+') as index_file:
+                namespace_rst = namespace_obj.render()
+                if namespace_rst:
+                    index_file.write(namespace_rst)
 
     elif app.config.autoapi_type == 'python':
         for root, dirnames, filenames in os.walk(app.config.autoapi_dir):

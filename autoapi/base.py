@@ -9,6 +9,7 @@ class AutoAPIBase(object):
     def __init__(self, obj):
         self.obj = obj
 
+
     def render(self, ctx=None):
         if not ctx:
             ctx = {}
@@ -17,6 +18,12 @@ class AutoAPIBase(object):
         )
         ctx.update(**self.__dict__)
         return template.render(**ctx)
+
+    def get_absolute_path(self):
+        return "/autoapi/{type}/{name}".format(
+            type=self.type,
+            name=self.name,
+        )
 
 
 class UnknownType(AutoAPIBase):
