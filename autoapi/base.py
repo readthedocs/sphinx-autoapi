@@ -9,14 +9,13 @@ class AutoAPIBase(object):
     def __init__(self, obj):
         self.obj = obj
 
-
     def render(self, ctx=None):
         if not ctx:
             ctx = {}
         template = env.get_template(
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
-        ctx.update(**self.__dict__)
+        ctx.update(**self.get_context_data())
         return template.render(**ctx)
 
     def get_absolute_path(self):
@@ -24,6 +23,9 @@ class AutoAPIBase(object):
             type=self.type,
             name=self.name,
         )
+
+    def get_context_data(self):
+        return self.__dict__
 
 
 class UnknownType(AutoAPIBase):
