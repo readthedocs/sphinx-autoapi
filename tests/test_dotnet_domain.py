@@ -60,7 +60,7 @@ class DomainTests(unittest.TestCase):
                                      'type': 'Method'}
                                 ]})
         self.assertIsInstance(cls, dotnet.DotNetClass)
-        self.assertIsInstance(cls.item_map['Method'][0], dotnet.DotNetMethod)
+        self.assertDictEqual(cls.item_map, {})
 
     def test_get_objects(self):
         '''Test basic get objects'''

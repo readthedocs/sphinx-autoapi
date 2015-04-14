@@ -1,9 +1,9 @@
 {% block title %}
 
-{{ short_name }} {{ object.type.title()}}
-{{ "=" * (short_name|length + object.type|length + 1) }}
+{{ object.short_name }} {{ object.type.title()}}
+{{ "=" * (object.short_name|length + object.type|length + 1) }}
 
-.. dn:{{ object.type }}:: {{ name }}
+.. dn:{{ object.type }}:: {{ object.name }}
 
 {% endblock %}
 

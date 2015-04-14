@@ -55,12 +55,9 @@ class DotNetDomain(AutoAPIDomain):
         # TODO this should recurse in the case we're getting back more complex
         # argument listings
         if 'items' in data:
-            obj.children = []
-            obj.item_map = defaultdict(list)
             for item in data['items']:
                 child_obj = self.create_class(item)
                 obj.children.append(child_obj)
-                obj.item_map[item['type']].append(child_obj)
 
         return obj
 
@@ -96,7 +93,7 @@ class DotNetDomain(AutoAPIDomain):
         '''Organize objects and namespaces'''
 
         def _recurse_ns(obj):
-            namespace = obj.namespace()
+            namespace = obj.namespace
             if namespace is not None:
                 ns_obj = None
                 for (n, search_obj) in enumerate(self.app.env.autoapi_data):
@@ -136,7 +133,6 @@ class DotNetDomain(AutoAPIDomain):
             # for obj in objs:
 
             # TODO not here!
-            obj.item_map = defaultdict(list)
             for child in obj.children:
                 obj.item_map[child.type].append(child)
 
@@ -176,19 +172,13 @@ class DotNetBase(AutoAPIBase):
         super(DotNetBase, self).__init__(obj)
         # Always exist
         self.id = obj['id']
-        self.type = obj['type']
-        # Use name or id
-        try:
-            self.name = obj['qualifiedName']['CSharp']
-        except:
-            self.name = self.id
-        self.short_name = self.name.split('.')[-1]
 
         # Optional
         self.summary = obj.get('summary', '')
         self.parameters = []
-        self.items = []
+        self.items = obj.get('items', [])
         self.children = []
+        self.item_map = defaultdict(list)
 
         # Syntax example and parameter list
         syntax = obj.get('syntax', None)
@@ -209,23 +199,32 @@ class DotNetBase(AutoAPIBase):
                         'desc': param.get('description', '')
                     })
 
-        self.items = obj.get('items', [])
-
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
                                      id=self.id)
 
+    @property
+    def name(self):
+        '''Return short name for member id
+
+        Use C# qualified name from deserialized data first, falling back to the
+        member id minus the namespace prefix
+        '''
+        try:
+            return self.obj['qualifiedName']['CSharp']
+        except KeyError:
+            return self.id
+
+    @property
+    def short_name(self):
+        '''Shorten name property'''
+        return self.name.split('.')[-1]
+
+    @property
     def namespace(self):
         pieces = self.id.split('.')[:-1]
         if pieces:
             return '.'.join(pieces)
-
-    @property
-    def ref_type(self):
-        return self.type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del')
-
-    def to_ref_type(self, _type):
-        return _type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del')
 
 
 class DotNetNamespace(DotNetBase):

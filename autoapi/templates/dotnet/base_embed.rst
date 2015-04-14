@@ -1,4 +1,4 @@
-.. dn:{{ object.type }}:: {{ name }}
+.. dn:{{ object.type }}:: {{ object.name }}
 
     {% if summary %}
 
