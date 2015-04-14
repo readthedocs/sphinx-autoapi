@@ -23,10 +23,26 @@ class DotNetBase(AutoAPIBase):
 
         # Optional
         self.summary = obj.get('summary', '')
-        if 'syntax' in obj:
-            self.syntax = obj['syntax']['content']['CSharp']
-        else:
-            self.syntax = ''
+
+        # Syntax example and parameter list
+        syntax = obj.get('syntax', None)
+        self.example = ''
+        if syntax is not None:
+            # Code example
+            try:
+                self.example = syntax['content']['CSharp']
+            except KeyError:
+                pass
+
+            self.parameters = []
+            for param in syntax.get('parameters', []):
+                if 'id' in param:
+                    self.parameters.append({
+                        'name': param.get('id'),
+                        'type': param.get('type', {}).get('id', None),
+                        'desc': param.get('description', '')
+                    })
+
         self.children = obj.get('items', [])
         if self.children:
             self.item_map = defaultdict(list)

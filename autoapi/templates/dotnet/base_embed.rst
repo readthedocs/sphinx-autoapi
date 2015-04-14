@@ -1,12 +1,19 @@
 .. dn:{{ type.lower() }}:: {{ name }}
 
-	{% if summary %}
+    {% if summary %}
 
     {% macro render() %}{{ summary }}{% endmacro %}
     {{ render()|indent(4) }}
 
-	{% endif %}
+    {% endif %}
 
-	.. code-block:: csharp
+    {%- for param in parameters %}
+    :param {{ param.name }}: {{ param.desc }}
+      {%- if param.type %}
+    :type {{ param.name }}: {{ param.type }}
+      {%- endif %}
+    {%- endfor %}
 
-	   {{ syntax }}
+    .. code-block:: csharp
+
+       {{ example }}
