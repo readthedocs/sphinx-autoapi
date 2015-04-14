@@ -1,5 +1,8 @@
 *.pyc
 *.egg-info
+.eggs/
+*.egg
 build
 dist
 wheelhouse
+*.sw[opmn]

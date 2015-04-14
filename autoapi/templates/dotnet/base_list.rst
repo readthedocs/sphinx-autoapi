@@ -3,6 +3,8 @@
 {{ short_name }} {{ type.title()}}
 {{ "=" * (short_name|length + type|length + 1) }}
 
+.. dn:{{ type.lower() }}:: {{ name }}
+
 {% endblock %}
 
 {% block toc %}
@@ -32,7 +34,7 @@
      - Description
    {%- for item in children %}
    {% macro render() %}{{ item.summary }}{% endmacro %}
-   * - :dn:{{ item.type.lower().replace('class', 'cls').replace('interface', 'iface').replace('delegate', 'del') }}:`{{ item.id }}`
+   * - :dn:{{ item.reftype }}:`{{ item.id }}`
      - {{ render()|indent(7) }}
    {% endfor %}
 

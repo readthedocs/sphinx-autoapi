@@ -7,6 +7,8 @@ try:
             'epyparse',
             'epydoc',
         ],
+        test_suite='nose.collector',
+        tests_require=['nose', 'mock'],
     )
 except ImportError:
     from distutils.core import setup

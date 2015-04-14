@@ -1,9 +1,35 @@
 import sys
 from collections import defaultdict
 
-from .base import AutoAPIBase
-from .settings import env
+from epyparse import parsed
 
+from ..base import AutoAPIBase
+from ..settings import env
+
+#        for root, dirnames, filenames in os.walk(app.config.autoapi_dir):
+#            for filename in fnmatch.filter(filenames, u'*.py'):
+#                to_open = os.path.join(root, filename)
+#                if ignore_file(app, to_open):
+#                    continue
+#                # print "Parsing Python File from %s" % to_open
+#                try:
+#                    parsed_data = parsed(to_open)
+#                    app.env.autoapi_data.append(parsed_data)
+#                except Exception:
+#                    print "Exception, Keeping going: %s" % to_open
+#                    import traceback
+#                    traceback.print_exc()
+#        app.env.autoapi_enabled = True
+#
+#        # Generate RST
+#        for obj in app.env.autoapi_data:
+#            # print "Parsing %s" % obj['fullname']
+#            rst = classify(obj, 'python').render()
+#            if rst:
+#                path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['fullname'], app.config.source_suffix[0]))
+#                ensuredir(app.config.autoapi_root)
+#                with open(path, 'w+') as fp:
+#                    fp.write(rst.encode('utf8'))
 
 class PythonBase(AutoAPIBase):
 
