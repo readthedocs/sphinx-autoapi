@@ -12,9 +12,8 @@
 .. toctree::
    :hidden:
 
-   {%- for item in children %} 
-   {# {{ item.get_absolute_path }}  #}
-   /autoapi/{{ item.type }}/{{ item.id.split('.')[-1] }}
+   {% for item in children %}
+   /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
 
 {% endif %}
