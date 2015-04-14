@@ -1,9 +1,9 @@
 {% block title %}
 
-{{ short_name }} {{ type.title()}}
-{{ "=" * (short_name|length + type|length + 1) }}
+{{ short_name }} {{ object.type.title()}}
+{{ "=" * (short_name|length + object.type|length + 1) }}
 
-.. dn:{{ type.lower().replace('struct', 'structure').replace('enum', 'enumeration') }}:: {{ name }}
+.. dn:{{ object.type }}:: {{ name }}
 
 {% endblock %}
 

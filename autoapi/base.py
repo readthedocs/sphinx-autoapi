@@ -27,7 +27,11 @@ class AutoAPIBase(object):
         )
 
     def get_context_data(self):
-        return self.__dict__
+        context = {}
+        # TODO deprecate this, it doesn't handle things like class variables
+        context.update(self.__dict__)
+        context['object'] = self
+        return context
 
 
 class UnknownType(AutoAPIBase):

@@ -230,63 +230,63 @@ class DotNetBase(AutoAPIBase):
 
 class DotNetNamespace(DotNetBase):
     type = 'namespace'
-    reftype = 'ns'
+    ref_type = 'ns'
 
 
 class DotNetMethod(DotNetBase):
     type = 'method'
-    reftype = 'meth'
+    ref_type = 'meth'
 
 
 class DotNetProperty(DotNetBase):
     type = 'property'
-    reftype = 'prop'
+    ref_type = 'prop'
 
 
 class DotNetEnum(DotNetBase):
     type = 'enum'
-    reftype = 'enum'
+    ref_type = 'enum'
 
 
 class DotNetStruct(DotNetBase):
     type = 'struct'
-    reftype = 'struct'
+    ref_type = 'struct'
 
 
 class DotNetConstructor(DotNetBase):
     type = 'constructor'
-    reftype = 'ctor'
+    ref_type = 'ctor'
 
 
 class DotNetInterface(DotNetBase):
     type = 'interface'
-    reftype = 'iface'
+    ref_type = 'iface'
 
 
 class DotNetDelegate(DotNetBase):
     type = 'delegate'
-    reftype = 'del'
+    ref_type = 'del'
 
 
 class DotNetClass(DotNetBase):
     type = 'class'
-    reftype = 'cls'
+    ref_type = 'cls'
 
 
 class DotNetField(DotNetBase):
     type = 'field'
-    reftype = 'field'
+    ref_type = 'field'
 
 
 class DotNetEvent(DotNetBase):
     type = 'event'
-    reftype = 'event'
+    ref_type = 'event'
 
 
 class DotNetVirtualNamespace(AutoAPIBase):
     language = 'dotnet'
     type = 'namespace'
-    reftype = 'ns'
+    ref_type = 'ns'
 
     def __init__(self, name, objs):
         self.name = self.short_name = name

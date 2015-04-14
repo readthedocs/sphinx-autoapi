@@ -1,9 +1,9 @@
 {% block title %}
 
-{{ short_name }} {{ type.title()}}
-{{ "=" * (short_name|length + type|length + 1) }}
+{{ short_name }} {{ object.type.title()}}
+{{ "=" * (short_name|length + object.type|length + 1) }}
 
-.. dn:{{ type.lower() }}:: {{ name }}
+.. dn:{{ object.type }}:: {{ name }}
 
 {% endblock %}
 
@@ -34,7 +34,7 @@
      - Description
    {%- for item in children %}
    {% macro render() %}{{ item.summary }}{% endmacro %}
-   * - :dn:{{ item.reftype }}:`{{ item.id }}`
+   * - :dn:{{ item.ref_type }}:`{{ item.id }}`
      - {{ render()|indent(7) }}
    {% endfor %}
 

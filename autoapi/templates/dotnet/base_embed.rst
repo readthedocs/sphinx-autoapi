@@ -1,4 +1,4 @@
-.. dn:{{ type.lower() }}:: {{ name }}
+.. dn:{{ object.type }}:: {{ name }}
 
     {% if summary %}
 
