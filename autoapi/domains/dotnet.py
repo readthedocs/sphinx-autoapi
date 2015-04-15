@@ -189,6 +189,8 @@ class DotNetBase(AutoAPIBase):
                         'desc': param.get('description', '')
                     })
 
+            self.returns = syntax.get('return', None)
+
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
         self.inheritance = [DotNetClass({'id': iobj['id'], 'name': iobj['name']})

@@ -13,6 +13,9 @@
     :type {{ param.name }}: {{ param.type }}
       {%- endif %}
     {%- endfor %}
+    {%- if object.returns %}
+    :return: {{ object.returns.id }}
+    {%- endif %}
 
     .. code-block:: csharp
 
