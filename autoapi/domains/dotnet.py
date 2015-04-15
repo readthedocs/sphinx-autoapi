@@ -168,6 +168,7 @@ class DotNetBase(AutoAPIBase):
         self.items = obj.get('items', [])
         self.children = []
         self.item_map = defaultdict(list)
+        self.inheritance = []
 
         # Syntax example and parameter list
         syntax = obj.get('syntax', None)
@@ -187,6 +188,11 @@ class DotNetBase(AutoAPIBase):
                         'type': param.get('type', {}).get('id', None),
                         'desc': param.get('description', '')
                     })
+
+        # Inheritance
+        # TODO Support more than just a class type here, should support enum/etc
+        self.inheritance = [DotNetClass({'id': iobj['id'], 'name': iobj['name']})
+                            for iobj in obj.get('inheritance', [])]
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
