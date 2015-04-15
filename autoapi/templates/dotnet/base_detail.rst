@@ -8,53 +8,60 @@
 {% endblock %}
 
 {% block summary %}
+  {%- if object.summary %}
 
 Summary
 -------
 
 {{ summary }}
 
+  {%- endif %}
 {% endblock %}
 
 {% block inheritance %}
+  {%- if object.inheritance %}
 
 Inheritance Hierarchy
 ---------------------
 
-{% for item in inheritance %}
-* :ref:`{{ item.id }}`
-{% endfor %}
-
+    {%- for item in inheritance %}
+* :dn:{{ item.ref_directive }}:`{{ item.id }}`
+    {%- endfor %}
+  {%- endif %}
 {% endblock %}
 
 {% block syntax %}
+  {%- if object.example %}
 
 Syntax
 ------
 
 .. code-block:: csharp
 
-   {{ syntax }}
+   {{ example }}
 
+  {%- endif %}
 {% endblock %}
 
 
 {% block content %}
 
-{% if item_map %}
+  {%- macro display_type(item_type) %}
+    {%- if item_type in item_map %}
 
-{% for obj_type, obj_list in item_map.items() %}
+{{ item_type.title() }}
+{{ "-" * item_type|length }}
 
-{{ obj_type }}
-{{ "-" * obj_type|length }}
-
-{% for obj_item in obj_list %}
+      {%- for obj_item in item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
-{% endfor %}
+      {%- endfor %}
+    {%- endif %}
+  {%- endmacro %}
 
-{% endfor %}
-
-{% endif %}
+  {%- for item_type in ['constructor', 'method', 'field', 'property',
+                        'event', 'operator'] %}
+{{ display_type(item_type) }}
+  {%- endfor %}
 
 {% endblock %}
