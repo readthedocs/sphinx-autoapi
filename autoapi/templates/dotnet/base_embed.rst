@@ -14,7 +14,7 @@
       {%- endif %}
     {%- endfor %}
     {%- if object.returns %}
-    :return: {{ object.returns.id }}
+    :rtype: {{ object.returns.id }}
     {%- endif %}
 
     .. code-block:: csharp
