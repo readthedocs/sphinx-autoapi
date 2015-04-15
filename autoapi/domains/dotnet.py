@@ -76,19 +76,6 @@ class DotNetDomain(AutoAPIDomain):
         self.app.env.autoapi_data.append(obj)
         self.objects.append(obj)
 
-    def sort_objects(self):
-        '''Not implemented yet'''
-        pass
-        # print "Sorting objects"
-        # Sort objects
-        # for obj in app.env.autoapi_data:
-            # rst = parse(obj, 'dotnet')
-            # if rst:
-            #     path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['name']['CSharp'], app.config.source_suffix[0]))
-            #     ensuredir(app.config.autoapi_root)
-            #     with open(path, 'w+') as fp:
-            #         fp.write(rst)
-
     def organize_objects(self):
         '''Organize objects and namespaces'''
 
