@@ -33,6 +33,12 @@ class AutoAPIBase(object):
         context['object'] = self
         return context
 
+    def __lt__(self, other):
+        '''Object sorting comparison'''
+        if isinstance(other, AutoAPIBase):
+            return self.id < other.id
+        return super(AutoAPIBase, self).__lt__(other)
+
 
 class UnknownType(AutoAPIBase):
 

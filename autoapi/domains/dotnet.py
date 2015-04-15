@@ -135,6 +135,8 @@ class DotNetDomain(AutoAPIDomain):
             # TODO not here!
             for child in obj.children:
                 obj.item_map[child.type].append(child)
+            for key in obj.item_map.keys():
+                obj.item_map[key].sort()
 
             rst = obj.render()
             # Detail
@@ -226,60 +228,68 @@ class DotNetBase(AutoAPIBase):
         if pieces:
             return '.'.join(pieces)
 
+    @property
+    def ref_type(self):
+        return self.type
+
+    @property
+    def ref_directive(self):
+        return self.type
+
 
 class DotNetNamespace(DotNetBase):
     type = 'namespace'
-    ref_type = 'ns'
+    ref_directive = 'ns'
 
 
 class DotNetMethod(DotNetBase):
     type = 'method'
-    ref_type = 'meth'
+    ref_directive = 'meth'
 
 
 class DotNetProperty(DotNetBase):
     type = 'property'
-    ref_type = 'prop'
+    ref_directive = 'prop'
 
 
 class DotNetEnum(DotNetBase):
     type = 'enum'
-    ref_type = 'enum'
+    ref_type = 'enumeration'
+    ref_directive = 'enum'
 
 
 class DotNetStruct(DotNetBase):
     type = 'struct'
-    ref_type = 'struct'
+    ref_type = 'structure'
+    ref_directive = 'struct'
 
 
 class DotNetConstructor(DotNetBase):
     type = 'constructor'
-    ref_type = 'ctor'
+    ref_directive = 'ctor'
 
 
 class DotNetInterface(DotNetBase):
     type = 'interface'
-    ref_type = 'iface'
+    ref_directive = 'iface'
 
 
 class DotNetDelegate(DotNetBase):
     type = 'delegate'
-    ref_type = 'del'
+    ref_directive = 'del'
 
 
 class DotNetClass(DotNetBase):
     type = 'class'
-    ref_type = 'cls'
+    ref_directive = 'cls'
 
 
 class DotNetField(DotNetBase):
     type = 'field'
-    ref_type = 'field'
 
 
 class DotNetEvent(DotNetBase):
     type = 'event'
-    ref_type = 'event'
 
 
 class DotNetVirtualNamespace(AutoAPIBase):

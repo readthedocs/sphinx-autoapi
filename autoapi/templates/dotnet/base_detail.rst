@@ -3,7 +3,7 @@
 {{ object.short_name }} {{ object.type.title()}}
 {{ "=" * (object.short_name|length + object.type|length + 1) }}
 
-.. dn:{{ object.type }}:: {{ object.name }}
+.. dn:{{ object.ref_type }}:: {{ object.name }}
 
 {% endblock %}
 

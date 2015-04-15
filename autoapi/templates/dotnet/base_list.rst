@@ -1,9 +1,9 @@
 {% block title %}
 
-{{ object.short_name }} {{ object.type.title()}}
+{{ object.short_name }} {{ object.type.title() }}
 {{ "=" * (object.short_name|length + object.type|length + 1) }}
 
-.. dn:{{ object.type }}:: {{ object.name }}
+.. dn:{{ object.ref_type }}:: {{ object.name }}
 
 {% endblock %}
 
@@ -24,17 +24,17 @@
 
 {% block table %}
 
-{% if children %}
+{% if object.children %}
 
-.. list-table:: Classes
+.. list-table:: Members
    :widths: 20, 80
    :header-rows: 1
 
    * - Class
      - Description
-   {%- for item in children %}
+   {%- for item in object.children|sort %}
    {% macro render() %}{{ item.summary }}{% endmacro %}
-   * - :dn:{{ item.ref_type }}:`{{ item.id }}`
+   * - :dn:{{ item.ref_directive }}:`{{ item.id }}`
      - {{ render()|indent(7) }}
    {% endfor %}
 
