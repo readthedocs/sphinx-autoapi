@@ -3,14 +3,10 @@
 Sphinx Auto-API
 """
 
-import os
 import fnmatch
 import shutil
-from collections import defaultdict
-import traceback
 
-from .settings import env
-from .domains import *
+from .domains import DotNetDomain
 
 
 def ignore_file(app, filename):
@@ -25,7 +21,6 @@ def load_yaml(app):
         print "You must configure an autodapi_dir setting."
         return
     app.env.autoapi_data = []
-    namespaces = defaultdict(list)
 
     if app.config.autoapi_type == 'dotnet':
         domain = DotNetDomain(app)

@@ -108,16 +108,7 @@ class DotNetDomain(AutoAPIDomain):
         self.write_indexes()
 
     def generate_output(self):
-        # for namespace, objs in namespaces.items():
         for obj in self.app.env.autoapi_data:
-            # path = os.path.join(app.config.autoapi_root, '%s%s' % (namespace, app.config.source_suffix[0]))
-            # namespace_obj = DotNetNamespace(namespace, objs)
-            # ensuredir(app.config.autoapi_root)
-            # with open(path, 'w+') as index_file:
-            #     namespace_rst = namespace_obj.render()
-            #     if namespace_rst:
-            #         index_file.write(namespace_rst)
-            # for obj in objs:
 
             # TODO not here!
             for child in obj.children:
@@ -130,18 +121,19 @@ class DotNetDomain(AutoAPIDomain):
             detail_dir = os.path.join(self.get_config('autoapi_root'),
                                       *obj.name.split('.'))
             ensuredir(detail_dir)
+            # TODO: Better way to determine suffix?
             path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
             if rst:
                 with open(path, 'w+') as detail_file:
                     detail_file.write(rst)
 
-        for namespace, obj in self.namespaces.items():
-            path = os.path.join(self.get_config('autoapi_root'), '%s%s' % (namespace, self.get_config('source_suffix')[0]))
-            ensuredir(self.get_config('autoapi_root'))
-            with open(path, 'w+') as index_file:
-                namespace_rst = obj.render()
-                if namespace_rst:
-                    index_file.write(namespace_rst)
+        # for namespace, obj in self.namespaces.items():
+        #     path = os.path.join(self.get_config('autoapi_root'), '%s%s' % (namespace, self.get_config('source_suffix')[0]))
+        #     ensuredir(self.get_config('autoapi_root'))
+        #     with open(path, 'w+') as index_file:
+        #         namespace_rst = obj.render()
+        #         if namespace_rst:
+        #             index_file.write(namespace_rst)
 
     def write_indexes(self):
         # Write Index

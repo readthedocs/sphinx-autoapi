@@ -8,4 +8,4 @@ Below is a list of all items that are documented here.
    :includehidden:
    :glob:
 
-   *
+   */*
