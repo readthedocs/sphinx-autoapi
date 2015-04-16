@@ -92,7 +92,7 @@ class DotNetDomain(AutoAPIDomain):
                                                 'type': 'namespace'})
                     self.app.env.autoapi_data.append(ns_obj)
                     self.namespaces[ns_obj.id] = ns_obj
-                if obj not in ns_obj.children:
+                if obj.id not in (child.id for child in ns_obj.children):
                     ns_obj.children.append(obj)
                 _recurse_ns(ns_obj)
 
@@ -109,7 +109,6 @@ class DotNetDomain(AutoAPIDomain):
 
     def generate_output(self):
         for obj in self.app.env.autoapi_data:
-
             # TODO not here!
             for child in obj.children:
                 obj.item_map[child.type].append(child)
