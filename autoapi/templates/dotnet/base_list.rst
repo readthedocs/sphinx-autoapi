@@ -11,6 +11,7 @@
 
 .. toctree::
    :hidden:
+   :maxdepth: 2 
 
    {% for item in children %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
