@@ -11,9 +11,9 @@
 
 .. toctree::
    :hidden:
-   :maxdepth: 2 
+   :maxdepth: 4
 
-   {% for item in children %}
+   {% for item in children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
 
@@ -21,17 +21,29 @@
 
 {% endblock %}
 
-{% block table %}
-
-.. dn:{{ object.ref_type }}:: {{ object.name }}
+{% block content %}
 
 {% if object.children %}
 
-    {%- for item in object.children|sort %}
-        {% macro render() %}{{ item.summary }}{% endmacro %}
-    {{ item.type }} :dn:{{ item.ref_directive }}:`{{ item.short_name }}`
+{%- macro display_type(item_type) %}
+{%- if item_type in item_map %}
+
+    .. rubric:: {{ item_type.title() }}
+
+{%- for obj_item in item_map.get(item_type, []) %}
+        {% macro render() %}{{ obj_item.summary }}{% endmacro %}
+    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.short_name }}`
         {{ render()|indent(8) }}
-    {% endfor %}
+{%- endfor %}
+
+{%- endif %}
+{%- endmacro %}
+
+.. dn:{{ object.ref_type }}:: {{ object.name }}
+
+{%- for item_type in ['class', 'struct', 'delegate', 'enum'] %}
+{{ display_type(item_type) }}
+{%- endfor %}
 
 {% endif %}
 
