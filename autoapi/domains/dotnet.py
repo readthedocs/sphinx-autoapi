@@ -37,8 +37,10 @@ class DotNetDomain(AutoAPIDomain):
                    DotNetDelegate, DotNetField, DotNetEvent]
         obj = None
         for cls in classes:
-            if data['type'].lower() == cls.type.lower():
+            if data.get('type', '').lower() == cls.type.lower():
                 obj = cls(data)
+        else:
+            return None
 
         # Append child objects
         # TODO this should recurse in the case we're getting back more complex
@@ -53,9 +55,12 @@ class DotNetDomain(AutoAPIDomain):
     def get_objects(self):
         '''Trigger find of serialized sources and build objects'''
         for path in self.find_files():
-            data = self.read_file(os.path.join(self.get_config('autoapi_dir'), path))
-            obj = self.create_class(data)
-            self.add_object(obj)
+            data = self.read_file(path)
+            try:
+                obj = self.create_class(data)
+                self.add_object(obj)
+            except:
+                import traceback; traceback.print_exc();
 
     def add_object(self, obj):
         '''Add object to local and app environment storage
@@ -113,7 +118,7 @@ class DotNetDomain(AutoAPIDomain):
             path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
             if rst:
                 with open(path, 'w+') as detail_file:
-                    detail_file.write(rst)
+                    detail_file.write(rst.encode('utf-8'))
 
         # for namespace, obj in self.namespaces.items():
         #     path = os.path.join(self.get_config('autoapi_root'), '%s%s' % (namespace, self.get_config('source_suffix')[0]))
