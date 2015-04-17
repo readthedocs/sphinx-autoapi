@@ -17,17 +17,6 @@ class DotNetDomain(AutoAPIDomain):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    def find_files(self):
-        '''Find YAML/JSON files to parse for namespace information'''
-        # TODO do an intelligent glob here, we're picking up too much
-        files_to_read = os.listdir(self.get_config('autoapi_dir'))
-        for _path in self.app.status_iterator(
-                files_to_read,
-                '[AutoAPI] Reading files... ',
-                darkgreen,
-                len(files_to_read)):
-            yield _path
-
     def create_class(self, data):
         '''Return instance of class based on Roslyn type property
 

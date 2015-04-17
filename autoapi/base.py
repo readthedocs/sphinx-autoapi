@@ -1,4 +1,8 @@
+import os
 import yaml
+import fnmatch
+
+from sphinx.util.console import darkgreen
 
 from .settings import env
 
@@ -48,6 +52,7 @@ class UnknownType(AutoAPIBase):
 
 
 class AutoAPIDomain(object):
+
     '''Base class for domain handling
 
     :param app: Sphinx application instance
@@ -82,3 +87,22 @@ class AutoAPIDomain(object):
     def get_config(self, key):
         if self.app.config is not None:
             return getattr(self.app.config, key, None)
+
+    def find_files(self):
+        '''Find YAML/JSON files to parse for namespace information'''
+        # TODO do an intelligent glob here, we're picking up too much
+        files_to_read = []
+        absolute_dir = os.path.normpath(self.get_config('autoapi_dir'))
+        for root, dirnames, filenames in os.walk(absolute_dir):
+            for filename in fnmatch.filter(filenames, '*.yaml'):
+                if os.path.isabs(filename):
+                    files_to_read.append(os.path.join(filename))
+                else:
+                    files_to_read.append(os.path.join(root, filename))
+
+        for _path in self.app.status_iterator(
+                files_to_read,
+                '[AutoAPI] Reading files... ',
+                darkgreen,
+                len(files_to_read)):
+            yield _path
