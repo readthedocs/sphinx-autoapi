@@ -1,3 +1,5 @@
+
+
 {% block title %}
 
 {{ object.short_name }} {{ object.type.title()}}
@@ -7,9 +9,10 @@
 
 {% endblock %}
 
+.. contents:: 
+
 {% block summary %}
   {%- if object.summary %}
-
 Summary
 -------
 
