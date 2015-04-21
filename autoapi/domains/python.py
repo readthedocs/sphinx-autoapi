@@ -1,108 +1,188 @@
+import os
 import sys
 from collections import defaultdict
 
+from sphinx.util.osutil import ensuredir
 from epyparse import parsed
 
-from ..base import AutoAPIBase
+from ..base import AutoAPIBase, AutoAPIDomain
 from ..settings import env
 
-#        for root, dirnames, filenames in os.walk(app.config.autoapi_dir):
-#            for filename in fnmatch.filter(filenames, u'*.py'):
-#                to_open = os.path.join(root, filename)
-#                if ignore_file(app, to_open):
-#                    continue
-#                # print "Parsing Python File from %s" % to_open
-#                try:
-#                    parsed_data = parsed(to_open)
-#                    app.env.autoapi_data.append(parsed_data)
-#                except Exception:
-#                    print "Exception, Keeping going: %s" % to_open
-#                    import traceback
-#                    traceback.print_exc()
-#        app.env.autoapi_enabled = True
-#
-#        # Generate RST
-#        for obj in app.env.autoapi_data:
-#            # print "Parsing %s" % obj['fullname']
-#            rst = classify(obj, 'python').render()
-#            if rst:
-#                path = os.path.join(app.config.autoapi_root, '%s%s' % (obj['fullname'], app.config.source_suffix[0]))
-#                ensuredir(app.config.autoapi_root)
-#                with open(path, 'w+') as fp:
-#                    fp.write(rst.encode('utf8'))
+
+class PythonDomain(AutoAPIDomain):
+
+    '''Auto API domain handler for Python
+
+    Parses directly from Python files.
+
+    :param app: Sphinx application passed in as part of the extension
+    '''
+
+    def create_class(self, data):
+        '''Return instance of class based on Roslyn type property
+
+        Data keys handled here:
+
+            type
+                Set the object class
+
+            items
+                Recurse into :py:meth:`create_class` to create child object
+                instances
+
+        :param data: dictionary data from Roslyn output artifact
+        '''
+        # TODO replace this with a global mapping
+        classes = [PythonClass, PythonFunction, PythonModule]
+        obj = None
+        for cls in classes:
+            if data['type'].lower() == cls.type.lower():
+                obj = cls(data)
+        if not obj:
+            print "Unknown Type: %s" % data['type']
+
+        # Append child objects
+        # TODO this should recurse in the case we're getting back more complex
+        # argument listings
+        if 'children' in data:
+            for item in data['children']:
+                child_obj = self.create_class(item)
+                obj.children.append(child_obj)
+        return obj
+
+    def read_file(self, path):
+        '''Read file input into memory, returning deserialized objects
+
+        :param path: Path of file to read
+        '''
+        # TODO support JSON here
+        # TODO sphinx way of reporting errors in logs?
+
+        try:
+            parsed_data = parsed(path)
+            return parsed_data
+        except IOError:
+            print Warning('Error reading file: {0}'.format(path))
+        except TypeError:
+            print Warning('Error reading file: {0}'.format(path))
+        return None
+
+    def get_objects(self):
+        '''Trigger find of serialized sources and build objects'''
+        for path in self.find_files(pattern='*.py'):
+            data = self.read_file(os.path.join(self.get_config('autoapi_dir'), path))
+            if data:
+                obj = self.create_class(data)
+                self.add_object(obj)
+
+    def add_object(self, obj):
+        '''Add object to local and app environment storage
+
+        :param obj: Instance of a AutoAPI object
+        '''
+        self.app.env.autoapi_data.append(obj)
+        self.objects.append(obj)
+
+    def organize_objects(self):
+        '''Organize objects and namespaces'''
+        pass
+
+    def full(self):
+        print "Reading"
+        self.get_objects()
+        self.organize_objects()
+        print "Writing"
+        self.generate_output()
+        self.write_indexes()
+
+    def generate_output(self):
+        for obj in self.app.env.autoapi_data:
+
+            # TODO not here!
+            for child in obj.children:
+                obj.item_map[child.type].append(child)
+            for key in obj.item_map.keys():
+                obj.item_map[key].sort()
+
+            rst = obj.render()
+            # Detail
+            detail_dir = os.path.join(self.get_config('autoapi_root'),
+                                      *obj.name.split('.'))
+            ensuredir(detail_dir)
+            # TODO: Better way to determine suffix?
+            path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
+            if rst:
+                with open(path, 'w+') as detail_file:
+                    detail_file.write(rst)
+
+    def write_indexes(self):
+        # Write Index
+        top_level_index = os.path.join(self.get_config('autoapi_root'),
+                                       'index.rst')
+        with open(top_level_index, 'w+') as top_level_file:
+            content = env.get_template('index.rst')
+            top_level_file.write(content.render())
+
 
 class PythonBase(AutoAPIBase):
 
     language = 'python'
 
     def __init__(self, obj):
-        obj = super(PythonBase, self).__init__(obj)
-        obj.name = obj['fullname']
+        super(PythonBase, self).__init__(obj)
+        # Always exist
+        self.id = obj['fullname']
 
-    def render(self, ctx):
-        added_ctx = {
-            'underline': len(self.name) * self.header
-        }
-        added_ctx.update(**ctx)
-        super(PythonBase, self).render(ctx=added_ctx)
+        # Optional
+        self.imports = obj.get('imports', [])
+        self.children = []
+        self.parameters = obj.get('params', [])
+        self.docstring = obj.get('docstring', '')
+
+        # For later
+        self.item_map = defaultdict(list)
+
+    def __str__(self):
+        return '<{cls} {id}>'.format(cls=self.__class__.__name__,
+                                     id=self.id)
+
+    @property
+    def name(self):
+        '''Return short name for member id
+
+        '''
+        try:
+            return self.obj['fullname']
+        except KeyError:
+            return self.id
+
+    @property
+    def short_name(self):
+        '''Shorten name property'''
+        return self.name.split('.')[-1]
+
+    @property
+    def namespace(self):
+        pieces = self.id.split('.')[:-1]
+        if pieces:
+            return '.'.join(pieces)
+
+    @property
+    def ref_type(self):
+        return self.type
+
+    @property
+    def ref_directive(self):
+        return self.type
 
 
 class PythonFunction(PythonBase):
     type = 'function'
 
 
-class PythonModule(object):
-
-    def __init__(self, obj):
-        self.obj = obj
-        self.item_map = defaultdict(list)
-        self.sort()
-
-    def sort(self):
-        from .utils import classify
-        for item in self.obj.get('children', []):
-            if 'type' not in item:
-                print "Missing Type: %s" % item
-                continue
-            self.item_map[item['type']].append(classify(item, 'python'))
-
-    def render(self):
-        # print "Rendering module %s" % self.obj['fullname']
-        self.obj['underline'] = len(self.obj['fullname']) * "#"
-        template = env.get_template('python/module.rst')
-
-        ctx = self.obj
-        ctx.update(dict(
-            methods=self.item_map['function'],
-            classes=self.item_map['class'],
-            imports=self.obj['imports'],
-        ))
-        return template.render(**ctx)
+class PythonModule(PythonBase):
+    type = 'module'
 
 
-class PythonClass(object):
-
-    def __init__(self, obj):
-        self.obj = obj
-        self.item_map = defaultdict(list)
-        self.sort()
-
-    def sort(self):
-        from .utils import classify
-        for item in self.obj.get('children', []):
-            if 'type' not in item:
-                print "Missing Type: %s" % item
-                continue
-            self.item_map[item['type']].append(classify(item, 'python'))
-
-    def render(self, indent=4):
-        # print "Rendering class %s" % self.obj['fullname']
-        template = env.get_template('python/class.rst')
-        ctx = self.obj
-        ctx.update(dict(
-            underline=len(self.obj['fullname']) * "-",
-            methods=self.item_map['function'],
-            classes=self.item_map['class'],
-            indent=indent,
-        ))
-        return template.render(**ctx)
+class PythonClass(PythonBase):
+    type = 'class'

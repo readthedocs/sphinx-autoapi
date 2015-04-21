@@ -1,38 +1,35 @@
-{{ fullname }}
-{{ underline }}
+{{ object.name }}
+{{ "-" * object.name|length }}
 
-{% if docstring %}
+{% if object.docstring %}
 
 .. rubric:: Summary
 
-{{ docstring }}
+{{ object.docstring }}
 
 {% endif %}
 
-.. module:: {{ fullname }}
+.. module:: {{ object.name }}
 
 
-{% if classes %}
 
-.. rubric:: Classes
+{% block content %}
 
-{% for class in classes %}
+{%- macro display_type(item_type) %}
+{%- if item_type in item_map %}
 
-{{ class.render() }}
+{{ item_type.title() }}
+{{ "*" * item_type|length }}
 
-{% endfor %}
+{%- for obj_item in item_map.get(item_type, []) %}
+{% macro render() %}{{ obj_item.render() }}{% endmacro %}
+    {{ render()|indent(4) }}
+{%- endfor %}
+{%- endif %}
+{%- endmacro %}
 
-{% endif %}
+{%- for item_type in ['function', 'class'] %}
+{{ display_type(item_type) }}
+{%- endfor %}
 
-
-{% if methods %}
-
-.. rubric:: Functions
-
-{% for method in methods %}
-
-{{ method.render() }}
-
-{% endfor %}
-
-{% endif %}
+{% endblock %}

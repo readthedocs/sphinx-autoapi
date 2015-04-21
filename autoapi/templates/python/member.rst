@@ -1,7 +1,7 @@
 {# Identention in this file is important #}
 
-.. {{ type }}:: {{ fullname }}
+.. {{ obj.type }}:: {{ object.name }}
 
-   {{ docstring|indent(3) }}
+   {{ object.docstring|indent(3) }}
 
 

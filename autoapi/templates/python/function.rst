@@ -2,13 +2,13 @@
 
 {% if is_method %}
 {# Slice self off #}
-.. method:: {{ fullname.split('.')[-1] }}({{ args[1:]|join(',') }})
+.. method:: {{ object.name.split('.')[-1] }}({{ args[1:]|join(',') }})
 {% else %}
-.. function:: {{ fullname.split('.')[-1] }}({{ args|join(',') }})
+.. function:: {{ object.name.split('.')[-1] }}({{ args|join(',') }})
 {% endif %}
 
-   {% if docstring %}
-   {{ docstring|indent(3) }}
+   {% if object.docstring %}
+   {{ object.docstring|indent(3) }}
    {% endif %}
 
 

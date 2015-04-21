@@ -39,8 +39,6 @@ class DotNetDomain(AutoAPIDomain):
         for cls in classes:
             if data.get('type', '').lower() == cls.type.lower():
                 obj = cls(data)
-        else:
-            return None
 
         # Append child objects
         # TODO this should recurse in the case we're getting back more complex
@@ -74,6 +72,8 @@ class DotNetDomain(AutoAPIDomain):
         '''Organize objects and namespaces'''
 
         def _recurse_ns(obj):
+            if not obj:
+                return
             namespace = obj.namespace
             if namespace is not None:
                 ns_obj = None

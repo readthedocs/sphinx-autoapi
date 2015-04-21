@@ -22,6 +22,7 @@ class AutoAPIBase(object):
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
         ctx.update(**self.get_context_data())
+        print ctx['item_map'].keys()
         return template.render(**ctx)
 
     def get_absolute_path(self):
@@ -88,13 +89,13 @@ class AutoAPIDomain(object):
         if self.app.config is not None:
             return getattr(self.app.config, key, None)
 
-    def find_files(self):
+    def find_files(self, pattern='*.yaml'):
         '''Find YAML/JSON files to parse for namespace information'''
         # TODO do an intelligent glob here, we're picking up too much
         files_to_read = []
         absolute_dir = os.path.normpath(self.get_config('autoapi_dir'))
         for root, dirnames, filenames in os.walk(absolute_dir):
-            for filename in fnmatch.filter(filenames, '*.yaml'):
+            for filename in fnmatch.filter(filenames, pattern):
                 if os.path.isabs(filename):
                     files_to_read.append(os.path.join(filename))
                 else:
