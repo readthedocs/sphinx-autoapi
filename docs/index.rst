@@ -19,7 +19,7 @@ Contents
 Install
 -------
 
-First you need to install autoapi.
+First you need to install autoapi:
 
 .. code:: bash
 	
@@ -33,7 +33,14 @@ Then add it to your Sphinx project's ``conf.py``:
 
 	autoapi_type = 'python'
 	autoapi_dir = 'path/to/my/project/files'
-	autoapi_output = 'path/to/output'
+
+Then in your ``index.rst``, add autoapi to your TOC tree:
+
+.. code:: rst
+
+	.. toctree::
+
+	   autoapi/index
 
 See all available configuration options in :doc:`config`.
 
