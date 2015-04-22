@@ -1,4 +1,5 @@
-recursive-include readthedocs_ext *.css
-recursive-include readthedocs_ext *.js_t
-recursive-include readthedocs_ext *.js
+recursive-include autoapi *.css
+recursive-include autoapi *.js_t
+recursive-include autoapi *.js
+recursive-include autoapi *.rst
 include *.rst

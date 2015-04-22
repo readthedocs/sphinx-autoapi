@@ -1,4 +1,5 @@
+*.pyc
 _build
 _build_rtd
 readthedocs_build
-autoapi
+docs/autoapi
