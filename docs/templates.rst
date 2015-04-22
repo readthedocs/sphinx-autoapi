@@ -13,16 +13,14 @@ It uses the form :samp:`{language}/{type}.rst` to find the template to render.
 The full search path is:
 
 	* :samp:`{language}/{type}.rst`
-	* :samp:`{language}/member.rst`
-	* :samp:`base/{type}.rst`
-	* :samp:`base/member.rst`
+	* :samp:`{language}/unknown.rst`
+	* :samp:`base/unknown.rst`
 
 So for a .Net Class, this would resolve to:
 
 	* :samp:`{dotnet}/{class}.rst`
-	* :samp:`{dotnet}/member.rst`
-	* :samp:`base/{class}.rst`
-	* :samp:`base/member.rst`
+	* :samp:`{dotnet}/unknown.rst`
+	* :samp:`base/unknown.rst`
 
 We provide :samp:`base/member.rst` as an incredibly basic output of every object::
 
