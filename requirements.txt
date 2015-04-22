@@ -1,0 +1,1 @@
+https://bitbucket.org/readthedocs/sphinx-autoapi/get/master.zip
