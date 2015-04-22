@@ -1,8 +1,4 @@
-*.pyc
-*.egg-info
-.eggs/
-*.egg
-build
-dist
-wheelhouse
-*.sw[opmn]
+_build
+_build_rtd
+readthedocs_build
+autoapi

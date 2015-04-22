@@ -39,6 +39,9 @@ class DotNetDomain(AutoAPIDomain):
         for cls in classes:
             if data.get('type', '').lower() == cls.type.lower():
                 obj = cls(data)
+        if not obj:
+            pass
+            # import ipdb; ipdb.set_trace()
 
         # Append child objects
         # TODO this should recurse in the case we're getting back more complex
@@ -105,6 +108,7 @@ class DotNetDomain(AutoAPIDomain):
 
     def generate_output(self):
         for obj in self.app.env.autoapi_data:
+
             # TODO not here!
             for child in obj.children:
                 obj.item_map[child.type].append(child)
