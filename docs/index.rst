@@ -12,6 +12,7 @@ Contents
    :glob:
 
    config
+   templates
    design
 
 Install
