@@ -14,6 +14,7 @@ Contents
    config
    templates
    design
+   autoapi/index
 
 Install
 -------
