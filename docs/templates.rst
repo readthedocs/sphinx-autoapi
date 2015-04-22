@@ -24,6 +24,9 @@ So for a .Net Class, this would resolve to:
 	* :samp:`base/{class}.rst`
 	* :samp:`base/member.rst`
 
+We provide :samp:`base/member.rst` as an incredibly basic output of every object::
+
+	.. {language}:{type}:: {name}
 
 Context
 ~~~~~~~
