@@ -52,7 +52,9 @@ class DotNetDomain(AutoAPIDomain):
 
     def get_objects(self):
         '''Trigger find of serialized sources and build objects'''
-        for path in self.find_files():
+        for path in self.find_files('*.yaml'):
+            if path.endswith('toc.yml'):
+                continue
             data = self.read_file(path)
             try:
                 obj = self.create_class(data)

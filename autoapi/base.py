@@ -22,7 +22,6 @@ class AutoAPIBase(object):
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
         ctx.update(**self.get_context_data())
-        print ctx['item_map'].keys()
         return template.render(**ctx)
 
     def get_absolute_path(self):
