@@ -5,8 +5,6 @@ AutoAPI Configuration
 
 	**Required**
 
-	Default: ``''``
-
 	Where to find the files to generate the AutoAPI from.
 
 .. confval:: autoapi_type
