@@ -28,8 +28,7 @@ setup(
     url='http://github.com/ericholscher/sphinx-autoapi',
     license='BSD',
     description='',
-    package_dir={'': '.'},
-    packages=find_packages('.'),
+    packages=['autoapi'],
     long_description=codecs.open("README.rst", "r", "utf-8").read(),
     # trying to add files...
     include_package_data=True,
