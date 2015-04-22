@@ -22,7 +22,7 @@ except ImportError:
 
 setup(
     name='sphinx-autoapi',
-    version='0.1.0',
+    version='0.1.1',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
     url='http://github.com/ericholscher/sphinx-autoapi',
