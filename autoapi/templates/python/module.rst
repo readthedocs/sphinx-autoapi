@@ -1,6 +1,22 @@
 {{ object.name }}
 {{ "-" * object.name|length }}
 
+{% block toc %}
+
+{% if children %}
+
+.. toctree::
+   :hidden:
+   :maxdepth: 4
+
+   {% for item in children|sort %}
+   /autoapi/{{ item.id.split('.')|join('/') }}/index
+   {%- endfor %}
+
+{% endif %}
+
+{% endblock %}
+
 {% if object.docstring %}
 
 .. rubric:: Summary
@@ -28,7 +44,7 @@
 {%- endif %}
 {%- endmacro %}
 
-{%- for item_type in ['function', 'class'] %}
+{%- for item_type in ['module', 'function', 'class'] %}
 {{ display_type(item_type) }}
 {%- endfor %}
 

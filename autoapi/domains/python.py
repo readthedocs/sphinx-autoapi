@@ -85,7 +85,28 @@ class PythonDomain(AutoAPIDomain):
 
     def organize_objects(self):
         '''Organize objects and namespaces'''
-        pass
+
+        def _recurse_ns(obj):
+            if not obj:
+                return
+            namespace = obj.namespace
+            if namespace is not None:
+                ns_obj = None
+                for (n, search_obj) in enumerate(self.app.env.autoapi_data):
+                    if (search_obj.id == namespace and
+                            isinstance(search_obj, PythonModule)):
+                        ns_obj = self.app.env.autoapi_data[n]
+                if ns_obj is None:
+                    ns_obj = self.create_class({'id': namespace,
+                                                'type': 'module'})
+                    self.app.env.autoapi_data.append(ns_obj)
+                    self.namespaces[ns_obj.id] = ns_obj
+                if obj.id not in (child.id for child in ns_obj.children):
+                    ns_obj.children.append(obj)
+                _recurse_ns(ns_obj)
+
+        for obj in self.app.env.autoapi_data:
+            _recurse_ns(obj)
 
     def full(self):
         print "Reading"
