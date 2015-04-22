@@ -1,5 +1,5 @@
-Sphinx Auto API
-===============
+Sphinx AutoAPI
+==============
 
 A tool that generates a full API ref (Javadoc style) for your project.
 It requires no RST and is fully automated,
