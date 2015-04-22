@@ -34,7 +34,10 @@ setup(
     # trying to add files...
     include_package_data=True,
     package_data={
-        '': ['_static/*.js', '_static/*.js_t', '_static/*.css'],
+        'autoapi': [
+            'templates/*.rst',
+            'templates/*/*.rst',
+        ],
     },
     **extra_setup
 )
