@@ -6,7 +6,6 @@
 {% if obj.children %}
 
 .. toctree::
-   :hidden:
    :maxdepth: 4
 
    {% for item in obj.children|sort %}
@@ -45,7 +44,9 @@
 {%- endmacro %}
 
 {%- for item_type in obj.item_map.keys() %}
+{% if item_type.lower() != 'module' %}
 {{ display_type(item_type) }}
+{% endif %}
 {%- endfor %}
 
 {% endblock %}
