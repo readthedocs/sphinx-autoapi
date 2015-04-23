@@ -1,7 +1,7 @@
-.. {{ object.type }}:: {{ object.name }}
+.. {{ obj.type }}:: {{ obj.name }}
 
 	{% if summary %}
 
-	{{ object.obj.summary }}
+	{{ obj.summary }}
 
 	{% endif %}

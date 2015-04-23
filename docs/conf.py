@@ -33,6 +33,7 @@ extensions = ['autoapi.extension']
 
 autoapi_type = 'python'
 autoapi_dir = '../autoapi'
+autoapi_file_pattern = '*.py'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

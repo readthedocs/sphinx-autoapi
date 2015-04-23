@@ -7,6 +7,6 @@ Below is a list of all items that are documented here.
 .. toctree::
    :includehidden:
    :glob:
-   :maxdepth: 5
+   :maxdepth: 2
 
    */*

@@ -31,11 +31,9 @@ class AutoAPIBase(object):
         )
 
     def get_context_data(self):
-        context = {}
-        # TODO deprecate this, it doesn't handle things like class variables
-        context.update(self.__dict__)
-        context['object'] = self
-        return context
+        return {
+            'obj': self
+        }
 
     def __lt__(self, other):
         '''Object sorting comparison'''
@@ -59,7 +57,7 @@ class AutoAPIDomain(object):
     '''
 
     namespaces = {}
-    objects = []
+    objects = {}
 
     def __init__(self, app):
         self.app = app
@@ -95,6 +93,13 @@ class AutoAPIDomain(object):
         absolute_dir = os.path.normpath(self.get_config('autoapi_dir'))
         for root, dirnames, filenames in os.walk(absolute_dir):
             for filename in fnmatch.filter(filenames, pattern):
+
+                # Skip ignored files
+                for ignore_pattern in self.get_config('autoapi_ignore'):
+                    if fnmatch.fnmatch(filename, ignore_pattern):
+                        print "Ignoring %s/%s" % (root, filename)
+                        continue
+
                 if os.path.isabs(filename):
                     files_to_read.append(os.path.join(filename))
                 else:

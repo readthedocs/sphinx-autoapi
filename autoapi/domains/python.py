@@ -67,9 +67,9 @@ class PythonDomain(AutoAPIDomain):
             print Warning('Error reading file: {0}'.format(path))
         return None
 
-    def get_objects(self):
+    def get_objects(self, pattern):
         '''Trigger find of serialized sources and build objects'''
-        for path in self.find_files(pattern='*.py'):
+        for path in self.find_files(pattern):
             data = self.read_file(os.path.join(self.get_config('autoapi_dir'), path))
             if data:
                 obj = self.create_class(data)
@@ -81,7 +81,7 @@ class PythonDomain(AutoAPIDomain):
         :param obj: Instance of a AutoAPI object
         '''
         self.app.env.autoapi_data.append(obj)
-        self.objects.append(obj)
+        self.objects[obj.name] = obj
 
     def organize_objects(self):
         '''Organize objects and namespaces'''
@@ -110,7 +110,7 @@ class PythonDomain(AutoAPIDomain):
 
     def full(self):
         print "Reading"
-        self.get_objects()
+        self.get_objects(self.get_config('autoapi_file_pattern'))
         self.organize_objects()
         print "Writing"
         self.generate_output()
@@ -195,6 +195,10 @@ class PythonBase(AutoAPIBase):
     @property
     def ref_directive(self):
         return self.type
+
+    @property
+    def methods(self):
+        return self.obj.get('methods', [])
 
 
 class PythonFunction(PythonBase):

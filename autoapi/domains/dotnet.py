@@ -1,5 +1,6 @@
 import os
 from collections import defaultdict
+import fnmatch
 
 from sphinx.util.console import bold, darkgreen
 from sphinx.util.osutil import ensuredir
@@ -7,8 +8,11 @@ from sphinx.util.osutil import ensuredir
 from ..base import AutoAPIBase, AutoAPIDomain
 from ..settings import env
 
+MADE = set()
+
 
 class DotNetDomain(AutoAPIDomain):
+
     '''Auto API domain handler for .NET
 
     Searches for YAML files, and soon to be JSON files as well, for auto API
@@ -32,49 +36,69 @@ class DotNetDomain(AutoAPIDomain):
         :param data: dictionary data from Roslyn output artifact
         '''
         # TODO replace this with a global mapping
-        classes = [DotNetNamespace, DotNetClass, DotNetProperty, DotNetMethod,
-                   DotNetEnum, DotNetConstructor, DotNetStruct, DotNetInterface,
-                   DotNetDelegate, DotNetField, DotNetEvent]
+        self.list_classes = [
+            DotNetNamespace, DotNetClass, DotNetEnum,
+            DotNetStruct, DotNetInterface, DotNetDelegate
+        ]
+        self.detail_classes = [
+            DotNetProperty, DotNetMethod, DotNetConstructor,
+            DotNetField, DotNetEvent
+        ]
+        classes = self.detail_classes + self.list_classes
         obj = None
         for cls in classes:
             if data.get('type', '').lower() == cls.type.lower():
                 obj = cls(data)
-        if not obj:
-            pass
-            # import ipdb; ipdb.set_trace()
+                break
+
+        if data.get('id', None) in MADE:
+            print "DOING IT AGAIN: %s" % data.get('id')
+        MADE.add(data['id'])
 
         # Append child objects
         # TODO this should recurse in the case we're getting back more complex
         # argument listings
-        if 'items' in data:
-            for item in data['items']:
-                child_obj = self.create_class(item)
-                obj.children.append(child_obj)
+        # if 'children' in data:
+        #     for item in data['children']:
+        #         child_obj = self.create_class(item)
+        #         obj.children.append(child_obj)
 
         return obj
 
-    def get_objects(self):
+    def get_objects(self, pattern):
         '''Trigger find of serialized sources and build objects'''
-        for path in self.find_files('*.yaml'):
-            if path.endswith('toc.yml'):
-                continue
-            data = self.read_file(path)
+        for path in self.find_files(pattern):
+            data_objects = self.read_file(path)
+            if type(data_objects) == dict:
+                data_objects = data_objects['items']
             try:
-                obj = self.create_class(data)
-                self.add_object(obj)
+                for data in data_objects:
+                    obj = self.create_class(data)
+                    self.add_object(obj)
             except:
-                import traceback; traceback.print_exc();
+                import traceback
+                traceback.print_exc()
 
     def add_object(self, obj):
         '''Add object to local and app environment storage
 
         :param obj: Instance of a .NET object
         '''
-        self.app.env.autoapi_data.append(obj)
-        self.objects.append(obj)
+        if type(obj) in self.list_classes:
+            self.app.env.autoapi_data.append(obj)
+        self.objects[obj.name] = obj
 
     def organize_objects(self):
         '''Organize objects and namespaces'''
+
+        def _render_children(obj):
+            for child in obj.children_strings:
+                child_object = self.objects.get(child)
+                if child_object:
+                    obj.item_map[child_object.type].append(child_object)
+                    obj.children.append(child_object)
+            for key in obj.item_map:
+                obj.item_map[key].sort()
 
         def _recurse_ns(obj):
             if not obj:
@@ -87,20 +111,23 @@ class DotNetDomain(AutoAPIDomain):
                             isinstance(search_obj, DotNetNamespace)):
                         ns_obj = self.app.env.autoapi_data[n]
                 if ns_obj is None:
+                    print "Adding Namespace %s" % namespace
                     ns_obj = self.create_class({'id': namespace,
                                                 'type': 'namespace'})
+                    _render_children(ns_obj)
                     self.app.env.autoapi_data.append(ns_obj)
                     self.namespaces[ns_obj.id] = ns_obj
-                if obj.id not in (child.id for child in ns_obj.children):
+                if obj.id not in (child for child in ns_obj.children):
                     ns_obj.children.append(obj)
-                _recurse_ns(ns_obj)
+                # _recurse_ns(ns_obj)
 
         for obj in self.app.env.autoapi_data:
+            _render_children(obj)
             _recurse_ns(obj)
 
     def full(self):
         print "Reading"
-        self.get_objects()
+        self.get_objects(self.get_config('autoapi_file_pattern'))
         self.organize_objects()
         print "Writing"
         self.generate_output()
@@ -109,16 +136,17 @@ class DotNetDomain(AutoAPIDomain):
     def generate_output(self):
         for obj in self.app.env.autoapi_data:
 
-            # TODO not here!
-            for child in obj.children:
-                obj.item_map[child.type].append(child)
-            for key in obj.item_map.keys():
-                obj.item_map[key].sort()
+            if not obj:
+                continue
 
             rst = obj.render()
             # Detail
+            try:
+                filename = obj.name.split('(')[0]
+            except IndexError:
+                filename = obj.name
             detail_dir = os.path.join(self.get_config('autoapi_root'),
-                                      *obj.name.split('.'))
+                                      *filename.split('.'))
             ensuredir(detail_dir)
             # TODO: Better way to determine suffix?
             path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
@@ -144,6 +172,7 @@ class DotNetDomain(AutoAPIDomain):
 
 
 class DotNetBase(AutoAPIBase):
+
     '''Base .NET object representation'''
 
     language = 'dotnet'
@@ -157,6 +186,7 @@ class DotNetBase(AutoAPIBase):
         self.summary = obj.get('summary', '')
         self.parameters = []
         self.items = obj.get('items', [])
+        self.children_strings = obj.get('children', [])
         self.children = []
         self.item_map = defaultdict(list)
         self.inheritance = []

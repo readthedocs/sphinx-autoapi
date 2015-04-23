@@ -1,15 +1,15 @@
-{{ object.name }}
-{{ "-" * object.name|length }}
+{{ obj.name }}
+{{ "-" * obj.name|length }}
 
 {% block toc %}
 
-{% if children %}
+{% if obj.children %}
 
 .. toctree::
    :hidden:
    :maxdepth: 4
 
-   {% for item in children|sort %}
+   {% for item in obj.children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
 
@@ -17,34 +17,34 @@
 
 {% endblock %}
 
-{% if object.docstring %}
+{% if obj.docstring %}
 
 .. rubric:: Summary
 
-{{ object.docstring }}
+{{ obj.docstring }}
 
 {% endif %}
 
-.. module:: {{ object.name }}
+.. module:: {{ obj.name }}
 
 
 
 {% block content %}
 
 {%- macro display_type(item_type) %}
-{%- if item_type in item_map %}
 
 {{ item_type.title() }}
 {{ "*" * item_type|length }}
 
-{%- for obj_item in item_map.get(item_type, []) %}
+{%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
+
     {{ render()|indent(4) }}
+
 {%- endfor %}
-{%- endif %}
 {%- endmacro %}
 
-{%- for item_type in ['module', 'function', 'class'] %}
+{%- for item_type in obj.item_map.keys() %}
 {{ display_type(item_type) }}
 {%- endfor %}
 

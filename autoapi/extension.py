@@ -17,6 +17,10 @@ def ignore_file(app, filename):
 
 
 def load_yaml(app):
+    """
+    Load AutoAPI data from the filesystem.
+    """
+
     if not app.config.autoapi_dir:
         print "You must configure an autodapi_dir setting."
         return
@@ -25,7 +29,7 @@ def load_yaml(app):
     if app.config.autoapi_type == 'dotnet':
         domain = DotNetDomain(app)
     elif app.config.autoapi_type == 'python':
-       domain = PythonDomain(app)
+        domain = PythonDomain(app)
     domain.full()
 
 
@@ -42,6 +46,7 @@ def setup(app):
     app.add_config_value('autoapi_type', 'dotnet', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
+    app.add_config_value('autoapi_file_pattern', '*', 'html')
     app.add_config_value('autoapi_dir', '', 'html')
     app.add_config_value('autoapi_keep_files', True, 'html')
     app.add_stylesheet('autoapi.css')

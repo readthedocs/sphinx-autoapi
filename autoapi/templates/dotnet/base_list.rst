@@ -1,19 +1,19 @@
 {% block title %}
 
-{{ object.short_name }} {{ object.type.title() }}
-{{ "=" * (object.short_name|length + object.type|length + 1) }}
+{{ obj.short_name }} {{ obj.type.title() }}
+{{ "=" * (obj.short_name|length + obj.type|length + 1) }}
 
 {% endblock %}
 
 {% block toc %}
 
-{% if children %}
+{% if obj.children %}
 
 .. toctree::
    :hidden:
-   :maxdepth: 4
+   :maxdepth: 1
 
-   {% for item in children|sort %}
+   {% for item in obj.children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
 
@@ -21,30 +21,27 @@
 
 {% endblock %}
 
+
 {% block content %}
 
-{% if object.children %}
-
 {%- macro display_type(item_type) %}
-{%- if item_type in item_map %}
 
     .. rubric:: {{ item_type.title() }}
 
-{%- for obj_item in item_map.get(item_type, []) %}
-        {% macro render() %}{{ obj_item.summary }}{% endmacro %}
+{%- for obj_item in obj.item_map.get(item_type, []) %}
+{% macro render() %}{{ obj_item.summary }}{% endmacro %}
+
     {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.short_name }}`
         {{ render()|indent(8) }}
-{%- endfor %}
 
-{%- endif %}
+{%- endfor %}
 {%- endmacro %}
 
-.. dn:{{ object.ref_type }}:: {{ object.name }}
+.. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
-{%- for item_type in ['class', 'struct', 'delegate', 'enum'] %}
+{%- for item_type in obj.item_map.keys() %}
 {{ display_type(item_type) }}
 {%- endfor %}
 
-{% endif %}
 
 {% endblock %}

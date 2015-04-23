@@ -1,16 +1,16 @@
-.. class:: {{ object.name }}({{ object.args|join(',') }})
+.. class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
-   {% if object.docstring %}
+   {% if obj.docstring %}
 
    .. rubric:: Summary
 
-   {{ object.docstring|indent(3) }}
+   {{ obj.docstring|indent(3) }}
 
    {% endif %}
 
-   {% if methods %}
+   {% if obj.methods %}
    
-   {% for method in methods %}
+   {% for method in obj.methods %}
 
    {% macro render() %}{{ method.render() }}{% endmacro %}
    {{ render()|indent(3) }}

@@ -2,27 +2,27 @@
 
 {% block title %}
 
-{{ object.short_name }} {{ object.type.title()}}
-{{ "=" * (object.short_name|length + object.type|length + 1) }}
+{{ obj.short_name }} {{ obj.type.title()}}
+{{ "=" * (obj.short_name|length + obj.type|length + 1) }}
 
-.. dn:{{ object.ref_type }}:: {{ object.name }}
+.. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
 {% endblock %}
 
 .. contents:: 
 
 {% block summary %}
-  {%- if object.summary %}
+  {%- if obj.summary %}
 Summary
 -------
 
-{{ summary }}
+{{ obj.summary }}
 
   {%- endif %}
 {% endblock %}
 
 {% block inheritance %}
-  {%- if object.inheritance %}
+  {%- if obj.inheritance %}
 
 Inheritance Hierarchy
 ---------------------
@@ -34,14 +34,14 @@ Inheritance Hierarchy
 {% endblock %}
 
 {% block syntax %}
-  {%- if object.example %}
+  {%- if obj.example %}
 
 Syntax
 ------
 
 .. code-block:: csharp
 
-   {{ example }}
+   {{ obj.example }}
 
   {%- endif %}
 {% endblock %}
@@ -50,20 +50,19 @@ Syntax
 {% block content %}
 
   {%- macro display_type(item_type) %}
-    {%- if item_type in item_map %}
+    {%- if item_type in obj.item_map %}
 
 {{ item_type.title() }}
 {{ "-" * item_type|length }}
 
-      {%- for obj_item in item_map.get(item_type, []) %}
+      {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
       {%- endfor %}
     {%- endif %}
   {%- endmacro %}
 
-  {%- for item_type in ['constructor', 'method', 'field', 'property',
-                        'event', 'operator'] %}
+  {%- for item_type in obj.item_map.keys() %}
 {{ display_type(item_type) }}
   {%- endfor %}
 
