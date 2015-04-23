@@ -45,6 +45,14 @@ Then in your ``index.rst``, add autoapi to your TOC tree:
 
 See all available configuration options in :doc:`config`.
 
+Customize
+---------
+
+All of the pages that AutoAPI generates are templated with Jinja2 templates.
+You can fully customize how pages are displayed on a per-object basis.
+Read more about it in :doc:`templates`.
+
+
 Design
 ------
 
