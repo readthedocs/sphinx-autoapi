@@ -25,7 +25,7 @@
 
 {% endif %}
 
-.. module:: {{ obj.name }}
+.. py:module:: {{ obj.name }}
 
 
 
@@ -39,7 +39,7 @@
 {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 
-    {{ render()|indent(4) }}
+{{ render()|indent(0) }}
 
 {%- endfor %}
 {%- endmacro %}

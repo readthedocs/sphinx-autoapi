@@ -1,4 +1,4 @@
-.. class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
+.. py:class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {% if obj.docstring %}
 
