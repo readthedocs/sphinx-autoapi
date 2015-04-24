@@ -10,6 +10,7 @@
 {% endblock %}
 
 .. contents:: 
+   :local:
 
 {% block summary %}
   {%- if obj.summary %}
