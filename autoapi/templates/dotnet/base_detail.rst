@@ -3,8 +3,6 @@
 {{ obj.short_name }} {{ obj.type.title()}}
 {{ "=" * (obj.short_name|length + obj.type|length + 1) }}
 
-.. dn:{{ obj.ref_type }}:: {{ obj.name }}
-
 {% endblock %}
 
 .. contents:: 
@@ -60,15 +58,21 @@ GitHub
 
 {% block content %}
 
+.. dn:{{ obj.ref_type }}:: {{ obj.name }}
+
   {%- macro display_type(item_type) %}
     {%- if item_type in obj.item_map %}
 
 {{ item_type.title() }}
 {{ "-" * item_type|length }}
 
+.. dn:{{ obj.ref_type }}:: {{ obj.name }}
+    :noindex:
+    :hidden:
+
       {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
-{{ render()|indent(0) }}
+    {{ render()|indent(4) }}
       {%- endfor %}
     {%- endif %}
   {%- endmacro %}
