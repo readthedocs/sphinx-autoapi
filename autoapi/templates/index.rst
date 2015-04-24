@@ -7,6 +7,8 @@ Below is a list of all items that are documented here.
 .. toctree::
    :includehidden:
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
 
-   */*
+   {% for page in pages %}
+   /autoapi/{{ page.id.split('.')|join('/') }}/index
+   {% endfor %}

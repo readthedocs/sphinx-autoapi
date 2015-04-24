@@ -9,6 +9,7 @@
 
 {% if obj.children %}
 
+{#
 .. toctree::
    :hidden:
    :maxdepth: 1
@@ -16,6 +17,8 @@
    {% for item in obj.children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
+
+#}
 
 {% endif %}
 
