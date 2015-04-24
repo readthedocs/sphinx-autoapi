@@ -1,7 +1,7 @@
 {% block title %}
 
-{{ obj.short_name }} {{ obj.type.title() }}
-{{ "=" * (obj.short_name|length + obj.type|length + 1) }}
+{{ obj.id }} {{ obj.type.title() }}
+{{ "=" * (obj.id|length + obj.type|length + 1) }}
 
 {% endblock %}
 
@@ -9,16 +9,16 @@
 
 {% if obj.children %}
 
-{#
 .. toctree::
    :hidden:
-   :maxdepth: 1
+   :maxdepth: 2
 
    {% for item in obj.children|sort %}
+   {% if item.type != 'namespace' %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
+   {% endif %}
    {%- endfor %}
 
-#}
 
 {% endif %}
 

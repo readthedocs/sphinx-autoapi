@@ -9,9 +9,9 @@
 
     {%- for param in obj.parameters %}
     :param {{ param.name }}: {{ param.desc }}
-      {%- if param.type %}
+    {%- if param.type %}
     :type {{ param.name }}: {{ param.type }}
-      {%- endif %}
+    {%- endif %}
     {%- endfor %}
     {%- if obj.returns %}
     :rtype: {{ obj.returns.id }}
@@ -19,4 +19,4 @@
 
     .. code-block:: csharp
 
-       {{ example }}
+       {{ obj.example }}

@@ -35,7 +35,8 @@ Inheritance Hierarchy
 {% endblock %}
 
 {% block syntax %}
-  {%- if obj.example %}
+
+{%- if obj.example %}
 
 Syntax
 ------
@@ -44,7 +45,8 @@ Syntax
 
    {{ obj.example }}
 
-  {%- endif %}
+{%- endif %}
+
 {% endblock %}
 
 

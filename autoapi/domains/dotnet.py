@@ -21,6 +21,8 @@ class DotNetDomain(AutoAPIDomain):
     :param app: Sphinx application passed in as part of the extension
     '''
 
+    top_namespaces = {}
+
     def create_class(self, data):
         '''Return instance of class based on Roslyn type property
 
@@ -86,6 +88,8 @@ class DotNetDomain(AutoAPIDomain):
         '''
         if type(obj) in self.list_classes:
             self.top_level_objects[obj.name] = obj
+            if type(obj) == DotNetNamespace:
+                self.namespaces[obj.name] = obj
         self.objects[obj.name] = obj
 
     def organize_objects(self):
@@ -95,7 +99,7 @@ class DotNetDomain(AutoAPIDomain):
             for child in obj.children_strings:
                 child_object = self.objects.get(child)
                 if child_object:
-                    obj.item_map[child_object.type].append(child_object)
+                    obj.item_map[child_object.plural].append(child_object)
                     obj.children.append(child_object)
             for key in obj.item_map:
                 obj.item_map[key].sort()
@@ -103,27 +107,35 @@ class DotNetDomain(AutoAPIDomain):
         def _recurse_ns(obj):
             if not obj:
                 return
-            namespace = obj.namespace
+            namespace = obj.top_namespace
             if namespace is not None:
-                ns_obj = self.top_level_objects.get(namespace)
-                if ns_obj is None:
+                ns_obj = self.top_namespaces.get(namespace)
+                if ns_obj is None or type(ns_obj) != DotNetNamespace:
                     print "Adding Namespace %s" % namespace
                     ns_obj = self.create_class({'id': namespace,
                                                 'type': 'namespace'})
-                    self.top_level_objects[ns_obj.name] = ns_obj
-                if obj not in ns_obj.children:
+                    self.top_namespaces[ns_obj.id] = ns_obj
+                if obj not in ns_obj.children and namespace != obj.id:
                     ns_obj.children.append(obj)
-                self.namespaces[ns_obj.id] = ns_obj
-                #_recurse_ns(ns_obj)
 
         for obj in self.top_level_objects.values():
             _render_children(obj)
             _recurse_ns(obj)
 
+        # Clean out dead namespaces
+        for key, ns in self.top_namespaces.items():
+            if len(ns.children) == 0:
+                del self.top_namespaces[key]
+
+        for key, ns in self.namespaces.items():
+            if len(ns.children) == 0:
+                del self.namespaces[key]
+
     def full(self):
         print "Reading"
         self.get_objects(self.get_config('autoapi_file_pattern'))
         self.organize_objects()
+
         print "Writing"
         self.generate_output()
         self.write_indexes()
@@ -133,6 +145,7 @@ class DotNetDomain(AutoAPIDomain):
 
             if not obj:
                 continue
+
 
             rst = obj.render()
             # Detail
@@ -240,6 +253,12 @@ class DotNetBase(AutoAPIBase):
             return '.'.join(pieces)
 
     @property
+    def top_namespace(self):
+        pieces = self.id.split('.')[:2]
+        if pieces:
+            return '.'.join(pieces)
+
+    @property
     def ref_type(self):
         return self.type
 
@@ -251,66 +270,64 @@ class DotNetBase(AutoAPIBase):
 class DotNetNamespace(DotNetBase):
     type = 'namespace'
     ref_directive = 'ns'
+    plural = 'namespaces'
 
 
 class DotNetMethod(DotNetBase):
     type = 'method'
     ref_directive = 'meth'
+    plural = 'methods'
 
 
 class DotNetProperty(DotNetBase):
     type = 'property'
     ref_directive = 'prop'
+    plural = 'properties'
 
 
 class DotNetEnum(DotNetBase):
     type = 'enum'
     ref_type = 'enumeration'
     ref_directive = 'enum'
+    plural = 'enumerations'
 
 
 class DotNetStruct(DotNetBase):
     type = 'struct'
     ref_type = 'structure'
     ref_directive = 'struct'
+    plural = 'structures'
 
 
 class DotNetConstructor(DotNetBase):
     type = 'constructor'
     ref_directive = 'ctor'
+    plural = 'constructors'
 
 
 class DotNetInterface(DotNetBase):
     type = 'interface'
     ref_directive = 'iface'
+    plural = 'interfaces'
 
 
 class DotNetDelegate(DotNetBase):
     type = 'delegate'
     ref_directive = 'del'
+    plural = 'delegates'
 
 
 class DotNetClass(DotNetBase):
     type = 'class'
     ref_directive = 'cls'
+    plural = 'classes'
 
 
 class DotNetField(DotNetBase):
     type = 'field'
+    plural = 'fields'
 
 
 class DotNetEvent(DotNetBase):
     type = 'event'
-
-
-class DotNetVirtualNamespace(AutoAPIBase):
-    language = 'dotnet'
-    type = 'namespace'
-    ref_type = 'ns'
-
-    def __init__(self, name, objs):
-        self.name = self.short_name = name
-        self.children = []
-        self.type = 'namespace'
-        for obj in objs:
-            self.children.append(obj.obj)
+    plural = 'events'
