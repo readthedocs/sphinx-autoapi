@@ -1,5 +1,3 @@
-
-
 {% block title %}
 
 {{ obj.short_name }} {{ obj.type.title()}}
@@ -13,7 +11,8 @@
    :local:
 
 {% block summary %}
-  {%- if obj.summary %}
+{%- if obj.summary %}
+
 Summary
 -------
 
@@ -23,15 +22,18 @@ Summary
 {% endblock %}
 
 {% block inheritance %}
-  {%- if obj.inheritance %}
+
+{%- if obj.inheritance %}
 
 Inheritance Hierarchy
 ---------------------
 
-    {%- for item in inheritance %}
+    {%- for item in obj.inheritance %}
 * :dn:{{ item.ref_directive }}:`{{ item.id }}`
     {%- endfor %}
+* :dn:{{ obj.ref_directive }}:`{{ obj.id}}`
   {%- endif %}
+
 {% endblock %}
 
 {% block syntax %}
