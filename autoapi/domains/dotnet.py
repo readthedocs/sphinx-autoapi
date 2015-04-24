@@ -191,6 +191,7 @@ class DotNetBase(AutoAPIBase):
         self.id = obj['id']
 
         # Optional
+        self.fullname = obj.get('fullName')
         self.summary = obj.get('summary', '')
         self.parameters = []
         self.items = obj.get('items', [])
@@ -237,9 +238,31 @@ class DotNetBase(AutoAPIBase):
         member id minus the namespace prefix
         '''
         try:
-            return self.obj['qualifiedName']['CSharp']
+            return self.obj['fullName']
         except KeyError:
             return self.id
+
+    @property
+    def edit_link(self):
+        try:
+            repo = self.source['remote']['repo'].replace('.git', '')
+            path = self.path
+            return '{repo}/blob/master/{path}'.format(
+                repo=repo,
+                path=path,
+                )
+        except:
+            import traceback; traceback.print_exc();
+            return ''
+
+
+    @property
+    def source(self):
+        return self.obj.get('source')
+
+    @property
+    def path(self):
+        return self.source['path']
 
     @property
     def short_name(self):

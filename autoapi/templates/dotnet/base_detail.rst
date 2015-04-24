@@ -51,6 +51,12 @@ Syntax
 
 {% endblock %}
 
+GitHub
+------
+
+`View on GitHub <{{ obj.edit_link }}>`_
+
+
 
 {% block content %}
 
