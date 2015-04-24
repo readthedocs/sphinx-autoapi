@@ -9,12 +9,19 @@ Contents
 --------
 
 .. toctree::
+   :caption: Main
    :glob:
    :maxdepth: 2
 
    config
    templates
    design
+
+.. toctree::
+   :caption: API
+   :glob:
+   :maxdepth: 2
+
    autoapi/index
 
 Install
