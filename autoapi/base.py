@@ -58,6 +58,7 @@ class AutoAPIDomain(object):
 
     namespaces = {}
     objects = {}
+    top_level_objects = {}
 
     def __init__(self, app):
         self.app = app

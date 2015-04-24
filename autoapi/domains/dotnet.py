@@ -85,7 +85,7 @@ class DotNetDomain(AutoAPIDomain):
         :param obj: Instance of a .NET object
         '''
         if type(obj) in self.list_classes:
-            self.app.env.autoapi_data.append(obj)
+            self.top_level_objects[obj.name] = obj
         self.objects[obj.name] = obj
 
     def organize_objects(self):
@@ -105,23 +105,18 @@ class DotNetDomain(AutoAPIDomain):
                 return
             namespace = obj.namespace
             if namespace is not None:
-                ns_obj = None
-                for (n, search_obj) in enumerate(self.app.env.autoapi_data):
-                    if (search_obj.id == namespace and
-                            isinstance(search_obj, DotNetNamespace)):
-                        ns_obj = self.app.env.autoapi_data[n]
+                ns_obj = self.top_level_objects.get(namespace)
                 if ns_obj is None:
                     print "Adding Namespace %s" % namespace
                     ns_obj = self.create_class({'id': namespace,
                                                 'type': 'namespace'})
-                    _render_children(ns_obj)
-                    self.app.env.autoapi_data.append(ns_obj)
-                    self.namespaces[ns_obj.id] = ns_obj
-                if obj.id not in (child for child in ns_obj.children):
+                    self.top_level_objects[ns_obj.name] = ns_obj
+                if obj not in ns_obj.children:
                     ns_obj.children.append(obj)
-                # _recurse_ns(ns_obj)
+                self.namespaces[ns_obj.id] = ns_obj
+                #_recurse_ns(ns_obj)
 
-        for obj in self.app.env.autoapi_data:
+        for obj in self.top_level_objects.values():
             _render_children(obj)
             _recurse_ns(obj)
 
@@ -134,7 +129,7 @@ class DotNetDomain(AutoAPIDomain):
         self.write_indexes()
 
     def generate_output(self):
-        for obj in self.app.env.autoapi_data:
+        for obj in self.top_level_objects.values():
 
             if not obj:
                 continue
@@ -165,10 +160,10 @@ class DotNetDomain(AutoAPIDomain):
     def write_indexes(self):
         # Write Index
         top_level_index = os.path.join(self.get_config('autoapi_root'),
-                                       'index.rst')
+                                   'index.rst')
         with open(top_level_index, 'w+') as top_level_file:
             content = env.get_template('index.rst')
-            top_level_file.write(content.render())
+            top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
 class DotNetBase(AutoAPIBase):
