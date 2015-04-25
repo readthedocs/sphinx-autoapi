@@ -1,7 +1,7 @@
 {% block title %}
 
-{{ obj.id }} {{ obj.type.title() }}
-{{ "=" * (obj.id|length + obj.type|length + 1) }}
+{{ obj.name }} {{ obj.type.title() }}
+{{ "=" * (obj.name|length + obj.type|length + 1) }}
 
 {% endblock %}
 
@@ -15,7 +15,7 @@
 
    {% for item in obj.children|sort %}
    {% if item.type != 'namespace' %}
-   /autoapi/{{ item.id.split('.')|join('/') }}/index
+   /autoapi/{{ item.name.split('.')|join('/') }}/index
    {% endif %}
    {%- endfor %}
 
@@ -34,7 +34,7 @@
 {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.summary }}{% endmacro %}
 
-    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.short_name }}`
+    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_short_name }}`
         {{ render()|indent(8) }}
 
 {%- endfor %}

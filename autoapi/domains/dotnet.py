@@ -90,7 +90,7 @@ class DotNetDomain(AutoAPIDomain):
             self.top_level_objects[obj.name] = obj
             if type(obj) == DotNetNamespace:
                 self.namespaces[obj.name] = obj
-        self.objects[obj.name] = obj
+        self.objects[obj.id] = obj
 
     def organize_objects(self):
         '''Organize objects and namespaces'''
@@ -243,6 +243,11 @@ class DotNetBase(AutoAPIBase):
             return self.id
 
     @property
+    def short_name(self):
+        '''Shorten name property'''
+        return self.name.split('.')[-1]
+
+    @property
     def edit_link(self):
         try:
             repo = self.source['remote']['repo'].replace('.git', '')
@@ -255,7 +260,6 @@ class DotNetBase(AutoAPIBase):
             import traceback; traceback.print_exc();
             return ''
 
-
     @property
     def source(self):
         return self.obj.get('source')
@@ -263,11 +267,6 @@ class DotNetBase(AutoAPIBase):
     @property
     def path(self):
         return self.source['path']
-
-    @property
-    def short_name(self):
-        '''Shorten name property'''
-        return self.name.split('.')[-1]
 
     @property
     def namespace(self):
@@ -288,6 +287,29 @@ class DotNetBase(AutoAPIBase):
     @property
     def ref_directive(self):
         return self.type
+
+    @property
+    def ref_name(self):
+        '''Return object name suitable for use in references
+
+        Escapes several known strings that cause problems, including the
+        following reference syntax::
+
+            :dotnet:cls:`Foo.Bar<T>`
+
+        As the `<T>` notation is also special syntax in references, indicating
+        the reference to Foo.Bar should be named T.
+
+        See: http://sphinx-doc.org/domains.html#role-cpp:any
+        '''
+        return (self.name
+                .replace('<', '\<')
+                .replace('`', '\`'))
+
+    @property
+    def ref_short_name(self):
+        '''Same as above, return the truncated name instead'''
+        return self.ref_name.split('.')[-1]
 
 
 class DotNetNamespace(DotNetBase):

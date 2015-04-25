@@ -17,6 +17,8 @@
     :rtype: {{ obj.returns.id }}
     {%- endif %}
 
+    {%- if obj.example %}
     .. code-block:: csharp
 
        {{ obj.example }}
+    {%- endif %}

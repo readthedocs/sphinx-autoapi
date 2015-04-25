@@ -27,9 +27,9 @@ Inheritance Hierarchy
 ---------------------
 
     {%- for item in obj.inheritance %}
-* :dn:{{ item.ref_directive }}:`{{ item.id }}`
+* :dn:{{ item.ref_directive }}:`{{ item.ref_name }}`
     {%- endfor %}
-* :dn:{{ obj.ref_directive }}:`{{ obj.id}}`
+* :dn:{{ obj.ref_directive }}:`{{ obj.ref_name }}`
   {%- endif %}
 
 {% endblock %}
