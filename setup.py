@@ -6,6 +6,7 @@ try:
             'PyYAML',
             'epyparse',
             'epydoc',
+            'sphinx',
         ],
         test_suite='nose.collector',
         tests_require=['nose', 'mock'],
@@ -17,6 +18,7 @@ except ImportError:
             'PyYAML',
             'epyparse',
             'epydoc',
+            'sphinx'
         ],
     )
 
