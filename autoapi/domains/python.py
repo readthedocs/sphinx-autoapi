@@ -70,7 +70,7 @@ class PythonDomain(AutoAPIDomain):
     def get_objects(self, pattern):
         '''Trigger find of serialized sources and build objects'''
         for path in self.find_files(pattern):
-            data = self.read_file(os.path.join(self.get_config('autoapi_dir'), path))
+            data = self.read_file(path)
             if data:
                 obj = self.create_class(data)
                 self.add_object(obj)
