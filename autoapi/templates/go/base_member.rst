@@ -1,5 +1,8 @@
 .. go:{{ obj.ref_type }}:: {{ obj.name }}
 
+	{% macro render() %}{{ obj.docstring }}{% endmacro %}
+	{{ render()|indent(8) }}
+	
     {%- for param in obj.parameters %}
     :param {{ param.name }}: {{ param.desc }}
     {%- if param.type %}

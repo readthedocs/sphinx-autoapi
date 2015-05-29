@@ -31,7 +31,7 @@ Context
 
 Every template will be given a set context. It will contain:
 
-	* `obj`: A Python object derived from :any:`AutoAPIBase`
+	* `obj`: A Python object derived from 
 
 This object has a number of standard attributes you can reliably access:
 

@@ -18,10 +18,10 @@
 {% endif %}
 
 {% block content %}
-  {%- for obj_item in obj.children %}
+{%- for obj_item in obj.children %}
 
-  {% macro render() %}{{ obj_item.render() }}{% endmacro %}
-	{{ render()|indent(0) }}
-	
-  {%- endfor %}
+{% macro render() %}{{ obj_item.render() }}{% endmacro %}
+{{ render()|indent(0) }}
+
+{%- endfor %}
 {% endblock %}
