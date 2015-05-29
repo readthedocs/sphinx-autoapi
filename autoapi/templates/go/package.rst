@@ -1,5 +1,8 @@
 .. go:package:: {{ obj.name }}
 
+{{ obj.name }}
+{{ "=" * obj.name|length }}
+
 {% block toc %}
   {%- if obj.children %}
 
