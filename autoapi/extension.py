@@ -6,7 +6,7 @@ Sphinx Auto-API
 import fnmatch
 import shutil
 
-from .domains import DotNetDomain, PythonDomain
+from .domains import DotNetDomain, PythonDomain, GoDomain
 
 
 def ignore_file(app, filename):
@@ -30,6 +30,8 @@ def load_yaml(app):
         domain = DotNetDomain(app)
     elif app.config.autoapi_type == 'python':
         domain = PythonDomain(app)
+    elif app.config.autoapi_type == 'go':
+        domain = GoDomain(app)
     domain.full()
 
 
