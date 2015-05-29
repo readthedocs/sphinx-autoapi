@@ -1,0 +1,286 @@
+.. go:package:: uuid
+
+uuid
+====
+
+
+
+.. toctree::
+   :maxdepth: 4
+
+   
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+   /autoapi//Users/austin/go/src/code/google/com/p/go-uuid/uuid/index
+
+
+
+The uuid package generates and inspects UUIDs.
+
+UUIDs are based on RFC 4122 and DCE 1.1: Authentication and Security Services.
+
+
+
+
+
+Variable
+--------
+
+
+.. go:var:: uuid
+
+	
+	Well known Name Space IDs and UUIDs
+
+Type
+----
+
+
+.. go:type:: Domain
+
+	
+	A Domain represents a Version 2 domain
+
+
+.. go:type:: Time
+
+	
+	A Time represents a time as the number of 100's of nanoseconds since 15 Oct
+        1582.
+
+
+.. go:type:: UUID
+
+	
+	A UUID is a 128 bit (16 byte) Universal Unique IDentifier as defined in RFC
+        4122.
+
+
+.. go:type:: Variant
+
+	
+	A Variant represents a UUIDs variant.
+
+
+.. go:type:: Version
+
+	
+	A Version represents a UUIDs version.
+
+Const
+-----
+
+
+.. go:const:: uuid
+
+	
+	Domain constants for DCE Security (Version 2) UUIDs.
+
+
+.. go:const:: uuid
+
+	
+	Constants returned by Variant.
+
+Func
+----
+
+
+.. go:function:: ClockSequence
+
+	
+	ClockSequence returns the current clock sequence, generating one if not
+        already set.  The clock sequence is only used for Version 1 UUIDs.
+        
+        The uuid package does not use global static storage for the clock sequence or
+        the last time a UUID was generated.  Unless SetClockSequence a new random
+        clock sequence is generated the first time a clock sequence is requested by
+        ClockSequence, GetTime, or NewUUID.  (section 4.2.1.1) sequence is generated
+        for
+
+
+.. go:function:: Equal
+
+	
+	Equal returns true if uuid1 and uuid2 are equal.
+
+
+.. go:function:: New
+
+	
+	New returns a new random (version 4) UUID as a string.  It is a convenience
+        function for NewRandom().String().
+
+
+.. go:function:: NodeID
+
+	
+	NodeID returns a slice of a copy of the current Node ID, setting the Node ID
+        if not already set.
+
+
+.. go:function:: NodeInterface
+
+	
+	NodeInterface returns the name of the interface from which the NodeID was
+        derived.  The interface "user" is returned if the NodeID was set by
+        SetNodeID.
+
+
+.. go:function:: SetClockSequence
+
+	
+	SetClockSeq sets the clock sequence to the lower 14 bits of seq.  Setting to
+        -1 causes a new sequence to be generated.
+
+
+.. go:function:: SetNodeID
+
+	
+	SetNodeID sets the Node ID to be used for Version 1 UUIDs.  The first 6 bytes
+        of id are used.  If id is less than 6 bytes then false is returned and the
+        Node ID is not set.
+
+
+.. go:function:: SetNodeInterface
+
+	
+	SetNodeInterface selects the hardware address to be used for Version 1 UUIDs.
+        If name is "" then the first usable interface found will be used or a random
+        Node ID will be generated.  If a named interface cannot be found then false
+        is returned.
+        
+        SetNodeInterface never fails when name is "".
+
+
+.. go:function:: SetRand
+
+	
+	SetRand sets the random number generator to r, which implents io.Reader.
+        If r.Read returns an error when the package requests random data then
+        a panic will be issued.
+        
+        Calling SetRand with nil sets the random number generator to the default
+        generator.
+
+
+.. go:function:: TestBadRand
+
+	
+	
+
+
+.. go:function:: TestClockSeq
+
+	
+	
+
+
+.. go:function:: TestClockSeqRace
+
+	
+	TestClockSeqRace tests for a particular race condition of returning two
+        identical Version1 UUIDs.  The duration of 1 minute was chosen as the race
+        condition, before being fixed, nearly always occured in under 30 seconds.
+
+
+.. go:function:: TestCoding
+
+	
+	
+
+
+.. go:function:: TestConstants
+
+	
+	
+
+
+.. go:function:: TestDCE
+
+	
+	
+
+
+.. go:function:: TestJSON
+
+	
+	
+
+
+.. go:function:: TestMD5
+
+	
+	
+
+
+.. go:function:: TestNew
+
+	
+	
+
+
+.. go:function:: TestNodeAndTime
+
+	
+	
+
+
+.. go:function:: TestNodeID
+
+	
+	
+
+
+.. go:function:: TestRandomUUID
+
+	
+	
+
+
+.. go:function:: TestSHA1
+
+	
+	
+
+
+.. go:function:: TestUUID
+
+	
+	
+
+
+.. go:function:: TestVersion1
+
+	
+	
+
