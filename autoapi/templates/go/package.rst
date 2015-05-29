@@ -18,8 +18,10 @@
 {% endif %}
 
 {% block content %}
-  {%- for obj_item in obj.item_map.get(item_type, []) %}
-{% macro render() %}{{ obj_item.render() }}{% endmacro %}
-	{{ render()|indent(4) }}
+  {%- for obj_item in obj.children %}
+
+  {% macro render() %}{{ obj_item.render() }}{% endmacro %}
+	{{ render()|indent(0) }}
+	
   {%- endfor %}
 {% endblock %}

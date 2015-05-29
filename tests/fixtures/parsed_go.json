@@ -36,6 +36,7 @@
   ],
   "consts": [
     {
+      "name": "awesome",
       "type": "const",
       "doc": "This is the documentation for the const",
       "names": [

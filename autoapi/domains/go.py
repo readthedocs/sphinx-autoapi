@@ -58,7 +58,6 @@ class GoDomain(AutoAPIDomain):
             if _type == cls.type.lower():
                 obj = cls(data)
         if not obj:
-            import ipdb; ipdb.set_trace()
             print "Unknown Type: %s" % data
 
         for child_type in ['consts', 'types', 'vars', 'funcs']:
@@ -141,7 +140,10 @@ class GoBase(AutoAPIBase):
             self.name = obj['name']
         except:
             self.name = obj['packageName']
-        self.id = self.name
+        try:
+            self.id = obj['packageImportPath']
+        except:
+            self.id = self.name
 
         # Second level
         self.imports = obj.get('imports', [])
@@ -187,6 +189,7 @@ class GoBase(AutoAPIBase):
 
 class GoVariable(GoBase):
     type = 'variable'
+    ref_type = 'var'
 
 
 class GoMethod(GoBase):
@@ -199,6 +202,7 @@ class GoConstant(GoBase):
 
 class GoFunction(GoBase):
     type = 'func'
+    ref_type = 'function'
 
 
 class GoPackage(GoBase):
