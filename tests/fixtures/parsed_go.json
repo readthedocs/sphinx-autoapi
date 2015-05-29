@@ -1,0 +1,112 @@
+{
+  "doc": "This is the golang UUID module",
+  "name": "go.uuid",
+  "import_path": "uuid.go",
+  "imports": [
+    "something",
+    "foo",
+    "bar"
+  ],
+  "filenames": [
+    "something.go",
+    "foo.go",
+    "bar.go"
+  ],
+  "notes": [
+    {
+      "pos": 27,
+      "end": 42,
+      "uid": "foobar",
+      "body": "This is the body of the note"
+    },
+    {
+      "pos": 43,
+      "end": 44,
+      "uid": "bar",
+      "body": "More notes here"
+    }
+  ],
+  "bugs": [
+    "Bug notes here"
+  ],
+  "consts": [
+    {
+      "doc": "This is the documentation for the const",
+      "names": [
+        "not",
+        "sure",
+        "what",
+        "goes",
+        "here"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "doc": "This is the documentation for the type",
+      "name": "uuid.foobar",
+      "consts": [
+        {
+          "doc": "This is the documentation for a const nested in a type",
+          "names": [
+            "shit"
+          ]
+        }
+      ],
+      "vars": [
+        {
+          "doc": "This is the documentation for a variable nested in a type",
+          "names": [
+            "more"
+          ]
+        }
+      ],
+      "funcs": [
+        {
+          "doc": "This is documentation for a function",
+          "name": "uuid.some_func",
+          "recv": "",
+          "orig": "",
+          "level": 0
+        }
+      ],
+      "methods": [
+        {
+          "doc": "This is documentation for a method",
+          "name": "uuid.some_method",
+          "recv": "T",
+          "orig": "T",
+          "level": 0
+        }
+      ]
+    }
+  ],
+  "vars": [
+    {
+      "doc": "This is the documentation for the variable",
+      "names": [
+        "not",
+        "sure",
+        "what",
+        "goes",
+        "here"
+      ]
+    }
+  ],
+  "funcs": [
+    {
+      "doc": "This is documentation for a function",
+      "name": "uuid.some_func",
+      "recv": "",
+      "orig": "",
+      "level": 0
+    },
+    {
+      "doc": "This is documentation for a method",
+      "name": "uuid.some_method",
+      "recv": "T",
+      "orig": "T",
+      "level": 0
+    }
+  ]
+}
