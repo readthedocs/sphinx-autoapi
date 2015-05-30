@@ -21,21 +21,10 @@
 {% endif %}
 
 {% block content %}
-
-
-
-
-{%- for item_type in obj.item_map.keys() %}
-
-{{ item_type.title() }}
-{{ "-" * item_type.title()|length }}
-
-{%- for obj_item in obj.item_map.get(item_type, []) %}
+{%- for obj_item in obj.children %}
 
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
 
 {%- endfor %}
-{%- endfor %}
-
 {% endblock %}
