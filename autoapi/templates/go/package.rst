@@ -6,12 +6,14 @@
 {% block toc %}
   {%- if obj.children %}
 
+{# TODO Make this work
 .. toctree::
    :maxdepth: 4
 
    {% for item in obj.children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
+#}
 
   {%- endif %}
 {% endblock %}
@@ -21,10 +23,10 @@
 {% endif %}
 
 {% block content %}
-{%- for obj_item in obj.children %}
+  {%- for obj_item in obj.children|sort %}
 
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
 
-{%- endfor %}
+  {%- endfor %}
 {% endblock %}

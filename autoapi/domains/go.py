@@ -35,7 +35,7 @@ class GoDomain(AutoAPIDomain):
     #         print Warning('Error reading file: {0}'.format(path))
     #     return None
 
-    def create_class(self, data, _type=None):
+    def create_class(self, data):
         '''Return instance of class based on Go data
 
         Data keys handled here:
@@ -47,54 +47,30 @@ class GoDomain(AutoAPIDomain):
                 Recurse into :py:meth:`create_class` to create child object
                 instances
 
-        :param data: dictionary data from Roslyn output artifact
+        :param data: dictionary data from godocjson output
         '''
         # TODO replace this with a global mapping
         classes = [GoConstant, GoFunction, GoPackage, GoVariable, GoType, GoMethod]
         obj = None
-        if not _type:
-            _type = data.get('type', '').lower()
+        _type = data.get('type', None)
+        if _type is None or not _type:
+            self.app.warn('Missing type: %s' % data)
         for cls in classes:
             if _type == cls.type.lower():
                 obj = cls(data)
-        if not obj:
-            print "Unknown Type: %s" % data
+        if obj is None:
+            self.app.warn('Unknown Type: %s' % data)
+            return obj
 
         for child_type in ['consts', 'types', 'vars', 'funcs']:
-            # if child_type == 'consts' or child_type == 'vars':
-            #     iter_data = []
-            #     for inner_data in data.get(child_type, []):
-            #         for name in inner_data.get('name', [])
-            #         del inner_data['doc']
-            #         iter_data.append({
-            #             'name': name,
-            #             **inner_data
-            #             })
-            # else:
-            iter_data = data.get(child_type, [])
-            for obj_data in iter_data:
-                child_obj = self.create_class(obj_data, _type=child_type.replace('consts', 'const').replace('types', 'type').replace('vars', 'variable').replace('funcs', 'func'))
-                obj.children.append(child_obj)
-                obj.item_map[child_obj.type].append(child_obj)
+            for child_data in data.get(child_type, []):
+                child_obj = self.create_class(child_data)
+                if child_obj is not None:
+                    obj.children.append(child_obj)
         return obj
 
-    def organize_objects(self):
-        '''Organize objects and namespaces'''
-
-        # Add all objects to the item_map
-        for obj in self.objects.values():
-            for child in obj.children:
-                child_object = self.objects.get(child)
-                if child_object:
-                    obj.children.append(child_object)
-            # for key in obj.item_map:
-            #     obj.item_map[key].sort()
-
     def full(self):
-        print "Reading"
         self.get_objects(self.get_config('autoapi_file_pattern'), format='json')
-        # self.organize_objects()
-        print "Writing"
         self.generate_output()
         self.write_indexes()
 
@@ -134,16 +110,8 @@ class GoBase(AutoAPIBase):
 
     def __init__(self, obj):
         super(GoBase, self).__init__(obj)
-        # Always exist
-        #self.id = obj['import_path']
-        try:
-            self.name = obj['name']
-        except:
-            self.name = obj['packageName']
-        try:
-            self.id = obj['packageImportPath']
-        except:
-            self.id = self.name
+        self.name = obj.get('name') or obj.get('packageName')
+        self.id = obj.get('packageImportPath') or self.name
 
         # Second level
         self.imports = obj.get('imports', [])
@@ -155,9 +123,6 @@ class GoBase(AutoAPIBase):
         self.notes = obj.get('notes', {})
         self.filenames = obj.get('filenames', [])
         self.bugs = obj.get('bugs', [])
-
-        # For later
-        self.item_map = defaultdict(list)
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
@@ -186,14 +151,20 @@ class GoBase(AutoAPIBase):
     def methods(self):
         return self.obj.get('methods', [])
 
+    def __lt__(self, other):
+        '''Sort object by name'''
+        if isinstance(other, GoBase):
+            return self.name.lower() < other.name.lower()
+        return self.name < other
+
 
 class GoVariable(GoBase):
-    type = 'variable'
-    ref_type = 'var'
+    type = 'var'
 
 
 class GoMethod(GoBase):
     type = 'method'
+    ref_directive = 'meth'
 
 
 class GoConstant(GoBase):
@@ -207,6 +178,7 @@ class GoFunction(GoBase):
 
 class GoPackage(GoBase):
     type = 'package'
+    ref_directive = 'pkg'
 
 
 class GoType(GoBase):

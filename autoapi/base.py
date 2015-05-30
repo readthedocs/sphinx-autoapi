@@ -130,7 +130,8 @@ class AutoAPIDomain(object):
             data = self.read_file(path, format=format)
             if data:
                 obj = self.create_class(data)
-                self.add_object(obj)
+                if obj is not None:
+                    self.add_object(obj)
 
     def create_class(self, obj):
         '''
