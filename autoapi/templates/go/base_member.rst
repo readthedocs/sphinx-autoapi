@@ -13,3 +13,10 @@
     {%- if obj.returns %}
     :rtype: {{ obj.returns.id }}
     {%- endif %}
+
+    {% if obj.children -%}
+        {%- for child in obj.children|sort %}
+    {% macro render_child() %}{{ child.render() }}{% endmacro %}
+    {{ render_child()|indent(4) }}
+        {%- endfor %}
+    {%- endif %}
