@@ -37,35 +37,34 @@ class DotNetDomain(AutoAPIDomain):
 
         :param data: dictionary data from Roslyn output artifact
         '''
-        # TODO replace this with a global mapping
-        self.list_classes = [
-            DotNetNamespace, DotNetClass, DotNetEnum,
-            DotNetStruct, DotNetInterface, DotNetDelegate
-        ]
-        self.detail_classes = [
-            DotNetProperty, DotNetMethod, DotNetConstructor,
-            DotNetField, DotNetEvent
-        ]
-        classes = self.detail_classes + self.list_classes
-        obj = None
-        for cls in classes:
-            if data.get('type', '').lower() == cls.type.lower():
-                obj = cls(data)
-                break
+        obj_map = dict(
+            (cls.type, cls) for cls
+            in [
+                DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
+                DotNetInterface, DotNetDelegate, DotNetProperty, DotNetMethod,
+                DotNetConstructor, DotNetField, DotNetEvent
+            ])
+        try:
+            cls = obj_map[data['type']]
+        except KeyError:
+            self.app.warn('Unknown type: %s', data)
+        else:
+            obj = cls(data)
 
-        if data.get('id', None) in MADE:
-            print "DOING IT AGAIN: %s" % data.get('id')
-        MADE.add(data['id'])
+            # TODO what is MADE?
+            if data.get('id', None) in MADE:
+                self.app.warn("Object already added: %s" % data.get('id'))
+            MADE.add(data['id'])
 
-        # Append child objects
-        # TODO this should recurse in the case we're getting back more complex
-        # argument listings
-        # if 'children' in data:
-        #     for item in data['children']:
-        #         child_obj = self.create_class(item)
-        #         obj.children.append(child_obj)
+            # Append child objects
+            # TODO this should recurse in the case we're getting back more
+            # complex argument listings
+            # if 'children' in data:
+            #     for item in data['children']:
+            #         child_obj = self.create_class(item)
+            #         obj.children.append(child_obj)
 
-        return obj
+            yield obj
 
     def get_objects(self, pattern):
         '''Trigger find of serialized sources and build objects'''

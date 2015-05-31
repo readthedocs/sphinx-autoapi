@@ -49,25 +49,32 @@ class GoDomain(AutoAPIDomain):
 
         :param data: dictionary data from godocjson output
         '''
-        # TODO replace this with a global mapping
-        classes = [GoConstant, GoFunction, GoPackage, GoVariable, GoType, GoMethod]
-        obj = None
-        _type = data.get('type', None)
-        if _type is None or not _type:
-            self.app.warn('Missing type: %s' % data)
-        for cls in classes:
-            if _type == cls.type.lower():
-                obj = cls(data)
-        if obj is None:
+        obj_map = dict(
+            (cls.type, cls) for cls
+            in [GoConstant, GoFunction, GoPackage, GoVariable, GoType, GoMethod]
+        )
+        try:
+            cls = obj_map[data['type']]
+        except KeyError as e:
             self.app.warn('Unknown Type: %s' % data)
-            return obj
-
-        for child_type in ['consts', 'types', 'vars', 'funcs']:
-            for child_data in data.get(child_type, []):
-                child_obj = self.create_class(child_data)
-                if child_obj is not None:
-                    obj.children.append(child_obj)
-        return obj
+        else:
+            if cls.inverted_names and 'names' in data:
+                # Handle types that have reversed names parameter
+                for name in data['names']:
+                    data_inv = {}
+                    data_inv.update(data)
+                    data_inv['name'] = name
+                    if 'names' in data_inv:
+                        del data_inv['names']
+                    for obj in self.create_class(data_inv):
+                        yield obj
+            else:
+                # Recurse for children
+                obj = cls(data)
+                for child_type in ['consts', 'types', 'vars', 'funcs']:
+                    for child_data in data.get(child_type, []):
+                        obj.children += list(self.create_class(child_data))
+                yield obj
 
     def full(self):
         self.get_objects(self.get_config('autoapi_file_pattern'), format='json')
@@ -107,11 +114,12 @@ class GoDomain(AutoAPIDomain):
 class GoBase(AutoAPIBase):
 
     language = 'go'
+    inverted_names = False
 
     def __init__(self, obj):
         super(GoBase, self).__init__(obj)
         self.name = obj.get('name') or obj.get('packageName')
-        self.id = obj.get('packageImportPath') or self.name
+        self.id = self.name
 
         # Second level
         self.imports = obj.get('imports', [])
@@ -164,6 +172,7 @@ class GoBase(AutoAPIBase):
 
 class GoVariable(GoBase):
     type = 'var'
+    inverted_names = True
 
 
 class GoMethod(GoBase):
@@ -173,6 +182,7 @@ class GoMethod(GoBase):
 
 class GoConstant(GoBase):
     type = 'const'
+    inverted_names = True
 
 
 class GoFunction(GoBase):

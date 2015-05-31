@@ -129,8 +129,8 @@ class AutoAPIDomain(object):
         for path in self.find_files(pattern):
             data = self.read_file(path, format=format)
             if data:
-                obj = self.create_class(data)
-                if obj is not None:
+                for obj in self.create_class(data):
+                    print obj
                     self.add_object(obj)
 
     def create_class(self, obj):
