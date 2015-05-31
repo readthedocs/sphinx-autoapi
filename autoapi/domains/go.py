@@ -1,6 +1,6 @@
 import os
-from collections import defaultdict
 import json
+from collections import defaultdict
 
 from sphinx.util.osutil import ensuredir
 
@@ -43,7 +43,7 @@ class GoDomain(AutoAPIDomain):
             type
                 Set the object class
 
-            items
+            consts, types, vars, funcs
                 Recurse into :py:meth:`create_class` to create child object
                 instances
 
@@ -116,7 +116,11 @@ class GoBase(AutoAPIBase):
         # Second level
         self.imports = obj.get('imports', [])
         self.children = []
-        self.parameters = obj.get('params', [])
+        self.parameters = map(
+            lambda n: {'name': n['name'],
+                       'type': n['type'].lstrip('*')},
+            obj.get('parameters', [])
+        )
         self.docstring = obj.get('doc', '')
 
         # Go Specific
