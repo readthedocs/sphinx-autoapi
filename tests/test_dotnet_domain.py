@@ -66,11 +66,13 @@ class DomainTests(unittest.TestCase):
         '''Test basic get objects'''
         objs = []
 
-        def _mock_find(self):
-            return ['foo', 'bar']
+        def _mock_find(self, pattern):
+            return {'items': ['foo', 'bar']}
 
         def _mock_read(self, path):
-            return {'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
+            return {'items': [{'id': 'Foo.Bar', 'name': 'Foo', 'type': 'property'},
+                              {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
+                    'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
 
         def _mock_add(self, obj):
             objs.append(obj)
@@ -81,13 +83,13 @@ class DomainTests(unittest.TestCase):
         with nested(
                 patch('autoapi.domains.dotnet.DotNetDomain.find_files', _mock_find),
                 patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
-                patch('autoapi.domains.dotnet.DotNetDomain.add_object', _mock_add),
                 patch('autoapi.domains.dotnet.DotNetDomain.get_config', _mock_config),
                 ):
             dom = dotnet.DotNetDomain({})
-            dom.get_objects()
+            dom.get_objects('*')
+            objs = dom.objects
             self.assertEqual(len(objs), 2)
-            self.assertEqual(objs[0].id, 'Foo.Bar')
-            self.assertEqual(objs[0].summary, 'foo/foo')
-            self.assertEqual(objs[1].id, 'Foo.Bar')
-            self.assertEqual(objs[1].summary, 'foo/bar')
+            self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')
+            self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
+            self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
+            self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
