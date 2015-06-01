@@ -11,9 +11,8 @@ from autoapi.domains import dotnet
 
 class DomainTests(unittest.TestCase):
 
-    def test_config(self):
-        '''Sphinx app config'''
-
+    def setUp(self):
+        '''Test setup'''
         class _config(object):
             autoapi_dir = '/tmp/autoapi/tmp'
             autoapi_root = '/tmp/autoapi/root'
@@ -21,44 +20,55 @@ class DomainTests(unittest.TestCase):
         class _application(object):
             config = _config()
 
-        dom = dotnet.DotNetDomain(_application())
+            def warn(self, *args, **kwargs):
+                pass
+
+        self.application = _application()
+
+    def test_config(self):
+        '''Sphinx app config'''
+        dom = dotnet.DotNetDomain(self.application)
         self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
         self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
 
     def test_create_class(self):
         '''Test .NET class instance creation helper'''
-        dom = dotnet.DotNetDomain({})
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Namespace'})
+        dom = dotnet.DotNetDomain(self.application)
+        def _create_class(data):
+            return list(dom.create_class(data))[0]
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Namespace'})
         self.assertIsInstance(cls, dotnet.DotNetNamespace)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Class'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Class'})
         self.assertIsInstance(cls, dotnet.DotNetClass)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Property'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Property'})
         self.assertIsInstance(cls, dotnet.DotNetProperty)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Method'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Method'})
         self.assertIsInstance(cls, dotnet.DotNetMethod)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Enum'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Enum'})
         self.assertIsInstance(cls, dotnet.DotNetEnum)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Constructor'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Constructor'})
         self.assertIsInstance(cls, dotnet.DotNetConstructor)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Struct'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Struct'})
         self.assertIsInstance(cls, dotnet.DotNetStruct)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Interface'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Interface'})
         self.assertIsInstance(cls, dotnet.DotNetInterface)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Delegate'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Delegate'})
         self.assertIsInstance(cls, dotnet.DotNetDelegate)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Field'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Field'})
         self.assertIsInstance(cls, dotnet.DotNetField)
-        cls = dom.create_class({'id': 'Foo.Bar', 'type': 'Event'})
+        cls = _create_class({'id': 'Foo.Bar', 'type': 'Event'})
         self.assertIsInstance(cls, dotnet.DotNetEvent)
 
     def test_create_class_with_children(self):
-        dom = dotnet.DotNetDomain({})
-        cls = dom.create_class({'id': 'Foo.Bar',
-                                'type': 'Class',
-                                'items': [
-                                    {'id': 'Foo.Bar.Baz',
-                                     'type': 'Method'}
-                                ]})
+        dom = dotnet.DotNetDomain(self.application)
+        def _create_class(data):
+            return list(dom.create_class(data))[0]
+        cls = _create_class({'id': 'Foo.Bar',
+                             'type': 'Class',
+                             'items': [
+                                 {'id': 'Foo.Bar.Baz',
+                                  'type': 'Method'}
+                             ]})
         self.assertIsInstance(cls, dotnet.DotNetClass)
         self.assertDictEqual(cls.item_map, {})
 
@@ -85,7 +95,7 @@ class DomainTests(unittest.TestCase):
                 patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
                 patch('autoapi.domains.dotnet.DotNetDomain.get_config', _mock_config),
                 ):
-            dom = dotnet.DotNetDomain({})
+            dom = dotnet.DotNetDomain(self.application)
             dom.get_objects('*')
             objs = dom.objects
             self.assertEqual(len(objs), 2)
