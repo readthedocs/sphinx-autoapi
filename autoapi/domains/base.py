@@ -5,7 +5,7 @@ import fnmatch
 
 from sphinx.util.console import darkgreen
 
-from .settings import env
+from ..settings import env
 
 
 class AutoAPIBase(object):

@@ -1,11 +1,9 @@
 import os
 from collections import defaultdict
-import fnmatch
 
-from sphinx.util.console import bold, darkgreen
 from sphinx.util.osutil import ensuredir
 
-from ..base import AutoAPIBase, AutoAPIDomain
+from .base import AutoAPIBase, AutoAPIDomain
 from ..settings import env
 
 MADE = set()

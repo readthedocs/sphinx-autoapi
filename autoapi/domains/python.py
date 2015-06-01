@@ -1,11 +1,10 @@
 import os
-import sys
 from collections import defaultdict
 
 from sphinx.util.osutil import ensuredir
 from epyparse import parsed
 
-from ..base import AutoAPIBase, AutoAPIDomain
+from .base import AutoAPIBase, AutoAPIDomain
 from ..settings import env
 
 
