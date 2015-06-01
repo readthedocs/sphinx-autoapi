@@ -1,6 +1,14 @@
 Sphinx AutoAPI
 ==============
 
+.. image:: https://readthedocs.org/projects/sphinx-autoapi/badge/?version=latest
+   :target: https://readthedocs.org/projects/sphinx-autoapi/?badge=latest
+   :alt: Documentation Status
+
+.. image:: https://travis-ci.org/rtfd/sphinx-autoapi.svg?branch=master
+   :target: https://travis-ci.org/rtfd/sphinx-autoapi
+
+
 A tool that generates a full API ref (Javadoc style) for your project.
 
 It aims to be easy to use,
