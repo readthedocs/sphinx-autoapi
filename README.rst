@@ -2,8 +2,9 @@ Sphinx AutoAPI
 ==============
 
 A tool that generates a full API ref (Javadoc style) for your project.
-It requires no RST and is fully automated,
-while being integrated into Sphinx.
+
+It aims to be easy to use,
+and not require much configuration.
 
 Contents
 --------
