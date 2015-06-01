@@ -14,6 +14,8 @@ A tool that generates a full API ref (Javadoc style) for your project.
 It aims to be easy to use,
 and not require much configuration.
 
+Full documentation can be found on `Read the Docs <http://sphinx-autoapi.readthedocs.org>`_.
+
 Contents
 --------
 
