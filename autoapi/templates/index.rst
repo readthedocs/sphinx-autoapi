@@ -9,6 +9,7 @@ Below is a list of all items that are documented here.
    :glob:
    :maxdepth: 1
 
+   */*
    {% for page in pages|sort %}
    /autoapi/{{ page.id.split('.')|join('/') }}/index
    {% endfor %}

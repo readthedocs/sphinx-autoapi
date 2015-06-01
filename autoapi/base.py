@@ -1,5 +1,6 @@
 import os
 import yaml
+import json
 import fnmatch
 
 from sphinx.util.console import darkgreen
@@ -63,7 +64,7 @@ class AutoAPIDomain(object):
     def __init__(self, app):
         self.app = app
 
-    def read_file(self, path):
+    def read_file(self, path, format='yaml'):
         '''Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
@@ -72,16 +73,26 @@ class AutoAPIDomain(object):
         # TODO sphinx way of reporting errors in logs?
         try:
             with open(path, 'r') as handle:
-                obj = yaml.safe_load(handle)
+                if format == 'yaml':
+                    obj = yaml.safe_load(handle)
+                elif format == 'json':
+                    obj = json.load(handle)
         except IOError:
             raise Warning('Error reading file: {0}'.format(path))
         except yaml.YAMLError:
             raise Warning('Error parsing file: {0}'.format(path))
+        except ValueError:
+            raise Warning('Error parsing file: {0} at {1}'.format(path, json.last_error_position))
         return obj
 
-    def create_class(self, obj):
-        '''Create class object from obj'''
-        raise NotImplementedError
+    def add_object(self, obj):
+        '''
+        Add object to local and app environment storage
+
+        :param obj: Instance of a AutoAPI object
+        '''
+        self.app.env.autoapi_data.append(obj)
+        self.objects[obj.name] = obj
 
     def get_config(self, key):
         if self.app.config is not None:
@@ -112,3 +123,19 @@ class AutoAPIDomain(object):
                 darkgreen,
                 len(files_to_read)):
             yield _path
+
+    def get_objects(self, pattern, format='yaml'):
+        '''Trigger find of serialized sources and build objects'''
+        for path in self.find_files(pattern):
+            data = self.read_file(path, format=format)
+            if data:
+                for obj in self.create_class(data):
+                    self.add_object(obj)
+
+    def create_class(self, obj):
+        '''
+        Create class object.
+
+        :param obj: Instance of a AutoAPI object
+        '''
+        raise NotImplementedError

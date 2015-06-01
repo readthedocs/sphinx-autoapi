@@ -1,0 +1,127 @@
+{
+  "type": "package",
+  "doc": "This is the golang UUID module",
+  "name": "go.uuid",
+  "import_path": "uuid.go",
+  "imports": [
+    "something",
+    "foo",
+    "bar"
+  ],
+  "filenames": [
+    "something.go",
+    "foo.go",
+    "bar.go"
+  ],
+  "notes": {
+    "TODO": [
+      {
+        "pos": 27,
+        "end": 42,
+        "uid": "someone",
+        "body": "This is a code TODO note, we probably shouldn't show it."
+      }
+    ],
+    "BUG": [
+      {
+        "pos": 43,
+        "end": 44,
+        "uid": "someone",
+        "body": "This is a bug admonition"
+      }
+    ]
+  },
+  "bugs": [
+    "Bug notes here"
+  ],
+  "consts": [
+    {
+      "name": "awesome",
+      "type": "const",
+      "doc": "This is the documentation for the const",
+      "names": [
+        "not",
+        "sure",
+        "what",
+        "goes",
+        "here"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "type": "type",
+      "doc": "This is the documentation for the type",
+      "name": "uuid.foobar",
+      "consts": [
+        {
+          "type": "const",
+          "doc": "This is the documentation for a const nested in a type",
+          "names": [
+            "shit"
+          ]
+        }
+      ],
+      "vars": [
+        {
+          "type": "variable",
+          "doc": "This is the documentation for a variable nested in a type",
+          "names": [
+            "more"
+          ]
+        }
+      ],
+      "funcs": [
+        {
+          "type": "func",
+          "doc": "This is documentation for a function",
+          "name": "uuid.some_func",
+          "recv": "",
+          "orig": "",
+          "level": 0
+        }
+      ],
+      "methods": [
+        {
+          "type": "method",
+          "doc": "This is documentation for a method",
+          "name": "uuid.some_method",
+          "recv": "T",
+          "orig": "T",
+          "level": 0
+        }
+      ]
+    }
+  ],
+  "vars": [
+    {
+      "type": "var",
+      "doc": "This is the documentation for the variable",
+      "names": [
+        "not",
+        "sure",
+        "what",
+        "goes",
+        "here"
+      ]
+    }
+  ],
+  "funcs": [
+    {
+      "type": "func",
+      "doc": "This is documentation for a function",
+      "name": "uuid.some_func",
+      "recv": "",
+      "orig": "",
+      "level": 0
+    },
+    {
+      "type": "method",
+      "doc": "This is documentation for a method",
+      "name": "uuid.some_method",
+      "recv": "T",
+      "orig": "T",
+      "level": 0
+    }
+  ]
+}

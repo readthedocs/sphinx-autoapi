@@ -30,25 +30,21 @@ class PythonDomain(AutoAPIDomain):
                 Recurse into :py:meth:`create_class` to create child object
                 instances
 
-        :param data: dictionary data from Roslyn output artifact
+        :param data: dictionary data of epydoc output
         '''
-        # TODO replace this with a global mapping
-        classes = [PythonClass, PythonFunction, PythonModule]
-        obj = None
-        for cls in classes:
-            if data['type'].lower() == cls.type.lower():
-                obj = cls(data)
-        if not obj:
-            print "Unknown Type: %s" % data['type']
-
-        # Append child objects
-        # TODO this should recurse in the case we're getting back more complex
-        # argument listings
-        if 'children' in data:
-            for item in data['children']:
-                child_obj = self.create_class(item)
-                obj.children.append(child_obj)
-        return obj
+        obj_map = dict((cls.type, cls) for cls
+                       in [PythonClass, PythonFunction, PythonModule])
+        try:
+            cls = obj_map[data['type']]
+        except KeyError:
+            self.app.warn("Unknown Type: %s" % data['type'])
+        else:
+            obj = cls(data)
+            if 'children' in data:
+                for child_data in data['children']:
+                    child_obj = self.create_class(child_data)
+                    obj.children.append(child_obj)
+            yield obj
 
     def read_file(self, path):
         '''Read file input into memory, returning deserialized objects
