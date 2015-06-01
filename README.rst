@@ -2,7 +2,7 @@ Sphinx AutoAPI
 ==============
 
 .. image:: https://readthedocs.org/projects/sphinx-autoapi/badge/?version=latest
-   :target: https://readthedocs.org/projects/sphinx-autoapi/?badge=latest
+   :target: https://sphinx-autoapi.readthedocs.org
    :alt: Documentation Status
 
 .. image:: https://travis-ci.org/rtfd/sphinx-autoapi.svg?branch=master
