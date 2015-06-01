@@ -45,7 +45,7 @@ def build_finished(app, exception):
 def setup(app):
     app.connect('builder-inited', load_yaml)
     app.connect('build-finished', build_finished)
-    app.add_config_value('autoapi_type', 'dotnet', 'html')
+    app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_file_pattern', '*', 'html')
