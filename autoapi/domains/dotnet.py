@@ -45,9 +45,9 @@ class DotNetDomain(AutoAPIDomain):
                 DotNetConstructor, DotNetField, DotNetEvent
             ])
         try:
-            cls = obj_map[data['type']]
+            cls = obj_map[data['type'].lower()]
         except KeyError:
-            self.app.warn('Unknown type: %s', data)
+            self.app.warn('Unknown type: %s' % data)
         else:
             obj = cls(data)
 
@@ -74,8 +74,8 @@ class DotNetDomain(AutoAPIDomain):
                 data_objects = data_objects['items']
             try:
                 for data in data_objects:
-                    obj = self.create_class(data)
-                    self.add_object(obj)
+                    for obj in self.create_class(data):
+                        self.add_object(obj)
             except:
                 import traceback
                 traceback.print_exc()
@@ -85,7 +85,7 @@ class DotNetDomain(AutoAPIDomain):
 
         :param obj: Instance of a .NET object
         '''
-        if type(obj) in self.list_classes:
+        if obj.top_level_object:
             self.top_level_objects[obj.name] = obj
             if type(obj) == DotNetNamespace:
                 self.namespaces[obj.name] = obj
@@ -111,9 +111,9 @@ class DotNetDomain(AutoAPIDomain):
                 ns_obj = self.top_namespaces.get(namespace)
                 if ns_obj is None or type(ns_obj) != DotNetNamespace:
                     print "Adding Namespace %s" % namespace
-                    ns_obj = self.create_class({'id': namespace,
-                                                'type': 'namespace'})
-                    self.top_namespaces[ns_obj.id] = ns_obj
+                    for ns_obj in self.create_class({'id': namespace,
+                                                     'type': 'namespace'}):
+                        self.top_namespaces[ns_obj.id] = ns_obj
                 if obj not in ns_obj.children and namespace != obj.id:
                     ns_obj.children.append(obj)
 
@@ -183,6 +183,7 @@ class DotNetBase(AutoAPIBase):
     '''Base .NET object representation'''
 
     language = 'dotnet'
+    top_level_object = False
 
     def __init__(self, obj):
         super(DotNetBase, self).__init__(obj)
@@ -315,6 +316,7 @@ class DotNetNamespace(DotNetBase):
     type = 'namespace'
     ref_directive = 'ns'
     plural = 'namespaces'
+    top_level_object = True
 
 
 class DotNetMethod(DotNetBase):
@@ -334,6 +336,7 @@ class DotNetEnum(DotNetBase):
     ref_type = 'enumeration'
     ref_directive = 'enum'
     plural = 'enumerations'
+    top_level_object = True
 
 
 class DotNetStruct(DotNetBase):
@@ -341,6 +344,7 @@ class DotNetStruct(DotNetBase):
     ref_type = 'structure'
     ref_directive = 'struct'
     plural = 'structures'
+    top_level_object = True
 
 
 class DotNetConstructor(DotNetBase):
@@ -353,18 +357,21 @@ class DotNetInterface(DotNetBase):
     type = 'interface'
     ref_directive = 'iface'
     plural = 'interfaces'
+    top_level_object = True
 
 
 class DotNetDelegate(DotNetBase):
     type = 'delegate'
     ref_directive = 'del'
     plural = 'delegates'
+    top_level_object = True
 
 
 class DotNetClass(DotNetBase):
     type = 'class'
     ref_directive = 'cls'
     plural = 'classes'
+    top_level_object = True
 
 
 class DotNetField(DotNetBase):
