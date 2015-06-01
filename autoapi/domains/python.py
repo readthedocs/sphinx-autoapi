@@ -41,8 +41,8 @@ class PythonDomain(AutoAPIDomain):
             obj = cls(data)
             if 'children' in data:
                 for child_data in data['children']:
-                    child_obj = self.create_class(child_data)
-                    obj.children.append(child_obj)
+                    for child_obj in self.create_class(child_data):
+                        obj.children.append(child_obj)
             yield obj
 
     def read_file(self, path):
@@ -67,8 +67,8 @@ class PythonDomain(AutoAPIDomain):
         for path in self.find_files(pattern):
             data = self.read_file(path)
             if data:
-                obj = self.create_class(data)
-                self.add_object(obj)
+                for obj in self.create_class(data):
+                    self.add_object(obj)
 
     def add_object(self, obj):
         '''Add object to local and app environment storage
@@ -92,8 +92,8 @@ class PythonDomain(AutoAPIDomain):
                             isinstance(search_obj, PythonModule)):
                         ns_obj = self.app.env.autoapi_data[n]
                 if ns_obj is None:
-                    ns_obj = self.create_class({'id': namespace,
-                                                'type': 'module'})
+                    ns_obj = list(self.create_class({'id': namespace,
+                                                'type': 'module'}))[0]
                     self.app.env.autoapi_data.append(ns_obj)
                     self.namespaces[ns_obj.id] = ns_obj
                 if obj.id not in (child.id for child in ns_obj.children):
