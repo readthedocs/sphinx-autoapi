@@ -8,7 +8,7 @@ import unittest
 
 class FullPythonTests(unittest.TestCase):
 
-    def test_full_run(self):
+    def test_full_py(self):
         os.chdir('tests/pyexample')
         try:
             if os.path.exists('_build'):
@@ -35,7 +35,7 @@ Function
 
 class FullJavaScriptTests(unittest.TestCase):
 
-    def test_full_run(self):
+    def test_full_js(self):
         os.chdir('tests/jsexample')
         try:
             if os.path.exists('_build'):
