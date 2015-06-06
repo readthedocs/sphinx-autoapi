@@ -31,3 +31,20 @@ Function
 
         finally:
             os.chdir('../..')
+
+
+class FullJavaScriptTests(unittest.TestCase):
+
+    def test_full_run(self):
+        os.chdir('tests/jsexample')
+        try:
+            if os.path.exists('_build'):
+                shutil.rmtree('_build')
+            os.mkdir('_build')
+            sp.check_call('sphinx-build -b text -d ./doctrees . _build/text', shell=True)
+
+            with open('_build/text/autoapi/Circle/index.txt') as fin:
+                text = fin.read().strip()
+                self.assertIn('Creates an instance of Circle', text)
+        finally:
+            os.chdir('../..')
