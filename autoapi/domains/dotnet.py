@@ -4,7 +4,6 @@ from collections import defaultdict
 from sphinx.util.osutil import ensuredir
 
 from .base import AutoAPIBase, AutoAPIDomain
-from ..settings import env
 
 MADE = set()
 

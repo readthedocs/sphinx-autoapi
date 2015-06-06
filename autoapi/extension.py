@@ -3,6 +3,7 @@
 Sphinx Auto-API
 """
 
+import os
 import fnmatch
 import shutil
 
@@ -26,15 +27,29 @@ def load_yaml(app):
         return
     app.env.autoapi_data = []
 
-    if app.config.autoapi_type == 'dotnet':
-        domain = DotNetDomain(app)
-    elif app.config.autoapi_type == 'python':
-        domain = PythonDomain(app)
-    elif app.config.autoapi_type == 'go':
-        domain = GoDomain(app)
-    elif app.config.autoapi_type == 'javascript':
-        domain = JavaScriptDomain(app)
-    domain.full()
+    mapping = {
+        'python': PythonDomain,
+        'dotnet': DotNetDomain,
+        'go': GoDomain,
+        'javascript': JavaScriptDomain,
+    }
+
+    domain = mapping[app.config.autoapi_type]
+    domain_obj = domain(app)
+    app.info('[AutoAPI] Loading Data')
+    domain_obj.load(
+        pattern=app.config.autoapi_file_pattern,
+        dir=os.path.normpath(app.config.autoapi_dir),
+        ignore=app.config.autoapi_ignore,
+    )
+    app.info('[AutoAPI] Mapping Data')
+    domain_obj.map()
+    app.info('[AutoAPI] Rendering Data')
+    domain_obj.output_rst(
+        root=app.config.autoapi_root,
+        # TODO: Better way to determine suffix?
+        source_suffix=app.config.source_suffix[0]
+    )
 
 
 def build_finished(app, exception):

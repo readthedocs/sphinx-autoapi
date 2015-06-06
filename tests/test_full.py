@@ -18,17 +18,7 @@ class FullPythonTests(unittest.TestCase):
 
             with open('_build/text/autoapi/example/index.txt') as fin:
                 text = fin.read().strip()
-            self.assertEquals(text, '''example
-*******
-
-
-Function
-========
-
-   example.example_function()
-
-      Compute the square root of x and return it.''')
-
+            self.assertIn('Compute the square root of x and return it.', text)
         finally:
             os.chdir('../..')
 

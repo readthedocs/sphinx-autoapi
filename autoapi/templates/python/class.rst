@@ -18,3 +18,14 @@
    {%- endfor %}
 
    {% endif %}
+   
+
+   {% block content %}
+   {%- for obj_item in obj.children|sort %}
+
+   {% macro render() %}{{ obj_item.render() }}{% endmacro %}
+   {{ render()|indent(0) }}
+
+   {%- endfor %}
+   {% endblock %}
+

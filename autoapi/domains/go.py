@@ -3,7 +3,6 @@ import os
 from sphinx.util.osutil import ensuredir
 
 from .base import AutoAPIBase, AutoAPIDomain
-from ..settings import env
 
 
 class GoDomain(AutoAPIDomain):
@@ -68,7 +67,7 @@ class GoDomain(AutoAPIDomain):
                         yield obj
             else:
                 # Recurse for children
-                obj = cls(data)
+                obj = cls(data, env=self.jinja_env)
                 for child_type in ['consts', 'types', 'vars', 'funcs']:
                     for child_data in data.get(child_type, []):
                         obj.children += list(self.create_class(child_data))
