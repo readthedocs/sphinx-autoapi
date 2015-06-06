@@ -14,7 +14,7 @@ class FullPythonTests(unittest.TestCase):
             if os.path.exists('_build'):
                 shutil.rmtree('_build')
             os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d ./doctrees . _build/text', shell=True)
+            sp.check_call('sphinx-build -b text -d ./.doctrees . _build/text', shell=True)
 
             with open('_build/text/autoapi/example/index.txt') as fin:
                 text = fin.read().strip()
@@ -41,7 +41,7 @@ class FullJavaScriptTests(unittest.TestCase):
             if os.path.exists('_build'):
                 shutil.rmtree('_build')
             os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d ./doctrees . _build/text', shell=True)
+            sp.check_call('sphinx-build -b text -d ./.doctrees . _build/text', shell=True)
 
             with open('_build/text/autoapi/Circle/index.txt') as fin:
                 text = fin.read().strip()
