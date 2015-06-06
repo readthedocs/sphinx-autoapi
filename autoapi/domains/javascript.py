@@ -101,14 +101,6 @@ class JavaScriptDomain(AutoAPIDomain):
                 with open(path, 'w+') as detail_file:
                     detail_file.write(rst.encode('utf-8'))
 
-    def write_indexes(self):
-        # Write Index
-        top_level_index = os.path.join(self.get_config('autoapi_root'),
-                                       'index.rst')
-        with open(top_level_index, 'w+') as top_level_file:
-            content = env.get_template('index.rst')
-            top_level_file.write(content.render())
-
 
 class JavaScriptBase(AutoAPIBase):
 
@@ -134,9 +126,6 @@ class JavaScriptBase(AutoAPIBase):
         # Language Specific
         pass
 
-    def __str__(self):
-        return '<{cls} {id}>'.format(cls=self.__class__.__name__,
-                                     id=self.id)
 
     @property
     def short_name(self):
@@ -160,12 +149,6 @@ class JavaScriptBase(AutoAPIBase):
     @property
     def methods(self):
         return self.obj.get('methods', [])
-
-    def __lt__(self, other):
-        '''Sort object by name'''
-        if isinstance(other, JavaScriptBase):
-            return self.name.lower() < other.name.lower()
-        return self.name < other
 
 
 class JavaScriptClass(JavaScriptBase):

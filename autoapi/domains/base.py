@@ -3,9 +3,11 @@ import yaml
 import json
 import fnmatch
 
+from jinja2 import Environment, FileSystemLoader
 from sphinx.util.console import darkgreen
 
-from ..settings import env
+
+from ..settings import TEMPLATE_DIR
 
 
 class AutoAPIBase(object):
@@ -16,10 +18,20 @@ class AutoAPIBase(object):
     def __init__(self, obj):
         self.obj = obj
 
+        TEMPLATE_PATHS = [TEMPLATE_DIR]
+        USER_TEMPLATE_DIR = self.get_config('autoapi_template_dir')
+        if USER_TEMPLATE_DIR:
+            # Put at the front so it's loaded first
+            TEMPLATE_PATHS.insert(0, USER_TEMPLATE_DIR)
+
+        self.jinja_env = Environment(
+            loader=FileSystemLoader(TEMPLATE_PATHS)
+        )
+
     def render(self, ctx=None):
         if not ctx:
             ctx = {}
-        template = env.get_template(
+        template = self.jinja_env.get_template(
             '{language}/{type}.rst'.format(language=self.language, type=self.type)
         )
         ctx.update(**self.get_context_data())
@@ -42,12 +54,9 @@ class AutoAPIBase(object):
             return self.id < other.id
         return super(AutoAPIBase, self).__lt__(other)
 
-
-class UnknownType(AutoAPIBase):
-
-    def render(self, ctx=None):
-        print "Unknown Type: %s" % (self.obj['type'])
-        super(UnknownType, self).render(ctx=ctx)
+    def __str__(self):
+        return '<{cls} {id}>'.format(cls=self.__class__.__name__,
+                                     id=self.id)
 
 
 class AutoAPIDomain(object):
@@ -94,9 +103,9 @@ class AutoAPIDomain(object):
         self.app.env.autoapi_data.append(obj)
         self.objects[obj.name] = obj
 
-    def get_config(self, key):
+    def get_config(self, key, default=None):
         if self.app.config is not None:
-            return getattr(self.app.config, key, None)
+            return getattr(self.app.config, key, default)
 
     def find_files(self, pattern='*.yaml'):
         '''Find YAML/JSON files to parse for namespace information'''
@@ -139,3 +148,11 @@ class AutoAPIDomain(object):
         :param obj: Instance of a AutoAPI object
         '''
         raise NotImplementedError
+
+    def write_indexes(self):
+        # Write Index
+        top_level_index = os.path.join(self.get_config('autoapi_root'),
+                                       'index.rst')
+        with open(top_level_index, 'w+') as top_level_file:
+            content = self.jinja_env.get_template('index.rst')
+            top_level_file.write(content.render())

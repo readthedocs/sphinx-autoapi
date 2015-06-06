@@ -93,7 +93,7 @@ class PythonDomain(AutoAPIDomain):
                         ns_obj = self.app.env.autoapi_data[n]
                 if ns_obj is None:
                     ns_obj = list(self.create_class({'id': namespace,
-                                                'type': 'module'}))[0]
+                                                     'type': 'module'}))[0]
                     self.app.env.autoapi_data.append(ns_obj)
                     self.namespaces[ns_obj.id] = ns_obj
                 if obj.id not in (child.id for child in ns_obj.children):
@@ -130,14 +130,6 @@ class PythonDomain(AutoAPIDomain):
             if rst:
                 with open(path, 'w+') as detail_file:
                     detail_file.write(rst)
-
-    def write_indexes(self):
-        # Write Index
-        top_level_index = os.path.join(self.get_config('autoapi_root'),
-                                       'index.rst')
-        with open(top_level_index, 'w+') as top_level_file:
-            content = env.get_template('index.rst')
-            top_level_file.write(content.render())
 
 
 class PythonBase(AutoAPIBase):
