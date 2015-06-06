@@ -1,9 +1,9 @@
-__author__ = 'swenson'
-
 import os
 import shutil
 import subprocess as sp
 import unittest
+
+__author__ = 'swenson'
 
 
 class FullPythonTests(unittest.TestCase):
