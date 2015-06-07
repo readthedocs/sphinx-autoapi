@@ -69,8 +69,13 @@ Then add it to your Sphinx project's ``conf.py``:
 
 	extensions = ['autoapi.extension']
 
+        # Document Python Code
 	autoapi_type = 'python'
 	autoapi_dir = 'path/to/python/files'
+
+        # Or, Document Go Code
+	autoapi_type = 'go'
+	autoapi_dir = 'path/to/go/files'
 
 Then in your ``index.rst``, add autoapi to your TOC tree:
 
@@ -83,6 +88,9 @@ Then in your ``index.rst``, add autoapi to your TOC tree:
 This is needed because we will be outputting rst files into the ``autoapi`` directory.
 This adds it into the global TOCTree for your project,
 so that it appears in the menus.
+
+We hope to be able to dynamically add items into the TOCTree, and remove this step.
+However, it is currently required.
 
 See all available configuration options in :doc:`config`.
 
