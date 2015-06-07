@@ -46,7 +46,7 @@ Basic Workflow
 Sphinx AutoAPI has the following structure:
 
 * Configure directory to look for source files
-* Generate JSON from those source files
+* Generate JSON from those source files, using language-specific tooling
 * Map the JSON into standard AutoAPI Python objects
 * Generate RST through Jinja2 templates from those Python objects
 
