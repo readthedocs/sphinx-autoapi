@@ -1,4 +1,4 @@
-.. py:class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
+.. js:class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {% if obj.docstring %}
 
@@ -18,14 +18,3 @@
    {%- endfor %}
 
    {% endif %}
-   
-
-   {% block content %}
-   {%- for obj_item in obj.children|sort %}
-
-   {% macro render() %}{{ obj_item.render() }}{% endmacro %}
-   {{ render()|indent(0) }}
-
-   {%- endfor %}
-   {% endblock %}
-

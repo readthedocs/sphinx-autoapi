@@ -3,3 +3,4 @@ _build
 _build_rtd
 readthedocs_build
 docs/autoapi
+*.egg-info

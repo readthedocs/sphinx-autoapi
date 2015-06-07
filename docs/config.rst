@@ -19,6 +19,12 @@ AutoAPI Configuration
 
 	Directory to output the AutoAPI files into
 
+.. confval:: autoapi_template_dir
+
+	Default: ``''``
+
+	A directory that has user-defined templates to override our default templates.
+
 .. confval:: autoapi_ignore
 
 	Default: ``[]``

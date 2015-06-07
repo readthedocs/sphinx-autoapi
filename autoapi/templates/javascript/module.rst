@@ -24,17 +24,29 @@
 
 {% endif %}
 
-.. py:module:: {{ obj.name }}
-
+.. js:module:: {{ obj.name }}
 
 
 
 {% block content %}
-{%- for obj_item in obj.children|sort %}
 
+{%- macro display_type(item_type) %}
+
+{{ item_type.title() }}
+{{ "*" * item_type|length }}
+
+{%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
-{{ render()|indent(0) }}
+
+	{{ render()|indent(4) }}
 
 {%- endfor %}
-{% endblock %}
+{%- endmacro %}
 
+{%- for item_type in obj.item_map.keys() %}
+{% if item_type.lower() != 'module' %}
+{{ display_type(item_type) }}
+{% endif %}
+{%- endfor %}
+
+{% endblock %}

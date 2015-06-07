@@ -3,9 +3,12 @@ import yaml
 import json
 import fnmatch
 
+from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen
+from sphinx.util.osutil import ensuredir
 
-from ..settings import env
+
+from ..settings import TEMPLATE_DIR
 
 
 class AutoAPIBase(object):
@@ -19,9 +22,16 @@ class AutoAPIBase(object):
     def render(self, ctx=None):
         if not ctx:
             ctx = {}
-        template = env.get_template(
-            '{language}/{type}.rst'.format(language=self.language, type=self.type)
-        )
+        try:
+            template = self.jinja_env.get_template(
+                '{language}/{type}.rst'.format(language=self.language, type=self.type)
+            )
+        except TemplateNotFound:
+            # Use a try/except here so we fallback to language specific defaults, over base defaults
+            template = self.jinja_env.get_template(
+                'base/{type}.rst'.format(language=self.language, type=self.type)
+            )
+
         ctx.update(**self.get_context_data())
         return template.render(**ctx)
 
@@ -42,12 +52,28 @@ class AutoAPIBase(object):
             return self.id < other.id
         return super(AutoAPIBase, self).__lt__(other)
 
+    def __str__(self):
+        return '<{cls} {id}>'.format(cls=self.__class__.__name__,
+                                     id=self.id)
 
-class UnknownType(AutoAPIBase):
+    @property
+    def short_name(self):
+        '''Shorten name property'''
+        return self.name.split('.')[-1]
 
-    def render(self, ctx=None):
-        print "Unknown Type: %s" % (self.obj['type'])
-        super(UnknownType, self).render(ctx=ctx)
+    @property
+    def ref_type(self):
+        return self.type
+
+    @property
+    def ref_directive(self):
+        return self.type
+
+    @property
+    def namespace(self):
+        pieces = self.id.split('.')[:-1]
+        if pieces:
+            return '.'.join(pieces)
 
 
 class AutoAPIDomain(object):
@@ -57,61 +83,49 @@ class AutoAPIDomain(object):
     :param app: Sphinx application instance
     '''
 
-    namespaces = {}
+    # Mapping of {filepath -> raw data}
+    paths = {}
+    # Mapping of {object id -> Python Object}
     objects = {}
+
+    namespaces = {}
     top_level_objects = {}
 
     def __init__(self, app):
         self.app = app
 
-    def read_file(self, path, format='yaml'):
-        '''Read file input into memory, returning deserialized objects
+        TEMPLATE_PATHS = [TEMPLATE_DIR]
+        USER_TEMPLATE_DIR = self.get_config('autoapi_template_dir')
+        if USER_TEMPLATE_DIR:
+            # Put at the front so it's loaded first
+            TEMPLATE_PATHS.insert(0, USER_TEMPLATE_DIR)
 
-        :param path: Path of file to read
+        self.jinja_env = Environment(
+            loader=FileSystemLoader(TEMPLATE_PATHS)
+        )
+
+    def load(self, pattern, dir, ignore=[]):
         '''
-        # TODO support JSON here
-        # TODO sphinx way of reporting errors in logs?
-        try:
-            with open(path, 'r') as handle:
-                if format == 'yaml':
-                    obj = yaml.safe_load(handle)
-                elif format == 'json':
-                    obj = json.load(handle)
-        except IOError:
-            raise Warning('Error reading file: {0}'.format(path))
-        except yaml.YAMLError:
-            raise Warning('Error parsing file: {0}'.format(path))
-        except ValueError:
-            raise Warning('Error parsing file: {0} at {1}'.format(path, json.last_error_position))
-        return obj
+        Load objects from the filesystem into the ``paths`` dictionary.
 
-    def add_object(self, obj):
         '''
-        Add object to local and app environment storage
+        for path in self.find_files(pattern=pattern, dir=dir, ignore=ignore):
+            data = self.read_file(path=path)
+            if data:
+                self.paths[path] = data
 
-        :param obj: Instance of a AutoAPI object
-        '''
-        self.app.env.autoapi_data.append(obj)
-        self.objects[obj.name] = obj
-
-    def get_config(self, key):
-        if self.app.config is not None:
-            return getattr(self.app.config, key, None)
-
-    def find_files(self, pattern='*.yaml'):
-        '''Find YAML/JSON files to parse for namespace information'''
-        # TODO do an intelligent glob here, we're picking up too much
+    def find_files(self, pattern, dir, ignore):
         files_to_read = []
-        absolute_dir = os.path.normpath(self.get_config('autoapi_dir'))
-        for root, dirnames, filenames in os.walk(absolute_dir):
+        for root, dirnames, filenames in os.walk(dir):
             for filename in fnmatch.filter(filenames, pattern):
 
                 # Skip ignored files
-                for ignore_pattern in self.get_config('autoapi_ignore'):
+                for ignore_pattern in ignore:
                     if fnmatch.fnmatch(filename, ignore_pattern):
                         print "Ignoring %s/%s" % (root, filename)
                         continue
 
+                # Make sure the path is full
                 if os.path.isabs(filename):
                     files_to_read.append(os.path.join(filename))
                 else:
@@ -124,13 +138,32 @@ class AutoAPIDomain(object):
                 len(files_to_read)):
             yield _path
 
-    def get_objects(self, pattern, format='yaml'):
+    def read_file(self, path, format='yaml'):
+        '''Read file input into memory
+
+        :param path: Path of file to read
+        '''
+        # TODO support JSON here
+        # TODO sphinx way of reporting errors in logs?
+        raise NotImplementedError
+
+    def add_object(self, obj):
+        '''
+        Add object to local and app environment storage
+
+        :param obj: Instance of a AutoAPI object
+        '''
+        self.objects[obj.id] = obj
+
+    def get_config(self, key, default=None):
+        if self.app.config is not None:
+            return getattr(self.app.config, key, default)
+
+    def map(self):
         '''Trigger find of serialized sources and build objects'''
-        for path in self.find_files(pattern):
-            data = self.read_file(path, format=format)
-            if data:
-                for obj in self.create_class(data):
-                    self.add_object(obj)
+        for path, data in self.paths.items():
+            for obj in self.create_class(data):
+                self.add_object(obj)
 
     def create_class(self, obj):
         '''
@@ -139,3 +172,25 @@ class AutoAPIDomain(object):
         :param obj: Instance of a AutoAPI object
         '''
         raise NotImplementedError
+
+    def output_rst(self, root, source_suffix):
+        for id, obj in self.objects.items():
+
+            if not obj:
+                continue
+
+            rst = obj.render()
+            if not rst:
+                continue
+
+            detail_dir = os.path.join(root, *id.split('.'))
+            ensuredir(detail_dir)
+            path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
+            with open(path, 'w+') as detail_file:
+                detail_file.write(rst.encode('utf-8'))
+
+        # Render Top Index
+        top_level_index = os.path.join(root, 'index.rst')
+        with open(top_level_index, 'w+') as top_level_file:
+            content = self.jinja_env.get_template('index.rst')
+            top_level_file.write(content.render())

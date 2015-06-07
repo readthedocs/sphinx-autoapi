@@ -3,7 +3,6 @@ import os
 from sphinx.util.osutil import ensuredir
 
 from .base import AutoAPIBase, AutoAPIDomain
-from ..settings import env
 
 
 class GoDomain(AutoAPIDomain):
@@ -49,11 +48,11 @@ class GoDomain(AutoAPIDomain):
         '''
         obj_map = dict(
             (cls.type, cls) for cls
-            in [GoConstant, GoFunction, GoPackage, GoVariable, GoType, GoMethod]
+            in ALL_CLASSES
         )
         try:
             cls = obj_map[data['type']]
-        except KeyError as e:
+        except KeyError:
             self.app.warn('Unknown Type: %s' % data)
         else:
             if cls.inverted_names and 'names' in data:
@@ -68,7 +67,7 @@ class GoDomain(AutoAPIDomain):
                         yield obj
             else:
                 # Recurse for children
-                obj = cls(data)
+                obj = cls(data, env=self.jinja_env)
                 for child_type in ['consts', 'types', 'vars', 'funcs']:
                     for child_data in data.get(child_type, []):
                         obj.children += list(self.create_class(child_data))
@@ -99,14 +98,6 @@ class GoDomain(AutoAPIDomain):
             if rst:
                 with open(path, 'w+') as detail_file:
                     detail_file.write(rst.encode('utf-8'))
-
-    def write_indexes(self):
-        # Write Index
-        top_level_index = os.path.join(self.get_config('autoapi_root'),
-                                       'index.rst')
-        with open(top_level_index, 'w+') as top_level_file:
-            content = env.get_template('index.rst')
-            top_level_file.write(content.render())
 
 
 class GoBase(AutoAPIBase):
@@ -161,12 +152,6 @@ class GoBase(AutoAPIBase):
     def methods(self):
         return self.obj.get('methods', [])
 
-    def __lt__(self, other):
-        '''Sort object by name'''
-        if isinstance(other, GoBase):
-            return self.name.lower() < other.name.lower()
-        return self.name < other
-
 
 class GoVariable(GoBase):
     type = 'var'
@@ -195,3 +180,13 @@ class GoPackage(GoBase):
 
 class GoType(GoBase):
     type = 'type'
+
+
+ALL_CLASSES = [
+    GoConstant,
+    GoFunction,
+    GoPackage,
+    GoVariable,
+    GoType,
+    GoMethod,
+]

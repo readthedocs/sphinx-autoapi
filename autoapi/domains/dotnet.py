@@ -4,7 +4,6 @@ from collections import defaultdict
 from sphinx.util.osutil import ensuredir
 
 from .base import AutoAPIBase, AutoAPIDomain
-from ..settings import env
 
 MADE = set()
 
@@ -172,7 +171,7 @@ class DotNetDomain(AutoAPIDomain):
         top_level_index = os.path.join(self.get_config('autoapi_root'),
                                    'index.rst')
         with open(top_level_index, 'w+') as top_level_file:
-            content = env.get_template('index.rst')
+            content = self.jinja_env.get_template('index.rst')
             top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
