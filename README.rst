@@ -16,7 +16,7 @@ be easy to use,
 and not require much configuration.
 
 AutoAPI is a parse-only solution for both static and dynamic languages.
-This is in contract to the traditional `Sphinx autodoc <http://sphinx-doc.org/ext/autodoc.html>`_,
+This is in contrast to the traditional `Sphinx autodoc <http://sphinx-doc.org/ext/autodoc.html>`_,
 which is Python-only and uses code imports.
 
 Full documentation can be found on `Read the Docs <http://sphinx-autoapi.readthedocs.org>`_.

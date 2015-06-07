@@ -154,3 +154,15 @@ The .Net domain will not be able to depend on importing code from the users code
 
    .. autodnclass:: System.String
       :members:
+
+
+
+Design
+=======
+
+Every object needs a unique identifier
+
+* Loader
+    - Get a dict of {filename: dictionary of data}
+* Mapper
+    - Transforms a list of all objects generated
