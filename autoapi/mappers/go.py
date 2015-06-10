@@ -4,7 +4,7 @@ import subprocess
 from .base import PythonMapperBase, SphinxMapperBase
 
 
-class GoDomain(SphinxMapperBase):
+class GoSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Go
 
@@ -39,7 +39,7 @@ class GoDomain(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options, _type=None):
+    def create_class(self, data, options=None, _type=None):
         '''Return instance of class based on Go data
 
         Data keys handled here:
@@ -89,13 +89,13 @@ class GoDomain(SphinxMapperBase):
                 yield obj
 
 
-class GoBase(PythonMapperBase):
+class GoPythonMapper(PythonMapperBase):
 
     language = 'go'
     inverted_names = False
 
     def __init__(self, obj, **kwargs):
-        super(GoBase, self).__init__(obj, **kwargs)
+        super(GoPythonMapper, self).__init__(obj, **kwargs)
         self.name = obj.get('name') or obj.get('packageName')
         self.id = self.name
 
@@ -142,33 +142,33 @@ class GoBase(PythonMapperBase):
         return self.obj.get('methods', [])
 
 
-class GoVariable(GoBase):
+class GoVariable(GoPythonMapper):
     type = 'var'
     inverted_names = True
 
 
-class GoMethod(GoBase):
+class GoMethod(GoPythonMapper):
     type = 'method'
     ref_directive = 'meth'
 
 
-class GoConstant(GoBase):
+class GoConstant(GoPythonMapper):
     type = 'const'
     inverted_names = True
 
 
-class GoFunction(GoBase):
+class GoFunction(GoPythonMapper):
     type = 'func'
     ref_type = 'function'
 
 
-class GoPackage(GoBase):
+class GoPackage(GoPythonMapper):
     type = 'package'
     ref_directive = 'pkg'
     top_level_object = True
 
 
-class GoType(GoBase):
+class GoType(GoPythonMapper):
     type = 'type'
 
 

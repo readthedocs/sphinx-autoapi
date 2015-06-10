@@ -2,7 +2,7 @@
 
 import unittest
 
-from autoapi.domains import dotnet
+from autoapi.mappers import dotnet
 
 
 class NamespaceTests(unittest.TestCase):

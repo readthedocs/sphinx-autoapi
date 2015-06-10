@@ -11,7 +11,7 @@ import shutil
 
 from sphinx.util.console import darkgreen, bold
 
-from .domains import DotNetDomain, PythonDomain, GoDomain, JavaScriptDomain
+from .mappers import DotNetSphinxMapper, PythonSphinxMapper, GoSphinxMapper, JavaScriptSphinxMapper
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -35,10 +35,10 @@ def run_autoapi(app):
     app.env.autoapi_data = []
 
     mapping = {
-        'python': PythonDomain,
-        'dotnet': DotNetDomain,
-        'go': GoDomain,
-        'javascript': JavaScriptDomain,
+        'python': PythonSphinxMapper,
+        'dotnet': DotNetSphinxMapper,
+        'go': GoSphinxMapper,
+        'javascript': JavaScriptSphinxMapper,
     }
 
     domain = mapping[app.config.autoapi_type]

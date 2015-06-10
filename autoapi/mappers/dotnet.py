@@ -6,7 +6,7 @@ from .base import PythonMapperBase, SphinxMapperBase
 MADE = set()
 
 
-class DotNetDomain(SphinxMapperBase):
+class DotNetSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for .NET
 
@@ -37,7 +37,7 @@ class DotNetDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, options, **kwargs):
+    def map(self, options=None, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data['items']:
@@ -46,7 +46,7 @@ class DotNetDomain(SphinxMapperBase):
 
         self.organize_objects()
 
-    def create_class(self, data, options, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''
         Return instance of class based on Roslyn type property
 
@@ -162,14 +162,14 @@ class DotNetDomain(SphinxMapperBase):
     #         top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
-class DotNetBase(PythonMapperBase):
+class DotNetPythonMapper(PythonMapperBase):
 
     '''Base .NET object representation'''
 
     language = 'dotnet'
 
     def __init__(self, obj, **kwargs):
-        super(DotNetBase, self).__init__(obj, **kwargs)
+        super(DotNetPythonMapper, self).__init__(obj, **kwargs)
 
         # Always exist
         self.id = obj['id']
@@ -297,26 +297,26 @@ class DotNetBase(PythonMapperBase):
         return self.ref_name.split('.')[-1]
 
 
-class DotNetNamespace(DotNetBase):
+class DotNetNamespace(DotNetPythonMapper):
     type = 'namespace'
     ref_directive = 'ns'
     plural = 'namespaces'
     top_level_object = True
 
 
-class DotNetMethod(DotNetBase):
+class DotNetMethod(DotNetPythonMapper):
     type = 'method'
     ref_directive = 'meth'
     plural = 'methods'
 
 
-class DotNetProperty(DotNetBase):
+class DotNetProperty(DotNetPythonMapper):
     type = 'property'
     ref_directive = 'prop'
     plural = 'properties'
 
 
-class DotNetEnum(DotNetBase):
+class DotNetEnum(DotNetPythonMapper):
     type = 'enum'
     ref_type = 'enumeration'
     ref_directive = 'enum'
@@ -324,7 +324,7 @@ class DotNetEnum(DotNetBase):
     top_level_object = True
 
 
-class DotNetStruct(DotNetBase):
+class DotNetStruct(DotNetPythonMapper):
     type = 'struct'
     ref_type = 'structure'
     ref_directive = 'struct'
@@ -332,39 +332,39 @@ class DotNetStruct(DotNetBase):
     top_level_object = True
 
 
-class DotNetConstructor(DotNetBase):
+class DotNetConstructor(DotNetPythonMapper):
     type = 'constructor'
     ref_directive = 'ctor'
     plural = 'constructors'
 
 
-class DotNetInterface(DotNetBase):
+class DotNetInterface(DotNetPythonMapper):
     type = 'interface'
     ref_directive = 'iface'
     plural = 'interfaces'
     top_level_object = True
 
 
-class DotNetDelegate(DotNetBase):
+class DotNetDelegate(DotNetPythonMapper):
     type = 'delegate'
     ref_directive = 'del'
     plural = 'delegates'
     top_level_object = True
 
 
-class DotNetClass(DotNetBase):
+class DotNetClass(DotNetPythonMapper):
     type = 'class'
     ref_directive = 'cls'
     plural = 'classes'
     top_level_object = True
 
 
-class DotNetField(DotNetBase):
+class DotNetField(DotNetPythonMapper):
     type = 'field'
     plural = 'fields'
 
 
-class DotNetEvent(DotNetBase):
+class DotNetEvent(DotNetPythonMapper):
     type = 'event'
     plural = 'events'
 

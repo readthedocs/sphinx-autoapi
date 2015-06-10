@@ -5,7 +5,7 @@ from epyparse import parsed
 from .base import PythonMapperBase, SphinxMapperBase
 
 
-class PythonDomain(SphinxMapperBase):
+class PythonSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Python
 
@@ -31,7 +31,7 @@ class PythonDomain(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Roslyn type property
 
         Data keys handled here:
@@ -61,12 +61,12 @@ class PythonDomain(SphinxMapperBase):
             yield obj
 
 
-class PythonBase(PythonMapperBase):
+class PythonPythonMapper(PythonMapperBase):
 
     language = 'python'
 
     def __init__(self, obj, **kwargs):
-        super(PythonBase, self).__init__(obj, **kwargs)
+        super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
         # Always exist
         self.id = obj['fullname']
@@ -105,14 +105,14 @@ class PythonBase(PythonMapperBase):
         return True
 
 
-class PythonFunction(PythonBase):
+class PythonFunction(PythonPythonMapper):
     type = 'function'
 
 
-class PythonModule(PythonBase):
+class PythonModule(PythonPythonMapper):
     type = 'module'
     top_level_object = True
 
 
-class PythonClass(PythonBase):
+class PythonClass(PythonPythonMapper):
     type = 'class'

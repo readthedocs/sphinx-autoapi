@@ -5,7 +5,7 @@ import subprocess
 from .base import PythonMapperBase, SphinxMapperBase
 
 
-class JavaScriptDomain(SphinxMapperBase):
+class JavaScriptSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Javascript
 
@@ -32,7 +32,7 @@ class JavaScriptDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, options, **kwargs):
+    def map(self, options=None, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:
@@ -40,7 +40,7 @@ class JavaScriptDomain(SphinxMapperBase):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
 
-    def create_class(self, data, options, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Javascript data
 
         Data keys handled here:
@@ -72,7 +72,7 @@ class JavaScriptDomain(SphinxMapperBase):
             yield obj
 
 
-class JavaScriptBase(PythonMapperBase):
+class JavaScriptPythonMapper(PythonMapperBase):
 
     language = 'javascript'
 
@@ -84,7 +84,7 @@ class JavaScriptBase(PythonMapperBase):
         so we try and keep standard naming to keep templates more re-usable.
         '''
 
-        super(JavaScriptBase, self).__init__(obj, **kwargs)
+        super(JavaScriptPythonMapper, self).__init__(obj, **kwargs)
         self.name = obj.get('name')
         self.id = self.name
 
@@ -104,28 +104,28 @@ class JavaScriptBase(PythonMapperBase):
         pass
 
 
-class JavaScriptClass(JavaScriptBase):
+class JavaScriptClass(JavaScriptPythonMapper):
     type = 'class'
     ref_directive = 'class'
     top_level_object = True
 
 
-class JavaScriptFunction(JavaScriptBase):
+class JavaScriptFunction(JavaScriptPythonMapper):
     type = 'function'
     ref_type = 'func'
 
 
-class JavaScriptData(JavaScriptBase):
+class JavaScriptData(JavaScriptPythonMapper):
     type = 'data'
     ref_directive = 'data'
 
 
-class JavaScriptMember(JavaScriptBase):
+class JavaScriptMember(JavaScriptPythonMapper):
     type = 'member'
     ref_directive = 'member'
 
 
-class JavaScriptAttribute(JavaScriptBase):
+class JavaScriptAttribute(JavaScriptPythonMapper):
     type = 'attribute'
     ref_directive = 'attr'
 

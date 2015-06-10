@@ -5,7 +5,7 @@ from contextlib import nested
 
 from mock import patch
 
-from autoapi.domains import dotnet
+from autoapi.mappers import dotnet
 
 
 class DomainTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class DomainTests(unittest.TestCase):
 
     def test_create_class(self):
         '''Test .NET class instance creation helper'''
-        dom = dotnet.DotNetDomain(self.application)
+        dom = dotnet.DotNetSphinxMapper(self.application)
 
         def _create_class(data):
             return list(dom.create_class(data))[0]
@@ -54,7 +54,7 @@ class DomainTests(unittest.TestCase):
         self.assertIsInstance(cls, dotnet.DotNetEvent)
 
     def test_create_class_with_children(self):
-        dom = dotnet.DotNetDomain(self.application)
+        dom = dotnet.DotNetSphinxMapper(self.application)
 
         def _create_class(data):
             return list(dom.create_class(data))[0]
@@ -80,10 +80,10 @@ class DomainTests(unittest.TestCase):
                     'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
 
         with nested(
-                patch('autoapi.domains.dotnet.DotNetDomain.find_files', _mock_find),
-                patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
+                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find),
+                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read),
         ):
-            dom = dotnet.DotNetDomain(self.application)
+            dom = dotnet.DotNetSphinxMapper(self.application)
             dom.load('', '', '')
             dom.map()
             objs = dom.objects
