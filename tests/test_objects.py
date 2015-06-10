@@ -1,7 +1,6 @@
 '''Test .NET autoapi objects'''
 
 import unittest
-import time
 
 from autoapi.domains import dotnet
 
@@ -64,7 +63,6 @@ class NamespaceTests(unittest.TestCase):
         self.assertEqual(obj.type, 'event')
         self.assertEqual(obj.ref_type, 'event')
         self.assertEqual(obj.ref_directive, 'event')
-
 
     def test_names(self):
         '''Test names of objects'''

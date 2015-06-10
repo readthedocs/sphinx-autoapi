@@ -1,7 +1,6 @@
 '''Test .NET autoapi domain'''
 
 import unittest
-import time
 from contextlib import nested
 
 from mock import patch
