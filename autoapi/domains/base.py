@@ -11,6 +11,33 @@ from ..settings import TEMPLATE_DIR
 
 class PythonMapperBase(object):
 
+    '''
+    Base object for JSON -> Python object mapping.
+
+    Subclasses of this object will handle their language specific JSON input,
+    and map that onto this standard Python object.
+    Subclasses may also include language-specific attributes on this object.
+
+    Arguments:
+
+    :param obj: JSON object representing this object
+    :param jinja_env: A template environment for rendering this object
+
+    Required attributes:
+
+    :var str id: A globally unique indentifier for this object. Generally a fully qualified name, including namespace.
+    :var str name: A short "display friendly" name for this object.
+
+    Optional attributes:
+
+    :var str docstring: The documentation for this object
+    :var list imports: Imports in this object
+    :var list children: Children of this object
+    :var list parameters: Parameters to this object
+    :var list methods: Methods on this object
+
+    '''
+
     language = 'base'
     type = 'base'
 
