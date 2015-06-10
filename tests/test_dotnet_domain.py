@@ -34,6 +34,7 @@ class DomainTests(unittest.TestCase):
     def test_create_class(self):
         '''Test .NET class instance creation helper'''
         dom = dotnet.DotNetDomain(self.application)
+
         def _create_class(data):
             return list(dom.create_class(data))[0]
         cls = _create_class({'id': 'Foo.Bar', 'type': 'Namespace'})
@@ -61,6 +62,7 @@ class DomainTests(unittest.TestCase):
 
     def test_create_class_with_children(self):
         dom = dotnet.DotNetDomain(self.application)
+
         def _create_class(data):
             return list(dom.create_class(data))[0]
         cls = _create_class({'id': 'Foo.Bar',
@@ -76,16 +78,13 @@ class DomainTests(unittest.TestCase):
         '''Test basic get objects'''
         objs = []
 
-        def _mock_find(self, pattern):
+        def _mock_find(self, pattern, **kwargs):
             return {'items': ['foo', 'bar']}
 
         def _mock_read(self, path):
             return {'items': [{'id': 'Foo.Bar', 'name': 'Foo', 'type': 'property'},
                               {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
                     'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
-
-        def _mock_add(self, obj):
-            objs.append(obj)
 
         def _mock_config(self, key):
             return 'foo'
@@ -94,9 +93,10 @@ class DomainTests(unittest.TestCase):
                 patch('autoapi.domains.dotnet.DotNetDomain.find_files', _mock_find),
                 patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
                 patch('autoapi.domains.dotnet.DotNetDomain.get_config', _mock_config),
-                ):
+        ):
             dom = dotnet.DotNetDomain(self.application)
-            dom.get_objects('*')
+            dom.load('', '', '')
+            dom.map()
             objs = dom.objects
             self.assertEqual(len(objs), 2)
             self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')

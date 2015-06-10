@@ -1,5 +1,6 @@
 import os
 from collections import defaultdict
+import yaml
 
 from sphinx.util.osutil import ensuredir
 
@@ -20,8 +21,37 @@ class DotNetDomain(AutoAPIDomain):
 
     top_namespaces = {}
 
+    def read_file(self, path, **kwargs):
+        '''Read file input into memory, returning deserialized objects
+
+        :param path: Path of file to read
+        '''
+        # TODO support JSON here
+        # TODO sphinx way of reporting errors in logs?
+
+        try:
+            with open(path, 'r') as handle:
+                parsed_data = yaml.safe_load(handle)
+                return parsed_data
+        except IOError:
+            self.app.warn('Error reading file: {0}'.format(path))
+        except TypeError:
+            self.app.warn('Error reading file: {0}'.format(path))
+        return None
+
+    # Subclassed to iterate over items
+    def map(self):
+        '''Trigger find of serialized sources and build objects'''
+        for path, data in self.paths.items():
+            for item in data['items']:
+                for obj in self.create_class(item):
+                    self.add_object(obj)
+
+        self.organize_objects()
+
     def create_class(self, data):
-        '''Return instance of class based on Roslyn type property
+        '''
+        Return instance of class based on Roslyn type property
 
         Data keys handled here:
 
@@ -34,24 +64,17 @@ class DotNetDomain(AutoAPIDomain):
 
         :param data: dictionary data from Roslyn output artifact
         '''
+
         obj_map = dict(
             (cls.type, cls) for cls
-            in [
-                DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
-                DotNetInterface, DotNetDelegate, DotNetProperty, DotNetMethod,
-                DotNetConstructor, DotNetField, DotNetEvent
-            ])
+            in ALL_CLASSES
+        )
         try:
             cls = obj_map[data['type'].lower()]
         except KeyError:
             self.app.warn('Unknown type: %s' % data)
         else:
-            obj = cls(data)
-
-            # TODO what is MADE?
-            if data.get('id', None) in MADE:
-                self.app.warn("Object already added: %s" % data.get('id'))
-            MADE.add(data['id'])
+            obj = cls(data, jinja_env=self.jinja_env)
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more
@@ -62,20 +85,6 @@ class DotNetDomain(AutoAPIDomain):
             #         obj.children.append(child_obj)
 
             yield obj
-
-    def get_objects(self, pattern):
-        '''Trigger find of serialized sources and build objects'''
-        for path in self.find_files(pattern):
-            data_objects = self.read_file(path)
-            if type(data_objects) == dict:
-                data_objects = data_objects['items']
-            try:
-                for data in data_objects:
-                    for obj in self.create_class(data):
-                        self.add_object(obj)
-            except:
-                import traceback
-                traceback.print_exc()
 
     def add_object(self, obj):
         '''Add object to local and app environment storage
@@ -127,52 +136,33 @@ class DotNetDomain(AutoAPIDomain):
             if len(ns.children) == 0:
                 del self.namespaces[key]
 
-    def full(self):
-        print "Reading"
-        self.get_objects(self.get_config('autoapi_file_pattern'))
-        self.organize_objects()
+    # def output_rst(self, root, source_suffix):
+    #     for obj in self.top_level_objects.values():
 
-        print "Writing"
-        self.generate_output()
-        self.write_indexes()
+    #         if not obj:
+    #             continue
 
-    def generate_output(self):
-        for obj in self.top_level_objects.values():
+    #         rst = obj.render()
+    #         if not rst:
+    #             continue
 
-            if not obj:
-                continue
+    #         # Detail
+    #         try:
+    #             filename = obj.name.split('(')[0]
+    #         except IndexError:
+    #             filename = obj.name
+    #         detail_dir = os.path.join(root, *filename.split('.'))
+    #         ensuredir(detail_dir)
+    #         # TODO: Better way to determine suffix?
+    #         path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
+    #         with open(path, 'w+') as detail_file:
+    #             detail_file.write(rst.encode('utf-8'))
 
-
-            rst = obj.render()
-            # Detail
-            try:
-                filename = obj.name.split('(')[0]
-            except IndexError:
-                filename = obj.name
-            detail_dir = os.path.join(self.get_config('autoapi_root'),
-                                      *filename.split('.'))
-            ensuredir(detail_dir)
-            # TODO: Better way to determine suffix?
-            path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
-            if rst:
-                with open(path, 'w+') as detail_file:
-                    detail_file.write(rst.encode('utf-8'))
-
-        # for namespace, obj in self.namespaces.items():
-        #     path = os.path.join(self.get_config('autoapi_root'), '%s%s' % (namespace, self.get_config('source_suffix')[0]))
-        #     ensuredir(self.get_config('autoapi_root'))
-        #     with open(path, 'w+') as index_file:
-        #         namespace_rst = obj.render()
-        #         if namespace_rst:
-        #             index_file.write(namespace_rst)
-
-    def write_indexes(self):
-        # Write Index
-        top_level_index = os.path.join(self.get_config('autoapi_root'),
-                                   'index.rst')
-        with open(top_level_index, 'w+') as top_level_file:
-            content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=self.namespaces.values()))
+    #     # Write Indexes
+    #     top_level_index = os.path.join(root, 'index.rst')
+    #     with open(top_level_index, 'w+') as top_level_file:
+    #         content = self.jinja_env.get_template('index.rst')
+    #         top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
 class DotNetBase(AutoAPIBase):
@@ -182,8 +172,9 @@ class DotNetBase(AutoAPIBase):
     language = 'dotnet'
     top_level_object = False
 
-    def __init__(self, obj):
-        super(DotNetBase, self).__init__(obj)
+    def __init__(self, obj, **kwargs):
+        super(DotNetBase, self).__init__(obj, **kwargs)
+
         # Always exist
         self.id = obj['id']
 
@@ -252,9 +243,10 @@ class DotNetBase(AutoAPIBase):
             return '{repo}/blob/master/{path}'.format(
                 repo=repo,
                 path=path,
-                )
+            )
         except:
-            import traceback; traceback.print_exc();
+            import traceback
+            traceback.print_exc()
             return ''
 
     @property
@@ -379,3 +371,9 @@ class DotNetField(DotNetBase):
 class DotNetEvent(DotNetBase):
     type = 'event'
     plural = 'events'
+
+ALL_CLASSES = [
+    DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
+    DotNetInterface, DotNetDelegate, DotNetProperty, DotNetMethod,
+    DotNetConstructor, DotNetField, DotNetEvent
+]
