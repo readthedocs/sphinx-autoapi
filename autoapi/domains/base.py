@@ -16,8 +16,10 @@ class AutoAPIBase(object):
     language = 'base'
     type = 'base'
 
-    def __init__(self, obj):
+    def __init__(self, obj, jinja_env=None):
         self.obj = obj
+        if jinja_env:
+            self.jinja_env = jinja_env
 
     def render(self, ctx=None):
         if not ctx:

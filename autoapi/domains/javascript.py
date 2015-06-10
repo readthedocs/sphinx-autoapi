@@ -27,9 +27,9 @@ class JavaScriptDomain(AutoAPIDomain):
             parsed_data = json.loads(subprocess.check_output(['jsdoc', '-X', path]))
             return parsed_data
         except IOError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         return None
 
     def map(self):

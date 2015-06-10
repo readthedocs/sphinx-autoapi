@@ -26,9 +26,9 @@ class PythonDomain(AutoAPIDomain):
             parsed_data = parsed(path)
             return parsed_data
         except IOError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         return None
 
     def create_class(self, data):
@@ -64,10 +64,9 @@ class PythonBase(AutoAPIBase):
 
     language = 'python'
 
-    def __init__(self, obj, jinja_env):
-        super(PythonBase, self).__init__(obj)
+    def __init__(self, obj, **kwargs):
+        super(PythonBase, self).__init__(obj, **kwargs)
 
-        self.jinja_env = jinja_env
         # Always exist
         self.id = obj['fullname']
         self.name = self.obj.get('fullname', self.id)
