@@ -1,3 +1,5 @@
+{%- if obj.display(options) %}
+
 {%- if is_method %}
 {# Slice self off #}
 .. method:: {{ obj.name.split('.')[-1] }}({{ args[1:]|join(',') }})
@@ -8,3 +10,5 @@
    {%- if obj.docstring %}
    {{ obj.docstring.strip()|indent(3) }}
    {% endif %}
+
+{% endif %}

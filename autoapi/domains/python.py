@@ -82,6 +82,27 @@ class PythonBase(PythonMapperBase):
         # For later
         self.item_map = defaultdict(list)
 
+    @property
+    def undoc_member(self):
+        return self.docstring == ''
+
+    @property
+    def private_member(self):
+        return self.name[0] == '_'
+
+    @property
+    def special_member(self):
+        return self.name[0:1] == ['_', '_']
+
+    def display(self, options):
+        if self.undoc_member and 'undoc-members' not in options:
+            return False
+        if self.private_member and 'private-members' not in options:
+            return False
+        if self.special_member and 'special-members' not in options:
+            return False
+        return True
+
 
 class PythonFunction(PythonBase):
     type = 'function'
