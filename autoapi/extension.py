@@ -68,4 +68,5 @@ def setup(app):
     app.add_config_value('autoapi_file_pattern', '*', 'html')
     app.add_config_value('autoapi_dir', '', 'html')
     app.add_config_value('autoapi_keep_files', True, 'html')
+    app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
