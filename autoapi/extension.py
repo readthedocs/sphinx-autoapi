@@ -13,7 +13,7 @@ from sphinx.util.console import darkgreen, bold
 
 from .domains import DotNetDomain, PythonDomain, GoDomain, JavaScriptDomain
 
-default_options = ['members', 'undoc-members', 'private-members', 'special-members', 'inherited-members']
+default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
 
 def ignore_file(app, filename):
@@ -52,12 +52,11 @@ def run_autoapi(app):
     )
 
     app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
-    domain_obj.map()
+    domain_obj.map(options=app.config.autoapi_options)
 
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
         root=app.config.autoapi_root,
-        options=app.config.autoapi_options,
         # TODO: Better way to determine suffix?
         source_suffix=app.config.source_suffix[0],
     )

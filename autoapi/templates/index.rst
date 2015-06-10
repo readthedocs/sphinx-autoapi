@@ -9,10 +9,8 @@ Below is a list of all items that are documented here.
    :glob:
    :maxdepth: 1
 
-   .. Space Saver
-
    {%- for page in pages|sort %}
-   {%- if page.top_level_object %}
+   {% if page.top_level_object %}
    /autoapi/{{ page.id.split('.')|join('/') }}/index
-   {%- endif %}
+   {% endif %}
    {%- endfor %}

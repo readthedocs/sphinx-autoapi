@@ -44,8 +44,9 @@ class PythonMapperBase(object):
     # Create a page in the output for this object.
     top_level_object = False
 
-    def __init__(self, obj, jinja_env=None):
+    def __init__(self, obj, options=None, jinja_env=None):
         self.obj = obj
+        self.options = options
         if jinja_env:
             self.jinja_env = jinja_env
 
@@ -64,6 +65,11 @@ class PythonMapperBase(object):
         ctx.update(**self.get_context_data())
         ctx.update(**kwargs)
         return template.render(**ctx)
+
+    @property
+    def rendered(self):
+        'Shortcut to render an object in templates.'
+        return self.render()
 
     def get_absolute_path(self):
         return "/autoapi/{type}/{name}".format(
@@ -187,10 +193,10 @@ class SphinxMapperBase(object):
         '''
         self.objects[obj.id] = obj
 
-    def map(self):
+    def map(self, options):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data):
+            for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
     def create_class(self, obj, options):
@@ -201,13 +207,13 @@ class SphinxMapperBase(object):
         '''
         raise NotImplementedError
 
-    def output_rst(self, root, source_suffix, options):
+    def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
             if not obj or not obj.top_level_object:
                 continue
 
-            rst = obj.render(options=options)
+            rst = obj.render()
             if not rst:
                 continue
 

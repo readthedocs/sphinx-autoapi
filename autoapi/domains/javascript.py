@@ -32,15 +32,15 @@ class JavaScriptDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, **kwargs):
+    def map(self, options, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:
-                for obj in self.create_class(item):
+                for obj in self.create_class(item, options):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
 
-    def create_class(self, data):
+    def create_class(self, data, options, **kwargs):
         '''Return instance of class based on Javascript data
 
         Data keys handled here:
@@ -67,7 +67,7 @@ class JavaScriptDomain(SphinxMapperBase):
             obj = cls(data, jinja_env=self.jinja_env)
             if 'children' in data:
                 for child_data in data['children']:
-                    for child_obj in self.create_class(child_data):
+                    for child_obj in self.create_class(child_data, options=options):
                         obj.children.append(child_obj)
             yield obj
 

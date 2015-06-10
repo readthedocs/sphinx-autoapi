@@ -39,7 +39,7 @@ class GoDomain(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, _type=None):
+    def create_class(self, data, options, _type=None):
         '''Return instance of class based on Go data
 
         Data keys handled here:

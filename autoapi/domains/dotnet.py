@@ -37,16 +37,16 @@ class DotNetDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, **kwargs):
+    def map(self, options, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data['items']:
-                for obj in self.create_class(item):
+                for obj in self.create_class(item, options):
                     self.add_object(obj)
 
         self.organize_objects()
 
-    def create_class(self, data):
+    def create_class(self, data, options, **kwargs):
         '''
         Return instance of class based on Roslyn type property
 
@@ -71,7 +71,7 @@ class DotNetDomain(SphinxMapperBase):
         except KeyError:
             self.app.warn('Unknown type: %s' % data)
         else:
-            obj = cls(data, jinja_env=self.jinja_env)
+            obj = cls(data, jinja_env=self.jinja_env, options=options)
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more

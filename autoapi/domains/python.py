@@ -31,7 +31,7 @@ class PythonDomain(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, **kwargs):
+    def create_class(self, data, options, **kwargs):
         '''Return instance of class based on Roslyn type property
 
         Data keys handled here:
@@ -52,10 +52,10 @@ class PythonDomain(SphinxMapperBase):
         except KeyError:
             self.app.warn("Unknown Type: %s" % data['type'])
         else:
-            obj = cls(data, jinja_env=self.jinja_env)
+            obj = cls(data, jinja_env=self.jinja_env, options=self.app.config.autoapi_options)
             if 'children' in data:
                 for child_data in data['children']:
-                    for child_obj in self.create_class(child_data):
+                    for child_obj in self.create_class(child_data, options=options):
                         obj.children.append(child_obj)
                         self.add_object(child_obj)
             yield obj
@@ -88,18 +88,19 @@ class PythonBase(PythonMapperBase):
 
     @property
     def private_member(self):
-        return self.name[0] == '_'
+        return self.short_name[0] == '_'
 
     @property
     def special_member(self):
-        return self.name[0:1] == ['_', '_']
+        return self.short_name[0:2] == '__'
 
-    def display(self, options):
-        if self.undoc_member and 'undoc-members' not in options:
+    @property
+    def display(self):
+        if self.undoc_member and 'undoc-members' not in self.options:
             return False
-        if self.private_member and 'private-members' not in options:
+        if self.private_member and 'private-members' not in self.options:
             return False
-        if self.special_member and 'special-members' not in options:
+        if self.special_member and 'special-members' not in self.options:
             return False
         return True
 

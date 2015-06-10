@@ -1,4 +1,4 @@
-{%- if obj.display(options) %}
+{%- if obj.display %}
 
 {%- if is_method %}
 {# Slice self off #}

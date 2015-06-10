@@ -38,3 +38,14 @@ AutoAPI Configuration
 	Keep the AutoAPI generated files on the filesystem after the run.
 	Useful for debugging.
 
+.. confval:: autoapi_options
+
+	Default: ``['members', 'undoc-members', 'private-members', 'special-members']``
+
+	Options for display of the documentation.
+
+	:param members: Display children of an object
+	:param undoc-members: Display undocumented object
+	:param private-members: Display private objects (_foo in Python)
+	:param special-members: Display special objects (__foo__ in Python)
+

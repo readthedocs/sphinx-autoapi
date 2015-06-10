@@ -1,7 +1,7 @@
-{{ obj.name }}
-{{ "-" * obj.name|length }}
+{{ obj.short_name }}
+{{ "-" * obj.short_name|length }}
 
-.. py:class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
+.. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {%- if obj.docstring %}
 
@@ -15,8 +15,7 @@
    
    {%- for method in obj.methods %}
 
-   {% macro render() %}{{ method.render() }}{% endmacro %}
-   {{ render()|indent(3) }}
+   {{ method.rendered|indent(3) }}
    
    {%- endfor %}
 
@@ -25,8 +24,7 @@
    {% block content %}
    {%- for obj_item in obj.children %}
 
-   {%- macro render() %}{{ obj_item.render() }}{% endmacro %}
-   {{ render()|indent(3) }}
+   {{ obj_item.rendered|indent(3) }}
 
    {%- endfor %}
    {% endblock %}
