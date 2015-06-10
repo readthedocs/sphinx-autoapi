@@ -60,3 +60,23 @@ class FullTemplateTests(unittest.TestCase):
                 self.assertIn('This is a fuction template override!', text)
         finally:
             os.chdir('../..')
+
+
+class FullGoTests(unittest.TestCase):
+
+    def test_full_js(self):
+        os.chdir('tests/goexample')
+        try:
+            if os.path.exists('_build'):
+                shutil.rmtree('_build')
+            os.mkdir('_build')
+            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
+
+            with open('_build/text/autoapi/main/index.txt') as fin:
+                text = fin.read().strip()
+                self.assertIn(
+                    'CopyFuncs produces a json-annotated array of Func objects',
+                    text
+                )
+        finally:
+            os.chdir('../..')

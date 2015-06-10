@@ -7,4 +7,4 @@ docs/_build
 docs/autoapi
 readthedocs_build
 tests/*/_build
-tests/*example/
+tests/*/autoapi
