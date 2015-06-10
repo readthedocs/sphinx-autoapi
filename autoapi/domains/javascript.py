@@ -32,6 +32,7 @@ class JavaScriptDomain(AutoAPIDomain):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
+    # Subclassed to iterate over items
     def map(self):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
@@ -64,7 +65,7 @@ class JavaScriptDomain(AutoAPIDomain):
             self.app.warn('Unknown Type: %s' % data)
         else:
             # Recurse for children
-            obj = cls(data)
+            obj = cls(data, jinja_env=self.jinja_env)
             if 'children' in data:
                 for child_data in data['children']:
                     for child_obj in self.create_class(child_data):
@@ -76,7 +77,7 @@ class JavaScriptBase(AutoAPIBase):
 
     language = 'javascript'
 
-    def __init__(self, obj):
+    def __init__(self, obj, **kwargs):
         '''
         Map JSON data into Python object.
 
@@ -84,7 +85,7 @@ class JavaScriptBase(AutoAPIBase):
         so we try and keep standard naming to keep templates more re-usable.
         '''
 
-        super(JavaScriptBase, self).__init__(obj)
+        super(JavaScriptBase, self).__init__(obj, **kwargs)
         self.name = obj.get('name')
         self.id = self.name
 

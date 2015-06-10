@@ -1,8 +1,5 @@
 import json
-import os
 import subprocess
-
-from sphinx.util.osutil import ensuredir
 
 from .base import AutoAPIBase, AutoAPIDomain
 
