@@ -123,8 +123,8 @@ assuming your language has a tool to generate JSON from API documentation.
 The steps to follow:
 
 * Add a new Mapper file in `mappers/`. It's probably easiest to copy an existing one, like the Javascript or Python mappers.
-* Implement the :py:func:`create_class` and :py:func:`read_file` methods on the :py:cls:`SphinxMapperBase`.
-* Implement all appropriate object types on the :py:cls:`PythonMapperBase`
+* Implement the :py:func:`create_class` and :py:func:`read_file` methods on the :py:class:`SphinxMapperBase`.
+* Implement all appropriate object types on the :py:class:`PythonMapperBase`
 * Add a test in the `tests/test_integration.py`, along with an example project for the testing.
 * Include it in the class mapping in `mappers/base.py` and `extension.py`
 

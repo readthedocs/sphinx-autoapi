@@ -3,6 +3,16 @@
 
 .. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
+   {%- if obj.inheritance %}
+
+   .. rubric:: Imports
+
+   {% for import in obj.inheritance %}
+   * {{ import }}
+   {% endfor %}
+
+   {% endif %}
+
    {%- if obj.docstring %}
 
    .. rubric:: Summary

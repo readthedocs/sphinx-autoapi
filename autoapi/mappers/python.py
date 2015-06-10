@@ -75,9 +75,11 @@ class PythonPythonMapper(PythonMapperBase):
         # Optional
         self.imports = obj.get('imports', [])
         self.children = []
-        self.parameters = obj.get('params', [])
+        self.args = obj.get('args', [])
+        self.params = obj.get('params', [])
         self.docstring = obj.get('docstring', '')
         self.methods = obj.get('methods', [])
+        self.inheritance = obj.get('bases', [])
 
         # For later
         self.item_map = defaultdict(list)
