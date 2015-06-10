@@ -7,6 +7,8 @@ import os
 import fnmatch
 import shutil
 
+from sphinx.util.console import darkgreen, bold
+
 from .domains import DotNetDomain, PythonDomain, GoDomain, JavaScriptDomain
 
 
@@ -17,7 +19,7 @@ def ignore_file(app, filename):
     return False
 
 
-def load_yaml(app):
+def run_autoapi(app):
     """
     Load AutoAPI data from the filesystem.
     """
@@ -25,6 +27,7 @@ def load_yaml(app):
     if not app.config.autoapi_dir:
         print "You must configure an autodapi_dir setting."
         return
+
     app.env.autoapi_data = []
 
     mapping = {
@@ -36,15 +39,18 @@ def load_yaml(app):
 
     domain = mapping[app.config.autoapi_type]
     domain_obj = domain(app)
-    app.info('[AutoAPI] Loading Data')
+
+    app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
         pattern=app.config.autoapi_file_pattern,
         dir=os.path.normpath(app.config.autoapi_dir),
         ignore=app.config.autoapi_ignore,
     )
-    app.info('[AutoAPI] Mapping Data')
+
+    app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
     domain_obj.map()
-    app.info('[AutoAPI] Rendering Data')
+
+    app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
         root=app.config.autoapi_root,
         # TODO: Better way to determine suffix?
@@ -55,18 +61,18 @@ def load_yaml(app):
 def build_finished(app, exception):
     if not app.config.autoapi_keep_files:
         if app.verbosity > 1:
-            print "Cleaning autoapi out"
+            app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
         shutil.rmtree(app.config.autoapi_root)
 
 
 def setup(app):
-    app.connect('builder-inited', load_yaml)
+    app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_file_pattern', '*', 'html')
     app.add_config_value('autoapi_dir', '', 'html')
-    app.add_config_value('autoapi_keep_files', True, 'html')
+    app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
