@@ -24,12 +24,6 @@ class DomainTests(unittest.TestCase):
 
         self.application = _application()
 
-    def test_config(self):
-        '''Sphinx app config'''
-        dom = dotnet.DotNetDomain(self.application)
-        self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
-        self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
-
     def test_create_class(self):
         '''Test .NET class instance creation helper'''
         dom = dotnet.DotNetDomain(self.application)
@@ -85,13 +79,9 @@ class DomainTests(unittest.TestCase):
                               {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
                     'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
 
-        def _mock_config(self, key):
-            return 'foo'
-
         with nested(
                 patch('autoapi.domains.dotnet.DotNetDomain.find_files', _mock_find),
                 patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
-                patch('autoapi.domains.dotnet.DotNetDomain.get_config', _mock_config),
         ):
             dom = dotnet.DotNetDomain(self.application)
             dom.load('', '', '')

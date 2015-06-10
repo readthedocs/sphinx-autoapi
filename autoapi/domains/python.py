@@ -31,7 +31,7 @@ class PythonDomain(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data):
+    def create_class(self, data, **kwargs):
         '''Return instance of class based on Roslyn type property
 
         Data keys handled here:
@@ -57,6 +57,7 @@ class PythonDomain(SphinxMapperBase):
                 for child_data in data['children']:
                     for child_obj in self.create_class(child_data):
                         obj.children.append(child_obj)
+                        self.add_object(child_obj)
             yield obj
 
 
@@ -88,6 +89,7 @@ class PythonFunction(PythonBase):
 
 class PythonModule(PythonBase):
     type = 'module'
+    top_level_object = True
 
 
 class PythonClass(PythonBase):

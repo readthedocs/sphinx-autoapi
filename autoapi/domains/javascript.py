@@ -32,7 +32,7 @@ class JavaScriptDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self):
+    def map(self, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:
@@ -107,6 +107,7 @@ class JavaScriptBase(PythonMapperBase):
 class JavaScriptClass(JavaScriptBase):
     type = 'class'
     ref_directive = 'class'
+    top_level_object = True
 
 
 class JavaScriptFunction(JavaScriptBase):

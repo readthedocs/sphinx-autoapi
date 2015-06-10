@@ -1,3 +1,5 @@
+.. Member Template
+
 {# Identention in this file is important #}
 
 .. {{ obj.type }}:: {{ obj.name }}

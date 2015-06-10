@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Sphinx Auto-API
+Sphinx Auto-API Top-level Extension.
+
+This extension allows you to automagically generate API documentation from your project.
 """
 
 import os
@@ -10,6 +12,8 @@ import shutil
 from sphinx.util.console import darkgreen, bold
 
 from .domains import DotNetDomain, PythonDomain, GoDomain, JavaScriptDomain
+
+default_options = ['members', 'undoc-members', 'private-members', 'special-members', 'inherited-members']
 
 
 def ignore_file(app, filename):
@@ -38,7 +42,7 @@ def run_autoapi(app):
     }
 
     domain = mapping[app.config.autoapi_type]
-    domain_obj = domain(app)
+    domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
@@ -53,8 +57,9 @@ def run_autoapi(app):
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
         root=app.config.autoapi_root,
+        options=app.config.autoapi_options,
         # TODO: Better way to determine suffix?
-        source_suffix=app.config.source_suffix[0]
+        source_suffix=app.config.source_suffix[0],
     )
 
 
@@ -71,6 +76,7 @@ def setup(app):
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
+    app.add_config_value('autoapi_options', default_options, 'html')
     app.add_config_value('autoapi_file_pattern', '*', 'html')
     app.add_config_value('autoapi_dir', '', 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')

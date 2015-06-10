@@ -1,20 +1,24 @@
 {{ obj.name }}
-{{ "-" * obj.name|length }}
+{{ "~" * obj.name|length }}
+
+{#
 
 {% block toc %}
 
 {% if obj.children %}
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
-   {% for item in obj.children|sort %}
+   {% for item in obj.children %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
    {%- endfor %}
 
 {% endif %}
 
 {% endblock %}
+
+#}
 
 {% if obj.docstring %}
 
@@ -30,9 +34,9 @@
 
 
 {% block content %}
-{%- for obj_item in obj.children|sort %}
+{%- for obj_item in obj.children %}
 
-{% macro render() %}{{ obj_item.render() }}{% endmacro %}
+{%- macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
 
 {%- endfor %}

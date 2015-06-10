@@ -37,7 +37,7 @@ class DotNetDomain(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self):
+    def map(self, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data['items']:
@@ -167,7 +167,6 @@ class DotNetBase(PythonMapperBase):
     '''Base .NET object representation'''
 
     language = 'dotnet'
-    top_level_object = False
 
     def __init__(self, obj, **kwargs):
         super(DotNetBase, self).__init__(obj, **kwargs)

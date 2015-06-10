@@ -40,15 +40,16 @@ class PythonMapperBase(object):
 
     language = 'base'
     type = 'base'
+    # Create a page in the output for this object.
+    top_level_object = False
 
     def __init__(self, obj, jinja_env=None):
         self.obj = obj
         if jinja_env:
             self.jinja_env = jinja_env
 
-    def render(self, ctx=None):
-        if not ctx:
-            ctx = {}
+    def render(self, **kwargs):
+        ctx = {}
         try:
             template = self.jinja_env.get_template(
                 '{language}/{type}.rst'.format(language=self.language, type=self.type)
@@ -60,6 +61,7 @@ class PythonMapperBase(object):
             )
 
         ctx.update(**self.get_context_data())
+        ctx.update(**kwargs)
         return template.render(**ctx)
 
     def get_absolute_path(self):
@@ -108,6 +110,7 @@ class SphinxMapperBase(object):
     '''Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     :param app: Sphinx application instance
+
     '''
 
     # Mapping of {filepath -> raw data}
@@ -118,14 +121,14 @@ class SphinxMapperBase(object):
     namespaces = {}
     top_level_objects = {}
 
-    def __init__(self, app):
+    def __init__(self, app, template_dir=None):
         self.app = app
 
         TEMPLATE_PATHS = [TEMPLATE_DIR]
-        USER_TEMPLATE_DIR = self.get_config('autoapi_template_dir')
-        if USER_TEMPLATE_DIR:
+
+        if template_dir:
             # Put at the front so it's loaded first
-            TEMPLATE_PATHS.insert(0, USER_TEMPLATE_DIR)
+            TEMPLATE_PATHS.insert(0, template_dir)
 
         self.jinja_env = Environment(
             loader=FileSystemLoader(TEMPLATE_PATHS)
@@ -182,17 +185,13 @@ class SphinxMapperBase(object):
         '''
         self.objects[obj.id] = obj
 
-    def get_config(self, key, default=None):
-        if self.app.config is not None:
-            return getattr(self.app.config, key, default)
-
     def map(self):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for obj in self.create_class(data):
                 self.add_object(obj)
 
-    def create_class(self, obj):
+    def create_class(self, obj, options):
         '''
         Create class object.
 
@@ -200,13 +199,13 @@ class SphinxMapperBase(object):
         '''
         raise NotImplementedError
 
-    def output_rst(self, root, source_suffix):
+    def output_rst(self, root, source_suffix, options):
         for id, obj in self.objects.items():
 
-            if not obj:
+            if not obj or not obj.top_level_object:
                 continue
 
-            rst = obj.render()
+            rst = obj.render(options=options)
             if not rst:
                 continue
 
@@ -223,6 +222,12 @@ class SphinxMapperBase(object):
 
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
+        pages = self.objects.values()
+        # for key, item in self.objects.items():
+        #     if key.count('.') == 1:
+        #         top_level_pages.append(item)
+        #     else:
+        #         print key, key.find('.')
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render())
+            top_level_file.write(content.render(pages=pages))

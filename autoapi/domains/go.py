@@ -165,6 +165,7 @@ class GoFunction(GoBase):
 class GoPackage(GoBase):
     type = 'package'
     ref_directive = 'pkg'
+    top_level_object = True
 
 
 class GoType(GoBase):

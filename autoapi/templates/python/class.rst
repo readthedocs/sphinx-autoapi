@@ -1,6 +1,9 @@
+{{ obj.name }}
+{{ "-" * obj.name|length }}
+
 .. py:class:: {{ obj.name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
-   {% if obj.docstring %}
+   {%- if obj.docstring %}
 
    .. rubric:: Summary
 
@@ -8,9 +11,9 @@
 
    {% endif %}
 
-   {% if obj.methods %}
+   {%- if obj.methods %}
    
-   {% for method in obj.methods %}
+   {%- for method in obj.methods %}
 
    {% macro render() %}{{ method.render() }}{% endmacro %}
    {{ render()|indent(3) }}
@@ -18,14 +21,12 @@
    {%- endfor %}
 
    {% endif %}
-   
 
    {% block content %}
-   {%- for obj_item in obj.children|sort %}
+   {%- for obj_item in obj.children %}
 
-   {% macro render() %}{{ obj_item.render() }}{% endmacro %}
-   {{ render()|indent(0) }}
+   {%- macro render() %}{{ obj_item.render() }}{% endmacro %}
+   {{ render()|indent(3) }}
 
    {%- endfor %}
    {% endblock %}
-
