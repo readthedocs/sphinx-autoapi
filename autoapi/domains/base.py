@@ -1,5 +1,6 @@
 import os
 import fnmatch
+from collections import OrderedDict
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen
@@ -114,12 +115,13 @@ class SphinxMapperBase(object):
     '''
 
     # Mapping of {filepath -> raw data}
-    paths = {}
+    paths = OrderedDict()
     # Mapping of {object id -> Python Object}
-    objects = {}
-
-    namespaces = {}
-    top_level_objects = {}
+    objects = OrderedDict()
+    # Mapping of {namespace id -> Python Object}
+    namespaces = OrderedDict()
+    # Mapping of {namespace id -> Python Object}
+    top_level_objects = OrderedDict()
 
     def __init__(self, app, template_dir=None):
         self.app = app
