@@ -9,7 +9,7 @@ from sphinx.util.osutil import ensuredir
 from ..settings import TEMPLATE_DIR
 
 
-class AutoAPIBase(object):
+class PythonMapperBase(object):
 
     language = 'base'
     type = 'base'
@@ -48,9 +48,9 @@ class AutoAPIBase(object):
 
     def __lt__(self, other):
         '''Object sorting comparison'''
-        if isinstance(other, AutoAPIBase):
+        if isinstance(other, PythonMapperBase):
             return self.id < other.id
-        return super(AutoAPIBase, self).__lt__(other)
+        return super(PythonMapperBase, self).__lt__(other)
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
@@ -76,9 +76,9 @@ class AutoAPIBase(object):
             return '.'.join(pieces)
 
 
-class AutoAPIDomain(object):
+class SphinxMapperBase(object):
 
-    '''Base class for domain handling
+    '''Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     :param app: Sphinx application instance
     '''

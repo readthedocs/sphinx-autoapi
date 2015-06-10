@@ -2,10 +2,10 @@ from collections import defaultdict
 
 from epyparse import parsed
 
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class PythonDomain(AutoAPIDomain):
+class PythonDomain(SphinxMapperBase):
 
     '''Auto API domain handler for Python
 
@@ -60,7 +60,7 @@ class PythonDomain(AutoAPIDomain):
             yield obj
 
 
-class PythonBase(AutoAPIBase):
+class PythonBase(PythonMapperBase):
 
     language = 'python'
 

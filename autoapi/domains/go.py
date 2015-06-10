@@ -1,10 +1,10 @@
 import json
 import subprocess
 
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class GoDomain(AutoAPIDomain):
+class GoDomain(SphinxMapperBase):
 
     '''Auto API domain handler for Go
 
@@ -89,7 +89,7 @@ class GoDomain(AutoAPIDomain):
                 yield obj
 
 
-class GoBase(AutoAPIBase):
+class GoBase(PythonMapperBase):
 
     language = 'go'
     inverted_names = False

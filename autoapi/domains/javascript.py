@@ -1,12 +1,11 @@
-import os
 import json
 import subprocess
 
 
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class JavaScriptDomain(AutoAPIDomain):
+class JavaScriptDomain(SphinxMapperBase):
 
     '''Auto API domain handler for Javascript
 
@@ -73,7 +72,7 @@ class JavaScriptDomain(AutoAPIDomain):
             yield obj
 
 
-class JavaScriptBase(AutoAPIBase):
+class JavaScriptBase(PythonMapperBase):
 
     language = 'javascript'
 

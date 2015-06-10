@@ -1,15 +1,12 @@
-import os
 from collections import defaultdict
 import yaml
 
-from sphinx.util.osutil import ensuredir
-
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 MADE = set()
 
 
-class DotNetDomain(AutoAPIDomain):
+class DotNetDomain(SphinxMapperBase):
 
     '''Auto API domain handler for .NET
 
@@ -165,7 +162,7 @@ class DotNetDomain(AutoAPIDomain):
     #         top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
-class DotNetBase(AutoAPIBase):
+class DotNetBase(PythonMapperBase):
 
     '''Base .NET object representation'''
 
