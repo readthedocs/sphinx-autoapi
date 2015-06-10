@@ -1,6 +1,4 @@
 import os
-import yaml
-import json
 import fnmatch
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
@@ -140,7 +138,7 @@ class AutoAPIDomain(object):
                 len(files_to_read)):
             yield _path
 
-    def read_file(self, path, format='yaml'):
+    def read_file(self, path, **kwargs):
         '''Read file input into memory
 
         :param path: Path of file to read
@@ -185,7 +183,12 @@ class AutoAPIDomain(object):
             if not rst:
                 continue
 
-            detail_dir = os.path.join(root, *id.split('.'))
+            try:
+                filename = id.split('(')[0]
+            except IndexError:
+                filename = id
+            filename = filename.replace('#', '-')
+            detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
             with open(path, 'w+') as detail_file:
