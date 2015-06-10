@@ -33,7 +33,7 @@ AutoAPI Configuration
 
 .. confval:: autoapi_keep_files
 
-	Default: ``True``
+	Default: ``False``
 
 	Keep the AutoAPI generated files on the filesystem after the run.
 	Useful for debugging.

@@ -20,6 +20,5 @@ autoapi_type = 'python'
 autoapi_dir = 'example'
 autoapi_file_pattern = '*.py'
 autoapi_template_dir = 'template_overrides'
-autoapi_keep_files = False
 
 exclude_patterns = [autoapi_template_dir]
