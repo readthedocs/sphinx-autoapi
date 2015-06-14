@@ -1,11 +1,10 @@
-import os
+import json
+import subprocess
 
-from sphinx.util.osutil import ensuredir
-
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class GoDomain(AutoAPIDomain):
+class GoSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Go
 
@@ -14,30 +13,38 @@ class GoDomain(AutoAPIDomain):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    # def read_file(self, path, format=None):
-    #     '''Read file input into memory, returning deserialized objects
+    def load(self, pattern, dir, ignore=[]):
+        '''
+        Load objects from the filesystem into the ``paths`` dictionary.
 
-    #     :param path: Path of file to read
-    #     '''
-    # TODO support JSON here
-    # TODO sphinx way of reporting errors in logs?
+        '''
+        data = self.read_file(dir)
+        if data:
+            self.paths[dir] = data
 
-    #     try:
-    #         raw_json = os.system('godocjson %s' % path)
-    #         parsed_data = json.loads(raw_json)
-    #         return parsed_data
-    #     except IOError:
-    #         print Warning('Error reading file: {0}'.format(path))
-    #     except TypeError:
-    #         print Warning('Error reading file: {0}'.format(path))
-    #     return None
+    def read_file(self, path, **kwargs):
+        '''Read file input into memory, returning deserialized objects
 
-    def create_class(self, data):
+        :param path: Path of file to read
+        '''
+        # TODO support JSON here
+        # TODO sphinx way of reporting errors in logs?
+
+        try:
+            parsed_data = json.loads(subprocess.check_output(['godocjson', path]))
+            return parsed_data
+        except IOError:
+            self.app.warn('Error reading file: {0}'.format(path))
+        except TypeError:
+            self.app.warn('Error reading file: {0}'.format(path))
+        return None
+
+    def create_class(self, data, options=None, _type=None):
         '''Return instance of class based on Go data
 
         Data keys handled here:
 
-            type
+            _type
                 Set the object class
 
             consts, types, vars, funcs
@@ -51,7 +58,12 @@ class GoDomain(AutoAPIDomain):
             in ALL_CLASSES
         )
         try:
-            cls = obj_map[data['type']]
+            # Contextual type data from children recursion
+            if _type:
+                self.app.debug('Forcing Go Type %s' % _type)
+                cls = obj_map[_type]
+            else:
+                cls = obj_map[data['type']]
         except KeyError:
             self.app.warn('Unknown Type: %s' % data)
         else:
@@ -67,46 +79,23 @@ class GoDomain(AutoAPIDomain):
                         yield obj
             else:
                 # Recurse for children
-                obj = cls(data, env=self.jinja_env)
+                obj = cls(data, jinja_env=self.jinja_env)
                 for child_type in ['consts', 'types', 'vars', 'funcs']:
                     for child_data in data.get(child_type, []):
-                        obj.children += list(self.create_class(child_data))
+                        obj.children += list(self.create_class(
+                            child_data,
+                            _type=child_type.replace('consts', 'const').replace('types', 'type').replace('vars', 'variable').replace('funcs', 'func')
+                        ))
                 yield obj
 
-    def full(self):
-        self.get_objects(self.get_config('autoapi_file_pattern'), format='json')
-        self.generate_output()
-        self.write_indexes()
 
-    def generate_output(self):
-        for obj in self.app.env.autoapi_data:
-
-            if not obj:
-                continue
-
-            rst = obj.render()
-            # Detail
-            try:
-                filename = obj.name.split('(')[0]
-            except IndexError:
-                filename = obj.name
-            detail_dir = os.path.join(self.get_config('autoapi_root'),
-                                      *filename.split('.'))
-            ensuredir(detail_dir)
-            # TODO: Better way to determine suffix?
-            path = os.path.join(detail_dir, '%s%s' % ('index', self.get_config('source_suffix')[0]))
-            if rst:
-                with open(path, 'w+') as detail_file:
-                    detail_file.write(rst.encode('utf-8'))
-
-
-class GoBase(AutoAPIBase):
+class GoPythonMapper(PythonMapperBase):
 
     language = 'go'
     inverted_names = False
 
-    def __init__(self, obj):
-        super(GoBase, self).__init__(obj)
+    def __init__(self, obj, **kwargs):
+        super(GoPythonMapper, self).__init__(obj, **kwargs)
         self.name = obj.get('name') or obj.get('packageName')
         self.id = self.name
 
@@ -153,32 +142,33 @@ class GoBase(AutoAPIBase):
         return self.obj.get('methods', [])
 
 
-class GoVariable(GoBase):
+class GoVariable(GoPythonMapper):
     type = 'var'
     inverted_names = True
 
 
-class GoMethod(GoBase):
+class GoMethod(GoPythonMapper):
     type = 'method'
     ref_directive = 'meth'
 
 
-class GoConstant(GoBase):
+class GoConstant(GoPythonMapper):
     type = 'const'
     inverted_names = True
 
 
-class GoFunction(GoBase):
+class GoFunction(GoPythonMapper):
     type = 'func'
     ref_type = 'function'
 
 
-class GoPackage(GoBase):
+class GoPackage(GoPythonMapper):
     type = 'package'
     ref_directive = 'pkg'
+    top_level_object = True
 
 
-class GoType(GoBase):
+class GoType(GoPythonMapper):
     type = 'type'
 
 

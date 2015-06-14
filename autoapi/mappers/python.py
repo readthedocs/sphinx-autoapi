@@ -2,10 +2,10 @@ from collections import defaultdict
 
 from epyparse import parsed
 
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class PythonDomain(AutoAPIDomain):
+class PythonSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Python
 
@@ -26,12 +26,12 @@ class PythonDomain(AutoAPIDomain):
             parsed_data = parsed(path)
             return parsed_data
         except IOError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Roslyn type property
 
         Data keys handled here:
@@ -52,22 +52,22 @@ class PythonDomain(AutoAPIDomain):
         except KeyError:
             self.app.warn("Unknown Type: %s" % data['type'])
         else:
-            obj = cls(data, jinja_env=self.jinja_env)
+            obj = cls(data, jinja_env=self.jinja_env, options=self.app.config.autoapi_options)
             if 'children' in data:
                 for child_data in data['children']:
-                    for child_obj in self.create_class(child_data):
+                    for child_obj in self.create_class(child_data, options=options):
                         obj.children.append(child_obj)
+                        self.add_object(child_obj)
             yield obj
 
 
-class PythonBase(AutoAPIBase):
+class PythonPythonMapper(PythonMapperBase):
 
     language = 'python'
 
-    def __init__(self, obj, jinja_env):
-        super(PythonBase, self).__init__(obj)
+    def __init__(self, obj, **kwargs):
+        super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self.jinja_env = jinja_env
         # Always exist
         self.id = obj['fullname']
         self.name = self.obj.get('fullname', self.id)
@@ -75,21 +75,46 @@ class PythonBase(AutoAPIBase):
         # Optional
         self.imports = obj.get('imports', [])
         self.children = []
-        self.parameters = obj.get('params', [])
+        self.args = obj.get('args', [])
+        self.params = obj.get('params', [])
         self.docstring = obj.get('docstring', '')
         self.methods = obj.get('methods', [])
+        self.inheritance = obj.get('bases', [])
 
         # For later
         self.item_map = defaultdict(list)
 
+    @property
+    def undoc_member(self):
+        return self.docstring == ''
 
-class PythonFunction(PythonBase):
+    @property
+    def private_member(self):
+        return self.short_name[0] == '_'
+
+    @property
+    def special_member(self):
+        return self.short_name[0:2] == '__'
+
+    @property
+    def display(self):
+        if self.undoc_member and 'undoc-members' not in self.options:
+            return False
+        if self.private_member and 'private-members' not in self.options:
+            return False
+        if self.special_member and 'special-members' not in self.options:
+            return False
+        return True
+
+
+class PythonFunction(PythonPythonMapper):
     type = 'function'
 
 
-class PythonModule(PythonBase):
+class PythonModule(PythonPythonMapper):
     type = 'module'
+    top_level_object = True
 
 
-class PythonClass(PythonBase):
+class PythonClass(PythonPythonMapper):
     type = 'class'

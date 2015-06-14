@@ -1,12 +1,11 @@
-import os
 import json
 import subprocess
 
 
-from .base import AutoAPIBase, AutoAPIDomain
+from .base import PythonMapperBase, SphinxMapperBase
 
 
-class JavaScriptDomain(AutoAPIDomain):
+class JavaScriptSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for Javascript
 
@@ -27,20 +26,21 @@ class JavaScriptDomain(AutoAPIDomain):
             parsed_data = json.loads(subprocess.check_output(['jsdoc', '-X', path]))
             return parsed_data
         except IOError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
-            print Warning('Error reading file: {0}'.format(path))
+            self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def map(self):
+    # Subclassed to iterate over items
+    def map(self, options=None, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:
-                for obj in self.create_class(item):
+                for obj in self.create_class(item, options):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
 
-    def create_class(self, data):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Javascript data
 
         Data keys handled here:
@@ -64,19 +64,19 @@ class JavaScriptDomain(AutoAPIDomain):
             self.app.warn('Unknown Type: %s' % data)
         else:
             # Recurse for children
-            obj = cls(data)
+            obj = cls(data, jinja_env=self.jinja_env)
             if 'children' in data:
                 for child_data in data['children']:
-                    for child_obj in self.create_class(child_data):
+                    for child_obj in self.create_class(child_data, options=options):
                         obj.children.append(child_obj)
             yield obj
 
 
-class JavaScriptBase(AutoAPIBase):
+class JavaScriptPythonMapper(PythonMapperBase):
 
     language = 'javascript'
 
-    def __init__(self, obj):
+    def __init__(self, obj, **kwargs):
         '''
         Map JSON data into Python object.
 
@@ -84,7 +84,7 @@ class JavaScriptBase(AutoAPIBase):
         so we try and keep standard naming to keep templates more re-usable.
         '''
 
-        super(JavaScriptBase, self).__init__(obj)
+        super(JavaScriptPythonMapper, self).__init__(obj, **kwargs)
         self.name = obj.get('name')
         self.id = self.name
 
@@ -104,27 +104,28 @@ class JavaScriptBase(AutoAPIBase):
         pass
 
 
-class JavaScriptClass(JavaScriptBase):
+class JavaScriptClass(JavaScriptPythonMapper):
     type = 'class'
     ref_directive = 'class'
+    top_level_object = True
 
 
-class JavaScriptFunction(JavaScriptBase):
+class JavaScriptFunction(JavaScriptPythonMapper):
     type = 'function'
     ref_type = 'func'
 
 
-class JavaScriptData(JavaScriptBase):
+class JavaScriptData(JavaScriptPythonMapper):
     type = 'data'
     ref_directive = 'data'
 
 
-class JavaScriptMember(JavaScriptBase):
+class JavaScriptMember(JavaScriptPythonMapper):
     type = 'member'
     ref_directive = 'member'
 
 
-class JavaScriptAttribute(JavaScriptBase):
+class JavaScriptAttribute(JavaScriptPythonMapper):
     type = 'attribute'
     ref_directive = 'attr'
 

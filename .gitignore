@@ -1,6 +1,10 @@
-*.pyc
-_build
-_build_rtd
-readthedocs_build
-docs/autoapi
 *.egg-info
+*.pyc
+*.swp
+.doctrees
+_build_rtd
+docs/_build
+docs/autoapi
+readthedocs_build
+tests/*/_build
+tests/*/autoapi
