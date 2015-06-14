@@ -156,13 +156,16 @@ class SphinxMapperBase(object):
         files_to_read = []
         for root, dirnames, filenames in os.walk(dir):
             for filename in fnmatch.filter(filenames, pattern):
+                skip = False
 
                 # Skip ignored files
                 for ignore_pattern in ignore:
                     if fnmatch.fnmatch(filename, ignore_pattern):
-                        print "Ignoring %s/%s" % (root, filename)
-                        continue
+                        self.app.info("Ignoring %s/%s" % (root, filename))
+                        skip = True
 
+                if skip:
+                    continue
                 # Make sure the path is full
                 if os.path.isabs(filename):
                     files_to_read.append(os.path.join(filename))

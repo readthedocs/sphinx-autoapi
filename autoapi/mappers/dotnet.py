@@ -1,5 +1,10 @@
+import os
 from collections import defaultdict
+import subprocess
 import yaml
+
+from sphinx.util.osutil import ensuredir
+
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -18,6 +23,19 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     top_namespaces = {}
 
+    def load(self, pattern, dir, ignore=[]):
+        '''
+        Load objects from the filesystem into the ``paths`` dictionary.
+
+        '''
+        for path in self.find_files(pattern='project.json', dir=dir, ignore=ignore):
+            subprocess.check_output(['BuildMeta', '/target:Build', path])
+        # We now have yaml files
+        for xdoc_path in self.find_files(pattern='*.yml', dir='xdoc', ignore=ignore):
+            data = self.read_file(path=xdoc_path)
+            if data:
+                self.paths[xdoc_path] = data
+
     def read_file(self, path, **kwargs):
         '''Read file input into memory, returning deserialized objects
 
@@ -30,7 +48,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
             with open(path, 'r') as handle:
                 parsed_data = yaml.safe_load(handle)
                 return parsed_data
-        except IOError:
             self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
             self.app.warn('Error reading file: {0}'.format(path))
@@ -76,10 +93,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
             # Append child objects
             # TODO this should recurse in the case we're getting back more
             # complex argument listings
-            # if 'children' in data:
-            #     for item in data['children']:
-            #         child_obj = self.create_class(item)
-            #         obj.children.append(child_obj)
 
             yield obj
 
@@ -103,6 +116,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 if child_object:
                     obj.item_map[child_object.plural].append(child_object)
                     obj.children.append(child_object)
+
             for key in obj.item_map:
                 obj.item_map[key].sort()
 
@@ -114,13 +128,13 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 ns_obj = self.top_namespaces.get(namespace)
                 if ns_obj is None or type(ns_obj) != DotNetNamespace:
                     print "Adding Namespace %s" % namespace
-                    for ns_obj in self.create_class({'id': namespace,
+                    for ns_obj in self.create_class({'uid': namespace,
                                                      'type': 'namespace'}):
                         self.top_namespaces[ns_obj.id] = ns_obj
                 if obj not in ns_obj.children and namespace != obj.id:
                     ns_obj.children.append(obj)
 
-        for obj in self.top_level_objects.values():
+        for obj in self.namespaces.values():
             _render_children(obj)
             _recurse_ns(obj)
 
@@ -133,33 +147,32 @@ class DotNetSphinxMapper(SphinxMapperBase):
             if len(ns.children) == 0:
                 del self.namespaces[key]
 
-    # def output_rst(self, root, source_suffix):
-    #     for obj in self.top_level_objects.values():
+    def output_rst(self, root, source_suffix):
+        for id, obj in self.objects.items():
 
-    #         if not obj:
-    #             continue
+            if not obj or not obj.top_level_object:
+                continue
 
-    #         rst = obj.render()
-    #         if not rst:
-    #             continue
+            rst = obj.render()
+            if not rst:
+                continue
 
-    #         # Detail
-    #         try:
-    #             filename = obj.name.split('(')[0]
-    #         except IndexError:
-    #             filename = obj.name
-    #         detail_dir = os.path.join(root, *filename.split('.'))
-    #         ensuredir(detail_dir)
-    #         # TODO: Better way to determine suffix?
-    #         path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
-    #         with open(path, 'w+') as detail_file:
-    #             detail_file.write(rst.encode('utf-8'))
+            try:
+                filename = obj.name.split('(')[0]
+            except IndexError:
+                filename = id
+            filename = filename.replace('#', '-')
+            detail_dir = os.path.join(root, *filename.split('.'))
+            ensuredir(detail_dir)
+            path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
+            with open(path, 'w+') as detail_file:
+                detail_file.write(rst.encode('utf-8'))
 
-    #     # Write Indexes
-    #     top_level_index = os.path.join(root, 'index.rst')
-    #     with open(top_level_index, 'w+') as top_level_file:
-    #         content = self.jinja_env.get_template('index.rst')
-    #         top_level_file.write(content.render(pages=self.namespaces.values()))
+        # Render Top Index
+        top_level_index = os.path.join(root, 'index.rst')
+        with open(top_level_index, 'w+') as top_level_file:
+            content = self.jinja_env.get_template('index.rst')
+            top_level_file.write(content.render(pages=self.namespaces.values()))
 
 
 class DotNetPythonMapper(PythonMapperBase):
@@ -172,7 +185,7 @@ class DotNetPythonMapper(PythonMapperBase):
         super(DotNetPythonMapper, self).__init__(obj, **kwargs)
 
         # Always exist
-        self.id = obj['id']
+        self.id = obj.get('uid', obj.get('id'))
 
         # Optional
         self.fullname = obj.get('fullName')
@@ -199,7 +212,7 @@ class DotNetPythonMapper(PythonMapperBase):
                 if 'id' in param:
                     self.parameters.append({
                         'name': param.get('id'),
-                        'type': param.get('type', {}).get('id', None),
+                        'type': param.get('type'),
                         'desc': param.get('description', '')
                     })
 
@@ -207,8 +220,8 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
-        self.inheritance = [DotNetClass({'id': iobj['id'], 'name': iobj['name']})
-                            for iobj in obj.get('inheritance', [])]
+        self.inheritance = [DotNetClass({'uid': name, 'name': name})
+                            for name in obj.get('inheritance', [])]
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,

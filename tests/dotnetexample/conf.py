@@ -12,11 +12,12 @@ language = None
 exclude_patterns = ['_build']
 pygments_style = 'sphinx'
 todo_include_todos = False
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 htmlhelp_basename = 'dotnetexampledoc'
 extensions = ['autoapi.extension', 'sphinxcontrib.dotnetdomain']
 
 autoapi_type = 'dotnet'
 autoapi_dir = 'example'
-autoapi_file_pattern = '*.yml'
+autoapi_file_pattern = 'project.json'
+autoapi_ignore = ['toc.yml', 'index.yml']
