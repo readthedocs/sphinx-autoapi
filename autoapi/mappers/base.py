@@ -139,7 +139,10 @@ class SphinxMapperBase(object):
             TEMPLATE_PATHS.insert(0, template_dir)
 
         self.jinja_env = Environment(
-            loader=FileSystemLoader(TEMPLATE_PATHS)
+            loader=FileSystemLoader(TEMPLATE_PATHS),
+            # Kill this to fix rendering for now
+            # trim_blocks=True,
+            # lstrip_blocks=True,
         )
 
     def load(self, pattern, dir, ignore=[]):

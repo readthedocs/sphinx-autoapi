@@ -5,10 +5,7 @@ import yaml
 
 from sphinx.util.osutil import ensuredir
 
-
 from .base import PythonMapperBase, SphinxMapperBase
-
-MADE = set()
 
 
 class DotNetSphinxMapper(SphinxMapperBase):
@@ -41,13 +38,11 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         :param path: Path of file to read
         '''
-        # TODO support JSON here
-        # TODO sphinx way of reporting errors in logs?
-
         try:
             with open(path, 'r') as handle:
                 parsed_data = yaml.safe_load(handle)
                 return parsed_data
+        except IOError:
             self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
             self.app.warn('Error reading file: {0}'.format(path))
@@ -102,7 +97,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
         :param obj: Instance of a .NET object
         '''
         if obj.top_level_object:
-            self.top_level_objects[obj.name] = obj
             if type(obj) == DotNetNamespace:
                 self.namespaces[obj.name] = obj
         self.objects[obj.id] = obj
@@ -134,7 +128,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 if obj not in ns_obj.children and namespace != obj.id:
                     ns_obj.children.append(obj)
 
-        for obj in self.namespaces.values():
+        for obj in self.objects.values():
             _render_children(obj)
             _recurse_ns(obj)
 
@@ -186,6 +180,7 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Always exist
         self.id = obj.get('uid', obj.get('id'))
+        self.name = obj.get('fullName', self.id)
 
         # Optional
         self.fullname = obj.get('fullName')
@@ -226,18 +221,6 @@ class DotNetPythonMapper(PythonMapperBase):
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
                                      id=self.id)
-
-    @property
-    def name(self):
-        '''Return short name for member id
-
-        Use C# qualified name from deserialized data first, falling back to the
-        member id minus the namespace prefix
-        '''
-        try:
-            return self.obj['fullName']
-        except KeyError:
-            return self.id
 
     @property
     def short_name(self):
