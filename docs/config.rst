@@ -1,7 +1,8 @@
 AutoAPI Configuration
----------------------
+=====================
 
-.. rubric:: Commonly used
+Configuration Options
+---------------------
 
 .. confval:: autoapi_dir
 
@@ -23,7 +24,8 @@ AutoAPI Configuration
 
         You can see the existing files in the `autoapi/templates`_ directory.
 
-.. rubric:: Customization
+Customization Options
+---------------------
 
 .. confval:: autoapi_options
 
@@ -49,7 +51,8 @@ AutoAPI Configuration
 
 	Directory to output the AutoAPI files into
 
-.. rubric:: Debugging
+Debugging Options
+-----------------
 
 .. confval:: autoapi_keep_files
 
