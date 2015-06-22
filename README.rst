@@ -114,9 +114,17 @@ Currently Implemented
 * Go
 * Javascript
 
-Future
-------
+Adding a new language
+---------------------
 
-Our goal is to support all languages.
-Implementation is quite simple,
-we'll be adding more docs on implementation soon.
+Adding a new language should only take a couple of hours,
+assuming your language has a tool to generate JSON from API documentation.
+
+The steps to follow:
+
+* Add a new Mapper file in `mappers/`. It's probably easiest to copy an existing one, like the Javascript or Python mappers.
+* Implement the :py:func:`create_class` and :py:func:`read_file` methods on the :py:class:`SphinxMapperBase`.
+* Implement all appropriate object types on the :py:class:`PythonMapperBase`
+* Add a test in the `tests/test_integration.py`, along with an example project for the testing.
+* Include it in the class mapping in `mappers/base.py` and `extension.py`
+

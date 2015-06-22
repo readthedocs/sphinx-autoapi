@@ -1,12 +1,11 @@
 '''Test .NET autoapi domain'''
 
 import unittest
-import time
 from contextlib import nested
 
 from mock import patch
 
-from autoapi.domains import dotnet
+from autoapi.mappers import dotnet
 
 
 class DomainTests(unittest.TestCase):
@@ -25,15 +24,10 @@ class DomainTests(unittest.TestCase):
 
         self.application = _application()
 
-    def test_config(self):
-        '''Sphinx app config'''
-        dom = dotnet.DotNetDomain(self.application)
-        self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
-        self.assertEqual(dom.get_config('autoapi_dir'), '/tmp/autoapi/tmp')
-
     def test_create_class(self):
         '''Test .NET class instance creation helper'''
-        dom = dotnet.DotNetDomain(self.application)
+        dom = dotnet.DotNetSphinxMapper(self.application)
+
         def _create_class(data):
             return list(dom.create_class(data))[0]
         cls = _create_class({'id': 'Foo.Bar', 'type': 'Namespace'})
@@ -60,7 +54,8 @@ class DomainTests(unittest.TestCase):
         self.assertIsInstance(cls, dotnet.DotNetEvent)
 
     def test_create_class_with_children(self):
-        dom = dotnet.DotNetDomain(self.application)
+        dom = dotnet.DotNetSphinxMapper(self.application)
+
         def _create_class(data):
             return list(dom.create_class(data))[0]
         cls = _create_class({'id': 'Foo.Bar',
@@ -76,7 +71,7 @@ class DomainTests(unittest.TestCase):
         '''Test basic get objects'''
         objs = []
 
-        def _mock_find(self, pattern):
+        def _mock_find(self, pattern, **kwargs):
             return {'items': ['foo', 'bar']}
 
         def _mock_read(self, path):
@@ -84,19 +79,13 @@ class DomainTests(unittest.TestCase):
                               {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
                     'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
 
-        def _mock_add(self, obj):
-            objs.append(obj)
-
-        def _mock_config(self, key):
-            return 'foo'
-
         with nested(
-                patch('autoapi.domains.dotnet.DotNetDomain.find_files', _mock_find),
-                patch('autoapi.domains.dotnet.DotNetDomain.read_file', _mock_read),
-                patch('autoapi.domains.dotnet.DotNetDomain.get_config', _mock_config),
-                ):
-            dom = dotnet.DotNetDomain(self.application)
-            dom.get_objects('*')
+                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find),
+                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read),
+        ):
+            dom = dotnet.DotNetSphinxMapper(self.application)
+            dom.load('', '', '')
+            dom.map()
             objs = dom.objects
             self.assertEqual(len(objs), 2)
             self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')

@@ -1,22 +1,18 @@
 {{ obj.name }}
-{{ "-" * obj.name|length }}
+{{ "~" * obj.name|length }}
 
-{% block toc %}
 
-{% if obj.children %}
+{%- if obj.imports %}
 
-.. toctree::
-   :maxdepth: 4
+.. rubric:: Imports
 
-   {% for item in obj.children|sort %}
-   /autoapi/{{ item.id.split('.')|join('/') }}/index
-   {%- endfor %}
+{% for import in obj.imports %}
+* {{ import }}
+{% endfor %}
 
 {% endif %}
 
-{% endblock %}
-
-{% if obj.docstring %}
+{%- if obj.docstring %}
 
 .. rubric:: Summary
 
@@ -30,10 +26,9 @@
 
 
 {% block content %}
-{%- for obj_item in obj.children|sort %}
+{%- for obj_item in obj.children %}
 
-{% macro render() %}{{ obj_item.render() }}{% endmacro %}
-{{ render()|indent(0) }}
+{{ obj_item.rendered|indent(0) }}
 
 {%- endfor %}
 {% endblock %}

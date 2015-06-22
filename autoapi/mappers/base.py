@@ -1,7 +1,6 @@
 import os
-import yaml
-import json
 import fnmatch
+from collections import OrderedDict
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen
@@ -11,17 +10,48 @@ from sphinx.util.osutil import ensuredir
 from ..settings import TEMPLATE_DIR
 
 
-class AutoAPIBase(object):
+class PythonMapperBase(object):
+
+    '''
+    Base object for JSON -> Python object mapping.
+
+    Subclasses of this object will handle their language specific JSON input,
+    and map that onto this standard Python object.
+    Subclasses may also include language-specific attributes on this object.
+
+    Arguments:
+
+    :param obj: JSON object representing this object
+    :param jinja_env: A template environment for rendering this object
+
+    Required attributes:
+
+    :var str id: A globally unique indentifier for this object. Generally a fully qualified name, including namespace.
+    :var str name: A short "display friendly" name for this object.
+
+    Optional attributes:
+
+    :var str docstring: The documentation for this object
+    :var list imports: Imports in this object
+    :var list children: Children of this object
+    :var list parameters: Parameters to this object
+    :var list methods: Methods on this object
+
+    '''
 
     language = 'base'
     type = 'base'
+    # Create a page in the output for this object.
+    top_level_object = False
 
-    def __init__(self, obj):
+    def __init__(self, obj, options=None, jinja_env=None):
         self.obj = obj
+        self.options = options
+        if jinja_env:
+            self.jinja_env = jinja_env
 
-    def render(self, ctx=None):
-        if not ctx:
-            ctx = {}
+    def render(self, **kwargs):
+        ctx = {}
         try:
             template = self.jinja_env.get_template(
                 '{language}/{type}.rst'.format(language=self.language, type=self.type)
@@ -33,7 +63,13 @@ class AutoAPIBase(object):
             )
 
         ctx.update(**self.get_context_data())
+        ctx.update(**kwargs)
         return template.render(**ctx)
+
+    @property
+    def rendered(self):
+        'Shortcut to render an object in templates.'
+        return self.render()
 
     def get_absolute_path(self):
         return "/autoapi/{type}/{name}".format(
@@ -48,9 +84,9 @@ class AutoAPIBase(object):
 
     def __lt__(self, other):
         '''Object sorting comparison'''
-        if isinstance(other, AutoAPIBase):
+        if isinstance(other, PythonMapperBase):
             return self.id < other.id
-        return super(AutoAPIBase, self).__lt__(other)
+        return super(PythonMapperBase, self).__lt__(other)
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
@@ -76,29 +112,31 @@ class AutoAPIBase(object):
             return '.'.join(pieces)
 
 
-class AutoAPIDomain(object):
+class SphinxMapperBase(object):
 
-    '''Base class for domain handling
+    '''Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     :param app: Sphinx application instance
+
     '''
 
     # Mapping of {filepath -> raw data}
-    paths = {}
+    paths = OrderedDict()
     # Mapping of {object id -> Python Object}
-    objects = {}
+    objects = OrderedDict()
+    # Mapping of {namespace id -> Python Object}
+    namespaces = OrderedDict()
+    # Mapping of {namespace id -> Python Object}
+    top_level_objects = OrderedDict()
 
-    namespaces = {}
-    top_level_objects = {}
-
-    def __init__(self, app):
+    def __init__(self, app, template_dir=None):
         self.app = app
 
         TEMPLATE_PATHS = [TEMPLATE_DIR]
-        USER_TEMPLATE_DIR = self.get_config('autoapi_template_dir')
-        if USER_TEMPLATE_DIR:
+
+        if template_dir:
             # Put at the front so it's loaded first
-            TEMPLATE_PATHS.insert(0, USER_TEMPLATE_DIR)
+            TEMPLATE_PATHS.insert(0, template_dir)
 
         self.jinja_env = Environment(
             loader=FileSystemLoader(TEMPLATE_PATHS)
@@ -138,7 +176,7 @@ class AutoAPIDomain(object):
                 len(files_to_read)):
             yield _path
 
-    def read_file(self, path, format='yaml'):
+    def read_file(self, path, **kwargs):
         '''Read file input into memory
 
         :param path: Path of file to read
@@ -155,17 +193,13 @@ class AutoAPIDomain(object):
         '''
         self.objects[obj.id] = obj
 
-    def get_config(self, key, default=None):
-        if self.app.config is not None:
-            return getattr(self.app.config, key, default)
-
-    def map(self):
+    def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data):
+            for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
-    def create_class(self, obj):
+    def create_class(self, obj, options=None):
         '''
         Create class object.
 
@@ -176,14 +210,19 @@ class AutoAPIDomain(object):
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            if not obj:
+            if not obj or not obj.top_level_object:
                 continue
 
             rst = obj.render()
             if not rst:
                 continue
 
-            detail_dir = os.path.join(root, *id.split('.'))
+            try:
+                filename = id.split('(')[0]
+            except IndexError:
+                filename = id
+            filename = filename.replace('#', '-')
+            detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
             with open(path, 'w+') as detail_file:
@@ -191,6 +230,12 @@ class AutoAPIDomain(object):
 
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
+        pages = self.objects.values()
+        # for key, item in self.objects.items():
+        #     if key.count('.') == 1:
+        #         top_level_pages.append(item)
+        #     else:
+        #         print key, key.find('.')
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render())
+            top_level_file.write(content.render(pages=pages))

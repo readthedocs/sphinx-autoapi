@@ -1,0 +1,372 @@
+items:
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AdhocWorkspace
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 16
+  summary: >-
+    A workspace that allows full manipulation of projects and documents,
+
+    but does not persist changes.
+  syntax:
+    content:
+      CSharp: public sealed class AdhocWorkspace
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: Microsoft.CodeAnalysis.Workspace
+    name: Workspace
+    href: Microsoft.CodeAnalysis.Workspace.yml
+  id: Microsoft.CodeAnalysis.AdhocWorkspace
+  children:
+  - Microsoft.CodeAnalysis.AdhocWorkspace.#ctor(Microsoft.CodeAnalysis.Host.HostServices,System.String)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.#ctor
+  - Microsoft.CodeAnalysis.AdhocWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
+  - Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(System.String,System.String)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId,System.String,Microsoft.CodeAnalysis.Text.SourceText)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  - Microsoft.CodeAnalysis.AdhocWorkspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor(Microsoft.CodeAnalysis.Host.HostServices,System.String)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AdhocWorkspace(HostServices, string)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AdhocWorkspace(Microsoft.CodeAnalysis.Host.HostServices, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 18
+  syntax:
+    content:
+      CSharp: 'public AdhocWorkspace(HostServices host, string workspaceKind = "Custom"): base (host, workspaceKind)'
+    parameters:
+    - id: host
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostServices
+        name: HostServices
+        href: Microsoft.CodeAnalysis.Host.HostServices.yml
+    - id: workspaceKind
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor(Microsoft.CodeAnalysis.Host.HostServices,System.String)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AdhocWorkspace()
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AdhocWorkspace()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 23
+  syntax:
+    content:
+      CSharp: 'public AdhocWorkspace(): this (Host.Mef.MefHostServices.DefaultHost)'
+    parameters: []
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: CanApplyChange(ApplyChangesKind)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: public override bool CanApplyChange(ApplyChangesKind feature)
+    parameters:
+    - id: feature
+      type:
+        id: Microsoft.CodeAnalysis.ApplyChangesKind
+        name: ApplyChangesKind
+        href: Microsoft.CodeAnalysis.ApplyChangesKind.yml
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: CanOpenDocuments
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 34
+  syntax:
+    content:
+      CSharp: public override bool CanOpenDocuments { get; }
+    parameters:
+    - id: CanOpenDocuments
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: ClearSolution()
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 46
+  summary: Clears all projects and documents from the workspace.
+  syntax:
+    content:
+      CSharp: public new void ClearSolution()
+    parameters: []
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddSolution(SolutionInfo)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 54
+  summary: Adds an entire solution to the workspace, replacing any existing solution.
+  syntax:
+    content:
+      CSharp: public Solution AddSolution(SolutionInfo solutionInfo)
+    parameters:
+    - id: solutionInfo
+      type:
+        id: Microsoft.CodeAnalysis.SolutionInfo
+        name: SolutionInfo
+        href: Microsoft.CodeAnalysis.SolutionInfo.yml
+    return:
+      id: Solution
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(System.String,System.String)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddProject(string, string)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 69
+  summary: Adds a project to the workspace. All previous projects remain intact.
+  syntax:
+    content:
+      CSharp: public Project AddProject(string name, string language)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: language
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    return:
+      id: Project
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(System.String,System.String)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddProject(ProjectInfo)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 78
+  summary: Adds a project to the workspace. All previous projects remain intact.
+  syntax:
+    content:
+      CSharp: public Project AddProject(ProjectInfo projectInfo)
+    parameters:
+    - id: projectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
+    return:
+      id: Project
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddProjects(IEnumerable<ProjectInfo>)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ProjectInfo>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 94
+  summary: Adds multiple projects to the workspace at once. All existing projects remain intact.
+  syntax:
+    content:
+      CSharp: public void AddProjects(IEnumerable<ProjectInfo> projectInfos)
+    parameters:
+    - id: projectInfos
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId,System.String,Microsoft.CodeAnalysis.Text.SourceText)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddDocument(ProjectId, string, SourceText)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId, string, Microsoft.CodeAnalysis.Text.SourceText)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 110
+  summary: Adds a document to the workspace.
+  syntax:
+    content:
+      CSharp: public Document AddDocument(ProjectId projectId, string name, SourceText text)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: text
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+    return:
+      id: Document
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId,System.String,Microsoft.CodeAnalysis.Text.SourceText)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: AddDocument(DocumentInfo)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 136
+  summary: Adds a document to the workspace.
+  syntax:
+    content:
+      CSharp: public Document AddDocument(DocumentInfo documentInfo)
+    parameters:
+    - id: documentInfo
+      type:
+        id: Microsoft.CodeAnalysis.DocumentInfo
+        name: DocumentInfo
+        href: Microsoft.CodeAnalysis.DocumentInfo.yml
+    return:
+      id: Document
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: OpenDocument(DocumentId, bool)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 151
+  summary: Puts the specified document into the open state.
+  syntax:
+    content:
+      CSharp: public override void OpenDocument(DocumentId documentId, bool activate = true)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+    - id: activate
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: CloseDocument(DocumentId)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 164
+  summary: Puts the specified document into the closed state.
+  syntax:
+    content:
+      CSharp: public override void CloseDocument(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: OpenAdditionalDocument(DocumentId, bool)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 179
+  summary: Puts the specified additional document into the open state.
+  syntax:
+    content:
+      CSharp: public override void OpenAdditionalDocument(DocumentId documentId, bool activate = true)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+    - id: activate
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+- uid: Microsoft.CodeAnalysis.AdhocWorkspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
+  name: CloseAdditionalDocument(DocumentId)
+  fullName: Microsoft.CodeAnalysis.AdhocWorkspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
+    startLine: 192
+  summary: Puts the specified additional document into the closed state
+  syntax:
+    content:
+      CSharp: public override void CloseAdditionalDocument(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.CodeAnalysis.AdhocWorkspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
