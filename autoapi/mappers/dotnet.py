@@ -1,8 +1,8 @@
 import os
 from collections import defaultdict
 import subprocess
-import yaml
 
+import yaml
 from sphinx.util.osutil import ensuredir
 
 from .base import PythonMapperBase, SphinxMapperBase
