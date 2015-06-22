@@ -1,0 +1,61 @@
+
+
+IViewComponentInvokerFactory Interface
+======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IViewComponentInvokerFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/IViewComponentInvokerFactory.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory.CreateInstance(Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor, System.Object[])
+    
+        
+        :param viewComponentDescriptor: 
+        :type viewComponentDescriptor: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+        :param args: 
+        :type args: System.Object[]
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IViewComponentInvoker CreateInstance(ViewComponentDescriptor viewComponentDescriptor, object[] args)
+

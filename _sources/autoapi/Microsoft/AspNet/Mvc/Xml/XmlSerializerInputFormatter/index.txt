@@ -1,0 +1,233 @@
+
+
+XmlSerializerInputFormatter Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+This class handles deserialization of input XML data
+to strongly-typed objects using [System.Xml.Serialization.XmlSerializer]()
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.InputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class XmlSerializerInputFormatter : InputFormatter, IInputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/XmlSerializerInputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.XmlSerializerInputFormatter()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public XmlSerializerInputFormatter()
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.MaxDepth
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int MaxDepth { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.WrapperProviderFactories
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IWrapperProviderFactory> WrapperProviderFactories { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.XmlDictionaryReaderQuotas
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.CanReadType(System.Type)
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override bool CanReadType(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.CreateSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlSerializer CreateSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.CreateXmlReader(System.IO.Stream, System.Text.Encoding)
+    
+        
+    
+        
+        
+    
+        
+        :param readStream: The [System.IO.Stream]() from which to read.
+        :type readStream: System.IO.Stream
+        :param encoding: The [System.Text.Encoding]() used to read the stream.
+        :type encoding: System.Text.Encoding
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlReader CreateXmlReader(Stream readStream, Encoding encoding)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.GetCachedSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlSerializer GetCachedSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.GetSerializableType(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param declaredType: The declared type.
+        :type declaredType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual Type GetSerializableType(Type declaredType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The input formatter context which contains the body to be read.
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task<object> ReadRequestBodyAsync(InputFormatterContext context)
+

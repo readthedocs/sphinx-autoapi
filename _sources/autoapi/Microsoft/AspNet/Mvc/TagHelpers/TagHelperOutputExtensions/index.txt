@@ -1,0 +1,113 @@
+
+
+TagHelperOutputExtensions Class
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Utility related extensions for @!:TagHelperOutput-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TagHelperOutputExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/TagHelperOutputExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.CopyHtmlAttribute(TagHelperOutput, System.String, TagHelperContext)
+    
+        
+    
+        
+        
+    
+        
+        :param tagHelperOutput: The @!:TagHelperOutput- this method extends.
+        :type tagHelperOutput: TagHelperOutput
+        :param attributeName: The name of the bound attribute.
+        :type attributeName: System.String
+        :param context: The @!:TagHelperContext-.
+        :type context: TagHelperContext
+    
+        
+        .. code-block:: csharp
+    
+           public static void CopyHtmlAttribute(TagHelperOutput tagHelperOutput, string attributeName, TagHelperContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.MergeAttributes(TagHelperOutput, Microsoft.AspNet.Mvc.Rendering.TagBuilder)
+    
+        
+    
+        
+        
+    
+        
+        :param tagHelperOutput: The @!:TagHelperOutput- this method extends.
+        :type tagHelperOutput: TagHelperOutput
+        :param tagBuilder: The [Microsoft.AspNet.Mvc.Rendering.TagBuilder]() to merge attributes from.
+        :type tagBuilder: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+    
+        
+        .. code-block:: csharp
+    
+           public static void MergeAttributes(TagHelperOutput tagHelperOutput, TagBuilder tagBuilder)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.RemoveRange(TagHelperOutput, System.Collections.Generic.IEnumerable<TagHelperAttribute>)
+    
+        
+    
+        
+        
+    
+        
+        :param tagHelperOutput: The @!:TagHelperOutput- this method extends.
+        :type tagHelperOutput: TagHelperOutput
+        :param attributes: Attributes to remove.
+        :type attributes: System.Collections.Generic.IEnumerable{TagHelperAttribute}
+    
+        
+        .. code-block:: csharp
+    
+           public static void RemoveRange(TagHelperOutput tagHelperOutput, IEnumerable<TagHelperAttribute> attributes)
+

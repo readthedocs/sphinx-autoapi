@@ -1,0 +1,142 @@
+
+
+RazorFileInfo Class
+===================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RazorFileInfo
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Precompilation/RazorFileInfo.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.FullTypeName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string FullTypeName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.Hash
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Hash { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.HashAlgorithmVersion
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int HashAlgorithmVersion { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.LastModified
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public DateTimeOffset LastModified { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.Length
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public long Length { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.RelativePath
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RelativePath { get; set; }
+

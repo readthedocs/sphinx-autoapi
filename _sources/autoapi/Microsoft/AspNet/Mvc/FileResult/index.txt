@@ -1,0 +1,168 @@
+
+
+FileResult Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Represents an [Microsoft.AspNet.Mvc.ActionResult]() that when executed will
+write a file as the response.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionResult`
+* :dn:cls:`Microsoft.AspNet.Mvc.FileResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class FileResult : ActionResult, IActionResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/FileResult.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.FileResult
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FileResult
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.FileResult.FileResult(MediaTypeHeaderValue)
+    
+        
+    
+        
+        
+    
+        
+        :param contentType: The Content-Type header of the response.
+        :type contentType: MediaTypeHeaderValue
+    
+        
+        .. code-block:: csharp
+    
+           protected FileResult(MediaTypeHeaderValue contentType)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.FileResult.FileResult(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param contentType: The Content-Type header of the response.
+        :type contentType: System.String
+    
+        
+        .. code-block:: csharp
+    
+           protected FileResult(string contentType)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FileResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FileResult.ContentType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public MediaTypeHeaderValue ContentType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FileResult.FileDownloadName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string FileDownloadName { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FileResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.FileResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task ExecuteResultAsync(ActionContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.FileResult.WriteFileAsync(HttpResponse, System.Threading.CancellationToken)
+    
+        
+    
+        
+        
+    
+        
+        :param response: The @!:HttpResponse- where the file will be written
+        :type response: HttpResponse
+        :param cancellation: The [System.Threading.CancellationToken]()to cancel the operation.
+        :type cancellation: System.Threading.CancellationToken
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected abstract Task WriteFileAsync(HttpResponse response, CancellationToken cancellation)
+

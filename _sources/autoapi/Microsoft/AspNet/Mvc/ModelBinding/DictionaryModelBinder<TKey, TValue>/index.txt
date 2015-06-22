@@ -1,0 +1,80 @@
+
+
+DictionaryModelBinder<TKey, TValue> Class
+=========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+[Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() implementation for binding dictionary values.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder\<TKey, TValue>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DictionaryModelBinder<TKey, TValue> : CollectionModelBinder<KeyValuePair<TKey, TValue>>, IModelBinder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/DictionaryModelBinder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>.CreateEmptyCollection()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override object CreateEmptyCollection()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>.GetModel(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)
+    
+        
+        :param newCollection: 
+        :type newCollection: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override object GetModel(IEnumerable<KeyValuePair<TKey, TValue>> newCollection)
+

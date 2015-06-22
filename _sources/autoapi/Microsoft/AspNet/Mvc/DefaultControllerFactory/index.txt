@@ -1,0 +1,130 @@
+
+
+DefaultControllerFactory Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Default implementation for [Microsoft.AspNet.Mvc.IControllerFactory](Microsoft.AspNet.Mvc.IControllerFactory.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.DefaultControllerFactory`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultControllerFactory : IControllerFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/DefaultControllerFactory.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerFactory
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerFactory
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.DefaultControllerFactory.DefaultControllerFactory(Microsoft.AspNet.Mvc.IControllerActivator, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.IControllerPropertyActivator>)
+    
+        
+    
+        
+        
+    
+        
+        :param controllerActivator: [Microsoft.AspNet.Mvc.IControllerActivator](Microsoft.AspNet.Mvc.IControllerActivator.yml) used to create controller instances.
+        :type controllerActivator: Microsoft.AspNet.Mvc.IControllerActivator
+        :param propertyActivators: A set of [Microsoft.AspNet.Mvc.IControllerPropertyActivator](Microsoft.AspNet.Mvc.IControllerPropertyActivator.yml) instances used to initialize controller
+    properties.
+        :type propertyActivators: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IControllerPropertyActivator}
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultControllerFactory(IControllerActivator controllerActivator, IEnumerable<IControllerPropertyActivator> propertyActivators)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerFactory
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.DefaultControllerFactory.ControllerActivator
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IControllerActivator ControllerActivator { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerFactory.CreateController(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual object CreateController(ActionContext actionContext)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerFactory.ReleaseController(System.Object)
+    
+        
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void ReleaseController(object controller)
+

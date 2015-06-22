@@ -1,0 +1,164 @@
+
+
+TemplateInfo Class
+==================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TemplateInfo`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TemplateInfo
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/TemplateInfo.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TemplateInfo
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TemplateInfo
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TemplateInfo.TemplateInfo()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public TemplateInfo()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TemplateInfo.TemplateInfo(Microsoft.AspNet.Mvc.TemplateInfo)
+    
+        
+        :param original: 
+        :type original: Microsoft.AspNet.Mvc.TemplateInfo
+    
+        
+        .. code-block:: csharp
+    
+           public TemplateInfo(TemplateInfo original)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TemplateInfo
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TemplateInfo.FormattedModelValue
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object FormattedModelValue { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TemplateInfo.HtmlFieldPrefix
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string HtmlFieldPrefix { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TemplateInfo.TemplateDepth
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int TemplateDepth { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TemplateInfo
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.AddVisited(System.Object)
+    
+        
+        :param value: 
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool AddVisited(object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.GetFullHtmlFieldName(System.String)
+    
+        
+        :param partialFieldName: 
+        :type partialFieldName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string GetFullHtmlFieldName(string partialFieldName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.Visited(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer)
+    
+        
+        :param modelExplorer: 
+        :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Visited(ModelExplorer modelExplorer)
+

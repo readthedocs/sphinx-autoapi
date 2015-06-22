@@ -1,0 +1,82 @@
+
+
+MvcCoreServiceCollectionExtensions Class
+========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcCoreServiceCollectionExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/MvcCoreServiceCollectionExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMinimalMvc(IServiceCollection)
+    
+        
+        :param services: 
+        :type services: IServiceCollection
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection AddMinimalMvc(IServiceCollection services)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions.ConfigureMvc(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.MvcOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml) which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvc(IServiceCollection services, Action<MvcOptions> setupAction)
+

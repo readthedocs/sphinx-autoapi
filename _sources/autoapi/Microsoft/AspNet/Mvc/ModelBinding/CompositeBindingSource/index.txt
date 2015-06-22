@@ -1,0 +1,113 @@
+
+
+CompositeBindingSource Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.BindingSources](Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.yml) which can repesent multiple value-provider data sources.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.BindingSource`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CompositeBindingSource : BindingSource, IEquatable<BindingSource>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/CompositeBindingSource.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.CanAcceptDataFrom(Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
+    
+        
+        :param bindingSource: 
+        :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override bool CanAcceptDataFrom(BindingSource bindingSource)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.Create(System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ModelBinding.BindingSource>, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param bindingSources: The set of [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) entries.
+    Must be value-provider sources and user input.
+        :type bindingSources: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.BindingSource}
+        :param displayName: The display name for the composite source.
+        :type displayName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static CompositeBindingSource Create(IEnumerable<BindingSource> bindingSources, string displayName)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.BindingSources
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable<BindingSource> BindingSources { get; }
+

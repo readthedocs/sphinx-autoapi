@@ -1,0 +1,67 @@
+
+
+IControllerTypeProvider Interface
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides methods for discovery of controller types.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IControllerTypeProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IControllerTypeProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerTypeProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerTypeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.IControllerTypeProvider.ControllerTypes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerable<TypeInfo> ControllerTypes { get; }
+

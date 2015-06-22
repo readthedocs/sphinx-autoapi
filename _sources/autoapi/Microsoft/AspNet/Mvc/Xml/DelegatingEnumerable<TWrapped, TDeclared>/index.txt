@@ -1,0 +1,143 @@
+
+
+DelegatingEnumerable<TWrapped, TDeclared> Class
+===============================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Serializes [System.Collections.Generic.IEnumerable`1]() types by delegating them through a concrete implementation.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable\<TWrapped, TDeclared>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DelegatingEnumerable<TWrapped, TDeclared> : IEnumerable<TWrapped>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/DelegatingEnumerable.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.DelegatingEnumerable()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public DelegatingEnumerable()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.DelegatingEnumerable(System.Collections.Generic.IEnumerable<TDeclared>, Microsoft.AspNet.Mvc.Xml.IWrapperProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param source: The [System.Collections.Generic.IEnumerable`1]() instance to get the enumerator from.
+        :type source: System.Collections.Generic.IEnumerable{{TDeclared}}
+        :param elementWrapperProvider: The wrapper provider for wrapping individual elements.
+        :type elementWrapperProvider: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
+    
+        
+        .. code-block:: csharp
+    
+           public DelegatingEnumerable(IEnumerable<TDeclared> source, IWrapperProvider elementWrapperProvider)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.Add(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param item: The item to add. Unused.
+        :type item: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public void Add(object item)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.GetEnumerator()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerator<TWrapped> GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.System.Collections.IEnumerable.GetEnumerator()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerator IEnumerable.GetEnumerator()
+

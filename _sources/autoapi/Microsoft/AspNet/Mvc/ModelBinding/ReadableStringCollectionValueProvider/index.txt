@@ -1,0 +1,160 @@
+
+
+ReadableStringCollectionValueProvider Class
+===========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() adapter for data stored in an @!:IReadableStringCollection-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.BindingSourceValueProvider`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ReadableStringCollectionValueProvider : BindingSourceValueProvider, IBindingSourceValueProvider, IEnumerableValueProvider, IValueProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/ReadableStringCollectionValueProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.ReadableStringCollectionValueProvider(Microsoft.AspNet.Mvc.ModelBinding.BindingSource, IReadableStringCollection, System.Globalization.CultureInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
+        :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :param values: The key value pairs to wrap.
+        :type values: IReadableStringCollection
+        :param culture: The culture to return with ValueProviderResult instances.
+        :type culture: System.Globalization.CultureInfo
+    
+        
+        .. code-block:: csharp
+    
+           public ReadableStringCollectionValueProvider(BindingSource bindingSource, IReadableStringCollection values, CultureInfo culture)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.ReadableStringCollectionValueProvider(Microsoft.AspNet.Mvc.ModelBinding.BindingSource, System.Func<System.Threading.Tasks.Task<IReadableStringCollection>>, System.Globalization.CultureInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
+        :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :param valuesFactory: 
+        :type valuesFactory: System.Func{System.Threading.Tasks.Task{IReadableStringCollection}}
+        :param culture: The culture to return with ValueProviderResult instances.
+        :type culture: System.Globalization.CultureInfo
+    
+        
+        .. code-block:: csharp
+    
+           public ReadableStringCollectionValueProvider(BindingSource bindingSource, Func<Task<IReadableStringCollection>> valuesFactory, CultureInfo culture)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.Culture
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public CultureInfo Culture { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.ContainsPrefixAsync(System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task<bool> ContainsPrefixAsync(string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.GetKeysFromPrefixAsync(System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<IDictionary<string, string>> GetKeysFromPrefixAsync(string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.GetValueAsync(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task<ValueProviderResult> GetValueAsync(string key)
+

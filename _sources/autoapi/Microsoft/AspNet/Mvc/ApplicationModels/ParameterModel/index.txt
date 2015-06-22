@@ -1,0 +1,134 @@
+
+
+ParameterModel Class
+====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ParameterModel
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ApplicationModels/ParameterModel.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterModel(Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel)
+    
+        
+        :param other: 
+        :type other: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
+    
+        
+        .. code-block:: csharp
+    
+           public ParameterModel(ParameterModel other)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterModel(System.Reflection.ParameterInfo, System.Collections.Generic.IReadOnlyList<System.Object>)
+    
+        
+        :param parameterInfo: 
+        :type parameterInfo: System.Reflection.ParameterInfo
+        :param attributes: 
+        :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
+    
+        
+        .. code-block:: csharp
+    
+           public ParameterModel(ParameterInfo parameterInfo, IReadOnlyList<object> attributes)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.Action
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionModel Action { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.Attributes
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<object> Attributes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.BindingInfo
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public BindingInfo BindingInfo { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterInfo
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ParameterInfo ParameterInfo { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterName
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ParameterName { get; set; }
+

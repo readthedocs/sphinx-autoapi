@@ -1,0 +1,92 @@
+
+
+IApiDescriptionProvider Interface
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IApiDescriptionProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.ApiExplorer/IApiDescriptionProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int Order { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuted(ApiDescriptionProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuting(ApiDescriptionProviderContext context)
+

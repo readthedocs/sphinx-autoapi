@@ -1,0 +1,250 @@
+
+
+XmlSerializerOutputFormatter Class
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+This class handles serialization of objects
+to XML using [System.Xml.Serialization.XmlSerializer]()
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.OutputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class XmlSerializerOutputFormatter : OutputFormatter, IOutputFormatter, IApiResponseFormatMetadataProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/XmlSerializerOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.XmlSerializerOutputFormatter()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public XmlSerializerOutputFormatter()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.XmlSerializerOutputFormatter(System.Xml.XmlWriterSettings)
+    
+        
+    
+        
+        
+    
+        
+        :param writerSettings: The settings to be used by the [System.Xml.Serialization.XmlSerializer]().
+        :type writerSettings: System.Xml.XmlWriterSettings
+    
+        
+        .. code-block:: csharp
+    
+           public XmlSerializerOutputFormatter(XmlWriterSettings writerSettings)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WrapperProviderFactories
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IWrapperProviderFactory> WrapperProviderFactories { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WriterSettings
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public XmlWriterSettings WriterSettings { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.CanWriteType(System.Type, System.Type)
+    
+        
+        :param declaredType: 
+        :type declaredType: System.Type
+        :param runtimeType: 
+        :type runtimeType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override bool CanWriteType(Type declaredType, Type runtimeType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.CreateSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: The type of object for which the serializer should be created.
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlSerializer CreateSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.CreateXmlWriter(System.IO.Stream, System.Xml.XmlWriterSettings)
+    
+        
+    
+        
+        
+    
+        
+        :param writeStream: The stream on which the XmlWriter should operate on.
+        :type writeStream: System.IO.Stream
+        :param xmlWriterSettings: 
+        :type xmlWriterSettings: System.Xml.XmlWriterSettings
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual XmlWriter CreateXmlWriter(Stream writeStream, XmlWriterSettings xmlWriterSettings)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.GetCachedSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlSerializer GetCachedSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.GetSerializableType(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: The original type to be serialized
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual Type GetSerializableType(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.ResolveType(System.Type, System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param declaredType: The declared type of the object.
+        :type declaredType: System.Type
+        :param runtimeType: The runtime type of the object
+        :type runtimeType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual Type ResolveType(Type declaredType, Type runtimeType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task WriteResponseBodyAsync(OutputFormatterContext context)
+

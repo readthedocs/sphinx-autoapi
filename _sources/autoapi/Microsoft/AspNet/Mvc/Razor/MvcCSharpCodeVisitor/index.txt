@@ -1,0 +1,96 @@
+
+
+MvcCSharpCodeVisitor Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`CodeVisitor{CSharpCodeWriter}`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.MvcCSharpChunkVisitor`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class MvcCSharpCodeVisitor : MvcCSharpChunkVisitor
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/MvcCSharpCodeVistor.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor.MvcCSharpCodeVisitor(CSharpCodeWriter, CodeGeneratorContext)
+    
+        
+        :param writer: 
+        :type writer: CSharpCodeWriter
+        :param context: 
+        :type context: CodeGeneratorContext
+    
+        
+        .. code-block:: csharp
+    
+           public MvcCSharpCodeVisitor(CSharpCodeWriter writer, CodeGeneratorContext context)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor.Visit(Microsoft.AspNet.Mvc.Razor.InjectChunk)
+    
+        
+        :param chunk: 
+        :type chunk: Microsoft.AspNet.Mvc.Razor.InjectChunk
+    
+        
+        .. code-block:: csharp
+    
+           protected override void Visit(InjectChunk chunk)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeVisitor.Visit(Microsoft.AspNet.Mvc.Razor.ModelChunk)
+    
+        
+        :param chunk: 
+        :type chunk: Microsoft.AspNet.Mvc.Razor.ModelChunk
+    
+        
+        .. code-block:: csharp
+    
+           protected override void Visit(ModelChunk chunk)
+

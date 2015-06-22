@@ -1,0 +1,167 @@
+
+
+UrlHelper Class
+===============
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An implementation of [Microsoft.AspNet.Mvc.IUrlHelper](Microsoft.AspNet.Mvc.IUrlHelper.yml) that contains methods to
+build URLs for ASP.NET MVC within an application.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.UrlHelper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class UrlHelper : IUrlHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/UrlHelper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlHelper
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlHelper
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.UrlHelper.UrlHelper(Microsoft.AspNet.Mvc.IScopedInstance<Microsoft.AspNet.Mvc.ActionContext>, Microsoft.AspNet.Mvc.IActionSelector)
+    
+        
+    
+        
+        
+    
+        
+        :param contextAccessor: The [Microsoft.AspNet.Mvc.IScopedInstance`1](Microsoft.AspNet.Mvc.IScopedInstance`1.yml) to access the action context
+    of the current request.
+        :type contextAccessor: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionContext}
+        :param actionSelector: The [Microsoft.AspNet.Mvc.IActionSelector](Microsoft.AspNet.Mvc.IActionSelector.yml) to be used for verifying the correctness of
+    supplied parameters for a route.
+        :type actionSelector: Microsoft.AspNet.Mvc.IActionSelector
+    
+        
+        .. code-block:: csharp
+    
+           public UrlHelper(IScopedInstance<ActionContext> contextAccessor, IActionSelector actionSelector)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlHelper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Action(Microsoft.AspNet.Mvc.UrlActionContext)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.UrlActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string Action(UrlActionContext actionContext)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Content(System.String)
+    
+        
+        :param contentPath: 
+        :type contentPath: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string Content(string contentPath)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.GeneratePathFromRoute(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route that is used to generate the URL.
+        :type routeName: System.String
+        :param values: A dictionary that contains the parameters for a route.
+        :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual string GeneratePathFromRoute(string routeName, IDictionary<string, object> values)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.IsLocalUrl(System.String)
+    
+        
+        :param url: 
+        :type url: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsLocalUrl(string url)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Link(System.String, System.Object)
+    
+        
+        :param routeName: 
+        :type routeName: System.String
+        :param values: 
+        :type values: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string Link(string routeName, object values)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)
+    
+        
+        :param routeContext: 
+        :type routeContext: Microsoft.AspNet.Mvc.UrlRouteContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string RouteUrl(UrlRouteContext routeContext)
+

@@ -1,0 +1,92 @@
+
+
+ApiDescriptionExtensions Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Extension methods for [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ApiDescriptionExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.ApiExplorer/ApiDescriptionExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionExtensions.GetProperty<T>(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription)
+    
+        
+    
+        
+        
+    
+        
+        :param apiDescription: The [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
+        :type apiDescription: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static T GetProperty<T>(ApiDescription apiDescription)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionExtensions.SetProperty<T>(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription, T)
+    
+        
+    
+        
+        
+    
+        
+        :param apiDescription: The [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
+        :type apiDescription: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription
+        :param value: The value of the property.
+        :type value: T
+    
+        
+        .. code-block:: csharp
+    
+           public static void SetProperty<T>(ApiDescription apiDescription, T value)
+

@@ -1,0 +1,79 @@
+
+
+ScopedInstance<T> Class
+=======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ScopedInstance\<T>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ScopedInstance<T> : IScopedInstance<T>, IDisposable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ScopedInstance.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ScopedInstance<T>
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ScopedInstance<T>
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ScopedInstance<T>.Value
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public T Value { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ScopedInstance<T>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ScopedInstance<T>.Dispose()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Dispose()
+

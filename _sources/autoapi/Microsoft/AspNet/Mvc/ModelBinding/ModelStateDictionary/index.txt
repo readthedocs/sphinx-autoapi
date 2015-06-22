@@ -1,0 +1,592 @@
+
+
+ModelStateDictionary Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Represents the state of an attempt to bind values from an HTTP Request to an action method, which includes
+validation information.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModelStateDictionary : IDictionary<string, ModelState>, ICollection<KeyValuePair<string, ModelState>>, IEnumerable<KeyValuePair<string, ModelState>>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/ModelStateDictionary.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+
+
+Fields
+------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.DefaultMaxAllowedErrors
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public static readonly int DefaultMaxAllowedErrors
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ModelStateDictionary()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ModelStateDictionary(Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param dictionary: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to copy values from.
+        :type dictionary: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary(ModelStateDictionary dictionary)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ModelStateDictionary(System.Int32)
+    
+        
+    
+        
+        
+    
+        
+        :param maxAllowedErrors: 
+        :type maxAllowedErrors: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary(int maxAllowedErrors)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Count
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Count { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ErrorCount
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int ErrorCount { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.HasReachedMaxErrors
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool HasReachedMaxErrors { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.IsReadOnly
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsReadOnly { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.IsValid
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsValid { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Item[System.String]
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelState this[string key] { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Keys
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICollection<string> Keys { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int MaxAllowedErrors { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ValidationState
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelValidationState ValidationState { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Values
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICollection<ModelState> Values { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Add(System.Collections.Generic.KeyValuePair<System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelState>)
+    
+        
+        :param item: 
+        :type item: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}
+    
+        
+        .. code-block:: csharp
+    
+           public void Add(KeyValuePair<string, ModelState> item)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Add(System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelState)
+    
+        
+        :param key: 
+        :type key: System.String
+        :param value: 
+        :type value: Microsoft.AspNet.Mvc.ModelBinding.ModelState
+    
+        
+        .. code-block:: csharp
+    
+           public void Add(string key, ModelState value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.AddModelError(System.String, System.Exception)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
+        :type key: System.String
+        :param exception: The [System.Exception]() to add.
+        :type exception: System.Exception
+    
+        
+        .. code-block:: csharp
+    
+           public void AddModelError(string key, Exception exception)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.AddModelError(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
+        :type key: System.String
+        :param errorMessage: The error message to add.
+        :type errorMessage: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void AddModelError(string key, string errorMessage)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Clear()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Clear()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ClearValidationState(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to clear.
+        :type key: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void ClearValidationState(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Contains(System.Collections.Generic.KeyValuePair<System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelState>)
+    
+        
+        :param item: 
+        :type item: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Contains(KeyValuePair<string, ModelState> item)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ContainsKey(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool ContainsKey(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.CopyTo(System.Collections.Generic.KeyValuePair<System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelState>[], System.Int32)
+    
+        
+        :param array: 
+        :type array: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}[]
+        :param arrayIndex: 
+        :type arrayIndex: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           public void CopyTo(KeyValuePair<string, ModelState>[] array, int arrayIndex)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.FindKeysWithPrefix(System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable<KeyValuePair<string, ModelState>> FindKeysWithPrefix(string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerator<KeyValuePair<string, ModelState>> GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetFieldValidationState(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key to look up model state errors for.
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelValidationState GetFieldValidationState(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetValidationState(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key to look up model state errors for.
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelValidationState GetValidationState(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MarkFieldSkipped(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to mark as skipped.
+        :type key: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void MarkFieldSkipped(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MarkFieldValid(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to mark as valid.
+        :type key: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void MarkFieldValid(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Merge(Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param dictionary: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to copy values from.
+        :type dictionary: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
+        .. code-block:: csharp
+    
+           public void Merge(ModelStateDictionary dictionary)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Remove(System.Collections.Generic.KeyValuePair<System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelState>)
+    
+        
+        :param item: 
+        :type item: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Remove(KeyValuePair<string, ModelState> item)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Remove(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Remove(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.SetModelValue(System.String, Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key for the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) entry.
+        :type key: System.String
+        :param value: The value to assign.
+        :type value: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult
+    
+        
+        .. code-block:: csharp
+    
+           public void SetModelValue(string key, ValueProviderResult value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.System.Collections.IEnumerable.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerator IEnumerable.GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryAddModelError(System.String, System.Exception)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
+        :type key: System.String
+        :param exception: The [System.Exception]() to add.
+        :type exception: System.Exception
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool TryAddModelError(string key, Exception exception)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryAddModelError(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
+        :type key: System.String
+        :param errorMessage: The error message to add.
+        :type errorMessage: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool TryAddModelError(string key, string errorMessage)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryGetValue(System.String, out Microsoft.AspNet.Mvc.ModelBinding.ModelState)
+    
+        
+        :param key: 
+        :type key: System.String
+        :param value: 
+        :type value: Microsoft.AspNet.Mvc.ModelBinding.ModelState
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool TryGetValue(string key, out ModelState value)
+

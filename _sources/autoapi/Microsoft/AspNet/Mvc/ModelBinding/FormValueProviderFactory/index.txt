@@ -1,0 +1,64 @@
+
+
+FormValueProviderFactory Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.FormValueProviderFactory`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class FormValueProviderFactory : IValueProviderFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/FormValueProviderFactory.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.FormValueProviderFactory
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.FormValueProviderFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.FormValueProviderFactory.GetValueProvider(Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IValueProvider GetValueProvider(ValueProviderFactoryContext context)
+

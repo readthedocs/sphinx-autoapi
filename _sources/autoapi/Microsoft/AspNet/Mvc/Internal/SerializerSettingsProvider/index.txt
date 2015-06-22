@@ -1,0 +1,72 @@
+
+
+SerializerSettingsProvider Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Helper class which provides @!:JsonSerializerSettings-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class SerializerSettingsProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Internal/SerializerSettingsProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider.CreateSerializerSettings()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static JsonSerializerSettings CreateSerializerSettings()
+

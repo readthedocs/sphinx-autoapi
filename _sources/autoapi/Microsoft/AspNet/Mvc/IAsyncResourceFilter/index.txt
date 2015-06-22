@@ -1,0 +1,73 @@
+
+
+IAsyncResourceFilter Interface
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A filter which surrounds execution of model binding, the action (and filters) and the action result
+(and filters).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IAsyncResourceFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IAsyncResourceFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncResourceFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncResourceFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAsyncResourceFilter.OnResourceExecutionAsync(Microsoft.AspNet.Mvc.ResourceExecutingContext, Microsoft.AspNet.Mvc.ResourceExecutionDelegate)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ResourceExecutingContext](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ResourceExecutingContext
+        :param next: The [Microsoft.AspNet.Mvc.ResourceExecutionDelegate](Microsoft.AspNet.Mvc.ResourceExecutionDelegate.yml). Invoked to execute the next
+    resource filter, or the remainder of the pipeline.
+        :type next: Microsoft.AspNet.Mvc.ResourceExecutionDelegate
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Task OnResourceExecutionAsync(ResourceExecutingContext context, ResourceExecutionDelegate next)
+

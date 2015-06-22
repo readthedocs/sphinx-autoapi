@@ -1,0 +1,71 @@
+
+
+ITagHelperActivator Interface
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides methods to activate properties on a @!:ITagHelper- instance.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface ITagHelperActivator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/ITagHelperActivator.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.ITagHelperActivator
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.ITagHelperActivator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.ITagHelperActivator.Activate<TTagHelper>(TTagHelper, Microsoft.AspNet.Mvc.ViewContext)
+    
+        
+    
+        
+        
+    
+        
+        :param tagHelper: The
+    <typeparamref name="TTagHelper" /> to activate.
+        :type tagHelper: TTagHelper
+        :param context: The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.
+        :type context: Microsoft.AspNet.Mvc.ViewContext
+    
+        
+        .. code-block:: csharp
+    
+           void Activate<TTagHelper>(TTagHelper tagHelper, ViewContext context)where TTagHelper : ITagHelper
+

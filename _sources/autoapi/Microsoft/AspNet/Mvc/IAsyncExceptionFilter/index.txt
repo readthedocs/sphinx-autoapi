@@ -1,0 +1,59 @@
+
+
+IAsyncExceptionFilter Interface
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IAsyncExceptionFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IAsyncExceptionFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncExceptionFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncExceptionFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAsyncExceptionFilter.OnExceptionAsync(Microsoft.AspNet.Mvc.ExceptionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ExceptionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Task OnExceptionAsync(ExceptionContext context)
+

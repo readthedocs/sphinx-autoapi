@@ -1,0 +1,94 @@
+
+
+ModelNames Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ModelNames`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModelNames
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/ModelNames.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreateIndexModelName(System.String, System.Int32)
+    
+        
+        :param parentName: 
+        :type parentName: System.String
+        :param index: 
+        :type index: System.Int32
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string CreateIndexModelName(string parentName, int index)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreateIndexModelName(System.String, System.String)
+    
+        
+        :param parentName: 
+        :type parentName: System.String
+        :param index: 
+        :type index: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string CreateIndexModelName(string parentName, string index)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreatePropertyModelName(System.String, System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :param propertyName: 
+        :type propertyName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string CreatePropertyModelName(string prefix, string propertyName)
+

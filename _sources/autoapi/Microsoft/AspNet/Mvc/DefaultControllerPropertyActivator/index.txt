@@ -1,0 +1,82 @@
+
+
+DefaultControllerPropertyActivator Class
+========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultControllerPropertyActivator : IControllerPropertyActivator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/DefaultControllerPropertyActivator.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator.DefaultControllerPropertyActivator()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultControllerPropertyActivator()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator.Activate(Microsoft.AspNet.Mvc.ActionContext, System.Object)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public void Activate(ActionContext actionContext, object controller)
+

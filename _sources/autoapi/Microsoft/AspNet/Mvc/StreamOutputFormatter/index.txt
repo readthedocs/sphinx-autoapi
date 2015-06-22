@@ -1,0 +1,83 @@
+
+
+StreamOutputFormatter Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Always copies the stream to the response, regardless of requested content type.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.StreamOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class StreamOutputFormatter : IOutputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/StreamOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.StreamOutputFormatter
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.StreamOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.StreamOutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :param contentType: 
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool CanWriteResult(OutputFormatterContext context, MediaTypeHeaderValue contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.StreamOutputFormatter.WriteAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task WriteAsync(OutputFormatterContext context)
+

@@ -1,0 +1,212 @@
+
+
+Microsoft.AspNet.Mvc.WebApiCompatShim Namespace
+===============================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/FormDataCollectionExtensions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/HttpRequestMessageFeature/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/HttpRequestMessageHttpContextExtensions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/HttpRequestMessageModelBinder/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/HttpResponseExceptionActionFilter/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/HttpResponseMessageOutputFormatter/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/IHttpRequestMessageFeature/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/IUseWebApiActionConventions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/IUseWebApiOverloading/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/IUseWebApiParameterConventions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/IUseWebApiRoutes/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/OverloadActionConstraint/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/UseWebApiActionConventionsAttribute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/UseWebApiOverloadingAttribute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/UseWebApiParameterConventionsAttribute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/UseWebApiRoutesAttribute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiActionConventionsApplicationModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiCompatShimOptions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiCompatShimOptionsSetup/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiOverloadingApplicationModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiParameterConventionsApplicationModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/WebApiRoutesApplicationModelConvention/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.WebApiCompatShim
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IHttpRequestMessageFeature`
+        
+
+
+    interface :dn:iface:`IUseWebApiActionConventions`
+        
+
+
+    interface :dn:iface:`IUseWebApiOverloading`
+        
+
+
+    interface :dn:iface:`IUseWebApiParameterConventions`
+        
+
+
+    interface :dn:iface:`IUseWebApiRoutes`
+        
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`FormDataCollectionExtensions`
+        
+
+
+    class :dn:cls:`HttpRequestMessageFeature`
+        
+
+
+    class :dn:cls:`HttpRequestMessageHttpContextExtensions`
+        
+
+
+    class :dn:cls:`HttpRequestMessageModelBinder`
+        
+
+
+    class :dn:cls:`HttpResponseExceptionActionFilter`
+        An action filter which sets [Microsoft.AspNet.Mvc.ActionExecutedContext.Result]() to an [Microsoft.AspNet.Mvc.ObjectResult]()
+        if the exception type is [System.Web.Http.HttpResponseException](System.Web.Http.HttpResponseException.yml).
+        This filter runs immediately after the action.
+
+
+    class :dn:cls:`HttpResponseMessageOutputFormatter`
+        
+
+
+    class :dn:cls:`OverloadActionConstraint`
+        
+
+
+    class :dn:cls:`UseWebApiActionConventionsAttribute`
+        
+
+
+    class :dn:cls:`UseWebApiOverloadingAttribute`
+        
+
+
+    class :dn:cls:`UseWebApiParameterConventionsAttribute`
+        
+
+
+    class :dn:cls:`UseWebApiRoutesAttribute`
+        
+
+
+    class :dn:cls:`WebApiActionConventionsApplicationModelConvention`
+        
+
+
+    class :dn:cls:`WebApiCompatShimOptions`
+        
+
+
+    class :dn:cls:`WebApiCompatShimOptionsSetup`
+        
+
+
+    class :dn:cls:`WebApiOverloadingApplicationModelConvention`
+        
+
+
+    class :dn:cls:`WebApiParameterConventionsApplicationModelConvention`
+        
+
+
+    class :dn:cls:`WebApiRoutesApplicationModelConvention`
+        
+
+

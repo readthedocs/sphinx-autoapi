@@ -1,0 +1,82 @@
+
+
+TagHelperContentExtensions Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Extension methods for @!:TagHelperContent-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TagHelperContentExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/TagHelperContentExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions.Append(TagHelperContent, IHtmlEncoder, System.Text.Encoding, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The @!:TagHelperContent- to write to.
+        :type content: TagHelperContent
+        :param encoder: The @!:IHtmlEncoder- to use when encoding
+    <paramref name="value" />.
+        :type encoder: IHtmlEncoder
+        :param encoding: The character encoding in which the
+    <paramref name="value" /> is written.
+        :type encoding: System.Text.Encoding
+        :param value: The [System.Object]() to write.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static TagHelperContent Append(TagHelperContent content, IHtmlEncoder encoder, Encoding encoding, object value)
+

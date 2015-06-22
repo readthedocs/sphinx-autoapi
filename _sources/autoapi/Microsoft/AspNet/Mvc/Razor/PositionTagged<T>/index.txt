@@ -1,0 +1,111 @@
+
+
+PositionTagged<T> Class
+=======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.PositionTagged\<T>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class PositionTagged<T>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/PositionTagged.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.PositionTagged(T, System.Int32)
+    
+        
+        :param value: 
+        :type value: T
+        :param offset: 
+        :type offset: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           public PositionTagged(T value, int offset)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Position
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Position { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Value
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public T Value { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.ToString()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override string ToString()
+

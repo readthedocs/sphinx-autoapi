@@ -1,0 +1,347 @@
+
+
+ViewComponent Class
+===================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A base class for view components.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewComponent`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class ViewComponent
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/ViewComponent.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponent
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponent
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.Context
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpContext Context { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.Request
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpRequest Request { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.RouteData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RouteData RouteData { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.Url
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IUrlHelper Url { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.User
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IPrincipal User { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewBag
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewBag { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewComponentContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewComponentContext ViewComponentContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewContext ViewContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary ViewData { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewEngine
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICompositeViewEngine ViewEngine { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponent
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.Content(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The content, will be HTML encoded before output.
+        :type content: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ContentViewComponentResult Content(string content)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.Json(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The value to output in JSON text.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public JsonViewComponentResult Json(object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.Json(System.Object, JsonSerializerSettings)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The value to output in JSON text.
+        :type value: System.Object
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
+    the formatter.
+        :type serializerSettings: JsonSerializerSettings
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public JsonViewComponentResult Json(object value, JsonSerializerSettings serializerSettings)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.View()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewViewComponentResult View()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.View(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the partial view to render.
+        :type viewName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewViewComponentResult View(string viewName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.View<TModel>(System.String, TModel)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the partial view to render.
+        :type viewName: System.String
+        :param model: The model object for the view.
+        :type model: TModel
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewViewComponentResult View<TModel>(string viewName, TModel model)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponent.View<TModel>(TModel)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model object for the view.
+        :type model: TModel
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewViewComponentResult View<TModel>(TModel model)
+

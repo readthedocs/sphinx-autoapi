@@ -1,0 +1,101 @@
+
+
+StringOutputFormatter Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Always writes a string value to the response, regardless of requested content type.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.OutputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.StringOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class StringOutputFormatter : OutputFormatter, IOutputFormatter, IApiResponseFormatMetadataProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/StringOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.StringOutputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.StringOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.StringOutputFormatter.StringOutputFormatter()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public StringOutputFormatter()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.StringOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.StringOutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :param contentType: 
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override bool CanWriteResult(OutputFormatterContext context, MediaTypeHeaderValue contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.StringOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task WriteResponseBodyAsync(OutputFormatterContext context)
+

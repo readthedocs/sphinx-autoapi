@@ -1,0 +1,64 @@
+
+
+TypeConverterModelBinder Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.TypeConverterModelBinder`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public sealed class TypeConverterModelBinder : IModelBinder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/TypeConverterModelBinder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.TypeConverterModelBinder
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.TypeConverterModelBinder
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.TypeConverterModelBinder.BindModelAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
+    
+        
+        :param bindingContext: 
+        :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<ModelBindingResult> BindModelAsync(ModelBindingContext bindingContext)
+

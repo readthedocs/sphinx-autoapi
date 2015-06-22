@@ -1,0 +1,84 @@
+
+
+MinLengthAttributeAdapter Class
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator{System.ComponentModel.DataAnnotations.MinLengthAttribute}`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MinLengthAttributeAdapter : DataAnnotationsClientModelValidator<MinLengthAttribute>, IClientModelValidator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ModelBinding/Validation/MinLengthAttributeAdapter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter.MinLengthAttributeAdapter(System.ComponentModel.DataAnnotations.MinLengthAttribute)
+    
+        
+        :param attribute: 
+        :type attribute: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    
+        
+        .. code-block:: csharp
+    
+           public MinLengthAttributeAdapter(MinLengthAttribute attribute)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override IEnumerable<ModelClientValidationRule> GetClientValidationRules(ClientModelValidationContext context)
+

@@ -1,0 +1,196 @@
+
+
+AntiForgery Class
+=================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides access to the anti-forgery system, which provides protection against
+Cross-site Request Forgery (XSRF, also called CSRF) attacks.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.AntiForgery`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public sealed class AntiForgery
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/AntiForgery/AntiForgery.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgery
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgery
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AntiForgery.AntiForgery(Microsoft.AspNet.Mvc.IClaimUidExtractor, IDataProtectionProvider, Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider, IOptions<Microsoft.AspNet.Mvc.AntiForgeryOptions>, IHtmlEncoder, IOptions<DataProtectionOptions>)
+    
+        
+        :param claimUidExtractor: 
+        :type claimUidExtractor: Microsoft.AspNet.Mvc.IClaimUidExtractor
+        :param dataProtectionProvider: 
+        :type dataProtectionProvider: IDataProtectionProvider
+        :param additionalDataProvider: 
+        :type additionalDataProvider: Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider
+        :param antiforgeryOptions: 
+        :type antiforgeryOptions: IOptions{Microsoft.AspNet.Mvc.AntiForgeryOptions}
+        :param htmlEncoder: 
+        :type htmlEncoder: IHtmlEncoder
+        :param dataProtectionOptions: 
+        :type dataProtectionOptions: IOptions{DataProtectionOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public AntiForgery(IClaimUidExtractor claimUidExtractor, IDataProtectionProvider dataProtectionProvider, IAntiForgeryAdditionalDataProvider additionalDataProvider, IOptions<AntiForgeryOptions> antiforgeryOptions, IHtmlEncoder htmlEncoder, IOptions<DataProtectionOptions> dataProtectionOptions)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgery
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.GetHtml(HttpContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TagBuilder GetHtml(HttpContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.GetTokens(HttpContext, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+        :param oldCookieToken: The anti-forgery token - if any - that already existed
+    for this request. May be null. The anti-forgery system will try to reuse this cookie
+    value when generating a matching form token.
+        :type oldCookieToken: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public AntiForgeryTokenSet GetTokens(HttpContext context, string oldCookieToken)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.SetCookieTokenAndHeader(HttpContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+    
+        
+        .. code-block:: csharp
+    
+           public void SetCookieTokenAndHeader(HttpContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.Validate(HttpContext, Microsoft.AspNet.Mvc.AntiForgeryTokenSet)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+        :param antiForgeryTokenSet: The anti-forgery token pair (cookie and form token) for this request.
+        :type antiForgeryTokenSet: Microsoft.AspNet.Mvc.AntiForgeryTokenSet
+    
+        
+        .. code-block:: csharp
+    
+           public void Validate(HttpContext context, AntiForgeryTokenSet antiForgeryTokenSet)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.Validate(HttpContext, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+        :param cookieToken: The token that was supplied in the request cookie.
+        :type cookieToken: System.String
+        :param formToken: The token that was supplied in the request form body.
+        :type formToken: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void Validate(HttpContext context, string cookieToken, string formToken)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AntiForgery.ValidateAsync(HttpContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The HTTP context associated with the current call.
+        :type context: HttpContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task ValidateAsync(HttpContext context)
+

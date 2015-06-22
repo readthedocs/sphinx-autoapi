@@ -1,0 +1,111 @@
+
+
+AuthorizationApplicationModelProvider Class
+===========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AuthorizationApplicationModelProvider : IApplicationModelProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Authorization/AuthorizationApplicationModelProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.AuthorizationApplicationModelProvider(IOptions<AuthorizationOptions>)
+    
+        
+        :param authorizationOptionsAccessor: 
+        :type authorizationOptionsAccessor: IOptions{AuthorizationOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public AuthorizationApplicationModelProvider(IOptions<AuthorizationOptions> authorizationOptionsAccessor)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuted(ApplicationModelProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuting(ApplicationModelProviderContext context)
+

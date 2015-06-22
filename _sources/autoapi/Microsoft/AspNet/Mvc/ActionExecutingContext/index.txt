@@ -1,0 +1,109 @@
+
+
+ActionExecutingContext Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionExecutingContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionExecutingContext : FilterContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ActionExecutingContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutingContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutingContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionExecutingContext.ActionExecutingContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>, System.Collections.Generic.IDictionary<System.String, System.Object>, System.Object)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param filters: 
+        :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
+        :param actionArguments: 
+        :type actionArguments: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public ActionExecutingContext(ActionContext actionContext, IList<IFilter> filters, IDictionary<string, object> actionArguments, object controller)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutingContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.ActionArguments
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IDictionary<string, object> ActionArguments { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.Controller
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual object Controller { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.Result
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IActionResult Result { get; set; }
+

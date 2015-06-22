@@ -1,0 +1,84 @@
+
+
+AmbiguousActionException Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An exception which indicates multiple matches in action selection.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Exception`
+* :dn:cls:`System.SystemException`
+* :dn:cls:`System.InvalidOperationException`
+* :dn:cls:`Microsoft.AspNet.Mvc.AmbiguousActionException`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AmbiguousActionException : InvalidOperationException, ISerializable, _Exception
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/AmbiguousActionException.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.AmbiguousActionException
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AmbiguousActionException
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AmbiguousActionException.AmbiguousActionException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+    
+        
+        :param info: 
+        :type info: System.Runtime.Serialization.SerializationInfo
+        :param context: 
+        :type context: System.Runtime.Serialization.StreamingContext
+    
+        
+        .. code-block:: csharp
+    
+           protected AmbiguousActionException(SerializationInfo info, StreamingContext context)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AmbiguousActionException.AmbiguousActionException(System.String)
+    
+        
+        :param message: 
+        :type message: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public AmbiguousActionException(string message)
+

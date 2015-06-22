@@ -1,0 +1,78 @@
+
+
+HttpResponseMessageOutputFormatter Class
+========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseMessageOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class HttpResponseMessageOutputFormatter : IOutputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/Formatters/HttpResponseMessageOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseMessageOutputFormatter
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseMessageOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseMessageOutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :param contentType: 
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool CanWriteResult(OutputFormatterContext context, MediaTypeHeaderValue contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseMessageOutputFormatter.WriteAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task WriteAsync(OutputFormatterContext context)
+

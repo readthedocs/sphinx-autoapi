@@ -1,0 +1,128 @@
+
+
+EnvironmentTagHelper Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+@!:ITagHelper- implementation targeting &lt;environment&gt; elements that conditionally renders
+content based on the current value of @!:IHostingEnvironment.EnvironmentName-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`TagHelper`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class EnvironmentTagHelper : TagHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/EnvironmentTagHelper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.EnvironmentTagHelper(IHostingEnvironment)
+    
+        
+    
+        
+        
+    
+        
+        :param hostingEnvironment: The @!:IHostingEnvironment-.
+        :type hostingEnvironment: IHostingEnvironment
+    
+        
+        .. code-block:: csharp
+    
+           public EnvironmentTagHelper(IHostingEnvironment hostingEnvironment)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.HostingEnvironment
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IHostingEnvironment HostingEnvironment { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.Names
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Names { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.Process(TagHelperContext, TagHelperOutput)
+    
+        
+        :param context: 
+        :type context: TagHelperContext
+        :param output: 
+        :type output: TagHelperOutput
+    
+        
+        .. code-block:: csharp
+    
+           public override void Process(TagHelperContext context, TagHelperOutput output)
+

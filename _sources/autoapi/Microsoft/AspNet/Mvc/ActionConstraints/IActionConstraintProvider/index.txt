@@ -1,0 +1,92 @@
+
+
+IActionConstraintProvider Interface
+===================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionConstraintProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IActionConstraintProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int Order { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuted(ActionConstraintProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuting(ActionConstraintProviderContext context)
+

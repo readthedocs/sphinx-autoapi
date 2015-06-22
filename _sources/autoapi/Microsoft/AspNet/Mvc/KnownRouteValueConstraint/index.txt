@@ -1,0 +1,72 @@
+
+
+KnownRouteValueConstraint Class
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`IRouteConstraint`
+* :dn:cls:`Microsoft.AspNet.Mvc.KnownRouteValueConstraint`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class KnownRouteValueConstraint : IRouteConstraint
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/KnownRouteValueConstraint.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.KnownRouteValueConstraint
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.KnownRouteValueConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.KnownRouteValueConstraint.Match(HttpContext, IRouter, System.String, System.Collections.Generic.IDictionary<System.String, System.Object>, RouteDirection)
+    
+        
+        :param httpContext: 
+        :type httpContext: HttpContext
+        :param route: 
+        :type route: IRouter
+        :param routeKey: 
+        :type routeKey: System.String
+        :param values: 
+        :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :param routeDirection: 
+        :type routeDirection: RouteDirection
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Match(HttpContext httpContext, IRouter route, string routeKey, IDictionary<string, object> values, RouteDirection routeDirection)
+

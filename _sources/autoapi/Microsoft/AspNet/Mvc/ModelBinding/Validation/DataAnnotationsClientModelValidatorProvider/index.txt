@@ -1,0 +1,72 @@
+
+
+DataAnnotationsClientModelValidatorProvider Class
+=================================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() which provides client validators
+for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](). It also provides
+a validator for types which implement [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]().
+The logic to support [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]()
+is implemented in [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DataAnnotationsClientModelValidatorProvider : IClientModelValidatorProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ModelBinding/Validation/DataAnnotationsClientModelValidatorProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider.GetValidators(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void GetValidators(ClientValidatorProviderContext context)
+

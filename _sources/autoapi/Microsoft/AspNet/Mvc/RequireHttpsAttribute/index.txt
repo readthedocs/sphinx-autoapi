@@ -1,0 +1,93 @@
+
+
+RequireHttpsAttribute Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.RequireHttpsAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RequireHttpsAttribute : Attribute, _Attribute, IAuthorizationFilter, IOrderedFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/RequireHttpsAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.RequireHttpsAttribute
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RequireHttpsAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RequireHttpsAttribute.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RequireHttpsAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(Microsoft.AspNet.Mvc.AuthorizationContext)
+    
+        
+        :param filterContext: 
+        :type filterContext: Microsoft.AspNet.Mvc.AuthorizationContext
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual void HandleNonHttpsRequest(AuthorizationContext filterContext)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.RequireHttpsAttribute.OnAuthorization(Microsoft.AspNet.Mvc.AuthorizationContext)
+    
+        
+        :param filterContext: 
+        :type filterContext: Microsoft.AspNet.Mvc.AuthorizationContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnAuthorization(AuthorizationContext filterContext)
+

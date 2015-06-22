@@ -1,0 +1,85 @@
+
+
+AuthorizationContext Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.AuthorizationContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AuthorizationContext : FilterContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/AuthorizationContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AuthorizationContext.AuthorizationContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param filters: 
+        :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
+    
+        
+        .. code-block:: csharp
+    
+           public AuthorizationContext(ActionContext actionContext, IList<IFilter> filters)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AuthorizationContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.AuthorizationContext.Result
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IActionResult Result { get; set; }
+

@@ -1,0 +1,80 @@
+
+
+SyntaxTreeGenerator Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class SyntaxTreeGenerator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Compilation/SyntaxTreeGenerator.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator.Generate(System.String, System.String, CompilationSettings)
+    
+        
+        :param text: 
+        :type text: System.String
+        :param path: 
+        :type path: System.String
+        :param compilationSettings: 
+        :type compilationSettings: CompilationSettings
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static SyntaxTree Generate(string text, string path, CompilationSettings compilationSettings)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator.GetParseOptions(CompilationSettings)
+    
+        
+        :param compilationSettings: 
+        :type compilationSettings: CompilationSettings
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static CSharpParseOptions GetParseOptions(CompilationSettings compilationSettings)
+

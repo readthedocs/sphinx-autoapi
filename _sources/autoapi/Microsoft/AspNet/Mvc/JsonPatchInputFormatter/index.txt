@@ -1,0 +1,106 @@
+
+
+JsonPatchInputFormatter Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.InputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.JsonInputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.JsonPatchInputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonPatchInputFormatter : JsonInputFormatter, IInputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Formatters/JsonPatchInputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.JsonPatchInputFormatter()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchInputFormatter()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.JsonPatchInputFormatter(JsonSerializerSettings)
+    
+        
+        :param serializerSettings: 
+        :type serializerSettings: JsonSerializerSettings
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchInputFormatter(JsonSerializerSettings serializerSettings)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.CanRead(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override bool CanRead(InputFormatterContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task<object> ReadRequestBodyAsync(InputFormatterContext context)
+

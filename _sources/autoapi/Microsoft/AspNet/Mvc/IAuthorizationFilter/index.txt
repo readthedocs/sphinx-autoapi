@@ -1,0 +1,58 @@
+
+
+IAuthorizationFilter Interface
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IAuthorizationFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IAuthorizationFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAuthorizationFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAuthorizationFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAuthorizationFilter.OnAuthorization(Microsoft.AspNet.Mvc.AuthorizationContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.AuthorizationContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnAuthorization(AuthorizationContext context)
+

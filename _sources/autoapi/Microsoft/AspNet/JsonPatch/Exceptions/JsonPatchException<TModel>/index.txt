@@ -1,0 +1,125 @@
+
+
+JsonPatchException<TModel> Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Exception`
+* :dn:cls:`Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException`
+* :dn:cls:`Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException\<TModel>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonPatchException<TModel> : JsonPatchException, ISerializable, _Exception where TModel : class
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.JsonPatch/Exceptions/JsonPatchException.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.JsonPatchException()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchException()
+
+    .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.JsonPatchException(Microsoft.AspNet.JsonPatch.JsonPatchError<TModel>)
+    
+        
+        :param jsonPatchError: 
+        :type jsonPatchError: Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchException(JsonPatchError<TModel> jsonPatchError)
+
+    .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.JsonPatchException(Microsoft.AspNet.JsonPatch.JsonPatchError<TModel>, System.Exception)
+    
+        
+        :param jsonPatchError: 
+        :type jsonPatchError: Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}
+        :param innerException: 
+        :type innerException: System.Exception
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchException(JsonPatchError<TModel> jsonPatchError, Exception innerException)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.AffectedObject
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TModel AffectedObject { get; }
+
+    .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.FailedOperation
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Operation<TModel> FailedOperation { get; }
+
+    .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.Message
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override string Message { get; }
+

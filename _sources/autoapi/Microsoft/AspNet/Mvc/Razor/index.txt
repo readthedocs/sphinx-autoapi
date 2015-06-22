@@ -1,0 +1,39 @@
+
+
+Microsoft.AspNet.Mvc.Razor Namespace
+====================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/IBufferedTextWriter/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.Razor
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IBufferedTextWriter`
+        Specifies the contracts for a [System.IO.TextWriter]() that buffers its content.
+
+

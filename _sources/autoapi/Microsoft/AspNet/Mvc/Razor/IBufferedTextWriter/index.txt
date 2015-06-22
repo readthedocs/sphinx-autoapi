@@ -1,0 +1,108 @@
+
+
+IBufferedTextWriter Interface
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Specifies the contracts for a [System.IO.TextWriter]() that buffers its content.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IBufferedTextWriter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.PageExecutionInstrumentation.Interfaces/IBufferedTextWriter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter.IsBuffering
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool IsBuffering { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter.CopyTo(System.IO.TextWriter)
+    
+        
+    
+        
+        
+    
+        
+        :param writer: The writer to copy the contents to.
+        :type writer: System.IO.TextWriter
+    
+        
+        .. code-block:: csharp
+    
+           void CopyTo(TextWriter writer)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.IBufferedTextWriter.CopyToAsync(System.IO.TextWriter)
+    
+        
+    
+        
+        
+    
+        
+        :param writer: The writer to copy the contents to.
+        :type writer: System.IO.TextWriter
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Task CopyToAsync(TextWriter writer)
+

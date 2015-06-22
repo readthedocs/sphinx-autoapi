@@ -1,0 +1,85 @@
+
+
+IResourceFilter Interface
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A filter which surrounds execution of model binding, the action (and filters) and the action result
+(and filters).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IResourceFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IResourceFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IResourceFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IResourceFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IResourceFilter.OnResourceExecuted(Microsoft.AspNet.Mvc.ResourceExecutedContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ResourceExecutedContext](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ResourceExecutedContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnResourceExecuted(ResourceExecutedContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IResourceFilter.OnResourceExecuting(Microsoft.AspNet.Mvc.ResourceExecutingContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ResourceExecutingContext](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ResourceExecutingContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnResourceExecuting(ResourceExecutingContext context)
+

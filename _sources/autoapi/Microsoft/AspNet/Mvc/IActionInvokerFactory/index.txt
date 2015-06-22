@@ -1,0 +1,59 @@
+
+
+IActionInvokerFactory Interface
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionInvokerFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IActionInvokerFactory.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionInvokerFactory
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionInvokerFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IActionInvokerFactory.CreateInvoker(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IActionInvoker CreateInvoker(ActionContext actionContext)
+

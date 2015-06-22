@@ -1,0 +1,147 @@
+
+
+UrlActionContext Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Context object to be used for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.Action(Microsoft.AspNet.Mvc.UrlActionContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.UrlActionContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class UrlActionContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/UrlActionContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlActionContext
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlActionContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Action
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Action { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Controller
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Controller { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Fragment
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Fragment { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Host
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Host { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Protocol
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Protocol { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlActionContext.Values
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Values { get; set; }
+

@@ -1,0 +1,248 @@
+
+
+XmlDataContractSerializerInputFormatter Class
+=============================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+This class handles deserialization of input XML data
+to strongly-typed objects using [System.Runtime.Serialization.DataContractSerializer]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.InputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class XmlDataContractSerializerInputFormatter : InputFormatter, IInputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/XmlDataContractSerializerInputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.XmlDataContractSerializerInputFormatter()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public XmlDataContractSerializerInputFormatter()
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.MaxDepth
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int MaxDepth { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.SerializerSettings
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public DataContractSerializerSettings SerializerSettings { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.WrapperProviderFactories
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IWrapperProviderFactory> WrapperProviderFactories { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.XmlDictionaryReaderQuotas
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CanReadType(System.Type)
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override bool CanReadType(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: The type of object for which the serializer should be created.
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual DataContractSerializer CreateSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateXmlReader(System.IO.Stream, System.Text.Encoding)
+    
+        
+    
+        
+        
+    
+        
+        :param readStream: The [System.IO.Stream]() from which to read.
+        :type readStream: System.IO.Stream
+        :param encoding: The [System.Text.Encoding]() used to read the stream.
+        :type encoding: System.Text.Encoding
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual XmlReader CreateXmlReader(Stream readStream, Encoding encoding)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetCachedSerializer(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: 
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual DataContractSerializer GetCachedSerializer(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetSerializableType(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param declaredType: The declared type.
+        :type declaredType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual Type GetSerializableType(Type declaredType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The input formatter context which contains the body to be read.
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task<object> ReadRequestBodyAsync(InputFormatterContext context)
+

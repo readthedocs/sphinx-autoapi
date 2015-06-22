@@ -1,0 +1,119 @@
+
+
+ModelClientValidationRule Class
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModelClientValidationRule
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/Validation/ModelClientValidationRule.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ModelClientValidationRule(System.String)
+    
+        
+        :param errorMessage: 
+        :type errorMessage: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public ModelClientValidationRule(string errorMessage)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ModelClientValidationRule(System.String, System.String)
+    
+        
+        :param validationType: 
+        :type validationType: System.String
+        :param errorMessage: 
+        :type errorMessage: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public ModelClientValidationRule(string validationType, string errorMessage)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ErrorMessage
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ErrorMessage { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ValidationParameters
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<string, object> ValidationParameters { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ValidationType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ValidationType { get; }
+

@@ -1,0 +1,159 @@
+
+
+GlobbingUrlBuilder Class
+========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Utility methods for @!:ITagHelper-'s that support attributes containing file globbing patterns.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class GlobbingUrlBuilder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/Internal/GlobbingUrlBuilder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.GlobbingUrlBuilder(IFileProvider, IMemoryCache, PathString)
+    
+        
+    
+        
+        
+    
+        
+        :param fileProvider: The file provider.
+        :type fileProvider: IFileProvider
+        :param cache: The cache.
+        :type cache: IMemoryCache
+        :param requestPathBase: The request path base.
+        :type requestPathBase: PathString
+    
+        
+        .. code-block:: csharp
+    
+           public GlobbingUrlBuilder(IFileProvider fileProvider, IMemoryCache cache, PathString requestPathBase)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.Cache
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IMemoryCache Cache { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.FileProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFileProvider FileProvider { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.RequestPathBase
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public PathString RequestPathBase { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.BuildUrlList(System.String, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param staticUrl: The statically declared URL. This will always be added to the result.
+        :type staticUrl: System.String
+        :param includePattern: The file globbing include pattern.
+        :type includePattern: System.String
+        :param excludePattern: The file globbing exclude pattern.
+        :type excludePattern: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IEnumerable<string> BuildUrlList(string staticUrl, string includePattern, string excludePattern)
+

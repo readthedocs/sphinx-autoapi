@@ -1,0 +1,142 @@
+
+
+BindingInfo Class
+=================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Binding info which represents metadata associated to an action parameter.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.BindingInfo`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class BindingInfo
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/BindingInfo.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.BinderModelName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string BinderModelName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.BinderType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type BinderType { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.BindingSource
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public BindingSource BindingSource { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.PropertyBindingPredicateProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IPropertyBindingPredicateProvider PropertyBindingPredicateProvider { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.GetBindingInfo(System.Collections.Generic.IEnumerable<System.Object>)
+    
+        
+    
+        
+        
+    
+        
+        :param attributes: A collection of attributes which are used to construct [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml)
+        :type attributes: System.Collections.Generic.IEnumerable{System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static BindingInfo GetBindingInfo(IEnumerable<object> attributes)
+

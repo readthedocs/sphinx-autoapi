@@ -1,0 +1,128 @@
+
+
+CorsAuthorizationFilter Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A filter which applies the given @!:CorsPolicy- and adds appropriate response headers.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.CorsAuthorizationFilter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CorsAuthorizationFilter : ICorsAuthorizationFilter, IAsyncAuthorizationFilter, IOrderedFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Cors/CorsAuthorizationFilter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.CorsAuthorizationFilter(ICorsService, ICorsPolicyProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param corsService: The @!:ICorsService-.
+        :type corsService: ICorsService
+        :param policyProvider: The @!:ICorsPolicyProvider-.
+        :type policyProvider: ICorsPolicyProvider
+    
+        
+        .. code-block:: csharp
+    
+           public CorsAuthorizationFilter(ICorsService corsService, ICorsPolicyProvider policyProvider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.PolicyName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string PolicyName { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.OnAuthorizationAsync(Microsoft.AspNet.Mvc.AuthorizationContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.AuthorizationContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task OnAuthorizationAsync(AuthorizationContext context)
+

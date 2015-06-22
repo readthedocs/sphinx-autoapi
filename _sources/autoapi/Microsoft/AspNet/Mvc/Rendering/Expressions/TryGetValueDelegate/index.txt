@@ -1,0 +1,39 @@
+
+
+TryGetValueDelegate Delegate
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public delegate bool TryGetValueDelegate(object dictionary, string key, out object value);
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Expressions/TryGetValueDelegate.cs>`_
+
+
+
+
+
+.. dn:delegate:: Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueDelegate
+

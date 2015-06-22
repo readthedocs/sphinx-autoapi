@@ -1,0 +1,68 @@
+
+
+IDisplayMetadataProvider Interface
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml) for a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IDisplayMetadataProvider : IMetadataDetailsProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/Metadata/IDisplayMetadataProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider.GetDisplayMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void GetDisplayMetadata(DisplayMetadataProviderContext context)
+

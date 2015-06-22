@@ -1,0 +1,71 @@
+
+
+ITagHelperInitializer<TTagHelper> Interface
+===========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Initializes an @!:ITagHelper- before it's executed.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface ITagHelperInitializer<TTagHelper> where TTagHelper : ITagHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/ITagHelperInitializerOfT.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.ITagHelperInitializer<TTagHelper>
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.ITagHelperInitializer<TTagHelper>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.ITagHelperInitializer<TTagHelper>.Initialize(TTagHelper, Microsoft.AspNet.Mvc.ViewContext)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The
+    <typeparamref name="TTagHelper" /> to initialize.
+        :type helper: TTagHelper
+        :param context: The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.
+        :type context: Microsoft.AspNet.Mvc.ViewContext
+    
+        
+        .. code-block:: csharp
+    
+           void Initialize(TTagHelper helper, ViewContext context)
+

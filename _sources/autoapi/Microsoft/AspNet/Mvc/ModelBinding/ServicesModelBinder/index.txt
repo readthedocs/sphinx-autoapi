@@ -1,0 +1,93 @@
+
+
+ServicesModelBinder Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() which binds models from the request services when a model
+has the binding source [Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Services]()/
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ServicesModelBinder : BindingSourceModelBinder, IModelBinder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/ServicesModelBinder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder.ServicesModelBinder()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ServicesModelBinder()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ServicesModelBinder.BindModelCoreAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
+    
+        
+        :param bindingContext: 
+        :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override Task<ModelBindingResult> BindModelCoreAsync(ModelBindingContext bindingContext)
+

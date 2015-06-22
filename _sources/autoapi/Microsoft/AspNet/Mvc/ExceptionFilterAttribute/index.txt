@@ -1,0 +1,94 @@
+
+
+ExceptionFilterAttribute Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.ExceptionFilterAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class ExceptionFilterAttribute : Attribute, _Attribute, IAsyncExceptionFilter, IExceptionFilter, IOrderedFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ExceptionFilterAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute.OnException(Microsoft.AspNet.Mvc.ExceptionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ExceptionContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnException(ExceptionContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute.OnExceptionAsync(Microsoft.AspNet.Mvc.ExceptionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ExceptionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task OnExceptionAsync(ExceptionContext context)
+

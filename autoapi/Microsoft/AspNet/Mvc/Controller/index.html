@@ -1,0 +1,2056 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Controller Class &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Sphinx AutoAPI Index</a></li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Controller Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/Controller/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="controller-class">
+<h1>Controller Class<a class="headerlink" href="#controller-class" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#summary" id="id1">Summary</a></li>
+<li><a class="reference internal" href="#inheritance-hierarchy" id="id2">Inheritance Hierarchy</a></li>
+<li><a class="reference internal" href="#syntax" id="id3">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id4">GitHub</a></li>
+<li><a class="reference internal" href="#properties" id="id5">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id6">Methods</a></li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id1">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Base class for an MVC controller.</p>
+</div>
+<div class="section" id="inheritance-hierarchy">
+<h2><a class="toc-backref" href="#id2">Inheritance Hierarchy</a><a class="headerlink" href="#inheritance-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Object</span></code></li>
+<li><a class="reference internal" href="#Microsoft.AspNet.Mvc.Controller" title="Microsoft.AspNet.Mvc.Controller"><code class="xref dn dn-cls docutils literal"><span class="pre">Microsoft.AspNet.Mvc.Controller</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2><a class="toc-backref" href="#id3">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Controller</span> <span class="p">:</span> <span class="n">IActionFilter</span><span class="p">,</span> <span class="n">IAsyncActionFilter</span><span class="p">,</span> <span class="n">IFilter</span><span class="p">,</span> <span class="n">IDisposable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id4">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Controller.cs">View on GitHub</a></p>
+<dl class="class">
+<dt id="Microsoft.AspNet.Mvc.Controller">
+<em class="property">class </em><code class="descclassname">Microsoft.AspNet.Mvc.</code><code class="descname">Controller</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="properties">
+<h2><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.ActionContext">
+<code class="descname">ActionContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.ActionContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ActionContext</span> <span class="n">ActionContext</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.BindingContext">
+<code class="descname">BindingContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.BindingContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ActionBindingContext</span> <span class="n">BindingContext</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.Context">
+<code class="descname">Context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Context" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">HttpContext</span> <span class="n">Context</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.MetadataProvider">
+<code class="descname">MetadataProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.MetadataProvider" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IModelMetadataProvider</span> <span class="n">MetadataProvider</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.ModelState">
+<code class="descname">ModelState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.ModelState" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelStateDictionary</span> <span class="n">ModelState</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.ObjectValidator">
+<code class="descname">ObjectValidator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.ObjectValidator" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IObjectModelValidator</span> <span class="n">ObjectValidator</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.Request">
+<code class="descname">Request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Request" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">HttpRequest</span> <span class="n">Request</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.Resolver">
+<code class="descname">Resolver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Resolver" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IServiceProvider</span> <span class="n">Resolver</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.Response">
+<code class="descname">Response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Response" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">HttpResponse</span> <span class="n">Response</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.RouteData">
+<code class="descname">RouteData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RouteData" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">RouteData</span> <span class="n">RouteData</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.TempData">
+<code class="descname">TempData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.TempData" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ITempDataDictionary</span> <span class="n">TempData</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.Url">
+<code class="descname">Url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Url" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IUrlHelper</span> <span class="n">Url</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.User">
+<code class="descname">User</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.User" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ClaimsPrincipal</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.ViewBag">
+<code class="descname">ViewBag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.ViewBag" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ViewBag</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Controller.ViewData">
+<code class="descname">ViewData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.ViewData" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ViewDataDictionary</span> <span class="n">ViewData</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.Content">
+<code class="descname">Content</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Content" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>System.String</em>) &#8211; The content to write to the response.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ContentResult</span> <span class="nf">Content</span><span class="p">(</span><span class="kt">string</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Content</code><span class="sig-paren">(</span><em>System.String</em>, <em>MediaTypeHeaderValue</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>System.String</em>) &#8211; The content to write to the response.</li>
+<li><strong>contentType</strong> (<em>MediaTypeHeaderValue</em>) &#8211; The content type (MIME type).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ContentResult</span> <span class="nf">Content</span><span class="p">(</span><span class="kt">string</span> <span class="n">content</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Content</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>System.String</em>) &#8211; The content to write to the response.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The content type (MIME type).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ContentResult</span> <span class="nf">Content</span><span class="p">(</span><span class="kt">string</span> <span class="n">content</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Content</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>System.String</em>) &#8211; The content to write to the response.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The content type (MIME type).</li>
+<li><strong>contentEncoding</strong> (<em>System.Text.Encoding</em>) &#8211; The content encoding.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ContentResult</span> <span class="nf">Content</span><span class="p">(</span><span class="kt">string</span> <span class="n">content</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">,</span> <span class="n">Encoding</span> <span class="n">contentEncoding</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.Created">
+<code class="descname">Created</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Created" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>uri</strong> (<em>System.String</em>) &#8211; The URI at which the content has been created.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedResult</span> <span class="nf">Created</span><span class="p">(</span><span class="kt">string</span> <span class="n">uri</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Created</code><span class="sig-paren">(</span><em>System.Uri</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>uri</strong> (<em>System.Uri</em>) &#8211; The URI at which the content has been created.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedResult</span> <span class="nf">Created</span><span class="p">(</span><span class="n">Uri</span> <span class="n">uri</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.CreatedAtAction">
+<code class="descname">CreatedAtAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.CreatedAtAction" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtActionResult</span> <span class="nf">CreatedAtAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">CreatedAtAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action to use for generating the URL.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtActionResult</span> <span class="nf">CreatedAtAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">CreatedAtAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action to use for generating the URL.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller to use for generating the URL.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtActionResult</span> <span class="nf">CreatedAtAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.CreatedAtRoute">
+<code class="descname">CreatedAtRoute</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.CreatedAtRoute" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtRouteResult</span> <span class="nf">CreatedAtRoute</span><span class="p">(</span><span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">CreatedAtRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtRouteResult</span> <span class="nf">CreatedAtRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">CreatedAtRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route to use for generating the URL.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtRouteResult</span> <span class="nf">CreatedAtRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.Dispose()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.Dispose">
+<code class="descname">Dispose</code><span class="sig-paren">(</span><em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Dispose" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>disposing</strong> &#8211; &lt;c&gt;true&lt;/c&gt; if this method is being invoked by the [Microsoft.AspNet.Mvc.Controller.Dispose](Microsoft.AspNet.Mvc.Controller.yml) method,</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>otherwise
+&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type disposing:</th><td class="field-body">System.Boolean</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.File">
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.Byte[]</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.File" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileContents</strong> (<em>System.Byte[]</em>) &#8211; The file contents.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FileContentResult</span> <span class="nf">File</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">fileContents</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.Byte[]</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileContents</strong> (<em>System.Byte[]</em>) &#8211; The file contents.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+<li><strong>fileDownloadName</strong> (<em>System.String</em>) &#8211; The suggested file name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FileContentResult</span> <span class="nf">File</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">fileContents</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">fileDownloadName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.IO.Stream</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileStream</strong> (<em>System.IO.Stream</em>) &#8211; The [System.IO.Stream]() with the contents of the file.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FileStreamResult</span> <span class="nf">File</span><span class="p">(</span><span class="n">Stream</span> <span class="n">fileStream</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.IO.Stream</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileStream</strong> (<em>System.IO.Stream</em>) &#8211; The [System.IO.Stream]() with the contents of the file.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+<li><strong>fileDownloadName</strong> (<em>System.String</em>) &#8211; The suggested file name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FileStreamResult</span> <span class="nf">File</span><span class="p">(</span><span class="n">Stream</span> <span class="n">fileStream</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">fileDownloadName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileName</strong> (<em>System.String</em>) &#8211; The [System.IO.Stream]() with the contents of the file.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FilePathResult</span> <span class="nf">File</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">File</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileName</strong> (<em>System.String</em>) &#8211; The [System.IO.Stream]() with the contents of the file.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type of the file.</li>
+<li><strong>fileDownloadName</strong> (<em>System.String</em>) &#8211; The suggested file name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">FilePathResult</span> <span class="nf">File</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">fileDownloadName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.HttpBadRequest()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">BadRequestResult</span> <span class="nf">HttpBadRequest</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.HttpBadRequest">
+<code class="descname">HttpBadRequest</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.HttpBadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>modelState</strong> (<a class="reference internal" href="../ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">BadRequestObjectResult</span> <span class="nf">HttpBadRequest</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">HttpBadRequest</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>error</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">BadRequestObjectResult</span> <span class="nf">HttpBadRequest</span><span class="p">(</span><span class="kt">object</span> <span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.HttpNotFound()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">HttpNotFoundResult</span> <span class="nf">HttpNotFound</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.HttpNotFound">
+<code class="descname">HttpNotFound</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.HttpNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">HttpNotFoundObjectResult</span> <span class="nf">HttpNotFound</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.HttpUnauthorized()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">HttpUnauthorizedResult</span> <span class="nf">HttpUnauthorized</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.Json">
+<code class="descname">Json</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Json" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>System.Object</em>) &#8211; The object to serialize.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Json</code><span class="sig-paren">(</span><em>System.Object</em>, <em>JsonSerializerSettings</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>System.Object</em>) &#8211; The object to serialize.</li>
+<li><strong>serializerSettings</strong> &#8211; The &#64;!:JsonSerializerSettings- to be used by</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>the formatter.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type serializerSettings:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">JsonSerializerSettings</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.OnActionExecuted">
+<code class="descname">OnActionExecuted</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionExecutedContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.OnActionExecuted" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>context</strong> (<a class="reference internal" href="../ActionExecutedContext/index.html#Microsoft.AspNet.Mvc.ActionExecutedContext" title="Microsoft.AspNet.Mvc.ActionExecutedContext"><em>Microsoft.AspNet.Mvc.ActionExecutedContext</em></a>) &#8211; The action executed context.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">OnActionExecuted</span><span class="p">(</span><span class="n">ActionExecutedContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.OnActionExecuting">
+<code class="descname">OnActionExecuting</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionExecutingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.OnActionExecuting" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>context</strong> (<a class="reference internal" href="../ActionExecutingContext/index.html#Microsoft.AspNet.Mvc.ActionExecutingContext" title="Microsoft.AspNet.Mvc.ActionExecutingContext"><em>Microsoft.AspNet.Mvc.ActionExecutingContext</em></a>) &#8211; The action executing context.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">OnActionExecuting</span><span class="p">(</span><span class="n">ActionExecutingContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync">
+<code class="descname">OnActionExecutionAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionExecutingContext</em>, <em>Microsoft.AspNet.Mvc.ActionExecutionDelegate</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>context</strong> (<a class="reference internal" href="../ActionExecutingContext/index.html#Microsoft.AspNet.Mvc.ActionExecutingContext" title="Microsoft.AspNet.Mvc.ActionExecutingContext"><em>Microsoft.AspNet.Mvc.ActionExecutingContext</em></a>) &#8211; The action executing context.</li>
+<li><strong>next</strong> &#8211; The [Microsoft.AspNet.Mvc.ActionExecutionDelegate]() to execute. Invoke this delegate in the body</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>of [Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext,Microsoft.AspNet.Mvc.ActionExecutionDelegate)](Microsoft.AspNet.Mvc.Controller.yml) to continue execution of the action.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type next:</th><td class="field-body">Microsoft.AspNet.Mvc.ActionExecutionDelegate</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span> <span class="nf">OnActionExecutionAsync</span><span class="p">(</span><span class="n">ActionExecutingContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">ActionExecutionDelegate</span> <span class="n">next</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.PartialView()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">PartialViewResult</span> <span class="nf">PartialView</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.PartialView">
+<code class="descname">PartialView</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.PartialView" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model that is rendered by the partial view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">PartialViewResult</span> <span class="nf">PartialView</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">PartialView</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewName</strong> (<em>System.String</em>) &#8211; The name of the view that is rendered to the response.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">PartialViewResult</span> <span class="nf">PartialView</span><span class="p">(</span><span class="kt">string</span> <span class="n">viewName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">PartialView</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewName</strong> (<em>System.String</em>) &#8211; The name of the partial view that is rendered to the response.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model that is rendered by the partial view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">PartialViewResult</span> <span class="nf">PartialView</span><span class="p">(</span><span class="kt">string</span> <span class="n">viewName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.Redirect">
+<code class="descname">Redirect</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.Redirect" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>System.String</em>) &#8211; The URL to redirect to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectResult</span> <span class="nf">Redirect</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.RedirectPermanent">
+<code class="descname">RedirectPermanent</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RedirectPermanent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>System.String</em>) &#8211; The URL to redirect to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectResult</span> <span class="nf">RedirectPermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.RedirectToAction">
+<code class="descname">RedirectToAction</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RedirectToAction" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToAction</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToAction</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent">
+<code class="descname">RedirectToActionPermanent</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToActionPermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToActionPermanent</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToActionPermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToActionPermanent</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToActionPermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToActionPermanent</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToActionResult</span> <span class="nf">RedirectToActionPermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.RedirectToRoute">
+<code class="descname">RedirectToRoute</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RedirectToRoute" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoute</span><span class="p">(</span><span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToRoute</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.RedirectToRoutePermanent">
+<code class="descname">RedirectToRoutePermanent</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.RedirectToRoutePermanent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoutePermanent</span><span class="p">(</span><span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToRoutePermanent</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoutePermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">RedirectToRoutePermanent</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The parameters for a route.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoutePermanent</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync">
+<code class="descname">TryUpdateModelAsync</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Type</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model instance to update.</li>
+<li><strong>modelType</strong> (<em>System.Type</em>) &#8211; The type of model instance to update.</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">TryUpdateModelAsync</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Type</em>, <em>System.String</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em>, <em>System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em>, <em>System.String</em>, <em>System.Boolean&gt;</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model instance to update.</li>
+<li><strong>modelType</strong> (<em>System.Type</em>) &#8211; The type of model instance to update.</li>
+<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param predicate:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A predicate which can be used to filter properties at runtime.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean&gt;)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param predicate:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A predicate which can be used to filter properties at runtime.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param includeExpressions:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Linq.Expressions.Expression]()(s) which represent top-level properties</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>which need to be included for the current model.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type includeExpressions:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean&gt;)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().</li>
+<li><strong>predicate</strong> (<em>System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</em>) &#8211; A predicate which can be used to filter properties at runtime.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().</li>
+<li><strong>includeExpressions</strong> &#8211; [System.Linq.Expressions.Expression]()(s) which represent top-level properties</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>which need to be included for the current model.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type includeExpressions:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.TryValidateModel">
+<code class="descname">TryValidateModel</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.TryValidateModel" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model to validate.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">TryValidateModel</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model to validate.</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The key to use when looking up information in [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Controller.View()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ViewResult</span> <span class="nf">View</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Controller.View">
+<code class="descname">View</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.View" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model that is rendered by the view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ViewResult</span> <span class="nf">View</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">View</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewName</strong> (<em>System.String</em>) &#8211; The name of the view that is rendered to the response.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ViewResult</span> <span class="nf">View</span><span class="p">(</span><span class="kt">string</span> <span class="n">viewName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">View</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewName</strong> (<em>System.String</em>) &#8211; The name of the view that is rendered to the response.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model that is rendered by the view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ViewResult</span> <span class="nf">View</span><span class="p">(</span><span class="kt">string</span> <span class="n">viewName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

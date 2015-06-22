@@ -1,0 +1,92 @@
+
+
+IFilterProvider Interface
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IFilterProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IFilterProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IFilterProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IFilterProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Core.IFilterProvider.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int Order { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IFilterProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Core.IFilterProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.FilterProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.FilterProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuted(FilterProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Core.IFilterProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.FilterProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.FilterProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuting(FilterProviderContext context)
+

@@ -1,0 +1,71 @@
+
+
+IControllerActivator Interface
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides methods to create a controller.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IControllerActivator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IControllerActivator.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerActivator
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerActivator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IControllerActivator.Create(Microsoft.AspNet.Mvc.ActionContext, System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ActionContext]() for the executing action.
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :param controllerType: 
+        :type controllerType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           object Create(ActionContext context, Type controllerType)
+

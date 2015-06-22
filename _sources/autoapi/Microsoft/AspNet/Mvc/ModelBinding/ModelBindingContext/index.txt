@@ -1,0 +1,304 @@
+
+
+ModelBindingContext Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A context that contains operating information for model binding and validation.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModelBindingContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/ModelBindingContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelBindingContext()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ModelBindingContext()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetChildModelBindingContext(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata)
+    
+        
+    
+        
+        
+    
+        
+        :param bindingContext: Existing [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+        :param modelName: Model name of associated with the new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        :type modelName: System.String
+        :param modelMetadata: Model metadata of associated with the new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ModelBindingContext GetChildModelBindingContext(ModelBindingContext bindingContext, string modelName, ModelMetadata modelMetadata)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetModelBindingContext(Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata, Microsoft.AspNet.Mvc.ModelBinding.BindingInfo, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param metadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with the model.
+        :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :param bindingInfo: [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml) associated with the model.
+        :type bindingInfo: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+        :param modelName: An optional name of the model to be used.
+        :type modelName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ModelBindingContext GetModelBindingContext(ModelMetadata metadata, BindingInfo bindingInfo, string modelName)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderModelName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string BinderModelName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type BinderType { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BindingSource
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public BindingSource BindingSource { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.FallbackToEmptyPrefix
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool FallbackToEmptyPrefix { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Model { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadata ModelMetadata { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ModelName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ModelType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.OperationBindingContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public OperationBindingContext OperationBindingContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.PropertyFilter
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Func<ModelBindingContext, string, bool> PropertyFilter { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ValueProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IValueProvider ValueProvider { get; set; }
+

@@ -1,0 +1,135 @@
+
+
+Microsoft.AspNet.Mvc.Routing Namespace
+======================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/ActionSelectionDecisionTree/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/ActionSelectorDecisionTreeProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/AttributeRoute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/AttributeRouteLinkGenerationEntry/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/AttributeRouteMatchingEntry/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/AttributeRoutePrecedence/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/AttributeRouting/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/IActionSelectionDecisionTree/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/IActionSelectorDecisionTreeProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/IRouteTemplateProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/InnerAttributeRoute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/RouteValueEqualityComparer/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.Routing
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IActionSelectionDecisionTree`
+        A data structure that retrieves a list of [Microsoft.AspNet.Mvc.ActionDescriptor]() matches based on the values
+        supplied for the current request by @!:Microsoft.AspNet.Routing.RouteData.Values-.
+
+
+    interface :dn:iface:`IActionSelectorDecisionTreeProvider`
+        Stores an [Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree](Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.yml) for the current value of
+        [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.ActionDescriptors](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
+
+
+    interface :dn:iface:`IRouteTemplateProvider`
+        Interface for attributes which can supply a route template for attribute routing.
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`ActionSelectionDecisionTree`
+        
+
+
+    class :dn:cls:`ActionSelectorDecisionTreeProvider`
+        
+
+
+    class :dn:cls:`AttributeRoute`
+        
+
+
+    class :dn:cls:`AttributeRouteLinkGenerationEntry`
+        Used to build an [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml). Represents an individual URL-generating route that will be
+        aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).
+
+
+    class :dn:cls:`AttributeRouteMatchingEntry`
+        Used to build an [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml). Represents an individual URL-matching route that will be
+        aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).
+
+
+    class :dn:cls:`AttributeRoutePrecedence`
+        Computes precedence for an attribute route template.
+
+
+    class :dn:cls:`AttributeRouting`
+        
+
+
+    class :dn:cls:`InnerAttributeRoute`
+        An @!:IRouter- implementation for attribute routing.
+
+
+    class :dn:cls:`RouteValueEqualityComparer`
+        An [System.Collections.Generic.IEqualityComparer`1]() implementation that compares objects as-if
+        they were route value strings.
+
+

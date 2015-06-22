@@ -1,0 +1,108 @@
+
+
+AntiForgeryTokenSet Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+The anti-forgery token pair (cookie and form token) for a request.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.AntiForgeryTokenSet`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AntiForgeryTokenSet
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/AntiForgery/AntiForgeryTokenSet.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet.AntiForgeryTokenSet(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param formToken: The token that is supplied in the request form body.
+        :type formToken: System.String
+        :param cookieToken: The token that is supplied in the request cookie.
+        :type cookieToken: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public AntiForgeryTokenSet(string formToken, string cookieToken)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet.CookieToken
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string CookieToken { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet.FormToken
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string FormToken { get; }
+

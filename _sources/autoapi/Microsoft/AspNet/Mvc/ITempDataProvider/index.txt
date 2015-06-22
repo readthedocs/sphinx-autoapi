@@ -1,0 +1,87 @@
+
+
+ITempDataProvider Interface
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Defines the contract for temporary-data providers that store data that is viewed on the next request.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface ITempDataProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ITempDataProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ITempDataProvider
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ITempDataProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ITempDataProvider.LoadTempData(HttpContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The @!:HttpContext-.
+        :type context: HttpContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IDictionary<string, object> LoadTempData(HttpContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ITempDataProvider.SaveTempData(HttpContext, System.Collections.Generic.IDictionary<System.String, System.Object>)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The @!:HttpContext-.
+        :type context: HttpContext
+        :param values: The values to save.
+        :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
+    
+        
+        .. code-block:: csharp
+    
+           void SaveTempData(HttpContext context, IDictionary<string, object> values)
+

@@ -1,0 +1,158 @@
+
+
+ModelMetadataIdentity Struct
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A key type which identifies a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public struct ModelMetadataIdentity
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/Metadata/ModelMetadataIdentity.cs>`_
+
+
+
+
+
+.. dn:structure:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+
+
+Methods
+-------
+
+.. dn:structure:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.ForProperty(System.Type, System.String, System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param modelType: The model type.
+        :type modelType: System.Type
+        :param name: The name of the property.
+        :type name: System.String
+        :param containerType: The container type of the model property.
+        :type containerType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ModelMetadataIdentity ForProperty(Type modelType, string name, Type containerType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.ForType(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param modelType: The model [System.Type]().
+        :type modelType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ModelMetadataIdentity ForType(Type modelType)
+
+
+Properties
+----------
+
+.. dn:structure:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.ContainerType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ContainerType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.MetadataKind
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadataKind MetadataKind { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.ModelType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ModelType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.Name
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Name { get; }
+

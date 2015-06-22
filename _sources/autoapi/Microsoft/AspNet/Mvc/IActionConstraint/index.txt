@@ -1,0 +1,93 @@
+
+
+IActionConstraint Interface
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Supports conditional logic to determine whether or not an associated action is valid to be selected
+for the given request.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionConstraint : IActionConstraintMetadata
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IActionConstraint.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionConstraint
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.IActionConstraint.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int Order { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IActionConstraint.Accept(Microsoft.AspNet.Mvc.ActionConstraintContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ActionConstraintContext](Microsoft.AspNet.Mvc.ActionConstraintContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool Accept(ActionConstraintContext context)
+

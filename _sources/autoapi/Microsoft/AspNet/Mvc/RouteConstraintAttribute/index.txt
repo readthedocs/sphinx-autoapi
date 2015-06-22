@@ -1,0 +1,152 @@
+
+
+RouteConstraintAttribute Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An attribute which specifies a required route value for an action or controller.
+
+When placed on an action, the route data of a request must match the expectations of the route
+constraint in order for the action to be selected. See [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) for
+the expectations that must be satisfied by the route data.
+
+When placed on a controller, unless overridden by the action, the constraint applies to all
+actions defined by the controller.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.RouteConstraintAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class RouteConstraintAttribute : Attribute, _Attribute, IRouteConstraintProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/RouteConstraintAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteConstraintAttribute
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteConstraintAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteConstraintAttribute(System.String, Microsoft.AspNet.Mvc.RouteKeyHandling)
+    
+        
+    
+        
+        
+    
+        
+        :param routeKey: The route value key.
+        :type routeKey: System.String
+        :param keyHandling: The [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) value. Must be [Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll]()
+    or [Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey]().
+        :type keyHandling: Microsoft.AspNet.Mvc.RouteKeyHandling
+    
+        
+        .. code-block:: csharp
+    
+           protected RouteConstraintAttribute(string routeKey, RouteKeyHandling keyHandling)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteConstraintAttribute(System.String, System.String, System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param routeKey: The route value key.
+        :type routeKey: System.String
+        :param routeValue: The expected route value.
+        :type routeValue: System.String
+        :param blockNonAttributedActions: Set to true to negate this constraint on all actions that do not define a behavior for this route key.
+        :type blockNonAttributedActions: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           protected RouteConstraintAttribute(string routeKey, string routeValue, bool blockNonAttributedActions)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteConstraintAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.BlockNonAttributedActions
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool BlockNonAttributedActions { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKey
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteKey { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RouteKeyHandling RouteKeyHandling { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteValue
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteValue { get; }
+

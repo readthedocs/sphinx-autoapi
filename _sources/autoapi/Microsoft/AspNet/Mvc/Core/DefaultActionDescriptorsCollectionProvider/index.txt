@@ -1,0 +1,97 @@
+
+
+DefaultActionDescriptorsCollectionProvider Class
+================================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Default implementation for ActionDescriptors.
+This implementation caches the results at first call, and is not responsible for updates.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultActionDescriptorsCollectionProvider : IActionDescriptorsCollectionProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/DefaultActionDescriptorsCollectionProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider.DefaultActionDescriptorsCollectionProvider(System.IServiceProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param serviceProvider: The application IServiceProvider.
+        :type serviceProvider: System.IServiceProvider
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultActionDescriptorsCollectionProvider(IServiceProvider serviceProvider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider.ActionDescriptors
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionDescriptorsCollection ActionDescriptors { get; }
+

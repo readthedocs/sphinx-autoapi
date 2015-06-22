@@ -1,0 +1,69 @@
+
+
+IActionConstraintFactory Interface
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A factory for [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionConstraintFactory : IActionConstraintMetadata
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IActionConstraintFactory.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintFactory
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintFactory.CreateInstance(System.IServiceProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The per-request services.
+        :type services: System.IServiceProvider
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IActionConstraint CreateInstance(IServiceProvider services)
+

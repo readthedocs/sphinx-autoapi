@@ -1,0 +1,128 @@
+
+
+FilterDescriptor Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Descriptor for an [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterDescriptor`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class FilterDescriptor
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/FilterDescriptor.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterDescriptor
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterDescriptor
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.FilterDescriptor.FilterDescriptor(Microsoft.AspNet.Mvc.IFilter, System.Int32)
+    
+        
+    
+        
+        
+    
+        
+        :param filter: The [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml).
+        :type filter: Microsoft.AspNet.Mvc.IFilter
+        :param filterScope: The filter scope.
+        :type filterScope: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           public FilterDescriptor(IFilter filter, int filterScope)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterDescriptor
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FilterDescriptor.Filter
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFilter Filter { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FilterDescriptor.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FilterDescriptor.Scope
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Scope { get; }
+

@@ -1,0 +1,116 @@
+
+
+CollectionModelBinder<TElement> Class
+=====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+[Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() implementation for binding collection values.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder\<TElement>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CollectionModelBinder<TElement> : IModelBinder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/CollectionModelBinder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.BindModelAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
+    
+        
+        :param bindingContext: 
+        :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<ModelBindingResult> BindModelAsync(ModelBindingContext bindingContext)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.CopyToModel(System.Object, System.Collections.Generic.IEnumerable<TElement>)
+    
+        
+    
+        
+        
+    
+        
+        :param target: [System.Object]() into which values are copied.
+        :type target: System.Object
+        :param sourceCollection: Collection of values retrieved from value providers. Or
+    <c>null</c> if nothing was bound.
+        :type sourceCollection: System.Collections.Generic.IEnumerable{{TElement}}
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual void CopyToModel(object target, IEnumerable<TElement> sourceCollection)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.CreateEmptyCollection()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual object CreateEmptyCollection()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.GetModel(System.Collections.Generic.IEnumerable<TElement>)
+    
+        
+    
+        
+        
+    
+        
+        :param newCollection: Collection of values retrieved from value providers. Or
+    <c>null</c> if nothing was bound.
+        :type newCollection: System.Collections.Generic.IEnumerable{{TElement}}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual object GetModel(IEnumerable<TElement> newCollection)
+

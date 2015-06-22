@@ -1,0 +1,112 @@
+
+
+DefaultViewComponentInvoker Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultViewComponentInvoker : IViewComponentInvoker
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/DefaultViewComponentInvoker.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.DefaultViewComponentInvoker(System.IServiceProvider, Microsoft.AspNet.Mvc.ITypeActivatorCache, Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator)
+    
+        
+        :param serviceProvider: 
+        :type serviceProvider: System.IServiceProvider
+        :param typeActivatorCache: 
+        :type typeActivatorCache: Microsoft.AspNet.Mvc.ITypeActivatorCache
+        :param viewComponentActivator: 
+        :type viewComponentActivator: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultViewComponentInvoker(IServiceProvider serviceProvider, ITypeActivatorCache typeActivatorCache, IViewComponentActivator viewComponentActivator)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.Invoke(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+    
+        
+        .. code-block:: csharp
+    
+           public void Invoke(ViewComponentContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task InvokeAsync(ViewComponentContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(System.Reflection.MethodInfo, Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+        :param method: 
+        :type method: System.Reflection.MethodInfo
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IViewComponentResult InvokeSyncCore(MethodInfo method, ViewComponentContext context)
+

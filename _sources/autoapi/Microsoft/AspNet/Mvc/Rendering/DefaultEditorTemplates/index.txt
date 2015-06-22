@@ -1,0 +1,268 @@
+
+
+DefaultEditorTemplates Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultEditorTemplates
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Html/DefaultEditorTemplates.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.BooleanTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string BooleanTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.CollectionTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string CollectionTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string DateInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateTimeInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string DateTimeInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateTimeLocalInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string DateTimeLocalInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DecimalTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string DecimalTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.EmailAddressInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string EmailAddressInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.FileCollectionInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string FileCollectionInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.FileInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string FileInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.HiddenInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string HiddenInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.MultilineTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string MultilineTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.NumberInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string NumberInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.ObjectTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string ObjectTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.PasswordTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string PasswordTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.PhoneNumberInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string PhoneNumberInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.StringTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string StringTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.TimeInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string TimeInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.UrlInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string UrlInputTemplate(IHtmlHelper htmlHelper)
+

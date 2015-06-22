@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HttpPatchAttribute Class &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Sphinx AutoAPI Index</a></li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>HttpPatchAttribute Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/HttpPatchAttribute/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="httppatchattribute-class">
+<h1>HttpPatchAttribute Class<a class="headerlink" href="#httppatchattribute-class" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#summary" id="id1">Summary</a></li>
+<li><a class="reference internal" href="#inheritance-hierarchy" id="id2">Inheritance Hierarchy</a></li>
+<li><a class="reference internal" href="#syntax" id="id3">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id4">GitHub</a></li>
+<li><a class="reference internal" href="#constructors" id="id5">Constructors</a></li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id1">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Identifies an action that only supports the HTTP PATCH method.</p>
+</div>
+<div class="section" id="inheritance-hierarchy">
+<h2><a class="toc-backref" href="#id2">Inheritance Hierarchy</a><a class="headerlink" href="#inheritance-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Object</span></code></li>
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Attribute</span></code></li>
+<li><a class="reference internal" href="../HttpMethodAttribute/index.html#Microsoft.AspNet.Mvc.HttpMethodAttribute" title="Microsoft.AspNet.Mvc.HttpMethodAttribute"><code class="xref dn dn-cls docutils literal"><span class="pre">Microsoft.AspNet.Mvc.HttpMethodAttribute</span></code></a></li>
+<li><a class="reference internal" href="#Microsoft.AspNet.Mvc.HttpPatchAttribute" title="Microsoft.AspNet.Mvc.HttpPatchAttribute"><code class="xref dn dn-cls docutils literal"><span class="pre">Microsoft.AspNet.Mvc.HttpPatchAttribute</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2><a class="toc-backref" href="#id3">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">HttpPatchAttribute</span> <span class="p">:</span> <span class="n">HttpMethodAttribute</span><span class="p">,</span> <span class="n">_Attribute</span><span class="p">,</span> <span class="n">IActionHttpMethodProvider</span><span class="p">,</span> <span class="n">IRouteTemplateProvider</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id4">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/HttpPatchAttribute.cs">View on GitHub</a></p>
+<dl class="class">
+<dt id="Microsoft.AspNet.Mvc.HttpPatchAttribute">
+<em class="property">class </em><code class="descclassname">Microsoft.AspNet.Mvc.</code><code class="descname">HttpPatchAttribute</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.HttpPatchAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="constructors">
+<h2><a class="toc-backref" href="#id5">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="constructor">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.HttpPatchAttribute.HttpPatchAttribute()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpPatchAttribute</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="constructor">
+<dt id="Microsoft.AspNet.Mvc.HttpPatchAttribute.HttpPatchAttribute">
+<code class="descname">HttpPatchAttribute</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.HttpPatchAttribute.HttpPatchAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>template</strong> (<em>System.String</em>) &#8211; The route template. May not be null.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpPatchAttribute</span><span class="p">(</span><span class="kt">string</span> <span class="n">template</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

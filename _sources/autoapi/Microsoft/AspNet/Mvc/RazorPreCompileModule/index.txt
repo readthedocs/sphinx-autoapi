@@ -1,0 +1,126 @@
+
+
+RazorPreCompileModule Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An @!:ICompileModule- implementation that pre-compiles Razor views in the application.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`ICompileModule`
+* :dn:cls:`Microsoft.AspNet.Mvc.RazorPreCompileModule`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class RazorPreCompileModule : ICompileModule
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc/RazorPreCompileModule.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorPreCompileModule
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorPreCompileModule
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.RazorPreCompileModule.RazorPreCompileModule(System.IServiceProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The [System.IServiceProvider]() for the application.
+        :type services: System.IServiceProvider
+    
+        
+        .. code-block:: csharp
+    
+           public RazorPreCompileModule(IServiceProvider services)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorPreCompileModule
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RazorPreCompileModule.GenerateSymbols
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool GenerateSymbols { get; protected set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorPreCompileModule
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.RazorPreCompileModule.AfterCompile(AfterCompileContext)
+    
+        
+        :param context: 
+        :type context: AfterCompileContext
+    
+        
+        .. code-block:: csharp
+    
+           public void AfterCompile(AfterCompileContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.RazorPreCompileModule.BeforeCompile(BeforeCompileContext)
+    
+        
+        :param context: 
+        :type context: BeforeCompileContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void BeforeCompile(BeforeCompileContext context)
+

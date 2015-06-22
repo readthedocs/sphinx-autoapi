@@ -1,0 +1,190 @@
+
+
+CompositeValueProvider Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Represents a [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() whose values come from a collection of [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()s.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Collections.ObjectModel.Collection{Microsoft.AspNet.Mvc.ModelBinding.IValueProvider}`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CompositeValueProvider : Collection<IValueProvider>, IList<IValueProvider>, IList, IReadOnlyList<IValueProvider>, ICollection<IValueProvider>, ICollection, IReadOnlyCollection<IValueProvider>, IEnumerable<IValueProvider>, IEnumerable, IEnumerableValueProvider, IBindingSourceValueProvider, IValueProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/CompositeValueProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.CompositeValueProvider()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public CompositeValueProvider()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.CompositeValueProvider(System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ModelBinding.IValueProvider>)
+    
+        
+    
+        
+        
+    
+        
+        :param valueProviders: The sequence of [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() to add to this instance of
+    [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).
+        :type valueProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.IValueProvider}
+    
+        
+        .. code-block:: csharp
+    
+           public CompositeValueProvider(IEnumerable<IValueProvider> valueProviders)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.ContainsPrefixAsync(System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<bool> ContainsPrefixAsync(string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Create(System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory>, Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext)
+    
+        
+    
+        
+        
+    
+        
+        :param factories: The set of [Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory]() instances.
+        :type factories: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}
+        :param context: The [Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext]().
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static CompositeValueProvider Create(IEnumerable<IValueProviderFactory> factories, ValueProviderFactoryContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Filter(Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
+    
+        
+        :param bindingSource: 
+        :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IValueProvider Filter(BindingSource bindingSource)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.GetKeysFromPrefixAsync(System.String)
+    
+        
+        :param prefix: 
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<IDictionary<string, string>> GetKeysFromPrefixAsync(string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.GetValueAsync(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<ValueProviderResult> GetValueAsync(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.InsertItem(System.Int32, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)
+    
+        
+        :param index: 
+        :type index: System.Int32
+        :param item: 
+        :type item: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
+        .. code-block:: csharp
+    
+           protected override void InsertItem(int index, IValueProvider item)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.SetItem(System.Int32, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)
+    
+        
+        :param index: 
+        :type index: System.Int32
+        :param item: 
+        :type item: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
+        .. code-block:: csharp
+    
+           protected override void SetItem(int index, IValueProvider item)
+

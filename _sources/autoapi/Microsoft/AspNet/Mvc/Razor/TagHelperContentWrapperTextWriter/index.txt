@@ -1,0 +1,166 @@
+
+
+TagHelperContentWrapperTextWriter Class
+=======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+[System.IO.TextWriter]() implementation which writes to a @!:TagHelperContent- instance.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.MarshalByRefObject`
+* :dn:cls:`System.IO.TextWriter`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TagHelperContentWrapperTextWriter : TextWriter, IDisposable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/TagHelperContentWrapperTextWriter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.TagHelperContentWrapperTextWriter(System.Text.Encoding)
+    
+        
+    
+        
+        
+    
+        
+        :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
+        :type encoding: System.Text.Encoding
+    
+        
+        .. code-block:: csharp
+    
+           public TagHelperContentWrapperTextWriter(Encoding encoding)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.TagHelperContentWrapperTextWriter(System.Text.Encoding, TagHelperContent)
+    
+        
+    
+        
+        
+    
+        
+        :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
+        :type encoding: System.Text.Encoding
+        :param content: The @!:TagHelperContent- to write to.
+        :type content: TagHelperContent
+    
+        
+        .. code-block:: csharp
+    
+           public TagHelperContentWrapperTextWriter(Encoding encoding, TagHelperContent content)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Content
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TagHelperContent Content { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Encoding Encoding { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.ToString()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override string ToString()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Write(System.Char)
+    
+        
+        :param value: 
+        :type value: System.Char
+    
+        
+        .. code-block:: csharp
+    
+           public override void Write(char value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Write(System.String)
+    
+        
+        :param value: 
+        :type value: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public override void Write(string value)
+

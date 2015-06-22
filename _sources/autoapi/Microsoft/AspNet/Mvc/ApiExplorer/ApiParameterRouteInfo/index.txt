@@ -1,0 +1,102 @@
+
+
+ApiParameterRouteInfo Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A metadata description of routing information for an [Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterDescription.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ApiParameterRouteInfo
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.ApiExplorer/ApiParameterRouteInfo.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo.Constraints
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable<IRouteConstraint> Constraints { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo.DefaultValue
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object DefaultValue { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterRouteInfo.IsOptional
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsOptional { get; set; }
+

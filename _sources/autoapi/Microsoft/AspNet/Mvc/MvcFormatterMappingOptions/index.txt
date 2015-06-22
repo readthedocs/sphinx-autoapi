@@ -1,0 +1,72 @@
+
+
+MvcFormatterMappingOptions Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides programmatic configuration for formatter mappings in the MVC framework.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.MvcFormatterMappingOptions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcFormatterMappingOptions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/MvcFormatterMappingOptions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcFormatterMappingOptions
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcFormatterMappingOptions
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcFormatterMappingOptions.FormatterMappings
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public FormatterMappings FormatterMappings { get; }
+

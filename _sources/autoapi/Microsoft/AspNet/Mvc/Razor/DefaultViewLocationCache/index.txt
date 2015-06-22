@@ -1,0 +1,104 @@
+
+
+DefaultViewLocationCache Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Default implementation of [Microsoft.AspNet.Mvc.Razor.IViewLocationCache](Microsoft.AspNet.Mvc.Razor.IViewLocationCache.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultViewLocationCache : IViewLocationCache
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/DefaultViewLocationCache.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache.DefaultViewLocationCache()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultViewLocationCache()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache.Get(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Get(ViewLocationExpanderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache.Set(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext, System.String)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
+        :param value: 
+        :type value: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void Set(ViewLocationExpanderContext context, string value)
+

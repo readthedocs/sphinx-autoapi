@@ -1,0 +1,112 @@
+
+
+ServiceFilterAttribute Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.ServiceFilterAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ServiceFilterAttribute : Attribute, _Attribute, IFilterFactory, IOrderedFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ServiceFilterAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceFilterAttribute
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.ServiceFilterAttribute(System.Type)
+    
+        
+        :param type: 
+        :type type: System.Type
+    
+        
+        .. code-block:: csharp
+    
+           public ServiceFilterAttribute(Type type)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.ServiceType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ServiceType { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.CreateInstance(System.IServiceProvider)
+    
+        
+        :param serviceProvider: 
+        :type serviceProvider: System.IServiceProvider
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFilter CreateInstance(IServiceProvider serviceProvider)
+

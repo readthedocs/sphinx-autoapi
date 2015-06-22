@@ -1,0 +1,138 @@
+
+
+OptionTagHelper Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+@!:ITagHelper- implementation targeting &lt;option&gt; elements.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`TagHelper`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class OptionTagHelper : TagHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/OptionTagHelper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.OptionTagHelper(Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator)
+    
+        
+    
+        
+        
+    
+        
+        :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
+        :type generator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
+    
+        
+        .. code-block:: csharp
+    
+           public OptionTagHelper(IHtmlGenerator generator)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.Generator
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IHtmlGenerator Generator { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.Value
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Value { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.ViewContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewContext ViewContext { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.ProcessAsync(TagHelperContext, TagHelperOutput)
+    
+        
+        :param context: 
+        :type context: TagHelperContext
+        :param output: 
+        :type output: TagHelperOutput
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+

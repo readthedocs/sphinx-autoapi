@@ -1,0 +1,87 @@
+
+
+SerializableErrorWrapperProvider Class
+======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Wraps the object of type [Microsoft.AspNet.Mvc.SerializableError]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class SerializableErrorWrapperProvider : IWrapperProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/SerializableErrorWrapperProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.WrappingType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type WrappingType { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.Wrap(System.Object)
+    
+        
+        :param original: 
+        :type original: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Wrap(object original)
+

@@ -1,0 +1,94 @@
+
+
+ValidationSummary Enum
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Acceptable validation summary rendering modes.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public enum ValidationSummary
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/ValidationSummary.cs>`_
+
+
+
+
+
+.. dn:enumeration:: Microsoft.AspNet.Mvc.ValidationSummary
+
+
+Fields
+------
+
+.. dn:enumeration:: Microsoft.AspNet.Mvc.ValidationSummary
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.ValidationSummary.All
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           All = 2
+
+    .. dn:field:: Microsoft.AspNet.Mvc.ValidationSummary.ModelOnly
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           ModelOnly = 1
+
+    .. dn:field:: Microsoft.AspNet.Mvc.ValidationSummary.None
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           None = 0
+

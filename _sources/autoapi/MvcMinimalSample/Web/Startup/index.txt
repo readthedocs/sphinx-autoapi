@@ -1,0 +1,74 @@
+
+
+Startup Class
+=============
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`MvcMinimalSample.Web.Startup`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class Startup
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/samples/MvcMinimalSample.Web/Startup.cs>`_
+
+
+
+
+
+.. dn:class:: MvcMinimalSample.Web.Startup
+
+
+Methods
+-------
+
+.. dn:class:: MvcMinimalSample.Web.Startup
+    :noindex:
+    :hidden:
+
+    .. dn:method:: MvcMinimalSample.Web.Startup.Configure(IApplicationBuilder)
+    
+        
+        :param app: 
+        :type app: IApplicationBuilder
+    
+        
+        .. code-block:: csharp
+    
+           public void Configure(IApplicationBuilder app)
+
+    .. dn:method:: MvcMinimalSample.Web.Startup.ConfigureServices(IServiceCollection)
+    
+        
+        :param services: 
+        :type services: IServiceCollection
+    
+        
+        .. code-block:: csharp
+    
+           public void ConfigureServices(IServiceCollection services)
+

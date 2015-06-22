@@ -1,0 +1,69 @@
+
+
+IWrapperProviderFactory Interface
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Create a [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) given a [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IWrapperProviderFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/IWrapperProviderFactory.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.GetProvider(Microsoft.AspNet.Mvc.Xml.WrapperProviderContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
+        :type context: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IWrapperProvider GetProvider(WrapperProviderContext context)
+

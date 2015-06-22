@@ -1,0 +1,69 @@
+
+
+IUnwrappable Interface
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Defines an interface for objects to be un-wrappable after deserialization.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IUnwrappable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/IUnwrappable.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Xml.IUnwrappable
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Xml.IUnwrappable
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.IUnwrappable.Unwrap(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param declaredType: The type to which the object should be un-wrapped to.
+        :type declaredType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           object Unwrap(Type declaredType)
+

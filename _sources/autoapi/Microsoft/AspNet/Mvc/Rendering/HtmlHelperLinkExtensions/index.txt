@@ -1,0 +1,365 @@
+
+
+HtmlHelperLinkExtensions Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Link-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class HtmlHelperLinkExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/HtmlHelperLinkExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
+    attributes.
+        :type htmlAttributes: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName, object routeValues, object htmlAttributes)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName, string controllerName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName, string controllerName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.ActionLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
+    attributes.
+        :type htmlAttributes: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString ActionLink(IHtmlHelper helper, string linkText, string actionName, string controllerName, object routeValues, object htmlAttributes)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString RouteLink(IHtmlHelper htmlHelper, string linkText, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
+    attributes.
+        :type htmlAttributes: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString RouteLink(IHtmlHelper htmlHelper, string linkText, object routeValues, object htmlAttributes)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString RouteLink(IHtmlHelper htmlHelper, string linkText, string routeName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString RouteLink(IHtmlHelper htmlHelper, string linkText, string routeName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper, System.String, System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :param linkText: The inner text of the anchor element. Must not be
+    <c>null</c>.
+        :type linkText: System.String
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
+    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
+    created using [System.Object]() initializer syntax. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the route
+    parameters.
+        :type routeValues: System.Object
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
+    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
+    attributes.
+        :type htmlAttributes: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static HtmlString RouteLink(IHtmlHelper htmlHelper, string linkText, string routeName, object routeValues, object htmlAttributes)
+

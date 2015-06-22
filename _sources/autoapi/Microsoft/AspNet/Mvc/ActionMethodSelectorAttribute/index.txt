@@ -1,0 +1,108 @@
+
+
+ActionMethodSelectorAttribute Class
+===================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Base class for attributes which can implement conditional logic to enable or disable an action
+for a given request. See [Microsoft.AspNet.Mvc.IActionConstraint]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class ActionMethodSelectorAttribute : Attribute, _Attribute, IActionConstraint, IActionConstraintMetadata
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ActionMethodSelectorAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute.Accept(Microsoft.AspNet.Mvc.ActionConstraintContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Accept(ActionConstraintContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute.IsValidForRequest(RouteContext, Microsoft.AspNet.Mvc.ActionDescriptor)
+    
+        
+    
+        
+        
+    
+        
+        :param routeContext: The route context.
+        :type routeContext: RouteContext
+        :param action: Information about the action.
+        :type action: Microsoft.AspNet.Mvc.ActionDescriptor
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsValidForRequest(RouteContext routeContext, ActionDescriptor action)
+

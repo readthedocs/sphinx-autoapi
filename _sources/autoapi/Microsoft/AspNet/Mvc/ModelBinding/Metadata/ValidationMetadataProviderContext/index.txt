@@ -1,0 +1,158 @@
+
+
+ValidationMetadataProviderContext Class
+=======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A context for an [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IValidationMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.IValidationMetadataProvider.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ValidationMetadataProviderContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/Metadata/ValidationMetadataProviderContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.ValidationMetadataProviderContext(Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity, Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() for the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
+        :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+        :param attributes: The attributes for the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
+        :type attributes: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
+    
+        
+        .. code-block:: csharp
+    
+           public ValidationMetadataProviderContext(ModelMetadataIdentity key, ModelAttributes attributes)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.Attributes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<object> Attributes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.Key
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadataIdentity Key { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.PropertyAttributes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<object> PropertyAttributes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.TypeAttributes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<object> TypeAttributes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.ValidationMetadata
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ValidationMetadata ValidationMetadata { get; }
+

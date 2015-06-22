@@ -1,0 +1,120 @@
+
+
+FixedSetControllerTypeProvider Class
+====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A [Microsoft.AspNet.Mvc.IControllerTypeProvider]() with a fixed set of types that are used as controllers.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class FixedSetControllerTypeProvider : IControllerTypeProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/FixedSetControllerTypeProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.FixedSetControllerTypeProvider()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public FixedSetControllerTypeProvider()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.FixedSetControllerTypeProvider(System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo>)
+    
+        
+    
+        
+        
+    
+        
+        :param controllerTypes: The sequence of controller [System.Reflection.TypeInfo]().
+        :type controllerTypes: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
+    
+        
+        .. code-block:: csharp
+    
+           public FixedSetControllerTypeProvider(IEnumerable<TypeInfo> controllerTypes)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.ControllerTypes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<TypeInfo> ControllerTypes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.Microsoft.AspNet.Mvc.IControllerTypeProvider.ControllerTypes
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerable<TypeInfo> IControllerTypeProvider.ControllerTypes { get; }
+

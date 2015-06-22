@@ -1,0 +1,58 @@
+
+
+IExceptionFilter Interface
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IExceptionFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IExceptionFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IExceptionFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IExceptionFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IExceptionFilter.OnException(Microsoft.AspNet.Mvc.ExceptionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ExceptionContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnException(ExceptionContext context)
+

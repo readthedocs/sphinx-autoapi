@@ -1,0 +1,123 @@
+
+
+ViewDataDictionary<TModel> Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewDataDictionary`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewDataDictionary\<TModel>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ViewDataDictionary<TModel> : ViewDataDictionary, IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewDataDictionaryOfT.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.ViewDataDictionary(Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param metadataProvider: 
+        :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+        :param modelState: 
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary(IModelMetadataProvider metadataProvider, ModelStateDictionary modelState)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.ViewDataDictionary(Microsoft.AspNet.Mvc.ViewDataDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param source: 
+        :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary(ViewDataDictionary source)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.ViewDataDictionary(Microsoft.AspNet.Mvc.ViewDataDictionary, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param source: 
+        :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
+        :param model: 
+        :type model: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary(ViewDataDictionary source, object model)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.Model
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TModel Model { get; set; }
+

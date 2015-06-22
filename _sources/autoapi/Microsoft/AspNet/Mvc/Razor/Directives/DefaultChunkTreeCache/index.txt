@@ -1,0 +1,95 @@
+
+
+DefaultChunkTreeCache Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Default implementation of [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultChunkTreeCache : IChunkTreeCache
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/Directives/DefaultChunkTreeCache.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache.DefaultChunkTreeCache(IFileProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param fileProvider: The application's @!:IFileProvider-.
+        :type fileProvider: IFileProvider
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultChunkTreeCache(IFileProvider fileProvider)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache.GetOrAdd(System.String, System.Func<IFileInfo, ChunkTree>)
+    
+        
+        :param pagePath: 
+        :type pagePath: System.String
+        :param getChunkTree: 
+        :type getChunkTree: System.Func{IFileInfo,ChunkTree}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ChunkTree GetOrAdd(string pagePath, Func<IFileInfo, ChunkTree> getChunkTree)
+

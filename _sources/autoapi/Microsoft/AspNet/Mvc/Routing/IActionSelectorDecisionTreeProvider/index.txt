@@ -1,0 +1,68 @@
+
+
+IActionSelectorDecisionTreeProvider Interface
+=============================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Stores an [Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree](Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.yml) for the current value of
+[Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.ActionDescriptors](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionSelectorDecisionTreeProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/IActionSelectorDecisionTreeProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider.DecisionTree
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IActionSelectionDecisionTree DecisionTree { get; }
+

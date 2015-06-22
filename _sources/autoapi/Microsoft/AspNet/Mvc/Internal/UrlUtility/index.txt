@@ -1,0 +1,69 @@
+
+
+UrlUtility Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Internal.UrlUtility`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class UrlUtility
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Internal/UrlUtility.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Internal.UrlUtility
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Internal.UrlUtility
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Internal.UrlUtility.IsLocalUrl(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param url: The URL.
+        :type url: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static bool IsLocalUrl(string url)
+

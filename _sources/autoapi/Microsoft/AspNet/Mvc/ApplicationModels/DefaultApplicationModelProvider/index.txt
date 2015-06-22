@@ -1,0 +1,236 @@
+
+
+DefaultApplicationModelProvider Class
+=====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultApplicationModelProvider : IApplicationModelProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ApplicationModels/DefaultApplicationModelProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.DefaultApplicationModelProvider(IOptions<Microsoft.AspNet.Mvc.MvcOptions>)
+    
+        
+        :param mvcOptionsAccessor: 
+        :type mvcOptionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultApplicationModelProvider(IOptions<MvcOptions> mvcOptionsAccessor)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.BuildActionModels(System.Reflection.TypeInfo, System.Reflection.MethodInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param typeInfo: The controller [System.Reflection.TypeInfo]().
+        :type typeInfo: System.Reflection.TypeInfo
+        :param methodInfo: The action [System.Reflection.MethodInfo]().
+        :type methodInfo: System.Reflection.MethodInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual IEnumerable<ActionModel> BuildActionModels(TypeInfo typeInfo, MethodInfo methodInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.BuildControllerModels(System.Reflection.TypeInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param typeInfo: The controller [System.Reflection.TypeInfo]().
+        :type typeInfo: System.Reflection.TypeInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual IEnumerable<ControllerModel> BuildControllerModels(TypeInfo typeInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreateActionModel(System.Reflection.MethodInfo, System.Collections.Generic.IReadOnlyList<System.Object>)
+    
+        
+    
+        
+        
+    
+        
+        :param methodInfo: The [System.Reflection.MethodInfo]().
+        :type methodInfo: System.Reflection.MethodInfo
+        :param attributes: The set of attributes to use as metadata.
+        :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual ActionModel CreateActionModel(MethodInfo methodInfo, IReadOnlyList<object> attributes)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreateControllerModel(System.Reflection.TypeInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param typeInfo: The [System.Reflection.TypeInfo]().
+        :type typeInfo: System.Reflection.TypeInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual ControllerModel CreateControllerModel(TypeInfo typeInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreateParameterModel(System.Reflection.ParameterInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param parameterInfo: The [System.Reflection.ParameterInfo]().
+        :type parameterInfo: System.Reflection.ParameterInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual ParameterModel CreateParameterModel(ParameterInfo parameterInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreatePropertyModel(System.Reflection.PropertyInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param propertyInfo: The [System.Reflection.PropertyInfo]().
+        :type propertyInfo: System.Reflection.PropertyInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual PropertyModel CreatePropertyModel(PropertyInfo propertyInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.IsAction(System.Reflection.TypeInfo, System.Reflection.MethodInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param typeInfo: The [System.Reflection.TypeInfo]().
+        :type typeInfo: System.Reflection.TypeInfo
+        :param methodInfo: The [System.Reflection.MethodInfo]().
+        :type methodInfo: System.Reflection.MethodInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual bool IsAction(TypeInfo typeInfo, MethodInfo methodInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnProvidersExecuted(ApplicationModelProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnProvidersExecuting(ApplicationModelProviderContext context)
+

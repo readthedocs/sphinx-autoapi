@@ -1,0 +1,130 @@
+
+
+InputFormatterContext Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A context object used by an input formatter for deserializing the request body into an object.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.InputFormatterContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class InputFormatterContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/InputFormatterContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatterContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatterContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.InputFormatterContext.InputFormatterContext(HttpContext, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param httpContext: The @!:Http.HttpContext- for the current operation.
+        :type httpContext: HttpContext
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) for recording errors.
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+        :param modelType: The [System.Type]() of the model to deserialize.
+        :type modelType: System.Type
+    
+        
+        .. code-block:: csharp
+    
+           public InputFormatterContext(HttpContext httpContext, ModelStateDictionary modelState, Type modelType)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatterContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.InputFormatterContext.HttpContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpContext HttpContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.InputFormatterContext.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.InputFormatterContext.ModelType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ModelType { get; }
+

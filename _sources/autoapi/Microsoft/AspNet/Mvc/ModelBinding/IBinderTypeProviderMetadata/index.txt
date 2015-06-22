@@ -1,0 +1,67 @@
+
+
+IBinderTypeProviderMetadata Interface
+=====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides a [System.Type]() which implements [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IBinderTypeProviderMetadata : IBindingSourceMetadata
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/IBinderTypeProviderMetadata.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata.BinderType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Type BinderType { get; }
+

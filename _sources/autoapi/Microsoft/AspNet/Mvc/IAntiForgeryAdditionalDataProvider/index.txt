@@ -1,0 +1,90 @@
+
+
+IAntiForgeryAdditionalDataProvider Interface
+============================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Allows providing or validating additional custom data for anti-forgery tokens.
+For example, the developer could use this to supply a nonce when the token is
+generated, then he could validate the nonce when the token is validated.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IAntiForgeryAdditionalDataProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/AntiForgery/IAntiForgeryAdditionalDataProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider.GetAdditionalData(HttpContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: Information about the current request.
+        :type context: HttpContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           string GetAdditionalData(HttpContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAntiForgeryAdditionalDataProvider.ValidateAdditionalData(HttpContext, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param context: Information about the current request.
+        :type context: HttpContext
+        :param additionalData: Supplemental data that was embedded within the token.
+        :type additionalData: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool ValidateAdditionalData(HttpContext context, string additionalData)
+

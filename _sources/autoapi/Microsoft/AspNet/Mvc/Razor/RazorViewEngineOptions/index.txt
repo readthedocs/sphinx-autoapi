@@ -1,0 +1,87 @@
+
+
+RazorViewEngineOptions Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides programmatic configuration for the [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RazorViewEngineOptions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/RazorViewEngineOptions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.FileProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFileProvider FileProvider { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.ViewLocationExpanders
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IViewLocationExpander> ViewLocationExpanders { get; }
+

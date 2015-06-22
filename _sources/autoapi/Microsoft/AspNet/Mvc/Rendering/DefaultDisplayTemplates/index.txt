@@ -1,0 +1,160 @@
+
+
+DefaultDisplayTemplates Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultDisplayTemplates
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Html/DefaultDisplayTemplates.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.BooleanTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string BooleanTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.CollectionTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string CollectionTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.DecimalTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string DecimalTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.EmailAddressTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string EmailAddressTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.HiddenInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string HiddenInputTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.HtmlTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string HtmlTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.ObjectTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string ObjectTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.StringTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string StringTemplate(IHtmlHelper htmlHelper)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.UrlTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
+    
+        
+        :param htmlHelper: 
+        :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string UrlTemplate(IHtmlHelper htmlHelper)
+

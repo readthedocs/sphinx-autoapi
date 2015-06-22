@@ -1,0 +1,172 @@
+
+
+ResponseCacheFilter Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An [Microsoft.AspNet.Mvc.ActionFilterAttribute](Microsoft.AspNet.Mvc.ActionFilterAttribute.yml) which sets the appropriate headers related to response caching.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ResponseCacheFilter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ResponseCacheFilter : IResponseCacheFilter, IActionFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Filters/ResponseCacheFilter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResponseCacheFilter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResponseCacheFilter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ResponseCacheFilter.ResponseCacheFilter(Microsoft.AspNet.Mvc.CacheProfile)
+    
+        
+    
+        
+        
+    
+        
+        :param cacheProfile: The profile which contains the settings for
+    [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml).
+        :type cacheProfile: Microsoft.AspNet.Mvc.CacheProfile
+    
+        
+        .. code-block:: csharp
+    
+           public ResponseCacheFilter(CacheProfile cacheProfile)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResponseCacheFilter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResponseCacheFilter.Duration
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Duration { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResponseCacheFilter.Location
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ResponseCacheLocation Location { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResponseCacheFilter.NoStore
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool NoStore { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResponseCacheFilter.VaryByHeader
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string VaryByHeader { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResponseCacheFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ResponseCacheFilter.OnActionExecuted(Microsoft.AspNet.Mvc.ActionExecutedContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionExecutedContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnActionExecuted(ActionExecutedContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ResponseCacheFilter.OnActionExecuting(Microsoft.AspNet.Mvc.ActionExecutingContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnActionExecuting(ActionExecutingContext context)
+

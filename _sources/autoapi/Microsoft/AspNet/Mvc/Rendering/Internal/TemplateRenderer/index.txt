@@ -1,0 +1,120 @@
+
+
+TemplateRenderer Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TemplateRenderer
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Internal/TemplateRenderer.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer
+
+
+Fields
+------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.IEnumerableOfIFormFileName
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public const string IEnumerableOfIFormFileName
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.TemplateRenderer(Microsoft.AspNet.Mvc.Rendering.IViewEngine, Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ViewDataDictionary, System.String, System.Boolean)
+    
+        
+        :param viewEngine: 
+        :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
+        :param viewContext: 
+        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+        :param viewData: 
+        :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+        :param templateName: 
+        :type templateName: System.String
+        :param readOnly: 
+        :type readOnly: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public TemplateRenderer(IViewEngine viewEngine, ViewContext viewContext, ViewDataDictionary viewData, string templateName, bool readOnly)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.GetTypeNames(Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata, System.Type)
+    
+        
+        :param modelMetadata: 
+        :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :param fieldType: 
+        :type fieldType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IEnumerable<string> GetTypeNames(ModelMetadata modelMetadata, Type fieldType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.Render()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Render()
+

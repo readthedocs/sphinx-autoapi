@@ -1,0 +1,84 @@
+
+
+FilterItemOrderComparer Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterItemOrderComparer`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class FilterItemOrderComparer : IComparer<FilterItem>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/FilterItemOrderComparer.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterItemOrderComparer
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterItemOrderComparer
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FilterItemOrderComparer.Comparer
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static FilterItemOrderComparer Comparer { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FilterItemOrderComparer
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.FilterItemOrderComparer.Compare(Microsoft.AspNet.Mvc.FilterItem, Microsoft.AspNet.Mvc.FilterItem)
+    
+        
+        :param x: 
+        :type x: Microsoft.AspNet.Mvc.FilterItem
+        :param y: 
+        :type y: Microsoft.AspNet.Mvc.FilterItem
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Compare(FilterItem x, FilterItem y)
+
