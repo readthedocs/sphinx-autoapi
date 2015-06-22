@@ -86,7 +86,10 @@ Constructors
         <paramref name="value" />.
     
         
+    
+        
         :param value: The value to format as JSON.
+        
         :type value: System.Object
     
         
@@ -102,10 +105,15 @@ Constructors
         <paramref name="value" />.
     
         
+    
+        
         :param value: The value to format as JSON.
+        
         :type value: System.Object
-        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
-    the formatter.
+    
+        
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by the formatter.
+        
         :type serializerSettings: JsonSerializerSettings
     
         
@@ -121,10 +129,15 @@ Constructors
         <paramref name="value" />.
     
         
+    
+        
         :param value: The value to format as JSON.
+        
         :type value: System.Object
-        :param formatter: The formatter to use, or
-    <c>null</c> to choose a formatter dynamically.
+    
+        
+        :param formatter: The formatter to use, or <c>null</c> to choose a formatter dynamically.
+        
         :type formatter: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
@@ -207,7 +220,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Threading.Tasks.Task
     

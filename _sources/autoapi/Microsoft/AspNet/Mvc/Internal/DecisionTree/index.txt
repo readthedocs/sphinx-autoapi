@@ -14,33 +14,19 @@ Microsoft.AspNet.Mvc.Internal.DecisionTree Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/DecisionCriterionValue/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/DecisionCriterionValueEqualityComparer/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/DecisionCriterion<TItem>/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/DecisionTreeBuilder<TItem>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/DecisionTreeNode<TItem>/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/IClassifier<TItem>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/ItemDescriptor<TItem>/index
-   
    
 
 

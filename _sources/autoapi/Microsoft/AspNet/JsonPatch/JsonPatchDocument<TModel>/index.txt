@@ -63,9 +63,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.JsonPatchDocument<TModel>.JsonPatchDocument(System.Collections.Generic.List<Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>>, IContractResolver)
     
         
+    
+        
         :param operations: 
+        
         :type operations: System.Collections.Generic.List{Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}}
+    
+        
         :param contractResolver: 
+        
         :type contractResolver: IContractResolver
     
         
@@ -116,9 +122,15 @@ Methods
         At value at end of list
     
         
+    
+        
         :param path: path
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param value: value
+        
         :type value: TProp
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -134,11 +146,20 @@ Methods
         Add value to list at given position
     
         
+    
+        
         :param path: path
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param value: value
+        
         :type value: TProp
+    
+        
         :param position: position
+        
         :type position: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -155,9 +176,15 @@ Methods
         { "op": "add", "path": "/a/b/c", "value": [ "foo", "bar" ] }
     
         
+    
+        
         :param path: path
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
+    
+        
         :param value: value
+        
         :type value: TProp
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -169,7 +196,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.JsonPatchDocument<TModel>.ApplyTo(TModel)
     
         
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -180,9 +210,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.JsonPatchDocument<TModel>.ApplyTo(TModel, Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>)
     
         
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
+    
+        
         :param adapter: 
+        
         :type adapter: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter{{TModel}}
     
         
@@ -193,9 +229,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.JsonPatchDocument<TModel>.ApplyTo(TModel, System.Action<Microsoft.AspNet.JsonPatch.JsonPatchError<TModel>>)
     
         
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
+    
+        
         :param logErrorAction: 
+        
         :type logErrorAction: System.Action{Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}}
     
         
@@ -210,11 +252,20 @@ Methods
         Copy from a position in a list to the end of another list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -230,13 +281,25 @@ Methods
         Copy from a position in a list to a new location in a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param positionTo: 
+        
         :type positionTo: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -252,11 +315,20 @@ Methods
         Copy from a position in a list to a new location
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -272,9 +344,15 @@ Methods
         Copy to the end of a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -290,11 +368,20 @@ Methods
         Copy from a property to a location in a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param positionTo: 
+        
         :type positionTo: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -311,9 +398,15 @@ Methods
         { "op": "copy", "from": "/a/b/c", "path": "/a/b/e" }
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -339,11 +432,20 @@ Methods
         Move from a position in a list to the end of another list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -359,13 +461,25 @@ Methods
         Move from a position in a list to another location in a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param positionTo: 
+        
         :type positionTo: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -381,11 +495,20 @@ Methods
         Move from a position in a list to a new location
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
-        :param positionFrom: None
+    
+        
+        :param positionFrom: 
+        
         :type positionFrom: System.Int32
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -401,9 +524,15 @@ Methods
         Move to the end of a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -419,11 +548,20 @@ Methods
         Move from a property to a location in a list
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param positionTo: 
+        
         :type positionTo: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -440,9 +578,15 @@ Methods
         { "op": "move", "from": "/a/b/c", "path": "/a/b/d" }
     
         
-        :param from: None
+    
+        
+        :param from: 
+        
         :type from: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -458,7 +602,10 @@ Methods
         Remove value from end of list
     
         
+    
+        
         :param path: target location
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -474,9 +621,15 @@ Methods
         Remove value from list at given position
     
         
+    
+        
         :param path: target location
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param position: position
+        
         :type position: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -493,7 +646,10 @@ Methods
         { "op": "remove", "path": "/a/b/c" }
     
         
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -509,9 +665,15 @@ Methods
         Replace value at end of a list
     
         
+    
+        
         :param path: target location
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param value: 
+        
         :type value: TProp
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -527,11 +689,20 @@ Methods
         Replace value in a list at given position
     
         
+    
+        
         :param path: target location
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}
+    
+        
         :param value: 
+        
         :type value: TProp
+    
+        
         :param position: position
+        
         :type position: System.Int32
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     
@@ -548,9 +719,15 @@ Methods
         { "op": "replace", "path": "/a/b/c", "value": 42 }
     
         
-        :param path: None
+    
+        
+        :param path: 
+        
         :type path: System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}
-        :param value: None
+    
+        
+        :param value: 
+        
         :type value: TProp
         :rtype: Microsoft.AspNet.JsonPatch.JsonPatchDocument`1
     

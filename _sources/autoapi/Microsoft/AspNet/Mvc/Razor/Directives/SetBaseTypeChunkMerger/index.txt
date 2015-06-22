@@ -63,7 +63,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger.yml).
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.String
     
         
@@ -82,9 +85,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger.Merge(ChunkTree, Chunk)
     
         
+    
+        
         :param chunkTree: 
+        
         :type chunkTree: ChunkTree
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         
@@ -95,7 +104,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger.VisitChunk(Chunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         

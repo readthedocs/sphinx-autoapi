@@ -59,9 +59,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger.Merge(ChunkTree, Chunk)
     
         
+    
+        
         :param chunkTree: 
+        
         :type chunkTree: ChunkTree
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         
@@ -72,7 +78,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger.VisitChunk(Chunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         

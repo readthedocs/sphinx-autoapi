@@ -64,9 +64,15 @@ Methods
         "hidden" with value "false".
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; elements.
@@ -84,12 +90,20 @@ Methods
         "hidden" with value "false".
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param isChecked: If
-    <c>true</c>, checkbox is initially checked.
+    
+        
+        :param isChecked: If <c>true</c>, checkbox is initially checked.
+        
         :type isChecked: System.Boolean
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; elements.
@@ -107,13 +121,20 @@ Methods
         "hidden" with value "false".
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; elements.
@@ -131,9 +152,15 @@ Methods
         "hidden" with value "false".
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},System.Boolean}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; elements.
@@ -151,9 +178,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -171,12 +204,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -194,9 +235,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -214,9 +261,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -234,12 +287,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -257,9 +318,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -277,12 +344,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: Value to include in the element. Must not be
-    <c>null</c>.
+    
+        
+        :param value: Value to include in the element. Must not be <c>null</c>.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -300,23 +375,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element. Must not be
-    <c>null</c> if
     
-    <paramref name="isChecked" /> is also
-    <c>null</c>.
+        
+        :param value: If non- <c>null</c>, value to include in the element. Must not be <c>null</c> if  <paramref name="isChecked" /> is also <c>null</c>.
+        
         :type value: System.Object
-        :param isChecked: If
-    <c>true</c>, radio button is initially selected. Must not be
-    <c>null</c> if
     
-    <paramref name="value" /> is also
-    <c>null</c>.
+        
+        :param isChecked: If <c>true</c>, radio button is initially selected. Must not be <c>null</c> if  <paramref name="value" /> is also <c>null</c>.
+        
         :type isChecked: System.Boolean
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -334,19 +411,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element. Must not be
-    <c>null</c> if no "checked" entry exists
-    in
-    <paramref name="htmlAttributes" />.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element. Must not be <c>null</c> if no "checked" entry exists in <paramref name="htmlAttributes" />.
+        
         :type value: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -364,12 +447,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param value: Value to include in the element. Must not be
-    <c>null</c>.
+    
+        
+        :param value: Value to include in the element. Must not be <c>null</c>.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -387,9 +478,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -407,13 +504,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -431,12 +535,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -454,16 +566,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -481,9 +602,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -501,13 +628,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -525,9 +659,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -545,12 +685,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -568,16 +716,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -595,14 +752,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param value: If non-
-    <c>null</c>, value to include in the element.
+    
+        
+        :param value: If non- <c>null</c>, value to include in the element.
+        
         :type value: System.Object
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -620,9 +788,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -640,13 +814,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -664,11 +845,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.

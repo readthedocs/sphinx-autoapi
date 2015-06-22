@@ -14,13 +14,9 @@ Microsoft.AspNet.JsonPatch.Exceptions Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/JsonPatch/Exceptions/JsonPatchException/index
    
-   
-   
    /autoapi/Microsoft/AspNet/JsonPatch/Exceptions/JsonPatchException<TModel>/index
-   
    
 
 

@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ObjectResult.ObjectResult(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -136,7 +139,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ObjectResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Threading.Tasks.Task
     
@@ -152,7 +158,10 @@ Methods
         This method is called before the formatter writes to the output stream.
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         
@@ -163,9 +172,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ObjectResult.SelectFormatter(Microsoft.AspNet.Mvc.OutputFormatterContext, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.IOutputFormatter>)
     
         
+    
+        
         :param formatterContext: 
+        
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param formatters: 
+        
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
         :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
@@ -177,9 +192,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ObjectResult.SelectFormatterBasedOnTypeMatch(Microsoft.AspNet.Mvc.OutputFormatterContext, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.IOutputFormatter>)
     
         
+    
+        
         :param formatterContext: 
+        
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param formatters: 
+        
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
         :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
@@ -191,11 +212,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ObjectResult.SelectFormatterUsingAnyAcceptableContentType(Microsoft.AspNet.Mvc.OutputFormatterContext, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.IOutputFormatter>, System.Collections.Generic.IEnumerable<MediaTypeHeaderValue>)
     
         
+    
+        
         :param formatterContext: 
+        
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param formatters: 
+        
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
+    
+        
         :param acceptableContentTypes: 
+        
         :type acceptableContentTypes: System.Collections.Generic.IEnumerable{MediaTypeHeaderValue}
         :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
@@ -207,11 +237,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ObjectResult.SelectFormatterUsingSortedAcceptHeaders(Microsoft.AspNet.Mvc.OutputFormatterContext, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.IOutputFormatter>, System.Collections.Generic.IEnumerable<MediaTypeHeaderValue>)
     
         
+    
+        
         :param formatterContext: 
+        
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param formatters: 
+        
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
+    
+        
         :param sortedAcceptHeaders: 
+        
         :type sortedAcceptHeaders: System.Collections.Generic.IEnumerable{MediaTypeHeaderValue}
         :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     

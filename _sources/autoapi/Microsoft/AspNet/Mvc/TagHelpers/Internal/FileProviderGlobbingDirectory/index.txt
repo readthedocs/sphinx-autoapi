@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.FileProviderGlobbingDirectory(IFileProvider, IFileInfo, Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory)
     
         
+    
+        
         :param fileProvider: 
+        
         :type fileProvider: IFileProvider
+    
+        
         :param fileInfo: 
+        
         :type fileInfo: IFileInfo
+    
+        
         :param parent: 
+        
         :type parent: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory
     
         
@@ -135,7 +144,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.GetDirectory(System.String)
     
         
+    
+        
         :param path: 
+        
         :type path: System.String
         :rtype: DirectoryInfoBase
     
@@ -147,7 +159,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.GetFile(System.String)
     
         
+    
+        
         :param path: 
+        
         :type path: System.String
         :rtype: FileInfoBase
     

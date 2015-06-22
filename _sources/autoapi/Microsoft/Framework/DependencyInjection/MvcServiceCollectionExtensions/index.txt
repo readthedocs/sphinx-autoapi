@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.AddMvc(IServiceCollection)
     
         
+    
+        
         :param services: 
+        
         :type services: IServiceCollection
         :rtype: IServiceCollection
     
@@ -70,7 +73,10 @@ Methods
         Adds Mvc localization to the application.
     
         
+    
+        
         :param services: The @!:IServiceCollection-.
+        
         :type services: IServiceCollection
         :rtype: IServiceCollection
         :return: The @!:IServiceCollection-.
@@ -87,9 +93,15 @@ Methods
         Adds Mvc localization to the application.
     
         
+    
+        
         :param services: The @!:IServiceCollection-.
+        
         :type services: IServiceCollection
+    
+        
         :param option: The view format for localized views.
+        
         :type option: Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption
         :rtype: IServiceCollection
         :return: The @!:IServiceCollection-.
@@ -106,9 +118,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.AntiForgeryOptions]() for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.AntiForgeryOptions]() which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.AntiForgeryOptions}
     
         
@@ -123,9 +141,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.MvcFormatterMappingOptions]() for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.MvcCacheOptions]() which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcCacheOptions}
     
         
@@ -140,9 +164,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.MvcFormatterMappingOptions]() for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.MvcFormatterMappingOptions]() which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcFormatterMappingOptions}
     
         
@@ -157,9 +187,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.MvcJsonOptions]() for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.MvcJsonOptions]() which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcJsonOptions}
     
         
@@ -174,9 +210,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.MvcViewOptions]() for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.MvcViewOptions]() which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcViewOptions}
     
         
@@ -193,9 +235,15 @@ Methods
         for controller discovery.
     
         
+    
+        
         :param services: The @!:IServiceCollection-.
+        
         :type services: IServiceCollection
+    
+        
         :param controllerAssemblies: Assemblies to scan.
+        
         :type controllerAssemblies: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
         :rtype: IServiceCollection
         :return: The @!:IServiceCollection-.
@@ -214,11 +262,15 @@ Methods
         discovery.
     
         
-        :param services: The @!:IServiceCollection-.
-        :type services: IServiceCollection
-        :param controllerTypes: A sequence of controller [System.Type]()s to register in the
     
-    <paramref name="services" /> and used for controller discovery.
+        
+        :param services: The @!:IServiceCollection-.
+        
+        :type services: IServiceCollection
+    
+        
+        :param controllerTypes: A sequence of controller [System.Type]()s to register in the  <paramref name="services" /> and used for controller discovery.
+        
         :type controllerTypes: System.Collections.Generic.IEnumerable{System.Type}
         :rtype: IServiceCollection
         :return: The @!:IServiceCollection-.

@@ -59,12 +59,13 @@ Methods
         <paramref name="context" />.
     
         
-        :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location
-    expansion.
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion.
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
         :rtype: System.String
-        :return: The cached location, if available,
-    <c>null</c> otherwise.
+        :return: The cached location, if available, <c>null</c> otherwise.
     
         
         .. code-block:: csharp
@@ -79,10 +80,15 @@ Methods
         <paramref name="context" />.
     
         
-        :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location
-    expansion.
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion.
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
+    
+        
         :param value: The view location that is to be cached.
+        
         :type value: System.String
     
         

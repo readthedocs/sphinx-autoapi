@@ -34,8 +34,8 @@
   
     <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../../index.html"/>
         <link rel="up" title="Sphinx AutoAPI Index" href="../../../../../index.html"/>
-        <link rel="next" title="DataAnnotationsMetadataProvider Class" href="DataAnnotationsMetadataProvider/index.html"/>
-        <link rel="prev" title="IOptionalBinderMetadata Interface" href="../IOptionalBinderMetadata/index.html"/> 
+        <link rel="next" title="ModelMetadataIdentity Struct" href="ModelMetadataIdentity/index.html"/>
+        <link rel="prev" title="TypeMatchModelBinder Class" href="../TypeMatchModelBinder/index.html"/> 
 
   
   <script src="../../../../../../_static/js/modernizr.min.js"></script>
@@ -93,8 +93,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../Internal/Routing/index.html">Microsoft.AspNet.Mvc.Internal.Routing Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html">Microsoft.AspNet.Mvc.ModelBinding Namespace</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="DataAnnotationsMetadataProvider/index.html">DataAnnotationsMetadataProvider Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataMemberRequiredBindingMetadataProvider/index.html">DataMemberRequiredBindingMetadataProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelMetadataIdentity/index.html">ModelMetadataIdentity Struct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelMetadataKind/index.html">ModelMetadataKind Enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Validation/index.html">Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace</a></li>
@@ -168,13 +168,15 @@
 <dl class="namespace">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata">
 <em class="property">namespace </em><code class="descclassname">Microsoft.AspNet.Mvc.ModelBinding.</code><code class="descname">Metadata</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Classes</p>
+<dd><p class="rubric">Enumerations</p>
 <dl class="docutils">
-<dt>class <a class="reference internal" href="DataAnnotationsMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataAnnotationsMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataAnnotationsMetadataProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">DataAnnotationsMetadataProvider</span></code></a></dt>
-<dd>An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() and [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider]() for
-the System.ComponentModel.DataAnnotations attribute classes.</dd>
-<dt>class <a class="reference internal" href="DataMemberRequiredBindingMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataMemberRequiredBindingMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataMemberRequiredBindingMetadataProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">DataMemberRequiredBindingMetadataProvider</span></code></a></dt>
-<dd>An [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() for [System.Runtime.Serialization.DataMemberAttribute.IsRequired]().</dd>
+<dt>enum <a class="reference internal" href="ModelMetadataKind/index.html#Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataKind" title="Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataKind"><code class="xref dn dn-enum docutils literal"><span class="pre">ModelMetadataKind</span></code></a></dt>
+<dd>Enumeration for the kinds of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml)</dd>
+</dl>
+<p class="rubric">Structures</p>
+<dl class="docutils">
+<dt>struct <a class="reference internal" href="ModelMetadataIdentity/index.html#Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity" title="Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity"><code class="xref dn dn-struct docutils literal"><span class="pre">ModelMetadataIdentity</span></code></a></dt>
+<dd>A key type which identifies a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).</dd>
 </dl>
 </dd></dl>
 
@@ -187,10 +189,10 @@ the System.ComponentModel.DataAnnotations attribute classes.</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DataAnnotationsMetadataProvider/index.html" class="btn btn-neutral float-right" title="DataAnnotationsMetadataProvider Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ModelMetadataIdentity/index.html" class="btn btn-neutral float-right" title="ModelMetadataIdentity Struct" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../IOptionalBinderMetadata/index.html" class="btn btn-neutral" title="IOptionalBinderMetadata Interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../TypeMatchModelBinder/index.html" class="btn btn-neutral" title="TypeMatchModelBinder Class" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

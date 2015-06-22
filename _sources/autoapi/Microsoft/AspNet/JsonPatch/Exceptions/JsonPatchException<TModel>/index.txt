@@ -65,7 +65,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.JsonPatchException(Microsoft.AspNet.JsonPatch.JsonPatchError<TModel>)
     
         
+    
+        
         :param jsonPatchError: 
+        
         :type jsonPatchError: Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}
     
         
@@ -76,9 +79,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.JsonPatchException(Microsoft.AspNet.JsonPatch.JsonPatchError<TModel>, System.Exception)
     
         
+    
+        
         :param jsonPatchError: 
+        
         :type jsonPatchError: Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}
+    
+        
         :param innerException: 
+        
         :type innerException: System.Exception
     
         

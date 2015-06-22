@@ -394,39 +394,28 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
 <li><strong>modelExplorer</strong> (<a class="reference internal" href="../../ModelBinding/ModelExplorer/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer" title="Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the model.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; The model expression.</li>
 <li><strong>isChecked</strong> (<em>System.Nullable{System.Boolean}</em>) &#8211; The initial state of the checkbox element.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;input type=&#8221;checkbox&#8221;.../&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;input type=&#8221;checkbox&#8221;.../&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateCheckBox</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="p">?</span> <span class="n">isChecked</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateCheckBox</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="p">?</span> <span class="n">isChecked</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateForm">
 <code class="descname">GenerateForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateForm" title="Permalink to this definition">¶</a></dt>
@@ -436,59 +425,29 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
 <li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action method.</li>
 <li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<em>System.String</em>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateForm</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateForm</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateHidden">
 <code class="descname">GenerateHidden</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateHidden" title="Permalink to this definition">¶</a></dt>
@@ -633,58 +592,28 @@ checkbox was present on the page when the request was submitted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
 <li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<em>System.String</em>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateRouteForm</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateRouteForm</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRouteLink">
 <code class="descname">GenerateRouteLink</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRouteLink" title="Permalink to this definition">¶</a></dt>
@@ -722,102 +651,30 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
-<li><strong>modelExplorer</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the</li>
+<li><strong>modelExplorer</strong> (<a class="reference internal" href="../../ModelBinding/ModelExplorer/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer" title="Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the &lt;paramref name=&#8221;expression&#8221; /&gt;. If &lt;c&gt;null&lt;/c&gt;, determines validation attributes using &lt;paramref name=&#8221;viewContext&#8221; /&gt; and the &lt;paramref name=&#8221;expression&#8221; /&gt;.</li>
+<li><strong>optionLabel</strong> (<em>System.String</em>) &#8211; Optional text for a default empty &amp;lt;option&amp;gt; element.</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+<li><strong>selectList</strong> (<em>System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</em>) &#8211; A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &amp;lt;select&amp;gt; element with &amp;lt;optgroup&amp;gt; and &amp;lt;option&amp;gt; elements. If &lt;c&gt;null&lt;/c&gt;, finds this collection at  &lt;c&gt;ViewContext.ViewData[expression]&lt;/c&gt;.</li>
+<li><strong>allowMultiple</strong> (<em>System.Boolean</em>) &#8211; If &lt;c&gt;true&lt;/c&gt;, includes a &lt;c&gt;multiple&lt;/c&gt; attribute in the generated HTML. Otherwise generates a single-selection &amp;lt;select&amp;gt; element.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the &amp;lt;select&amp;gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt;. If
-&lt;c&gt;null&lt;/c&gt;, determines validation
-attributes using
-&lt;paramref name=&#8221;viewContext&#8221; /&gt; and the
-&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelExplorer:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param optionLabel:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Optional text for a default empty &amp;lt;option&amp;gt; element.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type optionLabel:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param expression:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Expression name, relative to the current model.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param selectList:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &amp;lt;select&amp;gt; element with</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>&amp;lt;optgroup&amp;gt; and &amp;lt;option&amp;gt; elements. If
-&lt;c&gt;null&lt;/c&gt;, finds this collection at</p>
-<dl class="docutils">
-<dt>&lt;c&gt;ViewContext.ViewData[expression]&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type selectList:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param allowMultiple:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt;, includes a
-&lt;c&gt;multiple&lt;/c&gt; attribute in the generated HTML. Otherwise generates a
-single-selection &amp;lt;select&amp;gt; element.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type allowMultiple:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the &amp;lt;select&amp;gt; element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateSelect</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionLabel</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">selectList</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateSelect</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionLabel</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">selectList</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">GenerateSelect</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;</em>, <em>System.Collections.Generic.IReadOnlyCollection&lt;System.String&gt;</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -827,119 +684,31 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
-<li><strong>modelExplorer</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the</li>
+<li><strong>modelExplorer</strong> (<a class="reference internal" href="../../ModelBinding/ModelExplorer/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer" title="Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the &lt;paramref name=&#8221;expression&#8221; /&gt;. If &lt;c&gt;null&lt;/c&gt;, determines validation attributes using &lt;paramref name=&#8221;viewContext&#8221; /&gt; and the &lt;paramref name=&#8221;expression&#8221; /&gt;.</li>
+<li><strong>optionLabel</strong> (<em>System.String</em>) &#8211; Optional text for a default empty &amp;lt;option&amp;gt; element.</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+<li><strong>selectList</strong> (<em>System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</em>) &#8211; A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &amp;lt;select&amp;gt; element with &amp;lt;optgroup&amp;gt; and &amp;lt;option&amp;gt; elements. If &lt;c&gt;null&lt;/c&gt;, finds this collection at  &lt;c&gt;ViewContext.ViewData[expression]&lt;/c&gt;.</li>
+<li><strong>currentValues</strong> (<em>System.Collections.Generic.IReadOnlyCollection{System.String}</em>) &#8211; An [System.Collections.Generic.IReadOnlyCollection`1]() containing values for &amp;lt;option&amp;gt; elements to select. If  &lt;c&gt;null&lt;/c&gt;, selects &amp;lt;option&amp;gt; elements based on [Microsoft.AspNet.Mvc.Rendering.SelectListItem.Selected](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) values in  &lt;paramref name=&#8221;selectList&#8221; /&gt;.</li>
+<li><strong>allowMultiple</strong> (<em>System.Boolean</em>) &#8211; If &lt;c&gt;true&lt;/c&gt;, includes a &lt;c&gt;multiple&lt;/c&gt; attribute in the generated HTML. Otherwise generates a single-selection &amp;lt;select&amp;gt; element.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the &amp;lt;select&amp;gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt;. If
-&lt;c&gt;null&lt;/c&gt;, determines validation
-attributes using
-&lt;paramref name=&#8221;viewContext&#8221; /&gt; and the
-&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelExplorer:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param optionLabel:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Optional text for a default empty &amp;lt;option&amp;gt; element.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type optionLabel:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param expression:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Expression name, relative to the current model.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param selectList:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &amp;lt;select&amp;gt; element with</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>&amp;lt;optgroup&amp;gt; and &amp;lt;option&amp;gt; elements. If
-&lt;c&gt;null&lt;/c&gt;, finds this collection at</p>
-<dl class="docutils">
-<dt>&lt;c&gt;ViewContext.ViewData[expression]&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type selectList:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param currentValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Collections.Generic.IReadOnlyCollection`1]() containing values for &amp;lt;option&amp;gt; elements to select. If</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;null&lt;/c&gt;, selects &amp;lt;option&amp;gt; elements based on [Microsoft.AspNet.Mvc.Rendering.SelectListItem.Selected](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) values in</p>
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;selectList&#8221; /&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type currentValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyCollection{System.String}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param allowMultiple:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt;, includes a
-&lt;c&gt;multiple&lt;/c&gt; attribute in the generated HTML. Otherwise generates a
-single-selection &amp;lt;select&amp;gt; element.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type allowMultiple:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the &amp;lt;select&amp;gt; element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateSelect</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionLabel</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">selectList</span><span class="p">,</span> <span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">currentValues</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TagBuilder</span> <span class="nf">GenerateSelect</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionLabel</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">selectList</span><span class="p">,</span> <span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">currentValues</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateTextArea">
 <code class="descname">GenerateTextArea</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Int32</em>, <em>System.Int32</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateTextArea" title="Permalink to this definition">¶</a></dt>
@@ -1079,78 +848,27 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
-<li><strong>modelExplorer</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the</li>
+<li><strong>modelExplorer</strong> (<a class="reference internal" href="../../ModelBinding/ModelExplorer/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer" title="Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the &lt;paramref name=&#8221;expression&#8221; /&gt;. If &lt;c&gt;null&lt;/c&gt;, calculates the  &lt;paramref name=&#8221;expression&#8221; /&gt; result using [Microsoft.AspNet.Mvc.ViewDataDictionary.Eval(System.String)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+<li><strong>allowMultiple</strong> (<em>System.Boolean</em>) &#8211; If &lt;c&gt;true&lt;/c&gt;, require a collection &lt;paramref name=&#8221;expression&#8221; /&gt; result. Otherwise, treat result as a single value.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IReadOnlyCollection{System.String}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;para&gt; &lt;c&gt;null&lt;/c&gt; if no &lt;paramref name=&#8221;expression&#8221; /&gt; result is found. Otherwise an &lt;see cref=&#8221;T:System.Collections.Generic.IReadOnlyCollection`1&#8221; /&gt; containing current values for the given &lt;paramref name=&#8221;expression&#8221; /&gt;. &lt;/para&gt; &lt;para&gt; Converts the &lt;paramref name=&#8221;expression&#8221; /&gt; result to a &lt;see cref=&#8221;T:System.String&#8221; /&gt;. If that result is an &lt;see cref=&#8221;T:System.Collections.IEnumerable&#8221; /&gt; type, instead converts each item in the collection and returns them separately. &lt;/para&gt; &lt;para&gt; If the &lt;paramref name=&#8221;expression&#8221; /&gt; result or the element type is an &lt;see cref=&#8221;T:System.Enum&#8221; /&gt;, returns a &lt;see cref=&#8221;T:System.String&#8221; /&gt; containing the integer representation of the &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; value as well as all &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; names for that value. Otherwise returns the default &lt;see cref=&#8221;T:System.String&#8221; /&gt; conversion of the value. &lt;/para&gt;</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt;. If
-&lt;c&gt;null&lt;/c&gt;, calculates the</p>
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;expression&#8221; /&gt; result using [Microsoft.AspNet.Mvc.ViewDataDictionary.Eval(System.String)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelExplorer:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param expression:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Expression name, relative to the current model.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param allowMultiple:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt;, require a collection
-&lt;paramref name=&#8221;expression&#8221; /&gt; result. Otherwise, treat result as a
-single value.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type allowMultiple:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IReadOnlyCollection{System.String}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">&lt;para&gt;</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>&lt;c&gt;null&lt;/c&gt; if no &lt;paramref name=&#8221;expression&#8221; /&gt; result is found. Otherwise an
-&lt;see cref=&#8221;T:System.Collections.Generic.IReadOnlyCollection`1&#8221; /&gt; containing current values for the given
-&lt;paramref name=&#8221;expression&#8221; /&gt;.
-&lt;/para&gt;
-&lt;para&gt;
-Converts the &lt;paramref name=&#8221;expression&#8221; /&gt; result to a &lt;see cref=&#8221;T:System.String&#8221; /&gt;. If that result is an
-&lt;see cref=&#8221;T:System.Collections.IEnumerable&#8221; /&gt; type, instead converts each item in the collection and returns
-them separately.
-&lt;/para&gt;
-&lt;para&gt;
-If the &lt;paramref name=&#8221;expression&#8221; /&gt; result or the element type is an &lt;see cref=&#8221;T:System.Enum&#8221; /&gt;, returns a
-&lt;see cref=&#8221;T:System.String&#8221; /&gt; containing the integer representation of the &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; value as well
-as all &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; names for that value. Otherwise returns the default &lt;see cref=&#8221;T:System.String&#8221; /&gt;
-conversion of the value.
-&lt;/para&gt;</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">GetCurrentValues</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">GetCurrentValues</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

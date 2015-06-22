@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IResultFilter.OnResultExecuted(Microsoft.AspNet.Mvc.ResultExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutedContext
     
         
@@ -60,7 +63,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IResultFilter.OnResultExecuting(Microsoft.AspNet.Mvc.ResultExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
     
         

@@ -54,9 +54,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollectionGenerator.RazorFileInfoCollectionGenerator(Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection, CompilationSettings)
     
         
+    
+        
         :param fileInfoCollection: 
+        
         :type fileInfoCollection: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
+    
+        
         :param compilationSettings: 
+        
         :type compilationSettings: CompilationSettings
     
         
@@ -143,7 +149,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollectionGenerator.GenerateFile(Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo)
     
         
+    
+        
         :param fileInfo: 
+        
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
         :rtype: System.String
     

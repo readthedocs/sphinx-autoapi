@@ -71,10 +71,15 @@ Constructors
         <paramref name="contentType" />.
     
         
-        :param fileName: The path to the file. The path must be an absolute
-    path. Relative and virtual paths are not supported.
+    
+        
+        :param fileName: The path to the file. The path must be an absolute path. Relative and virtual paths are not supported.
+        
         :type fileName: System.String
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: MediaTypeHeaderValue
     
         
@@ -93,10 +98,15 @@ Constructors
         <paramref name="contentType" />.
     
         
-        :param fileName: The path to the file. The path must be an absolute
-    path. Relative and virtual paths are not supported.
+    
+        
+        :param fileName: The path to the file. The path must be an absolute path. Relative and virtual paths are not supported.
+        
         :type fileName: System.String
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: System.String
     
         
@@ -156,7 +166,10 @@ Methods
         paths starting with '/' to be relative.
     
         
+    
+        
         :param path: The path to examine.
+        
         :type path: System.String
         :rtype: System.Boolean
         :return: True if the path is absolute.
@@ -177,7 +190,10 @@ Methods
         and will remove leading '~' characters.
     
         
+    
+        
         :param path: The path to normalize.
+        
         :type path: System.String
         :rtype: System.String
         :return: The normalized path.
@@ -190,9 +206,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FilePathResult.WriteFileAsync(HttpResponse, System.Threading.CancellationToken)
     
         
+    
+        
         :param response: 
+        
         :type response: HttpResponse
+    
+        
         :param cancellation: 
+        
         :type cancellation: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
     

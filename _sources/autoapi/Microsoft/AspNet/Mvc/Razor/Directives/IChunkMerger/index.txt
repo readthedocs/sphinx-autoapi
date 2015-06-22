@@ -58,9 +58,15 @@ Methods
         Merges an inherited @!:Chunk- into the @!:ChunkTree-.
     
         
+    
+        
         :param chunkTree: 
+        
         :type chunkTree: ChunkTree
+    
+        
         :param chunk: The @!:Chunk- to merge.
+        
         :type chunk: Chunk
     
         
@@ -75,7 +81,10 @@ Methods
         Visits a @!:Chunk- from the @!:ChunkTree- to merge into.
     
         
+    
+        
         :param chunk: A @!:Chunk- from the tree.
+        
         :type chunk: Chunk
     
         

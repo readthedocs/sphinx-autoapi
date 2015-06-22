@@ -93,11 +93,13 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TValue}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given
-    <paramref name="expression" />.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given <paramref name="expression" />.
     
         
         .. code-block:: csharp

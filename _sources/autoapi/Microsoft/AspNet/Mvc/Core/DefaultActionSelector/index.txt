@@ -54,13 +54,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Core.DefaultActionSelector.DefaultActionSelector(Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider, Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider>, ILoggerFactory)
     
         
+    
+        
         :param actionDescriptorsCollectionProvider: 
+        
         :type actionDescriptorsCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+    
+        
         :param decisionTreeProvider: 
+        
         :type decisionTreeProvider: Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider
+    
+        
         :param actionConstraintProviders: 
+        
         :type actionConstraintProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ActionConstraints.IActionConstraintProvider}
+    
+        
         :param loggerFactory: 
+        
         :type loggerFactory: ILoggerFactory
     
         
@@ -79,7 +91,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.DefaultActionSelector.HasValidAction(VirtualPathContext)
     
         
+    
+        
         :param context: 
+        
         :type context: VirtualPathContext
         :rtype: System.Boolean
     
@@ -91,7 +106,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.DefaultActionSelector.SelectAsync(RouteContext)
     
         
+    
+        
         :param context: 
+        
         :type context: RouteContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ActionDescriptor}
     
@@ -107,7 +125,10 @@ Methods
         Returns the set of best matching actions.
     
         
+    
+        
         :param actions: The set of actions that satisfy all constraints.
+        
         :type actions: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
         :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
         :return: A list of the best matching actions.

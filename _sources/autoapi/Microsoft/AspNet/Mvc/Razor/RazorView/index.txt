@@ -64,19 +64,30 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorView](Microsoft.AspNet.Mvc.Razor.RazorView.yml)
     
         
-        :param viewEngine: The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) used to locate Layout pages.
-        :type viewEngine: Microsoft.AspNet.Mvc.Razor.IRazorViewEngine
-        :param pageActivator: The [Microsoft.AspNet.Mvc.Razor.IRazorPageActivator](Microsoft.AspNet.Mvc.Razor.IRazorPageActivator.yml) used to activate pages.
-        :type pageActivator: Microsoft.AspNet.Mvc.Razor.IRazorPageActivator
-        :param viewStartProvider: The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart
     
-    <param name="razorPage">The <see cref="T:Microsoft.AspNet.Mvc.Razor.IRazorPage" /> instance to execute.</param>
-    <param name="isPartial">Determines if the view is to be executed as a partial.</param>
-    pages
+        
+        :param viewEngine: The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) used to locate Layout pages.
+        
+        :type viewEngine: Microsoft.AspNet.Mvc.Razor.IRazorViewEngine
+    
+        
+        :param pageActivator: The [Microsoft.AspNet.Mvc.Razor.IRazorPageActivator](Microsoft.AspNet.Mvc.Razor.IRazorPageActivator.yml) used to activate pages.
+        
+        :type pageActivator: Microsoft.AspNet.Mvc.Razor.IRazorPageActivator
+    
+        
+        :param viewStartProvider: The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart  <param name="razorPage">The <see cref="T:Microsoft.AspNet.Mvc.Razor.IRazorPage" /> instance to execute.</param> <param name="isPartial">Determines if the view is to be executed as a partial.</param> pages
+        
         :type viewStartProvider: Microsoft.AspNet.Mvc.Razor.IViewStartProvider
+    
+        
         :param razorPage: 
+        
         :type razorPage: Microsoft.AspNet.Mvc.Razor.IRazorPage
+    
+        
         :param isPartial: 
+        
         :type isPartial: System.Boolean
     
         
@@ -141,7 +152,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorView.RenderAsync(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
         :rtype: System.Threading.Tasks.Task
     

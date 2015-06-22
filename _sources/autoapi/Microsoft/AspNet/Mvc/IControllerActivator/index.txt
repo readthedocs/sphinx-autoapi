@@ -58,9 +58,15 @@ Methods
         Creates a controller.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ActionContext]() for the executing action.
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param controllerType: 
+        
         :type controllerType: System.Type
         :rtype: System.Object
     

@@ -59,17 +59,35 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.HtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.HtmlHelper`1.yml) class.
     
         
+    
+        
         :param htmlGenerator: 
+        
         :type htmlGenerator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
+    
+        
         :param viewEngine: 
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.ICompositeViewEngine
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param htmlEncoder: 
+        
         :type htmlEncoder: IHtmlEncoder
+    
+        
         :param urlEncoder: 
+        
         :type urlEncoder: IUrlEncoder
+    
+        
         :param javaScriptStringEncoder: 
+        
         :type javaScriptStringEncoder: IJavaScriptStringEncoder
     
         
@@ -106,9 +124,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.CheckBoxFor(System.Linq.Expressions.Expression<System.Func<TModel, System.Boolean>>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},System.Boolean}}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -120,7 +144,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.Contextualize(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
     
         
@@ -131,13 +158,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.DisplayFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -149,7 +188,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.DisplayNameForInnerType<TModelItem, TResult>(System.Linq.Expressions.Expression<System.Func<TModelItem, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModelItem},{TResult}}}
         :rtype: System.String
     
@@ -161,7 +203,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.DisplayNameFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
     
@@ -173,7 +218,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.DisplayTextFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
     
@@ -185,13 +233,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.DropDownListFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param optionLabel: 
+        
         :type optionLabel: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -203,13 +263,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.EditorFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -221,7 +293,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.GetExpressionName<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
     
@@ -233,7 +308,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.GetModelExplorer<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
@@ -245,9 +323,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.HiddenFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -259,7 +343,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.IdFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
     
@@ -271,11 +358,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.LabelFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param labelText: 
+        
         :type labelText: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -287,11 +383,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.ListBoxFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -303,7 +408,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.NameFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
     
@@ -315,9 +423,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.PasswordFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -329,11 +443,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.RadioButtonFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Object, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -345,13 +468,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.TextAreaFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.Int32, System.Int32, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param rows: 
+        
         :type rows: System.Int32
+    
+        
         :param columns: 
+        
         :type columns: System.Int32
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -363,11 +498,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.TextBoxFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -379,13 +523,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.ValidationMessageFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String, System.Object, System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
+    
+        
         :param tag: 
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -397,9 +553,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.ValueFor<TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     

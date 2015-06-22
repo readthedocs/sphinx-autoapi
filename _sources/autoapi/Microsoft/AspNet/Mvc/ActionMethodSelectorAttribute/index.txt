@@ -79,7 +79,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute.Accept(Microsoft.AspNet.Mvc.ActionConstraintContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
         :rtype: System.Boolean
     
@@ -95,14 +98,18 @@ Methods
         Determines whether the action selection is valid for the specified route context.
     
         
+    
+        
         :param routeContext: The route context.
+        
         :type routeContext: RouteContext
+    
+        
         :param action: Information about the action.
+        
         :type action: Microsoft.AspNet.Mvc.ActionDescriptor
         :rtype: System.Boolean
-        :return: <see langword="true" /> if the action  selection is valid for the specified context;
-    otherwise,
-    <see langword="false" />.
+        :return: <see langword="true" /> if the action  selection is valid for the specified context; otherwise, <see langword="false" />.
     
         
         .. code-block:: csharp

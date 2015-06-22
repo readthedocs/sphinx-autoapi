@@ -134,7 +134,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerInputFormatter.CanReadType(System.Type)
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Boolean
     
@@ -150,7 +153,10 @@ Methods
         Called during deserialization to get the [System.Xml.Serialization.XmlSerializer]().
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Xml.Serialization.XmlSerializer
         :return: The [System.Xml.Serialization.XmlSerializer]() used during deserialization.
@@ -167,9 +173,15 @@ Methods
         Called during deserialization to get the [System.Xml.XmlReader]().
     
         
+    
+        
         :param readStream: The [System.IO.Stream]() from which to read.
+        
         :type readStream: System.IO.Stream
+    
+        
         :param encoding: The [System.Text.Encoding]() used to read the stream.
+        
         :type encoding: System.Text.Encoding
         :rtype: System.Xml.XmlReader
         :return: The [System.Xml.XmlReader]() used during deserialization.
@@ -186,7 +198,10 @@ Methods
         Gets the cached serializer or creates and caches the serializer for the given type.
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Xml.Serialization.XmlSerializer
         :return: The [System.Xml.Serialization.XmlSerializer]() instance.
@@ -203,7 +218,10 @@ Methods
         Gets the type to which the XML will be deserialized.
     
         
+    
+        
         :param declaredType: The declared type.
+        
         :type declaredType: System.Type
         :rtype: System.Type
         :return: The type to which the XML will be deserialized.
@@ -220,7 +238,10 @@ Methods
         Reads the input XML.
     
         
+    
+        
         :param context: The input formatter context which contains the body to be read.
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
         :return: Task which reads the input.

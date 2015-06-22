@@ -66,13 +66,13 @@ Methods
         <c>_ViewImports</c>s that are applicable to the specified path.
     
         
-        :param applicationRelativePath: The application relative path of the file to locate
     
-    <c>_ViewImports</c>s for.
+        
+        :param applicationRelativePath: The application relative path of the file to locate  <c>_ViewImports</c>s for.
+        
         :type applicationRelativePath: System.String
         :rtype: System.Collections.Generic.IEnumerable{System.String}
-        :return: A sequence of paths that represent potential
-    <c>_ViewImports</c> locations.
+        :return: A sequence of paths that represent potential <c>_ViewImports</c> locations.
     
         
         .. code-block:: csharp
@@ -86,9 +86,10 @@ Methods
         Gets the view start locations that are applicable to the specified path.
     
         
-        :param applicationRelativePath: The application relative path of the file to locate
     
-    <c>_ViewStart</c>s for.
+        
+        :param applicationRelativePath: The application relative path of the file to locate  <c>_ViewStart</c>s for.
+        
         :type applicationRelativePath: System.String
         :rtype: System.Collections.Generic.IEnumerable{System.String}
         :return: A sequence of paths that represent potential view start locations.

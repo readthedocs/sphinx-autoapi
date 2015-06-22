@@ -260,44 +260,18 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>optionsAccessor</strong> (<em>IOptions{Microsoft.AspNet.Mvc.MvcViewOptions}</em>) &#8211; The options accessor for [Microsoft.AspNet.Mvc.MvcOptions]().</li>
-<li><strong>typeActivatorCache</strong> &#8211; As [Microsoft.AspNet.Mvc.ITypeActivatorCache]() instance that creates</li>
+<li><strong>typeActivatorCache</strong> (<a class="reference internal" href="../../ITypeActivatorCache/index.html#Microsoft.AspNet.Mvc.ITypeActivatorCache" title="Microsoft.AspNet.Mvc.ITypeActivatorCache"><em>Microsoft.AspNet.Mvc.ITypeActivatorCache</em></a>) &#8211; As [Microsoft.AspNet.Mvc.ITypeActivatorCache]() instance that creates an instance of type [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).</li>
+<li><strong>serviceProvider</strong> (<em>System.IServiceProvider</em>) &#8211; A [System.IServiceProvider]() instance that retrieves services from the service collection.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>an instance of type [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type typeActivatorCache:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ITypeActivatorCache</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param serviceProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A [System.IServiceProvider]() instance that retrieves services from the</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>service collection.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type serviceProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.IServiceProvider</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompositeViewEngine</span><span class="p">(</span><span class="n">IOptions</span><span class="p">&lt;</span><span class="n">MvcViewOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">,</span> <span class="n">ITypeActivatorCache</span> <span class="n">typeActivatorCache</span><span class="p">,</span> <span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompositeViewEngine</span><span class="p">(</span><span class="n">IOptions</span><span class="p">&lt;</span><span class="n">MvcViewOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">,</span> <span class="n">ITypeActivatorCache</span> <span class="n">typeActivatorCache</span><span class="p">,</span> <span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

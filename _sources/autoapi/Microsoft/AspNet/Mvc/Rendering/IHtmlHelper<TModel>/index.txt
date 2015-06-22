@@ -81,10 +81,15 @@ Methods
         "hidden" with value "false".
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},System.Boolean}}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; elements.
@@ -106,16 +111,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties
-    that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional
-    view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the
-    template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
@@ -134,7 +148,10 @@ Methods
         if the current model represents a collection.
     
         
+    
+        
         :param expression: An expression to be evaluated against an item in the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModelItem},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the display name.
@@ -152,7 +169,10 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the display name.
@@ -170,14 +190,13 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
-        :return: A [System.String]() containing the simple display text.
-    If the
-    <paramref name="expression" /> result is
-    <c>null</c>, returns
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText]().
+        :return: A [System.String]() containing the simple display text. If the <paramref name="expression" /> result is <c>null</c>, returns [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText]().
     
         
         .. code-block:: csharp
@@ -193,16 +212,25 @@ Methods
         specified list items, option label, and HTML attributes.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
-    &lt;optgroup&gt; and &lt;option&gt; elements.
+    
+        
+        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with &lt;optgroup&gt; and &lt;option&gt; elements.
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :param optionLabel: The text for a default empty item. Does not include such an item if argument is
-    <c>null</c>.
+    
+        
+        :param optionLabel: The text for a default empty item. Does not include such an item if argument is <c>null</c>.
+        
         :type optionLabel: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
@@ -224,16 +252,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: The name of the template that is used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties
-    that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional
-    view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the
-    template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -246,7 +283,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.Encode(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.String
     
@@ -258,7 +298,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.Encode(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.String
     
@@ -275,10 +318,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -296,7 +344,10 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the element Id.
@@ -314,12 +365,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param labelText: The inner text of the element.
+        
         :type labelText: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
@@ -338,13 +397,20 @@ Methods
         specified list items and HTML attributes.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
-    &lt;optgroup&gt; and &lt;option&gt; elements.
+    
+        
+        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with &lt;optgroup&gt; and &lt;option&gt; elements.
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
@@ -362,7 +428,10 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the element name.
@@ -380,10 +449,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -401,13 +475,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param value: Value to include in the element. Must not be
-    <c>null</c>.
+    
+        
+        :param value: Value to include in the element. Must not be <c>null</c>.
+        
         :type value: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -420,7 +501,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.Raw(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -432,7 +516,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.Raw(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -449,14 +536,25 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param rows: Number of rows in the textarea.
+        
         :type rows: System.Int32
+    
+        
         :param columns: Number of columns in the textarea.
+        
         :type columns: System.Int32
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;textarea&gt; element.
@@ -474,12 +572,20 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element.
@@ -498,27 +604,28 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the
-    <paramref name="tag" /> element.
-    Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the <paramref name="tag" /> element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the
-    <paramref name="tag" /> element.
-    <c>null</c> if the
-    
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the <paramref name="tag" /> element. <c>null</c> if the  <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -533,9 +640,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
         :rtype: System.String
         :return: A [System.String]() containing the formatted value.

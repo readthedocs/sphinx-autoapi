@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.SessionStateTempDataProvider.LoadTempData(HttpContext)
     
         
+    
+        
         :param context: 
+        
         :type context: HttpContext
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
@@ -71,9 +74,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.SessionStateTempDataProvider.SaveTempData(HttpContext, System.Collections.Generic.IDictionary<System.String, System.Object>)
     
         
+    
+        
         :param context: 
+        
         :type context: HttpContext
+    
+        
         :param values: 
+        
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         

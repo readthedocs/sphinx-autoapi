@@ -64,7 +64,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper](Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.yml).
     
         
+    
+        
         :param hostingEnvironment: The @!:IHostingEnvironment-.
+        
         :type hostingEnvironment: IHostingEnvironment
     
         
@@ -115,9 +118,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.Process(TagHelperContext, TagHelperOutput)
     
         
+    
+        
         :param context: 
+        
         :type context: TagHelperContext
+    
+        
         :param output: 
+        
         :type output: TagHelperOutput
     
         

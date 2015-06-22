@@ -71,7 +71,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.HttpMethodConstraint.HttpMethodConstraint(System.Collections.Generic.IEnumerable<System.String>)
     
         
+    
+        
         :param httpMethods: 
+        
         :type httpMethods: System.Collections.Generic.IEnumerable{System.String}
     
         
@@ -118,7 +121,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpMethodConstraint.Accept(Microsoft.AspNet.Mvc.ActionConstraintContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
         :rtype: System.Boolean
     

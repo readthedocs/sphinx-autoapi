@@ -49,9 +49,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue.DecisionCriterionValue(System.Object, System.Boolean)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param isCatchAll: 
+        
         :type isCatchAll: System.Boolean
     
         

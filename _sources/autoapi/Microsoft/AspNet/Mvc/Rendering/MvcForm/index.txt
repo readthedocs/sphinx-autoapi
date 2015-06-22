@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MvcForm.MvcForm(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
     
         
@@ -82,7 +85,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.MvcForm.Dispose(System.Boolean)
     
         
+    
+        
         :param disposing: 
+        
         :type disposing: System.Boolean
     
         

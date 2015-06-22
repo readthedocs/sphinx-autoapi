@@ -119,9 +119,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.OutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param contentType: 
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Boolean
     
@@ -137,13 +143,18 @@ Methods
         Returns a value indicating whether or not the given type can be written by this serializer.
     
         
+    
+        
         :param declaredType: The declared type.
+        
         :type declaredType: System.Type
+    
+        
         :param runtimeType: The runtime type.
+        
         :type runtimeType: System.Type
         :rtype: System.Boolean
-        :return: <c>true</c> if the type can be written, otherwise
-    <c>false</c>.
+        :return: <c>true</c> if the type can be written, otherwise <c>false</c>.
     
         
         .. code-block:: csharp
@@ -153,11 +164,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.OutputFormatter.GetSupportedContentTypes(System.Type, System.Type, MediaTypeHeaderValue)
     
         
+    
+        
         :param declaredType: 
+        
         :type declaredType: System.Type
+    
+        
         :param runtimeType: 
+        
         :type runtimeType: System.Type
+    
+        
         :param contentType: 
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}
     
@@ -175,7 +195,10 @@ Methods
         <paramref name="contentTypeHeader" />.
     
         
+    
+        
         :param context: The formatter context associated with the call.
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Text.Encoding
         :return: The [System.Text.Encoding]() to use when reading the request or writing the response.
@@ -188,7 +211,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.OutputFormatter.WriteAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Threading.Tasks.Task
     
@@ -204,7 +230,10 @@ Methods
         Writes the response body.
     
         
+    
+        
         :param context: The formatter context associated with the call.
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Threading.Tasks.Task
         :return: A task which can write the response body.
@@ -221,7 +250,10 @@ Methods
         Sets the headers on @!:Microsoft.AspNet.Http.HttpResponse- object.
     
         
+    
+        
         :param context: The formatter context associated with the call.
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
     
         

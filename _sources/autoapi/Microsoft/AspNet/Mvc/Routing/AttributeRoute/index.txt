@@ -54,13 +54,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.AttributeRoute(IRouter, Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider, IInlineConstraintResolver, ILoggerFactory)
     
         
+    
+        
         :param target: 
+        
         :type target: IRouter
+    
+        
         :param actionDescriptorsCollectionProvider: 
+        
         :type actionDescriptorsCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+    
+        
         :param constraintResolver: 
+        
         :type constraintResolver: IInlineConstraintResolver
+    
+        
         :param loggerFactory: 
+        
         :type loggerFactory: ILoggerFactory
     
         
@@ -79,7 +91,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.GetVirtualPath(VirtualPathContext)
     
         
+    
+        
         :param context: 
+        
         :type context: VirtualPathContext
         :rtype: VirtualPathData
     
@@ -91,7 +106,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.RouteAsync(RouteContext)
     
         
+    
+        
         :param context: 
+        
         :type context: RouteContext
         :rtype: System.Threading.Tasks.Task
     

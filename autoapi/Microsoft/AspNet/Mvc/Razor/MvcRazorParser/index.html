@@ -166,50 +166,19 @@ helpers from
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>parser</strong> (<em>RazorParser</em>) &#8211; The &#64;!:RazorParser- to copy properties from.</li>
-<li><strong>inheritedChunkTrees</strong> &#8211; The [System.Collections.Generic.IReadOnlyList`1]()s that are inherited</li>
+<li><strong>inheritedChunkTrees</strong> (<em>System.Collections.Generic.IReadOnlyList{ChunkTree}</em>) &#8211; The [System.Collections.Generic.IReadOnlyList`1]()s that are inherited from parsed pages from _ViewImports files.</li>
+<li><strong>defaultInheritedChunks</strong> (<em>System.Collections.Generic.IReadOnlyList{Chunk}</em>) &#8211; The [System.Collections.Generic.IReadOnlyList`1]() inherited by default by all Razor pages in the application.</li>
+<li><strong>modelExpressionTypeName</strong> (<em>System.String</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>from parsed pages from _ViewImports files.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type inheritedChunkTrees:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{ChunkTree}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param defaultInheritedChunks:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [System.Collections.Generic.IReadOnlyList`1]() inherited by</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>default by all Razor pages in the application.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type defaultInheritedChunks:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{Chunk}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelExpressionTypeName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelExpressionTypeName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">MvcRazorParser</span><span class="p">(</span><span class="n">RazorParser</span> <span class="n">parser</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">inheritedChunkTrees</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">Chunk</span><span class="p">&gt;</span> <span class="n">defaultInheritedChunks</span><span class="p">,</span> <span class="kt">string</span> <span class="n">modelExpressionTypeName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">MvcRazorParser</span><span class="p">(</span><span class="n">RazorParser</span> <span class="n">parser</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">inheritedChunkTrees</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">Chunk</span><span class="p">&gt;</span> <span class="n">defaultInheritedChunks</span><span class="p">,</span> <span class="kt">string</span> <span class="n">modelExpressionTypeName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

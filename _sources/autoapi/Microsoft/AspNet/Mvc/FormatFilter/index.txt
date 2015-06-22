@@ -64,10 +64,15 @@ Constructors
         Initializes an instance of [Microsoft.AspNet.Mvc.FormatFilter](Microsoft.AspNet.Mvc.FormatFilter.yml).
     
         
-        :param options: The
-    <see cref="!:IOptions&lt;MvcOptions&gt;" />
+    
+        
+        :param options: The <see cref="!:IOptions&lt;MvcOptions&gt;" />
+        
         :type options: IOptions{Microsoft.AspNet.Mvc.MvcFormatterMappingOptions}
+    
+        
         :param actionContext: The [Microsoft.AspNet.Mvc.IScopedInstance`1]()
+        
         :type actionContext: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionContext}
     
         
@@ -137,7 +142,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FormatFilter.OnResourceExecuted(Microsoft.AspNet.Mvc.ResourceExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutedContext
     
         
@@ -154,7 +162,10 @@ Methods
         2. If there is a conflicting producesFilter.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ResourceExecutingContext]().
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutingContext
     
         
@@ -165,7 +176,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FormatFilter.OnResultExecuted(Microsoft.AspNet.Mvc.ResultExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutedContext
     
         
@@ -180,7 +194,10 @@ Methods
         Sets a Content Type on an  [Microsoft.AspNet.Mvc.ObjectResult]()  using a format value from the request.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ResultExecutingContext]().
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
     
         

@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.DefaultControllerActivator](Microsoft.AspNet.Mvc.DefaultControllerActivator.yml).
     
         
+    
+        
         :param typeActivatorCache: The [Microsoft.AspNet.Mvc.ITypeActivatorCache](Microsoft.AspNet.Mvc.ITypeActivatorCache.yml).
+        
         :type typeActivatorCache: Microsoft.AspNet.Mvc.ITypeActivatorCache
     
         
@@ -82,9 +85,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerActivator.Create(Microsoft.AspNet.Mvc.ActionContext, System.Type)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param controllerType: 
+        
         :type controllerType: System.Type
         :rtype: System.Object
     

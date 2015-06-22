@@ -113,7 +113,10 @@ Methods
         Loads the assembly containing precompiled views.
     
         
+    
+        
         :param loadContext: The @!:IAssemblyLoadContext-.
+        
         :type loadContext: IAssemblyLoadContext
         :rtype: System.Reflection.Assembly
         :return: The [System.Reflection.Assembly]() containing precompiled views.

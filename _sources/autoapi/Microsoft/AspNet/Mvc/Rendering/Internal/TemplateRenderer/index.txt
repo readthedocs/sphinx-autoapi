@@ -71,15 +71,30 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.TemplateRenderer(Microsoft.AspNet.Mvc.Rendering.IViewEngine, Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ViewDataDictionary, System.String, System.Boolean)
     
         
+    
+        
         :param viewEngine: 
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param readOnly: 
+        
         :type readOnly: System.Boolean
     
         
@@ -98,9 +113,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.GetTypeNames(Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata, System.Type)
     
         
+    
+        
         :param modelMetadata: 
+        
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param fieldType: 
+        
         :type fieldType: System.Type
         :rtype: System.Collections.Generic.IEnumerable{System.String}
     

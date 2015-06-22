@@ -63,9 +63,15 @@ Constructors
         Creates the anti-forgery token pair (cookie and form token) for a request.
     
         
+    
+        
         :param formToken: The token that is supplied in the request form body.
+        
         :type formToken: System.String
+    
+        
         :param cookieToken: The token that is supplied in the request cookie.
+        
         :type cookieToken: System.String
     
         

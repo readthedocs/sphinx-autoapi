@@ -66,10 +66,15 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param expression: Expression name, relative to the current model. May identify a single property or an
-    [System.Object]() that contains the properties to edit.
+    
+        
+        :param expression: Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to edit.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -90,14 +95,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param expression: Expression name, relative to the current model. May identify a single property or an
-    [System.Object]() that contains the properties to edit.
+    
+        
+        :param expression: Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to edit.
+        
         :type expression: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -119,12 +130,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param expression: Expression name, relative to the current model. May identify a single property or an
-    [System.Object]() that contains the properties to edit.
+    
+        
+        :param expression: Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to edit.
+        
         :type expression: System.String
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -146,16 +165,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param expression: Expression name, relative to the current model. May identify a single property or an
-    [System.Object]() that contains the properties to edit.
+    
+        
+        :param expression: Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to edit.
+        
         :type expression: System.String
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -177,15 +205,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param expression: Expression name, relative to the current model. May identify a single property or an
-    [System.Object]() that contains the properties to edit.
+    
+        
+        :param expression: Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to edit.
+        
         :type expression: System.String
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for
-    properties that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -203,7 +241,10 @@ Methods
         model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -221,11 +262,15 @@ Methods
         template is found using the model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -244,9 +289,15 @@ Methods
         <paramref name="templateName" /> or the model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -266,13 +317,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -292,12 +350,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for
-    properties that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -317,16 +383,25 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param templateName: The name of the template used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for
-    properties that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -346,9 +421,15 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -369,13 +450,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -397,11 +485,20 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: The name of the template that is used to create the HTML markup.
+        
         :type templateName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -423,15 +520,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: The name of the template that is used to create the HTML markup.
+        
         :type templateName: System.String
-        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()
-    that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-    instance created for the template.
+    
+        
+        :param additionalViewData: An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
@@ -453,14 +560,25 @@ Methods
         <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param templateName: The name of the template that is used to create the HTML markup.
+        
         :type templateName: System.String
-        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties
-    that have the same name.
+    
+        
+        :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.
+        
         :type htmlFieldName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).

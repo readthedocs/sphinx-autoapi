@@ -260,41 +260,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -303,59 +288,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -364,75 +317,28 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -441,47 +347,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param controllerName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the controller.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type controllerName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -490,65 +376,28 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param controllerName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the controller.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type controllerName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -557,81 +406,29 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>helper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action.</li>
+<li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param actionName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the action.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type actionName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param controllerName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the controller.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type controllerName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ActionLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">helper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink">
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperLinkExtensions.RouteLink" title="Permalink to this definition">¶</a></dt>
@@ -640,53 +437,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -695,69 +465,27 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -766,40 +494,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the route.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type routeName:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -808,58 +522,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the route.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type routeName:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -868,74 +551,28 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>linkText</strong> &#8211; The inner text of the anchor element. Must not be</li>
+<li><strong>linkText</strong> (<em>System.String</em>) &#8211; The inner text of the anchor element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type linkText:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the route.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type routeName:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param routeValues:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RouteLink</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">linkText</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

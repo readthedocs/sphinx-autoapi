@@ -65,7 +65,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.JsonPatchInputFormatter(JsonSerializerSettings)
     
         
+    
+        
         :param serializerSettings: 
+        
         :type serializerSettings: JsonSerializerSettings
     
         
@@ -84,7 +87,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.CanRead(Microsoft.AspNet.Mvc.InputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Boolean
     
@@ -96,7 +102,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonPatchInputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
     

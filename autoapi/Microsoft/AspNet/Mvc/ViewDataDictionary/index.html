@@ -159,36 +159,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+<li><strong>metadataProvider</strong> (<a class="reference internal" href="../ModelBinding/IModelMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</li>
+<li><strong>modelState</strong> (<a class="reference internal" href="../ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelState:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelState:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
@@ -198,52 +180,19 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+<li><strong>metadataProvider</strong> (<a class="reference internal" href="../ModelBinding/IModelMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</li>
+<li><strong>modelState</strong> (<a class="reference internal" href="../ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</li>
+<li><strong>declaredModelType</strong> (<em>System.Type</em>) &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelState:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelState:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param declaredModelType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
@@ -253,46 +202,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+<li><strong>metadataProvider</strong> (<a class="reference internal" href="../ModelBinding/IModelMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em></a>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</li>
+<li><strong>declaredModelType</strong> (<em>System.Type</em>) &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param declaredModelType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em><span class="sig-paren">)</span></dt>
@@ -352,30 +273,17 @@ instance. This constructor is careful to avoid exceptions [Microsoft.AspNet.Mvc.
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
 <li><strong>model</strong> (<em>System.Object</em>) &#8211; Value for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) property.</li>
-<li><strong>declaredModelType</strong> &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</li>
+<li><strong>declaredModelType</strong> (<em>System.Type</em>) &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
@@ -387,30 +295,17 @@ instance.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
-<li><strong>declaredModelType</strong> &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</li>
+<li><strong>declaredModelType</strong> (<em>System.Type</em>) &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -715,19 +610,16 @@ instance.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Value of named</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Value of named &lt;paramref name=&#8221;expression&#8221; /&gt; in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">object</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">object</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Eval</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -748,21 +640,16 @@ using given
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Value of named</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Value of named &lt;paramref name=&#8221;expression&#8221; /&gt; in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted using given &lt;paramref name=&#8221;format&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted using
-given
-&lt;paramref name=&#8221;format&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">string</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">string</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.FormatValue">
 <code class="descname">FormatValue</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.FormatValue" title="Permalink to this definition">¶</a></dt>
@@ -804,20 +691,16 @@ given
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named &lt;paramref name=&#8221;expression&#8221; /&gt; in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in this
-[Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ViewDataInfo</span> <span class="nf">GetViewDataInfo</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ViewDataInfo</span> <span class="nf">GetViewDataInfo</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Remove">
 <code class="descname">Remove</code><span class="sig-paren">(</span><em>System.Collections.Generic.KeyValuePair&lt;System.String</em>, <em>System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Remove" title="Permalink to this definition">¶</a></dt>

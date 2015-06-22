@@ -54,9 +54,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcCSharpChunkVisitor.MvcCSharpChunkVisitor(CSharpCodeWriter, CodeGeneratorContext)
     
         
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
+    
+        
         :param context: 
+        
         :type context: CodeGeneratorContext
     
         
@@ -75,7 +81,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpChunkVisitor.Accept(Chunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         
@@ -86,7 +95,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpChunkVisitor.Visit(Microsoft.AspNet.Mvc.Razor.InjectChunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Microsoft.AspNet.Mvc.Razor.InjectChunk
     
         
@@ -97,7 +109,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpChunkVisitor.Visit(Microsoft.AspNet.Mvc.Razor.ModelChunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Microsoft.AspNet.Mvc.Razor.ModelChunk
     
         

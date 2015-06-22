@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.DefaultViewComponentInvoker(System.IServiceProvider, Microsoft.AspNet.Mvc.ITypeActivatorCache, Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator)
     
         
+    
+        
         :param serviceProvider: 
+        
         :type serviceProvider: System.IServiceProvider
+    
+        
         :param typeActivatorCache: 
+        
         :type typeActivatorCache: Microsoft.AspNet.Mvc.ITypeActivatorCache
+    
+        
         :param viewComponentActivator: 
+        
         :type viewComponentActivator: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator
     
         
@@ -77,7 +86,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.Invoke(Microsoft.AspNet.Mvc.ViewComponentContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         
@@ -88,7 +100,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(Microsoft.AspNet.Mvc.ViewComponentContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
         :rtype: System.Threading.Tasks.Task
     
@@ -100,9 +115,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(System.Reflection.MethodInfo, Microsoft.AspNet.Mvc.ViewComponentContext)
     
         
+    
+        
         :param method: 
+        
         :type method: System.Reflection.MethodInfo
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
         :rtype: Microsoft.AspNet.Mvc.IViewComponentResult
     

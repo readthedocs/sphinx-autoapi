@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultClaimUidExtractor.ExtractClaimUid(System.Security.Claims.ClaimsIdentity)
     
         
+    
+        
         :param claimsIdentity: 
+        
         :type claimsIdentity: System.Security.Claims.ClaimsIdentity
         :rtype: System.String
     

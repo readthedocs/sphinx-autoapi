@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Core.ControllerActionDescriptorProvider.ControllerActionDescriptorProvider(Microsoft.AspNet.Mvc.IControllerTypeProvider, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider>, IOptions<Microsoft.AspNet.Mvc.MvcOptions>)
     
         
+    
+        
         :param controllerTypeProvider: 
+        
         :type controllerTypeProvider: Microsoft.AspNet.Mvc.IControllerTypeProvider
+    
+        
         :param applicationModelProviders: 
+        
         :type applicationModelProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider}
+    
+        
         :param optionsAccessor: 
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcOptions}
     
         
@@ -115,7 +124,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionDescriptorProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.Core.ActionDescriptorProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Core.ActionDescriptorProviderContext
     
         
@@ -126,7 +138,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionDescriptorProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.Core.ActionDescriptorProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Core.ActionDescriptorProviderContext
     
         

@@ -70,7 +70,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>.GetModel(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)
     
         
+    
+        
         :param newCollection: 
+        
         :type newCollection: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
         :rtype: System.Object
     

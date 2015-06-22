@@ -59,13 +59,13 @@ Methods
         <paramref name="bindingSource" />.
     
         
+    
+        
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() associated with a model.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
-        :return: The filtered value provider, or
-    <c>null</c> if the value provider does not match
-    
-    <paramref name="bindingSource" />.
+        :return: The filtered value provider, or <c>null</c> if the value provider does not match  <paramref name="bindingSource" />.
     
         
         .. code-block:: csharp

@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.BindingBehaviorAttribute.BindingBehaviorAttribute(Microsoft.AspNet.Mvc.ModelBinding.BindingBehavior)
     
         
+    
+        
         :param behavior: 
+        
         :type behavior: Microsoft.AspNet.Mvc.ModelBinding.BindingBehavior
     
         

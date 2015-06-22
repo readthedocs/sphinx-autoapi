@@ -59,7 +59,10 @@ Methods
         <paramref name="actionContext" />.
     
         
+    
+        
         :param actionContext: [Microsoft.AspNet.Mvc.ActionContext]() for the action to execute.
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Object
         :return: The controller.
@@ -76,7 +79,10 @@ Methods
         Releases a controller instance.
     
         
+    
+        
         :param controller: The controller.
+        
         :type controller: System.Object
     
         

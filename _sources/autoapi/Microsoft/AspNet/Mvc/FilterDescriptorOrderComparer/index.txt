@@ -72,9 +72,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FilterDescriptorOrderComparer.Compare(Microsoft.AspNet.Mvc.FilterDescriptor, Microsoft.AspNet.Mvc.FilterDescriptor)
     
         
+    
+        
         :param x: 
+        
         :type x: Microsoft.AspNet.Mvc.FilterDescriptor
+    
+        
         :param y: 
+        
         :type y: Microsoft.AspNet.Mvc.FilterDescriptor
         :rtype: System.Int32
     

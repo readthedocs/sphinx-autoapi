@@ -65,9 +65,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider](Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider.yml).
     
         
+    
+        
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() of the data.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    
+        
         :param values: The values.
+        
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
@@ -86,7 +92,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider.ContainsPrefixAsync(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Threading.Tasks.Task{System.Boolean}
     
@@ -98,7 +107,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider.GetValueAsync(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     

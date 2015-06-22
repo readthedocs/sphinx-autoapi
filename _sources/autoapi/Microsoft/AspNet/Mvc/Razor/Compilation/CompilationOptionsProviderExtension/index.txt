@@ -64,9 +64,15 @@ Methods
         @!:CompilationSettings- used for Roslyn compilation.
     
         
+    
+        
         :param compilerOptionsProvider: A @!:ICompilerOptionsProvider- that reads compiler options.
+        
         :type compilerOptionsProvider: ICompilerOptionsProvider
+    
+        
         :param applicationEnvironment: The @!:IApplicationEnvironment- for the executing application.
+        
         :type applicationEnvironment: IApplicationEnvironment
         :rtype: CompilationSettings
         :return: The @!:CompilationSettings- for the current application.

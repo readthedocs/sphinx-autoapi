@@ -58,7 +58,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider](Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider.yml).
     
         
+    
+        
         :param actionDescriptorsCollectionProvider: The [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
+        
         :type actionDescriptorsCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
     
         

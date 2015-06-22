@@ -60,9 +60,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationEqualToRule.ModelClientValidationEqualToRule(System.String, System.Object)
     
         
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
+    
+        
         :param other: 
+        
         :type other: System.Object
     
         

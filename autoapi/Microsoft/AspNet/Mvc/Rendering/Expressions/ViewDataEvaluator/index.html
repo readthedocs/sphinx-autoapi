@@ -219,52 +219,25 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>viewData</strong> &#8211; The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewData</strong> (<a class="reference internal" href="../../../ViewDataDictionary/index.html#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the &lt;paramref name=&#8221;expression&#8221; /&gt; value.</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to &lt;c&gt;viewData.Model&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named &lt;paramref name=&#8221;expression&#8221; /&gt; in given &lt;paramref name=&#8221;viewData&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;expression&#8221; /&gt; value.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type viewData:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param expression:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Expression name, relative to</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;c&gt;viewData.Model&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in given
-&lt;paramref name=&#8221;viewData&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ViewDataInfo</span> <span class="nf">Eval</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ViewDataInfo</span> <span class="nf">Eval</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Eval</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -275,53 +248,25 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>indexableObject</strong> &#8211; The [System.Object]() that may contain the</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>indexableObject</strong> (<em>System.Object</em>) &#8211; The [System.Object]() that may contain the &lt;paramref name=&#8221;expression&#8221; /&gt; value.</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to &lt;paramref name=&#8221;indexableObject&#8221; /&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named &lt;paramref name=&#8221;expression&#8221; /&gt; in given  &lt;paramref name=&#8221;indexableObject&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;expression&#8221; /&gt; value.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type indexableObject:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param expression:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Expression name, relative to</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;paramref name=&#8221;indexableObject&#8221; /&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">[Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in given</p>
-<p>&lt;paramref name=&#8221;indexableObject&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ViewDataInfo</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">object</span> <span class="n">indexableObject</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ViewDataInfo</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">object</span> <span class="n">indexableObject</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

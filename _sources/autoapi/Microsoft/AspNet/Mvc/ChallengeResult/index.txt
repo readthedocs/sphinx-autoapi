@@ -64,7 +64,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ChallengeResult.ChallengeResult(AuthenticationProperties)
     
         
+    
+        
         :param properties: 
+        
         :type properties: AuthenticationProperties
     
         
@@ -75,7 +78,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ChallengeResult.ChallengeResult(System.Collections.Generic.IList<System.String>)
     
         
+    
+        
         :param authenticationSchemes: 
+        
         :type authenticationSchemes: System.Collections.Generic.IList{System.String}
     
         
@@ -86,9 +92,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ChallengeResult.ChallengeResult(System.Collections.Generic.IList<System.String>, AuthenticationProperties)
     
         
+    
+        
         :param authenticationSchemes: 
+        
         :type authenticationSchemes: System.Collections.Generic.IList{System.String}
+    
+        
         :param properties: 
+        
         :type properties: AuthenticationProperties
     
         
@@ -99,7 +111,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ChallengeResult.ChallengeResult(System.String)
     
         
+    
+        
         :param authenticationScheme: 
+        
         :type authenticationScheme: System.String
     
         
@@ -110,9 +125,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ChallengeResult.ChallengeResult(System.String, AuthenticationProperties)
     
         
+    
+        
         :param authenticationScheme: 
+        
         :type authenticationScheme: System.String
+    
+        
         :param properties: 
+        
         :type properties: AuthenticationProperties
     
         
@@ -159,7 +180,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ChallengeResult.ExecuteResult(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

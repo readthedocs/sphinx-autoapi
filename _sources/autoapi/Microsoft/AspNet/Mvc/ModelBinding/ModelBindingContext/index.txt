@@ -86,11 +86,20 @@ Methods
         <paramref name="bindingContext" />.
     
         
+    
+        
         :param bindingContext: Existing [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+    
+        
         :param modelName: Model name of associated with the new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        
         :type modelName: System.String
+    
+        
         :param modelMetadata: Model metadata of associated with the new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
+        
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
     
@@ -109,11 +118,20 @@ Methods
         <paramref name="bindingInfo" />.
     
         
+    
+        
         :param metadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with the model.
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param bindingInfo: [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml) associated with the model.
+        
         :type bindingInfo: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+    
+        
         :param modelName: An optional name of the model to be used.
+        
         :type modelName: System.String
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
         :return: A new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).

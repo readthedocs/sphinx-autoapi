@@ -58,9 +58,15 @@ Methods
         When implemented in a type, activates an instantiated page.
     
         
+    
+        
         :param page: The page to activate.
+        
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

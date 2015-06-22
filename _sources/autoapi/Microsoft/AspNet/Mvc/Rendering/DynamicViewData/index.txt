@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.DynamicViewData.DynamicViewData(System.Func<Microsoft.AspNet.Mvc.ViewDataDictionary>)
     
         
+    
+        
         :param viewDataFunc: 
+        
         :type viewDataFunc: System.Func{Microsoft.AspNet.Mvc.ViewDataDictionary}
     
         
@@ -84,9 +87,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DynamicViewData.TryGetMember(System.Dynamic.GetMemberBinder, out System.Object)
     
         
+    
+        
         :param binder: 
+        
         :type binder: System.Dynamic.GetMemberBinder
+    
+        
         :param result: 
+        
         :type result: System.Object
         :rtype: System.Boolean
     
@@ -98,9 +107,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DynamicViewData.TrySetMember(System.Dynamic.SetMemberBinder, System.Object)
     
         
+    
+        
         :param binder: 
+        
         :type binder: System.Dynamic.SetMemberBinder
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     

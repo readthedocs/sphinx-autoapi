@@ -63,9 +63,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
     
         
+    
+        
         :param groupName: The group name.
+        
         :type groupName: System.String
+    
+        
         :param items: A collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) items for this group.
+        
         :type items: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription}
     
         

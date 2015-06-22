@@ -73,7 +73,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ResultFilterAttribute.OnResultExecuted(Microsoft.AspNet.Mvc.ResultExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutedContext
     
         
@@ -84,7 +87,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ResultFilterAttribute.OnResultExecuting(Microsoft.AspNet.Mvc.ResultExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
     
         
@@ -95,9 +101,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ResultFilterAttribute.OnResultExecutionAsync(Microsoft.AspNet.Mvc.ResultExecutingContext, Microsoft.AspNet.Mvc.ResultExecutionDelegate)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
+    
+        
         :param next: 
+        
         :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
         :rtype: System.Threading.Tasks.Task
     

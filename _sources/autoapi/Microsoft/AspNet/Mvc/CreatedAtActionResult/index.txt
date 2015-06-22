@@ -66,13 +66,25 @@ Constructors
         provided.
     
         
+    
+        
         :param actionName: The name of the action to use for generating the URL.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller to use for generating the URL.
+        
         :type controllerName: System.String
+    
+        
         :param routeValues: The route data to use for generating the URL.
+        
         :type routeValues: System.Object
+    
+        
         :param value: The value to format in the entity body.
+        
         :type value: System.Object
     
         
@@ -155,7 +167,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CreatedAtActionResult.OnFormatting(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

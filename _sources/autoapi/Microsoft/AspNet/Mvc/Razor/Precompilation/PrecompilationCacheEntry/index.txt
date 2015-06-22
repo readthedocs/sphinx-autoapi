@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a successful parse.
     
         
+    
+        
         :param fileInfo: The [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml) of the file being cached.
+        
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
+    
+        
         :param syntaxTree: The @!:CodeAnalysis.SyntaxTree- to cache.
+        
         :type syntaxTree: SyntaxTree
     
         
@@ -80,9 +86,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a failed parse.
     
         
-        :param diagnostics: The [System.Collections.Generic.IReadOnlyList`1]() produced from parsing the Razor
-    file. This does not contain @!:Diagnostic-s produced from compiling the parsed
-    @!:CodeAnalysis.SyntaxTree-.
+    
+        
+        :param diagnostics: The [System.Collections.Generic.IReadOnlyList`1]() produced from parsing the Razor file. This does not contain @!:Diagnostic-s produced from compiling the parsed @!:CodeAnalysis.SyntaxTree-.
+        
         :type diagnostics: System.Collections.Generic.IReadOnlyList{Diagnostic}
     
         

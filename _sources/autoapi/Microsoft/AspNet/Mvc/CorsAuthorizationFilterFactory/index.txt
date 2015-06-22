@@ -63,7 +63,10 @@ Constructors
         Creates a new insntace of [Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory](Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory.yml).
     
         
-        :param policyName: None
+    
+        
+        :param policyName: 
+        
         :type policyName: System.String
     
         
@@ -100,7 +103,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory.CreateInstance(System.IServiceProvider)
     
         
+    
+        
         :param serviceProvider: 
+        
         :type serviceProvider: System.IServiceProvider
         :rtype: Microsoft.AspNet.Mvc.IFilter
     

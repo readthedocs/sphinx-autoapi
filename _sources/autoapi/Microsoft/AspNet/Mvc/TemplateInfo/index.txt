@@ -63,7 +63,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.TemplateInfo.TemplateInfo(Microsoft.AspNet.Mvc.TemplateInfo)
     
         
+    
+        
         :param original: 
+        
         :type original: Microsoft.AspNet.Mvc.TemplateInfo
     
         
@@ -128,7 +131,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.AddVisited(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     
@@ -140,7 +146,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.GetFullHtmlFieldName(System.String)
     
         
+    
+        
         :param partialFieldName: 
+        
         :type partialFieldName: System.String
         :rtype: System.String
     
@@ -152,7 +161,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TemplateInfo.Visited(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :rtype: System.Boolean
     

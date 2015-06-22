@@ -56,7 +56,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.AreaAttribute.AreaAttribute(System.String)
     
         
+    
+        
         :param areaName: 
+        
         :type areaName: System.String
     
         

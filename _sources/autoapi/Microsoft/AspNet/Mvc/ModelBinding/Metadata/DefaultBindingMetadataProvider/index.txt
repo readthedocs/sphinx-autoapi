@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultBindingMetadataProvider.GetBindingMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext
     
         

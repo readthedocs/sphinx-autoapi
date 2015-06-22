@@ -63,12 +63,20 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -85,18 +93,25 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -113,22 +128,30 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -145,14 +168,25 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller.
+        
         :type controllerName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -169,20 +203,30 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller.
+        
         :type controllerName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -199,24 +243,35 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified action.
     
         
+    
+        
         :param helper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type helper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param actionName: The name of the action.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller.
+        
         :type controllerName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -233,16 +288,20 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified route.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -259,20 +318,25 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified route.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -289,12 +353,20 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified route.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param routeName: The name of the route.
+        
         :type routeName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -311,18 +383,25 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified route.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param routeName: The name of the route.
+        
         :type routeName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.
@@ -339,22 +418,30 @@ Methods
         Returns an anchor (&lt;a&gt;) element that contains a URL path to the specified route.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param linkText: The inner text of the anchor element. Must not be
-    <c>null</c>.
+    
+        
+        :param linkText: The inner text of the anchor element. Must not be <c>null</c>.
+        
         :type linkText: System.String
+    
+        
         :param routeName: The name of the route.
+        
         :type routeName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route
-    parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.

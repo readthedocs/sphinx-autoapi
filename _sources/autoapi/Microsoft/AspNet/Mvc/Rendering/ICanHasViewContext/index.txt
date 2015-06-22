@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.ICanHasViewContext.Contextualize(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
     
         

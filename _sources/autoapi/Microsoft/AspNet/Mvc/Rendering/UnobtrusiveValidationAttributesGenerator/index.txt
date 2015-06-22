@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule>)
     
         
+    
+        
         :param clientRules: 
+        
         :type clientRules: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     

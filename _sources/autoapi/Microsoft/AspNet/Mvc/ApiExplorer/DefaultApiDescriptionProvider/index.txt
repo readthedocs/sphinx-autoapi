@@ -64,12 +64,20 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider](Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.yml).
     
         
+    
+        
         :param optionsAccessor: The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcOptions}
-        :param constraintResolver: The @!:IInlineConstraintResolver- used for resolving inline
-    constraints.
+    
+        
+        :param constraintResolver: The @!:IInlineConstraintResolver- used for resolving inline constraints.
+        
         :type constraintResolver: IInlineConstraintResolver
+    
+        
         :param modelMetadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        
         :type modelMetadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
@@ -106,7 +114,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
     
         
@@ -117,7 +128,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
     
         

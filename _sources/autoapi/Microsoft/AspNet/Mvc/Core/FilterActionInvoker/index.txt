@@ -54,25 +54,55 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.FilterActionInvoker(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.Core.IFilterProvider>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.IInputFormatter>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.IOutputFormatter>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.IModelBinder>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory>, Microsoft.AspNet.Mvc.IScopedInstance<Microsoft.AspNet.Mvc.ActionBindingContext>, ILoggerFactory, System.Int32)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param filterProviders: 
+        
         :type filterProviders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.Core.IFilterProvider}
+    
+        
         :param inputFormatters: 
+        
         :type inputFormatters: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IInputFormatter}
+    
+        
         :param outputFormatters: 
+        
         :type outputFormatters: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IOutputFormatter}
+    
+        
         :param modelBinders: 
+        
         :type modelBinders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}
+    
+        
         :param modelValidatorProviders: 
+        
         :type modelValidatorProviders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider}
+    
+        
         :param valueProviderFactories: 
+        
         :type valueProviderFactories: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}
+    
+        
         :param actionBindingContextAccessor: 
+        
         :type actionBindingContextAccessor: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionBindingContext}
+    
+        
         :param loggerFactory: 
+        
         :type loggerFactory: ILoggerFactory
+    
+        
         :param maxModelValidationErrors: 
+        
         :type maxModelValidationErrors: System.Int32
     
         
@@ -129,9 +159,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.BindActionArgumentsAsync(Microsoft.AspNet.Mvc.ActionContext, Microsoft.AspNet.Mvc.ActionBindingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param bindingContext: 
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
@@ -148,8 +184,7 @@ Methods
     
         
         :rtype: System.Object
-        :return: The constructed instance or
-    <c>null</c>.
+        :return: The constructed instance or <c>null</c>.
     
         
         .. code-block:: csharp
@@ -159,7 +194,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.InvokeActionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext)
     
         
+    
+        
         :param actionExecutingContext: 
+        
         :type actionExecutingContext: Microsoft.AspNet.Mvc.ActionExecutingContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.IActionResult}
     
@@ -185,7 +223,10 @@ Methods
         Called to create an instance of an object which will act as the reciever of the action invocation.
     
         
+    
+        
         :param instance: The instance to release.
+        
         :type instance: System.Object
     
         

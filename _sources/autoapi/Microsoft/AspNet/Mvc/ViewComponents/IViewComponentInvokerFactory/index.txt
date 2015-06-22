@@ -49,9 +49,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory.CreateInstance(Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor, System.Object[])
     
         
+    
+        
         :param viewComponentDescriptor: 
+        
         :type viewComponentDescriptor: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvoker
     

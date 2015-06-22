@@ -67,7 +67,10 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.Internal.NonDisposableStream](Microsoft.AspNet.Mvc.Internal.NonDisposableStream.yml).
     
         
+    
+        
         :param innerStream: The stream which should not be closed or flushed.
+        
         :type innerStream: System.IO.Stream
     
         
@@ -188,15 +191,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.BeginRead(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
+    
+        
         :param callback: 
+        
         :type callback: System.AsyncCallback
+    
+        
         :param state: 
+        
         :type state: System.Object
         :rtype: System.IAsyncResult
     
@@ -208,15 +226,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.BeginWrite(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
+    
+        
         :param callback: 
+        
         :type callback: System.AsyncCallback
+    
+        
         :param state: 
+        
         :type state: System.Object
         :rtype: System.IAsyncResult
     
@@ -237,11 +270,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.CopyToAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)
     
         
+    
+        
         :param destination: 
+        
         :type destination: System.IO.Stream
+    
+        
         :param bufferSize: 
+        
         :type bufferSize: System.Int32
+    
+        
         :param cancellationToken: 
+        
         :type cancellationToken: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
     
@@ -253,7 +295,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Dispose(System.Boolean)
     
         
+    
+        
         :param disposing: 
+        
         :type disposing: System.Boolean
     
         
@@ -264,7 +309,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.EndRead(System.IAsyncResult)
     
         
+    
+        
         :param asyncResult: 
+        
         :type asyncResult: System.IAsyncResult
         :rtype: System.Int32
     
@@ -276,7 +324,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.EndWrite(System.IAsyncResult)
     
         
+    
+        
         :param asyncResult: 
+        
         :type asyncResult: System.IAsyncResult
     
         
@@ -296,7 +347,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.FlushAsync(System.Threading.CancellationToken)
     
         
+    
+        
         :param cancellationToken: 
+        
         :type cancellationToken: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
     
@@ -308,11 +362,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Read(System.Byte[], System.Int32, System.Int32)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
         :rtype: System.Int32
     
@@ -324,13 +387,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.ReadAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
+    
+        
         :param cancellationToken: 
+        
         :type cancellationToken: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task{System.Int32}
     
@@ -352,9 +427,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Seek(System.Int64, System.IO.SeekOrigin)
     
         
+    
+        
         :param offset: 
+        
         :type offset: System.Int64
+    
+        
         :param origin: 
+        
         :type origin: System.IO.SeekOrigin
         :rtype: System.Int64
     
@@ -366,7 +447,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.SetLength(System.Int64)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Int64
     
         
@@ -377,11 +461,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Write(System.Byte[], System.Int32, System.Int32)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
     
         
@@ -392,13 +485,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.WriteAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Byte[]
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
+    
+        
         :param cancellationToken: 
+        
         :type cancellationToken: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
     
@@ -410,7 +515,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.WriteByte(System.Byte)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Byte
     
         

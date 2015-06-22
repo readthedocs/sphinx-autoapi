@@ -217,20 +217,16 @@ for a given request. See [Microsoft.AspNet.Mvc.IActionConstraint]().</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;see langword=&#8221;true&#8221; /&gt; if the action  selection is valid for the specified context;</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;see langword=&#8221;true&#8221; /&gt; if the action  selection is valid for the specified context; otherwise, &lt;see langword=&#8221;false&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>otherwise,
-&lt;see langword=&#8221;false&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">abstract</span> <span class="kt">bool</span> <span class="nf">IsValidForRequest</span><span class="p">(</span><span class="n">RouteContext</span> <span class="n">routeContext</span><span class="p">,</span> <span class="n">ActionDescriptor</span> <span class="n">action</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">abstract</span> <span class="kt">bool</span> <span class="nf">IsValidForRequest</span><span class="p">(</span><span class="n">RouteContext</span> <span class="n">routeContext</span><span class="p">,</span> <span class="n">ActionDescriptor</span> <span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

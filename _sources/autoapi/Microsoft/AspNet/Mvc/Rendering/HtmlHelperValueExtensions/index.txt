@@ -64,9 +64,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: System.String
         :return: A [System.String]() containing the formatted value.
@@ -83,7 +89,10 @@ Methods
         Returns the formatted value for the current model.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
         :return: A [System.String]() containing the formatted value.
@@ -100,9 +109,15 @@ Methods
         Returns the formatted value for the current model.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
         :rtype: System.String
         :return: A [System.String]() containing the formatted value.
@@ -120,9 +135,15 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the formatted value.

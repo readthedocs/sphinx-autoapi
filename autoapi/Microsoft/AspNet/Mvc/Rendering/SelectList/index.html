@@ -342,72 +342,20 @@ the data value field, the data text field, a selected value, and the data group 
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>items</strong> (<em>System.Collections.IEnumerable</em>) &#8211; The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.</li>
-<li><strong>dataValueField</strong> &#8211; The data value field. Used to match the Value property of the corresponding</li>
+<li><strong>dataValueField</strong> (<em>System.String</em>) &#8211; The data value field. Used to match the Value property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</li>
+<li><strong>dataTextField</strong> (<em>System.String</em>) &#8211; The data text field. Used to match the Text property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</li>
+<li><strong>selectedValue</strong> (<em>System.Object</em>) &#8211; The selected values. Used to match the Selected property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</li>
+<li><strong>dataGroupField</strong> (<em>System.String</em>) &#8211; The data group field. Used to match the Group property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type dataValueField:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param dataTextField:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The data text field. Used to match the Text property of the corresponding</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>[Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type dataTextField:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param selectedValue:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The selected values. Used to match the Selected property of the corresponding</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>[Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type selectedValue:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param dataGroupField:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The data group field. Used to match the Group property of the corresponding</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>[Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type dataGroupField:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">SelectList</span><span class="p">(</span><span class="n">IEnumerable</span> <span class="n">items</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataValueField</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataTextField</span><span class="p">,</span> <span class="kt">object</span> <span class="n">selectedValue</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataGroupField</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">SelectList</span><span class="p">(</span><span class="n">IEnumerable</span> <span class="n">items</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataValueField</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataTextField</span><span class="p">,</span> <span class="kt">object</span> <span class="n">selectedValue</span><span class="p">,</span> <span class="kt">string</span> <span class="n">dataGroupField</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

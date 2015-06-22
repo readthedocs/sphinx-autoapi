@@ -81,7 +81,10 @@ Methods
         Executed for the second pass of [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) building. See [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.Order](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         
@@ -96,7 +99,10 @@ Methods
         Executed for the first pass of [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) building. See [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.Order](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         

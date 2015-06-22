@@ -58,7 +58,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.RazorPageActivator](Microsoft.AspNet.Mvc.Razor.RazorPageActivator.yml) class.
     
         
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
@@ -77,9 +80,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorPageActivator.Activate(Microsoft.AspNet.Mvc.Razor.IRazorPage, Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param page: 
+        
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

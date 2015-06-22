@@ -58,9 +58,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.TempDataDictionary](Microsoft.AspNet.Mvc.TempDataDictionary.yml) class.
     
         
+    
+        
         :param context: The @!:IHttpContextAccessor- that provides the HttpContext.
+        
         :type context: IHttpContextAccessor
+    
+        
         :param provider: The [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml) used to Load and Save data.
+        
         :type provider: Microsoft.AspNet.Mvc.ITempDataProvider
     
         
@@ -137,9 +143,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Add(System.String, System.Object)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -159,7 +171,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.ContainsKey(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Boolean
     
@@ -171,7 +186,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.ContainsValue(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     
@@ -202,7 +220,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Keep(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
     
         
@@ -222,7 +243,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Peek(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Object
     
@@ -234,7 +258,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Remove(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Boolean
     
@@ -255,7 +282,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Add(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param keyValuePair: 
+        
         :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
     
         
@@ -266,7 +296,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Contains(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param keyValuePair: 
+        
         :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
         :rtype: System.Boolean
     
@@ -278,9 +311,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.CopyTo(System.Collections.Generic.KeyValuePair<System.String, System.Object>[], System.Int32)
     
         
+    
+        
         :param array: 
+        
         :type array: System.Collections.Generic.KeyValuePair{System.String,System.Object}[]
+    
+        
         :param index: 
+        
         :type index: System.Int32
     
         
@@ -291,7 +330,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Remove(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param keyValuePair: 
+        
         :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
         :rtype: System.Boolean
     
@@ -313,9 +355,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.TryGetValue(System.String, out System.Object)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     

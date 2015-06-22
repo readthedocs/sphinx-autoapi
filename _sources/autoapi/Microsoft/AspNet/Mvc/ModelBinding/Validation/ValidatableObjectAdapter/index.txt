@@ -72,7 +72,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ValidatableObjectAdapter.Validate(Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult}
     

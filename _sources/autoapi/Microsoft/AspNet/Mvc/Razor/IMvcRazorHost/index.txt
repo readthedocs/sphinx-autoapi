@@ -59,10 +59,15 @@ Methods
         <paramref name="inputStream" />.
     
         
-        :param rootRelativePath: The path of the relative to the root of the application.
-    Used to generate line pragmas and calculate the class name of the generated type.
+    
+        
+        :param rootRelativePath: The path of the relative to the root of the application. Used to generate line pragmas and calculate the class name of the generated type.
+        
         :type rootRelativePath: System.String
+    
+        
         :param inputStream: A [System.IO.Stream]() that represents the Razor contents.
+        
         :type inputStream: System.IO.Stream
         :rtype: GeneratorResults
         :return: A @!:GeneratorResults- instance that represents the results of code generation.

@@ -14,13 +14,13 @@ Microsoft.AspNet.Mvc.Internal Namespace
    :maxdepth: 2
 
    
+   /autoapi/Microsoft/AspNet/Mvc/Internal/MvcMarkerService/index
    
-   /autoapi/Microsoft/AspNet/Mvc/Internal/ModelClientValidationRemoteRule/index
+   /autoapi/Microsoft/AspNet/Mvc/Internal/MvcServicesHelper/index
    
+   /autoapi/Microsoft/AspNet/Mvc/Internal/NonDisposableStream/index
    
-   
-   /autoapi/Microsoft/AspNet/Mvc/Internal/SerializerSettingsProvider/index
-   
+   /autoapi/Microsoft/AspNet/Mvc/Internal/UrlUtility/index
    
 
 
@@ -37,12 +37,22 @@ Microsoft.AspNet.Mvc.Internal Namespace
     .. rubric:: Classes
 
 
-    class :dn:cls:`ModelClientValidationRemoteRule`
-        [Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule]() containing information for HTML attribute generation in fields a
-        [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) targets.
+    class :dn:cls:`MvcMarkerService`
+        This is a Marker class which is used to determine if all the services were added
+        to when Mvc is loaded.
 
 
-    class :dn:cls:`SerializerSettingsProvider`
-        Helper class which provides @!:JsonSerializerSettings-.
+    class :dn:cls:`MvcServicesHelper`
+        Helper class which contains MvcServices related helpers.
+
+
+    class :dn:cls:`NonDisposableStream`
+        Stream that delegates to an inner stream.
+        This Stream is present so that the inner stream is not closed
+        even when Close() or Dispose() is called.
+
+
+    class :dn:cls:`UrlUtility`
+        
 
 

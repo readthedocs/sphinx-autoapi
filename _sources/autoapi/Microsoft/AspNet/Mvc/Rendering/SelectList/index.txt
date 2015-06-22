@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
     
         
@@ -66,9 +69,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.Object)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param selectedValue: 
+        
         :type selectedValue: System.Object
     
         
@@ -79,11 +88,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.String, System.String)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param dataValueField: 
+        
         :type dataValueField: System.String
+    
+        
         :param dataTextField: 
+        
         :type dataTextField: System.String
     
         
@@ -94,13 +112,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.String, System.String, System.Object)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param dataValueField: 
+        
         :type dataValueField: System.String
+    
+        
         :param dataTextField: 
+        
         :type dataTextField: System.String
+    
+        
         :param selectedValue: 
+        
         :type selectedValue: System.Object
     
         
@@ -116,19 +146,30 @@ Constructors
         the data value field, the data text field, a selected value, and the data group field.
     
         
+    
+        
         :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
+        
         :type items: System.Collections.IEnumerable
-        :param dataValueField: The data value field. Used to match the Value property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataValueField: The data value field. Used to match the Value property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataValueField: System.String
-        :param dataTextField: The data text field. Used to match the Text property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataTextField: The data text field. Used to match the Text property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataTextField: System.String
-        :param selectedValue: The selected values. Used to match the Selected property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param selectedValue: The selected values. Used to match the Selected property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type selectedValue: System.Object
-        :param dataGroupField: The data group field. Used to match the Group property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataGroupField: The data group field. Used to match the Group property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataGroupField: System.String
     
         

@@ -63,17 +63,35 @@ Constructors
         Initalizes a new instance of the [Microsoft.AspNet.Mvc.Razor.Compilation.RoslynCompilationService](Microsoft.AspNet.Mvc.Razor.Compilation.RoslynCompilationService.yml) class.
     
         
+    
+        
         :param environment: The environment for the executing application.
+        
         :type environment: IApplicationEnvironment
+    
+        
         :param loaderAccessor: 
+        
         :type loaderAccessor: IAssemblyLoadContextAccessor
+    
+        
         :param libraryManager: The library manager that provides export and reference information.
+        
         :type libraryManager: ILibraryManager
+    
+        
         :param compilerOptionsProvider: 
+        
         :type compilerOptionsProvider: ICompilerOptionsProvider
+    
+        
         :param host: The [Microsoft.AspNet.Mvc.Razor.IMvcRazorHost]() that was used to generate the code.
+        
         :type host: Microsoft.AspNet.Mvc.Razor.IMvcRazorHost
+    
+        
         :param optionsAccessor: 
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
     
         
@@ -92,9 +110,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.RoslynCompilationService.Compile(Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo, System.String)
     
         
+    
+        
         :param fileInfo: 
+        
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+    
+        
         :param compilationContent: 
+        
         :type compilationContent: System.String
         :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
     

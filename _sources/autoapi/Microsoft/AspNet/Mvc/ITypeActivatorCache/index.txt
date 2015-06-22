@@ -60,11 +60,15 @@ Methods
         <typeparamref name="TInstance" />.
     
         
-        :param serviceProvider: The [System.IServiceProvider]() used to resolve dependencies for
     
-    <paramref name="implementationType" />.
+        
+        :param serviceProvider: The [System.IServiceProvider]() used to resolve dependencies for  <paramref name="implementationType" />.
+        
         :type serviceProvider: System.IServiceProvider
+    
+        
         :param optionType: 
+        
         :type optionType: System.Type
         :rtype: TInstance
     

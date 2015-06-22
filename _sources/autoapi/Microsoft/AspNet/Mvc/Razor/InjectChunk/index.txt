@@ -58,9 +58,15 @@ Constructors
         Represents the chunk for an [inject]()  statement.
     
         
+    
+        
         :param typeName: The type name of the property to be injected
+        
         :type typeName: System.String
+    
+        
         :param propertyName: The member name of the property to be injected.
+        
         :type propertyName: System.String
     
         

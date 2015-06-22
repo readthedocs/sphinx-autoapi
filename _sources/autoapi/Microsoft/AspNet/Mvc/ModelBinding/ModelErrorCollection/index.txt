@@ -55,7 +55,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelErrorCollection.Add(System.Exception)
     
         
+    
+        
         :param exception: 
+        
         :type exception: System.Exception
     
         
@@ -66,7 +69,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelErrorCollection.Add(System.String)
     
         
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
     
         

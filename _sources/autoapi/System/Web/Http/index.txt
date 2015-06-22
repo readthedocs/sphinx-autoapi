@@ -14,61 +14,33 @@ System.Web.Http Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/System/Web/Http/ApiController/index
-   
-   
    
    /autoapi/System/Web/Http/BadRequestErrorMessageResult/index
    
-   
-   
    /autoapi/System/Web/Http/ConflictResult/index
-   
-   
    
    /autoapi/System/Web/Http/ExceptionResult/index
    
-   
-   
    /autoapi/System/Web/Http/FromUriAttribute/index
-   
-   
    
    /autoapi/System/Web/Http/HttpError/index
    
-   
-   
    /autoapi/System/Web/Http/HttpErrorKeys/index
-   
-   
    
    /autoapi/System/Web/Http/HttpResponseException/index
    
-   
-   
    /autoapi/System/Web/Http/InternalServerErrorResult/index
-   
-   
    
    /autoapi/System/Web/Http/InvalidModelStateResult/index
    
-   
-   
    /autoapi/System/Web/Http/NegotiatedContentResult<T>/index
-   
-   
    
    /autoapi/System/Web/Http/OkNegotiatedContentResult<T>/index
    
-   
-   
    /autoapi/System/Web/Http/OkResult/index
    
-   
-   
    /autoapi/System/Web/Http/ResponseMessageResult/index
-   
    
 
 

@@ -62,9 +62,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.AmbiguousActionException.AmbiguousActionException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
     
         
+    
+        
         :param info: 
+        
         :type info: System.Runtime.Serialization.SerializationInfo
+    
+        
         :param context: 
+        
         :type context: System.Runtime.Serialization.StreamingContext
     
         
@@ -75,7 +81,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.AmbiguousActionException.AmbiguousActionException(System.String)
     
         
+    
+        
         :param message: 
+        
         :type message: System.String
     
         

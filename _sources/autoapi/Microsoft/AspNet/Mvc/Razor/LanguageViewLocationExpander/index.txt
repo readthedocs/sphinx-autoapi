@@ -77,7 +77,10 @@ Constructors
         Instantiates a new [Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator](Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator.yml) instance.
     
         
+    
+        
         :param option: The [Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption](Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption.yml).
+        
         :type option: Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption
     
         
@@ -96,9 +99,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpander.ExpandViewLocations(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext, System.Collections.Generic.IEnumerable<System.String>)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
+    
+        
         :param viewLocations: 
+        
         :type viewLocations: System.Collections.Generic.IEnumerable{System.String}
         :rtype: System.Collections.Generic.IEnumerable{System.String}
     
@@ -110,7 +119,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpander.PopulateValues(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
     
         

@@ -122,9 +122,10 @@
 <li><a class="reference internal" href="#syntax" id="id3">Syntax</a></li>
 <li><a class="reference internal" href="#github" id="id4">GitHub</a></li>
 <li><a class="reference internal" href="#fields" id="id5">Fields</a></li>
-<li><a class="reference internal" href="#constructors" id="id6">Constructors</a></li>
-<li><a class="reference internal" href="#properties" id="id7">Properties</a></li>
-<li><a class="reference internal" href="#methods" id="id8">Methods</a></li>
+<li><a class="reference internal" href="#operators" id="id6">Operators</a></li>
+<li><a class="reference internal" href="#constructors" id="id7">Constructors</a></li>
+<li><a class="reference internal" href="#properties" id="id8">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id9">Methods</a></li>
 </ul>
 </div>
 <div class="section" id="summary">
@@ -232,8 +233,60 @@ and route data from the request.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="operators">
+<h2><a class="toc-backref" href="#id6">Operators</a><a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="operator">
+<dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equality">
+<code class="descname">Equality</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equality" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>s1</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource" title="Microsoft.AspNet.Mvc.ModelBinding.BindingSource"><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em></a>) &#8211; </li>
+<li><strong>s2</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource" title="Microsoft.AspNet.Mvc.ModelBinding.BindingSource"><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">==(</span><span class="n">BindingSource</span> <span class="n">s1</span><span class="p">,</span> <span class="n">BindingSource</span> <span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="operator">
+<dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Inequality">
+<code class="descname">Inequality</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Inequality" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>s1</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource" title="Microsoft.AspNet.Mvc.ModelBinding.BindingSource"><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em></a>) &#8211; </li>
+<li><strong>s2</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource" title="Microsoft.AspNet.Mvc.ModelBinding.BindingSource"><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">!=(</span><span class="n">BindingSource</span> <span class="n">s1</span><span class="p">,</span> <span class="n">BindingSource</span> <span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="constructors">
-<h2><a class="toc-backref" href="#id6">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.BindingSource">
@@ -262,7 +315,7 @@ and route data from the request.</p>
 
 </div>
 <div class="section" id="properties">
-<h2><a class="toc-backref" href="#id7">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.DisplayName">
@@ -337,7 +390,7 @@ a single operation, and will not decompose the model into sub-properties.</p>
 
 </div>
 <div class="section" id="methods">
-<h2><a class="toc-backref" href="#id8">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.CanAcceptDataFrom">
@@ -357,19 +410,16 @@ data from
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the source is compatible, otherwise</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the source is compatible, otherwise &lt;c&gt;false&lt;/c&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;false&lt;/c&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanAcceptDataFrom</span><span class="p">(</span><span class="n">BindingSource</span> <span class="n">bindingSource</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanAcceptDataFrom</span><span class="p">(</span><span class="n">BindingSource</span> <span class="n">bindingSource</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equals">
 <code class="descname">Equals</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equals" title="Permalink to this definition">¶</a></dt>

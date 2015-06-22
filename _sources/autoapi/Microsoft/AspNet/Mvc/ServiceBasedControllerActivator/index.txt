@@ -60,9 +60,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ServiceBasedControllerActivator.Create(Microsoft.AspNet.Mvc.ActionContext, System.Type)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param controllerType: 
+        
         :type controllerType: System.Type
         :rtype: System.Object
     

@@ -98,7 +98,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.CanRead(Microsoft.AspNet.Mvc.InputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Boolean
     
@@ -114,11 +117,13 @@ Methods
         Returns a value indicating whether or not the given type can be read by this serializer.
     
         
+    
+        
         :param type: The type of object that will be read.
+        
         :type type: System.Type
         :rtype: System.Boolean
-        :return: <c>true</c> if the type can be read, otherwise
-    <c>false</c>.
+        :return: <c>true</c> if the type can be read, otherwise <c>false</c>.
     
         
         .. code-block:: csharp
@@ -128,7 +133,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.GetDefaultValueForType(System.Type)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
         :rtype: System.Object
     
@@ -140,7 +148,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.ReadAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
     
@@ -156,7 +167,10 @@ Methods
         Reads the request body.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.InputFormatterContext]() associated with the call.
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
         :return: A task which can read the request body.
@@ -173,7 +187,10 @@ Methods
         Returns encoding based on content type charset parameter.
     
         
+    
+        
         :param contentType: 
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Text.Encoding
     

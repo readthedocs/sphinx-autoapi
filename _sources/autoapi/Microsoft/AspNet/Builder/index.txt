@@ -14,9 +14,7 @@ Microsoft.AspNet.Builder Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Builder/RouteBuilderExtensions/index
-   
    
 
 

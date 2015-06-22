@@ -248,30 +248,17 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>diagnostics</strong> &#8211; The [System.Collections.Generic.IReadOnlyList`1]() produced from parsing the Razor</li>
+<li><strong>diagnostics</strong> (<em>System.Collections.Generic.IReadOnlyList{Diagnostic}</em>) &#8211; The [System.Collections.Generic.IReadOnlyList`1]() produced from parsing the Razor file. This does not contain &#64;!:Diagnostic-s produced from compiling the parsed &#64;!:CodeAnalysis.SyntaxTree-.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>file. This does not contain &#64;!:Diagnostic-s produced from compiling the parsed
-&#64;!:CodeAnalysis.SyntaxTree-.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type diagnostics:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{Diagnostic}</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">PrecompilationCacheEntry</span><span class="p">(</span><span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">Diagnostic</span><span class="p">&gt;</span> <span class="n">diagnostics</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

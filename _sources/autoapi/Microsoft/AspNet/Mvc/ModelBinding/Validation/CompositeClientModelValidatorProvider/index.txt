@@ -63,7 +63,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider.yml).
     
         
+    
+        
         :param providers: A collection of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() instances.
+        
         :type providers: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider}
     
         
@@ -104,7 +107,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider.GetValidators(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext
     
         

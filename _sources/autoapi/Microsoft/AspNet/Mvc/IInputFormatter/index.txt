@@ -59,12 +59,13 @@ Methods
         an object of the specified type.
     
         
+    
+        
         :param context: Input formatter context associated with this call.
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Boolean
-        :return: True if this [Microsoft.AspNet.Mvc.IInputFormatter](Microsoft.AspNet.Mvc.IInputFormatter.yml) supports the passed in
-    request's content-type and is able to de-serialize the request body.
-    False otherwise.
+        :return: True if this [Microsoft.AspNet.Mvc.IInputFormatter](Microsoft.AspNet.Mvc.IInputFormatter.yml) supports the passed in request's content-type and is able to de-serialize the request body. False otherwise.
     
         
         .. code-block:: csharp
@@ -78,7 +79,10 @@ Methods
         Called during deserialization to read an object from the request.
     
         
+    
+        
         :param context: Input formatter context associated with this call.
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
         :return: A task that deserializes the request body.

@@ -63,12 +63,20 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.yml).
     
         
+    
+        
         :param sourceFilePath: The path of the Razor source file that was compiled.
+        
         :type sourceFilePath: System.String
+    
+        
         :param sourceFileContent: The contents of the Razor source file.
+        
         :type sourceFileContent: System.String
-        :param messages: A sequence of @!:ICompilationMessage- encountered
-    during compilation.
+    
+        
+        :param messages: A sequence of @!:ICompilationMessage- encountered during compilation.
+        
         :type messages: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage}
     
         

@@ -71,9 +71,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerPropertyActivator.Activate(Microsoft.AspNet.Mvc.ActionContext, System.Object)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param controller: 
+        
         :type controller: System.Object
     
         

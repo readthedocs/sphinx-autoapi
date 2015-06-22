@@ -63,72 +63,14 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder](Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.yml).
     
         
-        :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](). Must be a single-source (non-composite) with
-    [Microsoft.AspNet.Mvc.ModelBinding.BindingSource.IsGreedy]() equal to
-    <c>true</c>.
+    
+        
+        :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](). Must be a single-source (non-composite) with [Microsoft.AspNet.Mvc.ModelBinding.BindingSource.IsGreedy]() equal to <c>true</c>.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
     
            protected BindingSourceModelBinder(BindingSource bindingSource)
-
-
-Properties
-----------
-
-.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder
-    :noindex:
-    :hidden:
-
-    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.BindingSource
-    
-        
-    
-        Gets the corresponding [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]().
-    
-        
-        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-    
-        
-        .. code-block:: csharp
-    
-           protected BindingSource BindingSource { get; }
-
-
-Methods
--------
-
-.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder
-    :noindex:
-    :hidden:
-
-    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.BindModelAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
-    
-        
-        :param context: 
-        :type context: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
-    
-        
-        .. code-block:: csharp
-    
-           public Task<ModelBindingResult> BindModelAsync(ModelBindingContext context)
-
-    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.BindModelCoreAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
-    
-        
-    
-        Binds the model. Called when the model's supported binding-source matches [Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.yml).
-    
-        
-        :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
-        :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
-        :return: A [System.Threading.Tasks.Task]() which will complete when model binding has completed.
-    
-        
-        .. code-block:: csharp
-    
-           protected abstract Task<ModelBindingResult> BindModelCoreAsync(ModelBindingContext bindingContext)
 

@@ -66,9 +66,15 @@ Constructors
         provided.
     
         
+    
+        
         :param routeValues: The route data to use for generating the URL.
+        
         :type routeValues: System.Object
+    
+        
         :param value: The value to format in the entity body.
+        
         :type value: System.Object
     
         
@@ -84,11 +90,20 @@ Constructors
         provided.
     
         
+    
+        
         :param routeName: The name of the route to use for generating the URL.
+        
         :type routeName: System.String
+    
+        
         :param routeValues: The route data to use for generating the URL.
+        
         :type routeValues: System.Object
+    
+        
         :param value: The value to format in the entity body.
+        
         :type value: System.Object
     
         
@@ -157,7 +172,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CreatedAtRouteResult.OnFormatting(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

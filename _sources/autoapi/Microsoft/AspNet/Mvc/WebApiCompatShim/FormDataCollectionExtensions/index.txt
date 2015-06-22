@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.FormDataCollectionExtensions.GetJQueryNameValuePairs(FormDataCollection)
     
         
+    
+        
         :param formData: 
+        
         :type formData: FormDataCollection
         :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     
@@ -66,7 +69,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.FormDataCollectionExtensions.NormalizeJQueryToMvc(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.String
     

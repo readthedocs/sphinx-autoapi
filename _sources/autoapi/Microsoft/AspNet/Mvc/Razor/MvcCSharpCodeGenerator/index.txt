@@ -54,13 +54,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeGenerator.MvcCSharpCodeGenerator(CodeGeneratorContext, System.String, System.String, Microsoft.AspNet.Mvc.Razor.GeneratedTagHelperAttributeContext)
     
         
+    
+        
         :param context: 
+        
         :type context: CodeGeneratorContext
+    
+        
         :param defaultModel: 
+        
         :type defaultModel: System.String
+    
+        
         :param injectAttribute: 
+        
         :type injectAttribute: System.String
+    
+        
         :param tagHelperAttributeContext: 
+        
         :type tagHelperAttributeContext: Microsoft.AspNet.Mvc.Razor.GeneratedTagHelperAttributeContext
     
         
@@ -79,7 +91,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeGenerator.BuildClassDeclaration(CSharpCodeWriter)
     
         
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
         :rtype: CSharpCodeWritingScope
     
@@ -91,7 +106,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeGenerator.BuildConstructor(CSharpCodeWriter)
     
         
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
     
         
@@ -102,9 +120,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcCSharpCodeGenerator.CreateCSharpCodeVisitor(CSharpCodeWriter, CodeGeneratorContext)
     
         
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
+    
+        
         :param context: 
+        
         :type context: CodeGeneratorContext
         :rtype: CSharpCodeVisitor
     

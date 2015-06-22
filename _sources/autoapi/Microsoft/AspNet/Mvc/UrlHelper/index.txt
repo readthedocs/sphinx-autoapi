@@ -65,11 +65,15 @@ Constructors
         action selector.
     
         
-        :param contextAccessor: The [Microsoft.AspNet.Mvc.IScopedInstance`1](Microsoft.AspNet.Mvc.IScopedInstance`1.yml) to access the action context
-    of the current request.
+    
+        
+        :param contextAccessor: The [Microsoft.AspNet.Mvc.IScopedInstance`1](Microsoft.AspNet.Mvc.IScopedInstance`1.yml) to access the action context of the current request.
+        
         :type contextAccessor: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionContext}
-        :param actionSelector: The [Microsoft.AspNet.Mvc.IActionSelector](Microsoft.AspNet.Mvc.IActionSelector.yml) to be used for verifying the correctness of
-    supplied parameters for a route.
+    
+        
+        :param actionSelector: The [Microsoft.AspNet.Mvc.IActionSelector](Microsoft.AspNet.Mvc.IActionSelector.yml) to be used for verifying the correctness of supplied parameters for a route.
+        
         :type actionSelector: Microsoft.AspNet.Mvc.IActionSelector
     
         
@@ -88,7 +92,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Action(Microsoft.AspNet.Mvc.UrlActionContext)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.UrlActionContext
         :rtype: System.String
     
@@ -100,7 +107,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Content(System.String)
     
         
+    
+        
         :param contentPath: 
+        
         :type contentPath: System.String
         :rtype: System.String
     
@@ -117,9 +127,15 @@ Methods
         using the specified route name.
     
         
+    
+        
         :param routeName: The name of the route that is used to generate the URL.
+        
         :type routeName: System.String
+    
+        
         :param values: A dictionary that contains the parameters for a route.
+        
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
         :rtype: System.String
         :return: The absolute path of the URL.
@@ -132,7 +148,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.IsLocalUrl(System.String)
     
         
+    
+        
         :param url: 
+        
         :type url: System.String
         :rtype: System.Boolean
     
@@ -144,9 +163,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.Link(System.String, System.Object)
     
         
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param values: 
+        
         :type values: System.Object
         :rtype: System.String
     
@@ -158,7 +183,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.UrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)
     
         
+    
+        
         :param routeContext: 
+        
         :type routeContext: Microsoft.AspNet.Mvc.UrlRouteContext
         :rtype: System.String
     

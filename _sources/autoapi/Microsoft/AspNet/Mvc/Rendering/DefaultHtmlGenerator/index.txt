@@ -58,16 +58,30 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator](Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.yml) class.
     
         
-        :param antiForgery: The [Microsoft.AspNet.Mvc.AntiForgery](Microsoft.AspNet.Mvc.AntiForgery.yml) instance which is used to generate anti-forgery
-    tokens.
+    
+        
+        :param antiForgery: The [Microsoft.AspNet.Mvc.AntiForgery](Microsoft.AspNet.Mvc.AntiForgery.yml) instance which is used to generate anti-forgery tokens.
+        
         :type antiForgery: Microsoft.AspNet.Mvc.AntiForgery
+    
+        
         :param optionsAccessor: The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcViewOptions}
+    
+        
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param urlHelper: The [Microsoft.AspNet.Mvc.IUrlHelper]().
+        
         :type urlHelper: Microsoft.AspNet.Mvc.IUrlHelper
+    
+        
         :param htmlEncoder: The @!:IHtmlEncoder-.
+        
         :type htmlEncoder: IHtmlEncoder
     
         
@@ -104,7 +118,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.Encode(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.String
     
@@ -116,7 +133,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.Encode(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.String
     
@@ -128,9 +148,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.FormatValue(System.Object, System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     
@@ -142,21 +168,45 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateActionLink(System.String, System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostname: 
+        
         :type hostname: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -168,7 +218,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateAntiForgery(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -180,15 +233,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateCheckBox(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -200,17 +268,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateForm(Microsoft.AspNet.Mvc.ViewContext, System.String, System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param method: 
+        
         :type method: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -226,14 +312,25 @@ Methods
         Generate a &lt;form&gt; element.
     
         
+    
+        
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param action: The URL where the form-data should be submitted.
+        
         :type action: System.String
+    
+        
         :param method: The HTTP method for processing the form, either GET or POST.
+        
         :type method: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
@@ -246,17 +343,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateHidden(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Boolean, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param useViewData: 
+        
         :type useViewData: System.Boolean
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -268,11 +383,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateHiddenForCheckbox(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -284,27 +408,60 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateInput(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.Rendering.InputType, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.String, System.Collections.Generic.IDictionary<System.String, System.Object>)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param inputType: 
+        
         :type inputType: Microsoft.AspNet.Mvc.Rendering.InputType
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param useViewData: 
+        
         :type useViewData: System.Boolean
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Boolean
+    
+        
         :param setId: 
+        
         :type setId: System.Boolean
+    
+        
         :param isExplicitValue: 
+        
         :type isExplicitValue: System.Boolean
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Collections.Generic.IDictionary{System.String,System.Object}
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -316,15 +473,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateLabel(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param labelText: 
+        
         :type labelText: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -336,11 +508,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateLink(System.String, System.String, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param url: 
+        
         :type url: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -352,15 +533,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GeneratePassword(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -372,17 +568,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateRadioButton(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -394,15 +608,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateRouteForm(Microsoft.AspNet.Mvc.ViewContext, System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param method: 
+        
         :type method: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -414,19 +643,40 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateRouteLink(System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostName: 
+        
         :type hostName: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -438,19 +688,40 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateSelect(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.Boolean, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param optionLabel: 
+        
         :type optionLabel: System.String
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param allowMultiple: 
+        
         :type allowMultiple: System.Boolean
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -462,21 +733,45 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateSelect(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Boolean, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param optionLabel: 
+        
         :type optionLabel: System.String
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param currentValues: 
+        
         :type currentValues: System.Collections.Generic.IReadOnlyCollection{System.String}
+    
+        
         :param allowMultiple: 
+        
         :type allowMultiple: System.Boolean
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -488,17 +783,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateTextArea(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Int32, System.Int32, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param rows: 
+        
         :type rows: System.Int32
+    
+        
         :param columns: 
+        
         :type columns: System.Int32
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -510,17 +823,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateTextBox(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -532,15 +863,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateValidationMessage(Microsoft.AspNet.Mvc.ViewContext, System.String, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param tag: 
+        
         :type tag: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -552,15 +898,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateValidationSummary(Microsoft.AspNet.Mvc.ViewContext, System.Boolean, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param excludePropertyErrors: 
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param headerTag: 
+        
         :type headerTag: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -572,11 +933,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GetClientValidationRules(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
@@ -588,13 +958,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GetCurrentValues(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Boolean)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param allowMultiple: 
+        
         :type allowMultiple: System.Boolean
         :rtype: System.Collections.Generic.IReadOnlyCollection{System.String}
     
@@ -606,11 +988,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GetValidationAttributes(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     

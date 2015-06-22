@@ -289,36 +289,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>isChecked</strong> &#8211; If</li>
+<li><strong>isChecked</strong> (<em>System.Boolean</em>) &#8211; If &lt;c&gt;true&lt;/c&gt;, checkbox is initially checked.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;true&lt;/c&gt;, checkbox is initially checked.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type isChecked:</th><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">CheckBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isChecked</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">CheckBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isChecked</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CheckBox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -328,37 +318,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the checkbox element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">CheckBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.CheckBoxFor&lt;TModel&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Boolean&gt;&gt;)</code></dt>
@@ -424,36 +403,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Hidden</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Hidden</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.HiddenFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
@@ -519,36 +488,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Password</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Password</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.PasswordFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
@@ -586,36 +545,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; Value to include in the element. Must not be</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; Value to include in the element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RadioButton</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RadioButton</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RadioButton</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Boolean</em><span class="sig-paren">)</span></dt>
@@ -625,55 +574,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element. Must not be &lt;c&gt;null&lt;/c&gt; if  &lt;paramref name=&#8221;isChecked&#8221; /&gt; is also &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>isChecked</strong> (<em>System.Boolean</em>) &#8211; If &lt;c&gt;true&lt;/c&gt;, radio button is initially selected. Must not be &lt;c&gt;null&lt;/c&gt; if  &lt;paramref name=&#8221;value&#8221; /&gt; is also &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>&lt;c&gt;null&lt;/c&gt;, value to include in the element. Must not be
-&lt;c&gt;null&lt;/c&gt; if</p>
-<p>&lt;paramref name=&#8221;isChecked&#8221; /&gt; is also
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param isChecked:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>&lt;c&gt;true&lt;/c&gt;, radio button is initially selected. Must not be
-&lt;c&gt;null&lt;/c&gt; if</p>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; is also
-&lt;c&gt;null&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type isChecked:</th><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RadioButton</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isChecked</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">RadioButton</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -683,54 +604,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element. Must not be &lt;c&gt;null&lt;/c&gt; if no &#8220;checked&#8221; entry exists in &lt;paramref name=&#8221;htmlAttributes&#8221; /&gt;.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>&lt;c&gt;null&lt;/c&gt;, value to include in the element. Must not be
-&lt;c&gt;null&lt;/c&gt; if no &#8220;checked&#8221; entry exists
-in
-&lt;paramref name=&#8221;htmlAttributes&#8221; /&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">RadioButton</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.RadioButtonFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Object)</code></dt>
@@ -740,36 +634,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
-<li><strong>value</strong> &#8211; Value to include in the element. Must not be</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; Value to include in the element. Must not be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">RadioButtonFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">RadioButtonFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextArea">
 <code class="descname">TextArea</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextArea" title="Permalink to this definition">¶</a></dt>
@@ -807,37 +691,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextArea</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TextArea</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -847,36 +720,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.String</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextArea</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextArea</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TextArea</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -886,52 +749,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.String</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextArea</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextAreaFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
@@ -969,37 +807,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">TextAreaFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextBox">
 <code class="descname">TextBox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextBox" title="Permalink to this definition">¶</a></dt>
@@ -1037,36 +864,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TextBox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -1076,52 +893,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TextBox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -1131,40 +923,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
-<li><strong>value</strong> &#8211; If non-</li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; If non- &lt;c&gt;null&lt;/c&gt;, value to include in the element.</li>
+<li><strong>format</strong> (<em>System.String</em>) &#8211; The composite format [System.String]() (see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>).</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;, value to include in the element.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param format:</th><td class="field-body">The composite format [System.String]() (see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>).</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type format:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">TextBox</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextBoxFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
@@ -1202,37 +981,26 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">TextBoxFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperInputExtensions.TextBoxFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String)</code></dt>

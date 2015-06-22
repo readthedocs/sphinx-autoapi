@@ -63,9 +63,15 @@ Methods
         Applies conventions to a [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
+    
+        
         :param applicationModel: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+        
         :type applicationModel: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
+    
+        
         :param conventions: The set of conventions.
+        
         :type conventions: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention}
     
         

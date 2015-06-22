@@ -65,7 +65,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) class.
     
         
+    
+        
         :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
+        
         :type encoding: System.Text.Encoding
     
         
@@ -80,9 +83,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) class.
     
         
+    
+        
         :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
+        
         :type encoding: System.Text.Encoding
+    
+        
         :param content: The @!:TagHelperContent- to write to.
+        
         :type content: TagHelperContent
     
         
@@ -143,7 +152,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Write(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
     
         
@@ -154,7 +166,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Write(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
     
         

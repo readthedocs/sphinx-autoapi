@@ -77,8 +77,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).
     
         
-        :param valueProviders: The sequence of [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() to add to this instance of
-    [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).
+    
+        
+        :param valueProviders: The sequence of [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() to add to this instance of [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).
+        
         :type valueProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.IValueProvider}
     
         
@@ -97,7 +99,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.ContainsPrefixAsync(System.String)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: System.String
         :rtype: System.Threading.Tasks.Task{System.Boolean}
     
@@ -116,13 +121,18 @@ Methods
         <paramref name="factories" />.
     
         
+    
+        
         :param factories: The set of [Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory]() instances.
+        
         :type factories: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext]().
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider
-        :return: A [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml) containing all [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() instances
-    created.
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml) containing all [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() instances created.
     
         
         .. code-block:: csharp
@@ -132,7 +142,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Filter(Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
     
         
+    
+        
         :param bindingSource: 
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
@@ -144,7 +157,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.GetKeysFromPrefixAsync(System.String)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: System.String
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.String}}
     
@@ -156,7 +172,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.GetValueAsync(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     
@@ -168,9 +187,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.InsertItem(System.Int32, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)
     
         
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param item: 
+        
         :type item: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
         
@@ -181,9 +206,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.SetItem(System.Int32, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)
     
         
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param item: 
+        
         :type item: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
         

@@ -63,10 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.DefaultControllerFactory](Microsoft.AspNet.Mvc.DefaultControllerFactory.yml).
     
         
+    
+        
         :param controllerActivator: [Microsoft.AspNet.Mvc.IControllerActivator](Microsoft.AspNet.Mvc.IControllerActivator.yml) used to create controller instances.
+        
         :type controllerActivator: Microsoft.AspNet.Mvc.IControllerActivator
-        :param propertyActivators: A set of [Microsoft.AspNet.Mvc.IControllerPropertyActivator](Microsoft.AspNet.Mvc.IControllerPropertyActivator.yml) instances used to initialize controller
-    properties.
+    
+        
+        :param propertyActivators: A set of [Microsoft.AspNet.Mvc.IControllerPropertyActivator](Microsoft.AspNet.Mvc.IControllerPropertyActivator.yml) instances used to initialize controller properties.
+        
         :type propertyActivators: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IControllerPropertyActivator}
     
         
@@ -107,7 +112,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerFactory.CreateController(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Object
     
@@ -119,7 +127,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerFactory.ReleaseController(System.Object)
     
         
+    
+        
         :param controller: 
+        
         :type controller: System.Object
     
         

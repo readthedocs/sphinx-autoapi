@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.yml).
     
         
+    
+        
         :param assemblyProvider: The [Microsoft.AspNet.Mvc.IAssemblyProvider]().
+        
         :type assemblyProvider: Microsoft.AspNet.Mvc.IAssemblyProvider
     
         
@@ -112,12 +115,13 @@ Methods
         Determines whether or not the given [System.Reflection.TypeInfo]() is a View Component class.
     
         
+    
+        
         :param typeInfo: The [System.Reflection.TypeInfo]().
+        
         :type typeInfo: System.Reflection.TypeInfo
         :rtype: System.Boolean
-        :return: <c>true</c> if
-    <paramref name="typeInfo" />represents a View Component class, otherwise
-    <c>false</c>.
+        :return: <c>true</c> if <paramref name="typeInfo" />represents a View Component class, otherwise <c>false</c>.
     
         
         .. code-block:: csharp

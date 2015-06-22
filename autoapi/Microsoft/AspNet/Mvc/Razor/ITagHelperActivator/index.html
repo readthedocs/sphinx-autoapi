@@ -154,33 +154,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tagHelper</strong> &#8211; The</li>
+<li><strong>tagHelper</strong> (<em>TTagHelper</em>) &#8211; The &lt;typeparamref name=&#8221;TTagHelper&#8221; /&gt; to activate.</li>
+<li><strong>context</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;typeparamref name=&#8221;TTagHelper&#8221; /&gt; to activate.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type tagHelper:</th><td class="field-body">TTagHelper</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param context:</th><td class="field-body">The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="n">Activate</span><span class="p">&lt;</span><span class="n">TTagHelper</span><span class="p">&gt;(</span><span class="n">TTagHelper</span> <span class="n">tagHelper</span><span class="p">,</span> <span class="n">ViewContext</span> <span class="n">context</span><span class="p">)</span><span class="k">where</span> <span class="n">TTagHelper</span> <span class="p">:</span> <span class="n">ITagHelper</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="n">Activate</span><span class="p">&lt;</span><span class="n">TTagHelper</span><span class="p">&gt;(</span><span class="n">TTagHelper</span> <span class="n">tagHelper</span><span class="p">,</span> <span class="n">ViewContext</span> <span class="n">context</span><span class="p">)</span><span class="k">where</span> <span class="n">TTagHelper</span> <span class="p">:</span> <span class="n">ITagHelper</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

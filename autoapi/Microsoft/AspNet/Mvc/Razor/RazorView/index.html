@@ -167,41 +167,19 @@ as parts of its exeuction.</p>
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>viewEngine</strong> (<a class="reference internal" href="../IRazorViewEngine/index.html#Microsoft.AspNet.Mvc.Razor.IRazorViewEngine" title="Microsoft.AspNet.Mvc.Razor.IRazorViewEngine"><em>Microsoft.AspNet.Mvc.Razor.IRazorViewEngine</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) used to locate Layout pages.</li>
 <li><strong>pageActivator</strong> (<a class="reference internal" href="../IRazorPageActivator/index.html#Microsoft.AspNet.Mvc.Razor.IRazorPageActivator" title="Microsoft.AspNet.Mvc.Razor.IRazorPageActivator"><em>Microsoft.AspNet.Mvc.Razor.IRazorPageActivator</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.IRazorPageActivator](Microsoft.AspNet.Mvc.Razor.IRazorPageActivator.yml) used to activate pages.</li>
-<li><strong>viewStartProvider</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart</li>
+<li><strong>viewStartProvider</strong> (<a class="reference internal" href="../IViewStartProvider/index.html#Microsoft.AspNet.Mvc.Razor.IViewStartProvider" title="Microsoft.AspNet.Mvc.Razor.IViewStartProvider"><em>Microsoft.AspNet.Mvc.Razor.IViewStartProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart  &lt;param name=&#8221;razorPage&#8221;&gt;The &lt;see cref=&#8221;T:Microsoft.AspNet.Mvc.Razor.IRazorPage&#8221; /&gt; instance to execute.&lt;/param&gt; &lt;param name=&#8221;isPartial&#8221;&gt;Determines if the view is to be executed as a partial.&lt;/param&gt; pages</li>
+<li><strong>razorPage</strong> (<a class="reference internal" href="../IRazorPage/index.html#Microsoft.AspNet.Mvc.Razor.IRazorPage" title="Microsoft.AspNet.Mvc.Razor.IRazorPage"><em>Microsoft.AspNet.Mvc.Razor.IRazorPage</em></a>) &#8211; </li>
+<li><strong>isPartial</strong> (<em>System.Boolean</em>) &#8211; </li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>&lt;param name=&#8221;razorPage&#8221;&gt;The &lt;see cref=&#8221;T:Microsoft.AspNet.Mvc.Razor.IRazorPage&#8221; /&gt; instance to execute.&lt;/param&gt;
-&lt;param name=&#8221;isPartial&#8221;&gt;Determines if the view is to be executed as a partial.&lt;/param&gt;
-pages</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type viewStartProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.Razor.IViewStartProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param razorPage:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type razorPage:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.IRazorPage</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param isPartial:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type isPartial:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorView</span><span class="p">(</span><span class="n">IRazorViewEngine</span> <span class="n">viewEngine</span><span class="p">,</span> <span class="n">IRazorPageActivator</span> <span class="n">pageActivator</span><span class="p">,</span> <span class="n">IViewStartProvider</span> <span class="n">viewStartProvider</span><span class="p">,</span> <span class="n">IRazorPage</span> <span class="n">razorPage</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPartial</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

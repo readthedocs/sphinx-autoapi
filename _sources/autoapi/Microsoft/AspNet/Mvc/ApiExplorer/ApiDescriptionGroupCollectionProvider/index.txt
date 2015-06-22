@@ -58,9 +58,15 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollectionProvider](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollectionProvider.yml).
     
         
+    
+        
         :param actionDescriptorCollectionProvider: The [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider]().
+        
         :type actionDescriptorCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+    
+        
         :param apiDescriptionProviders: The [System.Collections.Generic.IEnumerable`1]().
+        
         :type apiDescriptionProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApiExplorer.IApiDescriptionProvider}
     
         

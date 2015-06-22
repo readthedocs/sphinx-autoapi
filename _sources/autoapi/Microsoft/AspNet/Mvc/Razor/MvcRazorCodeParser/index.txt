@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcRazorCodeParser.MvcRazorCodeParser(System.String)
     
         
+    
+        
         :param baseType: 
+        
         :type baseType: System.String
     
         

@@ -63,9 +63,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.yml).
     
         
+    
+        
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() for the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
+        
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+    
+        
         :param attributes: The attributes for the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
+        
         :type attributes: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
     
         

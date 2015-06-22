@@ -72,7 +72,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) class.
     
         
+    
+        
         :param error: The [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object that needs to be wrapped.
+        
         :type error: Microsoft.AspNet.Mvc.SerializableError
     
         
@@ -128,7 +131,10 @@ Methods
         Generates a [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object from its XML representation.
     
         
+    
+        
         :param reader: The [System.Xml.XmlReader]() stream from which the object is deserialized.
+        
         :type reader: System.Xml.XmlReader
     
         
@@ -139,7 +145,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.Unwrap(System.Type)
     
         
+    
+        
         :param declaredType: 
+        
         :type declaredType: System.Type
         :rtype: System.Object
     
@@ -155,7 +164,10 @@ Methods
         Converts the wrapped [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object into its XML representation.
     
         
+    
+        
         :param writer: The [System.Xml.XmlWriter]() stream to which the object is serialized.
+        
         :type writer: System.Xml.XmlWriter
     
         

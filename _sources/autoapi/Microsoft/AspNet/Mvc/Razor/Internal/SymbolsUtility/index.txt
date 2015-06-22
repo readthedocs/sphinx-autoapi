@@ -64,8 +64,7 @@ Methods
     
         
         :rtype: System.Boolean
-        :return: <c>true</c> if pdb generation is supported;
-    <c>false</c> otherwise.
+        :return: <c>true</c> if pdb generation is supported; <c>false</c> otherwise.
     
         
         .. code-block:: csharp

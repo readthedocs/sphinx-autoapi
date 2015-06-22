@@ -63,9 +63,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.yml).
     
         
+    
+        
         :param hostingEnvironment: The @!:IHostingEnvironment-.
+        
         :type hostingEnvironment: IHostingEnvironment
+    
+        
         :param cache: The @!:IMemoryCache-.
+        
         :type cache: IMemoryCache
     
         
@@ -150,9 +156,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.Process(TagHelperContext, TagHelperOutput)
     
         
+    
+        
         :param context: 
+        
         :type context: TagHelperContext
+    
+        
         :param output: 
+        
         :type output: TagHelperOutput
     
         

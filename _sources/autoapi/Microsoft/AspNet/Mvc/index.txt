@@ -14,9 +14,187 @@ Microsoft.AspNet.Mvc Namespace
    :maxdepth: 2
 
    
+   /autoapi/Microsoft/AspNet/Mvc/AcceptVerbsAttribute/index
    
-   /autoapi/Microsoft/AspNet/Mvc/MvcOptionsExtensions/index
+   /autoapi/Microsoft/AspNet/Mvc/ActionBindingContext/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ActionBindingContextAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionContextAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionDescriptorExtensions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionDescriptorsCollection/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionNameAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionResult/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/AmbiguousActionException/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorerSettingsAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModelConventionExtensions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/AreaAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/BindAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ControllerActionDescriptor/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ControllerActionDescriptorBuilder/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ControllerActionExecutor/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/CoreMvcOptionsSetup/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultAssemblyProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultControllerActionArgumentBinder/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultControllerActivator/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultControllerFactory/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultControllerPropertyActivator/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultControllerTypeProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultOrder/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultPropertyBindingPredicateProvider<TModel>/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/DefaultTypeActivatorCache/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/EmptyResult/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ExcludeTypeValidationFilterExtensions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FilterCollectionExtensions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FilterDescriptorOrderComparer/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FilterItemOrderComparer/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FilterScope/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromBodyAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromFormAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromHeaderAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromQueryAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromRouteAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/FromServicesAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpDeleteAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpGetAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpHeadAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpMethodAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpMethodConstraint/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpNoContentOutputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpNotAcceptableOutputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpPatchAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpPostAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpPutAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/HttpResponseStreamWriter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IActionDescriptorsCollectionProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IActionHttpMethodProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IActionInvoker/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IActionInvokerFactory/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IActionSelector/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IAssemblyProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IControllerActionArgumentBinder/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IControllerActivator/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IControllerFactory/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IControllerPropertyActivator/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IControllerTypeProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ICorsAuthorizationFilter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IRouteConstraintProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IScopedInstance<TValue>/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ITempDataDictionary/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ITempDataProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ITypeActivatorCache/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/IUrlHelper/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/InputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/KnownRouteValueConstraint/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinderAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBindingHelper/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelMetadataTypeAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/MvcOptions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/MvcRouteHandler/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/NonActionAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/NonControllerAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ObjectResult/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/OutputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/RouteAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/RouteConstraintAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ScopedInstance<T>/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/ServiceFilterAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/SessionStateTempDataProvider/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/StreamOutputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/StringOutputFormatter/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/TempDataDictionary/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/TypeFilterAttribute/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/UrlActionContext/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/UrlHelper/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/UrlHelperExtensions/index
+   
+   /autoapi/Microsoft/AspNet/Mvc/UrlRouteContext/index
    
 
 
@@ -30,10 +208,400 @@ Microsoft.AspNet.Mvc Namespace
 .. dn:namespace:: Microsoft.AspNet.Mvc
 
 
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IActionDescriptorsCollectionProvider`
+        Provides the currently cached collection of [Microsoft.AspNet.Mvc.ActionDescriptor]().
+
+
+    interface :dn:iface:`IActionHttpMethodProvider`
+        
+
+
+    interface :dn:iface:`IActionInvoker`
+        
+
+
+    interface :dn:iface:`IActionInvokerFactory`
+        
+
+
+    interface :dn:iface:`IActionSelector`
+        
+
+
+    interface :dn:iface:`IAssemblyProvider`
+        Specifies the contract for discovering assemblies that may contain Mvc specific types such as controllers,
+        view components and precompiled views.
+
+
+    interface :dn:iface:`IControllerActionArgumentBinder`
+        Provides a dictionary of action arguments.
+
+
+    interface :dn:iface:`IControllerActivator`
+        Provides methods to create a controller.
+
+
+    interface :dn:iface:`IControllerFactory`
+        Provides methods for creation and disposal of controllers.
+
+
+    interface :dn:iface:`IControllerPropertyActivator`
+        
+
+
+    interface :dn:iface:`IControllerTypeProvider`
+        Provides methods for discovery of controller types.
+
+
+    interface :dn:iface:`ICorsAuthorizationFilter`
+        A filter which can be used to enable/disable cors support for a resource.
+
+
+    interface :dn:iface:`IRouteConstraintProvider`
+        An interface for metadata which provides [Microsoft.AspNet.Mvc.RouteDataActionConstraint]() values
+        for a controller or action.
+
+
+    interface :dn:iface:`IScopedInstance\<TValue>`
+        
+
+
+    interface :dn:iface:`ITempDataDictionary`
+        Represents a set of data that persists only from one request to the next.
+
+
+    interface :dn:iface:`ITempDataProvider`
+        Defines the contract for temporary-data providers that store data that is viewed on the next request.
+
+
+    interface :dn:iface:`ITypeActivatorCache`
+        Caches @!:Microsoft.Framework.DependencyInjection.ObjectFactory- instances produced by
+        @!:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateFactory(Type, Type[])-.
+
+
+    interface :dn:iface:`IUrlHelper`
+        Defines the contract for the helper to build URLs for ASP.NET MVC within an application.
+
+
     .. rubric:: Classes
 
 
-    class :dn:cls:`MvcOptionsExtensions`
+    class :dn:cls:`AcceptVerbsAttribute`
+        Specifies what HTTP methods an action supports.
+
+
+    class :dn:cls:`ActionBindingContext`
         
+
+
+    class :dn:cls:`ActionBindingContextAttribute`
+        Specifies that a controller property should be set with the current
+        [Microsoft.AspNet.Mvc.ActionBindingContext](Microsoft.AspNet.Mvc.ActionBindingContext.yml) when creating the controller. The property must have a public
+        set method.
+
+
+    class :dn:cls:`ActionContextAttribute`
+        Specifies that a controller property should be set with the current
+        [Microsoft.AspNet.Mvc.ActionContext]() when creating the controller. The property must have a public
+        set method.
+
+
+    class :dn:cls:`ActionDescriptorExtensions`
+        Extension methods for [Microsoft.AspNet.Mvc.ActionDescriptor]().
+
+
+    class :dn:cls:`ActionDescriptorsCollection`
+        A cached collection of [Microsoft.AspNet.Mvc.ActionDescriptor]().
+
+
+    class :dn:cls:`ActionNameAttribute`
+        
+
+
+    class :dn:cls:`ActionResult`
+        
+
+
+    class :dn:cls:`AmbiguousActionException`
+        An exception which indicates multiple matches in action selection.
+
+
+    class :dn:cls:`ApiExplorerSettingsAttribute`
+        Controls the visibility and group name for an
+        <c>ApiDescription</c>
+        of the associated controller class or action method.
+
+
+    class :dn:cls:`ApplicationModelConventionExtensions`
+        Contains the extension methods for [Microsoft.AspNet.Mvc.MvcOptions.Conventions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+
+
+    class :dn:cls:`AreaAttribute`
+        
+
+
+    class :dn:cls:`BindAttribute`
+        This attribute can be used on action parameters and types, to indicate model level metadata.
+
+
+    class :dn:cls:`ControllerActionDescriptor`
+        
+
+
+    class :dn:cls:`ControllerActionDescriptorBuilder`
+        Creates instances of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml) from [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+
+
+    class :dn:cls:`ControllerActionExecutor`
+        
+
+
+    class :dn:cls:`CoreMvcOptionsSetup`
+        Sets up default options for [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+
+
+    class :dn:cls:`DefaultAssemblyProvider`
+        
+
+
+    class :dn:cls:`DefaultControllerActionArgumentBinder`
+        Provides a default implementation of [Microsoft.AspNet.Mvc.IControllerActionArgumentBinder](Microsoft.AspNet.Mvc.IControllerActionArgumentBinder.yml).
+        Uses ModelBinding to populate action parameters.
+
+
+    class :dn:cls:`DefaultControllerActivator`
+        [Microsoft.AspNet.Mvc.IControllerActivator](Microsoft.AspNet.Mvc.IControllerActivator.yml) that uses type activation to create controllers.
+
+
+    class :dn:cls:`DefaultControllerFactory`
+        Default implementation for [Microsoft.AspNet.Mvc.IControllerFactory](Microsoft.AspNet.Mvc.IControllerFactory.yml).
+
+
+    class :dn:cls:`DefaultControllerPropertyActivator`
+        
+
+
+    class :dn:cls:`DefaultControllerTypeProvider`
+        A [Microsoft.AspNet.Mvc.IControllerTypeProvider](Microsoft.AspNet.Mvc.IControllerTypeProvider.yml) that identifies controller types from assemblies
+        specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.AspNet.Mvc.IAssemblyProvider.yml).
+
+
+    class :dn:cls:`DefaultOrder`
+        
+
+
+    class :dn:cls:`DefaultPropertyBindingPredicateProvider\<TModel>`
+        Default implementation for [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
+        Provides a expression based way to provide include properties.
+
+
+    class :dn:cls:`DefaultTypeActivatorCache`
+        Caches @!:ObjectFactory- instances produced by
+        @!:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateFactory(Type, Type[])-.
+
+
+    class :dn:cls:`EmptyResult`
+        Represents an [Microsoft.AspNet.Mvc.ActionResult](Microsoft.AspNet.Mvc.ActionResult.yml) that when executed will
+        do nothing.
+
+
+    class :dn:cls:`ExcludeTypeValidationFilterExtensions`
+        Extensions for [System.Collections.Generic.IList`1]().
+
+
+    class :dn:cls:`FilterCollectionExtensions`
+        Extension methods for adding filters to the global filters collection.
+
+
+    class :dn:cls:`FilterDescriptorOrderComparer`
+        
+
+
+    class :dn:cls:`FilterItemOrderComparer`
+        
+
+
+    class :dn:cls:`FilterScope`
+        Contains constant values for known filter scopes.
+        
+        Scope defines the ordering of filters that have the same order. Scope is by-default
+        defined by how a filter is registered.
+
+
+    class :dn:cls:`FromBodyAttribute`
+        Specifies that a parameter or property should be bound using the request body.
+
+
+    class :dn:cls:`FromFormAttribute`
+        Specifies that a parameter or property should be bound using form-data in the request body.
+
+
+    class :dn:cls:`FromHeaderAttribute`
+        Specifies that a parameter or property should be bound using the request headers.
+
+
+    class :dn:cls:`FromQueryAttribute`
+        Specifies that a parameter or property should be bound using the request query string.
+
+
+    class :dn:cls:`FromRouteAttribute`
+        Specifies that a parameter or property should be bound using route-data from the current request.
+
+
+    class :dn:cls:`FromServicesAttribute`
+        Specifies that a parameter or property should be bound using the request services.
+
+
+    class :dn:cls:`HttpDeleteAttribute`
+        Identifies an action that only supports the HTTP DELETE method.
+
+
+    class :dn:cls:`HttpGetAttribute`
+        Identifies an action that only supports the HTTP GET method.
+
+
+    class :dn:cls:`HttpHeadAttribute`
+        Identifies an action that only supports the HTTP HEAD method.
+
+
+    class :dn:cls:`HttpMethodAttribute`
+        Identifies an action that only supports a given set of HTTP methods.
+
+
+    class :dn:cls:`HttpMethodConstraint`
+        
+
+
+    class :dn:cls:`HttpNoContentOutputFormatter`
+        Sets the status code to 204 if the content is null.
+
+
+    class :dn:cls:`HttpNotAcceptableOutputFormatter`
+        A formatter which selects itself when content-negotiation has failed and writes a 406 Not Acceptable response.
+
+
+    class :dn:cls:`HttpPatchAttribute`
+        Identifies an action that only supports the HTTP PATCH method.
+
+
+    class :dn:cls:`HttpPostAttribute`
+        Identifies an action that only supports the HTTP POST method.
+
+
+    class :dn:cls:`HttpPutAttribute`
+        Identifies an action that only supports the HTTP PUT method.
+
+
+    class :dn:cls:`HttpResponseStreamWriter`
+        Writes to the [System.IO.Stream]() using the supplied [Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Encoding](Microsoft.AspNet.Mvc.HttpResponseStreamWriter.yml).
+        It does not write the BOM and also does not close the stream.
+
+
+    class :dn:cls:`InputFormatter`
+        Reads an object from the request body.
+
+
+    class :dn:cls:`KnownRouteValueConstraint`
+        
+
+
+    class :dn:cls:`ModelBinderAttribute`
+        An attribute that can specify a model name or type of [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() to use for binding.
+
+
+    class :dn:cls:`ModelBindingHelper`
+        
+
+
+    class :dn:cls:`ModelMetadataTypeAttribute`
+        This attribute specifies the metadata class to associate with a data model class.
+
+
+    class :dn:cls:`MvcOptions`
+        Provides programmatic configuration for the MVC framework.
+
+
+    class :dn:cls:`MvcRouteHandler`
+        
+
+
+    class :dn:cls:`NonActionAttribute`
+        
+
+
+    class :dn:cls:`NonControllerAttribute`
+        Indicates that the type and any derived types that this attribute is applied to
+        is not considered a controller by the default controller discovery mechanism.
+
+
+    class :dn:cls:`ObjectResult`
+        
+
+
+    class :dn:cls:`OutputFormatter`
+        Writes an object to the output stream.
+
+
+    class :dn:cls:`RouteAttribute`
+        Specifies an attribute route on a controller.
+
+
+    class :dn:cls:`RouteConstraintAttribute`
+        An attribute which specifies a required route value for an action or controller.
+        
+        When placed on an action, the route data of a request must match the expectations of the route
+        constraint in order for the action to be selected. See [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) for
+        the expectations that must be satisfied by the route data.
+        
+        When placed on a controller, unless overridden by the action, the constraint applies to all
+        actions defined by the controller.
+
+
+    class :dn:cls:`ScopedInstance\<T>`
+        
+
+
+    class :dn:cls:`ServiceFilterAttribute`
+        
+
+
+    class :dn:cls:`SessionStateTempDataProvider`
+        Provides session-state data to the current [Microsoft.AspNet.Mvc.ITempDataDictionary](Microsoft.AspNet.Mvc.ITempDataDictionary.yml) object.
+
+
+    class :dn:cls:`StreamOutputFormatter`
+        Always copies the stream to the response, regardless of requested content type.
+
+
+    class :dn:cls:`StringOutputFormatter`
+        Always writes a string value to the response, regardless of requested content type.
+
+
+    class :dn:cls:`TempDataDictionary`
+        
+
+
+    class :dn:cls:`TypeFilterAttribute`
+        
+
+
+    class :dn:cls:`UrlActionContext`
+        Context object to be used for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.Action(Microsoft.AspNet.Mvc.UrlActionContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
+
+
+    class :dn:cls:`UrlHelper`
+        An implementation of [Microsoft.AspNet.Mvc.IUrlHelper](Microsoft.AspNet.Mvc.IUrlHelper.yml) that contains methods to
+        build URLs for ASP.NET MVC within an application.
+
+
+    class :dn:cls:`UrlHelperExtensions`
+        
+
+
+    class :dn:cls:`UrlRouteContext`
+        Context object to be used for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
 
 

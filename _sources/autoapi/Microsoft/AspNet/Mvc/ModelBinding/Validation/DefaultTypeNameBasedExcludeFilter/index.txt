@@ -64,7 +64,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultTypeNameBasedExcludeFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultTypeNameBasedExcludeFilter.yml)
     
         
+    
+        
         :param typeFullName: Fully qualified name of the type which needs to be excluded.
+        
         :type typeFullName: System.String
     
         
@@ -105,7 +108,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultTypeNameBasedExcludeFilter.IsTypeExcluded(System.Type)
     
         
+    
+        
         :param propertyType: 
+        
         :type propertyType: System.Type
         :rtype: System.Boolean
     

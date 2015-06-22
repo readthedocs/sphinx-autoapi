@@ -58,13 +58,20 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine](Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine.yml).
     
         
+    
+        
         :param optionsAccessor: The options accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcViewOptions}
-        :param typeActivatorCache: As [Microsoft.AspNet.Mvc.ITypeActivatorCache]() instance that creates
-    an instance of type [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).
+    
+        
+        :param typeActivatorCache: As [Microsoft.AspNet.Mvc.ITypeActivatorCache]() instance that creates an instance of type [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).
+        
         :type typeActivatorCache: Microsoft.AspNet.Mvc.ITypeActivatorCache
-        :param serviceProvider: A [System.IServiceProvider]() instance that retrieves services from the
-    service collection.
+    
+        
+        :param serviceProvider: A [System.IServiceProvider]() instance that retrieves services from the service collection.
+        
         :type serviceProvider: System.IServiceProvider
     
         
@@ -105,9 +112,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine.FindPartialView(Microsoft.AspNet.Mvc.ActionContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
@@ -119,9 +132,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine.FindView(Microsoft.AspNet.Mvc.ActionContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param viewName: 
+        
         :type viewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     

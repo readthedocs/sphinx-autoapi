@@ -58,7 +58,10 @@ Methods
         Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel](Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.yml).
     
         
+    
+        
         :param parameter: The [Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel](Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.yml).
+        
         :type parameter: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
     
         

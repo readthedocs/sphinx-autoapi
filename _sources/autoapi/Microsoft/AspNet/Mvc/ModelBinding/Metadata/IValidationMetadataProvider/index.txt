@@ -58,7 +58,10 @@ Methods
         Gets the values for properties of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
     
         

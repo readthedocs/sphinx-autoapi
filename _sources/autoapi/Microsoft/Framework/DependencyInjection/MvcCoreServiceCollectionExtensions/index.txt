@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.Framework.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMinimalMvc(IServiceCollection)
     
         
+    
+        
         :param services: 
+        
         :type services: IServiceCollection
         :rtype: IServiceCollection
     
@@ -70,9 +73,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml) for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: The [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml) which need to be configured.
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcOptions}
     
         

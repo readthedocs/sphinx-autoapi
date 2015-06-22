@@ -120,9 +120,10 @@
 <li><a class="reference internal" href="#inheritance-hierarchy" id="id1">Inheritance Hierarchy</a></li>
 <li><a class="reference internal" href="#syntax" id="id2">Syntax</a></li>
 <li><a class="reference internal" href="#github" id="id3">GitHub</a></li>
-<li><a class="reference internal" href="#constructors" id="id4">Constructors</a></li>
-<li><a class="reference internal" href="#properties" id="id5">Properties</a></li>
-<li><a class="reference internal" href="#methods" id="id6">Methods</a></li>
+<li><a class="reference internal" href="#operators" id="id4">Operators</a></li>
+<li><a class="reference internal" href="#constructors" id="id5">Constructors</a></li>
+<li><a class="reference internal" href="#properties" id="id6">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id7">Methods</a></li>
 </ul>
 </div>
 <div class="section" id="inheritance-hierarchy">
@@ -147,8 +148,58 @@
 <dd></dd></dl>
 
 </div>
+<div class="section" id="operators">
+<h2><a class="toc-backref" href="#id4">Operators</a><a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="operator">
+<dt id="Microsoft.AspNet.Mvc.Razor.AttributeValue.Implicit">
+<code class="descname">Implicit</code><span class="sig-paren">(</span><em>System.Tuple&lt;System.Tuple&lt;System.String</em>, <em>System.Int32&gt;</em>, <em>System.Tuple&lt;System.Object</em>, <em>System.Int32&gt;</em>, <em>System.Boolean&gt; to Microsoft.AspNet.Mvc.Razor.AttributeValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.AttributeValue.Implicit" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean}</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Razor.AttributeValue</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">implicit</span> <span class="k">operator</span> <span class="nf">AttributeValue</span><span class="p">(</span><span class="n">Tuple</span><span class="p">&lt;</span><span class="n">Tuple</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;,</span> <span class="n">Tuple</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="operator">
+<dt>
+<code class="descname">Implicit</code><span class="sig-paren">(</span><em>System.Tuple&lt;System.Tuple&lt;System.String</em>, <em>System.Int32&gt;</em>, <em>System.Tuple&lt;System.String</em>, <em>System.Int32&gt;</em>, <em>System.Boolean&gt; to Microsoft.AspNet.Mvc.Razor.AttributeValue</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean}</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Razor.AttributeValue</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">implicit</span> <span class="k">operator</span> <span class="nf">AttributeValue</span><span class="p">(</span><span class="n">Tuple</span><span class="p">&lt;</span><span class="n">Tuple</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;,</span> <span class="n">Tuple</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="constructors">
-<h2><a class="toc-backref" href="#id4">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.AttributeValue.AttributeValue">
@@ -175,7 +226,7 @@
 
 </div>
 <div class="section" id="properties">
-<h2><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.AttributeValue.Literal">
@@ -229,7 +280,7 @@
 
 </div>
 <div class="section" id="methods">
-<h2><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.AttributeValue.FromTuple">

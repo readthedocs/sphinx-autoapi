@@ -64,7 +64,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider.yml) class.
     
         
+    
+        
         :param serviceProvider: The application IServiceProvider.
+        
         :type serviceProvider: System.IServiceProvider
     
         

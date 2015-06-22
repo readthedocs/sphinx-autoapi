@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.DefaultViewComponentHelper(Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider, Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector, Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory)
     
         
+    
+        
         :param descriptorProvider: 
+        
         :type descriptorProvider: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider
+    
+        
         :param selector: 
+        
         :type selector: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector
+    
+        
         :param invokerFactory: 
+        
         :type invokerFactory: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvokerFactory
     
         
@@ -77,7 +86,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.Contextualize(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
     
         
@@ -88,9 +100,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.Invoke(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -102,9 +120,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.Invoke(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -116,9 +140,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
@@ -130,9 +160,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
@@ -144,9 +180,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.RenderInvoke(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
     
         
@@ -157,9 +199,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.RenderInvoke(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
     
         
@@ -170,9 +218,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.RenderInvokeAsync(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: System.Threading.Tasks.Task
     
@@ -184,9 +238,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentHelper.RenderInvokeAsync(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param arguments: 
+        
         :type arguments: System.Object[]
         :rtype: System.Threading.Tasks.Task
     

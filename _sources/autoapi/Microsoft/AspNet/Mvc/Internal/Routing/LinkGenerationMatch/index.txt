@@ -49,9 +49,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationMatch.LinkGenerationMatch(Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry, System.Boolean)
     
         
+    
+        
         :param entry: 
+        
         :type entry: Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry
+    
+        
         :param isFallbackMatch: 
+        
         :type isFallbackMatch: System.Boolean
     
         

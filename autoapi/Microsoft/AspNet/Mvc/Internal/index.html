@@ -34,7 +34,7 @@
   
     <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Sphinx AutoAPI Index" href="../../../../index.html"/>
-        <link rel="next" title="ModelClientValidationRemoteRule Class" href="ModelClientValidationRemoteRule/index.html"/>
+        <link rel="next" title="MvcMarkerService Class" href="MvcMarkerService/index.html"/>
         <link rel="prev" title="DefaultFilterProvider Class" href="../Filters/DefaultFilterProvider/index.html"/> 
 
   
@@ -89,8 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../Core/index.html">Microsoft.AspNet.Mvc.Core Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Filters/index.html">Microsoft.AspNet.Mvc.Filters Namespace</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Microsoft.AspNet.Mvc.Internal Namespace</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationRemoteRule/index.html">ModelClientValidationRemoteRule Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SerializerSettingsProvider/index.html">SerializerSettingsProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MvcMarkerService/index.html">MvcMarkerService Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MvcServicesHelper/index.html">MvcServicesHelper Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NonDisposableStream/index.html">NonDisposableStream Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UrlUtility/index.html">UrlUtility Class</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="DecisionTree/index.html">Microsoft.AspNet.Mvc.Internal.DecisionTree Namespace</a></li>
@@ -170,12 +172,17 @@
 <em class="property">namespace </em><code class="descclassname">Microsoft.AspNet.Mvc.</code><code class="descname">Internal</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.Internal" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Classes</p>
 <dl class="docutils">
-<dt>class <a class="reference internal" href="ModelClientValidationRemoteRule/index.html#Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule" title="Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationRemoteRule</span></code></a></dt>
-<dd>[Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule]() containing information for HTML attribute generation in fields a
-[Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) targets.</dd>
-<dt>class <a class="reference internal" href="SerializerSettingsProvider/index.html#Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider" title="Microsoft.AspNet.Mvc.Internal.SerializerSettingsProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">SerializerSettingsProvider</span></code></a></dt>
-<dd>Helper class which provides &#64;!:JsonSerializerSettings-.</dd>
+<dt>class <a class="reference internal" href="MvcMarkerService/index.html#Microsoft.AspNet.Mvc.Internal.MvcMarkerService" title="Microsoft.AspNet.Mvc.Internal.MvcMarkerService"><code class="xref dn dn-cls docutils literal"><span class="pre">MvcMarkerService</span></code></a></dt>
+<dd>This is a Marker class which is used to determine if all the services were added
+to when Mvc is loaded.</dd>
+<dt>class <a class="reference internal" href="MvcServicesHelper/index.html#Microsoft.AspNet.Mvc.Internal.MvcServicesHelper" title="Microsoft.AspNet.Mvc.Internal.MvcServicesHelper"><code class="xref dn dn-cls docutils literal"><span class="pre">MvcServicesHelper</span></code></a></dt>
+<dd>Helper class which contains MvcServices related helpers.</dd>
+<dt>class <a class="reference internal" href="NonDisposableStream/index.html#Microsoft.AspNet.Mvc.Internal.NonDisposableStream" title="Microsoft.AspNet.Mvc.Internal.NonDisposableStream"><code class="xref dn dn-cls docutils literal"><span class="pre">NonDisposableStream</span></code></a></dt>
+<dd>Stream that delegates to an inner stream.
+This Stream is present so that the inner stream is not closed
+even when Close() or Dispose() is called.</dd>
 </dl>
+<p>class <a class="reference internal" href="UrlUtility/index.html#Microsoft.AspNet.Mvc.Internal.UrlUtility" title="Microsoft.AspNet.Mvc.Internal.UrlUtility"><code class="xref dn dn-cls docutils literal"><span class="pre">UrlUtility</span></code></a></p>
 </dd></dl>
 
 </div>
@@ -187,7 +194,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ModelClientValidationRemoteRule/index.html" class="btn btn-neutral float-right" title="ModelClientValidationRemoteRule Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MvcMarkerService/index.html" class="btn btn-neutral float-right" title="MvcMarkerService Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Filters/DefaultFilterProvider/index.html" class="btn btn-neutral" title="DefaultFilterProvider Class" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

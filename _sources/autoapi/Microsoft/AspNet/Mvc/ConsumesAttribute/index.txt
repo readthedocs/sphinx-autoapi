@@ -81,9 +81,15 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ConsumesAttribute](Microsoft.AspNet.Mvc.ConsumesAttribute.yml).
     
         
+    
+        
         :param contentType: 
+        
         :type contentType: System.String
+    
+        
         :param otherContentTypes: 
+        
         :type otherContentTypes: System.String[]
     
         
@@ -130,7 +136,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ConsumesAttribute.Accept(Microsoft.AspNet.Mvc.ActionConstraintContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
         :rtype: System.Boolean
     
@@ -142,7 +151,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ConsumesAttribute.OnResourceExecuted(Microsoft.AspNet.Mvc.ResourceExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutedContext
     
         
@@ -153,7 +165,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ConsumesAttribute.OnResourceExecuting(Microsoft.AspNet.Mvc.ResourceExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutingContext
     
         

@@ -61,11 +61,20 @@ Methods
         <paramref name="controller" />.
     
         
+    
+        
         :param context: The action context assoicated with the current action.
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param bindingContext: The [Microsoft.AspNet.Mvc.ActionBindingContext](Microsoft.AspNet.Mvc.ActionBindingContext.yml).
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
+    
+        
         :param controller: The controller object which contains the action.
+        
         :type controller: System.Object
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     

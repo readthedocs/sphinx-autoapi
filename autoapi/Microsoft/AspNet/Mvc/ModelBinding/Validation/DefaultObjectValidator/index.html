@@ -163,36 +163,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>excludeFilters</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that determine</li>
+<li><strong>excludeFilters</strong> (<em>System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter}</em>) &#8211; [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that determine types to exclude from validation.</li>
+<li><strong>modelMetadataProvider</strong> (<a class="reference internal" href="../../IModelMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>types to exclude from validation.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type excludeFilters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelMetadataProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelMetadataProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DefaultObjectValidator</span><span class="p">(</span><span class="n">IList</span><span class="p">&lt;</span><span class="n">IExcludeTypeValidationFilter</span><span class="p">&gt;</span> <span class="n">excludeFilters</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">modelMetadataProvider</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DefaultObjectValidator</span><span class="p">(</span><span class="n">IList</span><span class="p">&lt;</span><span class="n">IExcludeTypeValidationFilter</span><span class="p">&gt;</span> <span class="n">excludeFilters</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">modelMetadataProvider</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

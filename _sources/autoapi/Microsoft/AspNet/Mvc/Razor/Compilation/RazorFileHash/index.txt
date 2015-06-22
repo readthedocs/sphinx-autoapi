@@ -75,9 +75,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorFileHash.GetHash(IFileInfo, System.Int32)
     
         
+    
+        
         :param file: 
+        
         :type file: IFileInfo
+    
+        
         :param hashAlgorithmVersion: 
+        
         :type hashAlgorithmVersion: System.Int32
         :rtype: System.String
     

@@ -63,11 +63,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.ValueProviderResult(System.Object, System.String, System.Globalization.CultureInfo)
     
         
+    
+        
         :param rawValue: 
+        
         :type rawValue: System.Object
+    
+        
         :param attemptedValue: 
+        
         :type attemptedValue: System.String
+    
+        
         :param culture: 
+        
         :type culture: System.Globalization.CultureInfo
     
         
@@ -124,7 +133,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.ConvertTo(System.Type)
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Object
     
@@ -136,9 +148,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.ConvertTo(System.Type, System.Globalization.CultureInfo)
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
+    
+        
         :param culture: 
+        
         :type culture: System.Globalization.CultureInfo
         :rtype: System.Object
     

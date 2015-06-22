@@ -77,9 +77,15 @@ Constructors
         [System.Collections.Generic.IEnumerable`1]() and the wrapper provider for wrapping individual elements.
     
         
+    
+        
         :param source: The [System.Collections.Generic.IEnumerable`1]() instance to get the enumerator from.
+        
         :type source: System.Collections.Generic.IEnumerable{{TDeclared}}
+    
+        
         :param elementWrapperProvider: The wrapper provider for wrapping individual elements.
+        
         :type elementWrapperProvider: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
     
         
@@ -104,7 +110,10 @@ Methods
         method so that the type can be serialized. This will never be called.
     
         
+    
+        
         :param item: The item to add. Unused.
+        
         :type item: System.Object
     
         

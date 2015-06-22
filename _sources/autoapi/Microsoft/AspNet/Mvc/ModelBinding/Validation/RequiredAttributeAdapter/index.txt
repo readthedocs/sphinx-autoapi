@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.RequiredAttributeAdapter.RequiredAttributeAdapter(System.ComponentModel.DataAnnotations.RequiredAttribute)
     
         
+    
+        
         :param attribute: 
+        
         :type attribute: System.ComponentModel.DataAnnotations.RequiredAttribute
     
         
@@ -74,7 +77,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.RequiredAttributeAdapter.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     

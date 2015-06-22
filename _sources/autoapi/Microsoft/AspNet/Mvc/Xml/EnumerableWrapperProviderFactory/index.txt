@@ -65,7 +65,10 @@ Constructors
         [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml).
     
         
+    
+        
         :param wrapperProviderFactories: List of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml).
+        
         :type wrapperProviderFactories: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}
     
         
@@ -88,11 +91,13 @@ Methods
         Gets an [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml) for the provided context.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
         :rtype: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
-        :return: An instance of [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml) if the declared type is
-    an interface and implements [System.Collections.Generic.IEnumerable`1]().
+        :return: An instance of [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml) if the declared type is an interface and implements [System.Collections.Generic.IEnumerable`1]().
     
         
         .. code-block:: csharp

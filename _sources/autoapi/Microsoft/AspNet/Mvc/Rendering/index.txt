@@ -14,181 +14,93 @@ Microsoft.AspNet.Mvc.Rendering Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/CompositeViewEngine/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/DefaultDisplayTemplates/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/DefaultEditorTemplates/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/DefaultHtmlGenerator/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/DynamicViewData/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/FormMethod/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/Html5DateRenderingMode/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperDisplayExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperDisplayNameExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperEditorExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperFormExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperInputExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperLabelExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperLinkExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperNameExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperOptions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperPartialExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperSelectExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperValidationExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelperValueExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlHelper<TModel>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/HtmlString/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/ICanHasViewContext/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/ICompositeViewEngine/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IHtmlGenerator/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IHtmlHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IHtmlHelper<TModel>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IJsonHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IView/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/IViewEngine/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/InputType/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/JsonHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/ModelExpression/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/MultiSelectList/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/MvcForm/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/SelectList/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/SelectListGroup/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/SelectListItem/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/StringCollectionTextWriter/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/TagBuilder/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Rendering/TagRenderMode/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/UnobtrusiveValidationAttributesGenerator/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Rendering/ViewEngineResult/index
-   
    
 
 

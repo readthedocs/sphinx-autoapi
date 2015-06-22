@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpRequestMessageFeature.HttpRequestMessageFeature(HttpContext)
     
         
+    
+        
         :param httpContext: 
+        
         :type httpContext: HttpContext
     
         

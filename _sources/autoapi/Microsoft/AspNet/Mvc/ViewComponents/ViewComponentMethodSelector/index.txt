@@ -80,9 +80,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentMethodSelector.FindAsyncMethod(System.Reflection.TypeInfo, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Reflection.TypeInfo
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Reflection.MethodInfo
     
@@ -94,9 +100,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentMethodSelector.FindSyncMethod(System.Reflection.TypeInfo, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Reflection.TypeInfo
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Reflection.MethodInfo
     

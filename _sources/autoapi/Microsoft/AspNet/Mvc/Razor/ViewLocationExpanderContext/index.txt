@@ -63,11 +63,20 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml).
     
         
+    
+        
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext]() for the current executing action.
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param viewName: The view name.
+        
         :type viewName: System.String
+    
+        
         :param isPartial: Determines if the view being discovered is a partial.
+        
         :type isPartial: System.Boolean
     
         

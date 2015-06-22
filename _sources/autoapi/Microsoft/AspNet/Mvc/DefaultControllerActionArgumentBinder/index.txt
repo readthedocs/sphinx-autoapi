@@ -60,9 +60,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.DefaultControllerActionArgumentBinder.DefaultControllerActionArgumentBinder(Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator)
     
         
+    
+        
         :param modelMetadataProvider: 
+        
         :type modelMetadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param validator: 
+        
         :type validator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
     
         
@@ -81,11 +87,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerActionArgumentBinder.BindActionArgumentsAsync(Microsoft.AspNet.Mvc.ActionContext, Microsoft.AspNet.Mvc.ActionBindingContext, System.Object)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param actionBindingContext: 
+        
         :type actionBindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
+    
+        
         :param controller: 
+        
         :type controller: System.Object
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
@@ -97,11 +112,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultControllerActionArgumentBinder.BindModelAsync(Microsoft.AspNet.Mvc.ParameterDescriptor, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNet.Mvc.ModelBinding.OperationBindingContext)
     
         
+    
+        
         :param parameter: 
+        
         :type parameter: Microsoft.AspNet.Mvc.ParameterDescriptor
+    
+        
         :param modelState: 
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param operationContext: 
+        
         :type operationContext: Microsoft.AspNet.Mvc.ModelBinding.OperationBindingContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     

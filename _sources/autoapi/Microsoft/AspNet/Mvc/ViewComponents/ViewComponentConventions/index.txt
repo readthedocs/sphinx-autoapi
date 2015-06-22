@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentConventions.GetComponentFullName(System.Reflection.TypeInfo)
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Reflection.TypeInfo
         :rtype: System.String
     
@@ -66,7 +69,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentConventions.GetComponentName(System.Reflection.TypeInfo)
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Reflection.TypeInfo
         :rtype: System.String
     
@@ -78,7 +84,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentConventions.IsComponent(System.Reflection.TypeInfo)
     
         
+    
+        
         :param typeInfo: 
+        
         :type typeInfo: System.Reflection.TypeInfo
         :rtype: System.Boolean
     

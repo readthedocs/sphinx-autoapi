@@ -63,9 +63,15 @@ Methods
         Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
+    
+        
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
+    
+        
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filterType: System.Type
         :rtype: Microsoft.AspNet.Mvc.IFilter
         :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added type.
@@ -82,11 +88,20 @@ Methods
         Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
+    
+        
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
+    
+        
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filterType: System.Type
+    
+        
         :param order: The order of the added filter.
+        
         :type order: System.Int32
         :rtype: Microsoft.AspNet.Mvc.IFilter
         :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added type.
@@ -103,9 +118,15 @@ Methods
         Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
+    
+        
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
+    
+        
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filterType: System.Type
         :rtype: Microsoft.AspNet.Mvc.IFilter
         :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added service type.
@@ -122,11 +143,20 @@ Methods
         Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
+    
+        
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
+    
+        
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
+        
         :type filterType: System.Type
+    
+        
         :param order: The order of the added filter.
+        
         :type order: System.Int32
         :rtype: Microsoft.AspNet.Mvc.IFilter
         :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added service type.

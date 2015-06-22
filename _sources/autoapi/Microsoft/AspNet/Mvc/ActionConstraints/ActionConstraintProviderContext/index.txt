@@ -63,11 +63,20 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext](Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintProviderContext.yml).
     
         
+    
+        
         :param context: 
+        
         :type context: HttpContext
+    
+        
         :param action: The [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml) for which constraints are being created.
+        
         :type action: Microsoft.AspNet.Mvc.ActionDescriptor
+    
+        
         :param items: The list of [Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem](Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem.yml) objects.
+        
         :type items: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem}
     
         

@@ -59,7 +59,10 @@ Methods
         <paramref name="fileInfo" />.
     
         
+    
+        
         :param fileInfo: A [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml) instance that represents the file to compile.
+        
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
         :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
         :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) that represents the results of parsing and compiling the file.

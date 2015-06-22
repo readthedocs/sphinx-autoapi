@@ -66,9 +66,15 @@ Constructors
         Initializes an instance of [Microsoft.AspNet.Mvc.ProducesAttribute](Microsoft.AspNet.Mvc.ProducesAttribute.yml) with allowed content types.
     
         
+    
+        
         :param contentType: The allowed content type for a response.
+        
         :type contentType: System.String
+    
+        
         :param additionalContentTypes: Additional allowed content types for a response.
+        
         :type additionalContentTypes: System.String[]
     
         
@@ -83,7 +89,10 @@ Constructors
         Initializes an instance of [Microsoft.AspNet.Mvc.ProducesAttribute](Microsoft.AspNet.Mvc.ProducesAttribute.yml).
     
         
+    
+        
         :param type: The [Microsoft.AspNet.Mvc.ProducesAttribute.Type](Microsoft.AspNet.Mvc.ProducesAttribute.yml) of object that is going to be written in the response.
+        
         :type type: System.Type
     
         
@@ -130,7 +139,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ProducesAttribute.OnResultExecuting(Microsoft.AspNet.Mvc.ResultExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
     
         
@@ -141,7 +153,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ProducesAttribute.SetContentTypes(System.Collections.Generic.IList<MediaTypeHeaderValue>)
     
         
+    
+        
         :param contentTypes: 
+        
         :type contentTypes: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         

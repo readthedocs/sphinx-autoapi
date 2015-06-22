@@ -56,11 +56,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.InjectChunkVisitor.InjectChunkVisitor(CSharpCodeWriter, CodeGeneratorContext, System.String)
     
         
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
+    
+        
         :param context: 
+        
         :type context: CodeGeneratorContext
+    
+        
         :param injectAttributeName: 
+        
         :type injectAttributeName: System.String
     
         
@@ -97,7 +106,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.InjectChunkVisitor.Visit(Microsoft.AspNet.Mvc.Razor.InjectChunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Microsoft.AspNet.Mvc.Razor.InjectChunk
     
         

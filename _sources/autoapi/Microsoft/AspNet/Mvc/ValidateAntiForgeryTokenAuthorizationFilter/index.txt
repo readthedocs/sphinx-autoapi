@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ValidateAntiForgeryTokenAuthorizationFilter.ValidateAntiForgeryTokenAuthorizationFilter(Microsoft.AspNet.Mvc.AntiForgery)
     
         
+    
+        
         :param antiForgery: 
+        
         :type antiForgery: Microsoft.AspNet.Mvc.AntiForgery
     
         
@@ -73,7 +76,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ValidateAntiForgeryTokenAuthorizationFilter.OnAuthorizationAsync(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
         :rtype: System.Threading.Tasks.Task
     

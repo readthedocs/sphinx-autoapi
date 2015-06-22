@@ -64,7 +64,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelMetadataTypeAttribute](Microsoft.AspNet.Mvc.ModelMetadataTypeAttribute.yml) class.
     
         
+    
+        
         :param type: The type of metadata class that is associated with a data model class.
+        
         :type type: System.Type
     
         

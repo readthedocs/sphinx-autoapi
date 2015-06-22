@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultValidationMetadataProvider.GetValidationMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
     
         

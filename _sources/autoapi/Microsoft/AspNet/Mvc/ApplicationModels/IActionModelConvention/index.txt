@@ -58,7 +58,10 @@ Methods
         Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml).
     
         
+    
+        
         :param action: The [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml).
+        
         :type action: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
     
         

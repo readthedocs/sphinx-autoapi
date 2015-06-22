@@ -221,39 +221,25 @@ the valid upper and lower bounds for requested ranges.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
-<li><strong>invalidByteRangeException</strong> &#8211; An &#64;!:InvalidByteRangeException- instance, typically</li>
+<li><strong>invalidByteRangeException</strong> (<em>InvalidByteRangeException</em>) &#8211; An &#64;!:InvalidByteRangeException- instance, typically thrown by a &#64;!:ByteRangeStreamContent- instance.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An 416 (Requested Range Not Satisfiable) error response with a Content-Range header indicating the valid range.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>thrown by a &#64;!:ByteRangeStreamContent- instance.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type invalidByteRangeException:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">InvalidByteRangeException</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An 416 (Requested Range Not Satisfiable) error response with a Content-Range header indicating the valid</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>range.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">InvalidByteRangeException</span> <span class="n">invalidByteRangeException</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">InvalidByteRangeException</span> <span class="n">invalidByteRangeException</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateErrorResponse</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span></dt>
@@ -278,20 +264,16 @@ method returns a response with status 406 NotAcceptable.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for &lt;paramref name=&#8221;modelState&#8221; /&gt; with status code &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;modelState&#8221; /&gt; with status code
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateErrorResponse</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>System.Exception</em><span class="sig-paren">)</span></dt>
@@ -316,20 +298,16 @@ returns a response with status 406 NotAcceptable.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for &lt;paramref name=&#8221;exception&#8221; /&gt; with status code &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;exception&#8221; /&gt; with status code
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateErrorResponse</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -354,20 +332,16 @@ returns a response with status 406 NotAcceptable.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response with error message</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response with error message &lt;paramref name=&#8221;message&#8221; /&gt; and status code  &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;message&#8221; /&gt; and status code</p>
-<p>&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateErrorResponse</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>System.String</em>, <em>System.Exception</em><span class="sig-paren">)</span></dt>
@@ -394,22 +368,16 @@ NotAcceptable.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response for &lt;paramref name=&#8221;exception&#8221; /&gt; with error message &lt;paramref name=&#8221;message&#8221; /&gt; and status code &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;exception&#8221; /&gt; with error message
-&lt;paramref name=&#8221;message&#8221; /&gt;
-and status code
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateErrorResponse</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>System.Web.Http.HttpError</em><span class="sig-paren">)</span></dt>
@@ -433,20 +401,16 @@ as the content. If no formatter is found, this method returns a response with st
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response wrapping</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An error response wrapping &lt;paramref name=&#8221;error&#8221; /&gt; with status code &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;error&#8221; /&gt; with status code
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">HttpError</span> <span class="n">error</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="nf">CreateErrorResponse</span><span class="p">(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">HttpError</span> <span class="n">error</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="System.Net.Http.HttpRequestMessageExtensions.CreateResponse&lt;T&gt;">
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Net.Http.HttpRequestMessageExtensions.CreateResponse<T>" title="Permalink to this definition">¶</a></dt>
@@ -460,40 +424,26 @@ configuration.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>MediaTypeFormatter</em><span class="sig-paren">)</span></dt>
@@ -507,45 +457,27 @@ instance containing the provided
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>formatter</strong> (<em>MediaTypeFormatter</em>) &#8211; The formatter to use.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param formatter:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The formatter to use.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type formatter:</th><td class="field-body">MediaTypeFormatter</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>MediaTypeFormatter</em>, <em>System.Net.Http.Headers.MediaTypeHeaderValue</em><span class="sig-paren">)</span></dt>
@@ -559,58 +491,28 @@ instance containing the provided
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>formatter</strong> (<em>MediaTypeFormatter</em>) &#8211; The formatter to use.</li>
+<li><strong>mediaType</strong> (<em>System.Net.Http.Headers.MediaTypeHeaderValue</em>) &#8211; The media type override to set on the response&#8217;s content. Can be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param formatter:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The formatter to use.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type formatter:</th><td class="field-body">MediaTypeFormatter</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param mediaType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The media type override to set on the response&#8217;s content. Can be</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type mediaType:</th><td class="field-body">System.Net.Http.Headers.MediaTypeHeaderValue</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">mediaType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">mediaType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>MediaTypeFormatter</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -624,58 +526,28 @@ instance containing the provided
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>formatter</strong> (<em>MediaTypeFormatter</em>) &#8211; The formatter to use.</li>
+<li><strong>mediaType</strong> (<em>System.String</em>) &#8211; The media type override to set on the response&#8217;s content. Can be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param formatter:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The formatter to use.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type formatter:</th><td class="field-body">MediaTypeFormatter</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param mediaType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The media type override to set on the response&#8217;s content. Can be</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type mediaType:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">,</span> <span class="kt">string</span> <span class="n">mediaType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeFormatter</span> <span class="n">formatter</span><span class="p">,</span> <span class="kt">string</span> <span class="n">mediaType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>System.Collections.Generic.IEnumerable&lt;MediaTypeFormatter&gt;</em><span class="sig-paren">)</span></dt>
@@ -688,46 +560,27 @@ found, this method returns a response with status 406 NotAcceptable.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>formatters</strong> (<em>System.Collections.Generic.IEnumerable{MediaTypeFormatter}</em>) &#8211; </li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param formatters:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type formatters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{MediaTypeFormatter}</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">MediaTypeFormatter</span><span class="p">&gt;</span> <span class="n">formatters</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">MediaTypeFormatter</span><span class="p">&gt;</span> <span class="n">formatters</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>System.Net.Http.Headers.MediaTypeHeaderValue</em><span class="sig-paren">)</span></dt>
@@ -743,45 +596,27 @@ to find an instance of
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>mediaType</strong> (<em>System.Net.Http.Headers.MediaTypeHeaderValue</em>) &#8211; The media type used to look up an instance of &#64;!:MediaTypeFormatter-.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param mediaType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The media type used to look up an instance of &#64;!:MediaTypeFormatter-.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type mediaType:</th><td class="field-body">System.Net.Http.Headers.MediaTypeHeaderValue</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">mediaType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">mediaType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>System.Net.HttpStatusCode</em>, <em>T</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -797,45 +632,27 @@ to find an instance of
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
 <li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The status code of the created response.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
+<li><strong>mediaType</strong> (<em>System.String</em>) &#8211; The media type used to look up an instance of &#64;!:MediaTypeFormatter-.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with &lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param mediaType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The media type used to look up an instance of &#64;!:MediaTypeFormatter-.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type mediaType:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with
-&lt;paramref name=&#8221;statusCode&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="kt">string</span> <span class="n">mediaType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">,</span> <span class="kt">string</span> <span class="n">mediaType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">CreateResponse&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.Http.HttpRequestMessage</em>, <em>T</em><span class="sig-paren">)</span></dt>
@@ -850,38 +667,25 @@ with status 406 NotAcceptable.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>request</strong> (<em>System.Net.Http.HttpRequestMessage</em>) &#8211; The request.</li>
-<li><strong>value</strong> &#8211; The value to wrap. Can be</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The value to wrap. Can be &lt;c&gt;null&lt;/c&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Net.Http.HttpResponseMessage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A response wrapping &lt;paramref name=&#8221;value&#8221; /&gt; with [System.Net.HttpStatusCode.OK]() status code.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">T</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Net.Http.HttpResponseMessage</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A response wrapping</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;value&#8221; /&gt; with [System.Net.HttpStatusCode.OK]() status code.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HttpResponseMessage</span> <span class="n">CreateResponse</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpRequestMessage</span> <span class="n">request</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

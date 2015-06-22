@@ -64,7 +64,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem](Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem.yml).
     
         
+    
+        
         :param metadata: The [Microsoft.AspNet.Mvc.IActionConstraintMetadata](Microsoft.AspNet.Mvc.IActionConstraintMetadata.yml) instance.
+        
         :type metadata: Microsoft.AspNet.Mvc.IActionConstraintMetadata
     
         

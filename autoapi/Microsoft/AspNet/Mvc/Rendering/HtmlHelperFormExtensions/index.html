@@ -317,37 +317,26 @@ current action will process the request.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -357,38 +346,25 @@ current action will process the request.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -457,39 +433,28 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action method.</li>
 <li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
 <li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -499,40 +464,27 @@ attributes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action method.</li>
 <li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em><span class="sig-paren">)</span></dt>
@@ -542,44 +494,28 @@ parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action method.</li>
 <li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.FormMethod</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperFormExtensions.BeginRouteForm">
 <code class="descname">BeginRouteForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperFormExtensions.BeginRouteForm" title="Permalink to this definition">¶</a></dt>
@@ -591,38 +527,25 @@ specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginRouteForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginRouteForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -695,38 +618,27 @@ generates the &amp;lt;form&amp;gt;&#8217;s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
 <li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>[System.Collections.Generic.IDictionary`2]() instance containing the HTML
-attributes.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginRouteForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginRouteForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -738,39 +650,26 @@ generates the &amp;lt;form&amp;gt;&#8217;s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginRouteForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">BeginRouteForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em><span class="sig-paren">)</span></dt>
@@ -782,43 +681,27 @@ generates the &amp;lt;form&amp;gt;&#8217;s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route
-parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.FormMethod</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">MvcForm</span> <span class="nf">BeginRouteForm</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

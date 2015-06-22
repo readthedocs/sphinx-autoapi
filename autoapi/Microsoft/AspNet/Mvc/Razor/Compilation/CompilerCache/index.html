@@ -238,42 +238,19 @@ discovered using
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>assemblyProvider</strong> &#8211; The [Microsoft.AspNet.Mvc.IAssemblyProvider]() that provides assemblies</li>
+<li><strong>assemblyProvider</strong> (<a class="reference internal" href="../../../IAssemblyProvider/index.html#Microsoft.AspNet.Mvc.IAssemblyProvider" title="Microsoft.AspNet.Mvc.IAssemblyProvider"><em>Microsoft.AspNet.Mvc.IAssemblyProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.IAssemblyProvider]() that provides assemblies for precompiled view discovery.</li>
+<li><strong>loadContextAccessor</strong> (<em>IAssemblyLoadContextAccessor</em>) &#8211; </li>
+<li><strong>optionsAccessor</strong> (<em>IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}</em>) &#8211; An accessor to the [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>for precompiled view discovery.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type assemblyProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.IAssemblyProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param loadContextAccessor:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type loadContextAccessor:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">IAssemblyLoadContextAccessor</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param optionsAccessor:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An accessor to the [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml).</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type optionsAccessor:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompilerCache</span><span class="p">(</span><span class="n">IAssemblyProvider</span> <span class="n">assemblyProvider</span><span class="p">,</span> <span class="n">IAssemblyLoadContextAccessor</span> <span class="n">loadContextAccessor</span><span class="p">,</span> <span class="n">IOptions</span><span class="p">&lt;</span><span class="n">RazorViewEngineOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompilerCache</span><span class="p">(</span><span class="n">IAssemblyProvider</span> <span class="n">assemblyProvider</span><span class="p">,</span> <span class="n">IAssemblyLoadContextAccessor</span> <span class="n">loadContextAccessor</span><span class="p">,</span> <span class="n">IOptions</span><span class="p">&lt;</span><span class="n">RazorViewEngineOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.Framework.DependencyInjection.WebApiCompatShimServiceCollectionExtensions.AddWebApiConventions(IServiceCollection)
     
         
+    
+        
         :param services: 
+        
         :type services: IServiceCollection
         :rtype: IServiceCollection
     

@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was dynamically compiled.
     
         
+    
+        
         :param info: Metadata about the file that was compiled.
+        
         :type info: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+    
+        
         :param compiledType: The compiled [System.Type]().
+        
         :type compiledType: System.Type
     
         
@@ -80,9 +86,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was precompiled.
     
         
+    
+        
         :param info: Metadata about the precompiled file.
+        
         :type info: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
+    
+        
         :param compiledType: The compiled [System.Type]().
+        
         :type compiledType: System.Type
     
         

@@ -63,7 +63,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext.yml).
     
         
+    
+        
         :param actions: The list of actions.
+        
         :type actions: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
     
         

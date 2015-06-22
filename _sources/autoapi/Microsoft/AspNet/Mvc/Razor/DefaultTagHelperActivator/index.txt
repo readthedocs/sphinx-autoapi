@@ -75,9 +75,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator.Activate<TTagHelper>(TTagHelper, Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param tagHelper: 
+        
         :type tagHelper: TTagHelper
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

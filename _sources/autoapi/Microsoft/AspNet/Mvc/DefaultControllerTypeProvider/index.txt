@@ -64,8 +64,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.DefaultControllerTypeProvider](Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.yml).
     
         
-        :param assemblyProvider: [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.AspNet.Mvc.IAssemblyProvider.yml) that provides assemblies to look for
-    controllers in.
+    
+        
+        :param assemblyProvider: [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.AspNet.Mvc.IAssemblyProvider.yml) that provides assemblies to look for controllers in.
+        
         :type assemblyProvider: Microsoft.AspNet.Mvc.IAssemblyProvider
     
         
@@ -109,14 +111,18 @@ Methods
         <c>false</c>.
     
         
+    
+        
         :param typeInfo: The [System.Reflection.TypeInfo]().
+        
         :type typeInfo: System.Reflection.TypeInfo
+    
+        
         :param candidateAssemblies: The set of candidate assemblies.
+        
         :type candidateAssemblies: System.Collections.Generic.ISet{System.Reflection.Assembly}
         :rtype: System.Boolean
-        :return: <c>true</c> if the
-    <paramref name="typeInfo" /> is a controller. Otherwise
-    <c>false</c>.
+        :return: <c>true</c> if the <paramref name="typeInfo" /> is a controller. Otherwise <c>false</c>.
     
         
         .. code-block:: csharp

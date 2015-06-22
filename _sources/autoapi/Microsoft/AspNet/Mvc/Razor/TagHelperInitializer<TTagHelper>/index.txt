@@ -58,7 +58,10 @@ Constructors
         Creates a [Microsoft.AspNet.Mvc.Razor.TagHelperInitializer`1](Microsoft.AspNet.Mvc.Razor.TagHelperInitializer`1.yml).
     
         
+    
+        
         :param action: The initialization delegate.
+        
         :type action: System.Action{{TTagHelper},Microsoft.AspNet.Mvc.ViewContext}
     
         
@@ -77,9 +80,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperInitializer<TTagHelper>.Initialize(TTagHelper, Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param helper: 
+        
         :type helper: TTagHelper
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

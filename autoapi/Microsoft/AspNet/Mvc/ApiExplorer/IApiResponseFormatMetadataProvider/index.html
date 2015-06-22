@@ -216,37 +216,26 @@ for the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>declaredType</strong> (<em>System.Type</em>) &#8211; The declared type for which the supported content types are desired.</li>
 <li><strong>runtimeType</strong> (<em>System.Type</em>) &#8211; The runtime type for which the supported content types are desired.</li>
-<li><strong>contentType</strong> &#8211; The content type for which the supported content types are desired, or</li>
+<li><strong>contentType</strong> (<em>MediaTypeHeaderValue</em>) &#8211; The content type for which the supported content types are desired, or &lt;c&gt;null&lt;/c&gt; if any content type can be used.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>&lt;c&gt;null&lt;/c&gt; if any content
-type can be used.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type contentType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">MediaTypeHeaderValue</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">Content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]().</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]().</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">MediaTypeHeaderValue</span><span class="p">&gt;</span> <span class="n">GetSupportedContentTypes</span><span class="p">(</span><span class="n">Type</span> <span class="n">declaredType</span><span class="p">,</span> <span class="n">Type</span> <span class="n">runtimeType</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

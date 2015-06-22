@@ -58,10 +58,15 @@ Methods
         When implemented in a type, activates an instantiated @!:ITagHelper-.
     
         
-        :param tagHelper: The
-    <typeparamref name="TTagHelper" /> to activate.
+    
+        
+        :param tagHelper: The <typeparamref name="TTagHelper" /> to activate.
+        
         :type tagHelper: TTagHelper
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

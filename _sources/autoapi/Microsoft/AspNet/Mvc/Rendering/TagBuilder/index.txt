@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.TagBuilder(System.String)
     
         
+    
+        
         :param tagName: 
+        
         :type tagName: System.String
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.TagBuilder(System.String, IHtmlEncoder)
     
         
+    
+        
         :param tagName: 
+        
         :type tagName: System.String
+    
+        
         :param htmlEncoder: 
+        
         :type htmlEncoder: IHtmlEncoder
     
         
@@ -124,7 +133,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.AddCssClass(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
     
         
@@ -140,15 +152,18 @@ Methods
         <paramref name="name" />.
     
         
-        :param name: The original element name.
-        :type name: System.String
-        :param invalidCharReplacement: The [System.String]() (normally a single [System.Char]()) to substitute for invalid characters in
     
-    <paramref name="name" />.
+        
+        :param name: The original element name.
+        
+        :type name: System.String
+    
+        
+        :param invalidCharReplacement: The [System.String]() (normally a single [System.Char]()) to substitute for invalid characters in  <paramref name="name" />.
+        
         :type invalidCharReplacement: System.String
         :rtype: System.String
-        :return: Valid HTML 4.01 "id" attribute for an element with the given
-    <paramref name="name" />.
+        :return: Valid HTML 4.01 "id" attribute for an element with the given <paramref name="name" />.
     
         
         .. code-block:: csharp
@@ -158,9 +173,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.GenerateId(System.String, System.String)
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param idAttributeDotReplacement: 
+        
         :type idAttributeDotReplacement: System.String
     
         
@@ -171,9 +192,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.MergeAttribute(System.String, System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.String
     
         
@@ -184,11 +211,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.MergeAttribute(System.String, System.String, System.Boolean)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.String
+    
+        
         :param replaceExisting: 
+        
         :type replaceExisting: System.Boolean
     
         
@@ -199,7 +235,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.MergeAttributes<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>)
     
         
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IDictionary{{TKey},{TValue}}
     
         
@@ -210,9 +249,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.MergeAttributes<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, System.Boolean)
     
         
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+    
+        
         :param replaceExisting: 
+        
         :type replaceExisting: System.Boolean
     
         
@@ -223,7 +268,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.SetInnerText(System.String)
     
         
+    
+        
         :param innerText: 
+        
         :type innerText: System.String
     
         
@@ -234,7 +282,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.ToHtmlString(Microsoft.AspNet.Mvc.Rendering.TagRenderMode)
     
         
+    
+        
         :param renderMode: 
+        
         :type renderMode: Microsoft.AspNet.Mvc.Rendering.TagRenderMode
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -256,7 +307,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.ToString(Microsoft.AspNet.Mvc.Rendering.TagRenderMode)
     
         
+    
+        
         :param renderMode: 
+        
         :type renderMode: Microsoft.AspNet.Mvc.Rendering.TagRenderMode
         :rtype: System.String
     

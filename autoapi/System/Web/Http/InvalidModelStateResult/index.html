@@ -239,30 +239,17 @@ content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>modelState</strong> (<a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; The model state to include in the error.</li>
-<li><strong>includeErrorDetail</strong> &#8211; &lt;see langword=&#8221;true&#8221; /&gt; if the error should include exception messages; otherwise,</li>
+<li><strong>includeErrorDetail</strong> (<em>System.Boolean</em>) &#8211; &lt;see langword=&#8221;true&#8221; /&gt; if the error should include exception messages; otherwise, &lt;see langword=&#8221;false&#8221; /&gt;.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;see langword=&#8221;false&#8221; /&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type includeErrorDetail:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">InvalidModelStateResult</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">InvalidModelStateResult</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

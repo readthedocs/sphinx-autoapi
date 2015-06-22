@@ -60,7 +60,10 @@ Methods
         collections respectively.
     
         
+    
+        
         :param options: The MvcOptions
+        
         :type options: Microsoft.AspNet.Mvc.MvcOptions
     
         

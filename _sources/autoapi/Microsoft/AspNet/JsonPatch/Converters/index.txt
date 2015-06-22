@@ -14,9 +14,7 @@ Microsoft.AspNet.JsonPatch.Converters Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/JsonPatch/Converters/TypedJsonPatchDocumentConverter/index
-   
    
 
 

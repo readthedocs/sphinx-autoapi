@@ -64,11 +64,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Operations.Operation.Operation(System.String, System.String, System.String)
     
         
+    
+        
         :param op: 
+        
         :type op: System.String
+    
+        
         :param path: 
+        
         :type path: System.String
+    
+        
         :param from: 
+        
         :type from: System.String
     
         
@@ -79,13 +88,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Operations.Operation.Operation(System.String, System.String, System.String, System.Object)
     
         
+    
+        
         :param op: 
+        
         :type op: System.String
+    
+        
         :param path: 
+        
         :type path: System.String
+    
+        
         :param from: 
+        
         :type from: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         

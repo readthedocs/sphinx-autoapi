@@ -65,12 +65,20 @@ Constructors
         <paramref name="provider" />.
     
         
-        :param assemblyProvider: The [Microsoft.AspNet.Mvc.IAssemblyProvider]() that provides assemblies
-    for precompiled view discovery.
+    
+        
+        :param assemblyProvider: The [Microsoft.AspNet.Mvc.IAssemblyProvider]() that provides assemblies for precompiled view discovery.
+        
         :type assemblyProvider: Microsoft.AspNet.Mvc.IAssemblyProvider
+    
+        
         :param loadContextAccessor: 
+        
         :type loadContextAccessor: IAssemblyLoadContextAccessor
+    
+        
         :param optionsAccessor: An accessor to the [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml).
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
     
         
@@ -89,9 +97,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCache.GetOrAdd(System.String, System.Func<Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo, Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult>)
     
         
+    
+        
         :param relativePath: 
+        
         :type relativePath: System.String
+    
+        
         :param compile: 
+        
         :type compile: System.Func{Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo,Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult}
         :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult
     

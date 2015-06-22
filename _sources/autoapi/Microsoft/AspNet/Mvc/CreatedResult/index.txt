@@ -66,9 +66,15 @@ Constructors
         provided.
     
         
+    
+        
         :param location: The location at which the content has been created.
+        
         :type location: System.String
+    
+        
         :param value: The value to format in the entity body.
+        
         :type value: System.Object
     
         
@@ -109,7 +115,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CreatedResult.OnFormatting(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

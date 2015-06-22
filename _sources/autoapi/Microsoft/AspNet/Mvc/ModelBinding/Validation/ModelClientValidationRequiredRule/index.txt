@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRequiredRule.ModelClientValidationRequiredRule(System.String)
     
         
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
     
         

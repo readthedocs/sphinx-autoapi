@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection](Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.yml).
     
         
+    
+        
         :param properties: The properties.
+        
         :type properties: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
         
@@ -108,9 +111,7 @@ Properties
     
         
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :return: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instance for the property specified by
-    <paramref name="propertyName" />, or null
-    if no match can be found.
+        :return: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instance for the property specified by <paramref name="propertyName" />, or null if no match can be found.
     
         
         .. code-block:: csharp

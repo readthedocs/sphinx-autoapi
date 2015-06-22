@@ -63,9 +63,15 @@ Constructors
         Creates a new instace of [Microsoft.AspNet.Mvc.CorsAuthorizationFilter](Microsoft.AspNet.Mvc.CorsAuthorizationFilter.yml).
     
         
+    
+        
         :param corsService: The @!:ICorsService-.
+        
         :type corsService: ICorsService
+    
+        
         :param policyProvider: The @!:ICorsPolicyProvider-.
+        
         :type policyProvider: ICorsPolicyProvider
     
         
@@ -116,7 +122,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.OnAuthorizationAsync(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
         :rtype: System.Threading.Tasks.Task
     

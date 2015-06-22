@@ -44,6 +44,44 @@ GitHub
 .. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
 
 
+Operators
+---------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>
+    :noindex:
+    :hidden:
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Implicit(Microsoft.AspNet.Mvc.Razor.PositionTagged<T> to T)
+    
+        
+    
+        
+        :param value: 
+        
+        :type value: Microsoft.AspNet.Mvc.Razor.PositionTagged`1
+        :rtype: T
+    
+        
+        .. code-block:: csharp
+    
+           public static implicit operator T(PositionTagged<T> value)
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Implicit(System.Tuple<T, System.Int32> to Microsoft.AspNet.Mvc.Razor.PositionTagged<T>)
+    
+        
+    
+        
+        :param value: 
+        
+        :type value: System.Tuple{{T},System.Int32}
+        :rtype: Microsoft.AspNet.Mvc.Razor.PositionTagged`1
+    
+        
+        .. code-block:: csharp
+    
+           public static implicit operator PositionTagged<T>(Tuple<T, int> value)
+
+
 Constructors
 ------------
 
@@ -54,9 +92,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.PositionTagged(T, System.Int32)
     
         
+    
+        
         :param value: 
+        
         :type value: T
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
     
         

@@ -66,9 +66,15 @@ Constructors
         [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).
     
         
+    
+        
         :param inner: The original enumerator.
+        
         :type inner: System.Collections.Generic.IEnumerator{{TDeclared}}
+    
+        
         :param wrapperProvider: The wrapper provider to wrap individual elements.
+        
         :type wrapperProvider: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
     
         

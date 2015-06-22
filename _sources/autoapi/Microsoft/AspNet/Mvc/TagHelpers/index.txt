@@ -14,69 +14,37 @@ Microsoft.AspNet.Mvc.TagHelpers Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/AnchorTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/CacheTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/EnvironmentTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/FormTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/ImageTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/InputTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/LabelTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/LinkTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/OptionTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/ScriptTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/SelectTagHelper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/TagHelperContentExtensions/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/TagHelperOutputExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/TextAreaTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/ValidationMessageTagHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/TagHelpers/ValidationSummaryTagHelper/index
-   
    
 
 

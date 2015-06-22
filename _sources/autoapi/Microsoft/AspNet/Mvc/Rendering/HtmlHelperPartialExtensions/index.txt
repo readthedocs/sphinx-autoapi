@@ -63,10 +63,15 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: Returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
@@ -83,12 +88,20 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param viewData: A [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) to pass into the partial view.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: Returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
@@ -105,12 +118,20 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param model: A model to pass into the partial view.
+        
         :type model: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: Returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
@@ -127,14 +148,25 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param model: A model to pass into the partial view.
+        
         :type model: System.Object
+    
+        
         :param viewData: A [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) to pass into the partial view.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: Returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
@@ -151,14 +183,18 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing
-    the created HTML.
+        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
     
         
         .. code-block:: csharp
@@ -172,16 +208,23 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param viewData: A [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) to pass into the partial view.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing
-    the created HTML.
+        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
     
         
         .. code-block:: csharp
@@ -195,16 +238,23 @@ Methods
         Returns HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param model: A model to pass into the partial view.
+        
         :type model: System.Object
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing
-    the created HTML.
+        :return: A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.
     
         
         .. code-block:: csharp
@@ -218,10 +268,15 @@ Methods
         Renders HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that renders the created HTML when it executes.
@@ -238,12 +293,20 @@ Methods
         Renders HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param viewData: A [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) to pass into the partial view.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that renders the created HTML when it executes.
@@ -260,12 +323,20 @@ Methods
         Renders HTML markup for the specified partial view.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be
-    <c>null</c>.
+    
+        
+        :param partialViewName: The name of the partial view used to create the HTML markup. Must not be <c>null</c>.
+        
         :type partialViewName: System.String
+    
+        
         :param model: A model to pass into the partial view.
+        
         :type model: System.Object
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that renders the created HTML when it executes.

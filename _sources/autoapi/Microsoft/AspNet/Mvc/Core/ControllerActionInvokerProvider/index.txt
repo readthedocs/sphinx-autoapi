@@ -54,19 +54,40 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Core.ControllerActionInvokerProvider.ControllerActionInvokerProvider(Microsoft.AspNet.Mvc.IControllerFactory, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Core.IFilterProvider>, Microsoft.AspNet.Mvc.IControllerActionArgumentBinder, IOptions<Microsoft.AspNet.Mvc.MvcOptions>, Microsoft.AspNet.Mvc.IScopedInstance<Microsoft.AspNet.Mvc.ActionBindingContext>, Microsoft.AspNet.Mvc.ITempDataDictionary, ILoggerFactory)
     
         
+    
+        
         :param controllerFactory: 
+        
         :type controllerFactory: Microsoft.AspNet.Mvc.IControllerFactory
+    
+        
         :param filterProviders: 
+        
         :type filterProviders: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Core.IFilterProvider}
+    
+        
         :param argumentBinder: 
+        
         :type argumentBinder: Microsoft.AspNet.Mvc.IControllerActionArgumentBinder
+    
+        
         :param optionsAccessor: 
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcOptions}
+    
+        
         :param actionBindingContextAccessor: 
+        
         :type actionBindingContextAccessor: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionBindingContext}
+    
+        
         :param tempData: 
+        
         :type tempData: Microsoft.AspNet.Mvc.ITempDataDictionary
+    
+        
         :param loggerFactory: 
+        
         :type loggerFactory: ILoggerFactory
     
         
@@ -103,7 +124,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvokerProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
     
         
@@ -114,7 +138,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvokerProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
     
         

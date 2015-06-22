@@ -64,7 +64,10 @@ Constructors
         Creates a new instace of [Microsoft.AspNet.Mvc.BindAttribute](Microsoft.AspNet.Mvc.BindAttribute.yml).
     
         
+    
+        
         :param include: Names of parameters to include in binding.
+        
         :type include: System.String[]
     
         
@@ -79,8 +82,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.BindAttribute](Microsoft.AspNet.Mvc.BindAttribute.yml).
     
         
-        :param predicateProviderType: The type which implements
-    [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
+    
+        
+        :param predicateProviderType: The type which implements [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
+        
         :type predicateProviderType: System.Type
     
         

@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a [System.Type]().
     
         
+    
+        
         :param typeAttributes: The set of attributes for the [System.Type]().
+        
         :type typeAttributes: System.Collections.Generic.IEnumerable{System.Object}
     
         
@@ -78,9 +81,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a property.
     
         
+    
+        
         :param propertyAttributes: The set of attributes for the property.
+        
         :type propertyAttributes: System.Collections.Generic.IEnumerable{System.Object}
+    
+        
         :param typeAttributes: The set of attributes for the property's [System.Type](). See [System.Reflection.PropertyInfo.PropertyType]().
+        
         :type typeAttributes: System.Collections.Generic.IEnumerable{System.Object}
     
         
@@ -159,10 +168,15 @@ Methods
         <paramref name="property" />.
     
         
-        :param type: The [System.Type]() in which caller found
-    <paramref name="property" />.
+    
+        
+        :param type: The [System.Type]() in which caller found <paramref name="property" />.
+        
         :type type: System.Type
+    
+        
         :param property: A [System.Reflection.PropertyInfo]() for which attributes need to be resolved.
+        
         :type property: System.Reflection.PropertyInfo
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the property.
@@ -180,7 +194,10 @@ Methods
         <paramref name="type" />.
     
         
+    
+        
         :param type: The [System.Type]() for which attributes need to be resolved.
+        
         :type type: System.Type
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the [System.Type]().

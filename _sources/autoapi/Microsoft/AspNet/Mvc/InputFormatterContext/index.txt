@@ -63,11 +63,20 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.InputFormatterContext](Microsoft.AspNet.Mvc.InputFormatterContext.yml).
     
         
+    
+        
         :param httpContext: The @!:Http.HttpContext- for the current operation.
+        
         :type httpContext: HttpContext
+    
+        
         :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) for recording errors.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param modelType: The [System.Type]() of the model to deserialize.
+        
         :type modelType: System.Type
     
         

@@ -58,13 +58,25 @@ Methods
         Clears [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() entries for [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
+    
+        
         :param modelstate: 
+        
         :type modelstate: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelKey: The entry to clear.
+        
         :type modelKey: System.String
     
         
@@ -75,9 +87,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBindingHelper.ConvertValuesToCollectionType<T>(System.Type, System.Collections.Generic.IList<T>)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
+    
+        
         :param values: 
+        
         :type values: System.Collections.Generic.IList{{T}}
         :rtype: System.Object
     
@@ -93,9 +111,15 @@ Methods
         Creates an expression for a predicate to limit the set of properties used in model binding.
     
         
+    
+        
         :param prefix: The model prefix.
+        
         :type prefix: System.String
+    
+        
         :param expressions: Expressions identifying the properties to allow for binding.
+        
         :type expressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
         :rtype: System.Linq.Expressions.Expression{System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}}
         :return: An expression which can be used with [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
@@ -118,35 +142,63 @@ Methods
         <paramref name="validatorProvider" />.
     
         
+    
+        
         :param model: The model instance to update and validate.
+        
         :type model: System.Object
+    
+        
         :param modelType: The type of model instance to update and validate.
+        
         :type modelType: System.Type
-        :param prefix: The prefix to use when looking up values in the
-    <paramref name="valueProvider" />.
+    
+        
+        :param prefix: The prefix to use when looking up values in the <paramref name="valueProvider" />.
+        
         :type prefix: System.String
+    
+        
         :param httpContext: The @!:HttpContext- for the current executing request.
+        
         :type httpContext: HttpContext
-        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and
-    results of model-binding validation.
+    
+        
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and results of model-binding validation.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: The provider used for reading metadata for the model type.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelBinder: The [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() used for binding.
+        
         :type modelBinder: Microsoft.AspNet.Mvc.ModelBinding.IModelBinder
+    
+        
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
         :param inputFormatters: The set of [Microsoft.AspNet.Mvc.IInputFormatter]() instances for deserializing the body.
+        
         :type inputFormatters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
-        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the
-    bound values.
+    
+        
+        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the bound values.
+        
         :type objectModelValidator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
-        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
-    on the model instance.
+    
+        
+        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation on the model instance.
+        
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
         :rtype: System.Threading.Tasks.Task{System.Boolean}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns
-    <c>true</c> if the update is successful
+        :return: A [System.Threading.Tasks.Task]() that on completion returns <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -166,38 +218,68 @@ Methods
         <paramref name="validatorProvider" />.
     
         
+    
+        
         :param model: The model instance to update and validate.
+        
         :type model: System.Object
+    
+        
         :param modelType: The type of model instance to update and validate.
+        
         :type modelType: System.Type
-        :param prefix: The prefix to use when looking up values in the
-    <paramref name="valueProvider" />.
+    
+        
+        :param prefix: The prefix to use when looking up values in the <paramref name="valueProvider" />.
+        
         :type prefix: System.String
+    
+        
         :param httpContext: The @!:HttpContext- for the current executing request.
+        
         :type httpContext: HttpContext
-        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and
-    results of model-binding validation.
+    
+        
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and results of model-binding validation.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: The provider used for reading metadata for the model type.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelBinder: The [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() used for binding.
+        
         :type modelBinder: Microsoft.AspNet.Mvc.ModelBinding.IModelBinder
+    
+        
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
         :param inputFormatters: The set of [Microsoft.AspNet.Mvc.IInputFormatter]() instances for deserializing the body.
+        
         :type inputFormatters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
-        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the
-    bound values.
+    
+        
+        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the bound values.
+        
         :type objectModelValidator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
-        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
-    on the model instance.
+    
+        
+        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation on the model instance.
+        
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
-        :param predicate: A predicate which can be used to
-    filter properties(for inclusion/exclusion) at runtime.
+    
+        
+        :param predicate: A predicate which can be used to filter properties(for inclusion/exclusion) at runtime.
+        
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
         :rtype: System.Threading.Tasks.Task{System.Boolean}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns
-    <c>true</c> if the update is successful
+        :return: A [System.Threading.Tasks.Task]() that on completion returns <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -217,33 +299,58 @@ Methods
         <paramref name="validatorProvider" />.
     
         
+    
+        
         :param model: The model instance to update and validate.
+        
         :type model: TModel
-        :param prefix: The prefix to use when looking up values in the
-    <paramref name="valueProvider" />.
+    
+        
+        :param prefix: The prefix to use when looking up values in the <paramref name="valueProvider" />.
+        
         :type prefix: System.String
+    
+        
         :param httpContext: The @!:HttpContext- for the current executing request.
+        
         :type httpContext: HttpContext
-        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and
-    results of model-binding validation.
+    
+        
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and results of model-binding validation.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: The provider used for reading metadata for the model type.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelBinder: The [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() used for binding.
+        
         :type modelBinder: Microsoft.AspNet.Mvc.ModelBinding.IModelBinder
+    
+        
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
         :param inputFormatters: The set of [Microsoft.AspNet.Mvc.IInputFormatter]() instances for deserializing the body.
+        
         :type inputFormatters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
-        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the
-    bound values.
+    
+        
+        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the bound values.
+        
         :type objectModelValidator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
-        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
-    on the model instance.
+    
+        
+        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation on the model instance.
+        
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
         :rtype: System.Threading.Tasks.Task{System.Boolean}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns
-    <c>true</c> if the update is successful
+        :return: A [System.Threading.Tasks.Task]() that on completion returns <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -263,36 +370,63 @@ Methods
         <paramref name="validatorProvider" />.
     
         
+    
+        
         :param model: The model instance to update and validate.
+        
         :type model: TModel
-        :param prefix: The prefix to use when looking up values in the
-    <paramref name="valueProvider" />.
+    
+        
+        :param prefix: The prefix to use when looking up values in the <paramref name="valueProvider" />.
+        
         :type prefix: System.String
+    
+        
         :param httpContext: The @!:HttpContext- for the current executing request.
+        
         :type httpContext: HttpContext
-        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and
-    results of model-binding validation.
+    
+        
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and results of model-binding validation.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: The provider used for reading metadata for the model type.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelBinder: The [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() used for binding.
+        
         :type modelBinder: Microsoft.AspNet.Mvc.ModelBinding.IModelBinder
+    
+        
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
         :param inputFormatters: The set of [Microsoft.AspNet.Mvc.IInputFormatter]() instances for deserializing the body.
+        
         :type inputFormatters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
-        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the
-    bound values.
+    
+        
+        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the bound values.
+        
         :type objectModelValidator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
-        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
-    on the model instance.
+    
+        
+        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation on the model instance.
+        
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
-        :param predicate: A predicate which can be used to
-    filter properties(for inclusion/exclusion) at runtime.
+    
+        
+        :param predicate: A predicate which can be used to filter properties(for inclusion/exclusion) at runtime.
+        
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
         :rtype: System.Threading.Tasks.Task{System.Boolean}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns
-    <c>true</c> if the update is successful
+        :return: A [System.Threading.Tasks.Task]() that on completion returns <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -312,37 +446,63 @@ Methods
         <paramref name="validatorProvider" />.
     
         
+    
+        
         :param model: The model instance to update and validate.
+        
         :type model: TModel
-        :param prefix: The prefix to use when looking up values in the
-    <paramref name="valueProvider" />.
+    
+        
+        :param prefix: The prefix to use when looking up values in the <paramref name="valueProvider" />.
+        
         :type prefix: System.String
+    
+        
         :param httpContext: The @!:HttpContext- for the current executing request.
+        
         :type httpContext: HttpContext
-        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and
-    results of model-binding validation.
+    
+        
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() used for maintaining state and results of model-binding validation.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param metadataProvider: The provider used for reading metadata for the model type.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelBinder: The [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() used for binding.
+        
         :type modelBinder: Microsoft.AspNet.Mvc.ModelBinding.IModelBinder
+    
+        
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+    
+        
         :param inputFormatters: The set of [Microsoft.AspNet.Mvc.IInputFormatter]() instances for deserializing the body.
+        
         :type inputFormatters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
-        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the
-    bound values.
+    
+        
+        :param objectModelValidator: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator.yml) used for validating the bound values.
+        
         :type objectModelValidator: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
-        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
-    on the model
-    instance.
+    
+        
+        :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation on the model instance.
+        
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
-        :param includeExpressions: Expression(s) which represent top level properties
-    which need to be included for the current model.
+    
+        
+        :param includeExpressions: Expression(s) which represent top level properties which need to be included for the current model.
+        
         :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
         :rtype: System.Threading.Tasks.Task{System.Boolean}
-        :return: A [System.Threading.Tasks.Task]() that on completion returns
-    <c>true</c> if the update is successful
+        :return: A [System.Threading.Tasks.Task]() that on completion returns <c>true</c> if the update is successful
     
         
         .. code-block:: csharp

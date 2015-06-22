@@ -55,9 +55,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.FilterContext.FilterContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param filters: 
+        
         :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         

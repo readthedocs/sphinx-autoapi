@@ -164,30 +164,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>action</strong> (<a class="reference internal" href="../ActionDescriptor/index.html#Microsoft.AspNet.Mvc.ActionDescriptor" title="Microsoft.AspNet.Mvc.ActionDescriptor"><em>Microsoft.AspNet.Mvc.ActionDescriptor</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml) representing a candidate for selection.</li>
-<li><strong>constraints</strong> &#8211; The list of [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml) instances associated with</li>
+<li><strong>constraints</strong> (<em>System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IActionConstraint}</em>) &#8211; The list of [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml) instances associated with &lt;paramref name=&#8221;action&#8221; /&gt;.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;action&#8221; /&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type constraints:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IActionConstraint}</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ActionSelectorCandidate</span><span class="p">(</span><span class="n">ActionDescriptor</span> <span class="n">action</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">IActionConstraint</span><span class="p">&gt;</span> <span class="n">constraints</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ActionSelectorCandidate</span><span class="p">(</span><span class="n">ActionDescriptor</span> <span class="n">action</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">IActionConstraint</span><span class="p">&gt;</span> <span class="n">constraints</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

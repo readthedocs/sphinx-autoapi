@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ActionDescriptorsCollection](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml).
     
         
+    
+        
         :param items: The result of action discovery
+        
         :type items: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
+    
+        
         :param version: The unique version of discovered actions.
+        
         :type version: System.Int32
     
         

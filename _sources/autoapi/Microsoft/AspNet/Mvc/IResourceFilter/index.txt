@@ -59,7 +59,10 @@ Methods
         Executes the resource filter. Called after execution of the remainder of the pipeline.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ResourceExecutedContext](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutedContext
     
         
@@ -74,7 +77,10 @@ Methods
         Executes the resource filter. Called before execution of the remainder of the pipeline.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ResourceExecutingContext](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ResourceExecutingContext
     
         

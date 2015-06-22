@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext.ClientModelValidationContext(Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, System.IServiceProvider)
     
         
+    
+        
         :param metadata: 
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param requestServices: 
+        
         :type requestServices: System.IServiceProvider
     
         

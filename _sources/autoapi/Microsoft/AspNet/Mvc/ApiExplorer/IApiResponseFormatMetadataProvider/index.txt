@@ -62,13 +62,20 @@ Methods
         <paramref name="contentType" />.
     
         
+    
+        
         :param declaredType: The declared type for which the supported content types are desired.
+        
         :type declaredType: System.Type
+    
+        
         :param runtimeType: The runtime type for which the supported content types are desired.
+        
         :type runtimeType: System.Type
-        :param contentType: The content type for which the supported content types are desired, or
-    <c>null</c> if any content
-    type can be used.
+    
+        
+        :param contentType: The content type for which the supported content types are desired, or <c>null</c> if any content type can be used.
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}
         :return: Content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]().

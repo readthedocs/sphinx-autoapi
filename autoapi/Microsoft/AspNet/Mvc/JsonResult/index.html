@@ -204,30 +204,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>value</strong> (<em>System.Object</em>) &#8211; The value to format as JSON.</li>
-<li><strong>serializerSettings</strong> &#8211; The &#64;!:JsonSerializerSettings- to be used by</li>
+<li><strong>serializerSettings</strong> (<em>JsonSerializerSettings</em>) &#8211; The &#64;!:JsonSerializerSettings- to be used by the formatter.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>the formatter.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type serializerSettings:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">JsonSerializerSettings</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">JsonResult</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">JsonResult</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">JsonResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>Microsoft.AspNet.Mvc.IOutputFormatter</em><span class="sig-paren">)</span></dt>
@@ -239,29 +226,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>value</strong> (<em>System.Object</em>) &#8211; The value to format as JSON.</li>
-<li><strong>formatter</strong> &#8211; The formatter to use, or</li>
+<li><strong>formatter</strong> (<a class="reference internal" href="../IOutputFormatter/index.html#Microsoft.AspNet.Mvc.IOutputFormatter" title="Microsoft.AspNet.Mvc.IOutputFormatter"><em>Microsoft.AspNet.Mvc.IOutputFormatter</em></a>) &#8211; The formatter to use, or &lt;c&gt;null&lt;/c&gt; to choose a formatter dynamically.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;null&lt;/c&gt; to choose a formatter dynamically.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type formatter:</th><td class="field-body">Microsoft.AspNet.Mvc.IOutputFormatter</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">JsonResult</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">IOutputFormatter</span> <span class="n">formatter</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">JsonResult</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">IOutputFormatter</span> <span class="n">formatter</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

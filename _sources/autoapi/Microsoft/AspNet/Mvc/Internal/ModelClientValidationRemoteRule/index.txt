@@ -65,15 +65,25 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule](Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule.yml) class.
     
         
+    
+        
         :param errorMessage: Error message client should display when validation fails.
+        
         :type errorMessage: System.String
+    
+        
         :param url: URL where client should send a validation request.
+        
         :type url: System.String
-        :param httpMethod: HTTP method (
-    <c>"GET"</c> or
-    <c>"POST"</c>) client should use when sending a validation request.
+    
+        
+        :param httpMethod: HTTP method ( <c>"GET"</c> or <c>"POST"</c>) client should use when sending a validation request.
+        
         :type httpMethod: System.String
+    
+        
         :param additionalFields: Comma-separated names of fields the client should include in a validation request.
+        
         :type additionalFields: System.String
     
         

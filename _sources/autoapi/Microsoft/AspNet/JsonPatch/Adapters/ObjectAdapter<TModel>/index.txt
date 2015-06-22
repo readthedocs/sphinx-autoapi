@@ -58,9 +58,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter`1](Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter`1.yml).
     
         
+    
+        
         :param contractResolver: The @!:IContractResolver-.
+        
         :type contractResolver: IContractResolver
+    
+        
         :param logErrorAction: The [System.Action]() for logging [Microsoft.AspNet.JsonPatch.JsonPatchError`1](Microsoft.AspNet.JsonPatch.JsonPatchError`1.yml).
+        
         :type logErrorAction: System.Action{Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}}
     
         
@@ -174,9 +180,15 @@ Methods
         because "a" does not exist.
     
         
+    
+        
         :param operation: The add operation.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -208,9 +220,15 @@ Methods
         the value specified in from for performance reasons (multiple checks of same requirements).
     
         
+    
+        
         :param operation: The copy operation.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -243,9 +261,15 @@ Methods
         location; i.e., a location cannot be moved into one of its children.
     
         
+    
+        
         :param operation: The move operation.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -269,9 +293,15 @@ Methods
         specified index are shifted one position to the left.
     
         
+    
+        
         :param operation: The remove operation.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -301,9 +331,15 @@ Methods
         for performance reasons (multiple checks of same requirements).
     
         
+    
+        
         :param operation: The replace operation.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         

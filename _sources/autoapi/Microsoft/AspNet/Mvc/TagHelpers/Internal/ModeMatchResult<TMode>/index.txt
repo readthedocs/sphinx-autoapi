@@ -114,13 +114,25 @@ Methods
         Logs the details of the [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).
     
         
+    
+        
         :param logger: The @!:ILogger-.
+        
         :type logger: ILogger
+    
+        
         :param tagHelper: The @!:ITagHelper-.
+        
         :type tagHelper: TTagHelper
+    
+        
         :param uniqueId: The value of @!:TagHelperContext.UniqueId-.
+        
         :type uniqueId: System.String
+    
+        
         :param viewPath: The path to the view the @!:ITagHelper- is on.
+        
         :type viewPath: System.String
     
         

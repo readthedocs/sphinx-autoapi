@@ -54,15 +54,30 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.RazorPreCompiler(BeforeCompileContext, IAssemblyLoadContextAccessor, IFileProvider, IMemoryCache, CompilationSettings)
     
         
+    
+        
         :param compileContext: 
+        
         :type compileContext: BeforeCompileContext
+    
+        
         :param loadContextAccessor: 
+        
         :type loadContextAccessor: IAssemblyLoadContextAccessor
+    
+        
         :param fileProvider: 
+        
         :type fileProvider: IFileProvider
+    
+        
         :param precompilationCache: 
+        
         :type precompilationCache: IMemoryCache
+    
+        
         :param compilationSettings: 
+        
         :type compilationSettings: CompilationSettings
     
         
@@ -202,9 +217,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GeneratePrecompiledAssembly(System.Collections.Generic.IEnumerable<SyntaxTree>, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo>)
     
         
+    
+        
         :param syntaxTrees: 
+        
         :type syntaxTrees: System.Collections.Generic.IEnumerable{SyntaxTree}
+    
+        
         :param razorFileInfos: 
+        
         :type razorFileInfos: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo}
         :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
     
@@ -216,7 +237,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GetCacheEntry(Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo)
     
         
+    
+        
         :param fileInfo: 
+        
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
         :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry
     

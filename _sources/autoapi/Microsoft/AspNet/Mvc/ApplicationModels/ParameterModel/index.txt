@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterModel(Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel)
     
         
+    
+        
         :param other: 
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterModel(System.Reflection.ParameterInfo, System.Collections.Generic.IReadOnlyList<System.Object>)
     
         
+    
+        
         :param parameterInfo: 
+        
         :type parameterInfo: System.Reflection.ParameterInfo
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
     
         

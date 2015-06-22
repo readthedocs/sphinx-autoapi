@@ -65,7 +65,10 @@ Constructors
         Initializes a new instance of the [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) class.
     
         
+    
+        
         :param response: The response message.
+        
         :type response: System.Net.Http.HttpResponseMessage
     
         

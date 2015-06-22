@@ -149,8 +149,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) for a failed compilation.
     
         
-        :param compilationFailures: @!:ICompilationFailure-s produced from parsing or
-    compiling the Razor file.
+    
+        
+        :param compilationFailures: @!:ICompilationFailure-s produced from parsing or compiling the Razor file.
+        
         :type compilationFailures: System.Collections.Generic.IEnumerable{ICompilationFailure}
         :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
         :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) instance for a failed compilation.
@@ -167,7 +169,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) for a successful compilation.
     
         
+    
+        
         :param type: The compiled type.
+        
         :type type: System.Type
         :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
         :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) instance for a successful compilation.

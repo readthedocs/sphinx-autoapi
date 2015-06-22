@@ -63,11 +63,15 @@ Methods
         Adds a [Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention.yml) to all the actions in the application.
     
         
-        :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml)
-    in [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+    
+        
+        :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml) in [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+        
         :type conventions: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention}
-        :param actionModelConvention: The [Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention.yml) which needs to be
-    added.
+    
+        
+        :param actionModelConvention: The [Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention.yml) which needs to be added.
+        
         :type actionModelConvention: Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention
     
         
@@ -82,11 +86,15 @@ Methods
         Adds a [Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention.yml) to all the controllers in the application.
     
         
-        :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml)
-    in [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+    
+        
+        :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml) in [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml).
+        
         :type conventions: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention}
-        :param controllerModelConvention: The [Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention.yml) which needs to be
-    added.
+    
+        
+        :param controllerModelConvention: The [Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention.yml) which needs to be added.
+        
         :type controllerModelConvention: Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention
     
         

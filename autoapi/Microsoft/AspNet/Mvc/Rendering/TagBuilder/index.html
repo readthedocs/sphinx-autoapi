@@ -377,39 +377,25 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>name</strong> (<em>System.String</em>) &#8211; The original element name.</li>
-<li><strong>invalidCharReplacement</strong> &#8211; The [System.String]() (normally a single [System.Char]()) to substitute for invalid characters in</li>
+<li><strong>invalidCharReplacement</strong> (<em>System.String</em>) &#8211; The [System.String]() (normally a single [System.Char]()) to substitute for invalid characters in  &lt;paramref name=&#8221;name&#8221; /&gt;.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Valid HTML 4.01 &#8220;id&#8221; attribute for an element with the given &lt;paramref name=&#8221;name&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;name&#8221; /&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type invalidCharReplacement:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">Valid HTML 4.01 &#8220;id&#8221; attribute for an element with the given</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;name&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">CreateSanitizedId</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">invalidCharReplacement</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">CreateSanitizedId</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">invalidCharReplacement</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.TagBuilder.GenerateId">
 <code class="descname">GenerateId</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.TagBuilder.GenerateId" title="Permalink to this definition">¶</a></dt>

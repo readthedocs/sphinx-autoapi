@@ -63,7 +63,10 @@ Constructors
         Creats a new instance of [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml) from a given [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml).
     
         
+    
+        
         :param other: The [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml) which needs to be copied.
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel
     
         
@@ -78,9 +81,15 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml).
     
         
+    
+        
         :param propertyInfo: The [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.PropertyInfo](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml) for the underlying property.
+        
         :type propertyInfo: System.Reflection.PropertyInfo
+    
+        
         :param attributes: Any attributes which are annotated on the property.
+        
         :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
     
         

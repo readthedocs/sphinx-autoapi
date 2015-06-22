@@ -54,21 +54,45 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateBuilder.TemplateBuilder(Microsoft.AspNet.Mvc.Rendering.IViewEngine, Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ViewDataDictionary, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Boolean, System.Object)
     
         
+    
+        
         :param viewEngine: 
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param readOnly: 
+        
         :type readOnly: System.Boolean
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
     
         

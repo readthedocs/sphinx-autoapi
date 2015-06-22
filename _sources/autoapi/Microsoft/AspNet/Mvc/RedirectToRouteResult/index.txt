@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectToRouteResult.RedirectToRouteResult(System.Object)
     
         
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
     
         
@@ -66,9 +69,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectToRouteResult.RedirectToRouteResult(System.String, System.Object)
     
         
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
     
         
@@ -79,11 +88,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectToRouteResult.RedirectToRouteResult(System.String, System.Object, System.Boolean)
     
         
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param permanent: 
+        
         :type permanent: System.Boolean
     
         
@@ -150,7 +168,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RedirectToRouteResult.ExecuteResult(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

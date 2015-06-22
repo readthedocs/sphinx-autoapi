@@ -54,9 +54,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.InjectParameterGenerator(System.String, System.String)
     
         
+    
+        
         :param typeName: 
+        
         :type typeName: System.String
+    
+        
         :param propertyName: 
+        
         :type propertyName: System.String
     
         
@@ -103,7 +109,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.Equals(System.Object)
     
         
+    
+        
         :param obj: 
+        
         :type obj: System.Object
         :rtype: System.Boolean
     
@@ -115,9 +124,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.GenerateChunk(Span, ChunkGeneratorContext)
     
         
+    
+        
         :param target: 
+        
         :type target: Span
+    
+        
         :param context: 
+        
         :type context: ChunkGeneratorContext
     
         

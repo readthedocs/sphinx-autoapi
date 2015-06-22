@@ -14,73 +14,39 @@ Microsoft.AspNet.Mvc.Razor.Compilation Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilationFailedException/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilationOptionsProviderExtension/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilationResult/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilerCache/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilerCacheEntry/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/CompilerCacheResult/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/ICompilationService/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/ICompilerCache/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/IRazorCompilationService/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RazorCompilationFailure/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RazorCompilationMessage/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RazorCompilationService/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RazorFileHash/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RelativeFileInfo/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/RoslynCompilationService/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/SyntaxTreeGenerator/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/UncachedCompilationResult/index
-   
    
 
 

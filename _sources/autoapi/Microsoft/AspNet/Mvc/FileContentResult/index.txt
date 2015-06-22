@@ -70,9 +70,15 @@ Constructors
         <paramref name="contentType" />.
     
         
+    
+        
         :param fileContents: The bytes that represent the file contents.
+        
         :type fileContents: System.Byte[]
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: MediaTypeHeaderValue
     
         
@@ -91,9 +97,15 @@ Constructors
         <paramref name="contentType" />.
     
         
+    
+        
         :param fileContents: The bytes that represent the file contents.
+        
         :type fileContents: System.Byte[]
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: System.String
     
         
@@ -134,9 +146,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FileContentResult.WriteFileAsync(HttpResponse, System.Threading.CancellationToken)
     
         
+    
+        
         :param response: 
+        
         :type response: HttpResponse
+    
+        
         :param cancellation: 
+        
         :type cancellation: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
     

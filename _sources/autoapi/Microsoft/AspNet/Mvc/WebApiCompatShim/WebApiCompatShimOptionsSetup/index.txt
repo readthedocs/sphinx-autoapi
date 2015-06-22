@@ -99,9 +99,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Configure(Microsoft.AspNet.Mvc.MvcOptions, System.String)
     
         
+    
+        
         :param options: 
+        
         :type options: Microsoft.AspNet.Mvc.MvcOptions
+    
+        
         :param name: 
+        
         :type name: System.String
     
         
@@ -112,9 +118,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Configure(Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptions, System.String)
     
         
+    
+        
         :param options: 
+        
         :type options: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptions
+    
+        
         :param name: 
+        
         :type name: System.String
     
         

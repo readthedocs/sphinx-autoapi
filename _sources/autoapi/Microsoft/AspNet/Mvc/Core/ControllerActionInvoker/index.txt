@@ -55,33 +55,75 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Core.ControllerActionInvoker.ControllerActionInvoker(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.Core.IFilterProvider>, Microsoft.AspNet.Mvc.IControllerFactory, Microsoft.AspNet.Mvc.ControllerActionDescriptor, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.IInputFormatter>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.IOutputFormatter>, Microsoft.AspNet.Mvc.IControllerActionArgumentBinder, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.IModelBinder>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider>, System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory>, Microsoft.AspNet.Mvc.IScopedInstance<Microsoft.AspNet.Mvc.ActionBindingContext>, Microsoft.AspNet.Mvc.ITempDataDictionary, ILoggerFactory, System.Int32)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param filterProviders: 
+        
         :type filterProviders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.Core.IFilterProvider}
+    
+        
         :param controllerFactory: 
+        
         :type controllerFactory: Microsoft.AspNet.Mvc.IControllerFactory
+    
+        
         :param descriptor: 
+        
         :type descriptor: Microsoft.AspNet.Mvc.ControllerActionDescriptor
+    
+        
         :param inputFormatters: 
+        
         :type inputFormatters: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IInputFormatter}
+    
+        
         :param outputFormatters: 
+        
         :type outputFormatters: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.IOutputFormatter}
+    
+        
         :param controllerActionArgumentBinder: 
+        
         :type controllerActionArgumentBinder: Microsoft.AspNet.Mvc.IControllerActionArgumentBinder
+    
+        
         :param modelBinders: 
+        
         :type modelBinders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}
+    
+        
         :param modelValidatorProviders: 
+        
         :type modelValidatorProviders: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider}
+    
+        
         :param valueProviderFactories: 
+        
         :type valueProviderFactories: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}
+    
+        
         :param actionBindingContextAccessor: 
+        
         :type actionBindingContextAccessor: Microsoft.AspNet.Mvc.IScopedInstance{Microsoft.AspNet.Mvc.ActionBindingContext}
+    
+        
         :param tempData: 
+        
         :type tempData: Microsoft.AspNet.Mvc.ITempDataDictionary
+    
+        
         :param loggerFactory: 
+        
         :type loggerFactory: ILoggerFactory
+    
+        
         :param maxModelValidationErrors: 
+        
         :type maxModelValidationErrors: System.Int32
     
         
@@ -100,9 +142,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvoker.BindActionArgumentsAsync(Microsoft.AspNet.Mvc.ActionContext, Microsoft.AspNet.Mvc.ActionBindingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param bindingContext: 
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
@@ -124,7 +172,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvoker.InvokeActionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext)
     
         
+    
+        
         :param actionExecutingContext: 
+        
         :type actionExecutingContext: Microsoft.AspNet.Mvc.ActionExecutingContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.IActionResult}
     
@@ -136,7 +187,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvoker.ReleaseInstance(System.Object)
     
         
+    
+        
         :param instance: 
+        
         :type instance: System.Object
     
         

@@ -60,7 +60,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.CanAcceptDataFrom(Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
     
         
+    
+        
         :param bindingSource: 
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
         :rtype: System.Boolean
     
@@ -76,10 +79,15 @@ Methods
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource](Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.yml).
     
         
-        :param bindingSources: The set of [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) entries.
-    Must be value-provider sources and user input.
+    
+        
+        :param bindingSources: The set of [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) entries. Must be value-provider sources and user input.
+        
         :type bindingSources: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.BindingSource}
+    
+        
         :param displayName: The display name for the composite source.
+        
         :type displayName: System.String
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource](Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.yml).

@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.Collections.IEnumerable)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param selectedValues: 
+        
         :type selectedValues: System.Collections.IEnumerable
     
         
@@ -78,11 +87,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.String, System.String)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param dataValueField: 
+        
         :type dataValueField: System.String
+    
+        
         :param dataTextField: 
+        
         :type dataTextField: System.String
     
         
@@ -93,13 +111,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.String, System.String, System.Collections.IEnumerable)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.IEnumerable
+    
+        
         :param dataValueField: 
+        
         :type dataValueField: System.String
+    
+        
         :param dataTextField: 
+        
         :type dataTextField: System.String
+    
+        
         :param selectedValues: 
+        
         :type selectedValues: System.Collections.IEnumerable
     
         
@@ -115,19 +145,30 @@ Constructors
         the data value field, the data text field, the selected values, and the data group field.
     
         
+    
+        
         :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
+        
         :type items: System.Collections.IEnumerable
-        :param dataValueField: The data value field. Used to match the Value property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataValueField: The data value field. Used to match the Value property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataValueField: System.String
-        :param dataTextField: The data text field. Used to match the Text property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataTextField: The data text field. Used to match the Text property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataTextField: System.String
-        :param selectedValues: The selected values field. Used to match the Selected property of the
-    corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param selectedValues: The selected values field. Used to match the Selected property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type selectedValues: System.Collections.IEnumerable
-        :param dataGroupField: The data group field. Used to match the Group property of the corresponding
-    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+    
+        
+        :param dataGroupField: The data group field. Used to match the Group property of the corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        
         :type dataGroupField: System.String
     
         

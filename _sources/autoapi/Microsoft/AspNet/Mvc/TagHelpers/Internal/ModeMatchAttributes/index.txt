@@ -63,9 +63,15 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1.yml).
     
         
+    
+        
         :param mode: 
+        
         :type mode: TMode
+    
+        
         :param presentAttributes: 
+        
         :type presentAttributes: System.Collections.Generic.IEnumerable{System.String}
         :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}
     
@@ -81,11 +87,20 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1.yml).
     
         
+    
+        
         :param mode: 
+        
         :type mode: TMode
+    
+        
         :param presentAttributes: 
+        
         :type presentAttributes: System.Collections.Generic.IEnumerable{System.String}
+    
+        
         :param missingAttributes: 
+        
         :type missingAttributes: System.Collections.Generic.IEnumerable{System.String}
         :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}
     

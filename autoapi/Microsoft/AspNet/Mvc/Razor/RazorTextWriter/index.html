@@ -171,34 +171,18 @@ writer for all further write operations.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>unbufferedWriter</strong> &#8211; The [System.IO.TextWriter]() to write output to when this instance</li>
+<li><strong>unbufferedWriter</strong> (<em>System.IO.TextWriter</em>) &#8211; The [System.IO.TextWriter]() to write output to when this instance is no longer buffering.</li>
+<li><strong>encoding</strong> (<em>System.Text.Encoding</em>) &#8211; The character [Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml) in which the output is written.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>is no longer buffering.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type unbufferedWriter:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.IO.TextWriter</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param encoding:</th><td class="field-body">The character [Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml) in which the output is written.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type encoding:</th><td class="field-body">System.Text.Encoding</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorTextWriter</span><span class="p">(</span><span class="n">TextWriter</span> <span class="n">unbufferedWriter</span><span class="p">,</span> <span class="n">Encoding</span> <span class="n">encoding</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorTextWriter</span><span class="p">(</span><span class="n">TextWriter</span> <span class="n">unbufferedWriter</span><span class="p">,</span> <span class="n">Encoding</span> <span class="n">encoding</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

@@ -73,7 +73,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param filterContext: 
+        
         :type filterContext: Microsoft.AspNet.Mvc.AuthorizationContext
     
         
@@ -84,7 +87,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RequireHttpsAttribute.OnAuthorization(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param filterContext: 
+        
         :type filterContext: Microsoft.AspNet.Mvc.AuthorizationContext
     
         

@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationDecisionTree.LinkGenerationDecisionTree(System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry>)
     
         
+    
+        
         :param entries: 
+        
         :type entries: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry}
     
         
@@ -73,7 +76,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationDecisionTree.GetMatches(VirtualPathContext)
     
         
+    
+        
         :param context: 
+        
         :type context: VirtualPathContext
         :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationMatch}
     

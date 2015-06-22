@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.AuthorizationApplicationModelProvider(IOptions<AuthorizationOptions>)
     
         
+    
+        
         :param authorizationOptionsAccessor: 
+        
         :type authorizationOptionsAccessor: IOptions{AuthorizationOptions}
     
         
@@ -91,7 +94,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         
@@ -102,7 +108,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationApplicationModelProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         

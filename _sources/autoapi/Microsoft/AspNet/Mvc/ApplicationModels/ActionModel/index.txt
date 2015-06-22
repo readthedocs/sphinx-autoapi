@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.ActionModel(Microsoft.AspNet.Mvc.ApplicationModels.ActionModel)
     
         
+    
+        
         :param other: 
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.ActionModel(System.Reflection.MethodInfo, System.Collections.Generic.IReadOnlyList<System.Object>)
     
         
+    
+        
         :param actionMethod: 
+        
         :type actionMethod: System.Reflection.MethodInfo
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
     
         

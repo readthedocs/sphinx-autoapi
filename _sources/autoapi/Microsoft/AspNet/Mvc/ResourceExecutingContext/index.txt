@@ -66,9 +66,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ResourceExecutingContext](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).
     
         
+    
+        
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param filters: The list of [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml) instances.
+        
         :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         

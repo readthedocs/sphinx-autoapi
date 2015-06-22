@@ -59,15 +59,18 @@ Methods
         not available in the cache or is expired.
     
         
+    
+        
         :param pagePath: The application relative path of the Razor page.
+        
         :type pagePath: System.String
+    
+        
         :param getChunkTree: A delegate that creates a new @!:ChunkTree-.
+        
         :type getChunkTree: System.Func{IFileInfo,ChunkTree}
         :rtype: ChunkTree
-        :return: The @!:ChunkTree- if a file exists at
-    <paramref name="pagePath" />,
-    
-    <c>null</c> otherwise.
+        :return: The @!:ChunkTree- if a file exists at <paramref name="pagePath" />,  <c>null</c> otherwise.
     
         
         .. code-block:: csharp

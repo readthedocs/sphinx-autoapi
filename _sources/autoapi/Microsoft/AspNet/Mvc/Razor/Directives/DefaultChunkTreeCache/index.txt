@@ -63,7 +63,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache.yml).
     
         
+    
+        
         :param fileProvider: The application's @!:IFileProvider-.
+        
         :type fileProvider: IFileProvider
     
         
@@ -82,9 +85,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache.GetOrAdd(System.String, System.Func<IFileInfo, ChunkTree>)
     
         
+    
+        
         :param pagePath: 
+        
         :type pagePath: System.String
+    
+        
         :param getChunkTree: 
+        
         :type getChunkTree: System.Func{IFileInfo,ChunkTree}
         :rtype: ChunkTree
     

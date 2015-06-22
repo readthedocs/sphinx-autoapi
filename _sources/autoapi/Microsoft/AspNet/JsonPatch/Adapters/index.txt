@@ -14,13 +14,9 @@ Microsoft.AspNet.JsonPatch.Adapters Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/JsonPatch/Adapters/IObjectAdapter<TModel>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/JsonPatch/Adapters/ObjectAdapter<TModel>/index
-   
    
 
 

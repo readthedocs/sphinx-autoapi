@@ -59,13 +59,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder.AddRouteConstraints(System.Collections.Generic.ISet<System.String>, Microsoft.AspNet.Mvc.ControllerActionDescriptor, Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel, Microsoft.AspNet.Mvc.ApplicationModels.ActionModel)
     
         
+    
+        
         :param removalConstraints: 
+        
         :type removalConstraints: System.Collections.Generic.ISet{System.String}
+    
+        
         :param actionDescriptor: 
+        
         :type actionDescriptor: Microsoft.AspNet.Mvc.ControllerActionDescriptor
+    
+        
         :param controller: 
+        
         :type controller: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
+    
+        
         :param action: 
+        
         :type action: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
     
         
@@ -80,7 +92,10 @@ Methods
         Creates instances of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml) from [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
+    
+        
         :param application: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+        
         :type application: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
         :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ControllerActionDescriptor}
         :return: The list of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml).

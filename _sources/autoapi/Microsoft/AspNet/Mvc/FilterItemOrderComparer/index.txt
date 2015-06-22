@@ -72,9 +72,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FilterItemOrderComparer.Compare(Microsoft.AspNet.Mvc.FilterItem, Microsoft.AspNet.Mvc.FilterItem)
     
         
+    
+        
         :param x: 
+        
         :type x: Microsoft.AspNet.Mvc.FilterItem
+    
+        
         :param y: 
+        
         :type y: Microsoft.AspNet.Mvc.FilterItem
         :rtype: System.Int32
     

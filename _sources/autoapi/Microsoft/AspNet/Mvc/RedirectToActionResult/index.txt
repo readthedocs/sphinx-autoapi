@@ -55,11 +55,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectToActionResult.RedirectToActionResult(System.String, System.String, System.Collections.Generic.IDictionary<System.String, System.Object>)
     
         
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
@@ -70,13 +79,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectToActionResult.RedirectToActionResult(System.String, System.String, System.Collections.Generic.IDictionary<System.String, System.Object>, System.Boolean)
     
         
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
+    
+        
         :param permanent: 
+        
         :type permanent: System.Boolean
     
         
@@ -153,7 +174,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RedirectToActionResult.ExecuteResult(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

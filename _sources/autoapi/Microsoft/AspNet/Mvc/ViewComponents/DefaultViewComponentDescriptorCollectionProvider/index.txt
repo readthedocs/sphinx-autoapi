@@ -63,7 +63,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorCollectionProvider](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorCollectionProvider.yml).
     
         
+    
+        
         :param descriptorProvider: The [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider.yml).
+        
         :type descriptorProvider: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider
     
         

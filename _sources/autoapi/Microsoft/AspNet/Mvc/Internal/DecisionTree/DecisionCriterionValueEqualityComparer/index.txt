@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValueEqualityComparer.DecisionCriterionValueEqualityComparer(System.Collections.Generic.IEqualityComparer<System.Object>)
     
         
+    
+        
         :param innerComparer: 
+        
         :type innerComparer: System.Collections.Generic.IEqualityComparer{System.Object}
     
         
@@ -91,9 +94,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValueEqualityComparer.Equals(Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue, Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue)
     
         
+    
+        
         :param x: 
+        
         :type x: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
+    
+        
         :param y: 
+        
         :type y: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
         :rtype: System.Boolean
     
@@ -105,7 +114,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValueEqualityComparer.GetHashCode(Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue)
     
         
+    
+        
         :param obj: 
+        
         :type obj: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
         :rtype: System.Int32
     

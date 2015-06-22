@@ -59,9 +59,15 @@ Methods
         [Microsoft.AspNet.Mvc.Rendering.IViewEngine.FindPartialView(Microsoft.AspNet.Mvc.ActionContext,System.String)]().
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ActionContext]().
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param page: 
+        
         :type page: System.String
         :rtype: Microsoft.AspNet.Mvc.Razor.RazorPageResult
         :return: A result representing the result of locating the [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml).

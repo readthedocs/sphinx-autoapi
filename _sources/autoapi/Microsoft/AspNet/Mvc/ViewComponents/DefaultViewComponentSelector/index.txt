@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentSelector](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentSelector.yml).
     
         
+    
+        
         :param descriptorProvider: The [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider.yml).
+        
         :type descriptorProvider: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider
     
         
@@ -82,7 +85,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentSelector.SelectComponent(System.String)
     
         
+    
+        
         :param componentName: 
+        
         :type componentName: System.String
         :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
     

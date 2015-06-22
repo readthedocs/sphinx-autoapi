@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.ViewStartProvider.ViewStartProvider(Microsoft.AspNet.Mvc.Razor.IRazorPageFactory)
     
         
+    
+        
         :param pageFactory: 
+        
         :type pageFactory: Microsoft.AspNet.Mvc.Razor.IRazorPageFactory
     
         
@@ -73,7 +76,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.ViewStartProvider.GetViewStartPages(System.String)
     
         
+    
+        
         :param path: 
+        
         :type path: System.String
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.IRazorPage}
     

@@ -65,7 +65,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper.yml).
     
         
+    
+        
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
+        
         :type generator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
@@ -127,9 +130,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper.Process(TagHelperContext, TagHelperOutput)
     
         
+    
+        
         :param context: 
+        
         :type context: TagHelperContext
+    
+        
         :param output: 
+        
         :type output: TagHelperOutput
     
         

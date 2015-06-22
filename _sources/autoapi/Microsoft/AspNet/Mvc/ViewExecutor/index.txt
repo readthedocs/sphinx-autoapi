@@ -64,17 +64,35 @@ Methods
         <paramref name="view" /> to the response body.
     
         
+    
+        
         :param view: The [Microsoft.AspNet.Mvc.Rendering.IView](Microsoft.AspNet.Mvc.Rendering.IView.yml) to render.
+        
         :type view: Microsoft.AspNet.Mvc.Rendering.IView
+    
+        
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext]() for the current executing action.
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) for the view being rendered.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param tempData: The [Microsoft.AspNet.Mvc.ITempDataDictionary]() for the view being rendered.
+        
         :type tempData: Microsoft.AspNet.Mvc.ITempDataDictionary
+    
+        
         :param htmlHelperOptions: 
+        
         :type htmlHelperOptions: Microsoft.AspNet.Mvc.Rendering.HtmlHelperOptions
+    
+        
         :param contentType: 
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that represents the asynchronous rendering.

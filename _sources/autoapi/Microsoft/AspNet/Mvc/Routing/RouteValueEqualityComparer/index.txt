@@ -60,9 +60,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.RouteValueEqualityComparer.Equals(System.Object, System.Object)
     
         
+    
+        
         :param x: 
+        
         :type x: System.Object
+    
+        
         :param y: 
+        
         :type y: System.Object
         :rtype: System.Boolean
     
@@ -74,7 +80,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.RouteValueEqualityComparer.GetHashCode(System.Object)
     
         
+    
+        
         :param obj: 
+        
         :type obj: System.Object
         :rtype: System.Int32
     

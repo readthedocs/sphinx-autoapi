@@ -64,7 +64,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.JsonOutputFormatter.JsonOutputFormatter(JsonSerializerSettings)
     
         
+    
+        
         :param serializerSettings: 
+        
         :type serializerSettings: JsonSerializerSettings
     
         
@@ -105,9 +108,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonOutputFormatter.WriteObject(System.IO.TextWriter, System.Object)
     
         
+    
+        
         :param writer: 
+        
         :type writer: System.IO.TextWriter
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -118,7 +127,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Threading.Tasks.Task
     

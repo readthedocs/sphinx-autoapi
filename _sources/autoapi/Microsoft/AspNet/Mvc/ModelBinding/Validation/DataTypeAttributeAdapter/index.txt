@@ -61,9 +61,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataTypeAttributeAdapter.DataTypeAttributeAdapter(System.ComponentModel.DataAnnotations.DataTypeAttribute, System.String)
     
         
+    
+        
         :param attribute: 
+        
         :type attribute: System.ComponentModel.DataAnnotations.DataTypeAttribute
+    
+        
         :param ruleName: 
+        
         :type ruleName: System.String
     
         
@@ -100,7 +106,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataTypeAttributeAdapter.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     

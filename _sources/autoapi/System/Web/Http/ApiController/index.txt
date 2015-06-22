@@ -204,7 +204,10 @@ Methods
         Creates an [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) (400 Bad Request) with the specified model state.
     
         
+    
+        
         :param modelState: The model state to include in the error.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
         :rtype: System.Web.Http.InvalidModelStateResult
         :return: An [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) with the specified model state.
@@ -221,7 +224,10 @@ Methods
         Creates a [System.Web.Http.BadRequestErrorMessageResult](System.Web.Http.BadRequestErrorMessageResult.yml) (400 Bad Request) with the specified error message.
     
         
+    
+        
         :param message: The user-visible error message.
+        
         :type message: System.String
         :rtype: System.Web.Http.BadRequestErrorMessageResult
         :return: A [System.Web.Http.BadRequestErrorMessageResult](System.Web.Http.BadRequestErrorMessageResult.yml) with the specified error message.
@@ -253,9 +259,15 @@ Methods
         Creates a [System.Web.Http.NegotiatedContentResult`1](System.Web.Http.NegotiatedContentResult`1.yml) with the specified values.
     
         
+    
+        
         :param statusCode: The HTTP status code for the response message.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param value: The content value to negotiate and format in the entity body.
+        
         :type value: T
         :rtype: System.Web.Http.NegotiatedContentResult{{T}}
         :return: A [System.Web.Http.NegotiatedContentResult`1](System.Web.Http.NegotiatedContentResult`1.yml) with the specified values.
@@ -272,9 +284,15 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.CreatedResult]() (201 Created) with the specified values.
     
         
+    
+        
         :param location: The location at which the content has been created. Must be a relative or absolute URL.
+        
         :type location: System.String
+    
+        
         :param content: The content value to format in the entity body.
+        
         :type content: System.Object
         :rtype: Microsoft.AspNet.Mvc.CreatedResult
         :return: A [Microsoft.AspNet.Mvc.CreatedResult]() with the specified values.
@@ -291,9 +309,15 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.CreatedResult]() (201 Created) with the specified values.
     
         
+    
+        
         :param uri: 
+        
         :type uri: System.Uri
+    
+        
         :param content: The content value to format in the entity body.
+        
         :type content: System.Object
         :rtype: Microsoft.AspNet.Mvc.CreatedResult
         :return: A [Microsoft.AspNet.Mvc.CreatedResult]() with the specified values.
@@ -310,11 +334,20 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.CreatedAtRouteResult]() (201 Created) with the specified values.
     
         
+    
+        
         :param routeName: The name of the route to use for generating the URL.
+        
         :type routeName: System.String
+    
+        
         :param routeValues: The route data to use for generating the URL.
+        
         :type routeValues: System.Object
+    
+        
         :param content: The content value to format in the entity body.
+        
         :type content: System.Object
         :rtype: Microsoft.AspNet.Mvc.CreatedAtRouteResult
         :return: A [Microsoft.AspNet.Mvc.CreatedAtRouteResult]() with the specified values.
@@ -336,7 +369,10 @@ Methods
     .. dn:method:: System.Web.Http.ApiController.Dispose(System.Boolean)
     
         
+    
+        
         :param disposing: 
+        
         :type disposing: System.Boolean
     
         
@@ -366,7 +402,10 @@ Methods
         Creates an [System.Web.Http.ExceptionResult](System.Web.Http.ExceptionResult.yml) (500 Internal Server Error) with the specified exception.
     
         
+    
+        
         :param exception: The exception to include in the error.
+        
         :type exception: System.Exception
         :rtype: System.Web.Http.ExceptionResult
         :return: An [System.Web.Http.ExceptionResult](System.Web.Http.ExceptionResult.yml) with the specified exception.
@@ -383,7 +422,10 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified value.
     
         
+    
+        
         :param content: The content value to serialize in the entity body.
+        
         :type content: T
         :rtype: Microsoft.AspNet.Mvc.JsonResult
         :return: A [Microsoft.AspNet.Mvc.JsonResult]() with the specified value.
@@ -400,9 +442,15 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified values.
     
         
+    
+        
         :param content: The content value to serialize in the entity body.
+        
         :type content: T
+    
+        
         :param serializerSettings: The serializer settings.
+        
         :type serializerSettings: JsonSerializerSettings
         :rtype: Microsoft.AspNet.Mvc.JsonResult
         :return: A [Microsoft.AspNet.Mvc.JsonResult]() with the specified values.
@@ -419,11 +467,20 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified values.
     
         
+    
+        
         :param content: The content value to serialize in the entity body.
+        
         :type content: T
+    
+        
         :param serializerSettings: The serializer settings.
+        
         :type serializerSettings: JsonSerializerSettings
+    
+        
         :param encoding: The content encoding.
+        
         :type encoding: System.Text.Encoding
         :rtype: Microsoft.AspNet.Mvc.JsonResult
         :return: A [Microsoft.AspNet.Mvc.JsonResult]() with the specified values.
@@ -470,7 +527,10 @@ Methods
         Creates an [System.Web.Http.OkNegotiatedContentResult`1](System.Web.Http.OkNegotiatedContentResult`1.yml) (200 OK) with the specified values.
     
         
+    
+        
         :param content: The content value to negotiate and format in the entity body.
+        
         :type content: T
         :rtype: System.Web.Http.OkNegotiatedContentResult{{T}}
         :return: An [System.Web.Http.OkNegotiatedContentResult`1](System.Web.Http.OkNegotiatedContentResult`1.yml) with the specified values.
@@ -487,7 +547,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.RedirectResult]() (302 Found) with the specified value.
     
         
+    
+        
         :param location: The location to which to redirect.
+        
         :type location: System.String
         :rtype: Microsoft.AspNet.Mvc.RedirectResult
         :return: A [Microsoft.AspNet.Mvc.RedirectResult]() with the specified value.
@@ -504,7 +567,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.RedirectResult]() (302 Found) with the specified value.
     
         
+    
+        
         :param location: The location to which to redirect.
+        
         :type location: System.Uri
         :rtype: Microsoft.AspNet.Mvc.RedirectResult
         :return: A [Microsoft.AspNet.Mvc.RedirectResult]() with the specified value.
@@ -521,9 +587,15 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.RedirectToRouteResult]() (302 Found) with the specified values.
     
         
+    
+        
         :param routeName: The name of the route to use for generating the URL.
+        
         :type routeName: System.String
+    
+        
         :param routeValues: The route data to use for generating the URL.
+        
         :type routeValues: System.Object
         :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
         :return: A [Microsoft.AspNet.Mvc.RedirectToRouteResult]() with the specified values.
@@ -540,7 +612,10 @@ Methods
         Creates a [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) with the specified response.
     
         
+    
+        
         :param response: The HTTP response message.
+        
         :type response: System.Net.Http.HttpResponseMessage
         :rtype: System.Web.Http.ResponseMessageResult
         :return: A [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) for the specified response.
@@ -557,7 +632,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.HttpStatusCodeResult]() with the specified status code.
     
         
+    
+        
         :param status: The HTTP status code for the response message
+        
         :type status: System.Net.HttpStatusCode
         :rtype: Microsoft.AspNet.Mvc.HttpStatusCodeResult
         :return: A [Microsoft.AspNet.Mvc.HttpStatusCodeResult]() with the specified status code.
@@ -575,7 +653,10 @@ Methods
         under an empty prefix.
     
         
+    
+        
         :param entity: The entity being validated.
+        
         :type entity: TEntity
     
         
@@ -590,10 +671,15 @@ Methods
         Validates the given entity and adds the validation errors to the [System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml).
     
         
+    
+        
         :param entity: The entity being validated.
+        
         :type entity: TEntity
-        :param keyPrefix: The key prefix under which the model state errors would be added in the
-    [System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml).
+    
+        
+        :param keyPrefix: The key prefix under which the model state errors would be added in the [System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml).
+        
         :type keyPrefix: System.String
     
         

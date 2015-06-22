@@ -63,7 +63,10 @@ Methods
         Gets an embedded JavaScript file resource and decodes it for use as a .NET format string.
     
         
+    
+        
         :param resourceName: 
+        
         :type resourceName: System.String
         :rtype: System.String
     

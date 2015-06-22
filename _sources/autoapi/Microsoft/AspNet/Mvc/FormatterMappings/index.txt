@@ -63,11 +63,13 @@ Methods
         Clears the @!:MediaTypeHeaderValue- mapping for the format.
     
         
+    
+        
         :param format: The format value.
+        
         :type format: System.String
         :rtype: System.Boolean
-        :return: <c>true</c> if the format is successfully found and cleared; otherwise,
-    <c>false</c>.
+        :return: <c>true</c> if the format is successfully found and cleared; otherwise, <c>false</c>.
     
         
         .. code-block:: csharp
@@ -81,7 +83,10 @@ Methods
         Gets @!:MediaTypeHeaderValue- for the specified format.
     
         
+    
+        
         :param format: The format value.
+        
         :type format: System.String
         :rtype: MediaTypeHeaderValue
         :return: The @!:MediaTypeHeaderValue- for input format.
@@ -99,9 +104,15 @@ Methods
         If the format already exists, the @!:MediaTypeHeaderValue- will be overwritten with the new value.
     
         
+    
+        
         :param format: The format value.
+        
         :type format: System.String
+    
+        
         :param contentType: The @!:MediaTypeHeaderValue- for the format value.
+        
         :type contentType: MediaTypeHeaderValue
     
         

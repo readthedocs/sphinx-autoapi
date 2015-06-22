@@ -59,7 +59,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.ApplicationModelProviderContext(System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo>)
     
         
+    
+        
         :param controllerTypes: 
+        
         :type controllerTypes: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     
         

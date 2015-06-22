@@ -71,7 +71,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonMvcFormatterMappingOptionsSetup.ConfigureMvc(Microsoft.AspNet.Mvc.MvcFormatterMappingOptions)
     
         
+    
+        
         :param options: 
+        
         :type options: Microsoft.AspNet.Mvc.MvcFormatterMappingOptions
     
         

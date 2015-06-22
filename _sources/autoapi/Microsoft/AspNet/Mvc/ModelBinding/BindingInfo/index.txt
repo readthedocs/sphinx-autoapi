@@ -128,7 +128,10 @@ Methods
         <paramref name="attributes" />.
     
         
+    
+        
         :param attributes: A collection of attributes which are used to construct [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml)
+        
         :type attributes: System.Collections.Generic.IEnumerable{System.Object}
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
         :return: A new instance of [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml).

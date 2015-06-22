@@ -59,7 +59,10 @@ Methods
         <paramref name="value" />.
     
         
+    
+        
         :param value: The value to serialize as JSON.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the serialized JSON.
@@ -77,9 +80,15 @@ Methods
         <paramref name="value" />.
     
         
+    
+        
         :param value: The value to serialize as JSON.
+        
         :type value: System.Object
+    
+        
         :param serializerSettings: The @!:JsonSerializerSettings- to be used by the serializer.
+        
         :type serializerSettings: JsonSerializerSettings
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
         :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the serialized JSON.

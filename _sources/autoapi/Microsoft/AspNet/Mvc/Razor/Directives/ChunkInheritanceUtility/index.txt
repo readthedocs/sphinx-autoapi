@@ -64,12 +64,20 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility](Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.yml).
     
         
-        :param razorHost: The [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) used to parse
-    <c>_ViewImports</c> pages.
+    
+        
+        :param razorHost: The [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) used to parse <c>_ViewImports</c> pages.
+        
         :type razorHost: Microsoft.AspNet.Mvc.Razor.MvcRazorHost
+    
+        
         :param chunkTreeCache: [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) that caches @!:ChunkTree- instances.
+        
         :type chunkTreeCache: Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache
+    
+        
         :param defaultInheritedChunks: Sequence of @!:Chunk-s inherited by default.
+        
         :type defaultInheritedChunks: System.Collections.Generic.IReadOnlyList{Chunk}
     
         
@@ -99,11 +107,13 @@ Methods
         <paramref name="pagePath" /> in the file system appears first.
     
         
+    
+        
         :param pagePath: The path of the page to locate inherited chunks for.
+        
         :type pagePath: System.String
         :rtype: System.Collections.Generic.IReadOnlyList{ChunkTree}
-        :return: A [System.Collections.Generic.IReadOnlyList`1]() of parsed
-    <c>_ViewImports</c>@!:ChunkTree-s.
+        :return: A [System.Collections.Generic.IReadOnlyList`1]() of parsed <c>_ViewImports</c>@!:ChunkTree-s.
     
         
         .. code-block:: csharp
@@ -120,13 +130,20 @@ Methods
         <paramref name="chunkTree" />.
     
         
+    
+        
         :param chunkTree: The @!:ChunkTree- to merge in to.
+        
         :type chunkTree: ChunkTree
-        :param inheritedChunkTrees: [System.Collections.Generic.IReadOnlyList`1]() inherited from
-    <c>_ViewImports</c>
-    files.
+    
+        
+        :param inheritedChunkTrees: [System.Collections.Generic.IReadOnlyList`1]() inherited from <c>_ViewImports</c> files.
+        
         :type inheritedChunkTrees: System.Collections.Generic.IReadOnlyList{ChunkTree}
+    
+        
         :param defaultModel: The list of chunks to merge.
+        
         :type defaultModel: System.String
     
         

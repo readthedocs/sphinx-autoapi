@@ -79,7 +79,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseExceptionActionFilter.OnActionExecuted(Microsoft.AspNet.Mvc.ActionExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionExecutedContext
     
         
@@ -90,7 +93,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpResponseExceptionActionFilter.OnActionExecuting(Microsoft.AspNet.Mvc.ActionExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
     
         

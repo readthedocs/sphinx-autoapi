@@ -64,10 +64,15 @@ Constructors
         Initializes a new instance of RazorViewFactory
     
         
+    
+        
         :param pageActivator: The [Microsoft.AspNet.Mvc.Razor.IRazorPageActivator](Microsoft.AspNet.Mvc.Razor.IRazorPageActivator.yml) used to activate pages.
+        
         :type pageActivator: Microsoft.AspNet.Mvc.Razor.IRazorPageActivator
-        :param viewStartProvider: The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart
-    pages
+    
+        
+        :param viewStartProvider: The [Microsoft.AspNet.Mvc.Razor.IViewStartProvider](Microsoft.AspNet.Mvc.Razor.IViewStartProvider.yml) used for discovery of _ViewStart pages
+        
         :type viewStartProvider: Microsoft.AspNet.Mvc.Razor.IViewStartProvider
     
         
@@ -86,11 +91,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewFactory.GetView(Microsoft.AspNet.Mvc.Razor.IRazorViewEngine, Microsoft.AspNet.Mvc.Razor.IRazorPage, System.Boolean)
     
         
+    
+        
         :param viewEngine: 
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Razor.IRazorViewEngine
+    
+        
         :param page: 
+        
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
+    
+        
         :param isPartial: 
+        
         :type isPartial: System.Boolean
         :rtype: Microsoft.AspNet.Mvc.Rendering.IView
     

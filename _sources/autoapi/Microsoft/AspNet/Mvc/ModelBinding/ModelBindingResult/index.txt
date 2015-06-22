@@ -63,12 +63,20 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).
     
         
+    
+        
         :param model: The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+        
         :type model: System.Object
+    
+        
         :param key: The key using which was used to attempt binding the model.
+        
         :type key: System.String
-        :param isModelSet: A value that represents if the model has been set by the
-    [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+    
+        
+        :param isModelSet: A value that represents if the model has been set by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+        
         :type isModelSet: System.Boolean
     
         
@@ -83,14 +91,25 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).
     
         
+    
+        
         :param model: The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+        
         :type model: System.Object
+    
+        
         :param key: The key using which was used to attempt binding the model.
+        
         :type key: System.String
-        :param isModelSet: A value that represents if the model has been set by the
-    [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+    
+        
+        :param isModelSet: A value that represents if the model has been set by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
+        
         :type isModelSet: System.Boolean
+    
+        
         :param validationNode: A [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) which captures the validation information.
+        
         :type validationNode: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode
     
         
@@ -105,7 +124,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml) indicating a fatal error.
     
         
+    
+        
         :param key: The key using which was used to attempt binding the model.
+        
         :type key: System.String
     
         

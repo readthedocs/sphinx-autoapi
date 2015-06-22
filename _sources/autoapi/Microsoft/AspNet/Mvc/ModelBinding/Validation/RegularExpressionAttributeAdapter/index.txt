@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.RegularExpressionAttributeAdapter.RegularExpressionAttributeAdapter(System.ComponentModel.DataAnnotations.RegularExpressionAttribute)
     
         
+    
+        
         :param attribute: 
+        
         :type attribute: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
     
         
@@ -74,7 +77,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.RegularExpressionAttributeAdapter.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     

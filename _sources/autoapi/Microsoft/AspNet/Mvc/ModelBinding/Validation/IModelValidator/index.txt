@@ -81,7 +81,10 @@ Methods
         Validates the model value.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext](Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult}
         :return: A list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult](Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult.yml) indicating the results of validating the model value.

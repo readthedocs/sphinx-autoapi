@@ -64,13 +64,18 @@ Methods
         type.
     
         
+    
+        
         :param wrapperProviderFactories: A list of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml).
+        
         :type wrapperProviderFactories: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}
+    
+        
         :param wrapperProviderContext: The [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
+        
         :type wrapperProviderContext: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
         :rtype: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
-        :return: An instance of [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) if there is a wrapping provider for the
-    supplied type, else null.
+        :return: An instance of [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) if there is a wrapping provider for the supplied type, else null.
     
         
         .. code-block:: csharp

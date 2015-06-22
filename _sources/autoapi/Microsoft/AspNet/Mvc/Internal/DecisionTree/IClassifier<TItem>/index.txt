@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.DecisionTree.IClassifier<TItem>.GetCriteria(TItem)
     
         
+    
+        
         :param item: 
+        
         :type item: TItem
         :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue}
     

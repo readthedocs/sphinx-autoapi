@@ -58,7 +58,10 @@ Methods
         Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
+    
+        
         :param application: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+        
         :type application: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
     
         

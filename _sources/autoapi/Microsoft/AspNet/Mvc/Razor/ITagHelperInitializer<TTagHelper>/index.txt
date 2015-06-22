@@ -59,10 +59,15 @@ Methods
         <typeparamref name="TTagHelper" />.
     
         
-        :param helper: The
-    <typeparamref name="TTagHelper" /> to initialize.
+    
+        
+        :param helper: The <typeparamref name="TTagHelper" /> to initialize.
+        
         :type helper: TTagHelper
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewContext]() for the executing view.
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
     
         

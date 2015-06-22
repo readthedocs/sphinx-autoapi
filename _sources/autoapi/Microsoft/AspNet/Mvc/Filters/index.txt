@@ -14,17 +14,11 @@ Microsoft.AspNet.Mvc.Filters Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Filters/ControllerActionFilter/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Filters/ControllerResultFilter/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Filters/DefaultFilterProvider/index
-   
    
 
 

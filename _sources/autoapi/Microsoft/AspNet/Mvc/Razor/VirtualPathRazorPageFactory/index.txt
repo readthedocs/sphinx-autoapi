@@ -60,9 +60,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.VirtualPathRazorPageFactory.VirtualPathRazorPageFactory(System.IServiceProvider, Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache)
     
         
+    
+        
         :param serviceProvider: 
+        
         :type serviceProvider: System.IServiceProvider
+    
+        
         :param compilerCache: 
+        
         :type compilerCache: Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache
     
         
@@ -81,7 +87,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.VirtualPathRazorPageFactory.CreateInstance(System.String)
     
         
+    
+        
         :param relativePath: 
+        
         :type relativePath: System.String
         :rtype: Microsoft.AspNet.Mvc.Razor.IRazorPage
     

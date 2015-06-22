@@ -54,11 +54,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Expressions.ExpressionMetadataProvider.FromLambdaExpression<TModel, TResult>(System.Linq.Expressions.Expression<System.Func<TModel, TResult>>, Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
@@ -77,18 +86,23 @@ Methods
         <paramref name="viewData" />.
     
         
-        :param expression: Expression name, relative to
-    <c>viewData.Model</c>.
+    
+        
+        :param expression: Expression name, relative to <c>viewData.Model</c>.
+        
         :type expression: System.String
-        :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the
-    <paramref name="expression" /> value.
+    
+        
+        :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the <paramref name="expression" /> value.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :return: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named
-    <paramref name="expression" /> in given
-    <paramref name="viewData" />.
+        :return: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named <paramref name="expression" /> in given <paramref name="viewData" />.
     
         
         .. code-block:: csharp

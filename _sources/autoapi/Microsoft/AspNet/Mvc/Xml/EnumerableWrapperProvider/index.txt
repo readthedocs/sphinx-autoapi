@@ -64,11 +64,15 @@ Constructors
         Initializes an instance of [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml).
     
         
-        :param sourceEnumerableOfT: Type of the original [System.Collections.Generic.IEnumerable`1]()
-    that is being wrapped.
+    
+        
+        :param sourceEnumerableOfT: Type of the original [System.Collections.Generic.IEnumerable`1]() that is being wrapped.
+        
         :type sourceEnumerableOfT: System.Type
-        :param elementWrapperProvider: The [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) for the element type.
-    Can be null.
+    
+        
+        :param elementWrapperProvider: The [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) for the element type. Can be null.
+        
         :type elementWrapperProvider: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
     
         
@@ -105,7 +109,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.Wrap(System.Object)
     
         
+    
+        
         :param original: 
+        
         :type original: System.Object
         :rtype: System.Object
     

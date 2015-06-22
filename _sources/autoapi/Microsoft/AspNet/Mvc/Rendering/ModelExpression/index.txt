@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.ModelExpression](Microsoft.AspNet.Mvc.Rendering.ModelExpression.yml) class.
     
         
+    
+        
         :param name: String representation of the [System.Linq.Expressions.Expression]() of interest.
+        
         :type name: System.String
+    
+        
         :param modelExplorer: Includes the model and metadata about the [System.Linq.Expressions.Expression]() of interest.
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         

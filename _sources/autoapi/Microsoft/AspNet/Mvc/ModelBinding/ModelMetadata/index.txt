@@ -84,7 +84,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
     
         
+    
+        
         :param identity: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
+        
         :type identity: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
     
         

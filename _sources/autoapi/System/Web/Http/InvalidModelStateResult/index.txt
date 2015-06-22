@@ -66,10 +66,15 @@ Constructors
         Initializes a new instance of the [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) class.
     
         
+    
+        
         :param modelState: The model state to include in the error.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
-        :param includeErrorDetail: <see langword="true" /> if the error should include exception messages; otherwise,
-    <see langword="false" />.
+    
+        
+        :param includeErrorDetail: <see langword="true" /> if the error should include exception messages; otherwise, <see langword="false" />.
+        
         :type includeErrorDetail: System.Boolean
     
         
@@ -124,7 +129,10 @@ Methods
     .. dn:method:: System.Web.Http.InvalidModelStateResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Threading.Tasks.Task
     

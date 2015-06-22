@@ -58,9 +58,15 @@ Methods
         Finds the specified partial view by using the specified action context.
     
         
+    
+        
         :param context: The action context.
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
         :return: A result representing the result of locating the view.
@@ -77,9 +83,15 @@ Methods
         Finds the specified view by using the specified action context.
     
         
+    
+        
         :param context: The action context.
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param viewName: The name or full path to the view.
+        
         :type viewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
         :return: A result representing the result of locating the view.

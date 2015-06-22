@@ -165,30 +165,17 @@
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>model</strong> (<em>System.Object</em>) &#8211; The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</li>
 <li><strong>key</strong> (<em>System.String</em>) &#8211; The key using which was used to attempt binding the model.</li>
-<li><strong>isModelSet</strong> &#8211; A value that represents if the model has been set by the</li>
+<li><strong>isModelSet</strong> (<em>System.Boolean</em>) &#8211; A value that represents if the model has been set by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type isModelSet:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingResult</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isModelSet</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingResult</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isModelSet</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ModelBindingResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em>, <em>System.Boolean</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode</em><span class="sig-paren">)</span></dt>
@@ -200,36 +187,18 @@
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>model</strong> (<em>System.Object</em>) &#8211; The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</li>
 <li><strong>key</strong> (<em>System.String</em>) &#8211; The key using which was used to attempt binding the model.</li>
-<li><strong>isModelSet</strong> &#8211; A value that represents if the model has been set by the</li>
+<li><strong>isModelSet</strong> (<em>System.Boolean</em>) &#8211; A value that represents if the model has been set by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</li>
+<li><strong>validationNode</strong> (<a class="reference internal" href="../ModelValidationNode/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode" title="Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) which captures the validation information.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type isModelSet:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param validationNode:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) which captures the validation information.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type validationNode:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingResult</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isModelSet</span><span class="p">,</span> <span class="n">ModelValidationNode</span> <span class="n">validationNode</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingResult</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isModelSet</span><span class="p">,</span> <span class="n">ModelValidationNode</span> <span class="n">validationNode</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ModelBindingResult</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>

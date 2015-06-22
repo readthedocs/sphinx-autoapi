@@ -154,37 +154,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>context</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> (<a class="reference internal" href="../ViewLocationExpanderContext/index.html#Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext" title="Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext"><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The cached location, if available, &lt;c&gt;null&lt;/c&gt; otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>expansion.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The cached location, if available,</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;null&lt;/c&gt; otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">Get</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">Get</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Set">
 <code class="descname">Set</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Set" title="Permalink to this definition">¶</a></dt>
@@ -195,33 +182,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>context</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location</li>
+<li><strong>context</strong> (<a class="reference internal" href="../ViewLocationExpanderContext/index.html#Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext" title="Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext"><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion.</li>
+<li><strong>value</strong> (<em>System.String</em>) &#8211; The view location that is to be cached.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>expansion.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param value:</th><td class="field-body">The view location that is to be cached.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.String</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Set</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Set</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

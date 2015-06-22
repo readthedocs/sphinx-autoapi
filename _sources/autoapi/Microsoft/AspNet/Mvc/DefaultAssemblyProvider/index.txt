@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.DefaultAssemblyProvider.DefaultAssemblyProvider(ILibraryManager)
     
         
+    
+        
         :param libraryManager: 
+        
         :type libraryManager: ILibraryManager
     
         

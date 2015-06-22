@@ -14,49 +14,27 @@ Microsoft.AspNet.Mvc.Core Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/ActionDescriptorProviderContext/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Core/ActionInvokerFactory/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/ActionInvokerProviderContext/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Core/ControllerActionDescriptorProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/ControllerActionInvoker/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Core/ControllerActionInvokerProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/DefaultActionDescriptorsCollectionProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Core/DefaultActionSelector/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/FilterActionInvoker/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Core/IActionDescriptorProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Core/IActionInvokerProvider/index
-   
    
 
 

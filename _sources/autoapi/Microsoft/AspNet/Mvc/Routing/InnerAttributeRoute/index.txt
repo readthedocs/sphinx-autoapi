@@ -63,17 +63,35 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).
     
         
+    
+        
         :param next: The next router. Invoked when a route entry matches.
+        
         :type next: IRouter
+    
+        
         :param matchingEntries: 
+        
         :type matchingEntries: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry}
+    
+        
         :param linkGenerationEntries: 
+        
         :type linkGenerationEntries: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry}
+    
+        
         :param logger: 
+        
         :type logger: ILogger
+    
+        
         :param constraintLogger: 
+        
         :type constraintLogger: ILogger
+    
+        
         :param version: 
+        
         :type version: System.Int32
     
         
@@ -115,7 +133,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.GetVirtualPath(VirtualPathContext)
     
         
+    
+        
         :param context: 
+        
         :type context: VirtualPathContext
         :rtype: VirtualPathData
     
@@ -127,7 +148,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.RouteAsync(RouteContext)
     
         
+    
+        
         :param context: 
+        
         :type context: RouteContext
         :rtype: System.Threading.Tasks.Task
     

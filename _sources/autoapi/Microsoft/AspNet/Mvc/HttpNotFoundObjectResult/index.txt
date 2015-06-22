@@ -65,7 +65,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.HttpNotFoundObjectResult](Microsoft.AspNet.Mvc.HttpNotFoundObjectResult.yml) instance.
     
         
+    
+        
         :param value: The value to format in the entity body.
+        
         :type value: System.Object
     
         

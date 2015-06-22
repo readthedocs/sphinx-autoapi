@@ -14,21 +14,13 @@ Microsoft.AspNet.JsonPatch Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/JsonPatch/IJsonPatchDocument/index
-   
-   
    
    /autoapi/Microsoft/AspNet/JsonPatch/JsonPatchDocument<TModel>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/JsonPatch/JsonPatchError<TModel>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/JsonPatch/JsonPatchProperty/index
-   
    
 
 

@@ -63,11 +63,20 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder](Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.yml).
     
         
+    
+        
         :param fileProvider: The file provider.
+        
         :type fileProvider: IFileProvider
+    
+        
         :param cache: The cache.
+        
         :type cache: IMemoryCache
+    
+        
         :param requestPathBase: The request path base.
+        
         :type requestPathBase: PathString
     
         
@@ -140,11 +149,20 @@ Methods
         Builds a list of URLs.
     
         
+    
+        
         :param staticUrl: The statically declared URL. This will always be added to the result.
+        
         :type staticUrl: System.String
+    
+        
         :param includePattern: The file globbing include pattern.
+        
         :type includePattern: System.String
+    
+        
         :param excludePattern: The file globbing exclude pattern.
+        
         :type excludePattern: System.String
         :rtype: System.Collections.Generic.IEnumerable{System.String}
         :return: The list of URLs

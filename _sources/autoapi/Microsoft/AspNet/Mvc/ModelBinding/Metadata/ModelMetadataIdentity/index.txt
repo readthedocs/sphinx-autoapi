@@ -58,11 +58,20 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml) for the provided property.
     
         
+    
+        
         :param modelType: The model type.
+        
         :type modelType: System.Type
+    
+        
         :param name: The name of the property.
+        
         :type name: System.String
+    
+        
         :param containerType: The container type of the model property.
+        
         :type containerType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
@@ -79,7 +88,10 @@ Methods
         Creates a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml) for the provided model [System.Type]().
     
         
+    
+        
         :param modelType: The model [System.Type]().
+        
         :type modelType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).

@@ -1050,58 +1050,28 @@ in the resulting dictionary.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>actionName</strong> (<em>System.String</em>) &#8211; The name of the action method.</li>
 <li><strong>controllerName</strong> (<em>System.String</em>) &#8211; The name of the controller.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.FormMethod</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">MvcForm</span> <span class="nf">GenerateForm</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">MvcForm</span> <span class="nf">GenerateForm</span><span class="p">(</span><span class="kt">string</span> <span class="n">actionName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">controllerName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateHidden">
 <code class="descname">GenerateHidden</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateHidden" title="Permalink to this definition">¶</a></dt>
@@ -1306,57 +1276,27 @@ generates the &amp;lt;form&amp;gt;&#8217;s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route.</li>
-<li><strong>routeValues</strong> &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</li>
+<li><strong>method</strong> (<a class="reference internal" href="../FormMethod/index.html#Microsoft.AspNet.Mvc.Rendering.FormMethod" title="Microsoft.AspNet.Mvc.Rendering.FormMethod"><em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em></a>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.MvcForm</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-created using [System.Object]() initializer syntax. Alternatively, an
-[System.Collections.Generic.IDictionary`2]() instance containing the route parameters.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type routeValues:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param method:</th><td class="field-body">The HTTP method for processing the form, either GET or POST.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type method:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.FormMethod</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlAttributes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">MvcForm</span> <span class="nf">GenerateRouteForm</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">MvcForm</span> <span class="nf">GenerateRouteForm</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="n">FormMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateTextArea">
 <code class="descname">GenerateTextArea</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Int32</em>, <em>System.Int32</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateTextArea" title="Permalink to this definition">¶</a></dt>
@@ -1524,19 +1464,16 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given  &lt;paramref name=&#8221;metadata&#8221; /&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;metadata&#8221; /&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">(</span><span class="n">ModelMetadata</span> <span class="n">metadata</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">(</span><span class="n">ModelMetadata</span> <span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">GetEnumSelectList</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span></dt>

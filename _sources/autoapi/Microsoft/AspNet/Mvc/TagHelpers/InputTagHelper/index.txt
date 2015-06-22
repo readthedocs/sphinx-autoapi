@@ -64,7 +64,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper](Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.yml).
     
         
+    
+        
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
+        
         :type generator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
@@ -169,9 +172,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext, TagHelperOutput)
     
         
+    
+        
         :param context: 
+        
         :type context: TagHelperContext
+    
+        
         :param output: 
+        
         :type output: TagHelperOutput
     
         

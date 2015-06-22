@@ -172,35 +172,18 @@ provided
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fileName</strong> &#8211; The path to the file. The path must be an absolute</li>
+<li><strong>fileName</strong> (<em>System.String</em>) &#8211; The path to the file. The path must be an absolute path. Relative and virtual paths are not supported.</li>
+<li><strong>contentType</strong> (<em>MediaTypeHeaderValue</em>) &#8211; The Content-Type header of the response.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>path. Relative and virtual paths are not supported.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type fileName:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param contentType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The Content-Type header of the response.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type contentType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">MediaTypeHeaderValue</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">FilePathResult</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">FilePathResult</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">FilePathResult</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -214,35 +197,18 @@ provided
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fileName</strong> &#8211; The path to the file. The path must be an absolute</li>
+<li><strong>fileName</strong> (<em>System.String</em>) &#8211; The path to the file. The path must be an absolute path. Relative and virtual paths are not supported.</li>
+<li><strong>contentType</strong> (<em>System.String</em>) &#8211; The Content-Type header of the response.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>path. Relative and virtual paths are not supported.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type fileName:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param contentType:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The Content-Type header of the response.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type contentType:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">FilePathResult</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">FilePathResult</span><span class="p">(</span><span class="kt">string</span> <span class="n">fileName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">contentType</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

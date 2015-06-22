@@ -63,7 +63,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.Razor.HelperResult](Microsoft.AspNet.Mvc.Razor.HelperResult.yml).
     
         
+    
+        
         :param action: The delegate to invoke when [Microsoft.AspNet.Mvc.Razor.HelperResult.WriteTo(System.IO.TextWriter)](Microsoft.AspNet.Mvc.Razor.HelperResult.yml) is called.
+        
         :type action: System.Action{System.IO.TextWriter}
     
         
@@ -108,7 +111,10 @@ Methods
         Method invoked to produce content from the [Microsoft.AspNet.Mvc.Razor.HelperResult](Microsoft.AspNet.Mvc.Razor.HelperResult.yml).
     
         
+    
+        
         :param writer: The [System.IO.TextWriter]() instance to write to.
+        
         :type writer: System.IO.TextWriter
     
         

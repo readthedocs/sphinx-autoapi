@@ -59,7 +59,10 @@ Methods
         by updating [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.Validators](Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext](Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext.yml) associated with this call.
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext
     
         

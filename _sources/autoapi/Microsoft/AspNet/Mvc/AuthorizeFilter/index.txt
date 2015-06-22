@@ -63,7 +63,10 @@ Constructors
         Authorize filter for a specific policy.
     
         
-        :param policy: None
+    
+        
+        :param policy: 
+        
         :type policy: AuthorizationPolicy
     
         
@@ -104,7 +107,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizeFilter.OnAuthorizationAsync(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
         :rtype: System.Threading.Tasks.Task
     

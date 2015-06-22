@@ -63,10 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultObjectValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultObjectValidator.yml).
     
         
-        :param excludeFilters: [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that determine
-    types to exclude from validation.
+    
+        
+        :param excludeFilters: [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that determine types to exclude from validation.
+        
         :type excludeFilters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter}
+    
+        
         :param modelMetadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        
         :type modelMetadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
@@ -85,9 +90,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultObjectValidator.Validate(Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext, Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode)
     
         
+    
+        
         :param modelValidationContext: 
+        
         :type modelValidationContext: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext
+    
+        
         :param validationNode: 
+        
         :type validationNode: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode
     
         

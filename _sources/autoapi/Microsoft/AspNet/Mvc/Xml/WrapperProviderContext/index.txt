@@ -63,11 +63,15 @@ Constructors
         Initializes a [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
     
         
+    
+        
         :param declaredType: The declared type of the object that needs to be wrapped.
+        
         :type declaredType: System.Type
-        :param isSerialization: <see langword="true" /> if the wrapper provider is invoked during
-    serialization, otherwise
-    <see langword="false" />.
+    
+        
+        :param isSerialization: <see langword="true" /> if the wrapper provider is invoked during serialization, otherwise <see langword="false" />.
+        
         :type isSerialization: System.Boolean
     
         

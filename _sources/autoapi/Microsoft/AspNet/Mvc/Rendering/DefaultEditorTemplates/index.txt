@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.BooleanTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -66,7 +69,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.CollectionTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -78,7 +84,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -90,7 +99,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateTimeInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -102,7 +114,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DateTimeLocalInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -114,7 +129,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.DecimalTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -126,7 +144,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.EmailAddressInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -138,7 +159,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.FileCollectionInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -150,7 +174,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.FileInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -162,7 +189,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.HiddenInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -174,7 +204,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.MultilineTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -186,7 +219,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.NumberInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -198,7 +234,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.ObjectTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -210,7 +249,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.PasswordTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -222,7 +264,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.PhoneNumberInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -234,7 +279,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.StringTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -246,7 +294,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.TimeInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -258,7 +309,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultEditorTemplates.UrlInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     

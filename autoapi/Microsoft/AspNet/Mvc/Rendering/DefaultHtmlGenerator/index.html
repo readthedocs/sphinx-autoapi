@@ -259,53 +259,21 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>antiForgery</strong> &#8211; The [Microsoft.AspNet.Mvc.AntiForgery](Microsoft.AspNet.Mvc.AntiForgery.yml) instance which is used to generate anti-forgery</li>
+<li><strong>antiForgery</strong> (<a class="reference internal" href="../../AntiForgery/index.html#Microsoft.AspNet.Mvc.AntiForgery" title="Microsoft.AspNet.Mvc.AntiForgery"><em>Microsoft.AspNet.Mvc.AntiForgery</em></a>) &#8211; The [Microsoft.AspNet.Mvc.AntiForgery](Microsoft.AspNet.Mvc.AntiForgery.yml) instance which is used to generate anti-forgery tokens.</li>
+<li><strong>optionsAccessor</strong> (<em>IOptions{Microsoft.AspNet.Mvc.MvcViewOptions}</em>) &#8211; The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().</li>
+<li><strong>metadataProvider</strong> (<a class="reference internal" href="../../ModelBinding/IModelMetadataProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().</li>
+<li><strong>urlHelper</strong> (<a class="reference internal" href="../../IUrlHelper/index.html#Microsoft.AspNet.Mvc.IUrlHelper" title="Microsoft.AspNet.Mvc.IUrlHelper"><em>Microsoft.AspNet.Mvc.IUrlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.IUrlHelper]().</li>
+<li><strong>htmlEncoder</strong> (<em>IHtmlEncoder</em>) &#8211; The &#64;!:IHtmlEncoder-.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>tokens.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type antiForgery:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.AntiForgery</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param optionsAccessor:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type optionsAccessor:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">IOptions{Microsoft.AspNet.Mvc.MvcViewOptions}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param metadataProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param urlHelper:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.IUrlHelper]().</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type urlHelper:</th><td class="field-body">Microsoft.AspNet.Mvc.IUrlHelper</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlEncoder:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The &#64;!:IHtmlEncoder-.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlEncoder:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">IHtmlEncoder</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DefaultHtmlGenerator</span><span class="p">(</span><span class="n">AntiForgery</span> <span class="n">antiForgery</span><span class="p">,</span> <span class="n">IOptions</span><span class="p">&lt;</span><span class="n">MvcViewOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IUrlHelper</span> <span class="n">urlHelper</span><span class="p">,</span> <span class="n">IHtmlEncoder</span> <span class="n">htmlEncoder</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DefaultHtmlGenerator</span><span class="p">(</span><span class="n">AntiForgery</span> <span class="n">antiForgery</span><span class="p">,</span> <span class="n">IOptions</span><span class="p">&lt;</span><span class="n">MvcViewOptions</span><span class="p">&gt;</span> <span class="n">optionsAccessor</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IUrlHelper</span> <span class="n">urlHelper</span><span class="p">,</span> <span class="n">IHtmlEncoder</span> <span class="n">htmlEncoder</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -513,38 +481,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>viewContext</strong> (<a class="reference internal" href="../../ViewContext/index.html#Microsoft.AspNet.Mvc.ViewContext" title="Microsoft.AspNet.Mvc.ViewContext"><em>Microsoft.AspNet.Mvc.ViewContext</em></a>) &#8211; A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.</li>
 <li><strong>action</strong> (<em>System.String</em>) &#8211; The URL where the form-data should be submitted.</li>
 <li><strong>method</strong> (<em>System.String</em>) &#8211; The HTTP method for processing the form, either GET or POST.</li>
-<li><strong>htmlAttributes</strong> &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an</li>
+<li><strong>htmlAttributes</strong> (<em>System.Object</em>) &#8211; An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">TagBuilder</span> <span class="nf">GenerateFormCore</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">action</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">TagBuilder</span> <span class="nf">GenerateFormCore</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="kt">string</span> <span class="n">action</span><span class="p">,</span> <span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateHidden">
 <code class="descname">GenerateHidden</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.GenerateHidden" title="Permalink to this definition">¶</a></dt>

@@ -63,7 +63,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions]().
     
         
+    
+        
         :param applicationEnvironment: @!:IApplicationEnvironment- for the application.
+        
         :type applicationEnvironment: IApplicationEnvironment
     
         

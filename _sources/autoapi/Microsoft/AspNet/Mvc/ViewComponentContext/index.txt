@@ -76,13 +76,25 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
     
         
+    
+        
         :param viewComponentDescriptor: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the View Component being invoked.
+        
         :type viewComponentDescriptor: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+    
+        
         :param arguments: The View Component arguments.
+        
         :type arguments: System.Object[]
+    
+        
         :param viewContext: The [Microsoft.AspNet.Mvc.ViewComponentContext.ViewContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param writer: The [System.IO.TextWriter]() for writing output.
+        
         :type writer: System.IO.TextWriter
     
         

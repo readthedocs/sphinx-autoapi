@@ -58,7 +58,10 @@ Methods
         Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
     
         
+    
+        
         :param controller: The [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
+        
         :type controller: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
     
         

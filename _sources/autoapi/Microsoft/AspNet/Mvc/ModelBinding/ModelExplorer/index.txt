@@ -63,14 +63,25 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
     
         
+    
+        
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider.yml).
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param container: The container [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
+        
         :type container: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param metadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :param modelAccessor: A model accessor function. May be
-    <c>null</c>.
+    
+        
+        :param modelAccessor: A model accessor function. May be <c>null</c>.
+        
         :type modelAccessor: System.Func{System.Object,System.Object}
     
         
@@ -85,14 +96,25 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
     
         
+    
+        
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider.yml).
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param container: The container [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
+        
         :type container: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param metadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :param model: The model object. May be
-    <c>null</c>.
+    
+        
+        :param model: The model object. May be <c>null</c>.
+        
         :type model: System.Object
     
         
@@ -107,12 +129,20 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
     
         
+    
+        
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider.yml).
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param metadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :param model: The model object. May be
-    <c>null</c>.
+    
+        
+        :param model: The model object. May be <c>null</c>.
+        
         :type model: System.Object
     
         
@@ -209,9 +239,15 @@ Methods
         Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml) for the provided model value and model [System.Type]().
     
         
+    
+        
         :param metadata: 
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param modelAccessor: 
+        
         :type modelAccessor: System.Func{System.Object,System.Object}
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
@@ -228,9 +264,15 @@ Methods
         Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml) for the provided model value and model [System.Type]().
     
         
+    
+        
         :param metadata: 
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param model: The model value.
+        
         :type model: System.Object
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
@@ -247,9 +289,15 @@ Methods
         Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml) for the provided model value and model [System.Type]().
     
         
+    
+        
         :param modelType: The model [System.Type]().
+        
         :type modelType: System.Type
+    
+        
         :param modelAccessor: 
+        
         :type modelAccessor: System.Func{System.Object,System.Object}
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
@@ -266,9 +314,15 @@ Methods
         Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml) for the provided model value and model [System.Type]().
     
         
+    
+        
         :param modelType: The model [System.Type]().
+        
         :type modelType: System.Type
+    
+        
         :param model: The model value.
+        
         :type model: System.Object
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
@@ -286,7 +340,10 @@ Methods
         <paramref name="model" /> value.
     
         
+    
+        
         :param model: The model value.
+        
         :type model: System.Object
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml).
@@ -306,11 +363,13 @@ Methods
         the property cannot be found.
     
         
+    
+        
         :param name: The property name.
+        
         :type name: System.String
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or
-    <c>null</c>.
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or <c>null</c>.
     
         
         .. code-block:: csharp
@@ -327,13 +386,18 @@ Methods
         the property cannot be found.
     
         
+    
+        
         :param name: The property name.
+        
         :type name: System.String
+    
+        
         :param modelAccessor: An accessor for the model value.
+        
         :type modelAccessor: System.Func{System.Object,System.Object}
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or
-    <c>null</c>.
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or <c>null</c>.
     
         
         .. code-block:: csharp
@@ -350,13 +414,18 @@ Methods
         the property cannot be found.
     
         
+    
+        
         :param name: The property name.
+        
         :type name: System.String
+    
+        
         :param model: The model value.
+        
         :type model: System.Object
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or
-    <c>null</c>.
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer](Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.yml), or <c>null</c>.
     
         
         .. code-block:: csharp

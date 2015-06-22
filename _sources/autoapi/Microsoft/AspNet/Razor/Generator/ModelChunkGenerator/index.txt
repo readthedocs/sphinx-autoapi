@@ -54,9 +54,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.ModelChunkGenerator(System.String, System.String)
     
         
+    
+        
         :param baseType: 
+        
         :type baseType: System.String
+    
+        
         :param modelType: 
+        
         :type modelType: System.String
     
         
@@ -103,7 +109,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.Equals(System.Object)
     
         
+    
+        
         :param obj: 
+        
         :type obj: System.Object
         :rtype: System.Boolean
     
@@ -115,9 +124,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.GenerateChunk(Span, ChunkGeneratorContext)
     
         
+    
+        
         :param target: 
+        
         :type target: Span
+    
+        
         :param context: 
+        
         :type context: ChunkGeneratorContext
     
         

@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Converters.TypedJsonPatchDocumentConverter.CanConvert(System.Type)
     
         
+    
+        
         :param objectType: 
+        
         :type objectType: System.Type
         :rtype: System.Boolean
     
@@ -66,13 +69,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Converters.TypedJsonPatchDocumentConverter.ReadJson(JsonReader, System.Type, System.Object, JsonSerializer)
     
         
+    
+        
         :param reader: 
+        
         :type reader: JsonReader
+    
+        
         :param objectType: 
+        
         :type objectType: System.Type
+    
+        
         :param existingValue: 
+        
         :type existingValue: System.Object
+    
+        
         :param serializer: 
+        
         :type serializer: JsonSerializer
         :rtype: System.Object
     
@@ -84,11 +99,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Converters.TypedJsonPatchDocumentConverter.WriteJson(JsonWriter, System.Object, JsonSerializer)
     
         
+    
+        
         :param writer: 
+        
         :type writer: JsonWriter
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param serializer: 
+        
         :type serializer: JsonSerializer
     
         

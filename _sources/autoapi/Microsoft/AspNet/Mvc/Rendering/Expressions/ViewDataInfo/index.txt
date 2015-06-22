@@ -59,9 +59,15 @@ Constructors
         [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) lookup which has already been evaluated.
     
         
+    
+        
         :param container: 
+        
         :type container: System.Object
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -77,11 +83,20 @@ Constructors
         [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) lookup which is evaluated when [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.Value](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) is read.
     
         
+    
+        
         :param container: 
+        
         :type container: System.Object
+    
+        
         :param propertyInfo: 
+        
         :type propertyInfo: System.Reflection.PropertyInfo
+    
+        
         :param valueAccessor: 
+        
         :type valueAccessor: System.Func{System.Object}
     
         

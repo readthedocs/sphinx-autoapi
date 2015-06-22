@@ -58,7 +58,10 @@ Methods
         Loads the temporary data.
     
         
+    
+        
         :param context: The @!:HttpContext-.
+        
         :type context: HttpContext
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
         :return: The temporary data.
@@ -75,9 +78,15 @@ Methods
         Saves the temporary data.
     
         
+    
+        
         :param context: The @!:HttpContext-.
+        
         :type context: HttpContext
+    
+        
         :param values: The values to save.
+        
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         

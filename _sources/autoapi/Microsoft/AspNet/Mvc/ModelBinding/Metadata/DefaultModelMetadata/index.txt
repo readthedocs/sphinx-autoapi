@@ -64,11 +64,20 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.yml).
     
         
+    
+        
         :param provider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        
         :type provider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param detailsProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider.yml).
+        
         :type detailsProvider: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider
+    
+        
         :param details: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml).
+        
         :type details: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails
     
         

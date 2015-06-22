@@ -63,7 +63,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml) using the specified type.
     
         
+    
+        
         :param viewEngine: An instance of [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) that the descriptor represents.
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
     
         
@@ -78,7 +81,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml).
     
         
+    
+        
         :param type: The [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) type that the descriptor represents.
+        
         :type type: System.Type
     
         

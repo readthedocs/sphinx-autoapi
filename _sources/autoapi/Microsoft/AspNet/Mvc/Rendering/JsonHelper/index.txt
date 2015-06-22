@@ -64,7 +64,10 @@ Constructors
         <paramref name="jsonOutputFormatter" />.
     
         
+    
+        
         :param jsonOutputFormatter: The [Microsoft.AspNet.Mvc.JsonOutputFormatter](Microsoft.AspNet.Mvc.JsonOutputFormatter.yml) used to serialize JSON.
+        
         :type jsonOutputFormatter: Microsoft.AspNet.Mvc.JsonOutputFormatter
     
         
@@ -83,7 +86,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.JsonHelper.Serialize(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -95,9 +101,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.JsonHelper.Serialize(System.Object, JsonSerializerSettings)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param serializerSettings: 
+        
         :type serializerSettings: JsonSerializerSettings
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     

@@ -14,9 +14,7 @@ Microsoft.Framework.DependencyInjection Namespace
    :maxdepth: 2
 
    
-   
-   /autoapi/Microsoft/Framework/DependencyInjection/WebApiCompatShimServiceCollectionExtensions/index
-   
+   /autoapi/Microsoft/Framework/DependencyInjection/MvcServiceCollectionExtensions/index
    
 
 
@@ -33,7 +31,7 @@ Microsoft.Framework.DependencyInjection Namespace
     .. rubric:: Classes
 
 
-    class :dn:cls:`WebApiCompatShimServiceCollectionExtensions`
+    class :dn:cls:`MvcServiceCollectionExtensions`
         
 
 

@@ -14,73 +14,39 @@ Microsoft.AspNet.Mvc.Xml Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/DelegatingEnumerable<TWrapped, TDeclared>/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/DelegatingEnumerator<TWrapped, TDeclared>/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/EnumerableWrapperProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/EnumerableWrapperProviderFactory/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/FormattingUtilities/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/IUnwrappable/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/IWrapperProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/IWrapperProviderFactory/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/SerializableErrorWrapper/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/SerializableErrorWrapperProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/SerializableErrorWrapperProviderFactory/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/WrapperProviderContext/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/WrapperProviderFactoriesExtensions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/XmlDataContractSerializerInputFormatter/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/XmlDataContractSerializerOutputFormatter/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/Xml/XmlSerializerInputFormatter/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Xml/XmlSerializerOutputFormatter/index
-   
    
 
 

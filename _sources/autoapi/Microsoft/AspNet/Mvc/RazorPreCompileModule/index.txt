@@ -63,7 +63,10 @@ Constructors
         Instantiates a new [Microsoft.AspNet.Mvc.RazorPreCompileModule](Microsoft.AspNet.Mvc.RazorPreCompileModule.yml) instance.
     
         
+    
+        
         :param services: The [System.IServiceProvider]() for the application.
+        
         :type services: System.IServiceProvider
     
         
@@ -104,7 +107,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RazorPreCompileModule.AfterCompile(AfterCompileContext)
     
         
+    
+        
         :param context: 
+        
         :type context: AfterCompileContext
     
         
@@ -115,7 +121,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RazorPreCompileModule.BeforeCompile(BeforeCompileContext)
     
         
+    
+        
         :param context: 
+        
         :type context: BeforeCompileContext
     
         

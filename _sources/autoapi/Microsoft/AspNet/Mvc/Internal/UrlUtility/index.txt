@@ -59,11 +59,13 @@ Methods
         if it does not have a host/authority part. URLs using the virtual paths ('~/') are also local.
     
         
+    
+        
         :param url: The URL.
+        
         :type url: System.String
         :rtype: System.Boolean
-        :return: <c>true</c> if the URL is local; otherwise,
-    <c>false</c>.
+        :return: <c>true</c> if the URL is local; otherwise, <c>false</c>.
     
         
         .. code-block:: csharp

@@ -58,9 +58,15 @@ Methods
         When implemented in a type, activates an instantiated ViewComponent.
     
         
+    
+        
         :param viewComponent: The ViewComponent to activate.
+        
         :type viewComponent: System.Object
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the executing [Microsoft.AspNet.Mvc.ViewComponent](Microsoft.AspNet.Mvc.ViewComponent.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         

@@ -58,7 +58,10 @@ Methods
         Gets the values for properties of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext
     
         

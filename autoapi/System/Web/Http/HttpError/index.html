@@ -249,30 +249,17 @@ on the [System.Web.Http.HttpErrorKeys](System.Web.Http.HttpErrorKeys.yml) type.<
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>modelState</strong> (<a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; The invalid model state to use for error information.</li>
-<li><strong>includeErrorDetail</strong> &#8211; &lt;c&gt;true&lt;/c&gt; to include exception messages in the error;</li>
+<li><strong>includeErrorDetail</strong> (<em>System.Boolean</em>) &#8211; &lt;c&gt;true&lt;/c&gt; to include exception messages in the error; &lt;c&gt;false&lt;/c&gt; otherwise.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;false&lt;/c&gt; otherwise.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type includeErrorDetail:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpError</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpError</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">HttpError</code><span class="sig-paren">(</span><em>System.Exception</em>, <em>System.Boolean</em><span class="sig-paren">)</span></dt>
@@ -284,30 +271,17 @@ on the [System.Web.Http.HttpErrorKeys](System.Web.Http.HttpErrorKeys.yml) type.<
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>exception</strong> (<em>System.Exception</em>) &#8211; The exception to use for error information.</li>
-<li><strong>includeErrorDetail</strong> &#8211; &lt;c&gt;true&lt;/c&gt; to include the exception information in the error;</li>
+<li><strong>includeErrorDetail</strong> (<em>System.Boolean</em>) &#8211; &lt;c&gt;true&lt;/c&gt; to include the exception information in the error; &lt;c&gt;false&lt;/c&gt; otherwise.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;false&lt;/c&gt; otherwise.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type includeErrorDetail:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpError</span><span class="p">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">HttpError</span><span class="p">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">includeErrorDetail</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">HttpError</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>

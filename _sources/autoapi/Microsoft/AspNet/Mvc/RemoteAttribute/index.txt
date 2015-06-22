@@ -79,7 +79,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
+    
+        
         :param routeName: The route name used when generating the URL where client should send a validation request.
+        
         :type routeName: System.String
     
         
@@ -94,9 +97,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
+    
+        
         :param action: The action name used when generating the URL where client should send a validation request.
+        
         :type action: System.String
+    
+        
         :param controller: The controller name used when generating the URL where client should send a validation request.
+        
         :type controller: System.String
     
         
@@ -111,12 +120,20 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
+    
+        
         :param action: The action name used when generating the URL where client should send a validation request.
+        
         :type action: System.String
+    
+        
         :param controller: The controller name used when generating the URL where client should send a validation request.
+        
         :type controller: System.String
-        :param areaName: The name of the area containing the
-    <paramref name="controller" />.
+    
+        
+        :param areaName: The name of the area containing the <paramref name="controller" />.
+        
         :type areaName: System.String
     
         
@@ -208,7 +225,10 @@ Methods
         <paramref name="property" /> and [Microsoft.AspNet.Mvc.RemoteAttribute.AdditionalFields](Microsoft.AspNet.Mvc.RemoteAttribute.yml) for use in generated HTML.
     
         
+    
+        
         :param property: Name of the property associated with this [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) instance.
+        
         :type property: System.String
         :rtype: System.String
         :return: Comma-separated names of fields the client should include in a validation request.
@@ -221,7 +241,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RemoteAttribute.FormatErrorMessage(System.String)
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
         :rtype: System.String
     
@@ -238,7 +261,10 @@ Methods
         <paramref name="property" /> for use in generated HTML.
     
         
+    
+        
         :param property: One field name the client should include in a validation request.
+        
         :type property: System.String
         :rtype: System.String
         :return: Name of a field the client should include in a validation request.
@@ -251,7 +277,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RemoteAttribute.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
@@ -267,7 +296,10 @@ Methods
         Returns the URL where the client should send a validation request.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext]() used to generate the URL.
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
         :rtype: System.String
         :return: The URL where the client should send a validation request.
@@ -280,7 +312,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RemoteAttribute.IsValid(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     

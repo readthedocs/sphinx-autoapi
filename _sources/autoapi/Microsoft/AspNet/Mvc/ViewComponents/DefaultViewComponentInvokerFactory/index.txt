@@ -54,11 +54,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvokerFactory.DefaultViewComponentInvokerFactory(System.IServiceProvider, Microsoft.AspNet.Mvc.ITypeActivatorCache, Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator)
     
         
+    
+        
         :param serviceProvider: 
+        
         :type serviceProvider: System.IServiceProvider
+    
+        
         :param typeActivatorCache: 
+        
         :type typeActivatorCache: Microsoft.AspNet.Mvc.ITypeActivatorCache
+    
+        
         :param viewComponentActivator: 
+        
         :type viewComponentActivator: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator
     
         
@@ -77,9 +86,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentInvokerFactory.CreateInstance(Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor, System.Object[])
     
         
+    
+        
         :param viewComponentDescriptor: 
+        
         :type viewComponentDescriptor: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentInvoker
     

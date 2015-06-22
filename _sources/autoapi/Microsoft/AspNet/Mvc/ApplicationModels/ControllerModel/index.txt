@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ControllerModel(Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel)
     
         
+    
+        
         :param other: 
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ControllerModel(System.Reflection.TypeInfo, System.Collections.Generic.IReadOnlyList<System.Object>)
     
         
+    
+        
         :param controllerType: 
+        
         :type controllerType: System.Reflection.TypeInfo
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
     
         

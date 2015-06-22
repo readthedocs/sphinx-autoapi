@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider.yml).
     
         
+    
+        
         :param detailsProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider.yml).
+        
         :type detailsProvider: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider
     
         
@@ -108,7 +111,10 @@ Methods
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() from a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml).
     
         
+    
+        
         :param entry: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml) entry with cached data.
+        
         :type entry: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
         :return: A new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() instance.
@@ -126,7 +132,10 @@ Methods
         [System.Type]().
     
         
+    
+        
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() identifying the model [System.Type]().
+        
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails[]
         :return: A details object for each property of the model [System.Type]().
@@ -143,7 +152,10 @@ Methods
         Creates the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml) entry for a model [System.Type]().
     
         
+    
+        
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() identifying the model [System.Type]().
+        
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails
         :return: A details object for the model [System.Type]().
@@ -156,7 +168,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider.GetMetadataForProperties(System.Type)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
@@ -168,7 +183,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider.GetMetadataForType(System.Type)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     

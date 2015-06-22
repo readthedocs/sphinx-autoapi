@@ -263,36 +263,25 @@ using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>expression</strong> &#8211; Expression name, relative to the current model. May identify a single property or an</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to display.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Object]() that contains the properties to display.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Display</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -305,52 +294,26 @@ additional view data. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>expression</strong> &#8211; Expression name, relative to the current model. May identify a single property or an</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to display.</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Object]() that contains the properties to display.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param additionalViewData:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Display</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -364,42 +327,26 @@ using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>expression</strong> &#8211; Expression name, relative to the current model. May identify a single property or an</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to display.</li>
+<li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Object]() that contains the properties to display.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param templateName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the template used to create the HTML markup.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type templateName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Display</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -412,58 +359,27 @@ additional view data. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>expression</strong> &#8211; Expression name, relative to the current model. May identify a single property or an</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to display.</li>
+<li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Object]() that contains the properties to display.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param templateName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the template used to create the HTML markup.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type templateName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param additionalViewData:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Display</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -476,56 +392,27 @@ field name. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>expression</strong> &#8211; Expression name, relative to the current model. May identify a single property or an</li>
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model. May identify a single property or an [System.Object]() that contains the properties to display.</li>
+<li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
+<li><strong>htmlFieldName</strong> (<em>System.String</em>) &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[System.Object]() that contains the properties to display.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param templateName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name of the template used to create the HTML markup.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type templateName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param htmlFieldName:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A [System.String]() used to disambiguate the names of HTML elements that are created for</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>properties that have the same name.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlFieldName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">Display</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperDisplayExtensions.DisplayForModel">
 <code class="descname">DisplayForModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperDisplayExtensions.DisplayForModel" title="Permalink to this definition">¶</a></dt>
@@ -562,36 +449,25 @@ template is found using the model&#8217;s [Microsoft.AspNet.Mvc.ModelBinding.Mod
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
-<li><strong>additionalViewData</strong> &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">DisplayForModel</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">DisplayForModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -631,37 +507,26 @@ template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
-<li><strong>additionalViewData</strong> &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">DisplayForModel</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">DisplayForModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -673,37 +538,26 @@ template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
-<li><strong>htmlFieldName</strong> &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for</li>
+<li><strong>htmlFieldName</strong> (<em>System.String</em>) &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>properties that have the same name.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlFieldName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">DisplayForModel</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">DisplayForModel</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">DisplayForModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
@@ -715,53 +569,27 @@ additional view data. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<a class="reference internal" href="../IHtmlHelper/index.html#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper" title="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper"><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.</li>
 <li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
-<li><strong>htmlFieldName</strong> &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for</li>
+<li><strong>htmlFieldName</strong> (<em>System.String</em>) &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>properties that have the same name.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlFieldName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param additionalViewData:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">DisplayForModel</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperDisplayExtensions.DisplayFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
@@ -804,37 +632,26 @@ additional view data. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
-<li><strong>additionalViewData</strong> &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">DisplayFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperDisplayExtensions.DisplayFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String)</code></dt>
@@ -880,38 +697,27 @@ additional view data. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
 <li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
-<li><strong>additionalViewData</strong> &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]()</li>
+<li><strong>additionalViewData</strong> (<em>System.Object</em>) &#8211; An anonymous [System.Object]() or [System.Collections.Generic.IDictionary`2]() that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) instance created for the template.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
-instance created for the template.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">DisplayFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">additionalViewData</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperDisplayExtensions.DisplayFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.String)</code></dt>
@@ -924,38 +730,27 @@ field name. The template is found using the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>htmlHelper</strong> (<em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}</em>) &#8211; The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.</li>
 <li><strong>expression</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}</em>) &#8211; An expression to be evaluated against the current model.</li>
 <li><strong>templateName</strong> (<em>System.String</em>) &#8211; The name of the template used to create the HTML markup.</li>
-<li><strong>htmlFieldName</strong> &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for properties</li>
+<li><strong>htmlFieldName</strong> (<em>System.String</em>) &#8211; A [System.String]() used to disambiguate the names of HTML elements that are created for properties that have the same name.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>that have the same name.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type htmlFieldName:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">DisplayFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">DisplayFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">templateName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">htmlFieldName</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

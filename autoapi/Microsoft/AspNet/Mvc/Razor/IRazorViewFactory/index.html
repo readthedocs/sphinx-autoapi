@@ -153,47 +153,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>viewEngine</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) that was used to locate Layout pages</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>viewEngine</strong> (<a class="reference internal" href="../IRazorViewEngine/index.html#Microsoft.AspNet.Mvc.Razor.IRazorViewEngine" title="Microsoft.AspNet.Mvc.Razor.IRazorViewEngine"><em>Microsoft.AspNet.Mvc.Razor.IRazorViewEngine</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) that was used to locate Layout pages that will be part of &lt;paramref name=&#8221;page&#8221; /&gt;&#8217;s execution.</li>
+<li><strong>page</strong> (<a class="reference internal" href="../IRazorPage/index.html#Microsoft.AspNet.Mvc.Razor.IRazorPage" title="Microsoft.AspNet.Mvc.Razor.IRazorPage"><em>Microsoft.AspNet.Mvc.Razor.IRazorPage</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) instance to execute.</li>
+<li><strong>isPartial</strong> (<em>System.Boolean</em>) &#8211; Determines if the view is to be executed as a partial.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.IView</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.Rendering.IView]() instance that renders the contents of the &lt;paramref name=&#8221;page&#8221; /&gt;</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>that will be part of
-&lt;paramref name=&#8221;page&#8221; /&gt;&#8217;s execution.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type viewEngine:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.Razor.IRazorViewEngine</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param page:</th><td class="field-body">The [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) instance to execute.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type page:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.IRazorPage</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param isPartial:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Determines if the view is to be executed as a partial.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type isPartial:</th><td class="field-body">System.Boolean</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.IView</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.IView]() instance that renders the contents of the</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>&lt;paramref name=&#8221;page&#8221; /&gt;</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IView</span> <span class="nf">GetView</span><span class="p">(</span><span class="n">IRazorViewEngine</span> <span class="n">viewEngine</span><span class="p">,</span> <span class="n">IRazorPage</span> <span class="n">page</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPartial</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IView</span> <span class="nf">GetView</span><span class="p">(</span><span class="n">IRazorViewEngine</span> <span class="n">viewEngine</span><span class="p">,</span> <span class="n">IRazorPage</span> <span class="n">page</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPartial</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

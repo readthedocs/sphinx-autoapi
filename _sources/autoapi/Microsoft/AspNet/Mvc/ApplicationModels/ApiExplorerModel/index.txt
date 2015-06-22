@@ -77,7 +77,10 @@ Constructors
         <paramref name="other" />.
     
         
+    
+        
         :param other: The [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) to copy.
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel
     
         

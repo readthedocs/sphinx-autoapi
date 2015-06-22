@@ -68,7 +68,10 @@ Constructors
         provided.
     
         
+    
+        
         :param content: The content value to negotiate and format in the entity body.
+        
         :type content: T
     
         

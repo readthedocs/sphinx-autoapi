@@ -61,16 +61,18 @@ Methods
         <paramref name="viewData" />.
     
         
-        :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the
-    <paramref name="expression" /> value.
+    
+        
+        :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the <paramref name="expression" /> value.
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
-        :param expression: Expression name, relative to
-    <c>viewData.Model</c>.
+    
+        
+        :param expression: Expression name, relative to <c>viewData.Model</c>.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
-        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
-    <paramref name="expression" /> in given
-    <paramref name="viewData" />.
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named <paramref name="expression" /> in given <paramref name="viewData" />.
     
         
         .. code-block:: csharp
@@ -87,17 +89,18 @@ Methods
         <paramref name="indexableObject" />.
     
         
-        :param indexableObject: The [System.Object]() that may contain the
-    <paramref name="expression" /> value.
+    
+        
+        :param indexableObject: The [System.Object]() that may contain the <paramref name="expression" /> value.
+        
         :type indexableObject: System.Object
-        :param expression: Expression name, relative to
-    <paramref name="indexableObject" />.
+    
+        
+        :param expression: Expression name, relative to <paramref name="indexableObject" />.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
-        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
-    <paramref name="expression" /> in given
-    
-    <paramref name="indexableObject" />.
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named <paramref name="expression" /> in given  <paramref name="indexableObject" />.
     
         
         .. code-block:: csharp

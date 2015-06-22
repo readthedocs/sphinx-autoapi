@@ -63,7 +63,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.InjectChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.InjectChunkMerger.yml).
     
         
+    
+        
         :param modelType: The model type to be used to replace &lt;TModel&gt; tokens.
+        
         :type modelType: System.String
     
         
@@ -82,9 +85,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.InjectChunkMerger.Merge(ChunkTree, Chunk)
     
         
+    
+        
         :param chunkTree: 
+        
         :type chunkTree: ChunkTree
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         
@@ -95,7 +104,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.InjectChunkMerger.VisitChunk(Chunk)
     
         
+    
+        
         :param chunk: 
+        
         :type chunk: Chunk
     
         

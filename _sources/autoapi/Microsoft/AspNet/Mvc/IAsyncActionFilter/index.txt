@@ -49,9 +49,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IAsyncActionFilter.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext, Microsoft.AspNet.Mvc.ActionExecutionDelegate)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
+    
+        
         :param next: 
+        
         :type next: Microsoft.AspNet.Mvc.ActionExecutionDelegate
         :rtype: System.Threading.Tasks.Task
     

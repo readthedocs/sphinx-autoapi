@@ -59,7 +59,10 @@ Methods
         that are applicable to the specified view.
     
         
+    
+        
         :param path: The path of the page to locate ViewStart files for.
+        
         :type path: System.String
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.IRazorPage}
         :return: A sequence of [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) that represent ViewStart.

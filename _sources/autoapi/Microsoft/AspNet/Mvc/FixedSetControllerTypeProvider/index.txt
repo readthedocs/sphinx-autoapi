@@ -76,7 +76,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider](Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.yml).
     
         
+    
+        
         :param controllerTypes: The sequence of controller [System.Reflection.TypeInfo]().
+        
         :type controllerTypes: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     
         

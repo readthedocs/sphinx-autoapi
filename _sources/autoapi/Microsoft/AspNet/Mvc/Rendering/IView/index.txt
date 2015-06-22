@@ -81,7 +81,10 @@ Methods
         <paramref name="context" />.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewContext
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that on completion renders the view.

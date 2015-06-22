@@ -63,11 +63,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.OperationBase(System.String, System.String, System.String)
     
         
+    
+        
         :param op: 
+        
         :type op: System.String
+    
+        
         :param path: 
+        
         :type path: System.String
+    
+        
         :param from: 
+        
         :type from: System.String
     
         

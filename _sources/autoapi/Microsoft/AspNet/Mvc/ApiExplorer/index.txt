@@ -14,25 +14,15 @@ Microsoft.AspNet.Mvc.ApiExplorer Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/ApiDescriptionActionData/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiDescriptionGroupNameProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiDescriptionVisibilityProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiResponseFormatMetadataProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiResponseMetadataProvider/index
-   
    
 
 

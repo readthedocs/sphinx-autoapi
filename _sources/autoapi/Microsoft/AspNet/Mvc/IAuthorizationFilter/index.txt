@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IAuthorizationFilter.OnAuthorization(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
     
         

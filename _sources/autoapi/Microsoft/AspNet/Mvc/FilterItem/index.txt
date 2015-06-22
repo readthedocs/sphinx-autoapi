@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.FilterItem.FilterItem(Microsoft.AspNet.Mvc.FilterDescriptor)
     
         
+    
+        
         :param descriptor: 
+        
         :type descriptor: Microsoft.AspNet.Mvc.FilterDescriptor
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.FilterItem.FilterItem(Microsoft.AspNet.Mvc.FilterDescriptor, Microsoft.AspNet.Mvc.IFilter)
     
         
+    
+        
         :param descriptor: 
+        
         :type descriptor: Microsoft.AspNet.Mvc.FilterDescriptor
+    
+        
         :param filter: 
+        
         :type filter: Microsoft.AspNet.Mvc.IFilter
     
         

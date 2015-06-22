@@ -77,7 +77,10 @@ Constructors
         [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.yml).
     
         
+    
+        
         :param compilationResult: The [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml)
+        
         :type compilationResult: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
     
         

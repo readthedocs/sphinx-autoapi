@@ -64,11 +64,20 @@ Constructors
         Creates a provider for @!:IReadableStringCollection- wrapping an existing set of key value pairs.
     
         
+    
+        
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    
+        
         :param values: The key value pairs to wrap.
+        
         :type values: IReadableStringCollection
+    
+        
         :param culture: The culture to return with ValueProviderResult instances.
+        
         :type culture: System.Globalization.CultureInfo
     
         
@@ -84,11 +93,20 @@ Constructors
         existing set of key value pairs provided by the delegate.
     
         
+    
+        
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    
+        
         :param valuesFactory: 
+        
         :type valuesFactory: System.Func{System.Threading.Tasks.Task{IReadableStringCollection}}
+    
+        
         :param culture: The culture to return with ValueProviderResult instances.
+        
         :type culture: System.Globalization.CultureInfo
     
         
@@ -125,7 +143,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.ContainsPrefixAsync(System.String)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: System.String
         :rtype: System.Threading.Tasks.Task{System.Boolean}
     
@@ -137,7 +158,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.GetKeysFromPrefixAsync(System.String)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: System.String
         :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.String}}
     
@@ -149,7 +173,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.GetValueAsync(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     

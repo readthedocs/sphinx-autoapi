@@ -162,20 +162,16 @@ an object of the specified type.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if this [Microsoft.AspNet.Mvc.IInputFormatter](Microsoft.AspNet.Mvc.IInputFormatter.yml) supports the passed in</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if this [Microsoft.AspNet.Mvc.IInputFormatter](Microsoft.AspNet.Mvc.IInputFormatter.yml) supports the passed in request&#8217;s content-type and is able to de-serialize the request body. False otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>request&#8217;s content-type and is able to de-serialize the request body.
-False otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">CanRead</span><span class="p">(</span><span class="n">InputFormatterContext</span> <span class="n">context</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">CanRead</span><span class="p">(</span><span class="n">InputFormatterContext</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IInputFormatter.ReadAsync">
 <code class="descname">ReadAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.InputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IInputFormatter.ReadAsync" title="Permalink to this definition">¶</a></dt>

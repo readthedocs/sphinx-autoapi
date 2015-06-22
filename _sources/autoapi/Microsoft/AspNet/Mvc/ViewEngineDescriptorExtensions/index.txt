@@ -63,9 +63,15 @@ Methods
         Adds an [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) to a descriptor collection.
     
         
+    
+        
         :param descriptors: A list of ViewEngineDescriptors
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
+    
+        
         :param viewEngine: An [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) instance.
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
         :rtype: Microsoft.AspNet.Mvc.ViewEngineDescriptor
         :return: ViewEngineDescriptor representing the added instance.
@@ -82,9 +88,15 @@ Methods
         Adds a type representing a [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) to a descriptor collection.
     
         
+    
+        
         :param descriptors: A list of ViewEngineDescriptors
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
+    
+        
         :param viewEngineType: Type representing an [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).
+        
         :type viewEngineType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ViewEngineDescriptor
         :return: ViewEngineDescriptor representing the added instance.
@@ -101,11 +113,20 @@ Methods
         Insert an [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) to a descriptor collection.
     
         
+    
+        
         :param descriptors: A list of ViewEngineDescriptors
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param viewEngine: An [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) instance.
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.IViewEngine
         :rtype: Microsoft.AspNet.Mvc.ViewEngineDescriptor
         :return: ViewEngineDescriptor representing the added instance.
@@ -122,11 +143,20 @@ Methods
         Inserts a type representing a [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) to a descriptor collection.
     
         
+    
+        
         :param descriptors: A list of ViewEngineDescriptors
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param viewEngineType: Type representing an [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).
+        
         :type viewEngineType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ViewEngineDescriptor
         :return: ViewEngineDescriptor representing the inserted instance.
@@ -147,7 +177,10 @@ Methods
         <c>null</c> if the sequence is empty.
     
         
+    
+        
         :param descriptors: The [System.Collections.Generic.IList`1]() to search.
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
         :rtype: TInstance
     
@@ -165,12 +198,13 @@ Methods
         <paramref name="descriptors" />.
     
         
+    
+        
         :param descriptors: The [System.Collections.Generic.IList`1]() to search.
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
         :rtype: TInstance
-        :return: The only instance of
-    <typeparamref name="TInstance" /> in
-    <paramref name="descriptors" />.
+        :return: The only instance of <typeparamref name="TInstance" /> in <paramref name="descriptors" />.
     
         
         .. code-block:: csharp
@@ -186,13 +220,13 @@ Methods
         <paramref name="descriptors" />.
     
         
+    
+        
         :param descriptors: The [System.Collections.Generic.IList`1]() to search.
+        
         :type descriptors: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ViewEngineDescriptor}
         :rtype: System.Collections.Generic.IEnumerable{{TInstance}}
-        :return: An IEnumerable of
-    <typeparamref name="TInstance" /> that contains instances from
-    
-    <paramref name="descriptors" />.
+        :return: An IEnumerable of <typeparamref name="TInstance" /> that contains instances from  <paramref name="descriptors" />.
     
         
         .. code-block:: csharp

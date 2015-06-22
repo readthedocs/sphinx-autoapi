@@ -80,7 +80,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache.Get(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
         :rtype: System.String
     
@@ -92,9 +95,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.DefaultViewLocationCache.Set(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
+    
+        
         :param value: 
+        
         :type value: System.String
     
         

@@ -125,17 +125,35 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.HtmlHelper](Microsoft.AspNet.Mvc.Rendering.HtmlHelper.yml) class.
     
         
+    
+        
         :param htmlGenerator: 
+        
         :type htmlGenerator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
+    
+        
         :param viewEngine: 
+        
         :type viewEngine: Microsoft.AspNet.Mvc.Rendering.ICompositeViewEngine
+    
+        
         :param metadataProvider: 
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param htmlEncoder: 
+        
         :type htmlEncoder: IHtmlEncoder
+    
+        
         :param urlEncoder: 
+        
         :type urlEncoder: IUrlEncoder
+    
+        
         :param javaScriptStringEncoder: 
+        
         :type javaScriptStringEncoder: IJavaScriptStringEncoder
     
         
@@ -262,21 +280,45 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ActionLink(System.String, System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostname: 
+        
         :type hostname: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -301,7 +343,10 @@ Methods
         </example>
     
         
+    
+        
         :param htmlAttributes: Anonymous object describing HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
         :return: A dictionary that represents HTML attributes.
@@ -324,15 +369,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.BeginForm(System.String, System.String, System.Object, Microsoft.AspNet.Mvc.Rendering.FormMethod, System.Object)
     
         
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param method: 
+        
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
     
@@ -344,13 +404,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.BeginRouteForm(System.String, System.Object, Microsoft.AspNet.Mvc.Rendering.FormMethod, System.Object)
     
         
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param method: 
+        
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
     
@@ -362,11 +434,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.CheckBox(System.String, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -378,7 +459,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Contextualize(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
     
         
@@ -405,13 +489,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Display(System.String, System.String, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -423,7 +519,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.DisplayName(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -435,7 +534,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.DisplayText(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -447,13 +549,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.DropDownList(System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param optionLabel: 
+        
         :type optionLabel: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -465,13 +579,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Editor(System.String, System.String, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -483,7 +609,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Encode(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.String
     
@@ -495,7 +624,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Encode(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.String
     
@@ -516,9 +648,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.FormatValue(System.Object, System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     
@@ -530,13 +668,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateCheckBox(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -548,13 +698,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateDisplay(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -566,9 +728,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateDisplayName(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -580,7 +748,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateDisplayText(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :rtype: System.String
     
@@ -592,15 +763,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateDropDown(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.String, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param optionLabel: 
+        
         :type optionLabel: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -612,13 +798,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateEditor(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param htmlFieldName: 
+        
         :type htmlFieldName: System.String
+    
+        
         :param templateName: 
+        
         :type templateName: System.String
+    
+        
         :param additionalViewData: 
+        
         :type additionalViewData: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -636,19 +834,30 @@ Methods
         <paramref name="actionName" /> will process the request.
     
         
+    
+        
         :param actionName: The name of the action method.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller.
+        
         :type controllerName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
+    
+        
         :param method: The HTTP method for processing the form, either GET or POST.
+        
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
         :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
@@ -661,15 +870,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateHidden(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Boolean, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param useViewData: 
+        
         :type useViewData: System.Boolean
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -681,7 +905,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateId(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -693,7 +920,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateIdFromName(System.String)
     
         
+    
+        
         :param fullName: 
+        
         :type fullName: System.String
         :rtype: System.String
     
@@ -705,13 +935,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateLabel(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param labelText: 
+        
         :type labelText: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -723,13 +965,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateListBox(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -741,7 +995,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateName(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -753,13 +1010,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GeneratePassword(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -771,15 +1040,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateRadioButton(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -798,17 +1082,25 @@ Methods
         <c>action</c> attribute value.
     
         
+    
+        
         :param routeName: The name of the route.
+        
         :type routeName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
+    
+        
         :param method: The HTTP method for processing the form, either GET or POST.
+        
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
         :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
@@ -821,15 +1113,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateTextArea(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Int32, System.Int32, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param rows: 
+        
         :type rows: System.Int32
+    
+        
         :param columns: 
+        
         :type columns: System.Int32
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -841,15 +1148,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateTextBox(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -861,13 +1183,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateValidationMessage(System.String, System.String, System.Object, System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
+    
+        
         :param tag: 
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -879,13 +1213,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateValidationSummary(System.Boolean, System.String, System.Object, System.String)
     
         
+    
+        
         :param excludePropertyErrors: 
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
+    
+        
         :param tag: 
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -897,13 +1243,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GenerateValue(System.String, System.Object, System.String, System.Boolean)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param useViewData: 
+        
         :type useViewData: System.Boolean
         :rtype: System.String
     
@@ -915,9 +1273,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GetClientValidationRules(Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
@@ -934,12 +1298,13 @@ Methods
         <paramref name="metadata" />.
     
         
+    
+        
         :param metadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() to generate a select list for.
+        
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :return: An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given
-    
-    <paramref name="metadata" />.
+        :return: An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given  <paramref name="metadata" />.
     
         
         .. code-block:: csharp
@@ -949,7 +1314,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GetEnumSelectList(System.Type)
     
         
+    
+        
         :param enumType: 
+        
         :type enumType: System.Type
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
     
@@ -975,7 +1343,10 @@ Methods
         Returns the HTTP method that handles form input (GET or POST) as a string.
     
         
+    
+        
         :param method: The HTTP method that handles the form.
+        
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
         :rtype: System.String
         :return: The form method string, either "get" or "post".
@@ -988,11 +1359,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Hidden(System.String, System.Object, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1004,7 +1384,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Id(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -1016,11 +1399,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Label(System.String, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param labelText: 
+        
         :type labelText: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1032,11 +1424,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ListBox(System.String, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Rendering.SelectListItem>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param selectList: 
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1048,7 +1449,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Name(System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.String
     
@@ -1075,7 +1479,10 @@ Methods
         </example>
     
         
+    
+        
         :param value: The [System.Object]() to be converted.
+        
         :type value: System.Object
         :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
         :return: The created dictionary of property names and property values.
@@ -1088,11 +1495,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.PartialAsync(System.String, System.Object, Microsoft.AspNet.Mvc.ViewDataDictionary)
     
         
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
+    
+        
         :param model: 
+        
         :type model: System.Object
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
@@ -1104,11 +1520,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Password(System.String, System.Object, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1120,13 +1545,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.RadioButton(System.String, System.Object, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1138,7 +1575,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Raw(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1150,7 +1590,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Raw(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1162,11 +1605,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.RenderPartialAsync(System.String, System.Object, Microsoft.AspNet.Mvc.ViewDataDictionary)
     
         
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
+    
+        
         :param model: 
+        
         :type model: System.Object
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :rtype: System.Threading.Tasks.Task
     
@@ -1178,13 +1630,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.RenderPartialCoreAsync(System.String, System.Object, Microsoft.AspNet.Mvc.ViewDataDictionary, System.IO.TextWriter)
     
         
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
+    
+        
         :param model: 
+        
         :type model: System.Object
+    
+        
         :param viewData: 
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param writer: 
+        
         :type writer: System.IO.TextWriter
         :rtype: System.Threading.Tasks.Task
     
@@ -1196,19 +1660,40 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.RouteLink(System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostName: 
+        
         :type hostName: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1220,15 +1705,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.TextArea(System.String, System.String, System.Int32, System.Int32, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.String
+    
+        
         :param rows: 
+        
         :type rows: System.Int32
+    
+        
         :param columns: 
+        
         :type columns: System.Int32
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1240,13 +1740,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.TextBox(System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1258,13 +1770,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ValidationMessage(System.String, System.String, System.Object, System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
+    
+        
         :param tag: 
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1276,13 +1800,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ValidationSummary(System.Boolean, System.String, System.Object, System.String)
     
         
+    
+        
         :param excludePropertyErrors: 
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
+    
+        
         :param tag: 
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -1294,9 +1830,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Value(System.String, System.String)
     
         
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     

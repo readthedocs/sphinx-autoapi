@@ -78,7 +78,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.SerializableError](Microsoft.AspNet.Mvc.SerializableError.yml).
     
         
+    
+        
         :param modelState: [Microsoft.AspNet.Mvc.ModelBinding.ModelState]() containing the validation errors.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         

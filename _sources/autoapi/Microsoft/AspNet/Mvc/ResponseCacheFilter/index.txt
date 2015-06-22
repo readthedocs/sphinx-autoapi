@@ -63,8 +63,10 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml)
     
         
-        :param cacheProfile: The profile which contains the settings for
-    [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml).
+    
+        
+        :param cacheProfile: The profile which contains the settings for [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml).
+        
         :type cacheProfile: Microsoft.AspNet.Mvc.CacheProfile
     
         
@@ -153,7 +155,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ResponseCacheFilter.OnActionExecuted(Microsoft.AspNet.Mvc.ActionExecutedContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionExecutedContext
     
         
@@ -164,7 +169,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ResponseCacheFilter.OnActionExecuting(Microsoft.AspNet.Mvc.ActionExecutingContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
     
         

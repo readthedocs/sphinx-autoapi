@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.BindModelAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
     
         
+    
+        
         :param bindingContext: 
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
@@ -76,11 +79,13 @@ Methods
         <paramref name="propertyMetadata" /> can be updated.
     
         
+    
+        
         :param propertyMetadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for the property of interest.
+        
         :type propertyMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
         :rtype: System.Boolean
-        :return: <c>true</c> if the property can be updated;
-    <c>false</c> otherwise.
+        :return: <c>true</c> if the property can be updated; <c>false</c> otherwise.
     
         
         .. code-block:: csharp
@@ -95,7 +100,10 @@ Methods
         <paramref name="bindingContext" />.
     
         
+    
+        
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
         :rtype: System.Object
         :return: An [System.Object]() compatible with [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType]().
@@ -115,7 +123,10 @@ Methods
         <paramref name="bindingContext" />.
     
         
+    
+        
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
     
         
@@ -130,7 +141,10 @@ Methods
         Gets the collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.
     
         
+    
+        
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
         :return: Collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.
@@ -147,13 +161,25 @@ Methods
         Updates a property in the current [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model]().
     
         
+    
+        
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+    
+        
         :param modelExplorer: The [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the model containing property to set.
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param propertyMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for the property to set.
+        
         :type propertyMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param dtoResult: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult]() for the property's new value.
+        
         :type dtoResult: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult
     
         

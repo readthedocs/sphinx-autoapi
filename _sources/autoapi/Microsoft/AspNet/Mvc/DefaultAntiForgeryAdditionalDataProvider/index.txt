@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultAntiForgeryAdditionalDataProvider.GetAdditionalData(HttpContext)
     
         
+    
+        
         :param context: 
+        
         :type context: HttpContext
         :rtype: System.String
     
@@ -71,9 +74,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.DefaultAntiForgeryAdditionalDataProvider.ValidateAdditionalData(HttpContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: HttpContext
+    
+        
         :param additionalData: 
+        
         :type additionalData: System.String
         :rtype: System.Boolean
     

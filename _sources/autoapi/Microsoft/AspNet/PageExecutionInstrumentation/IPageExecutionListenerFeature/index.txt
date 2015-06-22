@@ -59,11 +59,13 @@ Methods
         write the result to.
     
         
+    
+        
         :param writer: The output [System.IO.TextWriter]() for the web page.
+        
         :type writer: System.IO.TextWriter
         :rtype: System.IO.TextWriter
-        :return: A [System.IO.TextWriter]() that wraps
-    <paramref name="writer" />.
+        :return: A [System.IO.TextWriter]() that wraps <paramref name="writer" />.
     
         
         .. code-block:: csharp
@@ -78,9 +80,15 @@ Methods
         <paramref name="sourceFilePath" />.
     
         
+    
+        
         :param sourceFilePath: The path of the page.
+        
         :type sourceFilePath: System.String
+    
+        
         :param writer: The [System.IO.TextWriter]() obtained from [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionListenerFeature.DecorateWriter(System.IO.TextWriter)](Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionListenerFeature.yml).
+        
         :type writer: System.IO.TextWriter
         :rtype: Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext
         :return: The [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext](Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext.yml).

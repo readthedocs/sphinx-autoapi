@@ -238,29 +238,17 @@
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>sourceFilePath</strong> (<em>System.String</em>) &#8211; The path of the Razor source file that was compiled.</li>
 <li><strong>sourceFileContent</strong> (<em>System.String</em>) &#8211; The contents of the Razor source file.</li>
-<li><strong>messages</strong> &#8211; A sequence of &#64;!:ICompilationMessage- encountered</li>
+<li><strong>messages</strong> (<em>System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage}</em>) &#8211; A sequence of &#64;!:ICompilationMessage- encountered during compilation.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>during compilation.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type messages:</th><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage}</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorCompilationFailure</span><span class="p">(</span><span class="kt">string</span> <span class="n">sourceFilePath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">sourceFileContent</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">RazorCompilationMessage</span><span class="p">&gt;</span> <span class="n">messages</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorCompilationFailure</span><span class="p">(</span><span class="kt">string</span> <span class="n">sourceFilePath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">sourceFileContent</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">RazorCompilationMessage</span><span class="p">&gt;</span> <span class="n">messages</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

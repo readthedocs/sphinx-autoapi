@@ -54,9 +54,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult.ModelValidationResult(System.String, System.String)
     
         
+    
+        
         :param memberName: 
+        
         :type memberName: System.String
+    
+        
         :param message: 
+        
         :type message: System.String
     
         

@@ -63,9 +63,15 @@ Constructors
         Initializes a [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.yml) with the specified message.
     
         
+    
+        
         :param razorError: A @!:RazorError-.
+        
         :type razorError: RazorError
+    
+        
         :param sourceFilePath: The path of the Razor source file that was parsed.
+        
         :type sourceFilePath: System.String
     
         

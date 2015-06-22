@@ -63,7 +63,10 @@ Methods
         Returns true if the given type is the underlying types that [Microsoft.AspNet.Mvc.ModelBinding.Validation.SimpleTypesExcludeFilter.IsTypeExcluded(System.Type)](Microsoft.AspNet.Mvc.ModelBinding.Validation.SimpleTypesExcludeFilter.yml) will exclude.
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Boolean
     
@@ -79,7 +82,10 @@ Methods
         Returns true if the given type will be excluded from the default model validation.
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Boolean
     

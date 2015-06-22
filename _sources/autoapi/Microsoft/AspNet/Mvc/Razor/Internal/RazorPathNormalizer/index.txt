@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Internal.RazorPathNormalizer.NormalizePath(System.String)
     
         
+    
+        
         :param path: 
+        
         :type path: System.String
         :rtype: System.String
     

@@ -63,9 +63,15 @@ Methods
         Encodes a .NET string array for safe use as a JavaScript array literal, including inline in an HTML file.
     
         
+    
+        
         :param encoder: 
+        
         :type encoder: IJavaScriptStringEncoder
+    
+        
         :param values: 
+        
         :type values: System.Collections.Generic.IEnumerable{System.String}
         :rtype: System.String
     

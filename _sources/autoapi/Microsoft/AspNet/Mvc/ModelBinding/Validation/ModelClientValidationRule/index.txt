@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ModelClientValidationRule(System.String)
     
         
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
     
         
@@ -65,9 +68,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule.ModelClientValidationRule(System.String, System.String)
     
         
+    
+        
         :param validationType: 
+        
         :type validationType: System.String
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
     
         

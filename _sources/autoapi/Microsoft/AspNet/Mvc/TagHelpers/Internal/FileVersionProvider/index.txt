@@ -63,11 +63,20 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.TagHelpers.Internal.FileVersionProvider](Microsoft.AspNet.Mvc.TagHelpers.Internal.FileVersionProvider.yml).
     
         
+    
+        
         :param fileProvider: The file provider to get and watch files.
+        
         :type fileProvider: IFileProvider
+    
+        
         :param cache: @!:IMemoryCache- where versioned urls of files are cached.
+        
         :type cache: IMemoryCache
+    
+        
         :param requestPathBase: 
+        
         :type requestPathBase: PathString
     
         
@@ -90,7 +99,10 @@ Methods
         Adds version query parameter to the specified file path.
     
         
+    
+        
         :param path: The path of the file to which version should be added.
+        
         :type path: System.String
         :rtype: System.String
         :return: Path containing the version query string.

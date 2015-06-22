@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance.
     
         
+    
+        
         :param property: 
+        
         :type property: JsonProperty
+    
+        
         :param parent: 
+        
         :type parent: System.Object
     
         

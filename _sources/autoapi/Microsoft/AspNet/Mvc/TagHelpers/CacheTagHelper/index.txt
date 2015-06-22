@@ -84,7 +84,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml).
     
         
+    
+        
         :param memoryCache: The @!:IMemoryCache-.
+        
         :type memoryCache: IMemoryCache
     
         
@@ -294,9 +297,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ProcessAsync(TagHelperContext, TagHelperOutput)
     
         
+    
+        
         :param context: 
+        
         :type context: TagHelperContext
+    
+        
         :param output: 
+        
         :type output: TagHelperOutput
         :rtype: System.Threading.Tasks.Task
     

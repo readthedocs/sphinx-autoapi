@@ -67,14 +67,18 @@ Methods
         the valid upper and lower bounds for requested ranges.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
-        :param invalidByteRangeException: An @!:InvalidByteRangeException- instance, typically
-    thrown by a @!:ByteRangeStreamContent- instance.
+    
+        
+        :param invalidByteRangeException: An @!:InvalidByteRangeException- instance, typically thrown by a @!:ByteRangeStreamContent- instance.
+        
         :type invalidByteRangeException: InvalidByteRangeException
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An 416 (Requested Range Not Satisfiable) error response with a Content-Range header indicating the valid
-    range.
+        :return: An 416 (Requested Range Not Satisfiable) error response with a Content-Range header indicating the valid range.
     
         
         .. code-block:: csharp
@@ -95,16 +99,23 @@ Methods
         method returns a response with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param modelState: The model state.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An error response for
-    <paramref name="modelState" /> with status code
-    <paramref name="statusCode" />.
+        :return: An error response for <paramref name="modelState" /> with status code <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -125,16 +136,23 @@ Methods
         returns a response with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param exception: The exception.
+        
         :type exception: System.Exception
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An error response for
-    <paramref name="exception" /> with status code
-    <paramref name="statusCode" />.
+        :return: An error response for <paramref name="exception" /> with status code <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -155,17 +173,23 @@ Methods
         returns a response with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param message: The error message.
+        
         :type message: System.String
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An error response with error message
-    <paramref name="message" /> and status code
-    
-    <paramref name="statusCode" />.
+        :return: An error response with error message <paramref name="message" /> and status code  <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -188,20 +212,28 @@ Methods
         NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param message: The error message.
+        
         :type message: System.String
+    
+        
         :param exception: The exception.
+        
         :type exception: System.Exception
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An error response for
-    <paramref name="exception" /> with error message
-    <paramref name="message" />
-    and status code
-    <paramref name="statusCode" />.
+        :return: An error response for <paramref name="exception" /> with error message <paramref name="message" /> and status code <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -220,16 +252,23 @@ Methods
         as the content. If no formatter is found, this method returns a response with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param error: The error to wrap.
+        
         :type error: System.Web.Http.HttpError
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: An error response wrapping
-    <paramref name="error" /> with status code
-    <paramref name="statusCode" />.
+        :return: An error response wrapping <paramref name="error" /> with status code <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -248,17 +287,23 @@ Methods
         configuration.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -277,19 +322,28 @@ Methods
         <paramref name="formatter" />.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param formatter: The formatter to use.
+        
         :type formatter: MediaTypeFormatter
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -308,22 +362,33 @@ Methods
         <paramref name="formatter" />.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param formatter: The formatter to use.
+        
         :type formatter: MediaTypeFormatter
-        :param mediaType: The media type override to set on the response's content. Can be
-    <c>null</c>.
+    
+        
+        :param mediaType: The media type override to set on the response's content. Can be <c>null</c>.
+        
         :type mediaType: System.Net.Http.Headers.MediaTypeHeaderValue
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -342,22 +407,33 @@ Methods
         <paramref name="formatter" />.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param formatter: The formatter to use.
+        
         :type formatter: MediaTypeFormatter
-        :param mediaType: The media type override to set on the response's content. Can be
-    <c>null</c>.
+    
+        
+        :param mediaType: The media type override to set on the response's content. Can be <c>null</c>.
+        
         :type mediaType: System.String
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -375,19 +451,28 @@ Methods
         found, this method returns a response with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param formatters: 
+        
         :type formatters: System.Collections.Generic.IEnumerable{MediaTypeFormatter}
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -408,19 +493,28 @@ Methods
         <see cref="!:MediaTypeFormatter" />.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param mediaType: The media type used to look up an instance of @!:MediaTypeFormatter-.
+        
         :type mediaType: System.Net.Http.Headers.MediaTypeHeaderValue
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -441,19 +535,28 @@ Methods
         <see cref="!:MediaTypeFormatter" />.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
+    
+        
         :param statusCode: The status code of the created response.
+        
         :type statusCode: System.Net.HttpStatusCode
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
+    
+        
         :param mediaType: The media type used to look up an instance of @!:MediaTypeFormatter-.
+        
         :type mediaType: System.String
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with
-    <paramref name="statusCode" />.
+        :return: A response wrapping <paramref name="value" /> with <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -473,14 +576,18 @@ Methods
         with status 406 NotAcceptable.
     
         
+    
+        
         :param request: The request.
+        
         :type request: System.Net.Http.HttpRequestMessage
-        :param value: The value to wrap. Can be
-    <c>null</c>.
+    
+        
+        :param value: The value to wrap. Can be <c>null</c>.
+        
         :type value: T
         :rtype: System.Net.Http.HttpResponseMessage
-        :return: A response wrapping
-    <paramref name="value" /> with [System.Net.HttpStatusCode.OK]() status code.
+        :return: A response wrapping <paramref name="value" /> with [System.Net.HttpStatusCode.OK]() status code.
     
         
         .. code-block:: csharp

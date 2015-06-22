@@ -228,41 +228,19 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>razorHost</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) used to parse</li>
+<li><strong>razorHost</strong> (<a class="reference internal" href="../../MvcRazorHost/index.html#Microsoft.AspNet.Mvc.Razor.MvcRazorHost" title="Microsoft.AspNet.Mvc.Razor.MvcRazorHost"><em>Microsoft.AspNet.Mvc.Razor.MvcRazorHost</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) used to parse &lt;c&gt;_ViewImports&lt;/c&gt; pages.</li>
+<li><strong>chunkTreeCache</strong> (<a class="reference internal" href="../IChunkTreeCache/index.html#Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache" title="Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache"><em>Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache</em></a>) &#8211; [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) that caches &#64;!:ChunkTree- instances.</li>
+<li><strong>defaultInheritedChunks</strong> (<em>System.Collections.Generic.IReadOnlyList{Chunk}</em>) &#8211; Sequence of &#64;!:Chunk-s inherited by default.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;c&gt;_ViewImports&lt;/c&gt; pages.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type razorHost:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.MvcRazorHost</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param chunkTreeCache:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) that caches &#64;!:ChunkTree- instances.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type chunkTreeCache:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param defaultInheritedChunks:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Sequence of &#64;!:Chunk-s inherited by default.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type defaultInheritedChunks:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{Chunk}</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ChunkInheritanceUtility</span><span class="p">(</span><span class="n">MvcRazorHost</span> <span class="n">razorHost</span><span class="p">,</span> <span class="n">IChunkTreeCache</span> <span class="n">chunkTreeCache</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">Chunk</span><span class="p">&gt;</span> <span class="n">defaultInheritedChunks</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ChunkInheritanceUtility</span><span class="p">(</span><span class="n">MvcRazorHost</span> <span class="n">razorHost</span><span class="p">,</span> <span class="n">IChunkTreeCache</span> <span class="n">chunkTreeCache</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">Chunk</span><span class="p">&gt;</span> <span class="n">defaultInheritedChunks</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -290,19 +268,16 @@ ordered so that the &#64;!:ChunkTree- for the
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IReadOnlyList{ChunkTree}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Collections.Generic.IReadOnlyList`1]() of parsed</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Collections.Generic.IReadOnlyList`1]() of parsed &lt;c&gt;_ViewImports&lt;/c&gt;&#64;!:ChunkTree-s.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;_ViewImports&lt;/c&gt;&#64;!:ChunkTree-s.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">GetInheritedChunkTrees</span><span class="p">(</span><span class="kt">string</span> <span class="n">pagePath</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">GetInheritedChunkTrees</span><span class="p">(</span><span class="kt">string</span> <span class="n">pagePath</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.MergeInheritedChunkTrees">
 <code class="descname">MergeInheritedChunkTrees</code><span class="sig-paren">(</span><em>ChunkTree</em>, <em>System.Collections.Generic.IReadOnlyList&lt;ChunkTree&gt;</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.MergeInheritedChunkTrees" title="Permalink to this definition">¶</a></dt>
@@ -315,36 +290,18 @@ ordered so that the &#64;!:ChunkTree- for the
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>chunkTree</strong> (<em>ChunkTree</em>) &#8211; The &#64;!:ChunkTree- to merge in to.</li>
-<li><strong>inheritedChunkTrees</strong> &#8211; [System.Collections.Generic.IReadOnlyList`1]() inherited from</li>
+<li><strong>inheritedChunkTrees</strong> (<em>System.Collections.Generic.IReadOnlyList{ChunkTree}</em>) &#8211; [System.Collections.Generic.IReadOnlyList`1]() inherited from &lt;c&gt;_ViewImports&lt;/c&gt; files.</li>
+<li><strong>defaultModel</strong> (<em>System.String</em>) &#8211; The list of chunks to merge.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>&lt;c&gt;_ViewImports&lt;/c&gt;
-files.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type inheritedChunkTrees:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IReadOnlyList{ChunkTree}</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param defaultModel:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The list of chunks to merge.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type defaultModel:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">MergeInheritedChunkTrees</span><span class="p">(</span><span class="n">ChunkTree</span> <span class="n">chunkTree</span><span class="p">,</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">inheritedChunkTrees</span><span class="p">,</span> <span class="kt">string</span> <span class="n">defaultModel</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 </div>

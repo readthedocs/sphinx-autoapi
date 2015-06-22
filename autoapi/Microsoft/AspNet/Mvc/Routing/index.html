@@ -34,7 +34,7 @@
   
     <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Sphinx AutoAPI Index" href="../../../../index.html"/>
-        <link rel="next" title="ActionSelectionDecisionTree Class" href="ActionSelectionDecisionTree/index.html"/>
+        <link rel="next" title="AttributeRouteInfo Class" href="AttributeRouteInfo/index.html"/>
         <link rel="prev" title="TemplateRenderer Class" href="../Rendering/Internal/TemplateRenderer/index.html"/> 
 
   
@@ -103,18 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Rendering/Expressions/index.html">Microsoft.AspNet.Mvc.Rendering.Expressions Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Rendering/Internal/index.html">Microsoft.AspNet.Mvc.Rendering.Internal Namespace</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Microsoft.AspNet.Mvc.Routing Namespace</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ActionSelectionDecisionTree/index.html">ActionSelectionDecisionTree Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ActionSelectorDecisionTreeProvider/index.html">ActionSelectorDecisionTreeProvider Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AttributeRoute/index.html">AttributeRoute Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AttributeRouteLinkGenerationEntry/index.html">AttributeRouteLinkGenerationEntry Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AttributeRouteMatchingEntry/index.html">AttributeRouteMatchingEntry Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AttributeRoutePrecedence/index.html">AttributeRoutePrecedence Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AttributeRouting/index.html">AttributeRouting Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IActionSelectionDecisionTree/index.html">IActionSelectionDecisionTree Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IActionSelectorDecisionTreeProvider/index.html">IActionSelectorDecisionTreeProvider Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IRouteTemplateProvider/index.html">IRouteTemplateProvider Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="InnerAttributeRoute/index.html">InnerAttributeRoute Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="RouteValueEqualityComparer/index.html">RouteValueEqualityComparer Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AttributeRouteInfo/index.html">AttributeRouteInfo Class</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../TagHelpers/index.html">Microsoft.AspNet.Mvc.TagHelpers Namespace</a></li>
@@ -178,38 +167,10 @@
 <dl class="namespace">
 <dt id="Microsoft.AspNet.Mvc.Routing">
 <em class="property">namespace </em><code class="descclassname">Microsoft.AspNet.Mvc.</code><code class="descname">Routing</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Interfaces</p>
+<dd><p class="rubric">Classes</p>
 <dl class="docutils">
-<dt>interface <a class="reference internal" href="IActionSelectionDecisionTree/index.html#Microsoft.AspNet.Mvc.Routing.IActionSelectionDecisionTree" title="Microsoft.AspNet.Mvc.Routing.IActionSelectionDecisionTree"><code class="xref dn dn-iface docutils literal"><span class="pre">IActionSelectionDecisionTree</span></code></a></dt>
-<dd>A data structure that retrieves a list of [Microsoft.AspNet.Mvc.ActionDescriptor]() matches based on the values
-supplied for the current request by &#64;!:Microsoft.AspNet.Routing.RouteData.Values-.</dd>
-<dt>interface <a class="reference internal" href="IActionSelectorDecisionTreeProvider/index.html#Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider" title="Microsoft.AspNet.Mvc.Routing.IActionSelectorDecisionTreeProvider"><code class="xref dn dn-iface docutils literal"><span class="pre">IActionSelectorDecisionTreeProvider</span></code></a></dt>
-<dd>Stores an [Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree](Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.yml) for the current value of
-[Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.ActionDescriptors](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).</dd>
-<dt>interface <a class="reference internal" href="IRouteTemplateProvider/index.html#Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider" title="Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider"><code class="xref dn dn-iface docutils literal"><span class="pre">IRouteTemplateProvider</span></code></a></dt>
-<dd>Interface for attributes which can supply a route template for attribute routing.</dd>
-</dl>
-<p class="rubric">Classes</p>
-<p>class <a class="reference internal" href="ActionSelectionDecisionTree/index.html#Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree" title="Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree"><code class="xref dn dn-cls docutils literal"><span class="pre">ActionSelectionDecisionTree</span></code></a></p>
-<p>class <a class="reference internal" href="ActionSelectorDecisionTreeProvider/index.html#Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider" title="Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">ActionSelectorDecisionTreeProvider</span></code></a></p>
-<p>class <a class="reference internal" href="AttributeRoute/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRoute" title="Microsoft.AspNet.Mvc.Routing.AttributeRoute"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRoute</span></code></a></p>
-<dl class="docutils">
-<dt>class <a class="reference internal" href="AttributeRouteLinkGenerationEntry/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry" title="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRouteLinkGenerationEntry</span></code></a></dt>
-<dd>Used to build an [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml). Represents an individual URL-generating route that will be
-aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).</dd>
-<dt>class <a class="reference internal" href="AttributeRouteMatchingEntry/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry" title="Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRouteMatchingEntry</span></code></a></dt>
-<dd>Used to build an [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml). Represents an individual URL-matching route that will be
-aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).</dd>
-<dt>class <a class="reference internal" href="AttributeRoutePrecedence/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRoutePrecedence" title="Microsoft.AspNet.Mvc.Routing.AttributeRoutePrecedence"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRoutePrecedence</span></code></a></dt>
-<dd>Computes precedence for an attribute route template.</dd>
-</dl>
-<p>class <a class="reference internal" href="AttributeRouting/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRouting" title="Microsoft.AspNet.Mvc.Routing.AttributeRouting"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRouting</span></code></a></p>
-<dl class="docutils">
-<dt>class <a class="reference internal" href="InnerAttributeRoute/index.html#Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute" title="Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute"><code class="xref dn dn-cls docutils literal"><span class="pre">InnerAttributeRoute</span></code></a></dt>
-<dd>An &#64;!:IRouter- implementation for attribute routing.</dd>
-<dt>class <a class="reference internal" href="RouteValueEqualityComparer/index.html#Microsoft.AspNet.Mvc.Routing.RouteValueEqualityComparer" title="Microsoft.AspNet.Mvc.Routing.RouteValueEqualityComparer"><code class="xref dn dn-cls docutils literal"><span class="pre">RouteValueEqualityComparer</span></code></a></dt>
-<dd>An [System.Collections.Generic.IEqualityComparer`1]() implementation that compares objects as-if
-they were route value strings.</dd>
+<dt>class <a class="reference internal" href="AttributeRouteInfo/index.html#Microsoft.AspNet.Mvc.Routing.AttributeRouteInfo" title="Microsoft.AspNet.Mvc.Routing.AttributeRouteInfo"><code class="xref dn dn-cls docutils literal"><span class="pre">AttributeRouteInfo</span></code></a></dt>
+<dd>Represents the routing information for an action that is attribute routed.</dd>
 </dl>
 </dd></dl>
 
@@ -222,7 +183,7 @@ they were route value strings.</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ActionSelectionDecisionTree/index.html" class="btn btn-neutral float-right" title="ActionSelectionDecisionTree Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="AttributeRouteInfo/index.html" class="btn btn-neutral float-right" title="AttributeRouteInfo Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Rendering/Internal/TemplateRenderer/index.html" class="btn btn-neutral" title="TemplateRenderer Class" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

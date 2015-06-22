@@ -64,7 +64,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.JsonInputFormatter.JsonInputFormatter(JsonSerializerSettings)
     
         
+    
+        
         :param serializerSettings: 
+        
         :type serializerSettings: JsonSerializerSettings
     
         
@@ -109,11 +112,20 @@ Methods
         Called during deserialization to get the @!:JsonReader-.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.InputFormatterContext]() for the read.
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+    
+        
         :param readStream: The [System.IO.Stream]() from which to read.
+        
         :type readStream: System.IO.Stream
+    
+        
         :param effectiveEncoding: The [System.Text.Encoding]() to use when reading.
+        
         :type effectiveEncoding: System.Text.Encoding
         :rtype: JsonReader
         :return: The @!:JsonReader- used during deserialization.
@@ -141,7 +153,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonInputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
         :rtype: System.Threading.Tasks.Task{System.Object}
     

@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.BooleanTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -66,7 +69,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.CollectionTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -78,7 +84,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.DecimalTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -90,7 +99,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.EmailAddressTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -102,7 +114,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.HiddenInputTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -114,7 +129,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.HtmlTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -126,7 +144,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.ObjectTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -138,7 +159,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.StringTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     
@@ -150,7 +174,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DefaultDisplayTemplates.UrlTemplate(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper)
     
         
+    
+        
         :param htmlHelper: 
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
     

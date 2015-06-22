@@ -77,17 +77,35 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml).
     
         
+    
+        
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext]().
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param view: The [Microsoft.AspNet.Mvc.Rendering.IView](Microsoft.AspNet.Mvc.Rendering.IView.yml) being rendered.
+        
         :type view: Microsoft.AspNet.Mvc.Rendering.IView
+    
+        
         :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param tempData: The [Microsoft.AspNet.Mvc.ITempDataDictionary]().
+        
         :type tempData: Microsoft.AspNet.Mvc.ITempDataDictionary
+    
+        
         :param writer: The [System.IO.TextWriter]() to render output to.
+        
         :type writer: System.IO.TextWriter
+    
+        
         :param htmlHelperOptions: 
+        
         :type htmlHelperOptions: Microsoft.AspNet.Mvc.Rendering.HtmlHelperOptions
     
         
@@ -102,13 +120,25 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml).
     
         
+    
+        
         :param viewContext: The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) to copy values from.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param view: The [Microsoft.AspNet.Mvc.Rendering.IView](Microsoft.AspNet.Mvc.Rendering.IView.yml) being rendered.
+        
         :type view: Microsoft.AspNet.Mvc.Rendering.IView
+    
+        
         :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param writer: The [System.IO.TextWriter]() to render output to.
+        
         :type writer: System.IO.TextWriter
     
         

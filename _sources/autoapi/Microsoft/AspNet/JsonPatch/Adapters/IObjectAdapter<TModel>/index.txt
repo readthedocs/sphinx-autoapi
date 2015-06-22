@@ -54,9 +54,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Add(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)
     
         
+    
+        
         :param operation: 
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -67,9 +73,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Copy(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)
     
         
+    
+        
         :param operation: 
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -80,9 +92,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Move(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)
     
         
+    
+        
         :param operation: 
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -93,9 +111,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Remove(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)
     
         
+    
+        
         :param operation: 
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         
@@ -106,9 +130,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Replace(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)
     
         
+    
+        
         :param operation: 
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param objectToApplyTo: 
+        
         :type objectToApplyTo: TModel
     
         

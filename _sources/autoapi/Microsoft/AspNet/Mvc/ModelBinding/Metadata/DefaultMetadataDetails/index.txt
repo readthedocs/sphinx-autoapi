@@ -63,9 +63,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml).
     
         
+    
+        
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]().
+        
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+    
+        
         :param attributes: The set of model attributes.
+        
         :type attributes: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
     
         

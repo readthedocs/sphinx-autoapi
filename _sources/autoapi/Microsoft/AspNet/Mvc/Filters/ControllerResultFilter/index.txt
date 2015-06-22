@@ -77,9 +77,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Filters.ControllerResultFilter.OnResultExecutionAsync(Microsoft.AspNet.Mvc.ResultExecutingContext, Microsoft.AspNet.Mvc.ResultExecutionDelegate)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
+    
+        
         :param next: 
+        
         :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
         :rtype: System.Threading.Tasks.Task
     

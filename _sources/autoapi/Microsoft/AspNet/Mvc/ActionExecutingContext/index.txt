@@ -56,13 +56,25 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ActionExecutingContext.ActionExecutingContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>, System.Collections.Generic.IDictionary<System.String, System.Object>, System.Object)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param filters: 
+        
         :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
+    
+        
         :param actionArguments: 
+        
         :type actionArguments: System.Collections.Generic.IDictionary{System.String,System.Object}
+    
+        
         :param controller: 
+        
         :type controller: System.Object
     
         

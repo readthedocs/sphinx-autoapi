@@ -14,77 +14,41 @@ Microsoft.AspNet.Mvc.ViewComponents Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentActivator/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentDescriptorCollectionProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentDescriptorProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentHelper/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentInvoker/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentInvokerFactory/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentSelector/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentActivator/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentDescriptorCollectionProvider/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentDescriptorProvider/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentInvoker/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentInvokerFactory/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentSelector/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentContextAttribute/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentConventions/index
-   
-   
    
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentDescriptor/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentDescriptorCollection/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentMethodSelector/index
-   
    
 
 

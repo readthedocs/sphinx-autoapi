@@ -63,11 +63,20 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.JsonPatch.JsonPatchError`1](Microsoft.AspNet.JsonPatch.JsonPatchError`1.yml).
     
         
+    
+        
         :param affectedObject: The object that is affected by the error.
+        
         :type affectedObject: TModel
+    
+        
         :param operation: The [Microsoft.AspNet.JsonPatch.Operations.Operation`1](Microsoft.AspNet.JsonPatch.Operations.Operation`1.yml) that caused the error.
+        
         :type operation: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
+    
+        
         :param errorMessage: The error message.
+        
         :type errorMessage: System.String
     
         

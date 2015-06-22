@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorPageResult](Microsoft.AspNet.Mvc.Razor.RazorPageResult.yml) for a successful discovery.
     
         
+    
+        
         :param name: The name of the page that was located.
+        
         :type name: System.String
+    
+        
         :param page: The located [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml).
+        
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
     
         
@@ -80,9 +86,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorPageResult](Microsoft.AspNet.Mvc.Razor.RazorPageResult.yml) for an unsuccessful discovery.
     
         
+    
+        
         :param name: The name of the page that was located.
+        
         :type name: System.String
+    
+        
         :param searchedLocations: 
+        
         :type searchedLocations: System.Collections.Generic.IEnumerable{System.String}
     
         

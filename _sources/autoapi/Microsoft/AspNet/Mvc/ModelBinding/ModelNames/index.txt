@@ -54,9 +54,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreateIndexModelName(System.String, System.Int32)
     
         
+    
+        
         :param parentName: 
+        
         :type parentName: System.String
+    
+        
         :param index: 
+        
         :type index: System.Int32
         :rtype: System.String
     
@@ -68,9 +74,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreateIndexModelName(System.String, System.String)
     
         
+    
+        
         :param parentName: 
+        
         :type parentName: System.String
+    
+        
         :param index: 
+        
         :type index: System.String
         :rtype: System.String
     
@@ -82,9 +94,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelNames.CreatePropertyModelName(System.String, System.String)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: System.String
+    
+        
         :param propertyName: 
+        
         :type propertyName: System.String
         :rtype: System.String
     

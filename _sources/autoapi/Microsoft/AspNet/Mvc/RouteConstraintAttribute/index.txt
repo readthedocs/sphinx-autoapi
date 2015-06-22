@@ -71,10 +71,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.RouteConstraintAttribute](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml).
     
         
+    
+        
         :param routeKey: The route value key.
+        
         :type routeKey: System.String
-        :param keyHandling: The [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) value. Must be [Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll]()
-    or [Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey]().
+    
+        
+        :param keyHandling: The [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) value. Must be [Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll]() or [Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey]().
+        
         :type keyHandling: Microsoft.AspNet.Mvc.RouteKeyHandling
     
         
@@ -90,11 +95,20 @@ Constructors
         [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) set to [Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey]().
     
         
+    
+        
         :param routeKey: The route value key.
+        
         :type routeKey: System.String
+    
+        
         :param routeValue: The expected route value.
+        
         :type routeValue: System.String
+    
+        
         :param blockNonAttributedActions: Set to true to negate this constraint on all actions that do not define a behavior for this route key.
+        
         :type blockNonAttributedActions: System.Boolean
     
         

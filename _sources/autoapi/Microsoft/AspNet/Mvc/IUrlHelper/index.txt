@@ -59,7 +59,10 @@ Methods
         method, which contains action name, controller name, route values, protocol to use, host name, and fragment.
     
         
+    
+        
         :param actionContext: The context object for the generated URLs for an action method.
+        
         :type actionContext: Microsoft.AspNet.Mvc.UrlActionContext
         :rtype: System.String
         :return: The fully qualified or absolute URL to an action method.
@@ -76,7 +79,10 @@ Methods
         Converts a virtual (relative) path to an application absolute path.
     
         
+    
+        
         :param contentPath: The virtual path of the content.
+        
         :type contentPath: System.String
         :rtype: System.String
         :return: The application absolute path.
@@ -94,11 +100,13 @@ Methods
         if it does not have a host/authority part. URLs using the virtual paths ('~/') are also local.
     
         
+    
+        
         :param url: The URL.
+        
         :type url: System.String
         :rtype: System.Boolean
-        :return: <c>true</c> if the URL is local; otherwise,
-    <c>false</c>.
+        :return: <c>true</c> if the URL is local; otherwise, <c>false</c>.
     
         
         .. code-block:: csharp
@@ -112,9 +120,15 @@ Methods
         Generates an absolute URL using the specified route name and values.
     
         
+    
+        
         :param routeName: The name of the route that is used to generate the URL.
+        
         :type routeName: System.String
+    
+        
         :param values: An object that contains the route values.
+        
         :type values: System.Object
         :rtype: System.String
         :return: The generated absolute URL.
@@ -132,7 +146,10 @@ Methods
         contains the route name, the route values, protocol to use, host name and fragment.
     
         
+    
+        
         :param routeContext: The context object for the generated URLs for a route.
+        
         :type routeContext: Microsoft.AspNet.Mvc.UrlRouteContext
         :rtype: System.String
         :return: The fully qualified or absolute URL.

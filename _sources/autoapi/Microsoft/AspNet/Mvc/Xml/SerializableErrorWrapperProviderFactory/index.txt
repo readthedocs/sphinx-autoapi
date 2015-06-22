@@ -64,12 +64,13 @@ Methods
         declared type is [Microsoft.AspNet.Mvc.SerializableError]().
     
         
-        :param context: None
+    
+        
+        :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
         :rtype: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
-        :return: An instance of [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.yml) if the provided
-    declared type is [Microsoft.AspNet.Mvc.SerializableError](), else
-    <c>null</c>.
+        :return: An instance of [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.yml) if the provided declared type is [Microsoft.AspNet.Mvc.SerializableError](), else <c>null</c>.
     
         
         .. code-block:: csharp

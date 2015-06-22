@@ -64,9 +64,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException.JsonPatchException(System.String, System.Exception)
     
         
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param innerException: 
+        
         :type innerException: System.Exception
     
         

@@ -62,9 +62,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.HttpResponseStreamWriter(System.IO.Stream, System.Text.Encoding)
     
         
+    
+        
         :param stream: 
+        
         :type stream: System.IO.Stream
+    
+        
         :param encoding: 
+        
         :type encoding: System.Text.Encoding
     
         
@@ -75,11 +81,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.HttpResponseStreamWriter(System.IO.Stream, System.Text.Encoding, System.Int32)
     
         
+    
+        
         :param stream: 
+        
         :type stream: System.IO.Stream
+    
+        
         :param encoding: 
+        
         :type encoding: System.Text.Encoding
+    
+        
         :param bufferSize: 
+        
         :type bufferSize: System.Int32
     
         
@@ -116,7 +131,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Dispose(System.Boolean)
     
         
+    
+        
         :param disposing: 
+        
         :type disposing: System.Boolean
     
         
@@ -146,7 +164,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Write(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
     
         
@@ -157,11 +178,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Write(System.Char[], System.Int32, System.Int32)
     
         
+    
+        
         :param values: 
+        
         :type values: System.Char[]
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
     
         
@@ -172,7 +202,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Write(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
     
         
@@ -183,7 +216,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.WriteAsync(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
         :rtype: System.Threading.Tasks.Task
     
@@ -195,11 +231,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.WriteAsync(System.Char[], System.Int32, System.Int32)
     
         
+    
+        
         :param values: 
+        
         :type values: System.Char[]
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
         :rtype: System.Threading.Tasks.Task
     
@@ -211,7 +256,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.WriteAsync(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.Threading.Tasks.Task
     

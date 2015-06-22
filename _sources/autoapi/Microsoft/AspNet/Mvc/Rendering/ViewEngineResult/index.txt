@@ -112,9 +112,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.Found(System.String, Microsoft.AspNet.Mvc.Rendering.IView)
     
         
+    
+        
         :param viewName: 
+        
         :type viewName: System.String
+    
+        
         :param view: 
+        
         :type view: Microsoft.AspNet.Mvc.Rendering.IView
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
@@ -126,9 +132,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.NotFound(System.String, System.Collections.Generic.IEnumerable<System.String>)
     
         
+    
+        
         :param viewName: 
+        
         :type viewName: System.String
+    
+        
         :param searchedLocations: 
+        
         :type searchedLocations: System.Collections.Generic.IEnumerable{System.String}
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     

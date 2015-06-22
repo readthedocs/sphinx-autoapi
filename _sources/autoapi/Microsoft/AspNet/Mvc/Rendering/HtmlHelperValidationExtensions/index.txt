@@ -65,15 +65,18 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -89,20 +92,23 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the
-    ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -118,20 +124,23 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -147,25 +156,28 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the
-    ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -181,25 +193,28 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a
-    <paramref name="tag" /> element.
-    <c>null</c> if the
-    
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a <paramref name="tag" /> element. <c>null</c> if the  <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -215,15 +230,18 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -239,20 +257,23 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -268,25 +289,28 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the
-    ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML
-    attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the ([Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml)) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.
-    
-    <c>null</c> if the
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.  <c>null</c> if the <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -302,25 +326,28 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
+    
+        
         :param expression: An expression to be evaluated against the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :param message: The message to be displayed. If
-    <c>null</c> or empty, method extracts an error string from the
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side
-    validation may update the associated CSS class.
+    
+        
+        :param message: The message to be displayed. If <c>null</c> or empty, method extracts an error string from the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object. Message will always be visible but client-side validation may update the associated CSS class.
+        
         :type message: System.String
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the
-    <paramref name="tag" /> element.
-    <c>null</c> if the
-    
-    <paramref name="expression" /> is valid and client-side validation is disabled.
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the <paramref name="tag" /> element. <c>null</c> if the  <paramref name="expression" /> is valid and client-side validation is disabled.
     
         
         .. code-block:: csharp
@@ -335,11 +362,13 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the &lt;ul&gt; element.
-    [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -354,14 +383,18 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param excludePropertyErrors: If
-    <c>true</c>, display model-level errors only; otherwise display all errors.
+    
+        
+        :param excludePropertyErrors: If <c>true</c>, display model-level errors only; otherwise display all errors.
+        
         :type excludePropertyErrors: System.Boolean
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the &lt;ul&gt; element.
-    [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -376,19 +409,23 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param excludePropertyErrors: If
-    <c>true</c>, display model-level errors only; otherwise display all errors.
+    
+        
+        :param excludePropertyErrors: If <c>true</c>, display model-level errors only; otherwise display all errors.
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which, in turn, wraps the
-    
-    <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
-    is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which, in turn, wraps the  <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -403,23 +440,28 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param excludePropertyErrors: If
-    <c>true</c>, display model-level errors only; otherwise display all errors.
+    
+        
+        :param excludePropertyErrors: If <c>true</c>, display model-level errors only; otherwise display all errors.
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element.
-    Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing
-    the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the
-    
-    <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
-    is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the  <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -434,22 +476,28 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :param excludePropertyErrors: If
-    <c>true</c>, display model-level errors only; otherwise display all errors.
+    
+        
+        :param excludePropertyErrors: If <c>true</c>, display model-level errors only; otherwise display all errors.
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    <paramref name="tag" /> element
-    and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
-    validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the <paramref name="tag" /> element and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -464,16 +512,18 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the
-    
-    <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
-    is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the  <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -488,20 +538,23 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element.
-    Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing
-    the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the
-    
-    <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
-    is valid and client-side validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the  <paramref name="message" />) and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -516,23 +569,28 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element.
-    Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing
-    the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the topmost (&lt;div&gt;) element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    <paramref name="tag" /> element
-    and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
-    validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the <paramref name="tag" /> element and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp
@@ -547,19 +605,23 @@ Methods
         [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
+    
+        
         :param message: The message to display with the validation summary.
+        
         :type message: System.String
-        :param tag: The tag to wrap the
-    <paramref name="message" /> in the generated HTML. Its default value is
-    [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+    
+        
+        :param tag: The tag to wrap the <paramref name="message" /> in the generated HTML. Its default value is [Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml).
+        
         :type tag: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
-        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the
-    <paramref name="tag" /> element
-    and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
-    validation is disabled).
+        :return: New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &lt;div&gt; element wrapping the <paramref name="tag" /> element and the &lt;ul&gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).
     
         
         .. code-block:: csharp

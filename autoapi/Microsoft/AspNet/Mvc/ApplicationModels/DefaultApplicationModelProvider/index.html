@@ -285,20 +285,16 @@
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.ActionModel}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A set of [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml) instances for the given action [System.Reflection.MethodInfo]() or</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A set of [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml) instances for the given action [System.Reflection.MethodInfo]() or  &lt;c&gt;null&lt;/c&gt; if the &lt;paramref name=&#8221;methodInfo&#8221; /&gt; does not represent an action.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;null&lt;/c&gt; if the
-&lt;paramref name=&#8221;methodInfo&#8221; /&gt; does not represent an action.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ActionModel</span><span class="p">&gt;</span> <span class="n">BuildActionModels</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">MethodInfo</span> <span class="n">methodInfo</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ActionModel</span><span class="p">&gt;</span> <span class="n">BuildActionModels</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">MethodInfo</span> <span class="n">methodInfo</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.BuildControllerModels">
 <code class="descname">BuildControllerModels</code><span class="sig-paren">(</span><em>System.Reflection.TypeInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.BuildControllerModels" title="Permalink to this definition">¶</a></dt>
@@ -315,20 +311,16 @@
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A set of [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) instances for the given controller [System.Reflection.TypeInfo]() or</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A set of [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) instances for the given controller [System.Reflection.TypeInfo]() or  &lt;c&gt;null&lt;/c&gt; if the &lt;paramref name=&#8221;typeInfo&#8221; /&gt; does not represent a controller.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;null&lt;/c&gt; if the
-&lt;paramref name=&#8221;typeInfo&#8221; /&gt; does not represent a controller.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ControllerModel</span><span class="p">&gt;</span> <span class="n">BuildControllerModels</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ControllerModel</span><span class="p">&gt;</span> <span class="n">BuildControllerModels</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreateActionModel">
 <code class="descname">CreateActionModel</code><span class="sig-paren">(</span><em>System.Reflection.MethodInfo</em>, <em>System.Collections.Generic.IReadOnlyList&lt;System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.CreateActionModel" title="Permalink to this definition">¶</a></dt>
@@ -454,20 +446,16 @@
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the &lt;paramref name=&#8221;methodInfo&#8221; /&gt; is an action. Otherwise &lt;c&gt;false&lt;/c&gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;methodInfo&#8221; /&gt; is an action. Otherwise
-&lt;c&gt;false&lt;/c&gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsAction</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">MethodInfo</span> <span class="n">methodInfo</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsAction</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">MethodInfo</span> <span class="n">methodInfo</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.OnProvidersExecuted">
 <code class="descname">OnProvidersExecuted</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.OnProvidersExecuted" title="Permalink to this definition">¶</a></dt>

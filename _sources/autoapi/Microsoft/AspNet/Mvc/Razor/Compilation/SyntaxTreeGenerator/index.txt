@@ -54,11 +54,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator.Generate(System.String, System.String, CompilationSettings)
     
         
+    
+        
         :param text: 
+        
         :type text: System.String
+    
+        
         :param path: 
+        
         :type path: System.String
+    
+        
         :param compilationSettings: 
+        
         :type compilationSettings: CompilationSettings
         :rtype: SyntaxTree
     
@@ -70,7 +79,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator.GetParseOptions(CompilationSettings)
     
         
+    
+        
         :param compilationSettings: 
+        
         :type compilationSettings: CompilationSettings
         :rtype: CSharpParseOptions
     

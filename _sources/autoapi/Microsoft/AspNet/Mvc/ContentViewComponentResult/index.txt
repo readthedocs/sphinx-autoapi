@@ -63,7 +63,10 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.ContentViewComponentResult](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
     
         
+    
+        
         :param encodedContent: 
+        
         :type encodedContent: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
@@ -78,7 +81,10 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.ContentViewComponentResult](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
     
         
+    
+        
         :param content: Content to write. The content be HTML encoded when output.
+        
         :type content: System.String
     
         
@@ -137,7 +143,10 @@ Methods
         Writes the [Microsoft.AspNet.Mvc.ContentViewComponentResult.EncodedContent](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         
@@ -152,7 +161,10 @@ Methods
         Writes the [Microsoft.AspNet.Mvc.ContentViewComponentResult.EncodedContent](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
         :rtype: System.Threading.Tasks.Task
         :return: A completed [System.Threading.Tasks.Task]().

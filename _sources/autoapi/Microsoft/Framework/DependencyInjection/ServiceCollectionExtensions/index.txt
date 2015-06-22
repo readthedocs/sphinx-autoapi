@@ -63,9 +63,15 @@ Methods
         Configures a set of [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml) for the application.
     
         
+    
+        
         :param services: The services available in the application.
+        
         :type services: IServiceCollection
+    
+        
         :param setupAction: An action to configure the [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml).
+        
         :type setupAction: System.Action{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
     
         
@@ -81,10 +87,15 @@ Methods
         <typeparamref name="TTagHelper" />.
     
         
+    
+        
         :param services: The @!:IServiceCollection- instance this method extends.
+        
         :type services: IServiceCollection
-        :param initialize: An action to initialize the
-    <typeparamref name="TTagHelper" />.
+    
+        
+        :param initialize: An action to initialize the <typeparamref name="TTagHelper" />.
+        
         :type initialize: System.Action{{TTagHelper},Microsoft.AspNet.Mvc.ViewContext}
         :rtype: IServiceCollection
         :return: The @!:IServiceCollection- instance this method extends.

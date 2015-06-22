@@ -80,7 +80,10 @@ Methods
         Configures a collection of allowed content types which can be produced by the action.
     
         
+    
+        
         :param contentTypes: 
+        
         :type contentTypes: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         

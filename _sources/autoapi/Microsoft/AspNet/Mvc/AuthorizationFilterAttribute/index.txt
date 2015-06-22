@@ -73,7 +73,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationFilterAttribute.Fail(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
     
         
@@ -84,7 +87,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationFilterAttribute.HasAllowAnonymous(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
         :rtype: System.Boolean
     
@@ -96,7 +102,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationFilterAttribute.OnAuthorization(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
     
         
@@ -107,7 +116,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.AuthorizationFilterAttribute.OnAuthorizationAsync(Microsoft.AspNet.Mvc.AuthorizationContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
         :rtype: System.Threading.Tasks.Task
     

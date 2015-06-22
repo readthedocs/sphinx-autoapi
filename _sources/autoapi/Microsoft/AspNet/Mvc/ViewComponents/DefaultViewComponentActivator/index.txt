@@ -80,9 +80,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentActivator.Activate(System.Object, Microsoft.AspNet.Mvc.ViewComponentContext)
     
         
+    
+        
         :param viewComponent: 
+        
         :type viewComponent: System.Object
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         

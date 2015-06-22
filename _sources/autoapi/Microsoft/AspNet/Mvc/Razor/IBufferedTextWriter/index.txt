@@ -81,7 +81,10 @@ Methods
         <paramref name="writer" />.
     
         
+    
+        
         :param writer: The writer to copy the contents to.
+        
         :type writer: System.IO.TextWriter
     
         
@@ -97,7 +100,10 @@ Methods
         <paramref name="writer" />.
     
         
+    
+        
         :param writer: The writer to copy the contents to.
+        
         :type writer: System.IO.TextWriter
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() representing the copy operation.

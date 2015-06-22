@@ -54,11 +54,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Builder.RouteBuilderExtensions.MapWebApiRoute(IRouteBuilder, System.String, System.String)
     
         
+    
+        
         :param routeCollectionBuilder: 
+        
         :type routeCollectionBuilder: IRouteBuilder
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param template: 
+        
         :type template: System.String
         :rtype: IRouteBuilder
     
@@ -70,13 +79,25 @@ Methods
     .. dn:method:: Microsoft.AspNet.Builder.RouteBuilderExtensions.MapWebApiRoute(IRouteBuilder, System.String, System.String, System.Object)
     
         
+    
+        
         :param routeCollectionBuilder: 
+        
         :type routeCollectionBuilder: IRouteBuilder
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param template: 
+        
         :type template: System.String
+    
+        
         :param defaults: 
+        
         :type defaults: System.Object
         :rtype: IRouteBuilder
     
@@ -88,15 +109,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Builder.RouteBuilderExtensions.MapWebApiRoute(IRouteBuilder, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param routeCollectionBuilder: 
+        
         :type routeCollectionBuilder: IRouteBuilder
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param template: 
+        
         :type template: System.String
+    
+        
         :param defaults: 
+        
         :type defaults: System.Object
+    
+        
         :param constraints: 
+        
         :type constraints: System.Object
         :rtype: IRouteBuilder
     
@@ -108,17 +144,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Builder.RouteBuilderExtensions.MapWebApiRoute(IRouteBuilder, System.String, System.String, System.Object, System.Object, System.Object)
     
         
+    
+        
         :param routeCollectionBuilder: 
+        
         :type routeCollectionBuilder: IRouteBuilder
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param template: 
+        
         :type template: System.String
+    
+        
         :param defaults: 
+        
         :type defaults: System.Object
+    
+        
         :param constraints: 
+        
         :type constraints: System.Object
+    
+        
         :param dataTokens: 
+        
         :type dataTokens: System.Object
         :rtype: IRouteBuilder
     

@@ -202,19 +202,16 @@ be validated by calling the Validate() method.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An HTML string corresponding to an &amp;lt;input type=&#8221;hidden&#8221;&amp;gt;</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An HTML string corresponding to an &amp;lt;input type=&#8221;hidden&#8221;&amp;gt; element. This element should be put inside a &amp;lt;form&amp;gt;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>element. This element should be put inside a &amp;lt;form&amp;gt;.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">TagBuilder</span> <span class="nf">GetHtml</span><span class="p">(</span><span class="n">HttpContext</span> <span class="n">context</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">TagBuilder</span> <span class="nf">GetHtml</span><span class="p">(</span><span class="n">HttpContext</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.AntiForgery.GetTokens">
 <code class="descname">GetTokens</code><span class="sig-paren">(</span><em>HttpContext</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgery.GetTokens" title="Permalink to this definition">¶</a></dt>
@@ -226,34 +223,22 @@ appropriate overload of Validate.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>context</strong> (<em>HttpContext</em>) &#8211; The HTTP context associated with the current call.</li>
-<li><strong>oldCookieToken</strong> &#8211; The anti-forgery token - if any - that already existed</li>
+<li><strong>oldCookieToken</strong> (<em>System.String</em>) &#8211; The anti-forgery token - if any - that already existed for this request. May be null. The anti-forgery system will try to reuse this cookie value when generating a matching form token.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>for this request. May be null. The anti-forgery system will try to reuse this cookie
-value when generating a matching form token.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type oldCookieToken:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.AntiForgeryTokenSet</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.AntiForgeryTokenSet</p>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">AntiForgeryTokenSet</span> <span class="nf">GetTokens</span><span class="p">(</span><span class="n">HttpContext</span> <span class="n">context</span><span class="p">,</span> <span class="kt">string</span> <span class="n">oldCookieToken</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.AntiForgery.SetCookieTokenAndHeader">
 <code class="descname">SetCookieTokenAndHeader</code><span class="sig-paren">(</span><em>HttpContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgery.SetCookieTokenAndHeader" title="Permalink to this definition">¶</a></dt>

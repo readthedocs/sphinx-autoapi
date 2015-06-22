@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver.yml).
     
         
+    
+        
         :param compileContext: The @!:BeforeCompileContext-.
+        
         :type compileContext: BeforeCompileContext
+    
+        
         :param loadContext: The @!:IAssemblyLoadContext-.
+        
         :type loadContext: IAssemblyLoadContext
     
         
@@ -84,7 +90,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver.GetExportedTypes(System.Reflection.AssemblyName)
     
         
+    
+        
         :param assemblyName: 
+        
         :type assemblyName: System.Reflection.AssemblyName
         :rtype: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     

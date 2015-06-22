@@ -63,9 +63,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection.yml).
     
         
+    
+        
         :param items: The list of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
+        
         :type items: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup}
+    
+        
         :param version: The unique version of discovered groups.
+        
         :type version: System.Int32
     
         

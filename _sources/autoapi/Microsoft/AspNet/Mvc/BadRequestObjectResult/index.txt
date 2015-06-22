@@ -65,7 +65,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) instance.
     
         
+    
+        
         :param modelState: [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() containing the validation errors.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
@@ -80,7 +83,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) instance.
     
         
+    
+        
         :param error: Contains the errors to be returned to the client.
+        
         :type error: System.Object
     
         

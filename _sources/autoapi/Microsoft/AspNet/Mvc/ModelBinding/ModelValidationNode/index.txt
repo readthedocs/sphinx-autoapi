@@ -63,13 +63,20 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml).
     
         
-        :param key: The key that will be used by the validation system to find [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml)
-    entries.
+    
+        
+        :param key: The key that will be used by the validation system to find [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) entries.
+        
         :type key: System.String
-        :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the
-    <paramref name="model" />.
+    
+        
+        :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the <paramref name="model" />.
+        
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param model: The model object which is to be validated.
+        
         :type model: System.Object
     
         
@@ -84,15 +91,25 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml).
     
         
-        :param key: The key that will be used by the validation system to add
-    [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) entries.
+    
+        
+        :param key: The key that will be used by the validation system to add [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) entries.
+        
         :type key: System.String
-        :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the
-    <paramref name="model" />.
+    
+        
+        :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the <paramref name="model" />.
+        
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    
+        
         :param model: The model object which will be validated.
+        
         :type model: System.Object
+    
+        
         :param childNodes: A collection of child nodes.
+        
         :type childNodes: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode}
     
         

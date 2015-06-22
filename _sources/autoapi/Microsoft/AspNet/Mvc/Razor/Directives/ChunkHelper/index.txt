@@ -65,12 +65,13 @@ Methods
         cast fails.
     
         
+    
+        
         :param chunk: The chunk to cast.
+        
         :type chunk: Chunk
         :rtype: TChunk
-        :return: The
-    <paramref name="chunk" /> cast to
-    <typeparamref name="TChunk" />.
+        :return: The <paramref name="chunk" /> cast to <typeparamref name="TChunk" />.
     
         
         .. code-block:: csharp
@@ -86,11 +87,13 @@ Methods
         <paramref name="chunkTree" />
     
         
+    
+        
         :param chunkTree: The @!:ChunkTree- to scan for [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml)s in.
+        
         :type chunkTree: ChunkTree
         :rtype: Microsoft.AspNet.Mvc.Razor.ModelChunk
-        :return: The last [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml) in the @!:ChunkTree- if found,
-    <c>null</c> otherwise.
+        :return: The last [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml) in the @!:ChunkTree- if found, <c>null</c> otherwise.
     
         
         .. code-block:: csharp
@@ -106,9 +109,15 @@ Methods
         <paramref name="chunkTree" /> if specified or the default model type.
     
         
+    
+        
         :param chunkTree: The @!:ChunkTree- to scan for [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml)s in.
+        
         :type chunkTree: ChunkTree
+    
+        
         :param defaultModelName: The [System.Type]() name of the default model.
+        
         :type defaultModelName: System.String
         :rtype: System.String
         :return: The model type name for the generated page.
@@ -127,9 +136,15 @@ Methods
         <paramref name="modelName" />.
     
         
+    
+        
         :param value: The string to replace the token in.
+        
         :type value: System.String
+    
+        
         :param modelName: The model name to replace with.
+        
         :type modelName: System.String
         :rtype: System.String
         :return: A string with the token replaced.

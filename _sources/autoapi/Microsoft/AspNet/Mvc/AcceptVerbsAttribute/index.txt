@@ -64,7 +64,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.AcceptVerbsAttribute](Microsoft.AspNet.Mvc.AcceptVerbsAttribute.yml) class.
     
         
+    
+        
         :param method: The HTTP method the action supports.
+        
         :type method: System.String
     
         
@@ -79,7 +82,10 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.AcceptVerbsAttribute](Microsoft.AspNet.Mvc.AcceptVerbsAttribute.yml) class.
     
         
+    
+        
         :param methods: The HTTP methods the action supports.
+        
         :type methods: System.String[]
     
         

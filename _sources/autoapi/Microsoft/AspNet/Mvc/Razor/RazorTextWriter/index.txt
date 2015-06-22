@@ -70,10 +70,15 @@ Constructors
         Creates a new instance of [Microsoft.AspNet.Mvc.Razor.RazorTextWriter](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml).
     
         
-        :param unbufferedWriter: The [System.IO.TextWriter]() to write output to when this instance
-    is no longer buffering.
+    
+        
+        :param unbufferedWriter: The [System.IO.TextWriter]() to write output to when this instance is no longer buffering.
+        
         :type unbufferedWriter: System.IO.TextWriter
+    
+        
         :param encoding: The character [Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml) in which the output is written.
+        
         :type encoding: System.Text.Encoding
     
         
@@ -120,7 +125,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyTo(System.IO.TextWriter)
     
         
+    
+        
         :param writer: 
+        
         :type writer: System.IO.TextWriter
     
         
@@ -131,7 +139,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyToAsync(System.IO.TextWriter)
     
         
+    
+        
         :param writer: 
+        
         :type writer: System.IO.TextWriter
         :rtype: System.Threading.Tasks.Task
     
@@ -175,7 +186,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
     
         
@@ -186,11 +200,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write(System.Char[], System.Int32, System.Int32)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Char[]
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
     
         
@@ -201,7 +224,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -212,7 +238,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
     
         
@@ -223,7 +252,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteAsync(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
         :rtype: System.Threading.Tasks.Task
     
@@ -235,11 +267,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteAsync(System.Char[], System.Int32, System.Int32)
     
         
+    
+        
         :param buffer: 
+        
         :type buffer: System.Char[]
+    
+        
         :param index: 
+        
         :type index: System.Int32
+    
+        
         :param count: 
+        
         :type count: System.Int32
         :rtype: System.Threading.Tasks.Task
     
@@ -251,7 +292,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteAsync(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.Threading.Tasks.Task
     
@@ -272,7 +316,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLine(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
     
         
@@ -293,7 +340,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync(System.Char)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char
         :rtype: System.Threading.Tasks.Task
     
@@ -305,11 +355,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync(System.Char[], System.Int32, System.Int32)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Char[]
+    
+        
         :param start: 
+        
         :type start: System.Int32
+    
+        
         :param offset: 
+        
         :type offset: System.Int32
         :rtype: System.Threading.Tasks.Task
     
@@ -321,7 +380,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.Threading.Tasks.Task
     

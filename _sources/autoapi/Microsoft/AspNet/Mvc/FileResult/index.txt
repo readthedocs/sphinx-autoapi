@@ -67,7 +67,10 @@ Constructors
         <paramref name="contentType" />.
     
         
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: MediaTypeHeaderValue
     
         
@@ -84,7 +87,10 @@ Constructors
         <paramref name="contentType" />.
     
         
+    
+        
         :param contentType: The Content-Type header of the response.
+        
         :type contentType: System.String
     
         
@@ -139,7 +145,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.FileResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Threading.Tasks.Task
     
@@ -155,9 +164,15 @@ Methods
         Writes the file to the response.
     
         
+    
+        
         :param response: The @!:HttpResponse- where the file will be written
+        
         :type response: HttpResponse
+    
+        
         :param cancellation: The [System.Threading.CancellationToken]()to cancel the operation.
+        
         :type cancellation: System.Threading.CancellationToken
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() that will complete when the file has been written to the response.

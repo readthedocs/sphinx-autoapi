@@ -67,7 +67,10 @@ Constructors
         <paramref name="statusCode" />.
     
         
+    
+        
         :param statusCode: The HTTP status code of the response.
+        
         :type statusCode: System.Int32
     
         
@@ -108,7 +111,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpStatusCodeResult.ExecuteResult(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

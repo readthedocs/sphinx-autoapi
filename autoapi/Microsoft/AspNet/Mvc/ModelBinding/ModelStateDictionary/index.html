@@ -639,20 +639,16 @@ specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entries are found for the specified</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entries are found for the specified key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if at least one instance is found with one or more model state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if at least one instance is found with one or more model
-state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelValidationState</span> <span class="nf">GetFieldValidationState</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelValidationState</span> <span class="nf">GetFieldValidationState</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetValidationState">
 <code class="descname">GetValidationState</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetValidationState" title="Permalink to this definition">¶</a></dt>
@@ -670,20 +666,16 @@ state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Mic
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entry is found for the specified</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entry is found for the specified key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if an instance is found with one or more model state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if an instance is found with one or more model
-state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelValidationState</span> <span class="nf">GetValidationState</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelValidationState</span> <span class="nf">GetValidationState</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MarkFieldSkipped">
 <code class="descname">MarkFieldSkipped</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MarkFieldSkipped" title="Permalink to this definition">¶</a></dt>
@@ -855,20 +847,16 @@ errors has already been recorded, records a [Microsoft.AspNet.Mvc.ModelBinding.T
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the given error was added,</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the given error was added, &lt;c&gt;false&lt;/c&gt; if the error was ignored. See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;false&lt;/c&gt; if the error was ignored.
-See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TryAddModelError</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TryAddModelError</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TryAddModelError</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -890,20 +878,16 @@ errors has already been recorded, records a [Microsoft.AspNet.Mvc.ModelBinding.T
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the given error was added,</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;True&lt;/c&gt; if the given error was added, &lt;c&gt;false&lt;/c&gt; if the error was ignored. See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;false&lt;/c&gt; if the error was ignored.
-See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TryAddModelError</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">string</span> <span class="n">errorMessage</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TryAddModelError</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">string</span> <span class="n">errorMessage</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryGetValue">
 <code class="descname">TryGetValue</code><span class="sig-paren">(</span><em>System.String</em>, <em>out Microsoft.AspNet.Mvc.ModelBinding.ModelState</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryGetValue" title="Permalink to this definition">¶</a></dt>

@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider.GetMetadataForProperties(System.Type)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
@@ -61,7 +64,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider.GetMetadataForType(System.Type)
     
         
+    
+        
         :param modelType: 
+        
         :type modelType: System.Type
         :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     

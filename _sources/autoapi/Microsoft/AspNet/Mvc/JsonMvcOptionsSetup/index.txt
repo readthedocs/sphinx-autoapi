@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup.JsonMvcOptionsSetup(IOptions<Microsoft.AspNet.Mvc.MvcJsonOptions>)
     
         
+    
+        
         :param jsonOptions: 
+        
         :type jsonOptions: IOptions{Microsoft.AspNet.Mvc.MvcJsonOptions}
     
         
@@ -73,9 +76,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup.ConfigureMvc(Microsoft.AspNet.Mvc.MvcOptions, JsonSerializerSettings)
     
         
+    
+        
         :param options: 
+        
         :type options: Microsoft.AspNet.Mvc.MvcOptions
+    
+        
         :param serializerSettings: 
+        
         :type serializerSettings: JsonSerializerSettings
     
         

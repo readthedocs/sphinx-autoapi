@@ -44,6 +44,44 @@ GitHub
 .. dn:class:: Microsoft.AspNet.Mvc.Razor.AttributeValue
 
 
+Operators
+---------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.AttributeValue
+    :noindex:
+    :hidden:
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.Razor.AttributeValue.Implicit(System.Tuple<System.Tuple<System.String, System.Int32>, System.Tuple<System.Object, System.Int32>, System.Boolean> to Microsoft.AspNet.Mvc.Razor.AttributeValue)
+    
+        
+    
+        
+        :param value: 
+        
+        :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean}
+        :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
+    
+        
+        .. code-block:: csharp
+    
+           public static implicit operator AttributeValue(Tuple<Tuple<string, int>, Tuple<object, int>, bool> value)
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.Razor.AttributeValue.Implicit(System.Tuple<System.Tuple<System.String, System.Int32>, System.Tuple<System.String, System.Int32>, System.Boolean> to Microsoft.AspNet.Mvc.Razor.AttributeValue)
+    
+        
+    
+        
+        :param value: 
+        
+        :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean}
+        :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
+    
+        
+        .. code-block:: csharp
+    
+           public static implicit operator AttributeValue(Tuple<Tuple<string, int>, Tuple<string, int>, bool> value)
+
+
 Constructors
 ------------
 
@@ -54,11 +92,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.AttributeValue.AttributeValue(Microsoft.AspNet.Mvc.Razor.PositionTagged<System.String>, Microsoft.AspNet.Mvc.Razor.PositionTagged<System.Object>, System.Boolean)
     
         
+    
+        
         :param prefix: 
+        
         :type prefix: Microsoft.AspNet.Mvc.Razor.PositionTagged{System.String}
+    
+        
         :param value: 
+        
         :type value: Microsoft.AspNet.Mvc.Razor.PositionTagged{System.Object}
+    
+        
         :param literal: 
+        
         :type literal: System.Boolean
     
         
@@ -115,7 +162,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.AttributeValue.FromTuple(System.Tuple<System.Tuple<System.String, System.Int32>, System.Tuple<System.Object, System.Int32>, System.Boolean>)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean}
         :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
     
@@ -127,7 +177,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.AttributeValue.FromTuple(System.Tuple<System.Tuple<System.String, System.Int32>, System.Tuple<System.String, System.Int32>, System.Boolean>)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean}
         :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
     

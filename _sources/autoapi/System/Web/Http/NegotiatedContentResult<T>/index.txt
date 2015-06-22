@@ -65,9 +65,15 @@ Constructors
         Initializes a new instance of the [System.Web.Http.NegotiatedContentResult`1](System.Web.Http.NegotiatedContentResult`1.yml) class with the values provided.
     
         
+    
+        
         :param statusCode: The HTTP status code for the response message.
+        
         :type statusCode: System.Net.HttpStatusCode
+    
+        
         :param content: The content value to negotiate and format in the entity body.
+        
         :type content: T
     
         
@@ -108,7 +114,10 @@ Methods
     .. dn:method:: System.Web.Http.NegotiatedContentResult<T>.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :rtype: System.Threading.Tasks.Task
     

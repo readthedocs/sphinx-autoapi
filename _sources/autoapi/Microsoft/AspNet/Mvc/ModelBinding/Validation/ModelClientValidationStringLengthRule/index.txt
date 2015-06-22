@@ -55,11 +55,20 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationStringLengthRule.ModelClientValidationStringLengthRule(System.String, System.Int32, System.Int32)
     
         
+    
+        
         :param errorMessage: 
+        
         :type errorMessage: System.String
+    
+        
         :param minimumLength: 
+        
         :type minimumLength: System.Int32
+    
+        
         :param maximumLength: 
+        
         :type maximumLength: System.Int32
     
         

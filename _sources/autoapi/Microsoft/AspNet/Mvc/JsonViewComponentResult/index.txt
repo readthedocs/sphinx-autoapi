@@ -63,7 +63,10 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
+    
+        
         :param value: The value to format as JSON text.
+        
         :type value: System.Object
     
         
@@ -78,10 +81,15 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
+    
+        
         :param value: The value to format as JSON text.
+        
         :type value: System.Object
-        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
-    the formatter.
+    
+        
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by the formatter.
+        
         :type serializerSettings: JsonSerializerSettings
     
         
@@ -96,9 +104,15 @@ Constructors
         Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
+    
+        
         :param value: The value to format as JSON text.
+        
         :type value: System.Object
+    
+        
         :param formatter: The [Microsoft.AspNet.Mvc.JsonOutputFormatter](Microsoft.AspNet.Mvc.JsonOutputFormatter.yml) to use.
+        
         :type formatter: Microsoft.AspNet.Mvc.JsonOutputFormatter
     
         
@@ -157,7 +171,10 @@ Methods
         Renders JSON text to the output.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         
@@ -172,7 +189,10 @@ Methods
         Renders JSON text to the output.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
         :rtype: System.Threading.Tasks.Task
         :return: A completed [System.Threading.Tasks.Task]().

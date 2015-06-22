@@ -58,7 +58,10 @@ Constructors
         Instantiates a new instance of [Microsoft.AspNet.Mvc.Razor.MvcTagHelperAttributeValueCodeRenderer](Microsoft.AspNet.Mvc.Razor.MvcTagHelperAttributeValueCodeRenderer.yml).
     
         
+    
+        
         :param context: Contains code generation information for rendering attribute values.
+        
         :type context: Microsoft.AspNet.Mvc.Razor.GeneratedTagHelperAttributeContext
     
         
@@ -77,15 +80,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcTagHelperAttributeValueCodeRenderer.RenderAttributeValue(TagHelperAttributeDescriptor, CSharpCodeWriter, CodeGeneratorContext, System.Action<CSharpCodeWriter>, System.Boolean)
     
         
+    
+        
         :param attributeDescriptor: 
+        
         :type attributeDescriptor: TagHelperAttributeDescriptor
+    
+        
         :param writer: 
+        
         :type writer: CSharpCodeWriter
+    
+        
         :param codeGeneratorContext: 
+        
         :type codeGeneratorContext: CodeGeneratorContext
+    
+        
         :param renderAttributeValue: 
+        
         :type renderAttributeValue: System.Action{CSharpCodeWriter}
+    
+        
         :param complexValue: 
+        
         :type complexValue: System.Boolean
     
         

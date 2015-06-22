@@ -63,9 +63,15 @@ Methods
         Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1.yml)/
     
         
+    
+        
         :param mode: 
+        
         :type mode: TMode
+    
+        
         :param attributes: 
+        
         :type attributes: System.Collections.Generic.IEnumerable{System.String}
         :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes{{TMode}}
     

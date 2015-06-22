@@ -155,41 +155,25 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>rootRelativePath</strong> &#8211; The path of the relative to the root of the application.</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>rootRelativePath</strong> (<em>System.String</em>) &#8211; The path of the relative to the root of the application. Used to generate line pragmas and calculate the class name of the generated type.</li>
+<li><strong>inputStream</strong> (<em>System.IO.Stream</em>) &#8211; A [System.IO.Stream]() that represents the Razor contents.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">GeneratorResults</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A &#64;!:GeneratorResults- instance that represents the results of code generation.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>Used to generate line pragmas and calculate the class name of the generated type.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type rootRelativePath:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param inputStream:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A [System.IO.Stream]() that represents the Razor contents.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type inputStream:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.IO.Stream</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">GeneratorResults</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A &#64;!:GeneratorResults- instance that represents the results of code generation.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">GeneratorResults</span> <span class="nf">GenerateCode</span><span class="p">(</span><span class="kt">string</span> <span class="n">rootRelativePath</span><span class="p">,</span> <span class="n">Stream</span> <span class="n">inputStream</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">GeneratorResults</span> <span class="nf">GenerateCode</span><span class="p">(</span><span class="kt">string</span> <span class="n">rootRelativePath</span><span class="p">,</span> <span class="n">Stream</span> <span class="n">inputStream</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

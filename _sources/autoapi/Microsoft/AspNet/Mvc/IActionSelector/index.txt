@@ -49,7 +49,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IActionSelector.HasValidAction(VirtualPathContext)
     
         
+    
+        
         :param context: 
+        
         :type context: VirtualPathContext
         :rtype: System.Boolean
     
@@ -61,7 +64,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IActionSelector.SelectAsync(RouteContext)
     
         
+    
+        
         :param context: 
+        
         :type context: RouteContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ActionDescriptor}
     

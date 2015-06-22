@@ -14,93 +14,25 @@ Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace
    :maxdepth: 2
 
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ClientModelValidationContext/index
    
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/CompareAttributeAdapter/index
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ClientValidatorProviderContext/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/IClientModelValidator/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/IClientModelValidatorProvider/index
    
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/CompositeClientModelValidatorProvider/index
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/IModelValidator/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/IModelValidatorProvider/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationRule/index
    
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DataAnnotationsClientModelValidatorProvider/index
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelValidationContext/index
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelValidationResult/index
    
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DataAnnotationsClientModelValidator<TAttribute>/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DataAnnotationsModelValidator/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DataAnnotationsModelValidatorProvider/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DataTypeAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/DefaultClientModelValidatorProvider/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/MaxLengthAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/MinLengthAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationEqualToRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationMaxLengthRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationMinLengthRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationRangeRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationRegexRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationRequiredRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelClientValidationStringLengthRule/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/RangeAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/RegularExpressionAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/RequiredAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/StringLengthAttributeAdapter/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ValidatableObjectAdapter/index
-   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/ModelValidatorProviderContext/index
    
 
 
@@ -114,101 +46,49 @@ Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace
 .. dn:namespace:: Microsoft.AspNet.Mvc.ModelBinding.Validation
 
 
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IClientModelValidator`
+        
+
+
+    interface :dn:iface:`IClientModelValidatorProvider`
+        Provides a collection of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator.yml)s.
+
+
+    interface :dn:iface:`IModelValidator`
+        Validates a model value.
+
+
+    interface :dn:iface:`IModelValidatorProvider`
+        Provides validators for a model value.
+
+
     .. rubric:: Classes
 
 
-    class :dn:cls:`CompareAttributeAdapter`
+    class :dn:cls:`ClientModelValidationContext`
         
 
 
-    class :dn:cls:`CompositeClientModelValidatorProvider`
-        Aggregate of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]()s that delegates to its underlying providers.
+    class :dn:cls:`ClientValidatorProviderContext`
+        A context for [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.yml).
 
 
-    class :dn:cls:`DataAnnotationsClientModelValidatorProvider`
-        An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() which provides client validators
-        for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](). It also provides
-        a validator for types which implement [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]().
-        The logic to support [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]()
-        is implemented in [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).
-
-
-    class :dn:cls:`DataAnnotationsClientModelValidator\<TAttribute>`
-        An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]() which understands data annotation attributes.
-
-
-    class :dn:cls:`DataAnnotationsModelValidator`
+    class :dn:cls:`ModelClientValidationRule`
         
 
 
-    class :dn:cls:`DataAnnotationsModelValidatorProvider`
-        An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() which provides validators
-        for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](). It also provides
-        a validator for types which implement [System.ComponentModel.DataAnnotations.IValidatableObject]().
-
-
-    class :dn:cls:`DataTypeAttributeAdapter`
-        A validation adapter that is used to map [System.ComponentModel.DataAnnotations.DataTypeAttribute]()'s to a single client side validation
-        rule.
-
-
-    class :dn:cls:`DefaultClientModelValidatorProvider`
-        A default implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]().
-
-
-    class :dn:cls:`MaxLengthAttributeAdapter`
+    class :dn:cls:`ModelValidationContext`
         
 
 
-    class :dn:cls:`MinLengthAttributeAdapter`
+    class :dn:cls:`ModelValidationResult`
         
 
 
-    class :dn:cls:`ModelClientValidationEqualToRule`
-        Represents client side validation rule that determines if two values are equal.
-
-
-    class :dn:cls:`ModelClientValidationMaxLengthRule`
-        
-
-
-    class :dn:cls:`ModelClientValidationMinLengthRule`
-        
-
-
-    class :dn:cls:`ModelClientValidationRangeRule`
-        
-
-
-    class :dn:cls:`ModelClientValidationRegexRule`
-        
-
-
-    class :dn:cls:`ModelClientValidationRequiredRule`
-        
-
-
-    class :dn:cls:`ModelClientValidationStringLengthRule`
-        
-
-
-    class :dn:cls:`RangeAttributeAdapter`
-        
-
-
-    class :dn:cls:`RegularExpressionAttributeAdapter`
-        
-
-
-    class :dn:cls:`RequiredAttributeAdapter`
-        
-
-
-    class :dn:cls:`StringLengthAttributeAdapter`
-        
-
-
-    class :dn:cls:`ValidatableObjectAdapter`
-        
+    class :dn:cls:`ModelValidatorProviderContext`
+        A context for [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider.yml).
 
 

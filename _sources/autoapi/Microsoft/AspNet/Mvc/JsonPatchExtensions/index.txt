@@ -63,11 +63,20 @@ Methods
         Applies JSON patch operations on object and logs errors in [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
     
         
+    
+        
         :param patchDoc: The [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]().
+        
         :type patchDoc: Microsoft.AspNet.JsonPatch.JsonPatchDocument{{T}}
+    
+        
         :param objectToApplyTo: The entity on which [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]() is applied.
+        
         :type objectToApplyTo: T
+    
+        
         :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() to add errors.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
@@ -82,13 +91,25 @@ Methods
         Applies JSON patch operations on object and logs errors in [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
     
         
+    
+        
         :param patchDoc: The [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]().
+        
         :type patchDoc: Microsoft.AspNet.JsonPatch.JsonPatchDocument{{T}}
+    
+        
         :param objectToApplyTo: The entity on which [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]() is applied.
+        
         :type objectToApplyTo: T
+    
+        
         :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() to add errors.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
         :param prefix: The prefix to use when looking up values in [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
+        
         :type prefix: System.String
     
         

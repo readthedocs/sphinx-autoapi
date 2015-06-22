@@ -59,7 +59,10 @@ Constructors
         <paramref name="chunkTreeCache" />.
     
         
+    
+        
         :param chunkTreeCache: An [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) rooted at the application base path.
+        
         :type chunkTreeCache: Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache
     
         
@@ -75,7 +78,10 @@ Constructors
         <paramref name="root" />.
     
         
+    
+        
         :param root: The path to the application base.
+        
         :type root: System.String
     
         
@@ -183,9 +189,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateCodeGenerator(CodeGenerator, CodeGeneratorContext)
     
         
+    
+        
         :param incomingGenerator: 
+        
         :type incomingGenerator: CodeGenerator
+    
+        
         :param context: 
+        
         :type context: CodeGeneratorContext
         :rtype: CodeGenerator
     
@@ -197,7 +209,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateCodeParser(ParserBase)
     
         
+    
+        
         :param incomingCodeParser: 
+        
         :type incomingCodeParser: ParserBase
         :rtype: ParserBase
     
@@ -209,9 +224,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateRazorParser(RazorParser, System.String)
     
         
+    
+        
         :param razorParser: 
+        
         :type razorParser: RazorParser
+    
+        
         :param sourceFileName: 
+        
         :type sourceFileName: System.String
         :rtype: RazorParser
     
@@ -223,9 +244,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.GenerateCode(System.String, System.IO.Stream)
     
         
+    
+        
         :param rootRelativePath: 
+        
         :type rootRelativePath: System.String
+    
+        
         :param inputStream: 
+        
         :type inputStream: System.IO.Stream
         :rtype: GeneratorResults
     

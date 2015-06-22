@@ -72,7 +72,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CorsApplicationModelProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         
@@ -83,7 +86,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CorsApplicationModelProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
     
         

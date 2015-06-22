@@ -154,40 +154,25 @@ determine search paths for a view.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>context</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location</li>
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> (<a class="reference internal" href="../ViewLocationExpanderContext/index.html#Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext" title="Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext"><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion operation.</li>
+<li><strong>viewLocations</strong> (<em>System.Collections.Generic.IEnumerable{System.String}</em>) &#8211; The sequence of view locations to expand.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{System.String}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of expanded view locations.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>expansion operation.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param viewLocations:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The sequence of view locations to expand.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type viewLocations:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A list of expanded view locations.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">ExpandViewLocations</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">viewLocations</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">ExpandViewLocations</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">viewLocations</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.PopulateValues">
 <code class="descname">PopulateValues</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.PopulateValues" title="Permalink to this definition">¶</a></dt>
@@ -199,29 +184,17 @@ has changed since the last time it was located.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>context</strong> &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location</li>
+<li><strong>context</strong> (<a class="reference internal" href="../ViewLocationExpanderContext/index.html#Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext" title="Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext"><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location expansion operation.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>expansion operation.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">PopulateValues</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">PopulateValues</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

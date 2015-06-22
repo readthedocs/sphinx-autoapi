@@ -65,15 +65,25 @@ Methods
         <paramref name="content" />.
     
         
+    
+        
         :param content: The @!:TagHelperContent- to write to.
+        
         :type content: TagHelperContent
-        :param encoder: The @!:IHtmlEncoder- to use when encoding
-    <paramref name="value" />.
+    
+        
+        :param encoder: The @!:IHtmlEncoder- to use when encoding <paramref name="value" />.
+        
         :type encoder: IHtmlEncoder
-        :param encoding: The character encoding in which the
-    <paramref name="value" /> is written.
+    
+        
+        :param encoding: The character encoding in which the <paramref name="value" /> is written.
+        
         :type encoding: System.Text.Encoding
+    
+        
         :param value: The [System.Object]() to write.
+        
         :type value: System.Object
         :rtype: TagHelperContent
         :return: <paramref name="content" /> after the write operation has completed.

@@ -212,29 +212,17 @@
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
 <li><strong>position</strong> (<em>System.Int32</em>) &#8211; The absolute character position of the expression or text in the Razor file.</li>
 <li><strong>length</strong> (<em>System.Int32</em>) &#8211; The character length of the expression or text in the Razor file.</li>
-<li><strong>isLiteral</strong> &#8211; A flag that indicates if the operation is for a literal text and not for a</li>
+<li><strong>isLiteral</strong> (<em>System.Boolean</em>) &#8211; A flag that indicates if the operation is for a literal text and not for a language expression.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>language expression.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type isLiteral:</th><td class="field-body">System.Boolean</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">BeginContext</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isLiteral</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">BeginContext</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isLiteral</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext.EndContext()</code></dt>

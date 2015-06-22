@@ -55,7 +55,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectResult.RedirectResult(System.String)
     
         
+    
+        
         :param url: 
+        
         :type url: System.String
     
         
@@ -66,9 +69,15 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.RedirectResult.RedirectResult(System.String, System.Boolean)
     
         
+    
+        
         :param url: 
+        
         :type url: System.String
+    
+        
         :param permanent: 
+        
         :type permanent: System.Boolean
     
         
@@ -125,7 +134,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.RedirectResult.ExecuteResult(Microsoft.AspNet.Mvc.ActionContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
     
         

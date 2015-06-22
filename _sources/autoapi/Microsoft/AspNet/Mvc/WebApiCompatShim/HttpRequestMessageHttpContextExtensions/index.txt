@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpRequestMessageHttpContextExtensions.GetHttpRequestMessage(HttpContext)
     
         
+    
+        
         :param httpContext: 
+        
         :type httpContext: HttpContext
         :rtype: System.Net.Http.HttpRequestMessage
     

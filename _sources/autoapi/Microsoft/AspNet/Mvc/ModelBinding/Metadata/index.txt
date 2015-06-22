@@ -14,13 +14,9 @@ Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace
    :maxdepth: 2
 
    
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/ModelMetadataIdentity/index
    
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/DataAnnotationsMetadataProvider/index
-   
-   
-   
-   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/DataMemberRequiredBindingMetadataProvider/index
-   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/ModelMetadataKind/index
    
 
 
@@ -34,15 +30,17 @@ Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace
 .. dn:namespace:: Microsoft.AspNet.Mvc.ModelBinding.Metadata
 
 
-    .. rubric:: Classes
+    .. rubric:: Enumerations
 
 
-    class :dn:cls:`DataAnnotationsMetadataProvider`
-        An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() and [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider]() for
-        the System.ComponentModel.DataAnnotations attribute classes.
+    enum :dn:enum:`ModelMetadataKind`
+        Enumeration for the kinds of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml)
 
 
-    class :dn:cls:`DataMemberRequiredBindingMetadataProvider`
-        An [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() for [System.Runtime.Serialization.DataMemberAttribute.IsRequired]().
+    .. rubric:: Structures
+
+
+    struct :dn:struct:`ModelMetadataIdentity`
+        A key type which identifies a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
 
 

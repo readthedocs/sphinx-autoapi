@@ -14,13 +14,9 @@ Microsoft.AspNet.Mvc.Razor.Internal Namespace
    :maxdepth: 2
 
    
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Internal/DesignTimeRazorPathNormalizer/index
    
-   
-   
    /autoapi/Microsoft/AspNet/Mvc/Razor/Internal/RazorPathNormalizer/index
-   
    
 
 

@@ -64,8 +64,10 @@ Constructors
         Instantiates a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException.yml).
     
         
-        :param compilationFailures: @!:ICompilationFailure-s containing
-    details of the compilation failure.
+    
+        
+        :param compilationFailures: @!:ICompilationFailure-s containing details of the compilation failure.
+        
         :type compilationFailures: System.Collections.Generic.IEnumerable{ICompilationFailure}
     
         

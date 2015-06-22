@@ -60,7 +60,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataAnnotationsMetadataProvider.GetBindingMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext
     
         
@@ -71,7 +74,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataAnnotationsMetadataProvider.GetDisplayMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext
     
         
@@ -82,7 +88,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DataAnnotationsMetadataProvider.GetValidationMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
     
         

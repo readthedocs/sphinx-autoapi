@@ -49,9 +49,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.Invoke(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -63,9 +69,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.Invoke(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
@@ -77,9 +89,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.InvokeAsync(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
@@ -91,9 +109,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.InvokeAsync(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
@@ -105,9 +129,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.RenderInvoke(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param args: 
+        
         :type args: System.Object[]
     
         
@@ -118,9 +148,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.RenderInvoke(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param args: 
+        
         :type args: System.Object[]
     
         
@@ -131,9 +167,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.RenderInvokeAsync(System.String, System.Object[])
     
         
+    
+        
         :param name: 
+        
         :type name: System.String
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Threading.Tasks.Task
     
@@ -145,9 +187,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IViewComponentHelper.RenderInvokeAsync(System.Type, System.Object[])
     
         
+    
+        
         :param componentType: 
+        
         :type componentType: System.Type
+    
+        
         :param args: 
+        
         :type args: System.Object[]
         :rtype: System.Threading.Tasks.Task
     

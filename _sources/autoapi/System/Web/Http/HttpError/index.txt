@@ -80,10 +80,15 @@ Constructors
         <paramref name="modelState" />.
     
         
+    
+        
         :param modelState: The invalid model state to use for error information.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
-        :param includeErrorDetail: <c>true</c> to include exception messages in the error;
-    <c>false</c> otherwise.
+    
+        
+        :param includeErrorDetail: <c>true</c> to include exception messages in the error; <c>false</c> otherwise.
+        
         :type includeErrorDetail: System.Boolean
     
         
@@ -99,10 +104,15 @@ Constructors
         <paramref name="exception" />.
     
         
+    
+        
         :param exception: The exception to use for error information.
+        
         :type exception: System.Exception
-        :param includeErrorDetail: <c>true</c> to include the exception information in the error;
-    <c>false</c> otherwise.
+    
+        
+        :param includeErrorDetail: <c>true</c> to include the exception information in the error; <c>false</c> otherwise.
+        
         :type includeErrorDetail: System.Boolean
     
         
@@ -119,7 +129,10 @@ Constructors
         <paramref name="message" />.
     
         
+    
+        
         :param message: The error message to associate with this instance.
+        
         :type message: System.String
     
         
@@ -251,7 +264,10 @@ Methods
         Gets a particular property value from this error instance.
     
         
+    
+        
         :param key: The name of the error property.
+        
         :type key: System.String
         :rtype: TValue
         :return: The value of the error property.
@@ -274,7 +290,10 @@ Methods
     .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
     
         
+    
+        
         :param reader: 
+        
         :type reader: System.Xml.XmlReader
     
         
@@ -285,7 +304,10 @@ Methods
     .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
     
         
+    
+        
         :param writer: 
+        
         :type writer: System.Xml.XmlWriter
     
         

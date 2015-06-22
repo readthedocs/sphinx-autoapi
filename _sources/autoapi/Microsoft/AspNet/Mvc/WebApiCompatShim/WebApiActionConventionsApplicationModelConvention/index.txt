@@ -54,7 +54,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiActionConventionsApplicationModelConvention.Apply(Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel)
     
         
+    
+        
         :param controller: 
+        
         :type controller: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
     
         

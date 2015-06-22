@@ -59,11 +59,13 @@ Methods
         <paramref name="componentName" />.
     
         
+    
+        
         :param componentName: The View Component name.
+        
         :type componentName: System.String
         :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
-        :return: A [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml), or
-    <c>null</c> if no match is found.
+        :return: A [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml), or <c>null</c> if no match is found.
     
         
         .. code-block:: csharp

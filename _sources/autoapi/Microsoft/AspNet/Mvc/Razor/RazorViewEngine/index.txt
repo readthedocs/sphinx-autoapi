@@ -63,13 +63,25 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) class.
     
         
+    
+        
         :param pageFactory: The page factory used for creating [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) instances.
+        
         :type pageFactory: Microsoft.AspNet.Mvc.Razor.IRazorPageFactory
+    
+        
         :param viewFactory: 
+        
         :type viewFactory: Microsoft.AspNet.Mvc.Razor.IRazorViewFactory
+    
+        
         :param optionsAccessor: 
+        
         :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
+    
+        
         :param viewLocationCache: 
+        
         :type viewLocationCache: Microsoft.AspNet.Mvc.Razor.IViewLocationCache
     
         
@@ -125,9 +137,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindPage(Microsoft.AspNet.Mvc.ActionContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param pageName: 
+        
         :type pageName: System.String
         :rtype: Microsoft.AspNet.Mvc.Razor.RazorPageResult
     
@@ -139,9 +157,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindPartialView(Microsoft.AspNet.Mvc.ActionContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param partialViewName: 
+        
         :type partialViewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
@@ -153,9 +177,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindView(Microsoft.AspNet.Mvc.ActionContext, System.String)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param viewName: 
+        
         :type viewName: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     

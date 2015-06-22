@@ -54,9 +54,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionTreeBuilder<TItem>.GenerateTree(System.Collections.Generic.IReadOnlyList<TItem>, Microsoft.AspNet.Mvc.Internal.DecisionTree.IClassifier<TItem>)
     
         
+    
+        
         :param items: 
+        
         :type items: System.Collections.Generic.IReadOnlyList{{TItem}}
+    
+        
         :param classifier: 
+        
         :type classifier: Microsoft.AspNet.Mvc.Internal.DecisionTree.IClassifier{{TItem}}
         :rtype: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionTreeNode{{TItem}}
     

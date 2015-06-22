@@ -76,7 +76,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.CoreMvcOptionsSetup.ConfigureMvc(Microsoft.AspNet.Mvc.MvcOptions)
     
         
+    
+        
         :param options: 
+        
         :type options: Microsoft.AspNet.Mvc.MvcOptions
     
         

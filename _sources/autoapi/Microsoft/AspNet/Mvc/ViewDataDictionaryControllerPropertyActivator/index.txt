@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ViewDataDictionaryControllerPropertyActivator.ViewDataDictionaryControllerPropertyActivator(Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider)
     
         
+    
+        
         :param modelMetadataProvider: 
+        
         :type modelMetadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
@@ -73,9 +76,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionaryControllerPropertyActivator.Activate(Microsoft.AspNet.Mvc.ActionContext, System.Object)
     
         
+    
+        
         :param actionContext: 
+        
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
         :param controller: 
+        
         :type controller: System.Object
     
         

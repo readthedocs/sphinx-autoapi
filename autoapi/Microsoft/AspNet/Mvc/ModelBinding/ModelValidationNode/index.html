@@ -163,47 +163,19 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; The key that will be used by the validation system to find [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml)</li>
+<li><strong>key</strong> (<em>System.String</em>) &#8211; The key that will be used by the validation system to find [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) entries.</li>
+<li><strong>modelMetadata</strong> (<a class="reference internal" href="../ModelMetadata/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata" title="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the &lt;paramref name=&#8221;model&#8221; /&gt;.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model object which is to be validated.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>entries.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type key:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelMetadata:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;paramref name=&#8221;model&#8221; /&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelMetadata:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param model:</th><td class="field-body">The model object which is to be validated.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type model:</th><td class="field-body">System.Object</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelValidationNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">ModelMetadata</span> <span class="n">modelMetadata</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelValidationNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">ModelMetadata</span> <span class="n">modelMetadata</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="constructor">
 <dt>
 <code class="descname">ModelValidationNode</code><span class="sig-paren">(</span><em>System.String</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em>, <em>System.Object</em>, <em>System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode&gt;</em><span class="sig-paren">)</span></dt>
@@ -213,53 +185,20 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; The key that will be used by the validation system to add</li>
+<li><strong>key</strong> (<em>System.String</em>) &#8211; The key that will be used by the validation system to add [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) entries.</li>
+<li><strong>modelMetadata</strong> (<a class="reference internal" href="../ModelMetadata/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata" title="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the &lt;paramref name=&#8221;model&#8221; /&gt;.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; The model object which will be validated.</li>
+<li><strong>childNodes</strong> (<em>System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode}</em>) &#8211; A collection of child nodes.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) entries.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type key:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param modelMetadata:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) for the</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>&lt;paramref name=&#8221;model&#8221; /&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type modelMetadata:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param model:</th><td class="field-body">The model object which will be validated.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type model:</th><td class="field-body">System.Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param childNodes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A collection of child nodes.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type childNodes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode}</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelValidationNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">ModelMetadata</span> <span class="n">modelMetadata</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ModelValidationNode</span><span class="p">&gt;</span> <span class="n">childNodes</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelValidationNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">ModelMetadata</span> <span class="n">modelMetadata</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ModelValidationNode</span><span class="p">&gt;</span> <span class="n">childNodes</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

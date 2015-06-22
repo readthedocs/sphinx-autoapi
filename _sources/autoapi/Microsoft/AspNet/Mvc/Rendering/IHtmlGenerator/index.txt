@@ -73,7 +73,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.Encode(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.String
     
@@ -85,7 +88,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.Encode(System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.String
         :rtype: System.String
     
@@ -97,9 +103,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.FormatValue(System.Object, System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     
@@ -111,21 +123,45 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateActionLink(System.String, System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param actionName: 
+        
         :type actionName: System.String
+    
+        
         :param controllerName: 
+        
         :type controllerName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostname: 
+        
         :type hostname: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -137,7 +173,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateAntiForgery(Microsoft.AspNet.Mvc.ViewContext)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -153,16 +192,30 @@ Methods
         Generate a &lt;input type="checkbox".../&gt; element.
     
         
+    
+        
         :param viewContext: The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: The [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the model.
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: The model expression.
+        
         :type expression: System.String
+    
+        
         :param isChecked: The initial state of the checkbox element.
+        
         :type isChecked: System.Nullable{System.Boolean}
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;input type="checkbox".../&gt; element.
@@ -181,21 +234,35 @@ Methods
         <paramref name="actionName" /> will process the request.
     
         
+    
+        
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param actionName: The name of the action method.
+        
         :type actionName: System.String
+    
+        
         :param controllerName: The name of the controller.
+        
         :type controllerName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
+    
+        
         :param method: The HTTP method for processing the form, either GET or POST.
+        
         :type method: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
@@ -208,17 +275,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateHidden(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Boolean, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param useViewData: 
+        
         :type useViewData: System.Boolean
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -236,11 +321,20 @@ Methods
         checkbox was present on the page when the request was submitted.
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -252,15 +346,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateLabel(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param labelText: 
+        
         :type labelText: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -272,15 +381,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GeneratePassword(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -292,17 +416,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRadioButton(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.Nullable<System.Boolean>, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param isChecked: 
+        
         :type isChecked: System.Nullable{System.Boolean}
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -321,19 +463,30 @@ Methods
         <c>action</c> attribute value.
     
         
+    
+        
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param routeName: The name of the route.
+        
         :type routeName: System.String
-        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through
-    reflection by examining the properties of the [System.Object](). This [System.Object]() is typically
-    created using [System.Object]() initializer syntax. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+    
+        
+        :param routeValues: An [System.Object]() that contains the parameters for a route. The parameters are retrieved through reflection by examining the properties of the [System.Object](). This [System.Object]() is typically created using [System.Object]() initializer syntax. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the route parameters.
+        
         :type routeValues: System.Object
+    
+        
         :param method: The HTTP method for processing the form, either GET or POST.
+        
         :type method: System.String
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
@@ -346,19 +499,40 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRouteLink(System.String, System.String, System.String, System.String, System.String, System.Object, System.Object)
     
         
+    
+        
         :param linkText: 
+        
         :type linkText: System.String
+    
+        
         :param routeName: 
+        
         :type routeName: System.String
+    
+        
         :param protocol: 
+        
         :type protocol: System.String
+    
+        
         :param hostName: 
+        
         :type hostName: System.String
+    
+        
         :param fragment: 
+        
         :type fragment: System.String
+    
+        
         :param routeValues: 
+        
         :type routeValues: System.Object
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -375,32 +549,40 @@ Methods
         <paramref name="expression" />.
     
         
-        :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
-        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
-        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the
-    <paramref name="expression" />. If
-    <c>null</c>, determines validation
-    attributes using
-    <paramref name="viewContext" /> and the
-    <paramref name="expression" />.
-        :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :param optionLabel: Optional text for a default empty &lt;option&gt; element.
-        :type optionLabel: System.String
-        :param expression: Expression name, relative to the current model.
-        :type expression: System.String
-        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
-    &lt;optgroup&gt; and &lt;option&gt; elements. If
-    <c>null</c>, finds this collection at
     
-    <c>ViewContext.ViewData[expression]</c>.
+        
+        :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
+        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
+        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the <paramref name="expression" />. If <c>null</c>, determines validation attributes using <paramref name="viewContext" /> and the <paramref name="expression" />.
+        
+        :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
+        :param optionLabel: Optional text for a default empty &lt;option&gt; element.
+        
+        :type optionLabel: System.String
+    
+        
+        :param expression: Expression name, relative to the current model.
+        
+        :type expression: System.String
+    
+        
+        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with &lt;optgroup&gt; and &lt;option&gt; elements. If <c>null</c>, finds this collection at  <c>ViewContext.ViewData[expression]</c>.
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :param allowMultiple: If
-    <c>true</c>, includes a
-    <c>multiple</c> attribute in the generated HTML. Otherwise generates a
-    single-selection &lt;select&gt; element.
+    
+        
+        :param allowMultiple: If <c>true</c>, includes a <c>multiple</c> attribute in the generated HTML. Otherwise generates a single-selection &lt;select&gt; element.
+        
         :type allowMultiple: System.Boolean
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &lt;select&gt; element.
@@ -418,38 +600,45 @@ Methods
         <paramref name="expression" />.
     
         
+    
+        
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
-        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the
-    <paramref name="expression" />. If
-    <c>null</c>, determines validation
-    attributes using
-    <paramref name="viewContext" /> and the
-    <paramref name="expression" />.
+    
+        
+        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the <paramref name="expression" />. If <c>null</c>, determines validation attributes using <paramref name="viewContext" /> and the <paramref name="expression" />.
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param optionLabel: Optional text for a default empty &lt;option&gt; element.
+        
         :type optionLabel: System.String
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
-    &lt;optgroup&gt; and &lt;option&gt; elements. If
-    <c>null</c>, finds this collection at
     
-    <c>ViewContext.ViewData[expression]</c>.
+        
+        :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with &lt;optgroup&gt; and &lt;option&gt; elements. If <c>null</c>, finds this collection at  <c>ViewContext.ViewData[expression]</c>.
+        
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :param currentValues: An [System.Collections.Generic.IReadOnlyCollection`1]() containing values for &lt;option&gt; elements to select. If
     
-    <c>null</c>, selects &lt;option&gt; elements based on [Microsoft.AspNet.Mvc.Rendering.SelectListItem.Selected](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) values in
-    
-    <paramref name="selectList" />.
+        
+        :param currentValues: An [System.Collections.Generic.IReadOnlyCollection`1]() containing values for &lt;option&gt; elements to select. If  <c>null</c>, selects &lt;option&gt; elements based on [Microsoft.AspNet.Mvc.Rendering.SelectListItem.Selected](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) values in  <paramref name="selectList" />.
+        
         :type currentValues: System.Collections.Generic.IReadOnlyCollection{System.String}
-        :param allowMultiple: If
-    <c>true</c>, includes a
-    <c>multiple</c> attribute in the generated HTML. Otherwise generates a
-    single-selection &lt;select&gt; element.
+    
+        
+        :param allowMultiple: If <c>true</c>, includes a <c>multiple</c> attribute in the generated HTML. Otherwise generates a single-selection &lt;select&gt; element.
+        
         :type allowMultiple: System.Boolean
-        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
-    [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+    
+        
+        :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
         :return: A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &lt;select&gt; element.
@@ -462,17 +651,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateTextArea(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Int32, System.Int32, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param rows: 
+        
         :type rows: System.Int32
+    
+        
         :param columns: 
+        
         :type columns: System.Int32
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -484,17 +691,35 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateTextBox(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String, System.Object, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -506,15 +731,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateValidationMessage(Microsoft.AspNet.Mvc.ViewContext, System.String, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param expression: 
+        
         :type expression: System.String
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param tag: 
+        
         :type tag: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -526,15 +766,30 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateValidationSummary(Microsoft.AspNet.Mvc.ViewContext, System.Boolean, System.String, System.String, System.Object)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param excludePropertyErrors: 
+        
         :type excludePropertyErrors: System.Boolean
+    
+        
         :param message: 
+        
         :type message: System.String
+    
+        
         :param headerTag: 
+        
         :type headerTag: System.String
+    
+        
         :param htmlAttributes: 
+        
         :type htmlAttributes: System.Object
         :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
@@ -546,11 +801,20 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GetClientValidationRules(Microsoft.AspNet.Mvc.ViewContext, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer, System.String)
     
         
+    
+        
         :param viewContext: 
+        
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
         :param modelExplorer: 
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: 
+        
         :type expression: System.String
         :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
@@ -567,38 +831,28 @@ Methods
         <paramref name="expression" />.
     
         
-        :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
-        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
-        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the
-    <paramref name="expression" />. If
-    <c>null</c>, calculates the
     
-    <paramref name="expression" /> result using [Microsoft.AspNet.Mvc.ViewDataDictionary.Eval(System.String)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        
+        :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
+        
+        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+    
+        
+        :param modelExplorer: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the <paramref name="expression" />. If <c>null</c>, calculates the  <paramref name="expression" /> result using [Microsoft.AspNet.Mvc.ViewDataDictionary.Eval(System.String)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
-        :param allowMultiple: If
-    <c>true</c>, require a collection
-    <paramref name="expression" /> result. Otherwise, treat result as a
-    single value.
+    
+        
+        :param allowMultiple: If <c>true</c>, require a collection <paramref name="expression" /> result. Otherwise, treat result as a single value.
+        
         :type allowMultiple: System.Boolean
         :rtype: System.Collections.Generic.IReadOnlyCollection{System.String}
-        :return: <para>
-    <c>null</c> if no <paramref name="expression" /> result is found. Otherwise an
-    <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" /> containing current values for the given
-    <paramref name="expression" />.
-    </para>
-    <para>
-    Converts the <paramref name="expression" /> result to a <see cref="T:System.String" />. If that result is an
-    <see cref="T:System.Collections.IEnumerable" /> type, instead converts each item in the collection and returns
-    them separately.
-    </para>
-    <para>
-    If the <paramref name="expression" /> result or the element type is an <see cref="T:System.Enum" />, returns a
-    <see cref="T:System.String" /> containing the integer representation of the <see cref="T:System.Enum" /> value as well
-    as all <see cref="T:System.Enum" /> names for that value. Otherwise returns the default <see cref="T:System.String" />
-    conversion of the value.
-    </para>
+        :return: <para> <c>null</c> if no <paramref name="expression" /> result is found. Otherwise an <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" /> containing current values for the given <paramref name="expression" />. </para> <para> Converts the <paramref name="expression" /> result to a <see cref="T:System.String" />. If that result is an <see cref="T:System.Collections.IEnumerable" /> type, instead converts each item in the collection and returns them separately. </para> <para> If the <paramref name="expression" /> result or the element type is an <see cref="T:System.Enum" />, returns a <see cref="T:System.String" /> containing the integer representation of the <see cref="T:System.Enum" /> value as well as all <see cref="T:System.Enum" /> names for that value. Otherwise returns the default <see cref="T:System.String" /> conversion of the value. </para>
     
         
         .. code-block:: csharp

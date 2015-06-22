@@ -78,7 +78,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.HttpHeadAttribute](Microsoft.AspNet.Mvc.HttpHeadAttribute.yml) with the given route template.
     
         
+    
+        
         :param template: The route template. May not be null.
+        
         :type template: System.String
     
         

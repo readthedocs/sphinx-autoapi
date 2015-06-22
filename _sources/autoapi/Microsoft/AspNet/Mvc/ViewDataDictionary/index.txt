@@ -58,10 +58,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
-        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+    
+        
+        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelState: [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
@@ -76,14 +81,20 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
-        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+    
+        
+        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
         :param modelState: [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.
+        
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
-        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-    <c>null</c>.
+    
+        
+        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is <c>null</c>.
+        
         :type declaredModelType: System.Type
     
         
@@ -98,12 +109,15 @@ Constructors
         Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
-        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+    
+        
+        :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.
+        
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
-        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-    <c>null</c>.
+    
+        
+        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is <c>null</c>.
+        
         :type declaredModelType: System.Type
     
         
@@ -119,7 +133,10 @@ Constructors
         instance.
     
         
+    
+        
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
+        
         :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
@@ -138,9 +155,15 @@ Constructors
         <c>null</c>.
     
         
+    
+        
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
+        
         :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param model: Value for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) property.
+        
         :type model: System.Object
     
         
@@ -159,13 +182,20 @@ Constructors
         <c>null</c>.
     
         
+    
+        
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
+        
         :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
+    
+        
         :param model: Value for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) property.
+        
         :type model: System.Object
-        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-    <c>null</c>.
+    
+        
+        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is <c>null</c>.
+        
         :type declaredModelType: System.Type
     
         
@@ -181,11 +211,15 @@ Constructors
         instance.
     
         
+    
+        
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
+        
         :type source: Microsoft.AspNet.Mvc.ViewDataDictionary
-        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set
-    [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
-    <c>null</c>.
+    
+        
+        :param declaredModelType: [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is <c>null</c>.
+        
         :type declaredModelType: System.Type
     
         
@@ -322,7 +356,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.Add(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param item: 
+        
         :type item: System.Collections.Generic.KeyValuePair{System.String,System.Object}
     
         
@@ -333,9 +370,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.Add(System.String, System.Object)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -355,7 +398,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.Contains(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param item: 
+        
         :type item: System.Collections.Generic.KeyValuePair{System.String,System.Object}
         :rtype: System.Boolean
     
@@ -367,7 +413,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.ContainsKey(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Boolean
     
@@ -379,9 +428,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.CopyTo(System.Collections.Generic.KeyValuePair<System.String, System.Object>[], System.Int32)
     
         
+    
+        
         :param array: 
+        
         :type array: System.Collections.Generic.KeyValuePair{System.String,System.Object}[]
+    
+        
         :param arrayIndex: 
+        
         :type arrayIndex: System.Int32
     
         
@@ -397,11 +452,13 @@ Methods
         <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: System.Object
-        :return: Value of named
-    <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        :return: Value of named <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         .. code-block:: csharp
@@ -418,15 +475,18 @@ Methods
         <paramref name="format" />.
     
         
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
+    
+        
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+        
         :type format: System.String
         :rtype: System.String
-        :return: Value of named
-    <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted using
-    given
-    <paramref name="format" />.
+        :return: Value of named <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted using given <paramref name="format" />.
     
         
         .. code-block:: csharp
@@ -436,9 +496,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.FormatValue(System.Object, System.String)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
+    
+        
         :param format: 
+        
         :type format: System.String
         :rtype: System.String
     
@@ -456,12 +522,13 @@ Methods
         [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
+    
+        
         :param expression: Expression name, relative to the current model.
+        
         :type expression: System.String
         :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
-        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
-    <paramref name="expression" /> in this
-    [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         .. code-block:: csharp
@@ -471,7 +538,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.Remove(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
     
         
+    
+        
         :param item: 
+        
         :type item: System.Collections.Generic.KeyValuePair{System.String,System.Object}
         :rtype: System.Boolean
     
@@ -483,7 +553,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.Remove(System.String)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
         :rtype: System.Boolean
     
@@ -495,7 +568,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel(System.Object)
     
         
+    
+        
         :param value: 
+        
         :type value: System.Object
     
         
@@ -526,9 +602,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.TryGetValue(System.String, out System.Object)
     
         
+    
+        
         :param key: 
+        
         :type key: System.String
+    
+        
         :param value: 
+        
         :type value: System.Object
         :rtype: System.Boolean
     

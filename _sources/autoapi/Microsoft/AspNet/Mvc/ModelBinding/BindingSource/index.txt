@@ -162,6 +162,54 @@ Fields
            public static readonly BindingSource Services
 
 
+Operators
+---------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    :noindex:
+    :hidden:
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equality(Microsoft.AspNet.Mvc.ModelBinding.BindingSource, Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
+    
+        
+    
+        
+        :param s1: 
+        
+        :type s1: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    
+        
+        :param s2: 
+        
+        :type s2: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :rtype: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public static bool operator ==(BindingSource s1, BindingSource s2)
+
+    .. dn:operator:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Inequality(Microsoft.AspNet.Mvc.ModelBinding.BindingSource, Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
+    
+        
+    
+        
+        :param s1: 
+        
+        :type s1: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+    
+        
+        :param s2: 
+        
+        :type s2: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
+        :rtype: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public static bool operator !=(BindingSource s1, BindingSource s2)
+
+
 Constructors
 ------------
 
@@ -176,13 +224,25 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml).
     
         
+    
+        
         :param id: The id, a unique identifier.
+        
         :type id: System.String
+    
+        
         :param displayName: The display name.
+        
         :type displayName: System.String
+    
+        
         :param isGreedy: A value indicating whether or not the source is greedy.
+        
         :type isGreedy: System.Boolean
+    
+        
         :param isFromRequest: A value indicating whether or not the data comes from the HTTP request.
+        
         :type isFromRequest: System.Boolean
     
         
@@ -272,11 +332,13 @@ Methods
         <paramref name="bindingSource" />.
     
         
+    
+        
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) to consider as input.
+        
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
         :rtype: System.Boolean
-        :return: <c>True</c> if the source is compatible, otherwise
-    <c>false</c>.
+        :return: <c>True</c> if the source is compatible, otherwise <c>false</c>.
     
         
         .. code-block:: csharp
@@ -286,7 +348,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equals(Microsoft.AspNet.Mvc.ModelBinding.BindingSource)
     
         
+    
+        
         :param other: 
+        
         :type other: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
         :rtype: System.Boolean
     
@@ -298,7 +363,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Equals(System.Object)
     
         
+    
+        
         :param obj: 
+        
         :type obj: System.Object
         :rtype: System.Boolean
     

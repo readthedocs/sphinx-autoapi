@@ -239,44 +239,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>sourceEnumerableOfT</strong> &#8211; Type of the original [System.Collections.Generic.IEnumerable`1]()</li>
+<li><strong>sourceEnumerableOfT</strong> (<em>System.Type</em>) &#8211; Type of the original [System.Collections.Generic.IEnumerable`1]() that is being wrapped.</li>
+<li><strong>elementWrapperProvider</strong> (<a class="reference internal" href="../IWrapperProvider/index.html#Microsoft.AspNet.Mvc.Xml.IWrapperProvider" title="Microsoft.AspNet.Mvc.Xml.IWrapperProvider"><em>Microsoft.AspNet.Mvc.Xml.IWrapperProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) for the element type. Can be null.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>that is being wrapped.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type sourceEnumerableOfT:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param elementWrapperProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) for the element type.</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>Can be null.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type elementWrapperProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.Xml.IWrapperProvider</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">EnumerableWrapperProvider</span><span class="p">(</span><span class="n">Type</span> <span class="n">sourceEnumerableOfT</span><span class="p">,</span> <span class="n">IWrapperProvider</span> <span class="n">elementWrapperProvider</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">EnumerableWrapperProvider</span><span class="p">(</span><span class="n">Type</span> <span class="n">sourceEnumerableOfT</span><span class="p">,</span> <span class="n">IWrapperProvider</span> <span class="n">elementWrapperProvider</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

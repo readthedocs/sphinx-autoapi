@@ -54,7 +54,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiRoutesApplicationModelConvention.WebApiRoutesApplicationModelConvention(System.String)
     
         
+    
+        
         :param area: 
+        
         :type area: System.String
     
         
@@ -73,7 +76,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiRoutesApplicationModelConvention.Apply(Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel)
     
         
+    
+        
         :param controller: 
+        
         :type controller: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
     
         

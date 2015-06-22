@@ -63,7 +63,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.AttributeRouteModel(Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel)
     
         
+    
+        
         :param other: 
+        
         :type other: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel
     
         
@@ -74,7 +77,10 @@ Constructors
     .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.AttributeRouteModel(Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider)
     
         
+    
+        
         :param templateProvider: 
+        
         :type templateProvider: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider
     
         
@@ -156,16 +162,18 @@ Methods
         a new [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instance with the result.
     
         
+    
+        
         :param left: The left [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml).
+        
         :type left: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel
+    
+        
         :param right: The right [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml).
+        
         :type right: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel
         :rtype: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel
-        :return: A new instance of [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) that represents the
-    combination of the two [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instances or
-    <c>null</c> if both
-    parameters are
-    <c>null</c>.
+        :return: A new instance of [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) that represents the combination of the two [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instances or <c>null</c> if both parameters are <c>null</c>.
     
         
         .. code-block:: csharp
@@ -175,9 +183,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.ReplaceTokens(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>)
     
         
+    
+        
         :param template: 
+        
         :type template: System.String
+    
+        
         :param values: 
+        
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
         :rtype: System.String
     

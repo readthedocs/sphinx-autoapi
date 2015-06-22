@@ -130,7 +130,10 @@ Methods
         <c>"Default"</c>.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
     
         
@@ -148,7 +151,10 @@ Methods
         <c>"Default"</c>.
     
         
+    
+        
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
+        
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
         :rtype: System.Threading.Tasks.Task
         :return: A [System.Threading.Tasks.Task]() which will complete when view rendering is completed.

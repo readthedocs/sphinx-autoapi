@@ -63,9 +63,15 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.FilterDescriptor](Microsoft.AspNet.Mvc.FilterDescriptor.yml).
     
         
+    
+        
         :param filter: The [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml).
+        
         :type filter: Microsoft.AspNet.Mvc.IFilter
+    
+        
         :param filterScope: The filter scope.
+        
         :type filterScope: System.Int32
     
         

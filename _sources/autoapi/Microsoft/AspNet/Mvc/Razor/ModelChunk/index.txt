@@ -58,9 +58,15 @@ Constructors
         Represents the chunk for an [model]()  statement.
     
         
+    
+        
         :param baseType: The base type of the view.
+        
         :type baseType: System.String
+    
+        
         :param modelType: The type of the view's Model.
+        
         :type modelType: System.String
     
         

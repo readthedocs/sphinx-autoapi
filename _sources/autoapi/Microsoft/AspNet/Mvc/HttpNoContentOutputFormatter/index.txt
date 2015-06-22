@@ -82,9 +82,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+    
+        
         :param contentType: 
+        
         :type contentType: MediaTypeHeaderValue
         :rtype: System.Boolean
     
@@ -96,7 +102,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter.WriteAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Threading.Tasks.Task
     

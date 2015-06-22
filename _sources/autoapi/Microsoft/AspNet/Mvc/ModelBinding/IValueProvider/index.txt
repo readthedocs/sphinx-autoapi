@@ -58,7 +58,10 @@ Methods
         Determines whether the collection contains the specified prefix.
     
         
+    
+        
         :param prefix: The prefix to search for.
+        
         :type prefix: System.String
         :rtype: System.Threading.Tasks.Task{System.Boolean}
         :return: true if the collection contains the specified prefix; otherwise, false.
@@ -75,7 +78,10 @@ Methods
         Retrieves a value object using the specified key.
     
         
+    
+        
         :param key: The key of the value object to retrieve.
+        
         :type key: System.String
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
         :return: The value object for the specified key. If the exact key is not found, null.

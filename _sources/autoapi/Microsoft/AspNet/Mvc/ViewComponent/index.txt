@@ -221,7 +221,10 @@ Methods
         Returns a result which will render HTML encoded text.
     
         
+    
+        
         :param content: The content, will be HTML encoded before output.
+        
         :type content: System.String
         :rtype: Microsoft.AspNet.Mvc.ContentViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.ContentViewComponentResult](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
@@ -238,7 +241,10 @@ Methods
         Returns a result which will render JSON text.
     
         
+    
+        
         :param value: The value to output in JSON text.
+        
         :type value: System.Object
         :rtype: Microsoft.AspNet.Mvc.JsonViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
@@ -255,10 +261,15 @@ Methods
         Returns a result which will render JSON text.
     
         
+    
+        
         :param value: The value to output in JSON text.
+        
         :type value: System.Object
-        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
-    the formatter.
+    
+        
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by the formatter.
+        
         :type serializerSettings: JsonSerializerSettings
         :rtype: Microsoft.AspNet.Mvc.JsonViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
@@ -292,7 +303,10 @@ Methods
         <paramref name="viewName" />.
     
         
+    
+        
         :param viewName: The name of the partial view to render.
+        
         :type viewName: System.String
         :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
@@ -310,9 +324,15 @@ Methods
         <paramref name="viewName" />.
     
         
+    
+        
         :param viewName: The name of the partial view to render.
+        
         :type viewName: System.String
+    
+        
         :param model: The model object for the view.
+        
         :type model: TModel
         :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
@@ -330,7 +350,10 @@ Methods
         <c>"Default"</c>.
     
         
+    
+        
         :param model: The model object for the view.
+        
         :type model: TModel
         :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
         :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).

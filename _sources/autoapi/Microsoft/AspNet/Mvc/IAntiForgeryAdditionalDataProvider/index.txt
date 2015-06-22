@@ -61,7 +61,10 @@ Methods
         during this request.
     
         
+    
+        
         :param context: Information about the current request.
+        
         :type context: HttpContext
         :rtype: System.String
         :return: Supplemental data to embed within the anti-forgery token.
@@ -79,9 +82,15 @@ Methods
         token.
     
         
+    
+        
         :param context: Information about the current request.
+        
         :type context: HttpContext
+    
+        
         :param additionalData: Supplemental data that was embedded within the token.
+        
         :type additionalData: System.String
         :rtype: System.Boolean
         :return: True if the data is valid; false if the data is invalid.

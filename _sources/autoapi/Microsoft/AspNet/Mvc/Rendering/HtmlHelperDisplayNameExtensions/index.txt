@@ -63,7 +63,10 @@ Methods
         Returns the display name for the current model.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :rtype: System.String
         :return: A [System.String]() containing the display name.
@@ -82,9 +85,15 @@ Methods
         if the current model represents a collection.
     
         
+    
+        
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
+        
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{System.Collections.Generic.IEnumerable{{TModelItem}}}
+    
+        
         :param expression: An expression to be evaluated against an item in the current model.
+        
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModelItem},{TResult}}}
         :rtype: System.String
         :return: A [System.String]() containing the display name.

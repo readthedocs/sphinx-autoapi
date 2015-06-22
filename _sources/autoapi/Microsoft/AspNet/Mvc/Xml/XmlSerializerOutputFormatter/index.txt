@@ -79,7 +79,10 @@ Constructors
         Initializes a new instance of [Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.yml)
     
         
+    
+        
         :param writerSettings: The settings to be used by the [System.Xml.Serialization.XmlSerializer]().
+        
         :type writerSettings: System.Xml.XmlWriterSettings
     
         
@@ -135,9 +138,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.CanWriteType(System.Type, System.Type)
     
         
+    
+        
         :param declaredType: 
+        
         :type declaredType: System.Type
+    
+        
         :param runtimeType: 
+        
         :type runtimeType: System.Type
         :rtype: System.Boolean
     
@@ -153,7 +162,10 @@ Methods
         Create a new instance of [System.Xml.Serialization.XmlSerializer]() for the given object type.
     
         
+    
+        
         :param type: The type of object for which the serializer should be created.
+        
         :type type: System.Type
         :rtype: System.Xml.Serialization.XmlSerializer
         :return: A new instance of [System.Xml.Serialization.XmlSerializer]()
@@ -170,9 +182,15 @@ Methods
         Creates a new instance of [System.Xml.XmlWriter]() using the given stream and the [Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WriterSettings](Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.yml).
     
         
+    
+        
         :param writeStream: The stream on which the XmlWriter should operate on.
+        
         :type writeStream: System.IO.Stream
+    
+        
         :param xmlWriterSettings: 
+        
         :type xmlWriterSettings: System.Xml.XmlWriterSettings
         :rtype: System.Xml.XmlWriter
         :return: A new instance of [System.Xml.XmlWriter]()
@@ -189,7 +207,10 @@ Methods
         Gets the cached serializer or creates and caches the serializer for the given type.
     
         
+    
+        
         :param type: 
+        
         :type type: System.Type
         :rtype: System.Xml.Serialization.XmlSerializer
         :return: The [System.Xml.Serialization.XmlSerializer]() instance.
@@ -206,7 +227,10 @@ Methods
         Gets the type to be serialized.
     
         
+    
+        
         :param type: The original type to be serialized
+        
         :type type: System.Type
         :rtype: System.Type
         :return: The original or wrapped type provided by any [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).
@@ -223,9 +247,15 @@ Methods
         Gets the type of the object to be serialized.
     
         
+    
+        
         :param declaredType: The declared type of the object.
+        
         :type declaredType: System.Type
+    
+        
         :param runtimeType: The runtime type of the object
+        
         :type runtimeType: System.Type
         :rtype: System.Type
         :return: A type that needs to be serialized.
@@ -238,7 +268,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :rtype: System.Threading.Tasks.Task
     

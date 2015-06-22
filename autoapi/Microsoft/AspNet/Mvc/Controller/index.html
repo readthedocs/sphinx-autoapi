@@ -769,29 +769,17 @@ a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>disposing</strong> &#8211; &lt;c&gt;true&lt;/c&gt; if this method is being invoked by the [Microsoft.AspNet.Mvc.Controller.Dispose](Microsoft.AspNet.Mvc.Controller.yml) method,</li>
+<li><strong>disposing</strong> (<em>System.Boolean</em>) &#8211; &lt;c&gt;true&lt;/c&gt; if this method is being invoked by the [Microsoft.AspNet.Mvc.Controller.Dispose](Microsoft.AspNet.Mvc.Controller.yml) method, otherwise &lt;c&gt;false&lt;/c&gt;.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>otherwise
-&lt;c&gt;false&lt;/c&gt;.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type disposing:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Controller.File">
 <code class="descname">File</code><span class="sig-paren">(</span><em>System.Byte[]</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.File" title="Permalink to this definition">¶</a></dt>
@@ -1134,20 +1122,16 @@ to JSON.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.JsonResult</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified &lt;paramref name=&#8221;data&#8221; /&gt; to JSON format for the response.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;paramref name=&#8221;data&#8221; /&gt;
-to JSON format for the response.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Json</code><span class="sig-paren">(</span><em>System.Object</em>, <em>JsonSerializerSettings</em><span class="sig-paren">)</span></dt>
@@ -1158,40 +1142,25 @@ to JSON.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> (<em>System.Object</em>) &#8211; The object to serialize.</li>
-<li><strong>serializerSettings</strong> &#8211; The &#64;!:JsonSerializerSettings- to be used by</li>
+<li><strong>serializerSettings</strong> (<em>JsonSerializerSettings</em>) &#8211; The &#64;!:JsonSerializerSettings- to be used by the formatter.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.JsonResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified &lt;paramref name=&#8221;data&#8221; /&gt; as JSON format for the response.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>the formatter.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type serializerSettings:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">JsonSerializerSettings</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.JsonResult</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;paramref name=&#8221;data&#8221; /&gt;
-as JSON format for the response.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="nf">Json</span><span class="p">(</span><span class="kt">object</span> <span class="n">data</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Controller.OnActionExecuted">
 <code class="descname">OnActionExecuted</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionExecutedContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.OnActionExecuted" title="Permalink to this definition">¶</a></dt>
@@ -1240,35 +1209,25 @@ as JSON format for the response.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>context</strong> (<a class="reference internal" href="../ActionExecutingContext/index.html#Microsoft.AspNet.Mvc.ActionExecutingContext" title="Microsoft.AspNet.Mvc.ActionExecutingContext"><em>Microsoft.AspNet.Mvc.ActionExecutingContext</em></a>) &#8211; The action executing context.</li>
-<li><strong>next</strong> &#8211; The [Microsoft.AspNet.Mvc.ActionExecutionDelegate]() to execute. Invoke this delegate in the body</li>
+<li><strong>next</strong> (<a class="reference internal" href="../ActionExecutionDelegate/index.html#Microsoft.AspNet.Mvc.ActionExecutionDelegate" title="Microsoft.AspNet.Mvc.ActionExecutionDelegate"><em>Microsoft.AspNet.Mvc.ActionExecutionDelegate</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ActionExecutionDelegate]() to execute. Invoke this delegate in the body of [Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext,Microsoft.AspNet.Mvc.ActionExecutionDelegate)](Microsoft.AspNet.Mvc.Controller.yml) to continue execution of the action.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() instance.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>of [Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext,Microsoft.AspNet.Mvc.ActionExecutionDelegate)](Microsoft.AspNet.Mvc.Controller.yml) to continue execution of the action.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type next:</th><td class="field-body">Microsoft.AspNet.Mvc.ActionExecutionDelegate</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() instance.</td>
-</tr>
-</tbody>
-</table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span> <span class="nf">OnActionExecutionAsync</span><span class="p">(</span><span class="n">ActionExecutingContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">ActionExecutionDelegate</span> <span class="n">next</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span> <span class="nf">OnActionExecutionAsync</span><span class="p">(</span><span class="n">ActionExecutingContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">ActionExecutionDelegate</span> <span class="n">next</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.PartialView()</code></dt>
@@ -1858,19 +1817,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TryUpdateModelAsync</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Type</em>, <em>System.String</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em>, <em>System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em>, <em>System.String</em>, <em>System.Boolean&gt;</em><span class="sig-paren">)</span></dt>
@@ -1882,50 +1838,28 @@ using the specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>model</strong> (<em>System.Object</em>) &#8211; The model instance to update.</li>
 <li><strong>modelType</strong> (<em>System.Type</em>) &#8211; The type of model instance to update.</li>
-<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the &lt;paramref name=&#8221;valueProvider&#8221; /&gt;</li>
+<li><strong>valueProvider</strong> (<a class="reference internal" href="../ModelBinding/IValueProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IValueProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IValueProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</li>
+<li><strong>predicate</strong> (<em>System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</em>) &#8211; A predicate which can be used to filter properties at runtime.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param predicate:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A predicate which can be used to filter properties at runtime.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel)</code></dt>
@@ -1944,19 +1878,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String)</code></dt>
@@ -1977,19 +1908,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)</code></dt>
@@ -2001,44 +1929,26 @@ using the specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
-<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the &lt;paramref name=&#8221;valueProvider&#8221; /&gt;.</li>
+<li><strong>valueProvider</strong> (<a class="reference internal" href="../ModelBinding/IValueProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IValueProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IValueProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean&gt;)</code></dt>
@@ -2050,49 +1960,27 @@ using the specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
-<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the &lt;paramref name=&#8221;valueProvider&#8221; /&gt;</li>
+<li><strong>valueProvider</strong> (<a class="reference internal" href="../ModelBinding/IValueProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IValueProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IValueProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</li>
+<li><strong>predicate</strong> (<em>System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</em>) &#8211; A predicate which can be used to filter properties at runtime.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param predicate:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">A predicate which can be used to filter properties at runtime.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
@@ -2104,58 +1992,27 @@ using the specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
-<li><strong>prefix</strong> &#8211; The prefix to use when looking up values in the</li>
+<li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the &lt;paramref name=&#8221;valueProvider&#8221; /&gt;</li>
+<li><strong>valueProvider</strong> (<a class="reference internal" href="../ModelBinding/IValueProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.IValueProvider" title="Microsoft.AspNet.Mvc.ModelBinding.IValueProvider"><em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em></a>) &#8211; The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</li>
+<li><strong>includeExpressions</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</em>) &#8211; [System.Linq.Expressions.Expression]()(s) which represent top-level properties which need to be included for the current model.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>&lt;paramref name=&#8221;valueProvider&#8221; /&gt;</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">type prefix:</th><td class="field-body">System.String</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param valueProvider:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">type valueProvider:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param includeExpressions:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Linq.Expressions.Expression]()(s) which represent top-level properties</td>
-</tr>
-</tbody>
-</table>
-</dd>
-<dt>which need to be included for the current model.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type includeExpressions:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean&gt;)</code></dt>
@@ -2177,19 +2034,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
@@ -2201,40 +2055,26 @@ using the specified
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
 <li><strong>model</strong> (<em>TModel</em>) &#8211; The model instance to update.</li>
 <li><strong>prefix</strong> (<em>System.String</em>) &#8211; The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().</li>
-<li><strong>includeExpressions</strong> &#8211; [System.Linq.Expressions.Expression]()(s) which represent top-level properties</li>
+<li><strong>includeExpressions</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</em>) &#8211; [System.Linq.Expressions.Expression]()(s) which represent top-level properties which need to be included for the current model.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Boolean}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that on completion returns &lt;c&gt;true&lt;/c&gt; if the update is successful</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="docutils">
-<dt>which need to be included for the current model.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">type includeExpressions:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Controller.TryValidateModel">
 <code class="descname">TryValidateModel</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Controller.TryValidateModel" title="Permalink to this definition">¶</a></dt>
@@ -2252,19 +2092,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid;</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid; &lt;c&gt;false&lt;/c&gt; otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;false&lt;/c&gt; otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">TryValidateModel</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
@@ -2283,19 +2120,16 @@ using the specified
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid;</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid; &lt;c&gt;false&lt;/c&gt; otherwise.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>&lt;c&gt;false&lt;/c&gt; otherwise.</p>
-<blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">TryValidateModel</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Controller.View()</code></dt>

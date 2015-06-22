@@ -80,7 +80,10 @@ Methods
         Wraps the given object to the wrapping type provided by [Microsoft.AspNet.Mvc.Xml.IWrapperProvider.WrappingType](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).
     
         
+    
+        
         :param original: The original non-wrapped object.
+        
         :type original: System.Object
         :rtype: System.Object
         :return: Returns a wrapped object.

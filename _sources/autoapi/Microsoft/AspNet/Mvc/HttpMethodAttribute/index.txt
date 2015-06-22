@@ -67,7 +67,10 @@ Constructors
         <param name="httpMethods">The set of supported HTTP methods.</param>
     
         
+    
+        
         :param httpMethods: 
+        
         :type httpMethods: System.Collections.Generic.IEnumerable{System.String}
     
         
@@ -83,9 +86,15 @@ Constructors
         set of HTTP methods an the given route template.
     
         
+    
+        
         :param httpMethods: The set of supported methods.
+        
         :type httpMethods: System.Collections.Generic.IEnumerable{System.String}
+    
+        
         :param template: The route template. May not be null.
+        
         :type template: System.String
     
         

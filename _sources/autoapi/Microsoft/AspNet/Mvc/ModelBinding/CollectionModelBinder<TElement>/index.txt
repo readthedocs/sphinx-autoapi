@@ -59,7 +59,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.BindModelAsync(Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext)
     
         
+    
+        
         :param bindingContext: 
+        
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
         :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
@@ -77,10 +80,15 @@ Methods
         <paramref name="target" />.
     
         
+    
+        
         :param target: [System.Object]() into which values are copied.
+        
         :type target: System.Object
-        :param sourceCollection: Collection of values retrieved from value providers. Or
-    <c>null</c> if nothing was bound.
+    
+        
+        :param sourceCollection: Collection of values retrieved from value providers. Or <c>null</c> if nothing was bound.
+        
         :type sourceCollection: System.Collections.Generic.IEnumerable{{TElement}}
     
         
@@ -105,12 +113,13 @@ Methods
         Gets an [System.Object]() assignable to the collection property.
     
         
-        :param newCollection: Collection of values retrieved from value providers. Or
-    <c>null</c> if nothing was bound.
+    
+        
+        :param newCollection: Collection of values retrieved from value providers. Or <c>null</c> if nothing was bound.
+        
         :type newCollection: System.Collections.Generic.IEnumerable{{TElement}}
         :rtype: System.Object
-        :return: [System.Object]() assignable to the collection property. Or
-    <c>null</c> if nothing was bound.
+        :return: [System.Object]() assignable to the collection property. Or <c>null</c> if nothing was bound.
     
         
         .. code-block:: csharp

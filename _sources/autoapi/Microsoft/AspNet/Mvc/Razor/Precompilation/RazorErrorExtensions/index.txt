@@ -54,9 +54,15 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorErrorExtensions.ToDiagnostics(RazorError, System.String)
     
         
+    
+        
         :param error: 
+        
         :type error: RazorError
+    
+        
         :param filePath: 
+        
         :type filePath: System.String
         :rtype: Diagnostic
     

@@ -63,7 +63,10 @@ Constructors
         Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultCompositeMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultCompositeMetadataDetailsProvider.yml).
     
         
+    
+        
         :param providers: The set of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider.yml) instances.
+        
         :type providers: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider}
     
         
@@ -82,7 +85,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultCompositeMetadataDetailsProvider.GetBindingMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadataProviderContext
     
         
@@ -93,7 +99,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultCompositeMetadataDetailsProvider.GetDisplayMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext
     
         
@@ -104,7 +113,10 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultCompositeMetadataDetailsProvider.GetValidationMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext)
     
         
+    
+        
         :param context: 
+        
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext
     
         
