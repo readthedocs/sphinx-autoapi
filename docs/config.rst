@@ -1,23 +1,19 @@
 AutoAPI Configuration
 ---------------------
 
+.. rubric:: Commonly used
+
 .. confval:: autoapi_dir
 
 	**Required**
 
-	Where to find the files to generate the AutoAPI from.
+        The path (relative or absolute) to the source code that you wish to generate your API documentation from.
 
 .. confval:: autoapi_type
 
-	Default: ``dotnet``
+	Default: ``python``
 
 	Set the type of files you are documenting
-
-.. confval:: autoapi_root
-
-	Default: ``autoapi``
-
-	Directory to output the AutoAPI files into
 
 .. confval:: autoapi_template_dir
 
@@ -25,18 +21,9 @@ AutoAPI Configuration
 
 	A directory that has user-defined templates to override our default templates.
 
-.. confval:: autoapi_ignore
+        You can see the existing files in the `autoapi/templates`_ directory.
 
-	Default: ``[]``
-
-	A list of patterns to ignore when finding files
-
-.. confval:: autoapi_keep_files
-
-	Default: ``False``
-
-	Keep the AutoAPI generated files on the filesystem after the run.
-	Useful for debugging.
+.. rubric:: Customization
 
 .. confval:: autoapi_options
 
@@ -49,3 +36,26 @@ AutoAPI Configuration
 	:param private-members: Display private objects (_foo in Python)
 	:param special-members: Display special objects (__foo__ in Python)
 
+
+.. confval:: autoapi_ignore
+
+	Default: ``[]``
+
+	A list of patterns to ignore when finding files
+
+.. confval:: autoapi_root
+
+	Default: ``autoapi``
+
+	Directory to output the AutoAPI files into
+
+.. rubric:: Debugging
+
+.. confval:: autoapi_keep_files
+
+	Default: ``False``
+
+	Keep the AutoAPI generated files on the filesystem after the run.
+	Useful for debugging.
+
+.. _autoapi/templates:: https://github.com/rtfd/sphinx-autoapi/tree/master/autoapi/templates
