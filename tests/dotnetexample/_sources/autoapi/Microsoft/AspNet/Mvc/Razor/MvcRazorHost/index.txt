@@ -1,0 +1,239 @@
+
+
+MvcRazorHost Class
+==================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`RazorEngineHost`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.MvcRazorHost`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcRazorHost : RazorEngineHost, IMvcRazorHost
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/MvcRazorHost.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MvcRazorHost(Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache)
+    
+        
+    
+        
+        
+    
+        
+        :param chunkTreeCache: An [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) rooted at the application base path.
+        :type chunkTreeCache: Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache
+    
+        
+        .. code-block:: csharp
+    
+           public MvcRazorHost(IChunkTreeCache chunkTreeCache)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MvcRazorHost(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param root: The path to the application base.
+        :type root: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public MvcRazorHost(string root)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.CreateModelExpressionMethod
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string CreateModelExpressionMethod { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultInheritedChunks
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IReadOnlyList<Chunk> DefaultInheritedChunks { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultModel
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string DefaultModel { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.InjectAttribute
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string InjectAttribute { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MainClassNamePrefix
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string MainClassNamePrefix { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.ModelExpressionType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string ModelExpressionType { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateCodeGenerator(CodeGenerator, CodeGeneratorContext)
+    
+        
+        :param incomingGenerator: 
+        :type incomingGenerator: CodeGenerator
+        :param context: 
+        :type context: CodeGeneratorContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override CodeGenerator DecorateCodeGenerator(CodeGenerator incomingGenerator, CodeGeneratorContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateCodeParser(ParserBase)
+    
+        
+        :param incomingCodeParser: 
+        :type incomingCodeParser: ParserBase
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override ParserBase DecorateCodeParser(ParserBase incomingCodeParser)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DecorateRazorParser(RazorParser, System.String)
+    
+        
+        :param razorParser: 
+        :type razorParser: RazorParser
+        :param sourceFileName: 
+        :type sourceFileName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override RazorParser DecorateRazorParser(RazorParser razorParser, string sourceFileName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.GenerateCode(System.String, System.IO.Stream)
+    
+        
+        :param rootRelativePath: 
+        :type rootRelativePath: System.String
+        :param inputStream: 
+        :type inputStream: System.IO.Stream
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public GeneratorResults GenerateCode(string rootRelativePath, Stream inputStream)
+

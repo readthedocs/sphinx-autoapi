@@ -1,0 +1,149 @@
+
+
+System.Web.Http Namespace
+=========================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/System/Web/Http/ApiController/index
+   
+   
+   
+   /autoapi/System/Web/Http/BadRequestErrorMessageResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/ConflictResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/ExceptionResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/FromUriAttribute/index
+   
+   
+   
+   /autoapi/System/Web/Http/HttpError/index
+   
+   
+   
+   /autoapi/System/Web/Http/HttpErrorKeys/index
+   
+   
+   
+   /autoapi/System/Web/Http/HttpResponseException/index
+   
+   
+   
+   /autoapi/System/Web/Http/InternalServerErrorResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/InvalidModelStateResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/NegotiatedContentResult<T>/index
+   
+   
+   
+   /autoapi/System/Web/Http/OkNegotiatedContentResult<T>/index
+   
+   
+   
+   /autoapi/System/Web/Http/OkResult/index
+   
+   
+   
+   /autoapi/System/Web/Http/ResponseMessageResult/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: System.Web.Http
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`ApiController`
+        
+
+
+    class :dn:cls:`BadRequestErrorMessageResult`
+        An action result that returns a @!:StatusCodes.Status400BadRequest- response and performs
+        content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) with a [System.Web.Http.HttpError.Message](System.Web.Http.HttpError.yml).
+
+
+    class :dn:cls:`ConflictResult`
+        An action result that returns an empty @!:StatusCodes.Status409Conflict- response.
+
+
+    class :dn:cls:`ExceptionResult`
+        An action result that returns a @!:StatusCodes.Status500InternalServerError- response and
+        performs content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) based on an [System.Web.Http.ExceptionResult.Exception](System.Web.Http.ExceptionResult.yml).
+
+
+    class :dn:cls:`FromUriAttribute`
+        An attribute that specifies that the value can be bound from the query string or route data.
+
+
+    class :dn:cls:`HttpError`
+        Defines a serializable container for storing error information. This information is stored
+        as key/value pairs. The dictionary keys to look up standard error information are available
+        on the [System.Web.Http.HttpErrorKeys](System.Web.Http.HttpErrorKeys.yml) type.
+
+
+    class :dn:cls:`HttpErrorKeys`
+        Provides keys to look up error information stored in the [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) dictionary.
+
+
+    class :dn:cls:`HttpResponseException`
+        
+
+
+    class :dn:cls:`InternalServerErrorResult`
+        An action result that returns an empty @!:StatusCodes.Status500InternalServerError- response.
+
+
+    class :dn:cls:`InvalidModelStateResult`
+        An action result that returns a @!:StatusCodes.Status400BadRequest- response and performs
+        content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) based on a [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
+
+
+    class :dn:cls:`NegotiatedContentResult\<T>`
+        An action result that performs content negotiation.
+
+
+    class :dn:cls:`OkNegotiatedContentResult\<T>`
+        Represents an action result that performs content negotiation and returns an [System.Net.HttpStatusCode.OK]()
+        response when it succeeds.
+
+
+    class :dn:cls:`OkResult`
+        An action result that returns an empty @!:StatusCodes.Status200OK- response.
+
+
+    class :dn:cls:`ResponseMessageResult`
+        An action result that returns a specified response message.
+
+

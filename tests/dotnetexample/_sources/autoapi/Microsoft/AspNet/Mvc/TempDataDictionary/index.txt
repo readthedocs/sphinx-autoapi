@@ -1,0 +1,326 @@
+
+
+TempDataDictionary Class
+========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TempDataDictionary`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TempDataDictionary : ITempDataDictionary, IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/TempDataDictionary.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TempDataDictionary
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TempDataDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TempDataDictionary.TempDataDictionary(IHttpContextAccessor, Microsoft.AspNet.Mvc.ITempDataProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The @!:IHttpContextAccessor- that provides the HttpContext.
+        :type context: IHttpContextAccessor
+        :param provider: The [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml) used to Load and Save data.
+        :type provider: Microsoft.AspNet.Mvc.ITempDataProvider
+    
+        
+        .. code-block:: csharp
+    
+           public TempDataDictionary(IHttpContextAccessor context, ITempDataProvider provider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TempDataDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Count
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Count { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Item[System.String]
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object this[string key] { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Keys
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICollection<string> Keys { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.IsReadOnly
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool ICollection<KeyValuePair<string, object>>.IsReadOnly { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Values
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICollection<object> Values { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TempDataDictionary
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Add(System.String, System.Object)
+    
+        
+        :param key: 
+        :type key: System.String
+        :param value: 
+        :type value: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public void Add(string key, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Clear()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Clear()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.ContainsKey(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool ContainsKey(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.ContainsValue(System.Object)
+    
+        
+        :param value: 
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool ContainsValue(object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Keep()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Keep()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Keep(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void Keep(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Load()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Load()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Peek(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Peek(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Remove(System.String)
+    
+        
+        :param key: 
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool Remove(string key)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.Save()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Save()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Add(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
+    
+        
+        :param keyValuePair: 
+        :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+    
+        
+        .. code-block:: csharp
+    
+           void ICollection<KeyValuePair<string, object>>.Add(KeyValuePair<string, object> keyValuePair)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Contains(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
+    
+        
+        :param keyValuePair: 
+        :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool ICollection<KeyValuePair<string, object>>.Contains(KeyValuePair<string, object> keyValuePair)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.CopyTo(System.Collections.Generic.KeyValuePair<System.String, System.Object>[], System.Int32)
+    
+        
+        :param array: 
+        :type array: System.Collections.Generic.KeyValuePair{System.String,System.Object}[]
+        :param index: 
+        :type index: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           void ICollection<KeyValuePair<string, object>>.CopyTo(KeyValuePair<string, object>[] array, int index)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.Remove(System.Collections.Generic.KeyValuePair<System.String, System.Object>)
+    
+        
+        :param keyValuePair: 
+        :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool ICollection<KeyValuePair<string, object>>.Remove(KeyValuePair<string, object> keyValuePair)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.IEnumerable.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerator IEnumerable.GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.TryGetValue(System.String, out System.Object)
+    
+        
+        :param key: 
+        :type key: System.String
+        :param value: 
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool TryGetValue(string key, out object value)
+

@@ -1,0 +1,91 @@
+
+
+ControllerActionDescriptorBuilder Class
+=======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Creates instances of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml) from [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ControllerActionDescriptorBuilder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ControllerActionDescriptorBuilder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder.AddRouteConstraints(System.Collections.Generic.ISet<System.String>, Microsoft.AspNet.Mvc.ControllerActionDescriptor, Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel, Microsoft.AspNet.Mvc.ApplicationModels.ActionModel)
+    
+        
+        :param removalConstraints: 
+        :type removalConstraints: System.Collections.Generic.ISet{System.String}
+        :param actionDescriptor: 
+        :type actionDescriptor: Microsoft.AspNet.Mvc.ControllerActionDescriptor
+        :param controller: 
+        :type controller: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
+        :param action: 
+        :type action: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
+    
+        
+        .. code-block:: csharp
+    
+           public static void AddRouteConstraints(ISet<string> removalConstraints, ControllerActionDescriptor actionDescriptor, ControllerModel controller, ActionModel action)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ControllerActionDescriptorBuilder.Build(Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel)
+    
+        
+    
+        
+        
+    
+        
+        :param application: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+        :type application: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IList<ControllerActionDescriptor> Build(ApplicationModel application)
+

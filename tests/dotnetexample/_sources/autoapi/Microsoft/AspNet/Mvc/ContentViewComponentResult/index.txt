@@ -1,0 +1,168 @@
+
+
+ContentViewComponentResult Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An [Microsoft.AspNet.Mvc.IViewComponentResult](Microsoft.AspNet.Mvc.IViewComponentResult.yml) which writes text when executed.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ContentViewComponentResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ContentViewComponentResult : IViewComponentResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/ContentViewComponentResult.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ContentViewComponentResult
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ContentViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ContentViewComponentResult.ContentViewComponentResult(Microsoft.AspNet.Mvc.Rendering.HtmlString)
+    
+        
+    
+        
+        
+    
+        
+        :param encodedContent: 
+        :type encodedContent: Microsoft.AspNet.Mvc.Rendering.HtmlString
+    
+        
+        .. code-block:: csharp
+    
+           public ContentViewComponentResult(HtmlString encodedContent)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ContentViewComponentResult.ContentViewComponentResult(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param content: Content to write. The content be HTML encoded when output.
+        :type content: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public ContentViewComponentResult(string content)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ContentViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ContentViewComponentResult.Content
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Content { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ContentViewComponentResult.EncodedContent
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HtmlString EncodedContent { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ContentViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ContentViewComponentResult.Execute(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+    
+        
+        .. code-block:: csharp
+    
+           public void Execute(ViewComponentContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ContentViewComponentResult.ExecuteAsync(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task ExecuteAsync(ViewComponentContext context)
+

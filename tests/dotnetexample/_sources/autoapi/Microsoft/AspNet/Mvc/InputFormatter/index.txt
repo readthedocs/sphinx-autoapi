@@ -1,0 +1,182 @@
+
+
+InputFormatter Class
+====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Reads an object from the request body.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.InputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class InputFormatter : IInputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/InputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatter
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.InputFormatter.SupportedEncodings
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<Encoding> SupportedEncodings { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.InputFormatter.SupportedMediaTypes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<MediaTypeHeaderValue> SupportedMediaTypes { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.InputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.CanRead(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool CanRead(InputFormatterContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.CanReadType(System.Type)
+    
+        
+    
+        
+        
+    
+        
+        :param type: The type of object that will be read.
+        :type type: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual bool CanReadType(Type type)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.GetDefaultValueForType(System.Type)
+    
+        
+        :param modelType: 
+        :type modelType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected object GetDefaultValueForType(Type modelType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.ReadAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<object> ReadAsync(InputFormatterContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.ReadRequestBodyAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.InputFormatterContext]() associated with the call.
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract Task<object> ReadRequestBodyAsync(InputFormatterContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.InputFormatter.SelectCharacterEncoding(MediaTypeHeaderValue)
+    
+        
+    
+        
+        
+    
+        
+        :param contentType: 
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected Encoding SelectCharacterEncoding(MediaTypeHeaderValue contentType)
+

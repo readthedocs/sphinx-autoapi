@@ -1,0 +1,101 @@
+
+
+AttributeRoute Class
+====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`IRouter`
+* :dn:cls:`Microsoft.AspNet.Mvc.Routing.AttributeRoute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AttributeRoute : IRouter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/AttributeRoute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.AttributeRoute
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.AttributeRoute
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.AttributeRoute(IRouter, Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider, IInlineConstraintResolver, ILoggerFactory)
+    
+        
+        :param target: 
+        :type target: IRouter
+        :param actionDescriptorsCollectionProvider: 
+        :type actionDescriptorsCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+        :param constraintResolver: 
+        :type constraintResolver: IInlineConstraintResolver
+        :param loggerFactory: 
+        :type loggerFactory: ILoggerFactory
+    
+        
+        .. code-block:: csharp
+    
+           public AttributeRoute(IRouter target, IActionDescriptorsCollectionProvider actionDescriptorsCollectionProvider, IInlineConstraintResolver constraintResolver, ILoggerFactory loggerFactory)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.AttributeRoute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.GetVirtualPath(VirtualPathContext)
+    
+        
+        :param context: 
+        :type context: VirtualPathContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public VirtualPathData GetVirtualPath(VirtualPathContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Routing.AttributeRoute.RouteAsync(RouteContext)
+    
+        
+        :param context: 
+        :type context: RouteContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task RouteAsync(RouteContext context)
+

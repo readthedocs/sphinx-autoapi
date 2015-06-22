@@ -1,0 +1,1514 @@
+
+
+Controller Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Base class for an MVC controller.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Controller`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class Controller : IActionFilter, IAsyncActionFilter, IFilter, IDisposable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Controller.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Controller
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Controller
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.ActionContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext ActionContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.BindingContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionBindingContext BindingContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.Context
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpContext Context { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.MetadataProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IModelMetadataProvider MetadataProvider { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.ObjectValidator
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IObjectModelValidator ObjectValidator { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.Request
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpRequest Request { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.Resolver
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IServiceProvider Resolver { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.Response
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpResponse Response { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.RouteData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RouteData RouteData { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.TempData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ITempDataDictionary TempData { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.Url
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IUrlHelper Url { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.User
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ClaimsPrincipal User { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.ViewBag
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewBag { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Controller.ViewData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary ViewData { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Controller
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Content(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The content to write to the response.
+        :type content: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ContentResult Content(string content)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Content(System.String, MediaTypeHeaderValue)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The content to write to the response.
+        :type content: System.String
+        :param contentType: The content type (MIME type).
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ContentResult Content(string content, MediaTypeHeaderValue contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Content(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The content to write to the response.
+        :type content: System.String
+        :param contentType: The content type (MIME type).
+        :type contentType: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ContentResult Content(string content, string contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Content(System.String, System.String, System.Text.Encoding)
+    
+        
+    
+        
+        
+    
+        
+        :param content: The content to write to the response.
+        :type content: System.String
+        :param contentType: The content type (MIME type).
+        :type contentType: System.String
+        :param contentEncoding: The content encoding.
+        :type contentEncoding: System.Text.Encoding
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ContentResult Content(string content, string contentType, Encoding contentEncoding)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Created(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param uri: The URI at which the content has been created.
+        :type uri: System.String
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedResult Created(string uri, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Created(System.Uri, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param uri: The URI at which the content has been created.
+        :type uri: System.Uri
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedResult Created(Uri uri, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtAction(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action to use for generating the URL.
+        :type actionName: System.String
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtActionResult CreatedAtAction(string actionName, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtAction(System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action to use for generating the URL.
+        :type actionName: System.String
+        :param routeValues: The route data to use for generating the URL.
+        :type routeValues: System.Object
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtActionResult CreatedAtAction(string actionName, object routeValues, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtAction(System.String, System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action to use for generating the URL.
+        :type actionName: System.String
+        :param controllerName: The name of the controller to use for generating the URL.
+        :type controllerName: System.String
+        :param routeValues: The route data to use for generating the URL.
+        :type routeValues: System.Object
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtActionResult CreatedAtAction(string actionName, string controllerName, object routeValues, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtRoute(System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeValues: The route data to use for generating the URL.
+        :type routeValues: System.Object
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtRouteResult CreatedAtRoute(object routeValues, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtRoute(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route to use for generating the URL.
+        :type routeName: System.String
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtRouteResult CreatedAtRoute(string routeName, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.CreatedAtRoute(System.String, System.Object, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route to use for generating the URL.
+        :type routeName: System.String
+        :param routeValues: The route data to use for generating the URL.
+        :type routeValues: System.Object
+        :param value: The content value to format in the entity body.
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual CreatedAtRouteResult CreatedAtRoute(string routeName, object routeValues, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Dispose()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public void Dispose()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Dispose(System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param disposing: <c>true</c> if this method is being invoked by the [Microsoft.AspNet.Mvc.Controller.Dispose](Microsoft.AspNet.Mvc.Controller.yml) method,
+    otherwise
+    <c>false</c>.
+        :type disposing: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual void Dispose(bool disposing)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.Byte[], System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileContents: The file contents.
+        :type fileContents: System.Byte[]
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FileContentResult File(byte[] fileContents, string contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.Byte[], System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileContents: The file contents.
+        :type fileContents: System.Byte[]
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :param fileDownloadName: The suggested file name.
+        :type fileDownloadName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FileContentResult File(byte[] fileContents, string contentType, string fileDownloadName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.IO.Stream, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileStream: The [System.IO.Stream]() with the contents of the file.
+        :type fileStream: System.IO.Stream
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FileStreamResult File(Stream fileStream, string contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.IO.Stream, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileStream: The [System.IO.Stream]() with the contents of the file.
+        :type fileStream: System.IO.Stream
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :param fileDownloadName: The suggested file name.
+        :type fileDownloadName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FileStreamResult File(Stream fileStream, string contentType, string fileDownloadName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileName: The [System.IO.Stream]() with the contents of the file.
+        :type fileName: System.String
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FilePathResult File(string fileName, string contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.File(System.String, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileName: The [System.IO.Stream]() with the contents of the file.
+        :type fileName: System.String
+        :param contentType: The Content-Type of the file.
+        :type contentType: System.String
+        :param fileDownloadName: The suggested file name.
+        :type fileDownloadName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual FilePathResult File(string fileName, string contentType, string fileDownloadName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpBadRequest()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual BadRequestResult HttpBadRequest()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpBadRequest(Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param modelState: 
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual BadRequestObjectResult HttpBadRequest(ModelStateDictionary modelState)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpBadRequest(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param error: 
+        :type error: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual BadRequestObjectResult HttpBadRequest(object error)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpNotFound()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual HttpNotFoundResult HttpNotFound()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpNotFound(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param value: 
+        :type value: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual HttpNotFoundObjectResult HttpNotFound(object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.HttpUnauthorized()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual HttpUnauthorizedResult HttpUnauthorized()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Json(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param data: The object to serialize.
+        :type data: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual JsonResult Json(object data)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Json(System.Object, JsonSerializerSettings)
+    
+        
+    
+        
+        
+    
+        
+        :param data: The object to serialize.
+        :type data: System.Object
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
+    the formatter.
+        :type serializerSettings: JsonSerializerSettings
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual JsonResult Json(object data, JsonSerializerSettings serializerSettings)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.OnActionExecuted(Microsoft.AspNet.Mvc.ActionExecutedContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The action executed context.
+        :type context: Microsoft.AspNet.Mvc.ActionExecutedContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnActionExecuted(ActionExecutedContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.OnActionExecuting(Microsoft.AspNet.Mvc.ActionExecutingContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The action executing context.
+        :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void OnActionExecuting(ActionExecutingContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext, Microsoft.AspNet.Mvc.ActionExecutionDelegate)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The action executing context.
+        :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
+        :param next: The [Microsoft.AspNet.Mvc.ActionExecutionDelegate]() to execute. Invoke this delegate in the body
+    of [Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext,Microsoft.AspNet.Mvc.ActionExecutionDelegate)](Microsoft.AspNet.Mvc.Controller.yml) to continue execution of the action.
+        :type next: Microsoft.AspNet.Mvc.ActionExecutionDelegate
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.PartialView()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual PartialViewResult PartialView()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.PartialView(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model that is rendered by the partial view.
+        :type model: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual PartialViewResult PartialView(object model)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.PartialView(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the view that is rendered to the response.
+        :type viewName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual PartialViewResult PartialView(string viewName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.PartialView(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the partial view that is rendered to the response.
+        :type viewName: System.String
+        :param model: The model that is rendered by the partial view.
+        :type model: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual PartialViewResult PartialView(string viewName, object model)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.Redirect(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param url: The URL to redirect to.
+        :type url: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectResult Redirect(string url)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectPermanent(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param url: The URL to redirect to.
+        :type url: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectResult RedirectPermanent(string url)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToAction(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToAction(string actionName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToAction(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToAction(string actionName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToAction(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToAction(string actionName, string controllerName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToAction(System.String, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToAction(string actionName, string controllerName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToActionPermanent(string actionName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToActionPermanent(string actionName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToActionPermanent(string actionName, string controllerName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToActionPermanent(System.String, System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param actionName: The name of the action.
+        :type actionName: System.String
+        :param controllerName: The name of the controller.
+        :type controllerName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToActionResult RedirectToActionPermanent(string actionName, string controllerName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoute(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoute(object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoute(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoute(string routeName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoute(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoute(string routeName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoutePermanent(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoutePermanent(object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoutePermanent(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoutePermanent(string routeName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.RedirectToRoutePermanent(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param routeName: The name of the route.
+        :type routeName: System.String
+        :param routeValues: The parameters for a route.
+        :type routeValues: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual RedirectToRouteResult RedirectToRoutePermanent(string routeName, object routeValues)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync(System.Object, System.Type, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: System.Object
+        :param modelType: The type of model instance to update.
+        :type modelType: System.Type
+        :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<bool> TryUpdateModelAsync(object model, Type modelType, string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync(System.Object, System.Type, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Func<Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean>)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: System.Object
+        :param modelType: The type of model instance to update.
+        :type modelType: System.Type
+        :param prefix: The prefix to use when looking up values in the
+    <paramref name="valueProvider" />
+        :type prefix: System.String
+        :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :param predicate: A predicate which can be used to filter properties at runtime.
+        :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<bool> TryUpdateModelAsync(object model, Type modelType, string prefix, IValueProvider valueProvider, Func<ModelBindingContext, string, bool> predicate)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<bool> TryUpdateModelAsync<TModel>(TModel model)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the
+    <paramref name="valueProvider" />.
+        :type prefix: System.String
+        :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix, IValueProvider valueProvider)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Func<Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean>)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the
+    <paramref name="valueProvider" />
+        :type prefix: System.String
+        :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :param predicate: A predicate which can be used to filter properties at runtime.
+        :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix, IValueProvider valueProvider, Func<ModelBindingContext, string, bool> predicate)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Linq.Expressions.Expression<System.Func<TModel, System.Object>>[])
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the
+    <paramref name="valueProvider" />
+        :type prefix: System.String
+        :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
+        :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :param includeExpressions: [System.Linq.Expressions.Expression]()(s) which represent top-level properties
+    which need to be included for the current model.
+        :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix, IValueProvider valueProvider, params Expression<Func<TModel, object>>[] includeExpressions)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String, System.Func<Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean>)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().
+        :type prefix: System.String
+        :param predicate: A predicate which can be used to filter properties at runtime.
+        :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix, Func<ModelBindingContext, string, bool> predicate)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryUpdateModelAsync<TModel>(TModel, System.String, System.Linq.Expressions.Expression<System.Func<TModel, System.Object>>[])
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model instance to update.
+        :type model: TModel
+        :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().
+        :type prefix: System.String
+        :param includeExpressions: [System.Linq.Expressions.Expression]()(s) which represent top-level properties
+    which need to be included for the current model.
+        :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task<bool> TryUpdateModelAsync<TModel>(TModel model, string prefix, params Expression<Func<TModel, object>>[] includeExpressions)where TModel : class
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryValidateModel(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model to validate.
+        :type model: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool TryValidateModel(object model)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.TryValidateModel(System.Object, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model to validate.
+        :type model: System.Object
+        :param prefix: The key to use when looking up information in [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml).
+        :type prefix: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool TryValidateModel(object model, string prefix)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.View()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ViewResult View()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.View(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param model: The model that is rendered by the view.
+        :type model: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ViewResult View(object model)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.View(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the view that is rendered to the response.
+        :type viewName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ViewResult View(string viewName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Controller.View(System.String, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param viewName: The name of the view that is rendered to the response.
+        :type viewName: System.String
+        :param model: The model that is rendered by the view.
+        :type model: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ViewResult View(string viewName, object model)
+

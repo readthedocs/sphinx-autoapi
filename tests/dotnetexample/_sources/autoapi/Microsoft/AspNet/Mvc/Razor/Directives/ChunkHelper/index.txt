@@ -1,0 +1,129 @@
+
+
+ChunkHelper Class
+=================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Contains helper methods for dealing with Chunks
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ChunkHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/Directives/ChunkHelper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.EnsureChunk<TChunk>(Chunk)
+    
+        
+    
+        
+        
+    
+        
+        :param chunk: The chunk to cast.
+        :type chunk: Chunk
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static TChunk EnsureChunk<TChunk>(Chunk chunk)where TChunk : Chunk
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelChunk(ChunkTree)
+    
+        
+    
+        
+        
+    
+        
+        :param chunkTree: The @!:ChunkTree- to scan for [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml)s in.
+        :type chunkTree: ChunkTree
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ModelChunk GetModelChunk(ChunkTree chunkTree)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelTypeName(ChunkTree, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param chunkTree: The @!:ChunkTree- to scan for [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml)s in.
+        :type chunkTree: ChunkTree
+        :param defaultModelName: The [System.Type]() name of the default model.
+        :type defaultModelName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string GetModelTypeName(ChunkTree chunkTree, string defaultModelName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.ReplaceTModel(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The string to replace the token in.
+        :type value: System.String
+        :param modelName: The model name to replace with.
+        :type modelName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string ReplaceTModel(string value, string modelName)
+

@@ -1,0 +1,154 @@
+
+
+Microsoft.AspNet.Mvc.ApplicationModels Namespace
+================================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ActionModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ApiExplorerModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ApplicationModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ApplicationModelConventions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ApplicationModelProviderContext/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/AttributeRouteModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ControllerModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/DefaultApplicationModelProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/IActionModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/IApplicationModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/IApplicationModelProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/IControllerModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/IParameterModelConvention/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/ParameterModel/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/PropertyModel/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.ApplicationModels
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IActionModelConvention`
+        Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml).
+
+
+    interface :dn:iface:`IApplicationModelConvention`
+        Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+
+
+    interface :dn:iface:`IApplicationModelProvider`
+        Builds or modifies an [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) for action discovery.
+
+
+    interface :dn:iface:`IControllerModelConvention`
+        Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
+
+
+    interface :dn:iface:`IParameterModelConvention`
+        Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`ActionModel`
+        
+
+
+    class :dn:cls:`ApiExplorerModel`
+        A model for ApiExplorer properties associated with a controller or action.
+
+
+    class :dn:cls:`ApplicationModel`
+        
+
+
+    class :dn:cls:`ApplicationModelConventions`
+        Applies conventions to a [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
+
+
+    class :dn:cls:`ApplicationModelProviderContext`
+        A context object for [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
+
+
+    class :dn:cls:`AttributeRouteModel`
+        
+
+
+    class :dn:cls:`ControllerModel`
+        
+
+
+    class :dn:cls:`DefaultApplicationModelProvider`
+        
+
+
+    class :dn:cls:`ParameterModel`
+        
+
+
+    class :dn:cls:`PropertyModel`
+        A type which is used to represent a property in a [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
+
+

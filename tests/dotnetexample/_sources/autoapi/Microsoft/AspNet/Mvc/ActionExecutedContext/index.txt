@@ -1,0 +1,137 @@
+
+
+ActionExecutedContext Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionExecutedContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionExecutedContext : FilterContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ActionExecutedContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutedContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutedContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionExecutedContext.ActionExecutedContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>, System.Object)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param filters: 
+        :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public ActionExecutedContext(ActionContext actionContext, IList<IFilter> filters, object controller)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionExecutedContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.Canceled
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool Canceled { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.Controller
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual object Controller { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.Exception
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Exception Exception { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.ExceptionDispatchInfo
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual ExceptionDispatchInfo ExceptionDispatchInfo { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.ExceptionHandled
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool ExceptionHandled { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutedContext.Result
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IActionResult Result { get; set; }
+

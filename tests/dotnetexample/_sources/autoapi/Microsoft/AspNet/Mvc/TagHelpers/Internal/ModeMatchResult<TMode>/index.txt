@@ -1,0 +1,132 @@
+
+
+ModeMatchResult<TMode> Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Result of determining the mode an @!:ITagHelper- will run in.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult\<TMode>`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModeMatchResult<TMode>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/Internal/ModeMatchResult.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.FullMatches
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<ModeMatchAttributes<TMode>> FullMatches { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.PartialMatches
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<ModeMatchAttributes<TMode>> PartialMatches { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.PartiallyMatchedAttributes
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<string> PartiallyMatchedAttributes { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.LogDetails<TTagHelper>(ILogger, TTagHelper, System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param logger: The @!:ILogger-.
+        :type logger: ILogger
+        :param tagHelper: The @!:ITagHelper-.
+        :type tagHelper: TTagHelper
+        :param uniqueId: The value of @!:TagHelperContext.UniqueId-.
+        :type uniqueId: System.String
+        :param viewPath: The path to the view the @!:ITagHelper- is on.
+        :type viewPath: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void LogDetails<TTagHelper>(ILogger logger, TTagHelper tagHelper, string uniqueId, string viewPath)where TTagHelper : ITagHelper
+

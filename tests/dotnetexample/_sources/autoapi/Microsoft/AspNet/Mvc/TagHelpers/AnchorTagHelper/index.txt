@@ -1,0 +1,217 @@
+
+
+AnchorTagHelper Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+@!:ITagHelper- implementation targeting &lt;a&gt; elements.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`TagHelper`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AnchorTagHelper : TagHelper
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/AnchorTagHelper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.AnchorTagHelper(Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator)
+    
+        
+    
+        
+        
+    
+        
+        :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
+        :type generator: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
+    
+        
+        .. code-block:: csharp
+    
+           public AnchorTagHelper(IHtmlGenerator generator)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Action
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Action { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Controller
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Controller { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Fragment
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Fragment { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Generator
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IHtmlGenerator Generator { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Host
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Host { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Protocol
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Protocol { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Route
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Route { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.RouteValues
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<string, string> RouteValues { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Process(TagHelperContext, TagHelperOutput)
+    
+        
+        :param context: 
+        :type context: TagHelperContext
+        :param output: 
+        :type output: TagHelperOutput
+    
+        
+        .. code-block:: csharp
+    
+           public override void Process(TagHelperContext context, TagHelperOutput output)
+

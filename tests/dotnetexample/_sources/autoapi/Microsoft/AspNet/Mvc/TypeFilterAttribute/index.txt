@@ -1,0 +1,122 @@
+
+
+TypeFilterAttribute Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Attribute`
+* :dn:cls:`Microsoft.AspNet.Mvc.TypeFilterAttribute`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TypeFilterAttribute : Attribute, _Attribute, IFilterFactory, IOrderedFilter, IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/TypeFilterAttribute.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TypeFilterAttribute
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TypeFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.TypeFilterAttribute.TypeFilterAttribute(System.Type)
+    
+        
+        :param type: 
+        :type type: System.Type
+    
+        
+        .. code-block:: csharp
+    
+           public TypeFilterAttribute(Type type)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TypeFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TypeFilterAttribute.Arguments
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object[] Arguments { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TypeFilterAttribute.ImplementationType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ImplementationType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.TypeFilterAttribute.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TypeFilterAttribute
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TypeFilterAttribute.CreateInstance(System.IServiceProvider)
+    
+        
+        :param serviceProvider: 
+        :type serviceProvider: System.IServiceProvider
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFilter CreateInstance(IServiceProvider serviceProvider)
+

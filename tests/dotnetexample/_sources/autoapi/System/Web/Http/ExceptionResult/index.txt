@@ -1,0 +1,137 @@
+
+
+ExceptionResult Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An action result that returns a @!:StatusCodes.Status500InternalServerError- response and
+performs content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) based on an [System.Web.Http.ExceptionResult.Exception](System.Web.Http.ExceptionResult.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionResult`
+* :dn:cls:`Microsoft.AspNet.Mvc.ObjectResult`
+* :dn:cls:`System.Web.Http.ExceptionResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ExceptionResult : ObjectResult, IActionResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/ActionResults/ExceptionResult.cs>`_
+
+
+
+
+
+.. dn:class:: System.Web.Http.ExceptionResult
+
+
+Constructors
+------------
+
+.. dn:class:: System.Web.Http.ExceptionResult
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: System.Web.Http.ExceptionResult.ExceptionResult(System.Exception, System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param exception: The exception to include in the error.
+        :type exception: System.Exception
+        :param includeErrorDetail: <see langword="true" /> if the error should include exception messages; otherwise,
+    <see langword="false" />.
+        :type includeErrorDetail: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public ExceptionResult(Exception exception, bool includeErrorDetail)
+
+
+Properties
+----------
+
+.. dn:class:: System.Web.Http.ExceptionResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: System.Web.Http.ExceptionResult.Exception
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Exception Exception { get; }
+
+    .. dn:property:: System.Web.Http.ExceptionResult.IncludeErrorDetail
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IncludeErrorDetail { get; }
+
+
+Methods
+-------
+
+.. dn:class:: System.Web.Http.ExceptionResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: System.Web.Http.ExceptionResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task ExecuteResultAsync(ActionContext context)
+

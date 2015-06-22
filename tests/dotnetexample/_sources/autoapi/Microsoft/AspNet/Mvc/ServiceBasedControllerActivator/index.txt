@@ -1,0 +1,72 @@
+
+
+ServiceBasedControllerActivator Class
+=====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A [Microsoft.AspNet.Mvc.IControllerActivator]() that retrieves controllers as services from the request's
+[System.IServiceProvider]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ServiceBasedControllerActivator`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ServiceBasedControllerActivator : IControllerActivator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ServiceBasedControllerActivator.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceBasedControllerActivator
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ServiceBasedControllerActivator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ServiceBasedControllerActivator.Create(Microsoft.AspNet.Mvc.ActionContext, System.Type)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param controllerType: 
+        :type controllerType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Create(ActionContext actionContext, Type controllerType)
+

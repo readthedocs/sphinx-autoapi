@@ -1,0 +1,79 @@
+
+
+Microsoft.AspNet.Mvc.ApiExplorer Namespace
+==========================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/ApiDescriptionActionData/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiDescriptionGroupNameProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiDescriptionVisibilityProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiResponseFormatMetadataProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/IApiResponseMetadataProvider/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.ApiExplorer
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IApiDescriptionGroupNameProvider`
+        Represents group name metadata for an
+        <c>ApiDescription</c>.
+
+
+    interface :dn:iface:`IApiDescriptionVisibilityProvider`
+        Represents visibility metadata for an
+        <c>ApiDescription</c>.
+
+
+    interface :dn:iface:`IApiResponseFormatMetadataProvider`
+        Provides metadata information about the response format to an
+        <c>IApiDescriptionProvider</c>.
+
+
+    interface :dn:iface:`IApiResponseMetadataProvider`
+        Provides a return type and a set of possible content types returned by a successful execution of the action.
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`ApiDescriptionActionData`
+        Represents data used to build an
+        <c>ApiDescription</c>, stored as part of the
+        [Microsoft.AspNet.Mvc.ActionDescriptor.Properties]().
+
+

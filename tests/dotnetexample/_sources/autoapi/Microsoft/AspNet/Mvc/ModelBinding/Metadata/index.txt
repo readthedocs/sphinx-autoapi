@@ -1,0 +1,48 @@
+
+
+Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace
+====================================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/DataAnnotationsMetadataProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/DataMemberRequiredBindingMetadataProvider/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.ModelBinding.Metadata
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`DataAnnotationsMetadataProvider`
+        An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() and [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataProvider]() for
+        the System.ComponentModel.DataAnnotations attribute classes.
+
+
+    class :dn:cls:`DataMemberRequiredBindingMetadataProvider`
+        An [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() for [System.Runtime.Serialization.DataMemberAttribute.IsRequired]().
+
+

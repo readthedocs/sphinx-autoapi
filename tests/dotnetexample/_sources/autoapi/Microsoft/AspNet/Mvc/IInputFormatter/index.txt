@@ -1,0 +1,86 @@
+
+
+IInputFormatter Interface
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Reads an object from the request body.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IInputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IInputFormatter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IInputFormatter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IInputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IInputFormatter.CanRead(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: Input formatter context associated with this call.
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           bool CanRead(InputFormatterContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IInputFormatter.ReadAsync(Microsoft.AspNet.Mvc.InputFormatterContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: Input formatter context associated with this call.
+        :type context: Microsoft.AspNet.Mvc.InputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Task<object> ReadAsync(InputFormatterContext context)
+

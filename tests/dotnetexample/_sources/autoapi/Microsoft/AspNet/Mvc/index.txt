@@ -1,0 +1,39 @@
+
+
+Microsoft.AspNet.Mvc Namespace
+==============================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/MvcOptionsExtensions/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`MvcOptionsExtensions`
+        
+
+

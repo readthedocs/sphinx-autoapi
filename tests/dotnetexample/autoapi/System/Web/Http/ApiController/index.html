@@ -1,0 +1,963 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ApiController Class &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="System.Web.Http Namespace" href="../index.html"/>
+        <link rel="next" title="BadRequestErrorMessageResult Class" href="../BadRequestErrorMessageResult/index.html"/>
+        <link rel="prev" title="System.Web.Http Namespace" href="../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Sphinx AutoAPI Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Builder/index.html">Microsoft.AspNet.Builder Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/JsonPatch/index.html">Microsoft.AspNet.JsonPatch Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/JsonPatch/Adapters/index.html">Microsoft.AspNet.JsonPatch.Adapters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/JsonPatch/Converters/index.html">Microsoft.AspNet.JsonPatch.Converters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/JsonPatch/Exceptions/index.html">Microsoft.AspNet.JsonPatch.Exceptions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/JsonPatch/Operations/index.html">Microsoft.AspNet.JsonPatch.Operations Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/index.html">Microsoft.AspNet.Mvc Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ActionConstraints/index.html">Microsoft.AspNet.Mvc.ActionConstraints Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ApiExplorer/index.html">Microsoft.AspNet.Mvc.ApiExplorer Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ApplicationModels/index.html">Microsoft.AspNet.Mvc.ApplicationModels Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Core/index.html">Microsoft.AspNet.Mvc.Core Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Filters/index.html">Microsoft.AspNet.Mvc.Filters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Internal/index.html">Microsoft.AspNet.Mvc.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Internal/DecisionTree/index.html">Microsoft.AspNet.Mvc.Internal.DecisionTree Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Internal/Routing/index.html">Microsoft.AspNet.Mvc.Internal.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/index.html">Microsoft.AspNet.Mvc.ModelBinding Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/Metadata/index.html">Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/Validation/index.html">Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Razor/index.html">Microsoft.AspNet.Mvc.Razor Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Razor/Compilation/index.html">Microsoft.AspNet.Mvc.Razor.Compilation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Razor/Directives/index.html">Microsoft.AspNet.Mvc.Razor.Directives Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Razor/Internal/index.html">Microsoft.AspNet.Mvc.Razor.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Razor/Precompilation/index.html">Microsoft.AspNet.Mvc.Razor.Precompilation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Rendering/index.html">Microsoft.AspNet.Mvc.Rendering Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Rendering/Expressions/index.html">Microsoft.AspNet.Mvc.Rendering.Expressions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Rendering/Internal/index.html">Microsoft.AspNet.Mvc.Rendering.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Routing/index.html">Microsoft.AspNet.Mvc.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/TagHelpers/index.html">Microsoft.AspNet.Mvc.TagHelpers Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/TagHelpers/Internal/index.html">Microsoft.AspNet.Mvc.TagHelpers.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ViewComponents/index.html">Microsoft.AspNet.Mvc.ViewComponents Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/WebApiCompatShim/index.html">Microsoft.AspNet.Mvc.WebApiCompatShim Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/Xml/index.html">Microsoft.AspNet.Mvc.Xml Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Net/Http/index.html">System.Net.Http Namespace</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">System.Web.Http Namespace</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">ApiController Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inheritance-hierarchy">Inheritance Hierarchy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#github">GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../BadRequestErrorMessageResult/index.html">BadRequestErrorMessageResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConflictResult/index.html">ConflictResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ExceptionResult/index.html">ExceptionResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FromUriAttribute/index.html">FromUriAttribute Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../HttpError/index.html">HttpError Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../HttpErrorKeys/index.html">HttpErrorKeys Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../HttpResponseException/index.html">HttpResponseException Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InternalServerErrorResult/index.html">InternalServerErrorResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InvalidModelStateResult/index.html">InvalidModelStateResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NegotiatedContentResult&lt;T&gt;/index.html">NegotiatedContentResult&lt;T&gt; Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OkNegotiatedContentResult&lt;T&gt;/index.html">OkNegotiatedContentResult&lt;T&gt; Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OkResult/index.html">OkResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ResponseMessageResult/index.html">ResponseMessageResult Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Sphinx AutoAPI Index</a> &raquo;</li>
+      
+          <li><a href="../index.html">System.Web.Http Namespace</a> &raquo;</li>
+      
+    <li>ApiController Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/autoapi/System/Web/Http/ApiController/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apicontroller-class">
+<h1>ApiController Class<a class="headerlink" href="#apicontroller-class" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#inheritance-hierarchy" id="id1">Inheritance Hierarchy</a></li>
+<li><a class="reference internal" href="#syntax" id="id2">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id3">GitHub</a></li>
+<li><a class="reference internal" href="#properties" id="id4">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id5">Methods</a></li>
+</ul>
+</div>
+<div class="section" id="inheritance-hierarchy">
+<h2><a class="toc-backref" href="#id1">Inheritance Hierarchy</a><a class="headerlink" href="#inheritance-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Object</span></code></li>
+<li><a class="reference internal" href="#System.Web.Http.ApiController" title="System.Web.Http.ApiController"><code class="xref dn dn-cls docutils literal"><span class="pre">System.Web.Http.ApiController</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2><a class="toc-backref" href="#id2">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">ApiController</span> <span class="p">:</span> <span class="n">IDisposable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id3">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/ApiController.cs">View on GitHub</a></p>
+<dl class="class">
+<dt id="System.Web.Http.ApiController">
+<em class="property">class </em><code class="descclassname">System.Web.Http.</code><code class="descname">ApiController</code><a class="headerlink" href="#System.Web.Http.ApiController" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="properties">
+<h2><a class="toc-backref" href="#id4">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="property">
+<dt id="System.Web.Http.ApiController.ActionContext">
+<code class="descname">ActionContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ActionContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ActionContext</span> <span class="n">ActionContext</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.BindingContext">
+<code class="descname">BindingContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.BindingContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ActionBindingContext</span> <span class="n">BindingContext</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.Context">
+<code class="descname">Context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Context" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">HttpContext</span> <span class="n">Context</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.MetadataProvider">
+<code class="descname">MetadataProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.MetadataProvider" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IModelMetadataProvider</span> <span class="n">MetadataProvider</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.ModelState">
+<code class="descname">ModelState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ModelState" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelStateDictionary</span> <span class="n">ModelState</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.ObjectValidator">
+<code class="descname">ObjectValidator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ObjectValidator" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IObjectModelValidator</span> <span class="n">ObjectValidator</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.Request">
+<code class="descname">Request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Request" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">HttpRequestMessage</span> <span class="n">Request</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.Url">
+<code class="descname">Url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Url" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IUrlHelper</span> <span class="n">Url</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="System.Web.Http.ApiController.User">
+<code class="descname">User</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.User" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IPrincipal</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2><a class="toc-backref" href="#id5">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.BadRequest()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">BadRequestResult</span> <span class="nf">BadRequest</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.BadRequest">
+<code class="descname">BadRequest</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.BadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>modelState</strong> (<a class="reference internal" href="../../../../Microsoft/AspNet/Mvc/ModelBinding/ModelStateDictionary/index.html#Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary" title="Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary"><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em></a>) &#8211; The model state to include in the error.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">InvalidModelStateResult</span> <span class="nf">BadRequest</span><span class="p">(</span><span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">BadRequest</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>message</strong> (<em>System.String</em>) &#8211; The user-visible error message.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">BadRequestErrorMessageResult</span> <span class="nf">BadRequest</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.Conflict()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ConflictResult</span> <span class="nf">Conflict</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Content&lt;T&gt;">
+<code class="descname">Content&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.HttpStatusCode</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Content<T>" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>statusCode</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The HTTP status code for the response message.</li>
+<li><strong>value</strong> (<em>T</em>) &#8211; The content value to negotiate and format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">NegotiatedContentResult</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Content</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">HttpStatusCode</span> <span class="n">statusCode</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Created">
+<code class="descname">Created</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Created" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>location</strong> (<em>System.String</em>) &#8211; The location at which the content has been created. Must be a relative or absolute URL.</li>
+<li><strong>content</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedResult</span> <span class="nf">Created</span><span class="p">(</span><span class="kt">string</span> <span class="n">location</span><span class="p">,</span> <span class="kt">object</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Created</code><span class="sig-paren">(</span><em>System.Uri</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>uri</strong> (<em>System.Uri</em>) &#8211; </li>
+<li><strong>content</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedResult</span> <span class="nf">Created</span><span class="p">(</span><span class="n">Uri</span> <span class="n">uri</span><span class="p">,</span> <span class="kt">object</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.CreatedAtRoute">
+<code class="descname">CreatedAtRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.CreatedAtRoute" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route to use for generating the URL.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+<li><strong>content</strong> (<em>System.Object</em>) &#8211; The content value to format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">CreatedAtRouteResult</span> <span class="nf">CreatedAtRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">,</span> <span class="kt">object</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.Dispose()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Dispose">
+<code class="descname">Dispose</code><span class="sig-paren">(</span><em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Dispose" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>disposing</strong> (<em>System.Boolean</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.InternalServerError()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">InternalServerErrorResult</span> <span class="nf">InternalServerError</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.InternalServerError">
+<code class="descname">InternalServerError</code><span class="sig-paren">(</span><em>System.Exception</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.InternalServerError" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>exception</strong> (<em>System.Exception</em>) &#8211; The exception to include in the error.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ExceptionResult</span> <span class="nf">InternalServerError</span><span class="p">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Json&lt;T&gt;">
+<code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Json<T>" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>T</em>) &#8211; The content value to serialize in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="n">Json</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em>, <em>JsonSerializerSettings</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>T</em>) &#8211; The content value to serialize in the entity body.</li>
+<li><strong>serializerSettings</strong> (<em>JsonSerializerSettings</em>) &#8211; The serializer settings.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="n">Json</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">content</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em>, <em>JsonSerializerSettings</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>T</em>) &#8211; The content value to serialize in the entity body.</li>
+<li><strong>serializerSettings</strong> (<em>JsonSerializerSettings</em>) &#8211; The serializer settings.</li>
+<li><strong>encoding</strong> (<em>System.Text.Encoding</em>) &#8211; The content encoding.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">JsonResult</span> <span class="n">Json</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">content</span><span class="p">,</span> <span class="n">JsonSerializerSettings</span> <span class="n">serializerSettings</span><span class="p">,</span> <span class="n">Encoding</span> <span class="n">encoding</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.NotFound()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">HttpNotFoundResult</span> <span class="nf">NotFound</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.Ok()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">OkResult</span> <span class="nf">Ok</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Ok&lt;T&gt;">
+<code class="descname">Ok&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Ok<T>" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>content</strong> (<em>T</em>) &#8211; The content value to negotiate and format in the entity body.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">OkNegotiatedContentResult</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Ok</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.Redirect">
+<code class="descname">Redirect</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Redirect" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>location</strong> (<em>System.String</em>) &#8211; The location to which to redirect.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectResult</span> <span class="nf">Redirect</span><span class="p">(</span><span class="kt">string</span> <span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Redirect</code><span class="sig-paren">(</span><em>System.Uri</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>location</strong> (<em>System.Uri</em>) &#8211; The location to which to redirect.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectResult</span> <span class="nf">Redirect</span><span class="p">(</span><span class="n">Uri</span> <span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.RedirectToRoute">
+<code class="descname">RedirectToRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.RedirectToRoute" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>routeName</strong> (<em>System.String</em>) &#8211; The name of the route to use for generating the URL.</li>
+<li><strong>routeValues</strong> (<em>System.Object</em>) &#8211; The route data to use for generating the URL.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">RedirectToRouteResult</span> <span class="nf">RedirectToRoute</span><span class="p">(</span><span class="kt">string</span> <span class="n">routeName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">routeValues</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.ResponseMessage">
+<code class="descname">ResponseMessage</code><span class="sig-paren">(</span><em>System.Net.Http.HttpResponseMessage</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ResponseMessage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>response</strong> (<em>System.Net.Http.HttpResponseMessage</em>) &#8211; The HTTP response message.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">ResponseMessageResult</span> <span class="nf">ResponseMessage</span><span class="p">(</span><span class="n">HttpResponseMessage</span> <span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="System.Web.Http.ApiController.StatusCode">
+<code class="descname">StatusCode</code><span class="sig-paren">(</span><em>System.Net.HttpStatusCode</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.StatusCode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>status</strong> (<em>System.Net.HttpStatusCode</em>) &#8211; The HTTP status code for the response message</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">HttpStatusCodeResult</span> <span class="nf">StatusCode</span><span class="p">(</span><span class="n">HttpStatusCode</span> <span class="n">status</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.Validate&lt;TEntity&gt;(TEntity)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>entity</strong> (<em>TEntity</em>) &#8211; The entity being validated.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="n">Validate</span><span class="p">&lt;</span><span class="n">TEntity</span><span class="p">&gt;(</span><span class="n">TEntity</span> <span class="n">entity</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">System.Web.Http.ApiController.Validate&lt;TEntity&gt;(TEntity, System.String)</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>entity</strong> (<em>TEntity</em>) &#8211; The entity being validated.</li>
+<li><strong>keyPrefix</strong> &#8211; The key prefix under which the model state errors would be added in the</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>[System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml).</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type keyPrefix:</th><td class="field-body">System.String</td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="n">Validate</span><span class="p">&lt;</span><span class="n">TEntity</span><span class="p">&gt;(</span><span class="n">TEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="kt">string</span> <span class="n">keyPrefix</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../BadRequestErrorMessageResult/index.html" class="btn btn-neutral float-right" title="BadRequestErrorMessageResult Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="System.Web.Http Namespace" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+Sphinx AutoAPI Index
+####################
+
+This page is the top-level of your generated API documentation.
+Below is a list of all items that are documented here.
+
+.. toctree::
+   :includehidden:
+   :glob:
+   :maxdepth: 1
+   
+   /autoapi/Microsoft/AspNet/Builder/index
+   
+   
+   /autoapi/Microsoft/AspNet/JsonPatch/index
+   
+   
+   /autoapi/Microsoft/AspNet/JsonPatch/Adapters/index
+   
+   
+   /autoapi/Microsoft/AspNet/JsonPatch/Converters/index
+   
+   
+   /autoapi/Microsoft/AspNet/JsonPatch/Exceptions/index
+   
+   
+   /autoapi/Microsoft/AspNet/JsonPatch/Operations/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ActionConstraints/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApiExplorer/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ApplicationModels/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Core/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Filters/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Internal/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Internal/DecisionTree/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Internal/Routing/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Metadata/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Internal/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Precompilation/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Internal/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Routing/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/WebApiCompatShim/index
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Xml/index
+   
+   
+   /autoapi/Microsoft/AspNet/PageExecutionInstrumentation/index
+   
+   
+   /autoapi/Microsoft/AspNet/Razor/Generator/index
+   
+   
+   /autoapi/Microsoft/Framework/DependencyInjection/index
+   
+   
+   /autoapi/MvcMinimalSample/Web/index
+   
+   
+   /autoapi/System/Net/Http/index
+   
+   
+   /autoapi/System/Web/Http/index
+   

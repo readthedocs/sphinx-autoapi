@@ -1,0 +1,134 @@
+
+
+DefaultFilterProvider Class
+===========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultFilterProvider : IFilterProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/DefaultFilterProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.DefaultFilterProvider(System.IServiceProvider)
+    
+        
+        :param serviceProvider: 
+        :type serviceProvider: System.IServiceProvider
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultFilterProvider(IServiceProvider serviceProvider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.ServiceProvider
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IServiceProvider ServiceProvider { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.FilterProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.FilterProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuted(FilterProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.FilterProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.FilterProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuting(FilterProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.ProvideFilter(Microsoft.AspNet.Mvc.FilterProviderContext, Microsoft.AspNet.Mvc.FilterItem)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.FilterProviderContext
+        :param filterItem: 
+        :type filterItem: Microsoft.AspNet.Mvc.FilterItem
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void ProvideFilter(FilterProviderContext context, FilterItem filterItem)
+

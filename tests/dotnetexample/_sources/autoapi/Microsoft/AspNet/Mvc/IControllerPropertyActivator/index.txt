@@ -1,0 +1,60 @@
+
+
+IControllerPropertyActivator Interface
+======================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IControllerPropertyActivator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IControllerPropertyActivator.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerPropertyActivator
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IControllerPropertyActivator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IControllerPropertyActivator.Activate(Microsoft.AspNet.Mvc.ActionContext, System.Object)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           void Activate(ActionContext actionContext, object controller)
+

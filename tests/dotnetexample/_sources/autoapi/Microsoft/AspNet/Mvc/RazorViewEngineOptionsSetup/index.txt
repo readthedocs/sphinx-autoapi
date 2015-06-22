@@ -1,0 +1,73 @@
+
+
+RazorViewEngineOptionsSetup Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Sets up default options for [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}`
+* :dn:cls:`Microsoft.AspNet.Mvc.RazorViewEngineOptionsSetup`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RazorViewEngineOptionsSetup : ConfigureOptions<RazorViewEngineOptions>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc/RazorViewEngineOptionsSetup.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorViewEngineOptionsSetup
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RazorViewEngineOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.RazorViewEngineOptionsSetup.RazorViewEngineOptionsSetup(IApplicationEnvironment)
+    
+        
+    
+        
+        
+    
+        
+        :param applicationEnvironment: @!:IApplicationEnvironment- for the application.
+        :type applicationEnvironment: IApplicationEnvironment
+    
+        
+        .. code-block:: csharp
+    
+           public RazorViewEngineOptionsSetup(IApplicationEnvironment applicationEnvironment)
+

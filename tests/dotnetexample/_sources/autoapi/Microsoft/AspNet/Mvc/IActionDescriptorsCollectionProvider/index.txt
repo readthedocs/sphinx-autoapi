@@ -1,0 +1,67 @@
+
+
+IActionDescriptorsCollectionProvider Interface
+==============================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides the currently cached collection of [Microsoft.AspNet.Mvc.ActionDescriptor]().
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionDescriptorsCollectionProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IActionDescriptorsCollectionProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.ActionDescriptors
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           ActionDescriptorsCollection ActionDescriptors { get; }
+

@@ -1,0 +1,82 @@
+
+
+ParameterDescriptor Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ParameterDescriptor`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ParameterDescriptor
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ParameterDescriptor.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ParameterDescriptor
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ParameterDescriptor
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ParameterDescriptor.BindingInfo
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public BindingInfo BindingInfo { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ParameterDescriptor.Name
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Name { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ParameterDescriptor.ParameterType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ParameterType { get; set; }
+

@@ -1,0 +1,113 @@
+
+
+JsonPatchProperty Class
+=======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Metadata for JsonProperty.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.JsonPatch.JsonPatchProperty`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonPatchProperty
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.JsonPatch/Helpers/JsonPatchProperty.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.JsonPatchProperty
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.JsonPatchProperty
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.JsonPatch.JsonPatchProperty.JsonPatchProperty(JsonProperty, System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param property: 
+        :type property: JsonProperty
+        :param parent: 
+        :type parent: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public JsonPatchProperty(JsonProperty property, object parent)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.JsonPatch.JsonPatchProperty
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.JsonPatch.JsonPatchProperty.Parent
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Parent { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.JsonPatch.JsonPatchProperty.Property
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public JsonProperty Property { get; set; }
+

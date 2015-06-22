@@ -1,0 +1,47 @@
+
+
+Microsoft.AspNet.Mvc.Razor.Internal Namespace
+=============================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Internal/DesignTimeRazorPathNormalizer/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Internal/RazorPathNormalizer/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.Razor.Internal
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`DesignTimeRazorPathNormalizer`
+        
+
+
+    class :dn:cls:`RazorPathNormalizer`
+        
+
+

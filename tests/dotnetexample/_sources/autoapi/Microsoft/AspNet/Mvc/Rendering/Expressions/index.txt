@@ -1,0 +1,90 @@
+
+
+Microsoft.AspNet.Mvc.Rendering.Expressions Namespace
+====================================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/CachedExpressionCompiler/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/ExpressionHelper/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/ExpressionMetadataProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/TryGetValueDelegate/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/TryGetValueProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/ViewDataEvaluator/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Rendering/Expressions/ViewDataInfo/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.Rendering.Expressions
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`CachedExpressionCompiler`
+        
+
+
+    class :dn:cls:`ExpressionHelper`
+        
+
+
+    class :dn:cls:`ExpressionMetadataProvider`
+        
+
+
+    class :dn:cls:`TryGetValueProvider`
+        
+
+
+    class :dn:cls:`ViewDataEvaluator`
+        
+
+
+    class :dn:cls:`ViewDataInfo`
+        
+
+
+    .. rubric:: Delegates
+
+
+    delegate :dn:del:`TryGetValueDelegate`
+        
+
+

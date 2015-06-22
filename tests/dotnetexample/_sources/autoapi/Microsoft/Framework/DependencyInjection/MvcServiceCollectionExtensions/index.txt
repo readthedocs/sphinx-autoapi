@@ -1,0 +1,230 @@
+
+
+MvcServiceCollectionExtensions Class
+====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcServiceCollectionExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc/MvcServiceCollectionExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.AddMvc(IServiceCollection)
+    
+        
+        :param services: 
+        :type services: IServiceCollection
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection AddMvc(IServiceCollection services)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.AddMvcLocalization(IServiceCollection)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The @!:IServiceCollection-.
+        :type services: IServiceCollection
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection AddMvcLocalization(IServiceCollection services)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.AddMvcLocalization(IServiceCollection, Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The @!:IServiceCollection-.
+        :type services: IServiceCollection
+        :param option: The view format for localized views.
+        :type option: Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection AddMvcLocalization(IServiceCollection services, LanguageViewLocationExpanderOption option)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.ConfigureAntiforgery(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.AntiForgeryOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.AntiForgeryOptions]() which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.AntiForgeryOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureAntiforgery(IServiceCollection services, Action<AntiForgeryOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.ConfigureMvcCaching(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.MvcCacheOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.MvcCacheOptions]() which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcCacheOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvcCaching(IServiceCollection services, Action<MvcCacheOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.ConfigureMvcFormatterMappings(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.MvcFormatterMappingOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.MvcFormatterMappingOptions]() which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcFormatterMappingOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvcFormatterMappings(IServiceCollection services, Action<MvcFormatterMappingOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.ConfigureMvcJson(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.MvcJsonOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.MvcJsonOptions]() which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcJsonOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvcJson(IServiceCollection services, Action<MvcJsonOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.ConfigureMvcViews(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.MvcViewOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: The [Microsoft.AspNet.Mvc.MvcViewOptions]() which need to be configured.
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.MvcViewOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvcViews(IServiceCollection services, Action<MvcViewOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.WithControllersAsServices(IServiceCollection, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The @!:IServiceCollection-.
+        :type services: IServiceCollection
+        :param controllerAssemblies: Assemblies to scan.
+        :type controllerAssemblies: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection WithControllersAsServices(IServiceCollection services, IEnumerable<Assembly> controllerAssemblies)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.MvcServiceCollectionExtensions.WithControllersAsServices(IServiceCollection, System.Collections.Generic.IEnumerable<System.Type>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The @!:IServiceCollection-.
+        :type services: IServiceCollection
+        :param controllerTypes: A sequence of controller [System.Type]()s to register in the
+    
+    <paramref name="services" /> and used for controller discovery.
+        :type controllerTypes: System.Collections.Generic.IEnumerable{System.Type}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection WithControllersAsServices(IServiceCollection services, IEnumerable<Type> controllerTypes)
+

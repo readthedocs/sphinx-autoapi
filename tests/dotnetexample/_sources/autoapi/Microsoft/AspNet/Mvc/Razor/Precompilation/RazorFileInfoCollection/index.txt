@@ -1,0 +1,127 @@
+
+
+RazorFileInfoCollection Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Specifies metadata about precompiled views.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class RazorFileInfoCollection
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Precompilation/RazorFileInfoCollection.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection.AssemblyResourceName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string AssemblyResourceName { get; protected set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection.FileInfos
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<RazorFileInfo> FileInfos { get; protected set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection.SymbolsResourceName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string SymbolsResourceName { get; protected set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection.LoadAssembly(IAssemblyLoadContext)
+    
+        
+    
+        
+        
+    
+        
+        :param loadContext: The @!:IAssemblyLoadContext-.
+        :type loadContext: IAssemblyLoadContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual Assembly LoadAssembly(IAssemblyLoadContext loadContext)
+

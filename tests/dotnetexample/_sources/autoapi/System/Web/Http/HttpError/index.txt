@@ -1,0 +1,298 @@
+
+
+HttpError Class
+===============
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Defines a serializable container for storing error information. This information is stored
+as key/value pairs. The dictionary keys to look up standard error information are available
+on the [System.Web.Http.HttpErrorKeys](System.Web.Http.HttpErrorKeys.yml) type.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`System.Collections.Generic.Dictionary{System.String,System.Object}`
+* :dn:cls:`System.Web.Http.HttpError`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public sealed class HttpError : Dictionary<string, object>, IDictionary<string, object>, IDictionary, IReadOnlyDictionary<string, object>, ISerializable, IDeserializationCallback, ICollection<KeyValuePair<string, object>>, ICollection, IReadOnlyCollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable, IXmlSerializable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/HttpError.cs>`_
+
+
+
+
+
+.. dn:class:: System.Web.Http.HttpError
+
+
+Constructors
+------------
+
+.. dn:class:: System.Web.Http.HttpError
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: System.Web.Http.HttpError.HttpError()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError()
+
+    .. dn:constructor:: System.Web.Http.HttpError.HttpError(Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param modelState: The invalid model state to use for error information.
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+        :param includeErrorDetail: <c>true</c> to include exception messages in the error;
+    <c>false</c> otherwise.
+        :type includeErrorDetail: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError(ModelStateDictionary modelState, bool includeErrorDetail)
+
+    .. dn:constructor:: System.Web.Http.HttpError.HttpError(System.Exception, System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param exception: The exception to use for error information.
+        :type exception: System.Exception
+        :param includeErrorDetail: <c>true</c> to include the exception information in the error;
+    <c>false</c> otherwise.
+        :type includeErrorDetail: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError(Exception exception, bool includeErrorDetail)
+
+    .. dn:constructor:: System.Web.Http.HttpError.HttpError(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param message: The error message to associate with this instance.
+        :type message: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError(string message)
+
+
+Properties
+----------
+
+.. dn:class:: System.Web.Http.HttpError
+    :noindex:
+    :hidden:
+
+    .. dn:property:: System.Web.Http.HttpError.ExceptionMessage
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ExceptionMessage { get; set; }
+
+    .. dn:property:: System.Web.Http.HttpError.ExceptionType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ExceptionType { get; set; }
+
+    .. dn:property:: System.Web.Http.HttpError.InnerException
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError InnerException { get; }
+
+    .. dn:property:: System.Web.Http.HttpError.Message
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Message { get; set; }
+
+    .. dn:property:: System.Web.Http.HttpError.MessageDetail
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string MessageDetail { get; set; }
+
+    .. dn:property:: System.Web.Http.HttpError.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpError ModelState { get; }
+
+    .. dn:property:: System.Web.Http.HttpError.StackTrace
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string StackTrace { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: System.Web.Http.HttpError
+    :noindex:
+    :hidden:
+
+    .. dn:method:: System.Web.Http.HttpError.GetPropertyValue<TValue>(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param key: The name of the error property.
+        :type key: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TValue GetPropertyValue<TValue>(string key)
+
+    .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.GetSchema()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           XmlSchema IXmlSerializable.GetSchema()
+
+    .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+    
+        
+        :param reader: 
+        :type reader: System.Xml.XmlReader
+    
+        
+        .. code-block:: csharp
+    
+           void IXmlSerializable.ReadXml(XmlReader reader)
+
+    .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+    
+        
+        :param writer: 
+        :type writer: System.Xml.XmlWriter
+    
+        
+        .. code-block:: csharp
+    
+           void IXmlSerializable.WriteXml(XmlWriter writer)
+

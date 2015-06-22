@@ -1,0 +1,109 @@
+
+
+ResultExecutingContext Class
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.FilterContext`
+* :dn:cls:`Microsoft.AspNet.Mvc.ResultExecutingContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ResultExecutingContext : FilterContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ResultExecutingContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResultExecutingContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResultExecutingContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ResultExecutingContext.ResultExecutingContext(Microsoft.AspNet.Mvc.ActionContext, System.Collections.Generic.IList<Microsoft.AspNet.Mvc.IFilter>, Microsoft.AspNet.Mvc.IActionResult, System.Object)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+        :param filters: 
+        :type filters: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
+        :param result: 
+        :type result: Microsoft.AspNet.Mvc.IActionResult
+        :param controller: 
+        :type controller: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public ResultExecutingContext(ActionContext actionContext, IList<IFilter> filters, IActionResult result, object controller)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ResultExecutingContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Cancel
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual bool Cancel { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Controller
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual object Controller { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Result
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IActionResult Result { get; set; }
+

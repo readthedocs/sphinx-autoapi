@@ -1,0 +1,68 @@
+
+
+MvcOptionsExtensions Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.MvcOptionsExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcOptionsExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/MvcOptionsExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptionsExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptionsExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.MvcOptionsExtensions.AddXmlDataContractSerializerFormatter(Microsoft.AspNet.Mvc.MvcOptions)
+    
+        
+    
+        
+        
+    
+        
+        :param options: The MvcOptions
+        :type options: Microsoft.AspNet.Mvc.MvcOptions
+    
+        
+        .. code-block:: csharp
+    
+           public static void AddXmlDataContractSerializerFormatter(MvcOptions options)
+

@@ -1,0 +1,84 @@
+
+
+ControllerActionExecutor Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ControllerActionExecutor`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ControllerActionExecutor
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ControllerActionExecutor.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ControllerActionExecutor
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ControllerActionExecutor
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ControllerActionExecutor.ExecuteAsync(System.Reflection.MethodInfo, System.Object, System.Collections.Generic.IDictionary<System.String, System.Object>)
+    
+        
+        :param actionMethodInfo: 
+        :type actionMethodInfo: System.Reflection.MethodInfo
+        :param instance: 
+        :type instance: System.Object
+        :param actionArguments: 
+        :type actionArguments: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static Task<object> ExecuteAsync(MethodInfo actionMethodInfo, object instance, IDictionary<string, object> actionArguments)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ControllerActionExecutor.ExecuteAsync(System.Reflection.MethodInfo, System.Object, System.Object[])
+    
+        
+        :param actionMethodInfo: 
+        :type actionMethodInfo: System.Reflection.MethodInfo
+        :param instance: 
+        :type instance: System.Object
+        :param orderedActionArguments: 
+        :type orderedActionArguments: System.Object[]
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static Task<object> ExecuteAsync(MethodInfo actionMethodInfo, object instance, object[] orderedActionArguments)
+

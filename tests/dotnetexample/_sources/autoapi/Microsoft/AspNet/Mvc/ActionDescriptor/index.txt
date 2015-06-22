@@ -1,0 +1,204 @@
+
+
+ActionDescriptor Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionDescriptor`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionDescriptor
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ActionDescriptor.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionDescriptor
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionDescriptor
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionDescriptor.ActionDescriptor()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ActionDescriptor()
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionDescriptor
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.ActionConstraints
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IActionConstraintMetadata> ActionConstraints { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.AttributeRouteInfo
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public AttributeRouteInfo AttributeRouteInfo { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.BoundProperties
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<ParameterDescriptor> BoundProperties { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.DisplayName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string DisplayName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.FilterDescriptors
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<FilterDescriptor> FilterDescriptors { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Id
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Id { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Name
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual string Name { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Parameters
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<ParameterDescriptor> Parameters { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Properties
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<object, object> Properties { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.RouteConstraints
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<RouteDataActionConstraint> RouteConstraints { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.RouteValueDefaults
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<string, object> RouteValueDefaults { get; }
+

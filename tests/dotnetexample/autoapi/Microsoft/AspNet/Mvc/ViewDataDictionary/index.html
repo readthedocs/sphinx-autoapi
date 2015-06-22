@@ -1,0 +1,953 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ViewDataDictionary Class &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Sphinx AutoAPI Index</a></li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>ViewDataDictionary Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/ViewDataDictionary/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="viewdatadictionary-class">
+<h1>ViewDataDictionary Class<a class="headerlink" href="#viewdatadictionary-class" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#inheritance-hierarchy" id="id1">Inheritance Hierarchy</a></li>
+<li><a class="reference internal" href="#syntax" id="id2">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id3">GitHub</a></li>
+<li><a class="reference internal" href="#constructors" id="id4">Constructors</a></li>
+<li><a class="reference internal" href="#properties" id="id5">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id6">Methods</a></li>
+</ul>
+</div>
+<div class="section" id="inheritance-hierarchy">
+<h2><a class="toc-backref" href="#id1">Inheritance Hierarchy</a><a class="headerlink" href="#inheritance-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Object</span></code></li>
+<li><a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><code class="xref dn dn-cls docutils literal"><span class="pre">Microsoft.AspNet.Mvc.ViewDataDictionary</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2><a class="toc-backref" href="#id2">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">ViewDataDictionary</span> <span class="p">:</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;,</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;,</span> <span class="n">IEnumerable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id3">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewDataDictionary.cs">View on GitHub</a></p>
+<dl class="class">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary">
+<em class="property">class </em><code class="descclassname">Microsoft.AspNet.Mvc.</code><code class="descname">ViewDataDictionary</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="constructors">
+<h2><a class="toc-backref" href="#id4">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="constructor">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.ViewDataDictionary">
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.ViewDataDictionary" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param modelState:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type modelState:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param modelState:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() instance for this scope.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">type modelState:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param declaredModelType:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metadataProvider</strong> &#8211; [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values.</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">param declaredModelType:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">[System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; Value for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) property.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>System.Object</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
+<li><strong>model</strong> (<em>System.Object</em>) &#8211; Value for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) property.</li>
+<li><strong>declaredModelType</strong> &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="constructor">
+<dt>
+<code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="#Microsoft.AspNet.Mvc.ViewDataDictionary" title="Microsoft.AspNet.Mvc.ViewDataDictionary"><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em></a>) &#8211; [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.</li>
+<li><strong>declaredModelType</strong> &#8211; [System.Type]() of [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) values expected. Used to set</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>[Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) when [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type declaredModelType:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Type</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">ViewDataDictionary</span><span class="p">(</span><span class="n">ViewDataDictionary</span> <span class="n">source</span><span class="p">,</span> <span class="n">Type</span> <span class="n">declaredModelType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="properties">
+<h2><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Count">
+<code class="descname">Count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Count" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">int</span> <span class="n">Count</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.IsReadOnly">
+<code class="descname">IsReadOnly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.IsReadOnly" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="n">IsReadOnly</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.ViewDataDictionary.Item[System.String]</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">object</span> <span class="k">this</span><span class="p">[</span><span class="kt">string</span> <span class="n">index</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Keys">
+<code class="descname">Keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Keys" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Keys</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Model">
+<code class="descname">Model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Model" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">object</span> <span class="n">Model</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.ModelExplorer">
+<code class="descname">ModelExplorer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.ModelExplorer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelExplorer</span> <span class="n">ModelExplorer</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata">
+<code class="descname">ModelMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelMetadata</span> <span class="n">ModelMetadata</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.ModelState">
+<code class="descname">ModelState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.ModelState" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelStateDictionary</span> <span class="n">ModelState</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.TemplateInfo">
+<code class="descname">TemplateInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.TemplateInfo" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">TemplateInfo</span> <span class="n">TemplateInfo</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Values">
+<code class="descname">Values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Values" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Values</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Add">
+<code class="descname">Add</code><span class="sig-paren">(</span><em>System.Collections.Generic.KeyValuePair&lt;System.String</em>, <em>System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Add" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>item</strong> (<em>System.Collections.Generic.KeyValuePair{System.String,System.Object}</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Add</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<em>System.String</em>) &#8211; </li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.ViewDataDictionary.Clear()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Contains">
+<code class="descname">Contains</code><span class="sig-paren">(</span><em>System.Collections.Generic.KeyValuePair&lt;System.String</em>, <em>System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Contains" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>item</strong> (<em>System.Collections.Generic.KeyValuePair{System.String,System.Object}</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">Contains</span><span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.ContainsKey">
+<code class="descname">ContainsKey</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.ContainsKey" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">ContainsKey</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.CopyTo">
+<code class="descname">CopyTo</code><span class="sig-paren">(</span><em>System.Collections.Generic.KeyValuePair&lt;System.String</em>, <em>System.Object&gt;[]</em>, <em>System.Int32</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.CopyTo" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>array</strong> (<em>System.Collections.Generic.KeyValuePair{System.String,System.Object}[]</em>) &#8211; </li>
+<li><strong>arrayIndex</strong> (<em>System.Int32</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">CopyTo</span><span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arrayIndex</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Eval">
+<code class="descname">Eval</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Eval" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">object</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Eval</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+<li><strong>format</strong> (<em>System.String</em>) &#8211; The composite format [System.String]() (see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">string</span> <span class="nf">Eval</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.FormatValue">
+<code class="descname">FormatValue</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.FormatValue" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+<li><strong>format</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">FormatValue</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="kt">string</span> <span class="n">format</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.GetViewDataInfo">
+<code class="descname">GetViewDataInfo</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.GetViewDataInfo" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>expression</strong> (<em>System.String</em>) &#8211; Expression name, relative to the current model.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ViewDataInfo</span> <span class="nf">GetViewDataInfo</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.Remove">
+<code class="descname">Remove</code><span class="sig-paren">(</span><em>System.Collections.Generic.KeyValuePair&lt;System.String</em>, <em>System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.Remove" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>item</strong> (<em>System.Collections.Generic.KeyValuePair{System.String,System.Object}</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">Remove</span><span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Remove</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">Remove</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel">
+<code class="descname">SetModel</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">SetModel</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.ViewDataDictionary.System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.GetEnumerator()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerator</span><span class="p">&lt;</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;.</span><span class="n">GetEnumerator</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.ViewDataDictionary.System.Collections.IEnumerable.GetEnumerator()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerator</span> <span class="n">IEnumerable</span><span class="p">.</span><span class="n">GetEnumerator</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.ViewDataDictionary.TryGetValue">
+<code class="descname">TryGetValue</code><span class="sig-paren">(</span><em>System.String</em>, <em>out System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary.TryGetValue" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>System.String</em>) &#8211; </li>
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TryGetValue</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

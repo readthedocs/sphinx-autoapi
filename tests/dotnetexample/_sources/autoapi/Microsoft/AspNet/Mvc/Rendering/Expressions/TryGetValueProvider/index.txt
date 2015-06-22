@@ -1,0 +1,64 @@
+
+
+TryGetValueProvider Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class TryGetValueProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Expressions/TryGetValueProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueProvider
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueProvider.CreateInstance(System.Type)
+    
+        
+        :param targetType: 
+        :type targetType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static TryGetValueDelegate CreateInstance(Type targetType)
+

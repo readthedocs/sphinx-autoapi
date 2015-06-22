@@ -1,0 +1,741 @@
+
+
+ModelMetadata Class
+===================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A metadata representation of a model type, property or parameter.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public abstract class ModelMetadata
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/ModelMetadata.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+
+
+Fields
+------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DefaultOrder
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public static readonly int DefaultOrder
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelMetadata(Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity)
+    
+        
+    
+        
+        
+    
+        
+        :param identity: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
+        :type identity: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+    
+        
+        .. code-block:: csharp
+    
+           protected ModelMetadata(ModelMetadataIdentity identity)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.AdditionalValues
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract IReadOnlyDictionary<object, object> AdditionalValues { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderModelName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string BinderModelName { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract Type BinderType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BindingSource
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract BindingSource BindingSource { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ContainerType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ContainerType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ConvertEmptyStringToNull
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool ConvertEmptyStringToNull { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DataTypeName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string DataTypeName { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Description
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string Description { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayFormatString
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string DisplayFormatString { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string DisplayName { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string EditFormatString { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ElementMetadata
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract ModelMetadata ElementMetadata { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumDisplayNamesAndValues
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract IEnumerable<KeyValuePair<string, string>> EnumDisplayNamesAndValues { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumNamesAndValues
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract IReadOnlyDictionary<string, string> EnumNamesAndValues { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HasNonDefaultEditFormat
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool HasNonDefaultEditFormat { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HideSurroundingHtml
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool HideSurroundingHtml { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HtmlEncode
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool HtmlEncode { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Identity
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected ModelMetadataIdentity Identity { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingAllowed
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsBindingAllowed { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingRequired
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsBindingRequired { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsCollectionType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsCollectionType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsComplexType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsComplexType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsEnum
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsEnum { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsFlagsEnum
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsFlagsEnum { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsNullableValueType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IsNullableValueType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsReadOnly
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsReadOnly { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool IsRequired { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.MetadataKind
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadataKind MetadataKind { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Type ModelType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string NullDisplayText { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract int Order { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Properties
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract ModelPropertyCollection Properties { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyBindingPredicateProvider
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract IPropertyBindingPredicateProvider PropertyBindingPredicateProvider { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyGetter
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract Func<object, object> PropertyGetter { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string PropertyName { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertySetter
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract Action<object, object> PropertySetter { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForDisplay
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool ShowForDisplay { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForEdit
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract bool ShowForEdit { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.SimpleDisplayProperty
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string SimpleDisplayProperty { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.TemplateHint
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract string TemplateHint { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ValidatorMetadata
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public abstract IReadOnlyList<object> ValidatorMetadata { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.GetDisplayName()
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string GetDisplayName()
+

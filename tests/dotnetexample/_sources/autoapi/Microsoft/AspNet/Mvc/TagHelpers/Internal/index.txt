@@ -1,0 +1,136 @@
+
+
+Microsoft.AspNet.Mvc.TagHelpers.Internal Namespace
+==================================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/AttributeMatcher/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/FileProviderGlobbingDirectory/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/FileProviderGlobbingFile/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/FileVersionProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/GlobbingUrlBuilder/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/JavaScriptResources/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/JavaScriptStringArrayEncoder/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/ModeAttributes/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/ModeAttributes<TMode>/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/ModeMatchAttributes/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/ModeMatchAttributes<TMode>/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/ModeMatchResult<TMode>/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/TagHelpers/Internal/PartialModeMatchLogValues<TMode>/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.TagHelpers.Internal
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`AttributeMatcher`
+        Methods for determining how an @!:ITagHelper- should run based on the attributes that were specified.
+
+
+    class :dn:cls:`FileProviderGlobbingDirectory`
+        
+
+
+    class :dn:cls:`FileProviderGlobbingFile`
+        
+
+
+    class :dn:cls:`FileVersionProvider`
+        Provides version hash for a specified file.
+
+
+    class :dn:cls:`GlobbingUrlBuilder`
+        Utility methods for @!:ITagHelper-'s that support attributes containing file globbing patterns.
+
+
+    class :dn:cls:`JavaScriptResources`
+        Methods for loading JavaScript from assembly embedded resources.
+
+
+    class :dn:cls:`JavaScriptStringArrayEncoder`
+        Methods for encoding [System.Collections.Generic.IEnumerable`1]() for use as a JavaScript array literal.
+
+
+    class :dn:cls:`ModeAttributes`
+        Static creation methods for [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1.yml).
+
+
+    class :dn:cls:`ModeAttributes\<TMode>`
+        A mapping of a @!:ITagHelper- mode to its required attributes.
+
+
+    class :dn:cls:`ModeMatchAttributes`
+        Static creation methods for [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1.yml).
+
+
+    class :dn:cls:`ModeMatchAttributes\<TMode>`
+        A mapping of a @!:ITagHelper- mode to its missing and present attributes.
+
+
+    class :dn:cls:`ModeMatchResult\<TMode>`
+        Result of determining the mode an @!:ITagHelper- will run in.
+
+
+    class :dn:cls:`PartialModeMatchLogValues\<TMode>`
+        Log values for @!:ITagHelper- instances that opt out of
+        processing due to missing attributes for one of several possible modes.
+
+

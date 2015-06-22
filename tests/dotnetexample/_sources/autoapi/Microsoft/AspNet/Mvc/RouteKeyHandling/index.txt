@@ -1,0 +1,89 @@
+
+
+RouteKeyHandling Enum
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public enum RouteKeyHandling
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/RouteKeyHandling.cs>`_
+
+
+
+
+
+.. dn:enumeration:: Microsoft.AspNet.Mvc.RouteKeyHandling
+
+
+Fields
+------
+
+.. dn:enumeration:: Microsoft.AspNet.Mvc.RouteKeyHandling
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           CatchAll = 2
+
+    .. dn:field:: Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           DenyKey = 1
+
+    .. dn:field:: Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           RequireKey = 0
+

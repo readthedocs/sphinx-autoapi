@@ -1,0 +1,97 @@
+
+
+IRouteTemplateProvider Interface
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Interface for attributes which can supply a route template for attribute routing.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IRouteTemplateProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/IRouteTemplateProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.Name
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           string Name { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int ? Order { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.Template
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           string Template { get; }
+

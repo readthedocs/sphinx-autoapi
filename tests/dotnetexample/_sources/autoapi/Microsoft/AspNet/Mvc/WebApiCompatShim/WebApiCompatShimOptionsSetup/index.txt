@@ -1,0 +1,123 @@
+
+
+WebApiCompatShimOptionsSetup Class
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`IConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`
+* :dn:cls:`Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class WebApiCompatShimOptionsSetup : IConfigureOptions<MvcOptions>, IConfigureOptions<WebApiCompatShimOptions>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/WebApiCompatShimOptionsSetup.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup
+
+
+Fields
+------
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:field:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.DefaultAreaName
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public static readonly string DefaultAreaName
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Name
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Name { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Configure(Microsoft.AspNet.Mvc.MvcOptions, System.String)
+    
+        
+        :param options: 
+        :type options: Microsoft.AspNet.Mvc.MvcOptions
+        :param name: 
+        :type name: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void Configure(MvcOptions options, string name = "")
+
+    .. dn:method:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Configure(Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptions, System.String)
+    
+        
+        :param options: 
+        :type options: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptions
+        :param name: 
+        :type name: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public void Configure(WebApiCompatShimOptions options, string name = "")
+

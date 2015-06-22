@@ -1,0 +1,95 @@
+
+
+PrecompilationTagHelperTypeResolver Class
+=========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+@!:TagHelperDescriptorResolver- used during Razor precompilation.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`TagHelperTypeResolver`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class PrecompilationTagHelperTypeResolver : TagHelperTypeResolver
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Precompilation/PrecompilationTagHelperDescriptorResolver.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver.PrecompilationTagHelperTypeResolver(BeforeCompileContext, IAssemblyLoadContext)
+    
+        
+    
+        
+        
+    
+        
+        :param compileContext: The @!:BeforeCompileContext-.
+        :type compileContext: BeforeCompileContext
+        :param loadContext: The @!:IAssemblyLoadContext-.
+        :type loadContext: IAssemblyLoadContext
+    
+        
+        .. code-block:: csharp
+    
+           public PrecompilationTagHelperTypeResolver(BeforeCompileContext compileContext, IAssemblyLoadContext loadContext)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationTagHelperTypeResolver.GetExportedTypes(System.Reflection.AssemblyName)
+    
+        
+        :param assemblyName: 
+        :type assemblyName: System.Reflection.AssemblyName
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected override IEnumerable<TypeInfo> GetExportedTypes(AssemblyName assemblyName)
+

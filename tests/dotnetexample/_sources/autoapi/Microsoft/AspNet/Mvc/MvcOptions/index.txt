@@ -1,0 +1,239 @@
+
+
+MvcOptions Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides programmatic configuration for the MVC framework.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.MvcOptions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcOptions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/MvcOptions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptions
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptions
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.MvcOptions.MvcOptions()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public MvcOptions()
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptions
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.Conventions
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IApplicationModelConvention> Conventions { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.Filters
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ICollection<IFilter> Filters { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.InputFormatters
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IInputFormatter> InputFormatters { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.MaxModelValidationErrors
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int MaxModelValidationErrors { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.ModelBinders
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IModelBinder> ModelBinders { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.ModelMetadataDetailsProviders
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IMetadataDetailsProvider> ModelMetadataDetailsProviders { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.ModelValidatorProviders
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IModelValidatorProvider> ModelValidatorProviders { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.OutputFormatters
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IOutputFormatter> OutputFormatters { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.RespectBrowserAcceptHeader
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool RespectBrowserAcceptHeader { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.ValidationExcludeFilters
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IExcludeTypeValidationFilter> ValidationExcludeFilters { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.MvcOptions.ValueProviderFactories
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IList<IValueProviderFactory> ValueProviderFactories { get; }
+

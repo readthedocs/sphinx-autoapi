@@ -1,0 +1,92 @@
+
+
+IActionInvokerProvider Interface
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionInvokerProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/IActionInvokerProvider.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider
+
+
+Properties
+----------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           int Order { get; }
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuted(ActionInvokerProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Core.IActionInvokerProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnProvidersExecuting(ActionInvokerProviderContext context)
+

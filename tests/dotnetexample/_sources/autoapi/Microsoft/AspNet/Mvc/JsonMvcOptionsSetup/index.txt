@@ -1,0 +1,84 @@
+
+
+JsonMvcOptionsSetup Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`
+* :dn:cls:`Microsoft.AspNet.Mvc.JsonMvcOptionsSetup`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonMvcOptionsSetup : ConfigureOptions<MvcOptions>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc/JsonMvcOptionsSetup.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup.JsonMvcOptionsSetup(IOptions<Microsoft.AspNet.Mvc.MvcJsonOptions>)
+    
+        
+        :param jsonOptions: 
+        :type jsonOptions: IOptions{Microsoft.AspNet.Mvc.MvcJsonOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public JsonMvcOptionsSetup(IOptions<MvcJsonOptions> jsonOptions)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonMvcOptionsSetup.ConfigureMvc(Microsoft.AspNet.Mvc.MvcOptions, JsonSerializerSettings)
+    
+        
+        :param options: 
+        :type options: Microsoft.AspNet.Mvc.MvcOptions
+        :param serializerSettings: 
+        :type serializerSettings: JsonSerializerSettings
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvc(MvcOptions options, JsonSerializerSettings serializerSettings)
+

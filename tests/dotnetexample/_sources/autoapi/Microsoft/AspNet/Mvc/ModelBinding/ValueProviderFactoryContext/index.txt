@@ -1,0 +1,93 @@
+
+
+ValueProviderFactoryContext Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ValueProviderFactoryContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ModelBinding/ValueProviderFactoryContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext.ValueProviderFactoryContext(HttpContext, System.Collections.Generic.IDictionary<System.String, System.Object>)
+    
+        
+        :param httpContext: 
+        :type httpContext: HttpContext
+        :param routeValues: 
+        :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
+    
+        
+        .. code-block:: csharp
+    
+           public ValueProviderFactoryContext(HttpContext httpContext, IDictionary<string, object> routeValues)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext.HttpContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpContext HttpContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext.RouteValues
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<string, object> RouteValues { get; }
+

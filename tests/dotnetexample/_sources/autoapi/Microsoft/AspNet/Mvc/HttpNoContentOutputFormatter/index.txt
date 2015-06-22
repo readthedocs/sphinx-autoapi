@@ -1,0 +1,106 @@
+
+
+HttpNoContentOutputFormatter Class
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Sets the status code to 204 if the content is null.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class HttpNoContentOutputFormatter : IOutputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/HttpNoContentOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter.TreatNullValueAsNoContent
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool TreatNullValueAsNoContent { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter.CanWriteResult(Microsoft.AspNet.Mvc.OutputFormatterContext, MediaTypeHeaderValue)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :param contentType: 
+        :type contentType: MediaTypeHeaderValue
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool CanWriteResult(OutputFormatterContext context, MediaTypeHeaderValue contentType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.HttpNoContentOutputFormatter.WriteAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task WriteAsync(OutputFormatterContext context)
+

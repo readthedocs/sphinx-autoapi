@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Sphinx AutoAPI Index" href="../../../../../index.html"/>
+        <link rel="next" title="CompareAttributeAdapter Class" href="CompareAttributeAdapter/index.html"/>
+        <link rel="prev" title="DataMemberRequiredBindingMetadataProvider Class" href="../Metadata/DataMemberRequiredBindingMetadataProvider/index.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">Sphinx AutoAPI Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Builder/index.html">Microsoft.AspNet.Builder Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/index.html">Microsoft.AspNet.JsonPatch Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Adapters/index.html">Microsoft.AspNet.JsonPatch.Adapters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Converters/index.html">Microsoft.AspNet.JsonPatch.Converters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Exceptions/index.html">Microsoft.AspNet.JsonPatch.Exceptions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Operations/index.html">Microsoft.AspNet.JsonPatch.Operations Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html">Microsoft.AspNet.Mvc Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ActionConstraints/index.html">Microsoft.AspNet.Mvc.ActionConstraints Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ApiExplorer/index.html">Microsoft.AspNet.Mvc.ApiExplorer Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ApplicationModels/index.html">Microsoft.AspNet.Mvc.ApplicationModels Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Core/index.html">Microsoft.AspNet.Mvc.Core Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Filters/index.html">Microsoft.AspNet.Mvc.Filters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/index.html">Microsoft.AspNet.Mvc.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/DecisionTree/index.html">Microsoft.AspNet.Mvc.Internal.DecisionTree Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/Routing/index.html">Microsoft.AspNet.Mvc.Internal.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Microsoft.AspNet.Mvc.ModelBinding Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metadata/index.html">Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CompareAttributeAdapter/index.html">CompareAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompositeClientModelValidatorProvider/index.html">CompositeClientModelValidatorProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataAnnotationsClientModelValidatorProvider/index.html">DataAnnotationsClientModelValidatorProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataAnnotationsClientModelValidator&lt;TAttribute&gt;/index.html">DataAnnotationsClientModelValidator&lt;TAttribute&gt; Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataAnnotationsModelValidator/index.html">DataAnnotationsModelValidator Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataAnnotationsModelValidatorProvider/index.html">DataAnnotationsModelValidatorProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTypeAttributeAdapter/index.html">DataTypeAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DefaultClientModelValidatorProvider/index.html">DefaultClientModelValidatorProvider Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaxLengthAttributeAdapter/index.html">MaxLengthAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinLengthAttributeAdapter/index.html">MinLengthAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationEqualToRule/index.html">ModelClientValidationEqualToRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationMaxLengthRule/index.html">ModelClientValidationMaxLengthRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationMinLengthRule/index.html">ModelClientValidationMinLengthRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationRangeRule/index.html">ModelClientValidationRangeRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationRegexRule/index.html">ModelClientValidationRegexRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationRequiredRule/index.html">ModelClientValidationRequiredRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelClientValidationStringLengthRule/index.html">ModelClientValidationStringLengthRule Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RangeAttributeAdapter/index.html">RangeAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RegularExpressionAttributeAdapter/index.html">RegularExpressionAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RequiredAttributeAdapter/index.html">RequiredAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StringLengthAttributeAdapter/index.html">StringLengthAttributeAdapter Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ValidatableObjectAdapter/index.html">ValidatableObjectAdapter Class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Razor/index.html">Microsoft.AspNet.Mvc.Razor Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Razor/Compilation/index.html">Microsoft.AspNet.Mvc.Razor.Compilation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Razor/Directives/index.html">Microsoft.AspNet.Mvc.Razor.Directives Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Razor/Internal/index.html">Microsoft.AspNet.Mvc.Razor.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Razor/Precompilation/index.html">Microsoft.AspNet.Mvc.Razor.Precompilation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/index.html">Microsoft.AspNet.Mvc.Rendering Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/Expressions/index.html">Microsoft.AspNet.Mvc.Rendering.Expressions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/Internal/index.html">Microsoft.AspNet.Mvc.Rendering.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Routing/index.html">Microsoft.AspNet.Mvc.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../TagHelpers/index.html">Microsoft.AspNet.Mvc.TagHelpers Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../TagHelpers/Internal/index.html">Microsoft.AspNet.Mvc.TagHelpers.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ViewComponents/index.html">Microsoft.AspNet.Mvc.ViewComponents Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WebApiCompatShim/index.html">Microsoft.AspNet.Mvc.WebApiCompatShim Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Xml/index.html">Microsoft.AspNet.Mvc.Xml Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../../index.html">Sphinx AutoAPI Index</a> &raquo;</li>
+      
+    <li>Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/ModelBinding/Validation/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="microsoft-aspnet-mvc-modelbinding-validation-namespace">
+<h1>Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace<a class="headerlink" href="#microsoft-aspnet-mvc-modelbinding-validation-namespace" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="namespace">
+<dt id="Microsoft.AspNet.Mvc.ModelBinding.Validation">
+<em class="property">namespace </em><code class="descclassname">Microsoft.AspNet.Mvc.ModelBinding.</code><code class="descname">Validation</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Validation" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Classes</p>
+<p>class <a class="reference internal" href="CompareAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.CompareAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.CompareAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">CompareAttributeAdapter</span></code></a></p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="CompositeClientModelValidatorProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">CompositeClientModelValidatorProvider</span></code></a></dt>
+<dd>Aggregate of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]()s that delegates to its underlying providers.</dd>
+<dt>class <a class="reference internal" href="DataAnnotationsClientModelValidatorProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidatorProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">DataAnnotationsClientModelValidatorProvider</span></code></a></dt>
+<dd>An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() which provides client validators
+for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](). It also provides
+a validator for types which implement [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]().
+The logic to support [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]()
+is implemented in [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).</dd>
+<dt>class <code class="xref dn dn-cls docutils literal"><span class="pre">DataAnnotationsClientModelValidator&lt;TAttribute&gt;</span></code></dt>
+<dd>An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator]() which understands data annotation attributes.</dd>
+</dl>
+<p>class <a class="reference internal" href="DataAnnotationsModelValidator/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidator" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidator"><code class="xref dn dn-cls docutils literal"><span class="pre">DataAnnotationsModelValidator</span></code></a></p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="DataAnnotationsModelValidatorProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidatorProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidatorProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">DataAnnotationsModelValidatorProvider</span></code></a></dt>
+<dd>An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() which provides validators
+for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](). It also provides
+a validator for types which implement [System.ComponentModel.DataAnnotations.IValidatableObject]().</dd>
+<dt>class <a class="reference internal" href="DataTypeAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.DataTypeAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.DataTypeAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">DataTypeAttributeAdapter</span></code></a></dt>
+<dd>A validation adapter that is used to map [System.ComponentModel.DataAnnotations.DataTypeAttribute]()&#8217;s to a single client side validation
+rule.</dd>
+<dt>class <a class="reference internal" href="DefaultClientModelValidatorProvider/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultClientModelValidatorProvider" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultClientModelValidatorProvider"><code class="xref dn dn-cls docutils literal"><span class="pre">DefaultClientModelValidatorProvider</span></code></a></dt>
+<dd>A default implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]().</dd>
+</dl>
+<p>class <a class="reference internal" href="MaxLengthAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.MaxLengthAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.MaxLengthAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">MaxLengthAttributeAdapter</span></code></a></p>
+<p>class <a class="reference internal" href="MinLengthAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.MinLengthAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">MinLengthAttributeAdapter</span></code></a></p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="ModelClientValidationEqualToRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationEqualToRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationEqualToRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationEqualToRule</span></code></a></dt>
+<dd>Represents client side validation rule that determines if two values are equal.</dd>
+</dl>
+<p>class <a class="reference internal" href="ModelClientValidationMaxLengthRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationMaxLengthRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationMaxLengthRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationMaxLengthRule</span></code></a></p>
+<p>class <a class="reference internal" href="ModelClientValidationMinLengthRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationMinLengthRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationMinLengthRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationMinLengthRule</span></code></a></p>
+<p>class <a class="reference internal" href="ModelClientValidationRangeRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRangeRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRangeRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationRangeRule</span></code></a></p>
+<p>class <a class="reference internal" href="ModelClientValidationRegexRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRegexRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRegexRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationRegexRule</span></code></a></p>
+<p>class <a class="reference internal" href="ModelClientValidationRequiredRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRequiredRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRequiredRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationRequiredRule</span></code></a></p>
+<p>class <a class="reference internal" href="ModelClientValidationStringLengthRule/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationStringLengthRule" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationStringLengthRule"><code class="xref dn dn-cls docutils literal"><span class="pre">ModelClientValidationStringLengthRule</span></code></a></p>
+<p>class <a class="reference internal" href="RangeAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.RangeAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.RangeAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">RangeAttributeAdapter</span></code></a></p>
+<p>class <a class="reference internal" href="RegularExpressionAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.RegularExpressionAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.RegularExpressionAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">RegularExpressionAttributeAdapter</span></code></a></p>
+<p>class <a class="reference internal" href="RequiredAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.RequiredAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.RequiredAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">RequiredAttributeAdapter</span></code></a></p>
+<p>class <a class="reference internal" href="StringLengthAttributeAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.StringLengthAttributeAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.StringLengthAttributeAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">StringLengthAttributeAdapter</span></code></a></p>
+<p>class <a class="reference internal" href="ValidatableObjectAdapter/index.html#Microsoft.AspNet.Mvc.ModelBinding.Validation.ValidatableObjectAdapter" title="Microsoft.AspNet.Mvc.ModelBinding.Validation.ValidatableObjectAdapter"><code class="xref dn dn-cls docutils literal"><span class="pre">ValidatableObjectAdapter</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CompareAttributeAdapter/index.html" class="btn btn-neutral float-right" title="CompareAttributeAdapter Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Metadata/DataMemberRequiredBindingMetadataProvider/index.html" class="btn btn-neutral" title="DataMemberRequiredBindingMetadataProvider Class" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

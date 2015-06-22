@@ -1,0 +1,176 @@
+
+
+ViewComponentContext Class
+==========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A context for View Components.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewComponentContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ViewComponentContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/ViewComponentContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponentContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponentContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponentContext.ViewComponentContext()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ViewComponentContext()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ViewComponentContext.ViewComponentContext(Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor, System.Object[], Microsoft.AspNet.Mvc.ViewContext, System.IO.TextWriter)
+    
+        
+    
+        
+        
+    
+        
+        :param viewComponentDescriptor: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the View Component being invoked.
+        :type viewComponentDescriptor: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+        :param arguments: The View Component arguments.
+        :type arguments: System.Object[]
+        :param viewContext: The [Microsoft.AspNet.Mvc.ViewComponentContext.ViewContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        :type viewContext: Microsoft.AspNet.Mvc.ViewContext
+        :param writer: The [System.IO.TextWriter]() for writing output.
+        :type writer: System.IO.TextWriter
+    
+        
+        .. code-block:: csharp
+    
+           public ViewComponentContext(ViewComponentDescriptor viewComponentDescriptor, object[] arguments, ViewContext viewContext, TextWriter writer)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewComponentContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponentContext.Arguments
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object[] Arguments { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponentContext.ViewComponentDescriptor
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewComponentDescriptor ViewComponentDescriptor { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponentContext.ViewContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewContext ViewContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponentContext.ViewData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary ViewData { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewComponentContext.Writer
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TextWriter Writer { get; }
+

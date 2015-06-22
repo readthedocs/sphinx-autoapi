@@ -1,0 +1,71 @@
+
+
+ICompilationService Interface
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Provides methods for compilation of a Razor page.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface ICompilationService
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Compilation/ICompilationService.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.Compilation.ICompilationService
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.Compilation.ICompilationService
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.ICompilationService.Compile(Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileInfo: The [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml) for the Razor file that was compiled.
+        :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+        :param compilationContent: The generated C# content to be compiled.
+        :type compilationContent: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           CompilationResult Compile(RelativeFileInfo fileInfo, string compilationContent)
+

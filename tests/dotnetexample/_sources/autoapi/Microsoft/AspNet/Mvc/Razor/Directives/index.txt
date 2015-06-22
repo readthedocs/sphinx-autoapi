@@ -1,0 +1,99 @@
+
+
+Microsoft.AspNet.Mvc.Razor.Directives Namespace
+===============================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/ChunkHelper/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/ChunkInheritanceUtility/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/DefaultChunkTreeCache/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/IChunkMerger/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/IChunkTreeCache/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/InjectChunkMerger/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/SetBaseTypeChunkMerger/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/Razor/Directives/UsingChunkMerger/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.Razor.Directives
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IChunkMerger`
+        Defines the contract for merging @!:Chunk- instances from _ViewStart files.
+
+
+    interface :dn:iface:`IChunkTreeCache`
+        A cache for parsed @!:ChunkTree-s.
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`ChunkHelper`
+        Contains helper methods for dealing with Chunks
+
+
+    class :dn:cls:`ChunkInheritanceUtility`
+        A utility type for supporting inheritance of directives into a page from applicable
+        <c>_ViewImports</c> pages.
+
+
+    class :dn:cls:`DefaultChunkTreeCache`
+        Default implementation of [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml).
+
+
+    class :dn:cls:`InjectChunkMerger`
+        A [Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger.yml) that merges [Microsoft.AspNet.Mvc.Razor.InjectChunk](Microsoft.AspNet.Mvc.Razor.InjectChunk.yml) instances.
+
+
+    class :dn:cls:`SetBaseTypeChunkMerger`
+        A [Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger.yml) that merges @!:SetBaseTypeChunk- instances.
+
+
+    class :dn:cls:`UsingChunkMerger`
+        A [Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger.yml) that merges @!:UsingChunk- instances.
+
+

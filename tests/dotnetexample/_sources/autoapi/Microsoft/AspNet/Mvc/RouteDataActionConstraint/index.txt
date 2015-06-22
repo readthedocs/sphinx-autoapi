@@ -1,0 +1,153 @@
+
+
+RouteDataActionConstraint Class
+===============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Constraints an action to a route key and value.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.RouteDataActionConstraint`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RouteDataActionConstraint
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/RouteDataActionConstraint.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteDataActionConstraint
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteDataActionConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.RouteDataActionConstraint.RouteDataActionConstraint(System.String, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param routeKey: The route key.
+        :type routeKey: System.String
+        :param routeValue: The route value.
+        :type routeValue: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public RouteDataActionConstraint(string routeKey, string routeValue)
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteDataActionConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.RouteDataActionConstraint.CreateCatchAll(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param routeKey: Route key.
+        :type routeKey: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static RouteDataActionConstraint CreateCatchAll(string routeKey)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.RouteDataActionConstraint
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteDataActionConstraint.KeyHandling
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RouteKeyHandling KeyHandling { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteDataActionConstraint.RouteKey
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteKey { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.RouteDataActionConstraint.RouteValue
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteValue { get; }
+

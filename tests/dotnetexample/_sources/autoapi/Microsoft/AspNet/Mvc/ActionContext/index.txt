@@ -1,0 +1,197 @@
+
+
+ActionContext Class
+===================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Context object for execution of action which has been selected as part of an HTTP request.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/ActionContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionContext.ActionContext()
+    
+        
+    
+        
+        
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionContext.ActionContext(HttpContext, RouteData, Microsoft.AspNet.Mvc.ActionDescriptor)
+    
+        
+    
+        
+        
+    
+        
+        :param httpContext: The @!:Http.HttpContext- for the current request.
+        :type httpContext: HttpContext
+        :param routeData: The @!:AspNet.Routing.RouteData- for the current request.
+        :type routeData: RouteData
+        :param actionDescriptor: The [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml) for the selected action.
+        :type actionDescriptor: Microsoft.AspNet.Mvc.ActionDescriptor
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext(HttpContext httpContext, RouteData routeData, ActionDescriptor actionDescriptor)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionContext.ActionContext(HttpContext, RouteData, Microsoft.AspNet.Mvc.ActionDescriptor, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary)
+    
+        
+    
+        
+        
+    
+        
+        :param httpContext: The @!:Http.HttpContext- for the current request.
+        :type httpContext: HttpContext
+        :param routeData: The @!:AspNet.Routing.RouteData- for the current request.
+        :type routeData: RouteData
+        :param actionDescriptor: The [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml) for the selected action.
+        :type actionDescriptor: Microsoft.AspNet.Mvc.ActionDescriptor
+        :param modelState: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext(HttpContext httpContext, RouteData routeData, ActionDescriptor actionDescriptor, ModelStateDictionary modelState)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ActionContext.ActionContext(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+    
+        
+        
+    
+        
+        :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml) to copy.
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext(ActionContext actionContext)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionContext.ActionDescriptor
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionDescriptor ActionDescriptor { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionContext.HttpContext
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public HttpContext HttpContext { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionContext.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ActionContext.RouteData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RouteData RouteData { get; set; }
+

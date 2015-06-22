@@ -1,0 +1,61 @@
+
+
+IAsyncResultFilter Interface
+============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IAsyncResultFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IAsyncResultFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncResultFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IAsyncResultFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IAsyncResultFilter.OnResultExecutionAsync(Microsoft.AspNet.Mvc.ResultExecutingContext, Microsoft.AspNet.Mvc.ResultExecutionDelegate)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
+        :param next: 
+        :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
+

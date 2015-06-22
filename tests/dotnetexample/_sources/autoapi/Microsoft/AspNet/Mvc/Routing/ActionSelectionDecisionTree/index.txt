@@ -1,0 +1,106 @@
+
+
+ActionSelectionDecisionTree Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionSelectionDecisionTree : IActionSelectionDecisionTree
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/ActionSelectionDecisionTree.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.ActionSelectionDecisionTree(Microsoft.AspNet.Mvc.ActionDescriptorsCollection)
+    
+        
+    
+        
+        
+    
+        
+        :param actions: The [Microsoft.AspNet.Mvc.ActionDescriptorsCollection](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml).
+        :type actions: Microsoft.AspNet.Mvc.ActionDescriptorsCollection
+    
+        
+        .. code-block:: csharp
+    
+           public ActionSelectionDecisionTree(ActionDescriptorsCollection actions)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.Version
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Version { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.Select(System.Collections.Generic.IDictionary<System.String, System.Object>)
+    
+        
+        :param routeValues: 
+        :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<ActionDescriptor> Select(IDictionary<string, object> routeValues)
+

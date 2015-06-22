@@ -1,0 +1,69 @@
+
+
+IActionFilter Interface
+=======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IActionFilter : IFilter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Abstractions/IActionFilter.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionFilter
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.IActionFilter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IActionFilter.OnActionExecuted(Microsoft.AspNet.Mvc.ActionExecutedContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionExecutedContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnActionExecuted(ActionExecutedContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.IActionFilter.OnActionExecuting(Microsoft.AspNet.Mvc.ActionExecutingContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
+    
+        
+        .. code-block:: csharp
+    
+           void OnActionExecuting(ActionExecutingContext context)
+

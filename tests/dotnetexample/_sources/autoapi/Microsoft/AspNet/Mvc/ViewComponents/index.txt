@@ -1,0 +1,180 @@
+
+
+Microsoft.AspNet.Mvc.ViewComponents Namespace
+=============================================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentActivator/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentDescriptorCollectionProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentDescriptorProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentHelper/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentInvoker/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentInvokerFactory/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/DefaultViewComponentSelector/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentActivator/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentDescriptorCollectionProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentDescriptorProvider/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentInvoker/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentInvokerFactory/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/IViewComponentSelector/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentContextAttribute/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentConventions/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentDescriptor/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentDescriptorCollection/index
+   
+   
+   
+   /autoapi/Microsoft/AspNet/Mvc/ViewComponents/ViewComponentMethodSelector/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: Microsoft.AspNet.Mvc.ViewComponents
+
+
+    .. rubric:: Interfaces
+
+
+    interface :dn:iface:`IViewComponentActivator`
+        Provides methods to activate an instantiated ViewComponent
+
+
+    interface :dn:iface:`IViewComponentDescriptorCollectionProvider`
+        Provides the currently cached collection of [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml).
+
+
+    interface :dn:iface:`IViewComponentDescriptorProvider`
+        Discovers the View Components in the application.
+
+
+    interface :dn:iface:`IViewComponentInvoker`
+        
+
+
+    interface :dn:iface:`IViewComponentInvokerFactory`
+        
+
+
+    interface :dn:iface:`IViewComponentSelector`
+        Selects a View Component based on a View Component name.
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`DefaultViewComponentActivator`
+        A default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentActivator.yml).
+
+
+    class :dn:cls:`DefaultViewComponentDescriptorCollectionProvider`
+        A default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorCollectionProvider.yml)
+
+
+    class :dn:cls:`DefaultViewComponentDescriptorProvider`
+        Default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider.yml).
+
+
+    class :dn:cls:`DefaultViewComponentHelper`
+        
+
+
+    class :dn:cls:`DefaultViewComponentInvoker`
+        
+
+
+    class :dn:cls:`DefaultViewComponentInvokerFactory`
+        
+
+
+    class :dn:cls:`DefaultViewComponentSelector`
+        Default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector.yml).
+
+
+    class :dn:cls:`ViewComponentContextAttribute`
+        Specifies that a controller property should be set with the current
+        [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) when creating the view component. The property must have a public
+        set method.
+
+
+    class :dn:cls:`ViewComponentConventions`
+        
+
+
+    class :dn:cls:`ViewComponentDescriptor`
+        A descriptor for a View Component.
+
+
+    class :dn:cls:`ViewComponentDescriptorCollection`
+        A cached collection of [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml).
+
+
+    class :dn:cls:`ViewComponentMethodSelector`
+        
+
+

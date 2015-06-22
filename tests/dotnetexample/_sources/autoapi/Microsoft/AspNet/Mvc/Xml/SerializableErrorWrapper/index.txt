@@ -1,0 +1,167 @@
+
+
+SerializableErrorWrapper Class
+==============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Wrapper class for [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) to enable it to be serialized by the xml formatters.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public sealed class SerializableErrorWrapper : IXmlSerializable, IUnwrappable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Xml/SerializableErrorWrapper.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableErrorWrapper()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public SerializableErrorWrapper()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableErrorWrapper(Microsoft.AspNet.Mvc.SerializableError)
+    
+        
+    
+        
+        
+    
+        
+        :param error: The [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object that needs to be wrapped.
+        :type error: Microsoft.AspNet.Mvc.SerializableError
+    
+        
+        .. code-block:: csharp
+    
+           public SerializableErrorWrapper(SerializableError error)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public SerializableError SerializableError { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.GetSchema()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public XmlSchema GetSchema()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.ReadXml(System.Xml.XmlReader)
+    
+        
+    
+        
+        
+    
+        
+        :param reader: The [System.Xml.XmlReader]() stream from which the object is deserialized.
+        :type reader: System.Xml.XmlReader
+    
+        
+        .. code-block:: csharp
+    
+           public void ReadXml(XmlReader reader)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.Unwrap(System.Type)
+    
+        
+        :param declaredType: 
+        :type declaredType: System.Type
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Unwrap(Type declaredType)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.WriteXml(System.Xml.XmlWriter)
+    
+        
+    
+        
+        
+    
+        
+        :param writer: The [System.Xml.XmlWriter]() stream to which the object is serialized.
+        :type writer: System.Xml.XmlWriter
+    
+        
+        .. code-block:: csharp
+    
+           public void WriteXml(XmlWriter writer)
+

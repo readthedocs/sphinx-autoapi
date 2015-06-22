@@ -1,0 +1,132 @@
+
+
+UrlRouteContext Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Context object to be used for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.UrlRouteContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class UrlRouteContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/UrlRouteContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlRouteContext
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.UrlRouteContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlRouteContext.Fragment
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Fragment { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlRouteContext.Host
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Host { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlRouteContext.Protocol
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Protocol { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlRouteContext.RouteName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.UrlRouteContext.Values
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Values { get; set; }
+

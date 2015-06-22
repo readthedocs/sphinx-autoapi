@@ -1,0 +1,100 @@
+
+
+FormContext Class
+=================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.FormContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class FormContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/FormContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.FormContext
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FormContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.FormContext.FormData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<string, object> FormData { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.FormContext
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.FormContext.RenderedField(System.String)
+    
+        
+        :param fieldName: 
+        :type fieldName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool RenderedField(string fieldName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.FormContext.RenderedField(System.String, System.Boolean)
+    
+        
+        :param fieldName: 
+        :type fieldName: System.String
+        :param value: 
+        :type value: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public void RenderedField(string fieldName, bool value)
+

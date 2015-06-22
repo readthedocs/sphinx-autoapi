@@ -1,0 +1,69 @@
+
+
+IRazorCompilationService Interface
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Specifies the contracts for a service that compiles Razor files.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IRazorCompilationService
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Compilation/IRazorCompilationService.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService.Compile(Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo)
+    
+        
+    
+        
+        
+    
+        
+        :param fileInfo: A [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml) instance that represents the file to compile.
+        :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           CompilationResult Compile(RelativeFileInfo fileInfo)
+

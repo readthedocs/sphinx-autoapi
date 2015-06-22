@@ -1,0 +1,103 @@
+
+
+ComplexModelDto Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ComplexModelDto
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/ComplexModelDto.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto.ComplexModelDto(Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata>)
+    
+        
+        :param modelMetadata: 
+        :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :param propertyMetadata: 
+        :type propertyMetadata: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
+    
+        
+        .. code-block:: csharp
+    
+           public ComplexModelDto(ModelMetadata modelMetadata, IEnumerable<ModelMetadata> propertyMetadata)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto.ModelMetadata
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadata ModelMetadata { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto.PropertyMetadata
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Collection<ModelMetadata> PropertyMetadata { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ComplexModelDto.Results
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IDictionary<ModelMetadata, ModelBindingResult> Results { get; }
+

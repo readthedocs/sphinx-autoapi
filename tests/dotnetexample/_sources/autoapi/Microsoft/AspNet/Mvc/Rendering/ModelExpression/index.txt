@@ -1,0 +1,143 @@
+
+
+ModelExpression Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Describes an [System.Linq.Expressions.Expression]() passed to a tag helper.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.ModelExpression`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public sealed class ModelExpression
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/ModelExpression.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.ModelExpression
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.ModelExpression
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.ModelExpression.ModelExpression(System.String, Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer)
+    
+        
+    
+        
+        
+    
+        
+        :param name: String representation of the [System.Linq.Expressions.Expression]() of interest.
+        :type name: System.String
+        :param modelExplorer: Includes the model and metadata about the [System.Linq.Expressions.Expression]() of interest.
+        :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+    
+        
+        .. code-block:: csharp
+    
+           public ModelExpression(string name, ModelExplorer modelExplorer)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.ModelExpression
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ModelExpression.Metadata
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelMetadata Metadata { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ModelExpression.Model
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Model { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ModelExpression.ModelExplorer
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelExplorer ModelExplorer { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ModelExpression.Name
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string Name { get; }
+

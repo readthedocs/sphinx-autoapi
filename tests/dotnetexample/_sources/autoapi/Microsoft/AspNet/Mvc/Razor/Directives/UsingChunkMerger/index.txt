@@ -1,0 +1,81 @@
+
+
+UsingChunkMerger Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A [Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger.yml) that merges @!:UsingChunk- instances.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class UsingChunkMerger : IChunkMerger
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/Directives/UsingChunkMerger.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger.Merge(ChunkTree, Chunk)
+    
+        
+        :param chunkTree: 
+        :type chunkTree: ChunkTree
+        :param chunk: 
+        :type chunk: Chunk
+    
+        
+        .. code-block:: csharp
+    
+           public void Merge(ChunkTree chunkTree, Chunk chunk)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Directives.UsingChunkMerger.VisitChunk(Chunk)
+    
+        
+        :param chunk: 
+        :type chunk: Chunk
+    
+        
+        .. code-block:: csharp
+    
+           public void VisitChunk(Chunk chunk)
+

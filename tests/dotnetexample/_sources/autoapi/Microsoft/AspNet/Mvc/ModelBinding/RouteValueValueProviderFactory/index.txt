@@ -1,0 +1,64 @@
+
+
+RouteValueValueProviderFactory Class
+====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ModelBinding.RouteValueValueProviderFactory`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RouteValueValueProviderFactory : IValueProviderFactory
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ModelBinding/RouteValueValueProviderFactory.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.RouteValueValueProviderFactory
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ModelBinding.RouteValueValueProviderFactory
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.RouteValueValueProviderFactory.GetValueProvider(Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IValueProvider GetValueProvider(ValueProviderFactoryContext context)
+

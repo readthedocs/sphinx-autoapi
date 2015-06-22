@@ -1,0 +1,92 @@
+
+
+ActionDescriptorExtensions Class
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Extension methods for [Microsoft.AspNet.Mvc.ActionDescriptor]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionDescriptorExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionDescriptorExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ActionDescriptorExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionDescriptorExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ActionDescriptorExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionDescriptorExtensions.GetProperty<T>(Microsoft.AspNet.Mvc.ActionDescriptor)
+    
+        
+    
+        
+        
+    
+        
+        :param actionDescriptor: The action descriptor.
+        :type actionDescriptor: Microsoft.AspNet.Mvc.ActionDescriptor
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static T GetProperty<T>(ActionDescriptor actionDescriptor)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ActionDescriptorExtensions.SetProperty<T>(Microsoft.AspNet.Mvc.ActionDescriptor, T)
+    
+        
+    
+        
+        
+    
+        
+        :param actionDescriptor: The action descriptor.
+        :type actionDescriptor: Microsoft.AspNet.Mvc.ActionDescriptor
+        :param value: The value of the property.
+        :type value: T
+    
+        
+        .. code-block:: csharp
+    
+           public static void SetProperty<T>(ActionDescriptor actionDescriptor, T value)
+

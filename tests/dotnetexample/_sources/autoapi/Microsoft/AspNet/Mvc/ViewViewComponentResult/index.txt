@@ -1,0 +1,158 @@
+
+
+ViewViewComponentResult Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A [Microsoft.AspNet.Mvc.IViewComponentResult](Microsoft.AspNet.Mvc.IViewComponentResult.yml) that renders a partial view when executed.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ViewViewComponentResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ViewViewComponentResult : IViewComponentResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/ViewViewComponentResult.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewViewComponentResult
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewViewComponentResult.TempData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ITempDataDictionary TempData { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewData
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewDataDictionary ViewData { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewEngine
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IViewEngine ViewEngine { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ViewName { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ViewViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewViewComponentResult.Execute(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+    
+        
+        .. code-block:: csharp
+    
+           public void Execute(ViewComponentContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewViewComponentResult.ExecuteAsync(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task ExecuteAsync(ViewComponentContext context)
+

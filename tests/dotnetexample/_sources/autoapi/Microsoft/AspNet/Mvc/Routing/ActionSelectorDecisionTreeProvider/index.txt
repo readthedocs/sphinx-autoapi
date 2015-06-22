@@ -1,0 +1,86 @@
+
+
+ActionSelectorDecisionTreeProvider Class
+========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionSelectorDecisionTreeProvider : IActionSelectorDecisionTreeProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/ActionSelectorDecisionTreeProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider.ActionSelectorDecisionTreeProvider(Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param actionDescriptorsCollectionProvider: The [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
+        :type actionDescriptorsCollectionProvider: Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider
+    
+        
+        .. code-block:: csharp
+    
+           public ActionSelectorDecisionTreeProvider(IActionDescriptorsCollectionProvider actionDescriptorsCollectionProvider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider.DecisionTree
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IActionSelectionDecisionTree DecisionTree { get; }
+

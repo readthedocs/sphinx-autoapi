@@ -1,0 +1,237 @@
+
+
+RazorPreCompiler Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RazorPreCompiler
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Precompilation/RazorPreCompiler.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.RazorPreCompiler(BeforeCompileContext, IAssemblyLoadContextAccessor, IFileProvider, IMemoryCache, CompilationSettings)
+    
+        
+        :param compileContext: 
+        :type compileContext: BeforeCompileContext
+        :param loadContextAccessor: 
+        :type loadContextAccessor: IAssemblyLoadContextAccessor
+        :param fileProvider: 
+        :type fileProvider: IFileProvider
+        :param precompilationCache: 
+        :type precompilationCache: IMemoryCache
+        :param compilationSettings: 
+        :type compilationSettings: CompilationSettings
+    
+        
+        .. code-block:: csharp
+    
+           public RazorPreCompiler(BeforeCompileContext compileContext, IAssemblyLoadContextAccessor loadContextAccessor, IFileProvider fileProvider, IMemoryCache precompilationCache, CompilationSettings compilationSettings)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CompilationSettings
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected CompilationSettings CompilationSettings { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CompileContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected BeforeCompileContext CompileContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.FileExtension
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual string FileExtension { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.FileProvider
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IFileProvider FileProvider { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GenerateSymbols
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool GenerateSymbols { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.LoadContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IAssemblyLoadContext LoadContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.MaxDegreesOfParallelism
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual int MaxDegreesOfParallelism { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.PreCompilationCache
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IMemoryCache PreCompilationCache { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.TagHelperTypeResolver
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual TagHelperTypeResolver TagHelperTypeResolver { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CompileViews()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public virtual void CompileViews()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CreateFileInfoCollection()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual RazorFileInfoCollection CreateFileInfoCollection()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GeneratePrecompiledAssembly(System.Collections.Generic.IEnumerable<SyntaxTree>, System.Collections.Generic.IEnumerable<Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo>)
+    
+        
+        :param syntaxTrees: 
+        :type syntaxTrees: System.Collections.Generic.IEnumerable{SyntaxTree}
+        :param razorFileInfos: 
+        :type razorFileInfos: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual RazorFileInfoCollection GeneratePrecompiledAssembly(IEnumerable<SyntaxTree> syntaxTrees, IEnumerable<RazorFileInfo> razorFileInfos)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GetCacheEntry(Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo)
+    
+        
+        :param fileInfo: 
+        :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected virtual PrecompilationCacheEntry GetCacheEntry(RelativeFileInfo fileInfo)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GetRazorHost()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           protected IMvcRazorHost GetRazorHost()
+

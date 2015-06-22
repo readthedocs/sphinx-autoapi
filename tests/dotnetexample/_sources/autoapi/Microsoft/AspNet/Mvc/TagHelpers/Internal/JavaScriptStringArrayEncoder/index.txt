@@ -1,0 +1,76 @@
+
+
+JavaScriptStringArrayEncoder Class
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Methods for encoding [System.Collections.Generic.IEnumerable`1]() for use as a JavaScript array literal.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.TagHelpers.Internal.JavaScriptStringArrayEncoder`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JavaScriptStringArrayEncoder
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.TagHelpers/Internal/JavaScriptStringArrayEncoder.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.JavaScriptStringArrayEncoder
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.TagHelpers.Internal.JavaScriptStringArrayEncoder
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.JavaScriptStringArrayEncoder.Encode(IJavaScriptStringEncoder, System.Collections.Generic.IEnumerable<System.String>)
+    
+        
+    
+        
+        
+    
+        
+        :param encoder: 
+        :type encoder: IJavaScriptStringEncoder
+        :param values: 
+        :type values: System.Collections.Generic.IEnumerable{System.String}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static string Encode(IJavaScriptStringEncoder encoder, IEnumerable<string> values)
+

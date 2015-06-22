@@ -1,0 +1,155 @@
+
+
+SelectList Class
+================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.MultiSelectList`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.SelectList`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class SelectList : MultiSelectList, IEnumerable<SelectListItem>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/SelectList.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.SelectList
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.SelectList
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+    
+        
+        .. code-block:: csharp
+    
+           public SelectList(IEnumerable items)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.Object)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param selectedValue: 
+        :type selectedValue: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public SelectList(IEnumerable items, object selectedValue)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.String, System.String)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: 
+        :type dataValueField: System.String
+        :param dataTextField: 
+        :type dataTextField: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public SelectList(IEnumerable items, string dataValueField, string dataTextField)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.String, System.String, System.Object)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: 
+        :type dataValueField: System.String
+        :param dataTextField: 
+        :type dataTextField: System.String
+        :param selectedValue: 
+        :type selectedValue: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public SelectList(IEnumerable items, string dataValueField, string dataTextField, object selectedValue)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectList(System.Collections.IEnumerable, System.String, System.String, System.Object, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: The data value field. Used to match the Value property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataValueField: System.String
+        :param dataTextField: The data text field. Used to match the Text property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataTextField: System.String
+        :param selectedValue: The selected values. Used to match the Selected property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type selectedValue: System.Object
+        :param dataGroupField: The data group field. Used to match the Group property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataGroupField: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public SelectList(IEnumerable items, string dataValueField, string dataTextField, object selectedValue, string dataGroupField)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.SelectList
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectedValue
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object SelectedValue { get; }
+

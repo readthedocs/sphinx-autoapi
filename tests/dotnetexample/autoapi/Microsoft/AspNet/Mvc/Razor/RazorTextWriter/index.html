@@ -1,0 +1,630 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RazorTextWriter Class &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../../index.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Sphinx AutoAPI Index</a></li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>RazorTextWriter Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/Razor/RazorTextWriter/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="razortextwriter-class">
+<h1>RazorTextWriter Class<a class="headerlink" href="#razortextwriter-class" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#summary" id="id1">Summary</a></li>
+<li><a class="reference internal" href="#inheritance-hierarchy" id="id2">Inheritance Hierarchy</a></li>
+<li><a class="reference internal" href="#syntax" id="id3">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id4">GitHub</a></li>
+<li><a class="reference internal" href="#constructors" id="id5">Constructors</a></li>
+<li><a class="reference internal" href="#properties" id="id6">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id7">Methods</a></li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id1">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>A [System.IO.TextWriter]() that is backed by a unbuffered writer (over the Response stream) and a buffered
+[Microsoft.AspNet.Mvc.Rendering.StringCollectionTextWriter](). When
+&lt;c&gt;Flush&lt;/c&gt; or
+&lt;c&gt;FlushAsync&lt;/c&gt; is invoked, the writer
+copies all content from the buffered writer to the unbuffered one and switches to writing to the unbuffered
+writer for all further write operations.</p>
+</div>
+<div class="section" id="inheritance-hierarchy">
+<h2><a class="toc-backref" href="#id2">Inheritance Hierarchy</a><a class="headerlink" href="#inheritance-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.Object</span></code></li>
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.MarshalByRefObject</span></code></li>
+<li><code class="xref dn dn-cls docutils literal"><span class="pre">System.IO.TextWriter</span></code></li>
+<li><a class="reference internal" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter" title="Microsoft.AspNet.Mvc.Razor.RazorTextWriter"><code class="xref dn dn-cls docutils literal"><span class="pre">Microsoft.AspNet.Mvc.Razor.RazorTextWriter</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2><a class="toc-backref" href="#id3">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">RazorTextWriter</span> <span class="p">:</span> <span class="n">TextWriter</span><span class="p">,</span> <span class="n">IDisposable</span><span class="p">,</span> <span class="n">IBufferedTextWriter</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id4">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/RazorTextWriter.cs">View on GitHub</a></p>
+<dl class="class">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter">
+<em class="property">class </em><code class="descclassname">Microsoft.AspNet.Mvc.Razor.</code><code class="descname">RazorTextWriter</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="constructors">
+<h2><a class="toc-backref" href="#id5">Constructors</a><a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="constructor">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.RazorTextWriter">
+<code class="descname">RazorTextWriter</code><span class="sig-paren">(</span><em>System.IO.TextWriter</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.RazorTextWriter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>unbufferedWriter</strong> &#8211; The [System.IO.TextWriter]() to write output to when this instance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>is no longer buffering.</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">type unbufferedWriter:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.IO.TextWriter</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param encoding:</th><td class="field-body">The character [Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml) in which the output is written.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">type encoding:</th><td class="field-body">System.Text.Encoding</td>
+</tr>
+</tbody>
+</table>
+<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">RazorTextWriter</span><span class="p">(</span><span class="n">TextWriter</span> <span class="n">unbufferedWriter</span><span class="p">,</span> <span class="n">Encoding</span> <span class="n">encoding</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="properties">
+<h2><a class="toc-backref" href="#id6">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding">
+<code class="descname">Encoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Encoding</span> <span class="n">Encoding</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.IsBuffering">
+<code class="descname">IsBuffering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.IsBuffering" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="kt">bool</span> <span class="n">IsBuffering</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2><a class="toc-backref" href="#id7">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dd><dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyTo">
+<code class="descname">CopyTo</code><span class="sig-paren">(</span><em>System.IO.TextWriter</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyTo" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>writer</strong> (<em>System.IO.TextWriter</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">CopyTo</span><span class="p">(</span><span class="n">TextWriter</span> <span class="n">writer</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyToAsync">
+<code class="descname">CopyToAsync</code><span class="sig-paren">(</span><em>System.IO.TextWriter</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.CopyToAsync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>writer</strong> (<em>System.IO.TextWriter</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span> <span class="nf">CopyToAsync</span><span class="p">(</span><span class="n">TextWriter</span> <span class="n">writer</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Flush()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Flush</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.FlushAsync()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">FlushAsync</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write">
+<code class="descname">Write</code><span class="sig-paren">(</span><em>System.Char</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>System.Char</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">char</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Write</code><span class="sig-paren">(</span><em>System.Char[]</em>, <em>System.Int32</em>, <em>System.Int32</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>buffer</strong> (<em>System.Char[]</em>) &#8211; </li>
+<li><strong>index</strong> (<em>System.Int32</em>) &#8211; </li>
+<li><strong>count</strong> (<em>System.Int32</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">char</span><span class="p">[]</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Write</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>System.Object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">object</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Write</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteAsync">
+<code class="descname">WriteAsync</code><span class="sig-paren">(</span><em>System.Char</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteAsync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Char</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteAsync</span><span class="p">(</span><span class="kt">char</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">WriteAsync</code><span class="sig-paren">(</span><em>System.Char[]</em>, <em>System.Int32</em>, <em>System.Int32</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>buffer</strong> (<em>System.Char[]</em>) &#8211; </li>
+<li><strong>index</strong> (<em>System.Int32</em>) &#8211; </li>
+<li><strong>count</strong> (<em>System.Int32</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteAsync</span><span class="p">(</span><span class="kt">char</span><span class="p">[]</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">WriteAsync</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteAsync</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLine()</code></dt>
+<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">WriteLine</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLine">
+<code class="descname">WriteLine</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLine" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">WriteLine</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteLineAsync</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync">
+<code class="descname">WriteLineAsync</code><span class="sig-paren">(</span><em>System.Char</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Char</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteLineAsync</span><span class="p">(</span><span class="kt">char</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">WriteLineAsync</code><span class="sig-paren">(</span><em>System.Char[]</em>, <em>System.Int32</em>, <em>System.Int32</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.Char[]</em>) &#8211; </li>
+<li><strong>start</strong> (<em>System.Int32</em>) &#8211; </li>
+<li><strong>offset</strong> (<em>System.Int32</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteLineAsync</span><span class="p">(</span><span class="kt">char</span><span class="p">[]</span> <span class="k">value</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">WriteLineAsync</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>System.String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="n">Task</span> <span class="nf">WriteLineAsync</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

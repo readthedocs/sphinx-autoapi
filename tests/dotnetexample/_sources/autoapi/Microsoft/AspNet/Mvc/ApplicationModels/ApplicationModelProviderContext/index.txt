@@ -1,0 +1,101 @@
+
+
+ApplicationModelProviderContext Class
+=====================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A context object for [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ApplicationModelProviderContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ApplicationModels/ApplicationModelProviderContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.ApplicationModelProviderContext(System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo>)
+    
+        
+        :param controllerTypes: 
+        :type controllerTypes: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
+    
+        
+        .. code-block:: csharp
+    
+           public ApplicationModelProviderContext(IEnumerable<TypeInfo> controllerTypes)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.ControllerTypes
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable<TypeInfo> ControllerTypes { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.Result
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ApplicationModel Result { get; }
+

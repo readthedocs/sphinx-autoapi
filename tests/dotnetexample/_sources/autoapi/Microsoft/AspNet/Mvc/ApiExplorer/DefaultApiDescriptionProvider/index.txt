@@ -1,0 +1,127 @@
+
+
+DefaultApiDescriptionProvider Class
+===================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Implements a provider of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) for actions represented
+by [Microsoft.AspNet.Mvc.ControllerActionDescriptor]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class DefaultApiDescriptionProvider : IApiDescriptionProvider
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.ApiExplorer/DefaultApiDescriptionProvider.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.DefaultApiDescriptionProvider(IOptions<Microsoft.AspNet.Mvc.MvcOptions>, IInlineConstraintResolver, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider)
+    
+        
+    
+        
+        
+    
+        
+        :param optionsAccessor: The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
+        :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.MvcOptions}
+        :param constraintResolver: The @!:IInlineConstraintResolver- used for resolving inline
+    constraints.
+        :type constraintResolver: IInlineConstraintResolver
+        :param modelMetadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
+        :type modelMetadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
+    
+        
+        .. code-block:: csharp
+    
+           public DefaultApiDescriptionProvider(IOptions<MvcOptions> optionsAccessor, IInlineConstraintResolver constraintResolver, IModelMetadataProvider modelMetadataProvider)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.Order
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.OnProvidersExecuted(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuted(ApiDescriptionProviderContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.OnProvidersExecuting(Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionProviderContext
+    
+        
+        .. code-block:: csharp
+    
+           public void OnProvidersExecuting(ApiDescriptionProviderContext context)
+

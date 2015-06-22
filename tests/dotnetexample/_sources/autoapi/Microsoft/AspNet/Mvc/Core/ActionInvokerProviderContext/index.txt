@@ -1,0 +1,91 @@
+
+
+ActionInvokerProviderContext Class
+==================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ActionInvokerProviderContext
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/ActionInvokerProviderContext.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext.ActionInvokerProviderContext(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param actionContext: 
+        :type actionContext: Microsoft.AspNet.Mvc.ActionContext
+    
+        
+        .. code-block:: csharp
+    
+           public ActionInvokerProviderContext(ActionContext actionContext)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext.ActionContext
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ActionContext ActionContext { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Core.ActionInvokerProviderContext.Result
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IActionInvoker Result { get; set; }
+

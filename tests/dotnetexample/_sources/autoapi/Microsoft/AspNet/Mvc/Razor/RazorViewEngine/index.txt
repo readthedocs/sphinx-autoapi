@@ -1,0 +1,167 @@
+
+
+RazorViewEngine Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Default implementation of [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.RazorViewEngine`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RazorViewEngine : IRazorViewEngine, IViewEngine
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/RazorViewEngine.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.RazorViewEngine(Microsoft.AspNet.Mvc.Razor.IRazorPageFactory, Microsoft.AspNet.Mvc.Razor.IRazorViewFactory, IOptions<Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions>, Microsoft.AspNet.Mvc.Razor.IViewLocationCache)
+    
+        
+    
+        
+        
+    
+        
+        :param pageFactory: The page factory used for creating [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) instances.
+        :type pageFactory: Microsoft.AspNet.Mvc.Razor.IRazorPageFactory
+        :param viewFactory: 
+        :type viewFactory: Microsoft.AspNet.Mvc.Razor.IRazorViewFactory
+        :param optionsAccessor: 
+        :type optionsAccessor: IOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
+        :param viewLocationCache: 
+        :type viewLocationCache: Microsoft.AspNet.Mvc.Razor.IViewLocationCache
+    
+        
+        .. code-block:: csharp
+    
+           public RazorViewEngine(IRazorPageFactory pageFactory, IRazorViewFactory viewFactory, IOptions<RazorViewEngineOptions> optionsAccessor, IViewLocationCache viewLocationCache)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.AreaViewLocationFormats
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IEnumerable<string> AreaViewLocationFormats { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.ViewLocationFormats
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IEnumerable<string> ViewLocationFormats { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindPage(Microsoft.AspNet.Mvc.ActionContext, System.String)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :param pageName: 
+        :type pageName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public RazorPageResult FindPage(ActionContext context, string pageName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindPartialView(Microsoft.AspNet.Mvc.ActionContext, System.String)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :param partialViewName: 
+        :type partialViewName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewEngineResult FindPartialView(ActionContext context, string partialViewName)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorViewEngine.FindView(Microsoft.AspNet.Mvc.ActionContext, System.String)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :param viewName: 
+        :type viewName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ViewEngineResult FindView(ActionContext context, string viewName)
+

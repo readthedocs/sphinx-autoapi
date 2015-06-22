@@ -1,0 +1,114 @@
+
+
+RelativeFileInfo Class
+======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A container type that represents @!:IFileInfo- along with the application base relative path
+for a file in the file system.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class RelativeFileInfo
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Compilation/RelativeFileInfo.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.RelativeFileInfo(IFileInfo, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param fileInfo: @!:IFileInfo- for the file.
+        :type fileInfo: IFileInfo
+        :param relativePath: Path of the file relative to the application base.
+        :type relativePath: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public RelativeFileInfo(IFileInfo fileInfo, string relativePath)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.FileInfo
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IFileInfo FileInfo { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.RelativePath
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RelativePath { get; }
+

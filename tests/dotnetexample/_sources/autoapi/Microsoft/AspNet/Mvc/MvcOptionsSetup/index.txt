@@ -1,0 +1,85 @@
+
+
+MvcOptionsSetup Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Sets up default options for [Microsoft.AspNet.Mvc.MvcOptions]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`
+* :dn:cls:`Microsoft.AspNet.Mvc.MvcOptionsSetup`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MvcOptionsSetup : ConfigureOptions<MvcOptions>
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc/MvcOptionsSetup.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptionsSetup
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.MvcOptionsSetup.MvcOptionsSetup()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public MvcOptionsSetup()
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.MvcOptionsSetup
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.MvcOptionsSetup.ConfigureMvc(Microsoft.AspNet.Mvc.MvcOptions)
+    
+        
+        :param options: 
+        :type options: Microsoft.AspNet.Mvc.MvcOptions
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureMvc(MvcOptions options)
+

@@ -1,0 +1,76 @@
+
+
+CompilationOptionsProviderExtension Class
+=========================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Extension methods for @!:ICompilerOptionsProvider-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CompilationOptionsProviderExtension
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/Compilation/CompilationOptionsProviderExtension.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension.GetCompilationSettings(ICompilerOptionsProvider, IApplicationEnvironment)
+    
+        
+    
+        
+        
+    
+        
+        :param compilerOptionsProvider: A @!:ICompilerOptionsProvider- that reads compiler options.
+        :type compilerOptionsProvider: ICompilerOptionsProvider
+        :param applicationEnvironment: The @!:IApplicationEnvironment- for the executing application.
+        :type applicationEnvironment: IApplicationEnvironment
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static CompilationSettings GetCompilationSettings(ICompilerOptionsProvider compilerOptionsProvider, IApplicationEnvironment applicationEnvironment)
+

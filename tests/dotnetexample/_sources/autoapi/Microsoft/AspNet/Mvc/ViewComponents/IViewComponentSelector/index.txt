@@ -1,0 +1,69 @@
+
+
+IViewComponentSelector Interface
+================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Selects a View Component based on a View Component name.
+
+
+
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public interface IViewComponentSelector
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/IViewComponentSelector.cs>`_
+
+
+
+
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector
+
+
+Methods
+-------
+
+.. dn:interface:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.IViewComponentSelector.SelectComponent(System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param componentName: The View Component name.
+        :type componentName: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           ViewComponentDescriptor SelectComponent(string componentName)
+

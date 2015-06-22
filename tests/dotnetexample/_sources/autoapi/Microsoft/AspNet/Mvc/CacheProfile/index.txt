@@ -1,0 +1,117 @@
+
+
+CacheProfile Class
+==================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Defines a set of settings which can be used for response caching.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.CacheProfile`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class CacheProfile
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/CacheProfile.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.CacheProfile
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.CacheProfile
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CacheProfile.Duration
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int ? Duration { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CacheProfile.Location
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ResponseCacheLocation? Location { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CacheProfile.NoStore
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool ? NoStore { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.CacheProfile.VaryByHeader
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string VaryByHeader { get; set; }
+

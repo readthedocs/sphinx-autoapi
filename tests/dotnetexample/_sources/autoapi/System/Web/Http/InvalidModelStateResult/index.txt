@@ -1,0 +1,137 @@
+
+
+InvalidModelStateResult Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An action result that returns a @!:StatusCodes.Status400BadRequest- response and performs
+content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) based on a [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ActionResult`
+* :dn:cls:`Microsoft.AspNet.Mvc.ObjectResult`
+* :dn:cls:`System.Web.Http.InvalidModelStateResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class InvalidModelStateResult : ObjectResult, IActionResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.WebApiCompatShim/ActionResults/InvalidModelStateResult.cs>`_
+
+
+
+
+
+.. dn:class:: System.Web.Http.InvalidModelStateResult
+
+
+Constructors
+------------
+
+.. dn:class:: System.Web.Http.InvalidModelStateResult
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: System.Web.Http.InvalidModelStateResult.InvalidModelStateResult(Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, System.Boolean)
+    
+        
+    
+        
+        
+    
+        
+        :param modelState: The model state to include in the error.
+        :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
+        :param includeErrorDetail: <see langword="true" /> if the error should include exception messages; otherwise,
+    <see langword="false" />.
+        :type includeErrorDetail: System.Boolean
+    
+        
+        .. code-block:: csharp
+    
+           public InvalidModelStateResult(ModelStateDictionary modelState, bool includeErrorDetail)
+
+
+Properties
+----------
+
+.. dn:class:: System.Web.Http.InvalidModelStateResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: System.Web.Http.InvalidModelStateResult.IncludeErrorDetail
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public bool IncludeErrorDetail { get; }
+
+    .. dn:property:: System.Web.Http.InvalidModelStateResult.ModelState
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public ModelStateDictionary ModelState { get; }
+
+
+Methods
+-------
+
+.. dn:class:: System.Web.Http.InvalidModelStateResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: System.Web.Http.InvalidModelStateResult.ExecuteResultAsync(Microsoft.AspNet.Mvc.ActionContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.ActionContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task ExecuteResultAsync(ActionContext context)
+

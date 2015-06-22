@@ -1,0 +1,129 @@
+
+
+JsonOutputFormatter Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.OutputFormatter`
+* :dn:cls:`Microsoft.AspNet.Mvc.JsonOutputFormatter`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonOutputFormatter : OutputFormatter, IApiResponseFormatMetadataProvider, IJsonOutputFormatter, IOutputFormatter
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Formatters/JsonOutputFormatter.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonOutputFormatter
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonOutputFormatter.JsonOutputFormatter()
+    
+        
+    
+        
+        .. code-block:: csharp
+    
+           public JsonOutputFormatter()
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonOutputFormatter.JsonOutputFormatter(JsonSerializerSettings)
+    
+        
+        :param serializerSettings: 
+        :type serializerSettings: JsonSerializerSettings
+    
+        
+        .. code-block:: csharp
+    
+           public JsonOutputFormatter(JsonSerializerSettings serializerSettings)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.JsonOutputFormatter.SerializerSettings
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public JsonSerializerSettings SerializerSettings { get; set; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonOutputFormatter
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonOutputFormatter.WriteObject(System.IO.TextWriter, System.Object)
+    
+        
+        :param writer: 
+        :type writer: System.IO.TextWriter
+        :param value: 
+        :type value: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public void WriteObject(TextWriter writer, object value)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNet.Mvc.OutputFormatterContext)
+    
+        
+        :param context: 
+        :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override Task WriteResponseBodyAsync(OutputFormatterContext context)
+

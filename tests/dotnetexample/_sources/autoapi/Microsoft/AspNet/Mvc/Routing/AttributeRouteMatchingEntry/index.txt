@@ -1,0 +1,138 @@
+
+
+AttributeRouteMatchingEntry Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Used to build an [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml). Represents an individual URL-matching route that will be
+aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class AttributeRouteMatchingEntry
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Core/Routing/AttributeRouteMatchingEntry.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Constraints
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyDictionary<string, IRouteConstraint> Constraints { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Order
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Order { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Precedence
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public decimal Precedence { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.RouteName
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteName { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.RouteTemplate
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string RouteTemplate { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Target
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IRouter Target { get; set; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.TemplateMatcher
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public TemplateMatcher TemplateMatcher { get; set; }
+

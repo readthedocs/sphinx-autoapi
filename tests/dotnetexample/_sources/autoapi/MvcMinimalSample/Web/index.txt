@@ -1,0 +1,47 @@
+
+
+MvcMinimalSample.Web Namespace
+==============================
+
+
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   
+   
+   /autoapi/MvcMinimalSample/Web/HomeController/index
+   
+   
+   
+   /autoapi/MvcMinimalSample/Web/Startup/index
+   
+   
+
+
+
+
+
+
+
+
+
+.. dn:namespace:: MvcMinimalSample.Web
+
+
+    .. rubric:: Classes
+
+
+    class :dn:cls:`HomeController`
+        
+
+
+    class :dn:cls:`Startup`
+        
+
+

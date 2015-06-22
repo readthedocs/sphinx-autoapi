@@ -1,0 +1,113 @@
+
+
+ApiDescriptionGroupCollection Class
+===================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+A cached collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ApiDescriptionGroupCollection
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.ApiExplorer/ApiDescriptionGroupCollection.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection.ApiDescriptionGroupCollection(System.Collections.Generic.IReadOnlyList<Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup>, System.Int32)
+    
+        
+    
+        
+        
+    
+        
+        :param items: The list of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
+        :type items: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup}
+        :param version: The unique version of discovered groups.
+        :type version: System.Int32
+    
+        
+        .. code-block:: csharp
+    
+           public ApiDescriptionGroupCollection(IReadOnlyList<ApiDescriptionGroup> items, int version)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection.Items
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IReadOnlyList<ApiDescriptionGroup> Items { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection.Version
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public int Version { get; }
+

@@ -1,0 +1,189 @@
+
+
+JsonViewComponentResult Class
+=============================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+An [Microsoft.AspNet.Mvc.IViewComponentResult](Microsoft.AspNet.Mvc.IViewComponentResult.yml) which renders JSON text when executed.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.JsonViewComponentResult`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class JsonViewComponentResult : IViewComponentResult
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/ViewComponents/JsonViewComponentResult.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonViewComponentResult
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonViewComponentResult.JsonViewComponentResult(System.Object)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The value to format as JSON text.
+        :type value: System.Object
+    
+        
+        .. code-block:: csharp
+    
+           public JsonViewComponentResult(object value)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonViewComponentResult.JsonViewComponentResult(System.Object, JsonSerializerSettings)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The value to format as JSON text.
+        :type value: System.Object
+        :param serializerSettings: The @!:JsonSerializerSettings- to be used by
+    the formatter.
+        :type serializerSettings: JsonSerializerSettings
+    
+        
+        .. code-block:: csharp
+    
+           public JsonViewComponentResult(object value, JsonSerializerSettings serializerSettings)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.JsonViewComponentResult.JsonViewComponentResult(System.Object, Microsoft.AspNet.Mvc.JsonOutputFormatter)
+    
+        
+    
+        
+        
+    
+        
+        :param value: The value to format as JSON text.
+        :type value: System.Object
+        :param formatter: The [Microsoft.AspNet.Mvc.JsonOutputFormatter](Microsoft.AspNet.Mvc.JsonOutputFormatter.yml) to use.
+        :type formatter: Microsoft.AspNet.Mvc.JsonOutputFormatter
+    
+        
+        .. code-block:: csharp
+    
+           public JsonViewComponentResult(object value, JsonOutputFormatter formatter)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.JsonViewComponentResult.Formatter
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public JsonOutputFormatter Formatter { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.JsonViewComponentResult.Value
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public object Value { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.JsonViewComponentResult
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonViewComponentResult.Execute(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+    
+        
+        .. code-block:: csharp
+    
+           public void Execute(ViewComponentContext context)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.JsonViewComponentResult.ExecuteAsync(Microsoft.AspNet.Mvc.ViewComponentContext)
+    
+        
+    
+        
+        
+    
+        
+        :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
+        :type context: Microsoft.AspNet.Mvc.ViewComponentContext
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public Task ExecuteAsync(ViewComponentContext context)
+

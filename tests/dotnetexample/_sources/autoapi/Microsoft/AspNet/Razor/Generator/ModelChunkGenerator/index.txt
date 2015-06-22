@@ -1,0 +1,146 @@
+
+
+ModelChunkGenerator Class
+=========================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`SpanChunkGenerator`
+* :dn:cls:`Microsoft.AspNet.Razor.Generator.ModelChunkGenerator`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ModelChunkGenerator : SpanChunkGenerator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor.Host/ModelChunkGenerator.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.ModelChunkGenerator(System.String, System.String)
+    
+        
+        :param baseType: 
+        :type baseType: System.String
+        :param modelType: 
+        :type modelType: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public ModelChunkGenerator(string baseType, string modelType)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.BaseType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string BaseType { get; }
+
+    .. dn:property:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.ModelType
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string ModelType { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.Equals(System.Object)
+    
+        
+        :param obj: 
+        :type obj: System.Object
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override bool Equals(object obj)
+
+    .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.GenerateChunk(Span, ChunkGeneratorContext)
+    
+        
+        :param target: 
+        :type target: Span
+        :param context: 
+        :type context: ChunkGeneratorContext
+    
+        
+        .. code-block:: csharp
+    
+           public override void GenerateChunk(Span target, ChunkGeneratorContext context)
+
+    .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.GetHashCode()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override int GetHashCode()
+
+    .. dn:method:: Microsoft.AspNet.Razor.Generator.ModelChunkGenerator.ToString()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public override string ToString()
+

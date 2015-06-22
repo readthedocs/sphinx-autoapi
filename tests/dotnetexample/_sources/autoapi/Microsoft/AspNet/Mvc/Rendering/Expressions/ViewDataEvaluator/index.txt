@@ -1,0 +1,94 @@
+
+
+ViewDataEvaluator Class
+=======================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataEvaluator`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ViewDataEvaluator
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/Expressions/ViewDataEvaluator.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataEvaluator
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataEvaluator
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataEvaluator.Eval(Microsoft.AspNet.Mvc.ViewDataDictionary, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the
+    <paramref name="expression" /> value.
+        :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
+        :param expression: Expression name, relative to
+    <c>viewData.Model</c>.
+        :type expression: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ViewDataInfo Eval(ViewDataDictionary viewData, string expression)
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataEvaluator.Eval(System.Object, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param indexableObject: The [System.Object]() that may contain the
+    <paramref name="expression" /> value.
+        :type indexableObject: System.Object
+        :param expression: Expression name, relative to
+    <paramref name="indexableObject" />.
+        :type expression: System.String
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static ViewDataInfo Eval(object indexableObject, string expression)
+

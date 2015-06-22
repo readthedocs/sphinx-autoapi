@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Microsoft.AspNet.Mvc.Razor.Compilation Namespace &mdash; dotnetexample 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../../../_static/autoapi.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="dotnetexample 0.1 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Sphinx AutoAPI Index" href="../../../../../index.html"/>
+        <link rel="next" title="CompilationFailedException Class" href="CompilationFailedException/index.html"/>
+        <link rel="prev" title="IBufferedTextWriter Interface" href="../IBufferedTextWriter/index.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../../../index.html" class="icon icon-home"> dotnetexample
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">Sphinx AutoAPI Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Builder/index.html">Microsoft.AspNet.Builder Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/index.html">Microsoft.AspNet.JsonPatch Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Adapters/index.html">Microsoft.AspNet.JsonPatch.Adapters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Converters/index.html">Microsoft.AspNet.JsonPatch.Converters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Exceptions/index.html">Microsoft.AspNet.JsonPatch.Exceptions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../JsonPatch/Operations/index.html">Microsoft.AspNet.JsonPatch.Operations Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html">Microsoft.AspNet.Mvc Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ActionConstraints/index.html">Microsoft.AspNet.Mvc.ActionConstraints Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ApiExplorer/index.html">Microsoft.AspNet.Mvc.ApiExplorer Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ApplicationModels/index.html">Microsoft.AspNet.Mvc.ApplicationModels Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Core/index.html">Microsoft.AspNet.Mvc.Core Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Filters/index.html">Microsoft.AspNet.Mvc.Filters Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/index.html">Microsoft.AspNet.Mvc.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/DecisionTree/index.html">Microsoft.AspNet.Mvc.Internal.DecisionTree Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Internal/Routing/index.html">Microsoft.AspNet.Mvc.Internal.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModelBinding/index.html">Microsoft.AspNet.Mvc.ModelBinding Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModelBinding/Metadata/index.html">Microsoft.AspNet.Mvc.ModelBinding.Metadata Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModelBinding/Validation/index.html">Microsoft.AspNet.Mvc.ModelBinding.Validation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Microsoft.AspNet.Mvc.Razor Namespace</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Microsoft.AspNet.Mvc.Razor.Compilation Namespace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CompilationFailedException/index.html">CompilationFailedException Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompilationOptionsProviderExtension/index.html">CompilationOptionsProviderExtension Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompilationResult/index.html">CompilationResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompilerCache/index.html">CompilerCache Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompilerCacheEntry/index.html">CompilerCacheEntry Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompilerCacheResult/index.html">CompilerCacheResult Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICompilationService/index.html">ICompilationService Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICompilerCache/index.html">ICompilerCache Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRazorCompilationService/index.html">IRazorCompilationService Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RazorCompilationFailure/index.html">RazorCompilationFailure Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RazorCompilationMessage/index.html">RazorCompilationMessage Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RazorCompilationService/index.html">RazorCompilationService Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RazorFileHash/index.html">RazorFileHash Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RelativeFileInfo/index.html">RelativeFileInfo Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RoslynCompilationService/index.html">RoslynCompilationService Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SyntaxTreeGenerator/index.html">SyntaxTreeGenerator Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UncachedCompilationResult/index.html">UncachedCompilationResult Class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Directives/index.html">Microsoft.AspNet.Mvc.Razor.Directives Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Internal/index.html">Microsoft.AspNet.Mvc.Razor.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Precompilation/index.html">Microsoft.AspNet.Mvc.Razor.Precompilation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/index.html">Microsoft.AspNet.Mvc.Rendering Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/Expressions/index.html">Microsoft.AspNet.Mvc.Rendering.Expressions Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rendering/Internal/index.html">Microsoft.AspNet.Mvc.Rendering.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Routing/index.html">Microsoft.AspNet.Mvc.Routing Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../TagHelpers/index.html">Microsoft.AspNet.Mvc.TagHelpers Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../TagHelpers/Internal/index.html">Microsoft.AspNet.Mvc.TagHelpers.Internal Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ViewComponents/index.html">Microsoft.AspNet.Mvc.ViewComponents Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WebApiCompatShim/index.html">Microsoft.AspNet.Mvc.WebApiCompatShim Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Xml/index.html">Microsoft.AspNet.Mvc.Xml Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">dotnetexample</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../../index.html">Sphinx AutoAPI Index</a> &raquo;</li>
+      
+    <li>Microsoft.AspNet.Mvc.Razor.Compilation Namespace</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/autoapi/Microsoft/AspNet/Mvc/Razor/Compilation/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="microsoft-aspnet-mvc-razor-compilation-namespace">
+<h1>Microsoft.AspNet.Mvc.Razor.Compilation Namespace<a class="headerlink" href="#microsoft-aspnet-mvc-razor-compilation-namespace" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="namespace">
+<dt id="Microsoft.AspNet.Mvc.Razor.Compilation">
+<em class="property">namespace </em><code class="descclassname">Microsoft.AspNet.Mvc.Razor.</code><code class="descname">Compilation</code><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Interfaces</p>
+<dl class="docutils">
+<dt>interface <a class="reference internal" href="ICompilationService/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.ICompilationService" title="Microsoft.AspNet.Mvc.Razor.Compilation.ICompilationService"><code class="xref dn dn-iface docutils literal"><span class="pre">ICompilationService</span></code></a></dt>
+<dd>Provides methods for compilation of a Razor page.</dd>
+<dt>interface <a class="reference internal" href="ICompilerCache/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache" title="Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache"><code class="xref dn dn-iface docutils literal"><span class="pre">ICompilerCache</span></code></a></dt>
+<dd>Caches the result of runtime compilation of Razor files for the duration of the app lifetime.</dd>
+<dt>interface <a class="reference internal" href="IRazorCompilationService/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService" title="Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService"><code class="xref dn dn-iface docutils literal"><span class="pre">IRazorCompilationService</span></code></a></dt>
+<dd>Specifies the contracts for a service that compiles Razor files.</dd>
+</dl>
+<p class="rubric">Classes</p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="CompilationFailedException/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilationFailedException</span></code></a></dt>
+<dd>An [System.Exception]() thrown when accessing the result of a failed compilation.</dd>
+<dt>class <a class="reference internal" href="CompilationOptionsProviderExtension/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilationOptionsProviderExtension"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilationOptionsProviderExtension</span></code></a></dt>
+<dd>Extension methods for &#64;!:ICompilerOptionsProvider-.</dd>
+<dt>class <a class="reference internal" href="CompilationResult/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilationResult</span></code></a></dt>
+<dd>Represents the result of compilation.</dd>
+<dt>class <a class="reference internal" href="CompilerCache/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCache" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCache"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilerCache</span></code></a></dt>
+<dd>Caches the result of runtime compilation of Razor files for the duration of the app lifetime.</dd>
+<dt>class <a class="reference internal" href="CompilerCacheEntry/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilerCacheEntry</span></code></a></dt>
+<dd>An entry in [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache.yml) that contain metadata about precompiled and dynamically compiled file.</dd>
+<dt>class <a class="reference internal" href="CompilerCacheResult/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult" title="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult"><code class="xref dn dn-cls docutils literal"><span class="pre">CompilerCacheResult</span></code></a></dt>
+<dd>Result of [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache.yml).</dd>
+<dt>class <a class="reference internal" href="RazorCompilationFailure/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure" title="Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure"><code class="xref dn dn-cls docutils literal"><span class="pre">RazorCompilationFailure</span></code></a></dt>
+<dd>&#64;!:ICompilationFailure- for Razor parse failures.</dd>
+<dt>class <a class="reference internal" href="RazorCompilationMessage/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage" title="Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage"><code class="xref dn dn-cls docutils literal"><span class="pre">RazorCompilationMessage</span></code></a></dt>
+<dd>&#64;!:ICompilationMessage- for a &#64;!:RazorError- encountered during parsing.</dd>
+<dt>class <a class="reference internal" href="RazorCompilationService/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationService" title="Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationService"><code class="xref dn dn-cls docutils literal"><span class="pre">RazorCompilationService</span></code></a></dt>
+<dd>Default implementation of [Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService](Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilationService.yml).</dd>
+</dl>
+<p>class <a class="reference internal" href="RazorFileHash/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RazorFileHash" title="Microsoft.AspNet.Mvc.Razor.Compilation.RazorFileHash"><code class="xref dn dn-cls docutils literal"><span class="pre">RazorFileHash</span></code></a></p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="RelativeFileInfo/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo" title="Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo"><code class="xref dn dn-cls docutils literal"><span class="pre">RelativeFileInfo</span></code></a></dt>
+<dd>A container type that represents &#64;!:IFileInfo- along with the application base relative path
+for a file in the file system.</dd>
+<dt>class <a class="reference internal" href="RoslynCompilationService/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.RoslynCompilationService" title="Microsoft.AspNet.Mvc.Razor.Compilation.RoslynCompilationService"><code class="xref dn dn-cls docutils literal"><span class="pre">RoslynCompilationService</span></code></a></dt>
+<dd>A type that uses Roslyn to compile C# content.</dd>
+</dl>
+<p>class <a class="reference internal" href="SyntaxTreeGenerator/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator" title="Microsoft.AspNet.Mvc.Razor.Compilation.SyntaxTreeGenerator"><code class="xref dn dn-cls docutils literal"><span class="pre">SyntaxTreeGenerator</span></code></a></p>
+<dl class="docutils">
+<dt>class <a class="reference internal" href="UncachedCompilationResult/index.html#Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult" title="Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult"><code class="xref dn dn-cls docutils literal"><span class="pre">UncachedCompilationResult</span></code></a></dt>
+<dd>Represents the result of compilation that does not come from the [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache.yml).</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CompilationFailedException/index.html" class="btn btn-neutral float-right" title="CompilationFailedException Class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../IBufferedTextWriter/index.html" class="btn btn-neutral" title="IBufferedTextWriter Interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, rtfd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+
+
+MultiSelectList Class
+=====================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.AspNet.Mvc.Rendering.MultiSelectList`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class MultiSelectList : IEnumerable<SelectListItem>, IEnumerable
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/MultiSelectList.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList
+
+
+Constructors
+------------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList
+    :noindex:
+    :hidden:
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+    
+        
+        .. code-block:: csharp
+    
+           public MultiSelectList(IEnumerable items)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.Collections.IEnumerable)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param selectedValues: 
+        :type selectedValues: System.Collections.IEnumerable
+    
+        
+        .. code-block:: csharp
+    
+           public MultiSelectList(IEnumerable items, IEnumerable selectedValues)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.String, System.String)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: 
+        :type dataValueField: System.String
+        :param dataTextField: 
+        :type dataTextField: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public MultiSelectList(IEnumerable items, string dataValueField, string dataTextField)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.String, System.String, System.Collections.IEnumerable)
+    
+        
+        :param items: 
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: 
+        :type dataValueField: System.String
+        :param dataTextField: 
+        :type dataTextField: System.String
+        :param selectedValues: 
+        :type selectedValues: System.Collections.IEnumerable
+    
+        
+        .. code-block:: csharp
+    
+           public MultiSelectList(IEnumerable items, string dataValueField, string dataTextField, IEnumerable selectedValues)
+
+    .. dn:constructor:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.MultiSelectList(System.Collections.IEnumerable, System.String, System.String, System.Collections.IEnumerable, System.String)
+    
+        
+    
+        
+        
+    
+        
+        :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
+        :type items: System.Collections.IEnumerable
+        :param dataValueField: The data value field. Used to match the Value property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataValueField: System.String
+        :param dataTextField: The data text field. Used to match the Text property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataTextField: System.String
+        :param selectedValues: The selected values field. Used to match the Selected property of the
+    corresponding [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type selectedValues: System.Collections.IEnumerable
+        :param dataGroupField: The data group field. Used to match the Group property of the corresponding
+    [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml).
+        :type dataGroupField: System.String
+    
+        
+        .. code-block:: csharp
+    
+           public MultiSelectList(IEnumerable items, string dataValueField, string dataTextField, IEnumerable selectedValues, string dataGroupField)
+
+
+Properties
+----------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList
+    :noindex:
+    :hidden:
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.DataGroupField
+    
+        
+    
+        
+        
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string DataGroupField { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.DataTextField
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string DataTextField { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.DataValueField
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public string DataValueField { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.Items
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable Items { get; }
+
+    .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.SelectedValues
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public IEnumerable SelectedValues { get; }
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public virtual IEnumerator<SelectListItem> GetEnumerator()
+
+    .. dn:method:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.System.Collections.IEnumerable.GetEnumerator()
+    
+        
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           IEnumerator IEnumerable.GetEnumerator()
+

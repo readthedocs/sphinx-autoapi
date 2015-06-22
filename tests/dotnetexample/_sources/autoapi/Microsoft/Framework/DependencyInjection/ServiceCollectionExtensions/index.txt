@@ -1,0 +1,95 @@
+
+
+ServiceCollectionExtensions Class
+=================================
+
+
+
+.. contents:: 
+   :local:
+
+
+
+Summary
+-------
+
+Contains extension methods to @!:IServiceCollection-.
+
+
+
+
+Inheritance Hierarchy
+---------------------
+* :dn:cls:`System.Object`
+* :dn:cls:`Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions`
+
+
+
+
+
+Syntax
+------
+
+.. code-block:: csharp
+
+   public class ServiceCollectionExtensions
+
+
+
+GitHub
+------
+
+`View on GitHub <https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/RazorServiceCollectionExtensions.cs>`_
+
+
+
+
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions
+
+
+Methods
+-------
+
+.. dn:class:: Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions
+    :noindex:
+    :hidden:
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions.ConfigureRazorViewEngine(IServiceCollection, System.Action<Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The services available in the application.
+        :type services: IServiceCollection
+        :param setupAction: An action to configure the [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml).
+        :type setupAction: System.Action{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}
+    
+        
+        .. code-block:: csharp
+    
+           public static void ConfigureRazorViewEngine(IServiceCollection services, Action<RazorViewEngineOptions> setupAction)
+
+    .. dn:method:: Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions.InitializeTagHelper<TTagHelper>(IServiceCollection, System.Action<TTagHelper, Microsoft.AspNet.Mvc.ViewContext>)
+    
+        
+    
+        
+        
+    
+        
+        :param services: The @!:IServiceCollection- instance this method extends.
+        :type services: IServiceCollection
+        :param initialize: An action to initialize the
+    <typeparamref name="TTagHelper" />.
+        :type initialize: System.Action{{TTagHelper},Microsoft.AspNet.Mvc.ViewContext}
+        :rtype: 
+    
+        
+        .. code-block:: csharp
+    
+           public static IServiceCollection InitializeTagHelper<TTagHelper>(IServiceCollection services, Action<TTagHelper, ViewContext> initialize)where TTagHelper : ITagHelper
+
