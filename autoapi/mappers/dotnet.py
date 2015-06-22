@@ -237,8 +237,6 @@ class DotNetPythonMapper(PythonMapperBase):
                 path=path,
             )
         except:
-            import traceback
-            traceback.print_exc()
             return ''
 
     @property

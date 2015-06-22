@@ -237,11 +237,6 @@ class SphinxMapperBase(object):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
-        # for key, item in self.objects.items():
-        #     if key.count('.') == 1:
-        #         top_level_pages.append(item)
-        #     else:
-        #         print key, key.find('.')
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
             top_level_file.write(content.render(pages=pages))
