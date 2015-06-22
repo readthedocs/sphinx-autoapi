@@ -139,7 +139,10 @@ class SphinxMapperBase(object):
             TEMPLATE_PATHS.insert(0, template_dir)
 
         self.jinja_env = Environment(
-            loader=FileSystemLoader(TEMPLATE_PATHS)
+            loader=FileSystemLoader(TEMPLATE_PATHS),
+            # Kill this to fix rendering for now
+            # trim_blocks=True,
+            # lstrip_blocks=True,
         )
 
     def load(self, pattern, dir, ignore=[]):
@@ -156,13 +159,16 @@ class SphinxMapperBase(object):
         files_to_read = []
         for root, dirnames, filenames in os.walk(dir):
             for filename in fnmatch.filter(filenames, pattern):
+                skip = False
 
                 # Skip ignored files
                 for ignore_pattern in ignore:
                     if fnmatch.fnmatch(filename, ignore_pattern):
-                        print "Ignoring %s/%s" % (root, filename)
-                        continue
+                        self.app.info("Ignoring %s/%s" % (root, filename))
+                        skip = True
 
+                if skip:
+                    continue
                 # Make sure the path is full
                 if os.path.isabs(filename):
                     files_to_read.append(os.path.join(filename))
@@ -231,11 +237,6 @@ class SphinxMapperBase(object):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
-        # for key, item in self.objects.items():
-        #     if key.count('.') == 1:
-        #         top_level_pages.append(item)
-        #     else:
-        #         print key, key.find('.')
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
             top_level_file.write(content.render(pages=pages))
