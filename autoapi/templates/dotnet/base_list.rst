@@ -17,7 +17,7 @@
    {% if item.type != 'namespace' %}
    /autoapi/{{ item.name.split('.')|join('/') }}/index
    {% endif %}
-   {%- endfor %}
+   {% endfor %}
 
 
 {% endif %}

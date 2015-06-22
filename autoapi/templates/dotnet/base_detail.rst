@@ -9,6 +9,7 @@
    :local:
 
 {% block summary %}
+
 {%- if obj.summary %}
 
 Summary
@@ -16,7 +17,8 @@ Summary
 
 {{ obj.summary }}
 
-  {%- endif %}
+{%- endif %}
+
 {% endblock %}
 
 {% block inheritance %}

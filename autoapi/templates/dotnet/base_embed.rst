@@ -2,8 +2,7 @@
 
     {% if obj.summary %}
 
-    {% macro render() %}{{ summary }}{% endmacro %}
-    {{ render()|indent(4) }}
+    {{ obj.summary|indent(4) }}
 
     {% endif %}
 
@@ -13,8 +12,11 @@
     :type {{ param.name }}: {{ param.type }}
     {%- endif %}
     {%- endfor %}
-    {%- if obj.returns %}
-    :rtype: {{ obj.returns.id }}
+    {%- if obj.returns.type %}
+    :rtype: {{ obj.returns.type }}
+    {%- endif %}
+    {%- if obj.returns.description %}
+    :return: {{ obj.returns.description }}
     {%- endif %}
 
     {% if obj.example %}
