@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -121,8 +122,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.HtmlHelper](Microsoft.AspNet.Mvc.Rendering.HtmlHelper.yml) class.
     
         
         :param htmlGenerator: 
@@ -154,7 +154,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.Html5DateRenderingMode
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.Html5DateRenderingMode
     
         
         .. code-block:: csharp
@@ -164,7 +164,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.HtmlEncoder
     
         
-        :rtype: 
+        :rtype: IHtmlEncoder
     
         
         .. code-block:: csharp
@@ -174,7 +174,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.IdAttributeDotReplacement
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -184,7 +184,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.JavaScriptStringEncoder
     
         
-        :rtype: 
+        :rtype: IJavaScriptStringEncoder
     
         
         .. code-block:: csharp
@@ -194,7 +194,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.MetadataProvider
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
         .. code-block:: csharp
@@ -204,7 +204,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.TempData
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ITempDataDictionary
     
         
         .. code-block:: csharp
@@ -214,7 +214,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.UrlEncoder
     
         
-        :rtype: 
+        :rtype: IUrlEncoder
     
         
         .. code-block:: csharp
@@ -224,7 +224,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ViewBag
     
         
-        :rtype: 
+        :rtype: dynamic
     
         
         .. code-block:: csharp
@@ -234,7 +234,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -244,7 +244,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.ViewData
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -278,7 +278,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -289,13 +289,22 @@ Methods
     
         
     
+        Creates a dictionary of HTML attributes from the input object,
+        translating underscores to dashes in each public instance property.
         
+        If the object is already an [System.Collections.Generic.IDictionary`2]() instance, then it is
+        returned as-is.
         
+        <example>
+        <c>new { data_name="value" }</c> will translate to the entry <c>{ "data-name", "value" }</c>
+        in the resulting dictionary.
+        </example>
     
         
         :param htmlAttributes: Anonymous object describing HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :return: A dictionary that represents HTML attributes.
     
         
         .. code-block:: csharp
@@ -305,7 +314,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.AntiForgeryToken()
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -325,7 +334,7 @@ Methods
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
     
         
         .. code-block:: csharp
@@ -343,7 +352,7 @@ Methods
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
     
         
         .. code-block:: csharp
@@ -359,7 +368,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -381,11 +390,12 @@ Methods
     
         
     
-        
-        
+        Override this method to return an [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) subclass. That subclass may change
+        [Microsoft.AspNet.Mvc.Rendering.HtmlHelper.EndForm](Microsoft.AspNet.Mvc.Rendering.HtmlHelper.yml) behavior.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance.
     
         
         .. code-block:: csharp
@@ -403,7 +413,7 @@ Methods
         :type htmlFieldName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -415,7 +425,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -427,7 +437,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -445,7 +455,7 @@ Methods
         :type optionLabel: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -463,7 +473,7 @@ Methods
         :type htmlFieldName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -475,7 +485,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -487,7 +497,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -510,7 +520,7 @@ Methods
         :type value: System.Object
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -528,7 +538,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -546,7 +556,7 @@ Methods
         :type templateName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -560,7 +570,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -572,7 +582,7 @@ Methods
         
         :param modelExplorer: 
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -592,7 +602,7 @@ Methods
         :type optionLabel: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -610,7 +620,7 @@ Methods
         :type templateName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -621,8 +631,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param actionName: The name of the action method.
@@ -639,7 +650,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -659,7 +671,7 @@ Methods
         :type useViewData: System.Boolean
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -671,7 +683,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -683,7 +695,7 @@ Methods
         
         :param fullName: 
         :type fullName: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -701,7 +713,7 @@ Methods
         :type labelText: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -719,7 +731,7 @@ Methods
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -731,7 +743,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -749,7 +761,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -769,7 +781,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -780,8 +792,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param routeName: The name of the route.
@@ -796,7 +810,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -816,7 +831,7 @@ Methods
         :type columns: System.Int32
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -836,7 +851,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -854,7 +869,7 @@ Methods
         :type htmlAttributes: System.Object
         :param tag: 
         :type tag: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -872,7 +887,7 @@ Methods
         :type htmlAttributes: System.Object
         :param tag: 
         :type tag: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -890,7 +905,7 @@ Methods
         :type format: System.String
         :param useViewData: 
         :type useViewData: System.Boolean
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -904,7 +919,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp
@@ -915,13 +930,16 @@ Methods
     
         
     
-        
-        
+        Returns a select list for the given
+        <paramref name="metadata" />.
     
         
         :param metadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() to generate a select list for.
         :type metadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
+        :return: An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given
+    
+    <paramref name="metadata" />.
     
         
         .. code-block:: csharp
@@ -933,7 +951,7 @@ Methods
         
         :param enumType: 
         :type enumType: System.Type
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
     
         
         .. code-block:: csharp
@@ -943,7 +961,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper.GetEnumSelectList<TEnum>()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
     
         
         .. code-block:: csharp
@@ -954,13 +972,13 @@ Methods
     
         
     
-        
-        
+        Returns the HTTP method that handles form input (GET or POST) as a string.
     
         
         :param method: The HTTP method that handles the form.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: System.String
+        :return: The form method string, either "get" or "post".
     
         
         .. code-block:: csharp
@@ -976,7 +994,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -988,7 +1006,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -1004,7 +1022,7 @@ Methods
         :type labelText: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1020,7 +1038,7 @@ Methods
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1032,7 +1050,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -1043,13 +1061,24 @@ Methods
     
         
     
+        Creates a dictionary from an object, by adding each public instance property as a key with its associated
+        value to the dictionary. It will expose public properties from derived types as well. This is typically
+        used with objects of an anonymous type.
         
+        If the
+        <paramref name="value" /> is already an [System.Collections.Generic.IDictionary`2]() instance, then it
+        is returned as-is.
         
+        <example>
+        <c>new { data_name="value" }</c> will translate to the entry <c>{ "data_name", "value" }</c>
+        in the resulting dictionary.
+        </example>
     
         
         :param value: The [System.Object]() to be converted.
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :return: The created dictionary of property names and property values.
     
         
         .. code-block:: csharp
@@ -1065,7 +1094,7 @@ Methods
         :type model: System.Object
         :param viewData: 
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -1081,7 +1110,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1099,7 +1128,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1111,7 +1140,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1123,7 +1152,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1139,7 +1168,7 @@ Methods
         :type model: System.Object
         :param viewData: 
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -1157,7 +1186,7 @@ Methods
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :param writer: 
         :type writer: System.IO.TextWriter
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -1181,7 +1210,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1201,7 +1230,7 @@ Methods
         :type columns: System.Int32
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1219,7 +1248,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1237,7 +1266,7 @@ Methods
         :type htmlAttributes: System.Object
         :param tag: 
         :type tag: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1255,7 +1284,7 @@ Methods
         :type htmlAttributes: System.Object
         :param tag: 
         :type tag: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -1269,7 +1298,7 @@ Methods
         :type expression: System.String
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

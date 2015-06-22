@@ -19,6 +19,7 @@ is not considered a controller by the default controller discovery mechanism.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`

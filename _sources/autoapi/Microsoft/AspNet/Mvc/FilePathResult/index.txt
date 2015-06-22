@@ -20,6 +20,7 @@ by the host.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,8 +64,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) instance with
+        the provided
+        <paramref name="fileName" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileName: The path to the file. The path must be an absolute
@@ -82,8 +86,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) instance with
+        the provided
+        <paramref name="fileName" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileName: The path to the file. The path must be an absolute
@@ -109,11 +116,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the path to the file that will be sent back as the response.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -124,11 +130,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:IFileProvider- used to resolve paths.
     
         
-        :rtype: 
+        :rtype: IFileProvider
     
         
         .. code-block:: csharp
@@ -147,13 +152,14 @@ Methods
     
         
     
-        
-        
+        Determines if the provided path is absolute or relative. The default implementation considers
+        paths starting with '/' to be relative.
     
         
         :param path: The path to examine.
         :type path: System.String
-        :rtype: 
+        :rtype: System.Boolean
+        :return: True if the path is absolute.
     
         
         .. code-block:: csharp
@@ -164,13 +170,17 @@ Methods
     
         
     
-        
-        
+        Creates a normalized representation of the given
+        <paramref name="path" />. The default
+        implementation doesn't support files with '\' in the file name and treats the '\' as
+        a directory separator. The default implementation will convert all the '\' into '/'
+        and will remove leading '~' characters.
     
         
         :param path: The path to normalize.
         :type path: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The normalized path.
     
         
         .. code-block:: csharp
@@ -184,7 +194,7 @@ Methods
         :type response: HttpResponse
         :param cancellation: 
         :type cancellation: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ RazorFileInfo Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Type name including namespace.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -69,11 +69,10 @@ Properties
     
         
     
-        
-        
+        A hash of the file content.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -84,11 +83,10 @@ Properties
     
         
     
-        
-        
+        The version of hash algorithm used to generate [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.Hash](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml).
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -99,11 +97,10 @@ Properties
     
         
     
-        
-        
+        Last modified at compilation time.
     
         
-        :rtype: 
+        :rtype: System.DateTimeOffset
     
         
         .. code-block:: csharp
@@ -114,11 +111,10 @@ Properties
     
         
     
-        
-        
+        The length of the file in bytes.
     
         
-        :rtype: 
+        :rtype: System.Int64
     
         
         .. code-block:: csharp
@@ -129,11 +125,10 @@ Properties
     
         
     
-        
-        
+        Path to to the file relative to the application base.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

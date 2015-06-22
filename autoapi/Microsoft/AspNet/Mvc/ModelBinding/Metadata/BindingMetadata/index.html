@@ -156,11 +156,14 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BinderModelName">
 <code class="descname">BinderModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BinderModelName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the binder model name. If
+&lt;c&gt;null&lt;/c&gt; the property or parameter name will be used.
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderModelName]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -172,11 +175,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BinderType">
 <code class="descname">BinderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BinderType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [System.Type]() of the model binder used to bind the model.
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderType]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -188,11 +193,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BindingSource">
 <code class="descname">BindingSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.BindingSource" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]().
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BindingSource]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.BindingSource</td>
 </tr>
 </tbody>
 </table>
@@ -204,11 +211,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsBindingAllowed">
 <code class="descname">IsBindingAllowed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsBindingAllowed" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value indicating whether or not the property can be model bound.
+Will be ignored if the model metadata being created does not represent a property.
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingAllowed]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -220,11 +230,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsBindingRequired">
 <code class="descname">IsBindingRequired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsBindingRequired" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value indicating whether or not the request must contain a value for the model.
+Will be ignored if the model metadata being created does not represent a property.
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingRequired]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -236,11 +249,16 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsReadOnly">
 <code class="descname">IsReadOnly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.IsReadOnly" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value indicating whether or not the model is read-only. Will be ignored
+if the model metadata being created is not a property. If
+&lt;c&gt;null&lt;/c&gt; then
+[Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsReadOnly]() will be  computed based on the accessibility
+of the property accessor and model [System.Type](). See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsReadOnly]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -252,11 +270,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.PropertyBindingPredicateProvider">
 <code class="descname">PropertyBindingPredicateProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.PropertyBindingPredicateProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyBindingPredicateProvider]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider</td>
 </tr>
 </tbody>
 </table>

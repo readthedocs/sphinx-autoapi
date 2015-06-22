@@ -13,6 +13,7 @@ ValidatableObjectAdapter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ValidatableObjectAdapter.IsRequired
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult}
     
         
         .. code-block:: csharp

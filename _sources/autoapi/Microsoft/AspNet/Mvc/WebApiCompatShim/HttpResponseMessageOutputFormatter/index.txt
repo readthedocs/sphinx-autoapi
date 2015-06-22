@@ -13,6 +13,7 @@ HttpResponseMessageOutputFormatter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -57,7 +58,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :param contentType: 
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -69,7 +70,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

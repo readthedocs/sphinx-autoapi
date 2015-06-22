@@ -139,7 +139,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -232,7 +231,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.DefaultViewComponentDescriptorProvider">
 <code class="descname">DefaultViewComponentDescriptorProvider</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.IAssemblyProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.DefaultViewComponentDescriptorProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -257,11 +257,15 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.GetCandidateTypes()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the candidate [System.Reflection.TypeInfo]() instances. The results of this will be provided to
+[Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.IsViewComponentType(System.Reflection.TypeInfo)](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.yml) for filtering.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of [System.Reflection.TypeInfo]() instances.</td>
 </tr>
 </tbody>
 </table>
@@ -277,7 +281,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor}</td>
 </tr>
 </tbody>
 </table>
@@ -289,7 +293,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.IsViewComponentType">
 <code class="descname">IsViewComponentType</code><span class="sig-paren">(</span><em>System.Reflection.TypeInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.IsViewComponentType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Determines whether or not the given [System.Reflection.TypeInfo]() is a View Component class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -298,16 +303,23 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsViewComponentType</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;typeInfo&#8221; /&gt;represents a View Component class, otherwise
+&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsViewComponentType</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

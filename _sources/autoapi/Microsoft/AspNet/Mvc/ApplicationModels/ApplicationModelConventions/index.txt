@@ -18,6 +18,7 @@ Applies conventions to a [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationMode
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Methods
     
         
     
-        
-        
+        Applies conventions to a [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
         :param applicationModel: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).

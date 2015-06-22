@@ -136,7 +136,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -228,7 +227,12 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.CopyHtmlAttribute">
 <code class="descname">CopyHtmlAttribute</code><span class="sig-paren">(</span><em>TagHelperOutput</em>, <em>System.String</em>, <em>TagHelperContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.CopyHtmlAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copies a user-provided attribute from
+&lt;paramref name=&#8221;context&#8221; /&gt;&#8217;s
+&#64;!:TagHelperContext.AllAttributes- to
+&lt;paramref name=&#8221;tagHelperOutput&#8221; /&gt;&#8217;s
+&#64;!:TagHelperOutput.Attributes-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -249,7 +253,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.MergeAttributes">
 <code class="descname">MergeAttributes</code><span class="sig-paren">(</span><em>TagHelperOutput</em>, <em>Microsoft.AspNet.Mvc.Rendering.TagBuilder</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.MergeAttributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Merges the given
+&lt;paramref name=&#8221;tagBuilder&#8221; /&gt;&#8217;s [Microsoft.AspNet.Mvc.Rendering.TagBuilder.Attributes]() into the</p>
+<p>&lt;paramref name=&#8221;tagHelperOutput&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -269,7 +276,11 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.RemoveRange">
 <code class="descname">RemoveRange</code><span class="sig-paren">(</span><em>TagHelperOutput</em>, <em>System.Collections.Generic.IEnumerable&lt;TagHelperAttribute&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.TagHelperOutputExtensions.RemoveRange" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Removes the given
+&lt;paramref name=&#8221;attributes&#8221; /&gt; from
+&lt;paramref name=&#8221;tagHelperOutput&#8221; /&gt;&#8217;s
+&#64;!:TagHelperOutput.Attributes-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

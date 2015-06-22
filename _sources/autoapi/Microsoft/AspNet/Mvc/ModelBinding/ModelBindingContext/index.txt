@@ -18,6 +18,7 @@ A context that contains operating information for model binding and validation.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) class.
     
         
     
@@ -81,8 +81,9 @@ Methods
     
         
     
+        Constructs a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) class using the
         
-        
+        <paramref name="bindingContext" />.
     
         
         :param bindingContext: Existing [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
@@ -91,7 +92,7 @@ Methods
         :type modelName: System.String
         :param modelMetadata: Model metadata of associated with the new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
     
         
         .. code-block:: csharp
@@ -102,8 +103,10 @@ Methods
     
         
     
-        
-        
+        Constructs a new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) from given
+        <paramref name="metadata" />
+        and
+        <paramref name="bindingInfo" />.
     
         
         :param metadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with the model.
@@ -112,7 +115,8 @@ Methods
         :type bindingInfo: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
         :param modelName: An optional name of the model to be used.
         :type modelName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
+        :return: A new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
     
         
         .. code-block:: csharp
@@ -131,11 +135,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a model name which is explicitly set using an [Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider.yml).
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -146,11 +150,11 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Type]() of an [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml) associated with the
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -161,11 +165,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value which represents the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with the
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -176,11 +180,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that indicates whether the binder should use an empty prefix to look up
+        values in [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) when no values are found using the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelName](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) prefix.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -191,11 +195,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the model value for the current operation.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -206,11 +209,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the metadata for the model associated with this context.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -221,11 +223,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the model. This property is used as a key for looking up values in
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) during model binding.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -236,11 +238,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) used to capture [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) values
+        for properties in the object graph of the model when binding.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -251,11 +253,10 @@ Properties
     
         
     
-        
-        
+        Gets the type of the model.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -266,11 +267,10 @@ Properties
     
         
     
-        
-        
+        Represents the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.OperationBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with this context.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.OperationBindingContext
     
         
         .. code-block:: csharp
@@ -280,7 +280,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.PropertyFilter
     
         
-        :rtype: 
+        :rtype: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
     
         
         .. code-block:: csharp
@@ -291,11 +291,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) associated with this context.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
         
         .. code-block:: csharp

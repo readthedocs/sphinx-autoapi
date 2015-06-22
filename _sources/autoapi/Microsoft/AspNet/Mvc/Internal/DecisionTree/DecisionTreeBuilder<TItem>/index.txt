@@ -13,6 +13,7 @@ DecisionTreeBuilder<TItem> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -57,7 +58,7 @@ Methods
         :type items: System.Collections.Generic.IReadOnlyList{{TItem}}
         :param classifier: 
         :type classifier: Microsoft.AspNet.Mvc.Internal.DecisionTree.IClassifier{{TItem}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionTreeNode{{TItem}}
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Creates instances of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,13 +77,13 @@ Methods
     
         
     
-        
-        
+        Creates instances of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml) from [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
         :param application: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
         :type application: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ControllerActionDescriptor}
+        :return: The list of [Microsoft.AspNet.Mvc.ControllerActionDescriptor](Microsoft.AspNet.Mvc.ControllerActionDescriptor.yml).
     
         
         .. code-block:: csharp

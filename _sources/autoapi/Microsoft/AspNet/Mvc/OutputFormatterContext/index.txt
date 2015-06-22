@@ -19,6 +19,7 @@ output content negotiation and in writing out the response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,11 +61,10 @@ Properties
     
         
     
-        
-        
+        The declared return type of the action.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -75,11 +75,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a flag to indicate that content-negotiation could not find a formatter based on the
+        information on the @!:Http.HttpRequest-.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Boolean}
     
         
         .. code-block:: csharp
@@ -90,11 +90,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.OutputFormatterContext.HttpContext](Microsoft.AspNet.Mvc.OutputFormatterContext.yml) context associated with the current operation.
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -105,11 +104,10 @@ Properties
     
         
     
-        
-        
+        The return value of the action method.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -120,11 +118,10 @@ Properties
     
         
     
-        
-        
+        The content type which is chosen by the selected formatter.
     
         
-        :rtype: 
+        :rtype: MediaTypeHeaderValue
     
         
         .. code-block:: csharp
@@ -135,11 +132,10 @@ Properties
     
         
     
-        
-        
+        The encoding which is chosen by the selected formatter.
     
         
-        :rtype: 
+        :rtype: System.Text.Encoding
     
         
         .. code-block:: csharp
@@ -150,11 +146,10 @@ Properties
     
         
     
-        
-        
+        Gets the status code that should be used for the response when successfully formatting.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp

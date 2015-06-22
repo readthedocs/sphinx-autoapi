@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelBindingContext()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingContext</span><span class="p">()</span>
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) class.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">ModelBindingContext</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -172,7 +173,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetChildModelBindingContext">
 <code class="descname">GetChildModelBindingContext</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em>, <em>System.String</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetChildModelBindingContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Constructs a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) class using the</p>
+<p>&lt;paramref name=&#8221;bindingContext&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -183,7 +186,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</p>
 </td>
 </tr>
 </tbody>
@@ -196,7 +199,11 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetModelBindingContext">
 <code class="descname">GetModelBindingContext</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.BindingInfo</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.GetModelBindingContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Constructs a new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) from given
+&lt;paramref name=&#8221;metadata&#8221; /&gt;
+and
+&lt;paramref name=&#8221;bindingInfo&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -207,7 +214,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).</p>
 </td>
 </tr>
 </tbody>
@@ -226,11 +236,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderModelName">
 <code class="descname">BinderModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderModelName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a model name which is explicitly set using an [Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider.yml).
+[Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -242,11 +254,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderType">
 <code class="descname">BinderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BinderType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [System.Type]() of an [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml) associated with the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -258,11 +272,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BindingSource">
 <code class="descname">BindingSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BindingSource" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value which represents the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.BindingSource</td>
 </tr>
 </tbody>
 </table>
@@ -274,11 +290,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.FallbackToEmptyPrefix">
 <code class="descname">FallbackToEmptyPrefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.FallbackToEmptyPrefix" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value that indicates whether the binder should use an empty prefix to look up
+values in [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) when no values are found using the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelName](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) prefix.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -290,11 +308,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model">
 <code class="descname">Model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the model value for the current operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -306,11 +325,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata">
 <code class="descname">ModelMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the metadata for the model associated with this context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</td>
 </tr>
 </tbody>
 </table>
@@ -322,11 +342,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelName">
 <code class="descname">ModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the name of the model. This property is used as a key for looking up values in
+[Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) during model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -338,11 +360,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelState">
 <code class="descname">ModelState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelState" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) used to capture [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) values
+for properties in the object graph of the model when binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -354,11 +378,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType">
 <code class="descname">ModelType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the type of the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -370,11 +395,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.OperationBindingContext">
 <code class="descname">OperationBindingContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.OperationBindingContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Represents the [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.OperationBindingContext](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.yml) associated with this context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.OperationBindingContext</td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +416,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -402,11 +428,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ValueProvider">
 <code class="descname">ValueProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ValueProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider](Microsoft.AspNet.Mvc.ModelBinding.IValueProvider.yml) associated with this context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</td>
 </tr>
 </tbody>
 </table>

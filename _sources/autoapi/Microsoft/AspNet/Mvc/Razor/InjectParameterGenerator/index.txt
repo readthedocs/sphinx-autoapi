@@ -13,6 +13,7 @@ InjectParameterGenerator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`SpanChunkGenerator`
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.PropertyName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.TypeName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -104,7 +105,7 @@ Methods
         
         :param obj: 
         :type obj: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -127,7 +128,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.GetHashCode()
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -137,7 +138,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.InjectParameterGenerator.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

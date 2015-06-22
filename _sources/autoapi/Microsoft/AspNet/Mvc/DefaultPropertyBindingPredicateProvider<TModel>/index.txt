@@ -19,6 +19,7 @@ Provides a expression based way to provide include properties.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,11 +61,10 @@ Properties
     
         
     
-        
-        
+        The prefix which is used while generating the property filter.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.DefaultPropertyBindingPredicateProvider<TModel>.PropertyFilter
     
         
-        :rtype: 
+        :rtype: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
     
         
         .. code-block:: csharp
@@ -85,11 +85,11 @@ Properties
     
         
     
-        
-        
+        Expressions which can be used to generate property filter which can filter model
+        properties.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}}
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ ExceptionFilterAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ExceptionFilterAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -85,7 +86,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ExceptionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

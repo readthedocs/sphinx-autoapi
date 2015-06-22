@@ -19,6 +19,7 @@ A [Microsoft.AspNet.Mvc.IControllerActivator]() that retrieves controllers as se
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,7 +64,7 @@ Methods
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
         :param controllerType: 
         :type controllerType: System.Type
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

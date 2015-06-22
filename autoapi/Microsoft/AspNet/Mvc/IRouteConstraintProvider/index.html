@@ -149,11 +149,12 @@ for a controller or action.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IRouteConstraintProvider.BlockNonAttributedActions">
 <code class="descname">BlockNonAttributedActions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IRouteConstraintProvider.BlockNonAttributedActions" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Set to true to negate this constraint on all actions that do not define a behavior for this route key.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -165,11 +166,12 @@ for a controller or action.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKey">
 <code class="descname">RouteKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKey" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The route value key.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -181,11 +183,12 @@ for a controller or action.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling">
 <code class="descname">RouteKeyHandling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The [Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling](Microsoft.AspNet.Mvc.IRouteConstraintProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.RouteKeyHandling</td>
 </tr>
 </tbody>
 </table>
@@ -197,11 +200,13 @@ for a controller or action.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteValue">
 <code class="descname">RouteValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteValue" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The expected route value. Will be null unless [Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling](Microsoft.AspNet.Mvc.IRouteConstraintProvider.yml) is
+set to [Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

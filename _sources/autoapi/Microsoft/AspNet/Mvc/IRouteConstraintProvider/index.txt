@@ -23,6 +23,7 @@ for a controller or action.
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,10 @@ Properties
     
         
     
-        
-        
+        Set to true to negate this constraint on all actions that do not define a behavior for this route key.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -70,11 +70,10 @@ Properties
     
         
     
-        
-        
+        The route value key.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -85,11 +84,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling](Microsoft.AspNet.Mvc.IRouteConstraintProvider.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RouteKeyHandling
     
         
         .. code-block:: csharp
@@ -100,11 +98,11 @@ Properties
     
         
     
-        
-        
+        The expected route value. Will be null unless [Microsoft.AspNet.Mvc.IRouteConstraintProvider.RouteKeyHandling](Microsoft.AspNet.Mvc.IRouteConstraintProvider.yml) is
+        set to [Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey]().
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

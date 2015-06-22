@@ -13,6 +13,7 @@ ContentResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,11 +56,10 @@ Properties
     
         
     
-        
-        
+        Gets or set the content representing the body of the response.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -70,11 +70,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:MediaTypeHeaderValue- representing the Content-Type header of the response.
     
         
-        :rtype: 
+        :rtype: MediaTypeHeaderValue
     
         
         .. code-block:: csharp
@@ -85,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTTP status code.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -109,7 +107,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

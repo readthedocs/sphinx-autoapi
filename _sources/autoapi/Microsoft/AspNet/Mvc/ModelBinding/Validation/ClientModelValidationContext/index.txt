@@ -13,6 +13,7 @@ ClientModelValidationContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext.MetadataProvider
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
         .. code-block:: csharp
@@ -86,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext.ModelMetadata
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext.RequestServices
     
         
-        :rtype: 
+        :rtype: System.IServiceProvider
     
         
         .. code-block:: csharp

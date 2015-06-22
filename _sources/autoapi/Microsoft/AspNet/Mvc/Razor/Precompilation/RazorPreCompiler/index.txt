@@ -13,6 +13,7 @@ RazorPreCompiler Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -80,7 +81,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CompilationSettings
     
         
-        :rtype: 
+        :rtype: CompilationSettings
     
         
         .. code-block:: csharp
@@ -90,7 +91,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CompileContext
     
         
-        :rtype: 
+        :rtype: BeforeCompileContext
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.FileExtension
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -110,7 +111,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.FileProvider
     
         
-        :rtype: 
+        :rtype: IFileProvider
     
         
         .. code-block:: csharp
@@ -121,11 +122,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that determines if symbols (.pdb) file for the precompiled views is generated.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -135,7 +135,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.LoadContext
     
         
-        :rtype: 
+        :rtype: IAssemblyLoadContext
     
         
         .. code-block:: csharp
@@ -145,7 +145,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.MaxDegreesOfParallelism
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -155,7 +155,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.PreCompilationCache
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -165,7 +165,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.TagHelperTypeResolver
     
         
-        :rtype: 
+        :rtype: TagHelperTypeResolver
     
         
         .. code-block:: csharp
@@ -192,7 +192,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.CreateFileInfoCollection()
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
     
         
         .. code-block:: csharp
@@ -206,7 +206,7 @@ Methods
         :type syntaxTrees: System.Collections.Generic.IEnumerable{SyntaxTree}
         :param razorFileInfos: 
         :type razorFileInfos: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfoCollection
     
         
         .. code-block:: csharp
@@ -218,7 +218,7 @@ Methods
         
         :param fileInfo: 
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry
     
         
         .. code-block:: csharp
@@ -228,7 +228,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPreCompiler.GetRazorHost()
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.IMvcRazorHost
     
         
         .. code-block:: csharp

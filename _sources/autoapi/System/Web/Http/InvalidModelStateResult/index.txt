@@ -19,6 +19,7 @@ content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) class.
     
         
         :param modelState: The model state to include in the error.
@@ -89,11 +89,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether the error should include exception messages.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -104,11 +103,10 @@ Properties
     
         
     
-        
-        
+        Gets the model state to include in the error.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -128,7 +126,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

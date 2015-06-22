@@ -19,6 +19,7 @@ Caches @!:ObjectFactory- instances produced by
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,7 +64,7 @@ Methods
         :type serviceProvider: System.IServiceProvider
         :param implementationType: 
         :type implementationType: System.Type
-        :rtype: 
+        :rtype: TInstance
     
         
         .. code-block:: csharp

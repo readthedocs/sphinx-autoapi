@@ -13,6 +13,7 @@ MvcForm Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -93,8 +94,7 @@ Methods
     
         
     
-        
-        
+        Renders the &lt;/form&gt; end tag to the response.
     
         
     

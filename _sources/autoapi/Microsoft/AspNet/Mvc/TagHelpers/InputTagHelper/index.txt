@@ -19,6 +19,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper](Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        An expression to be evaluated against the current model.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
     
         
         .. code-block:: csharp
@@ -99,11 +98,12 @@ Properties
     
         
     
-        
-        
+        The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx) to
+        apply when converting the [Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.For](Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.yml) result to a [System.String](). Sets the generated "value"
+        attribute to that formatted [System.String]().
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -113,7 +113,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -124,11 +124,10 @@ Properties
     
         
     
-        
-        
+        The type of the &lt;input&gt; element.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -139,11 +138,10 @@ Properties
     
         
     
-        
-        
+        The value of the &lt;input&gt; element.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -153,7 +151,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp

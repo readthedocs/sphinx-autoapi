@@ -18,6 +18,7 @@ Identifies an action that only supports the HTTP GET method.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.HttpGetAttribute](Microsoft.AspNet.Mvc.HttpGetAttribute.yml).
     
         
     
@@ -75,8 +75,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.HttpGetAttribute](Microsoft.AspNet.Mvc.HttpGetAttribute.yml) with the given route template.
     
         
         :param template: The route template. May not be null.

@@ -13,6 +13,7 @@ ApplicationModel Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -71,11 +72,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) for the application.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel
     
         
         .. code-block:: csharp
@@ -85,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.Controllers
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel}
     
         
         .. code-block:: csharp
@@ -95,7 +95,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.Filters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         
         .. code-block:: csharp
@@ -106,11 +106,11 @@ Properties
     
         
     
-        
-        
+        Gets a set of properties associated with all actions.
+        These properties will be copied to [Microsoft.AspNet.Mvc.ActionDescriptor.Properties]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp

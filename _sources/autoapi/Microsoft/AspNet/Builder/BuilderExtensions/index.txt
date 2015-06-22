@@ -18,6 +18,7 @@ Extension methods for @!:IApplicationBuilder- to add MVC to the request executio
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,14 @@ Methods
     
         
     
-        
-        
+        Adds MVC to the @!:IApplicationBuilder- request execution pipeline.
     
         
         :param app: The @!:IApplicationBuilder-.
         :type app: IApplicationBuilder
-        :rtype: 
+        :rtype: IApplicationBuilder
+        :return: The
+    <paramref name="app" />.
     
         
         .. code-block:: csharp
@@ -76,15 +78,16 @@ Methods
     
         
     
-        
-        
+        Adds MVC to the @!:IApplicationBuilder- request execution pipeline.
     
         
         :param app: The @!:IApplicationBuilder-.
         :type app: IApplicationBuilder
         :param configureRoutes: A callback to configure MVC routes.
         :type configureRoutes: System.Action{IRouteBuilder}
-        :rtype: 
+        :rtype: IApplicationBuilder
+        :return: The
+    <paramref name="app" />.
     
         
         .. code-block:: csharp
@@ -95,13 +98,16 @@ Methods
     
         
     
-        
-        
+        Adds MVC to the @!:IApplicationBuilder- request execution pipeline
+        with a default route named 'default' and the following template:
+        '{controller=Home}/{action=Index}/{id?}'.
     
         
         :param app: The @!:IApplicationBuilder-.
         :type app: IApplicationBuilder
-        :rtype: 
+        :rtype: IApplicationBuilder
+        :return: The
+    <paramref name="app" />.
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Represents a deferred write operation in a [Microsoft.AspNet.Mvc.Razor.RazorPage
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.Razor.HelperResult](Microsoft.AspNet.Mvc.Razor.HelperResult.yml).
     
         
         :param action: The delegate to invoke when [Microsoft.AspNet.Mvc.Razor.HelperResult.WriteTo(System.IO.TextWriter)](Microsoft.AspNet.Mvc.Razor.HelperResult.yml) is called.
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets the delegate to invoke when [Microsoft.AspNet.Mvc.Razor.HelperResult.WriteTo(System.IO.TextWriter)](Microsoft.AspNet.Mvc.Razor.HelperResult.yml) is called.
     
         
-        :rtype: 
+        :rtype: System.Action{System.IO.TextWriter}
     
         
         .. code-block:: csharp
@@ -106,8 +105,7 @@ Methods
     
         
     
-        
-        
+        Method invoked to produce content from the [Microsoft.AspNet.Mvc.Razor.HelperResult](Microsoft.AspNet.Mvc.Razor.HelperResult.yml).
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.

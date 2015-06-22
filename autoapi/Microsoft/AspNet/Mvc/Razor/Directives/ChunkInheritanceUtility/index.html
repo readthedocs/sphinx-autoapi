@@ -129,7 +129,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -223,7 +222,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.ChunkInheritanceUtility">
 <code class="descname">ChunkInheritanceUtility</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.MvcRazorHost</em>, <em>Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache</em>, <em>System.Collections.Generic.IReadOnlyList&lt;Chunk&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.ChunkInheritanceUtility" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility](Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -272,7 +272,13 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.GetInheritedChunkTrees">
 <code class="descname">GetInheritedChunkTrees</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.GetInheritedChunkTrees" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets an ordered [System.Collections.Generic.IReadOnlyList`1]() of parsed &#64;!:ChunkTree- for each</p>
+<p>&lt;c&gt;_ViewImports&lt;/c&gt; that is applicable to the page located at
+&lt;paramref name=&#8221;pagePath&#8221; /&gt;. The list is
+ordered so that the &#64;!:ChunkTree- for the
+&lt;c&gt;_ViewImports&lt;/c&gt; closest to the</p>
+<p>&lt;paramref name=&#8221;pagePath&#8221; /&gt; in the file system appears first.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -281,20 +287,29 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IReadOnlyList{ChunkTree}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Collections.Generic.IReadOnlyList`1]() of parsed</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">GetInheritedChunkTrees</span><span class="p">(</span><span class="kt">string</span> <span class="n">pagePath</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;_ViewImports&lt;/c&gt;&#64;!:ChunkTree-s.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">virtual</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">ChunkTree</span><span class="p">&gt;</span> <span class="n">GetInheritedChunkTrees</span><span class="p">(</span><span class="kt">string</span> <span class="n">pagePath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.MergeInheritedChunkTrees">
 <code class="descname">MergeInheritedChunkTrees</code><span class="sig-paren">(</span><em>ChunkTree</em>, <em>System.Collections.Generic.IReadOnlyList&lt;ChunkTree&gt;</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.MergeInheritedChunkTrees" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Merges &#64;!:Chunk- inherited by default and &#64;!:ChunkTree- instances produced by parsing</p>
+<p>&lt;c&gt;_ViewImports&lt;/c&gt; files into the specified
+&lt;paramref name=&#8221;chunkTree&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

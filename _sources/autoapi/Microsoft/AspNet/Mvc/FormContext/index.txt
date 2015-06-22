@@ -13,6 +13,7 @@ FormContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,11 +55,11 @@ Properties
     
         
     
-        
-        
+        Property bag for any information you wish to associate with a &lt;form/&gt; in an
+        [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) implementation or extension method.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -78,7 +79,7 @@ Methods
         
         :param fieldName: 
         :type fieldName: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

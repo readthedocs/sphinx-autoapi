@@ -19,6 +19,7 @@ element of type "hidden".
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new instance of the [Microsoft.AspNet.Mvc.HiddenInputAttribute](Microsoft.AspNet.Mvc.HiddenInputAttribute.yml) class.
     
         
     
@@ -83,11 +83,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether to display the value as well as provide a hidden &lt;input&gt;
+        element. The default value is
+        <c>true</c>.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

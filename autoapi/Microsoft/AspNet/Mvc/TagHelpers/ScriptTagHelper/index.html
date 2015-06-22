@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -232,7 +231,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.ScriptTagHelper">
 <code class="descname">ScriptTagHelper</code><span class="sig-paren">(</span><em>ILogger&lt;Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper&gt;</em>, <em>IHostingEnvironment</em>, <em>IMemoryCache</em>, <em>IHtmlEncoder</em>, <em>IJavaScriptStringEncoder</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.ScriptTagHelper" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -291,11 +291,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.AppendVersion">
 <code class="descname">AppendVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.AppendVersion" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Value indicating if file version should be appended to src urls.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +312,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IMemoryCache</td>
 </tr>
 </tbody>
 </table>
@@ -323,11 +324,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrc">
 <code class="descname">FallbackSrc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrc" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The URL of a Script tag to fallback to in the case the primary one fails.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -339,11 +341,15 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcExclude">
 <code class="descname">FallbackSrcExclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcExclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of JavaScript scripts to exclude from the fallback list, in
+the case the primary one fails.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcInclude](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -355,11 +361,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcInclude">
 <code class="descname">FallbackSrcInclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcInclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of JavaScript scripts to fallback to in the case the
+primary one fails.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -371,11 +380,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackTestExpression">
 <code class="descname">FallbackTestExpression</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackTestExpression" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The script method defined in the primary script to use for the fallback test.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -391,7 +401,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder</td>
 </tr>
 </tbody>
 </table>
@@ -407,7 +417,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IHostingEnvironment</td>
 </tr>
 </tbody>
 </table>
@@ -423,7 +433,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IHtmlEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -439,7 +449,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IJavaScriptStringEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -455,7 +465,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ILogger{Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper}</td>
 </tr>
 </tbody>
 </table>
@@ -467,11 +477,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.Src">
 <code class="descname">Src</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.Src" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Address of the external script to use.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -483,11 +494,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcExclude">
 <code class="descname">SrcExclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcExclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of JavaScript scripts to exclude from loading.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcInclude](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -499,11 +513,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcInclude">
 <code class="descname">SrcInclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcInclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of JavaScript scripts to load.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +535,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>
@@ -547,7 +563,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

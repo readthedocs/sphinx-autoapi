@@ -19,6 +19,7 @@ rule.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -81,7 +82,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataTypeAttributeAdapter.RuleName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -101,7 +102,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp

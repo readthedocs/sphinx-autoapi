@@ -13,6 +13,7 @@ JsonPatchException<TModel> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.AffectedObject
     
         
-        :rtype: 
+        :rtype: TModel
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.FailedOperation
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
     
         
         .. code-block:: csharp
@@ -116,7 +117,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Exceptions.JsonPatchException<TModel>.Message
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

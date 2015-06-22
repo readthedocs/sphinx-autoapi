@@ -13,6 +13,7 @@ ItemDescriptor<TItem> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.ItemDescriptor<TItem>.Criteria
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue}
     
         
         .. code-block:: csharp
@@ -63,7 +64,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.ItemDescriptor<TItem>.Index
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.ItemDescriptor<TItem>.Item
     
         
-        :rtype: 
+        :rtype: TItem
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ TemplateRenderer Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -101,7 +102,7 @@ Methods
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
         :param fieldType: 
         :type fieldType: System.Type
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp
@@ -111,7 +112,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateRenderer.Render()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

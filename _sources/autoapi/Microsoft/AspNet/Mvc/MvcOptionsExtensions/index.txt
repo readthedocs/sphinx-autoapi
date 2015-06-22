@@ -13,6 +13,7 @@ MvcOptionsExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,9 @@ Methods
     
         
     
-        
-        
+        Adds [Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter](Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.yml) and
+        [Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.yml) to the input and output formatter
+        collections respectively.
     
         
         :param options: The MvcOptions

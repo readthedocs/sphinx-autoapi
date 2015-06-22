@@ -18,6 +18,7 @@ Represents an [Microsoft.AspNet.Mvc.ActionResult]() that renders a view to the r
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,11 +61,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:MediaTypeHeaderValue- representing the Content-Type header of the response.
     
         
-        :rtype: 
+        :rtype: MediaTypeHeaderValue
     
         
         .. code-block:: csharp
@@ -75,11 +75,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTTP status code.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -90,11 +89,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ITempDataDictionary]() for this result.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ITempDataDictionary
     
         
         .. code-block:: csharp
@@ -105,11 +103,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) for this result.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -120,11 +117,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) used to locate views.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IViewEngine
     
         
         .. code-block:: csharp
@@ -135,11 +131,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the view to render.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -159,7 +154,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

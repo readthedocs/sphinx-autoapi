@@ -17,6 +17,7 @@ IValueProviderFactory Interface
 
 
 
+
 Syntax
 ------
 
@@ -49,13 +50,14 @@ Methods
     
         
     
-        
-        
+        Get a value provider with values from the given
+        <paramref name="requestContext" />.
     
         
         :param context: ValueProviderFactoryContext that value provider will populate from
         :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :return: a value provider instance or null
     
         
         .. code-block:: csharp

@@ -17,6 +17,7 @@ IEnumerableValueProvider Interface
 
 
 
+
 Syntax
 ------
 
@@ -50,7 +51,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.String}}
     
         
         .. code-block:: csharp

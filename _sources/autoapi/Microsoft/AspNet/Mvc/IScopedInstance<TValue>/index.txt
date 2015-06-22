@@ -17,6 +17,7 @@ IScopedInstance<TValue> Interface
 
 
 
+
 Syntax
 ------
 
@@ -48,7 +49,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.IScopedInstance<TValue>.Value
     
         
-        :rtype: 
+        :rtype: TValue
     
         
         .. code-block:: csharp

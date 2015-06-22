@@ -22,6 +22,7 @@ Interface for attributes which can supply a route template for attribute routing
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,11 @@ Properties
     
         
     
-        
-        
+        Gets the route name. The route name can be used to generate a link using a specific route, instead
+        of relying on selection of a route based on the given set of route values.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -69,11 +70,13 @@ Properties
     
         
     
-        
-        
+        Gets the route order. The order determines the order of route execution. Routes with a lower
+        order value are tried first. When a route doesn't specify a value, it gets a default value of 0.
+        A null value for the Order property means that the user didn't specify an explicit order for the
+        route.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -84,11 +87,10 @@ Properties
     
         
     
-        
-        
+        The route template. May be null.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

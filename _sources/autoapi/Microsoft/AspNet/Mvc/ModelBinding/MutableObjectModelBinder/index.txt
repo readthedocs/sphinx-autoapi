@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,7 +61,7 @@ Methods
         
         :param bindingContext: 
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
         
         .. code-block:: csharp
@@ -71,13 +72,15 @@ Methods
     
         
     
-        
-        
+        Gets an indication whether a property with the given
+        <paramref name="propertyMetadata" /> can be updated.
     
         
         :param propertyMetadata: [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for the property of interest.
         :type propertyMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the property can be updated;
+    <c>false</c> otherwise.
     
         
         .. code-block:: csharp
@@ -88,13 +91,14 @@ Methods
     
         
     
-        
-        
+        Creates suitable [System.Object]() for given
+        <paramref name="bindingContext" />.
     
         
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Object
+        :return: An [System.Object]() compatible with [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType]().
     
         
         .. code-block:: csharp
@@ -105,8 +109,10 @@ Methods
     
         
     
+        Ensures [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model]() is not
+        <c>null</c> in given
         
-        
+        <paramref name="bindingContext" />.
     
         
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
@@ -121,13 +127,13 @@ Methods
     
         
     
-        
-        
+        Gets the collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.
     
         
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
+        :return: Collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.
     
         
         .. code-block:: csharp
@@ -138,8 +144,7 @@ Methods
     
         
     
-        
-        
+        Updates a property in the current [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model]().
     
         
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().

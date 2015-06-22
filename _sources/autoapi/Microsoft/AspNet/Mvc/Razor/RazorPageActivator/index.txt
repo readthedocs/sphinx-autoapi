@@ -13,6 +13,7 @@ RazorPageActivator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.RazorPageActivator](Microsoft.AspNet.Mvc.Razor.RazorPageActivator.yml) class.
     
         
         :param metadataProvider: 

@@ -13,6 +13,7 @@ ScopedInstance<T> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ScopedInstance<T>.Value
     
         
-        :rtype: 
+        :rtype: T
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ DefaultTagHelperActivator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new [Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator](Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator.yml) instance.
     
         
     

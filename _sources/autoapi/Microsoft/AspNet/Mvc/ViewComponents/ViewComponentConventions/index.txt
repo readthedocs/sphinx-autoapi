@@ -13,6 +13,7 @@ ViewComponentConventions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param componentType: 
         :type componentType: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -67,7 +68,7 @@ Methods
         
         :param componentType: 
         :type componentType: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Methods
         
         :param typeInfo: 
         :type typeInfo: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

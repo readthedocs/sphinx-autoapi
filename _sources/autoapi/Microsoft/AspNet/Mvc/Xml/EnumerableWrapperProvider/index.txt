@@ -19,6 +19,7 @@ Provides a [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes an instance of [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml).
     
         
         :param sourceEnumerableOfT: Type of the original [System.Collections.Generic.IEnumerable`1]()
@@ -87,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.WrappingType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -107,7 +107,7 @@ Methods
         
         :param original: 
         :type original: System.Object
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

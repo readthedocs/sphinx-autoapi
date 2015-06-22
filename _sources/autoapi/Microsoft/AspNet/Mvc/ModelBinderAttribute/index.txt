@@ -18,6 +18,7 @@ An attribute that can specify a model name or type of [Microsoft.AspNet.Mvc.Mode
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinderAttribute.BinderType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -69,7 +70,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinderAttribute.BindingSource
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinderAttribute.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

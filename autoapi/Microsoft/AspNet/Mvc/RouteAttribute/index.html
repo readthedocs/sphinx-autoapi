@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.RouteAttribute.RouteAttribute">
 <code class="descname">RouteAttribute</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RouteAttribute.RouteAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.RouteAttribute](Microsoft.AspNet.Mvc.RouteAttribute.yml) with the given route template.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -187,7 +188,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -203,7 +204,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -215,11 +216,16 @@
 <dl class="property">
 <dt>
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the route order. The order determines the order of route execution. Routes with a lower order
+value are tried first. If an action defines a route by providing an [Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider](Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.yml)
+with a non
+&lt;c&gt;null&lt;/c&gt; order, that order is used instead of this value. If neither the action nor the
+controller defines an order, a default value of 0 is used.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -235,7 +241,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

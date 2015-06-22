@@ -13,6 +13,7 @@ OperationBase Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.OperationType
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.JsonPatch.Operations.OperationType
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.from
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.op
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -115,7 +116,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.path
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -133,7 +134,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Operations.OperationBase.ShouldSerializefrom()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

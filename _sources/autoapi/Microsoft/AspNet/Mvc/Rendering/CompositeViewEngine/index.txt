@@ -13,6 +13,7 @@ CompositeViewEngine Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine](Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine.yml).
     
         
         :param optionsAccessor: The options accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets the list of [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) this instance of [Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine](Microsoft.AspNet.Mvc.Rendering.CompositeViewEngine.yml) delegates to.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.Rendering.IViewEngine}
     
         
         .. code-block:: csharp
@@ -110,7 +109,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :param partialViewName: 
         :type partialViewName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
         
         .. code-block:: csharp
@@ -124,7 +123,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :param viewName: 
         :type viewName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
         
         .. code-block:: csharp

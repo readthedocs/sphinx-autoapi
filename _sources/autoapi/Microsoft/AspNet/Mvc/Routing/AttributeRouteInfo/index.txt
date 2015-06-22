@@ -18,6 +18,7 @@ Represents the routing information for an action that is attribute routed.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,12 @@ Properties
     
         
     
-        
-        
+        Gets the name of the route associated with a given action. This property can be used
+        to generate a link by referring to the route by name instead of attempting to match a
+        route by provided route data.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,11 +76,12 @@ Properties
     
         
     
-        
-        
+        Gets the order of the route associated with a given action. This property determines
+        the order in which routes get executed. Routes with a lower order value are tried first. In case a route
+        doesn't specify a value, it gets a default order of 0.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -89,11 +92,10 @@ Properties
     
         
     
-        
-        
+        The route template. May be null if the action has no attribute routes.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

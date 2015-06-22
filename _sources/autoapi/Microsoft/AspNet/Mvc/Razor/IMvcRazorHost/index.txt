@@ -22,6 +22,7 @@ Specifies the contracts for a Razor host that parses Razor files and generates C
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,8 @@ Methods
     
         
     
-        
-        
+        Parses and generates the contents of a Razor file represented by
+        <paramref name="inputStream" />.
     
         
         :param rootRelativePath: The path of the relative to the root of the application.
@@ -63,7 +64,8 @@ Methods
         :type rootRelativePath: System.String
         :param inputStream: A [System.IO.Stream]() that represents the Razor contents.
         :type inputStream: System.IO.Stream
-        :rtype: 
+        :rtype: GeneratorResults
+        :return: A @!:GeneratorResults- instance that represents the results of code generation.
     
         
         .. code-block:: csharp
@@ -82,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Represent the namespace the main entry class in the view.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -97,11 +98,10 @@ Properties
     
         
     
-        
-        
+        Represent the prefix off the main entry class in the view.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

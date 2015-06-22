@@ -18,6 +18,7 @@ Utility related extensions for @!:TagHelperOutput-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,11 @@ Methods
     
         
     
-        
-        
+        Copies a user-provided attribute from
+        <paramref name="context" />'s
+        @!:TagHelperContext.AllAttributes- to
+        <paramref name="tagHelperOutput" />'s
+        @!:TagHelperOutput.Attributes-.
     
         
         :param tagHelperOutput: The @!:TagHelperOutput- this method extends.
@@ -79,8 +83,10 @@ Methods
     
         
     
+        Merges the given
+        <paramref name="tagBuilder" />'s [Microsoft.AspNet.Mvc.Rendering.TagBuilder.Attributes]() into the
         
-        
+        <paramref name="tagHelperOutput" />.
     
         
         :param tagHelperOutput: The @!:TagHelperOutput- this method extends.
@@ -97,8 +103,10 @@ Methods
     
         
     
-        
-        
+        Removes the given
+        <paramref name="attributes" /> from
+        <paramref name="tagHelperOutput" />'s
+        @!:TagHelperOutput.Attributes-.
     
         
         :param tagHelperOutput: The @!:TagHelperOutput- this method extends.

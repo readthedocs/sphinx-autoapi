@@ -13,6 +13,7 @@ TagBuilder Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.Attributes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.InnerHtml
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.TagName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -135,8 +136,8 @@ Methods
     
         
     
-        
-        
+        Return valid HTML 4.01 "id" attribute for an element with the given
+        <paramref name="name" />.
     
         
         :param name: The original element name.
@@ -145,7 +146,9 @@ Methods
     
     <paramref name="name" />.
         :type invalidCharReplacement: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: Valid HTML 4.01 "id" attribute for an element with the given
+    <paramref name="name" />.
     
         
         .. code-block:: csharp
@@ -233,7 +236,7 @@ Methods
         
         :param renderMode: 
         :type renderMode: Microsoft.AspNet.Mvc.Rendering.TagRenderMode
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -243,7 +246,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.TagBuilder.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -255,7 +258,7 @@ Methods
         
         :param renderMode: 
         :type renderMode: Microsoft.AspNet.Mvc.Rendering.TagRenderMode
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

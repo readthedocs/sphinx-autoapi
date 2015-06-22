@@ -149,7 +149,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IAsyncResourceFilter.OnResourceExecutionAsync">
 <code class="descname">OnResourceExecutionAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ResourceExecutingContext</em>, <em>Microsoft.AspNet.Mvc.ResourceExecutionDelegate</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IAsyncResourceFilter.OnResourceExecutionAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Executes the resource filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -171,7 +172,9 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type next:</th><td class="field-body">Microsoft.AspNet.Mvc.ResourceExecutionDelegate</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() which will complete when the remainder of the pipeline completes.</td>
 </tr>
 </tbody>
 </table>

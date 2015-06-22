@@ -18,6 +18,7 @@ Contains extension methods to @!:IServiceCollection-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Methods
     
         
     
-        
-        
+        Configures a set of [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml) for the application.
     
         
         :param services: The services available in the application.
@@ -77,8 +77,8 @@ Methods
     
         
     
-        
-        
+        Adds an initialization callback for a given
+        <typeparamref name="TTagHelper" />.
     
         
         :param services: The @!:IServiceCollection- instance this method extends.
@@ -86,7 +86,8 @@ Methods
         :param initialize: An action to initialize the
     <typeparamref name="TTagHelper" />.
         :type initialize: System.Action{{TTagHelper},Microsoft.AspNet.Mvc.ViewContext}
-        :rtype: 
+        :rtype: IServiceCollection
+        :return: The @!:IServiceCollection- instance this method extends.
     
         
         .. code-block:: csharp

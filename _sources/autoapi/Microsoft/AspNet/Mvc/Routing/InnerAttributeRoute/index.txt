@@ -18,6 +18,7 @@ An @!:IRouter- implementation for attribute routing.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`IRouter`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute.yml).
     
         
         :param next: The next router. Invoked when a route entry matches.
@@ -93,11 +93,11 @@ Properties
     
         
     
-        
-        
+        Gets the version of this route. This corresponds to the value of
+        [Microsoft.AspNet.Mvc.ActionDescriptorsCollection.Version](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml) when this route was created.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -117,7 +117,7 @@ Methods
         
         :param context: 
         :type context: VirtualPathContext
-        :rtype: 
+        :rtype: VirtualPathData
     
         
         .. code-block:: csharp
@@ -129,7 +129,7 @@ Methods
         
         :param context: 
         :type context: RouteContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ HttpResponseException Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,8 +56,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.HttpResponseException](System.Web.Http.HttpResponseException.yml) class.
     
         
         :param response: The response message.
@@ -71,8 +71,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.HttpResponseException](System.Web.Http.HttpResponseException.yml) class.
     
         
         :param statusCode: The status code of the response.
@@ -95,11 +94,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Net.Http.HttpResponseMessage]() to return to the client.
     
         
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
     
         
         .. code-block:: csharp

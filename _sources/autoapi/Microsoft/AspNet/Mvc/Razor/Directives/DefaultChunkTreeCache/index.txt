@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.DefaultChunkTreeCache.yml).
     
         
         :param fileProvider: The application's @!:IFileProvider-.
@@ -86,7 +86,7 @@ Methods
         :type pagePath: System.String
         :param getChunkTree: 
         :type getChunkTree: System.Func{IFileInfo,ChunkTree}
-        :rtype: 
+        :rtype: ChunkTree
     
         
         .. code-block:: csharp

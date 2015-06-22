@@ -18,6 +18,7 @@ The anti-forgery token pair (cookie and form token) for a request.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates the anti-forgery token pair (cookie and form token) for a request.
     
         
         :param formToken: The token that is supplied in the request form body.
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.AntiForgeryTokenSet.CookieToken
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -95,11 +95,10 @@ Properties
     
         
     
-        
-        
+        The token that is supplied in the request form body.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

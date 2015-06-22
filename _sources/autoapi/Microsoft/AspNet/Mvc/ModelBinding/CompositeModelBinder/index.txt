@@ -19,6 +19,7 @@ instances.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the CompositeModelBinder class.
     
         
         :param modelBinders: A collection of [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() instances.
@@ -83,7 +83,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.CompositeModelBinder.ModelBinders
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}
     
         
         .. code-block:: csharp
@@ -103,7 +103,7 @@ Methods
         
         :param bindingContext: 
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
         
         .. code-block:: csharp

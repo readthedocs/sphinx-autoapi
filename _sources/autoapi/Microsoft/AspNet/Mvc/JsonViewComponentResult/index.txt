@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.IViewComponentResult](Microsoft.AspNet.Mvc.IViewCompone
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
         :param value: The value to format as JSON text.
@@ -75,8 +75,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
         :param value: The value to format as JSON text.
@@ -94,8 +93,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
         :param value: The value to format as JSON text.
@@ -120,11 +118,10 @@ Properties
     
         
     
-        
-        
+        Gets the formatter.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.JsonOutputFormatter
     
         
         .. code-block:: csharp
@@ -135,11 +132,10 @@ Properties
     
         
     
-        
-        
+        Gets the value.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -158,8 +154,7 @@ Methods
     
         
     
-        
-        
+        Renders JSON text to the output.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
@@ -174,13 +169,13 @@ Methods
     
         
     
-        
-        
+        Renders JSON text to the output.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A completed [System.Threading.Tasks.Task]().
     
         
         .. code-block:: csharp

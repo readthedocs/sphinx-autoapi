@@ -18,6 +18,7 @@ Extension methods for [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]().
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,15 @@ Methods
     
         
     
-        
-        
+        Gets a simple display string for the [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer.Model]() property
+        of
+        <paramref name="modelExplorer" />.
     
         
         :param modelExplorer: The [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]().
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :rtype: 
+        :rtype: System.String
+        :return: A simple display string for the model.
     
         
         .. code-block:: csharp

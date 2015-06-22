@@ -22,6 +22,7 @@ Provides the currently cached collection of [Microsoft.AspNet.Mvc.ActionDescript
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Returns the current cached [Microsoft.AspNet.Mvc.ActionDescriptorsCollection](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml)
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionDescriptorsCollection
     
         
         .. code-block:: csharp

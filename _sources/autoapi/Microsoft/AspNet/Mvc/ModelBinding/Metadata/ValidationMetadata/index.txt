@@ -18,6 +18,7 @@ Validation metadata details for a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetada
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,14 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether or not the model is a required value. Will be ignored
+        if the model metadata being created is not a property. If
+        <c>null</c> then
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired]() will be computed based on the model [System.Type]().
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired]().
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Boolean}
     
         
         .. code-block:: csharp
@@ -74,11 +78,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of metadata items for validators.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.Object}
     
         
         .. code-block:: csharp

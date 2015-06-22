@@ -151,7 +151,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBindingHelper.ClearValidationStateForModel">
 <code class="descname">ClearValidationStateForModel</code><span class="sig-paren">(</span><em>System.Type</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBindingHelper.ClearValidationStateForModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Clears [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() entries for [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -183,7 +184,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Object</p>
 </td>
 </tr>
 </tbody>
@@ -196,7 +197,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBindingHelper.GetIncludePredicateExpression&lt;TModel&gt;(System.String, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an expression for a predicate to limit the set of properties used in model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -206,7 +208,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Linq.Expressions.Expression{System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An expression which can be used with [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().</p>
 </td>
 </tr>
 </tbody>
@@ -219,7 +224,13 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBindingHelper.TryUpdateModelAsync">
 <code class="descname">TryUpdateModelAsync</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Type</em>, <em>System.String</em>, <em>HttpContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelBinder</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em>, <em>System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IInputFormatter&gt;</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBindingHelper.TryUpdateModelAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates the specified
+&lt;paramref name=&#8221;model&#8221; /&gt; instance using the specified
+&lt;paramref name=&#8221;modelBinder&#8221; /&gt;
+and the specified
+&lt;paramref name=&#8221;valueProvider&#8221; /&gt; and executes validation using the specified</p>
+<p>&lt;paramref name=&#8221;validatorProvider&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -307,26 +318,37 @@
 </table>
 </dd>
 <dt>on the model instance.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">type validatorProvider:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">TryUpdateModelAsync</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Type</em>, <em>System.String</em>, <em>HttpContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelBinder</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</em>, <em>System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IInputFormatter&gt;</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider</em>, <em>System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em>, <em>System.String</em>, <em>System.Boolean&gt;</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates the specified
+&lt;paramref name=&#8221;model&#8221; /&gt; instance using the specified
+&lt;paramref name=&#8221;modelBinder&#8221; /&gt;
+and the specified
+&lt;paramref name=&#8221;valueProvider&#8221; /&gt; and executes validation using the specified</p>
+<p>&lt;paramref name=&#8221;validatorProvider&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -428,25 +450,36 @@
 </table>
 </dd>
 <dt>filter properties(for inclusion/exclusion) at runtime.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">Type</span> <span class="n">modelType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBindingHelper.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, HttpContext, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, Microsoft.AspNet.Mvc.ModelBinding.IModelBinder, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IInputFormatter&gt;, Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator, Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates the specified
+&lt;paramref name=&#8221;model&#8221; /&gt; instance using the specified
+&lt;paramref name=&#8221;modelBinder&#8221; /&gt;
+and the specified
+&lt;paramref name=&#8221;valueProvider&#8221; /&gt; and executes validation using the specified</p>
+<p>&lt;paramref name=&#8221;validatorProvider&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -533,26 +566,37 @@
 </table>
 </dd>
 <dt>on the model instance.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">type validatorProvider:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBindingHelper.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, HttpContext, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, Microsoft.AspNet.Mvc.ModelBinding.IModelBinder, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IInputFormatter&gt;, Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator, Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider, System.Func&lt;Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext, System.String, System.Boolean&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates the specified
+&lt;paramref name=&#8221;model&#8221; /&gt; instance using the specified
+&lt;paramref name=&#8221;modelBinder&#8221; /&gt;
+and the specified
+&lt;paramref name=&#8221;valueProvider&#8221; /&gt; and executes validation using the specified</p>
+<p>&lt;paramref name=&#8221;validatorProvider&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -653,25 +697,36 @@
 </table>
 </dd>
 <dt>filter properties(for inclusion/exclusion) at runtime.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type predicate:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">ModelBindingContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">predicate</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBindingHelper.TryUpdateModelAsync&lt;TModel&gt;(TModel, System.String, HttpContext, Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider, Microsoft.AspNet.Mvc.ModelBinding.IModelBinder, Microsoft.AspNet.Mvc.ModelBinding.IValueProvider, System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IInputFormatter&gt;, Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator, Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Object&gt;&gt;[])</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates the specified
+&lt;paramref name=&#8221;model&#8221; /&gt; instance using the specified
+&lt;paramref name=&#8221;modelBinder&#8221; /&gt;
+and the specified
+&lt;paramref name=&#8221;valueProvider&#8221; /&gt; and executes validation using the specified</p>
+<p>&lt;paramref name=&#8221;validatorProvider&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -776,22 +831,27 @@ instance.</p>
 </div></blockquote>
 <dl class="docutils">
 <dt>which need to be included for the current model.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">type includeExpressions:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{System.Boolean}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;true&lt;/c&gt; if the update is successful</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="n">TryUpdateModelAsync</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;(</span><span class="n">TModel</span> <span class="n">model</span><span class="p">,</span> <span class="kt">string</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">HttpContext</span> <span class="n">httpContext</span><span class="p">,</span> <span class="n">ModelStateDictionary</span> <span class="n">modelState</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">,</span> <span class="n">IModelBinder</span> <span class="n">modelBinder</span><span class="p">,</span> <span class="n">IValueProvider</span> <span class="n">valueProvider</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IInputFormatter</span><span class="p">&gt;</span> <span class="n">inputFormatters</span><span class="p">,</span> <span class="n">IObjectModelValidator</span> <span class="n">objectModelValidator</span><span class="p">,</span> <span class="n">IModelValidatorProvider</span> <span class="n">validatorProvider</span><span class="p">,</span> <span class="k">params</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;[]</span> <span class="n">includeExpressions</span><span class="p">)</span><span class="k">where</span> <span class="n">TModel</span> <span class="p">:</span> <span class="k">class</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

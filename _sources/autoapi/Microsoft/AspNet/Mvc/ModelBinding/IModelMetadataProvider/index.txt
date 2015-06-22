@@ -17,6 +17,7 @@ IModelMetadataProvider Interface
 
 
 
+
 Syntax
 ------
 
@@ -50,7 +51,7 @@ Methods
         
         :param modelType: 
         :type modelType: System.Type
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
         
         .. code-block:: csharp
@@ -62,7 +63,7 @@ Methods
         
         :param modelType: 
         :type modelType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp

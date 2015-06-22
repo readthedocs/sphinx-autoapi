@@ -19,6 +19,7 @@ that is getting added as extension prefix comes from @!:Microsoft.AspNet.Http.Ht
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new [Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpander](Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpander.yml) instance.
     
         
     
@@ -74,8 +74,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new [Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator](Microsoft.AspNet.Mvc.Razor.DefaultTagHelperActivator.yml) instance.
     
         
         :param option: The [Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption](Microsoft.AspNet.Mvc.Razor.LanguageViewLocationExpanderOption.yml).
@@ -101,7 +100,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
         :param viewLocations: 
         :type viewLocations: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp

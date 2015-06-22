@@ -18,6 +18,7 @@ A context for View Components.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
     
         
     
@@ -73,8 +73,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
     
         
         :param viewComponentDescriptor: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the View Component being invoked.
@@ -103,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the View Component arguments.
     
         
-        :rtype: 
+        :rtype: System.Object[]
     
         
         .. code-block:: csharp
@@ -118,11 +116,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewComponentContext.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the View Component being invoked.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
     
         
         .. code-block:: csharp
@@ -133,11 +130,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewComponentContext.ViewContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -148,11 +144,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -163,11 +158,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.IO.TextWriter]() for output.
     
         
-        :rtype: 
+        :rtype: System.IO.TextWriter
     
         
         .. code-block:: csharp

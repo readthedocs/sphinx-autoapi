@@ -19,6 +19,7 @@ executed will produce a Bad Request (400) response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.BadRequestResult](Microsoft.AspNet.Mvc.BadRequestResult.yml) instance.
     
         
     

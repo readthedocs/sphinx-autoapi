@@ -17,6 +17,7 @@ IActionHttpMethodProvider Interface
 
 
 
+
 Syntax
 ------
 
@@ -48,7 +49,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.IActionHttpMethodProvider.HttpMethods
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp

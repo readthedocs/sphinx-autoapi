@@ -18,6 +18,7 @@ Represents a group of related apis.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
     
         
         :param groupName: The group name.
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        The group name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        A collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) items for this group.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription}
     
         
         .. code-block:: csharp

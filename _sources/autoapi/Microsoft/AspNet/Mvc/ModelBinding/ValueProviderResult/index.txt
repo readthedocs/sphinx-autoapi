@@ -13,6 +13,7 @@ ValueProviderResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.AttemptedValue
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.Culture
     
         
-        :rtype: 
+        :rtype: System.Globalization.CultureInfo
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult.RawValue
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -125,7 +126,7 @@ Methods
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -139,7 +140,7 @@ Methods
         :type type: System.Type
         :param culture: 
         :type culture: System.Globalization.CultureInfo
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

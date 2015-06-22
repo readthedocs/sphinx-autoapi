@@ -157,11 +157,12 @@ Provides a expression based way to provide include properties.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.DefaultPropertyBindingPredicateProvider&lt;TModel&gt;.Prefix">
 <code class="descname">Prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultPropertyBindingPredicateProvider<TModel>.Prefix" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The prefix which is used while generating the property filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -177,7 +178,7 @@ Provides a expression based way to provide include properties.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -189,11 +190,13 @@ Provides a expression based way to provide include properties.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.DefaultPropertyBindingPredicateProvider&lt;TModel&gt;.PropertyIncludeExpressions">
 <code class="descname">PropertyIncludeExpressions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultPropertyBindingPredicateProvider<TModel>.PropertyIncludeExpressions" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Expressions which can be used to generate property filter which can filter model
+properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}}</td>
 </tr>
 </tbody>
 </table>

@@ -18,6 +18,7 @@ Default implementation for [Microsoft.AspNet.Mvc.IControllerFactory](Microsoft.A
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.DefaultControllerFactory](Microsoft.AspNet.Mvc.DefaultControllerFactory.yml).
     
         
         :param controllerActivator: [Microsoft.AspNet.Mvc.IControllerActivator](Microsoft.AspNet.Mvc.IControllerActivator.yml) used to create controller instances.
@@ -86,11 +86,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.IControllerActivator](Microsoft.AspNet.Mvc.IControllerActivator.yml) used to create a controller.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IControllerActivator
     
         
         .. code-block:: csharp
@@ -110,7 +109,7 @@ Methods
         
         :param actionContext: 
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

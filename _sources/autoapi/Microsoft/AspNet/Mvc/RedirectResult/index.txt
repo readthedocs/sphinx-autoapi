@@ -13,6 +13,7 @@ RedirectResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -86,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectResult.Permanent
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectResult.Url
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectResult.UrlHelper
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IUrlHelper
     
         
         .. code-block:: csharp

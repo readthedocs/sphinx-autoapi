@@ -18,6 +18,7 @@ Binding info which represents metadata associated to an action parameter.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the binder model name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [System.Type]() of the model binder used to bind the model.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -104,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider](Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider
     
         
         .. code-block:: csharp
@@ -127,13 +124,14 @@ Methods
     
         
     
-        
-        
+        Constructs a new instance of [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml) from the given
+        <paramref name="attributes" />.
     
         
         :param attributes: A collection of attributes which are used to construct [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml)
         :type attributes: System.Collections.Generic.IEnumerable{System.Object}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
+        :return: A new instance of [Microsoft.AspNet.Mvc.ModelBinding.BindingInfo](Microsoft.AspNet.Mvc.ModelBinding.BindingInfo.yml).
     
         
         .. code-block:: csharp

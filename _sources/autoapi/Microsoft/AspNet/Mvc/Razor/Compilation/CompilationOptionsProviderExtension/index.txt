@@ -18,6 +18,7 @@ Extension methods for @!:ICompilerOptionsProvider-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,16 @@ Methods
     
         
     
-        
-        
+        Parses the @!:ICompilerOptions- for the current executing application and returns a
+        @!:CompilationSettings- used for Roslyn compilation.
     
         
         :param compilerOptionsProvider: A @!:ICompilerOptionsProvider- that reads compiler options.
         :type compilerOptionsProvider: ICompilerOptionsProvider
         :param applicationEnvironment: The @!:IApplicationEnvironment- for the executing application.
         :type applicationEnvironment: IApplicationEnvironment
-        :rtype: 
+        :rtype: CompilationSettings
+        :return: The @!:CompilationSettings- for the current application.
     
         
         .. code-block:: csharp

@@ -22,6 +22,7 @@ A factory for [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IAct
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml).
     
         
         :param services: The per-request services.
         :type services: System.IServiceProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionConstraint
+        :return: An [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml).
     
         
         .. code-block:: csharp

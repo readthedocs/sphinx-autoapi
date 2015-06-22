@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDes
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.yml).
     
         
         :param assemblyProvider: The [Microsoft.AspNet.Mvc.IAssemblyProvider]().
@@ -83,11 +83,12 @@ Methods
     
         
     
-        
-        
+        Gets the candidate [System.Reflection.TypeInfo]() instances. The results of this will be provided to
+        [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.IsViewComponentType(System.Reflection.TypeInfo)](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.yml) for filtering.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
+        :return: A list of [System.Reflection.TypeInfo]() instances.
     
         
         .. code-block:: csharp
@@ -97,7 +98,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorProvider.GetViewComponents()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor}
     
         
         .. code-block:: csharp
@@ -108,13 +109,15 @@ Methods
     
         
     
-        
-        
+        Determines whether or not the given [System.Reflection.TypeInfo]() is a View Component class.
     
         
         :param typeInfo: The [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if
+    <paramref name="typeInfo" />represents a View Component class, otherwise
+    <c>false</c>.
     
         
         .. code-block:: csharp

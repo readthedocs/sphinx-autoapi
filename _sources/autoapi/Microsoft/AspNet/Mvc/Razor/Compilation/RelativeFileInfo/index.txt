@@ -19,6 +19,7 @@ for a file in the file system.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml).
     
         
         :param fileInfo: @!:IFileInfo- for the file.
@@ -86,11 +86,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:IFileInfo- associated with this instance of [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml).
     
         
-        :rtype: 
+        :rtype: IFileInfo
     
         
         .. code-block:: csharp
@@ -101,11 +100,10 @@ Properties
     
         
     
-        
-        
+        Gets the path of the file relative to the application base.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

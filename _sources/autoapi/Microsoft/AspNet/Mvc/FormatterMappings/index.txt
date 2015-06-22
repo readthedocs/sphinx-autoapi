@@ -18,6 +18,7 @@ Used to specify mapping between the URL Format and corresponding @!:MediaTypeHea
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,14 @@ Methods
     
         
     
-        
-        
+        Clears the @!:MediaTypeHeaderValue- mapping for the format.
     
         
         :param format: The format value.
         :type format: System.String
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the format is successfully found and cleared; otherwise,
+    <c>false</c>.
     
         
         .. code-block:: csharp
@@ -76,13 +78,13 @@ Methods
     
         
     
-        
-        
+        Gets @!:MediaTypeHeaderValue- for the specified format.
     
         
         :param format: The format value.
         :type format: System.String
-        :rtype: 
+        :rtype: MediaTypeHeaderValue
+        :return: The @!:MediaTypeHeaderValue- for input format.
     
         
         .. code-block:: csharp
@@ -93,8 +95,8 @@ Methods
     
         
     
-        
-        
+        Sets mapping for the format to specified @!:MediaTypeHeaderValue-.
+        If the format already exists, the @!:MediaTypeHeaderValue- will be overwritten with the new value.
     
         
         :param format: The format value.

@@ -19,6 +19,7 @@ which can be used to select a formatter while executing [Microsoft.AspNet.Mvc.Ob
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Initializes an instance of [Microsoft.AspNet.Mvc.ProducesAttribute](Microsoft.AspNet.Mvc.ProducesAttribute.yml) with allowed content types.
     
         
         :param contentType: The allowed content type for a response.
@@ -80,8 +80,7 @@ Constructors
     
         
     
-        
-        
+        Initializes an instance of [Microsoft.AspNet.Mvc.ProducesAttribute](Microsoft.AspNet.Mvc.ProducesAttribute.yml).
     
         
         :param type: The [Microsoft.AspNet.Mvc.ProducesAttribute.Type](Microsoft.AspNet.Mvc.ProducesAttribute.yml) of object that is going to be written in the response.
@@ -103,7 +102,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ProducesAttribute.ContentTypes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         
         .. code-block:: csharp
@@ -113,7 +112,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ProducesAttribute.Type
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp

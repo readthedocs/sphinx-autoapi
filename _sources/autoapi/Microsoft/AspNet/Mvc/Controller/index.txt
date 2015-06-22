@@ -18,6 +18,7 @@ Base class for an MVC controller.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ActionContext]() object.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionContext
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ActionBindingContext]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionBindingContext
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:HttpContext- for the executing action.
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -104,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
     
         
         .. code-block:: csharp
@@ -119,11 +116,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() that contains the state of the model and of model-binding validation.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -133,7 +129,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Controller.ObjectValidator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator
     
         
         .. code-block:: csharp
@@ -144,11 +140,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:HttpRequest- for the executing action.
     
         
-        :rtype: 
+        :rtype: HttpRequest
     
         
         .. code-block:: csharp
@@ -159,11 +154,10 @@ Properties
     
         
     
-        
-        
+        Gets the request-specific [System.IServiceProvider]().
     
         
-        :rtype: 
+        :rtype: System.IServiceProvider
     
         
         .. code-block:: csharp
@@ -174,11 +168,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:HttpResponse- for the executing action.
     
         
-        :rtype: 
+        :rtype: HttpResponse
     
         
         .. code-block:: csharp
@@ -189,11 +182,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:AspNet.Routing.RouteData- for the executing action.
     
         
-        :rtype: 
+        :rtype: RouteData
     
         
         .. code-block:: csharp
@@ -204,11 +196,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets [Microsoft.AspNet.Mvc.ITempDataDictionary]() used by [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ITempDataDictionary
     
         
         .. code-block:: csharp
@@ -219,11 +210,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.IUrlHelper]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IUrlHelper
     
         
         .. code-block:: csharp
@@ -234,11 +224,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [System.Security.Claims.ClaimsPrincipal]() for user associated with the executing action.
     
         
-        :rtype: 
+        :rtype: System.Security.Claims.ClaimsPrincipal
     
         
         .. code-block:: csharp
@@ -249,11 +238,10 @@ Properties
     
         
     
-        
-        
+        Gets the dynamic view bag.
     
         
-        :rtype: 
+        :rtype: dynamic
     
         
         .. code-block:: csharp
@@ -264,11 +252,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) used by [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) and [Microsoft.AspNet.Mvc.Controller.ViewBag](Microsoft.AspNet.Mvc.Controller.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -287,13 +274,14 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object by specifying a
+        <paramref name="content" /> string.
     
         
         :param content: The content to write to the response.
         :type content: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ContentResult
+        :return: The created [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -304,15 +292,18 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object by specifying a
+        <paramref name="content" />
+        string and a
+        <paramref name="contentType" />.
     
         
         :param content: The content to write to the response.
         :type content: System.String
         :param contentType: The content type (MIME type).
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ContentResult
+        :return: The created [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -323,15 +314,17 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object by specifying a
+        <paramref name="content" /> string
+        and a content type.
     
         
         :param content: The content to write to the response.
         :type content: System.String
         :param contentType: The content type (MIME type).
         :type contentType: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ContentResult
+        :return: The created [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -342,8 +335,11 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object by specifying a
+        <paramref name="content" /> string,
+        a
+        <paramref name="contentType" />, and
+        <paramref name="contentEncoding" />.
     
         
         :param content: The content to write to the response.
@@ -352,7 +348,8 @@ Methods
         :type contentType: System.String
         :param contentEncoding: The content encoding.
         :type contentEncoding: System.Text.Encoding
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ContentResult
+        :return: The created [Microsoft.AspNet.Mvc.ContentResult](Microsoft.AspNet.Mvc.ContentResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -363,15 +360,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedResult](Microsoft.AspNet.Mvc.CreatedResult.yml) object that produces a Created (201) response.
     
         
         :param uri: The URI at which the content has been created.
         :type uri: System.String
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedResult](Microsoft.AspNet.Mvc.CreatedResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -382,15 +379,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedResult](Microsoft.AspNet.Mvc.CreatedResult.yml) object that produces a Created (201) response.
     
         
         :param uri: The URI at which the content has been created.
         :type uri: System.Uri
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedResult](Microsoft.AspNet.Mvc.CreatedResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -401,15 +398,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtActionResult](Microsoft.AspNet.Mvc.CreatedAtActionResult.yml) object that produces a Created (201) response.
     
         
         :param actionName: The name of the action to use for generating the URL.
         :type actionName: System.String
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtActionResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -420,8 +417,7 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtActionResult](Microsoft.AspNet.Mvc.CreatedAtActionResult.yml) object that produces a Created (201) response.
     
         
         :param actionName: The name of the action to use for generating the URL.
@@ -430,7 +426,8 @@ Methods
         :type routeValues: System.Object
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtActionResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -441,8 +438,7 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtActionResult](Microsoft.AspNet.Mvc.CreatedAtActionResult.yml) object that produces a Created (201) response.
     
         
         :param actionName: The name of the action to use for generating the URL.
@@ -453,7 +449,8 @@ Methods
         :type routeValues: System.Object
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtActionResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -464,15 +461,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) object that produces a Created (201) response.
     
         
         :param routeValues: The route data to use for generating the URL.
         :type routeValues: System.Object
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -483,15 +480,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) object that produces a Created (201) response.
     
         
         :param routeName: The name of the route to use for generating the URL.
         :type routeName: System.String
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -502,8 +499,7 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) object that produces a Created (201) response.
     
         
         :param routeName: The name of the route to use for generating the URL.
@@ -512,7 +508,8 @@ Methods
         :type routeValues: System.Object
         :param value: The content value to format in the entity body.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.CreatedAtRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -532,8 +529,7 @@ Methods
     
         
     
-        
-        
+        Releases all resources currently used by this [Microsoft.AspNet.Mvc.Controller](Microsoft.AspNet.Mvc.Controller.yml) instance.
     
         
         :param disposing: <c>true</c> if this method is being invoked by the [Microsoft.AspNet.Mvc.Controller.Dispose](Microsoft.AspNet.Mvc.Controller.yml) method,
@@ -550,15 +546,18 @@ Methods
     
         
     
-        
-        
+        Returns a file with the specified
+        <paramref name="fileContents" /> as content and the
+        specified
+        <paramref name="contentType" /> as the Content-Type.
     
         
         :param fileContents: The file contents.
         :type fileContents: System.Byte[]
         :param contentType: The Content-Type of the file.
         :type contentType: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FileContentResult
+        :return: The created [Microsoft.AspNet.Mvc.FileContentResult](Microsoft.AspNet.Mvc.FileContentResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -569,8 +568,12 @@ Methods
     
         
     
-        
-        
+        Returns a file with the specified
+        <paramref name="fileContents" /> as content, the
+        specified
+        <paramref name="contentType" /> as the Content-Type and the
+        specified
+        <paramref name="fileDownloadName" /> as the suggested file name.
     
         
         :param fileContents: The file contents.
@@ -579,7 +582,8 @@ Methods
         :type contentType: System.String
         :param fileDownloadName: The suggested file name.
         :type fileDownloadName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FileContentResult
+        :return: The created [Microsoft.AspNet.Mvc.FileContentResult](Microsoft.AspNet.Mvc.FileContentResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -590,15 +594,18 @@ Methods
     
         
     
-        
-        
+        Returns a file in the specified
+        <paramref name="fileStream" /> with the
+        specified
+        <paramref name="contentType" /> as the Content-Type.
     
         
         :param fileStream: The [System.IO.Stream]() with the contents of the file.
         :type fileStream: System.IO.Stream
         :param contentType: The Content-Type of the file.
         :type contentType: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FileStreamResult
+        :return: The created [Microsoft.AspNet.Mvc.FileStreamResult](Microsoft.AspNet.Mvc.FileStreamResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -609,8 +616,12 @@ Methods
     
         
     
-        
-        
+        Returns a file in the specified
+        <paramref name="fileStream" /> with the
+        specified
+        <paramref name="contentType" /> as the Content-Type and the
+        specified
+        <paramref name="fileDownloadName" /> as the suggested file name.
     
         
         :param fileStream: The [System.IO.Stream]() with the contents of the file.
@@ -619,7 +630,8 @@ Methods
         :type contentType: System.String
         :param fileDownloadName: The suggested file name.
         :type fileDownloadName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FileStreamResult
+        :return: The created [Microsoft.AspNet.Mvc.FileStreamResult](Microsoft.AspNet.Mvc.FileStreamResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -630,15 +642,18 @@ Methods
     
         
     
-        
-        
+        Returns the file specified by
+        <paramref name="fileName" /> with the
+        specified
+        <paramref name="contentType" /> as the Content-Type.
     
         
         :param fileName: The [System.IO.Stream]() with the contents of the file.
         :type fileName: System.String
         :param contentType: The Content-Type of the file.
         :type contentType: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FilePathResult
+        :return: The created [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -649,8 +664,12 @@ Methods
     
         
     
-        
-        
+        Returns the file specified by
+        <paramref name="fileName" /> with the
+        specified
+        <paramref name="contentType" /> as the Content-Type and the
+        specified
+        <paramref name="fileDownloadName" /> as the suggested file name.
     
         
         :param fileName: The [System.IO.Stream]() with the contents of the file.
@@ -659,7 +678,8 @@ Methods
         :type contentType: System.String
         :param fileDownloadName: The suggested file name.
         :type fileDownloadName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FilePathResult
+        :return: The created [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -670,11 +690,11 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.BadRequestResult](Microsoft.AspNet.Mvc.BadRequestResult.yml) that produces a Bad Request (400) response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.BadRequestResult
+        :return: The created [Microsoft.AspNet.Mvc.BadRequestResult](Microsoft.AspNet.Mvc.BadRequestResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -685,13 +705,13 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) that produces a Bad Request (400) response.
     
         
         :param modelState: 
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.BadRequestObjectResult
+        :return: The created [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -702,13 +722,13 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) that produces a Bad Request (400) response.
     
         
         :param error: 
         :type error: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.BadRequestObjectResult
+        :return: The created [Microsoft.AspNet.Mvc.BadRequestObjectResult](Microsoft.AspNet.Mvc.BadRequestObjectResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -719,11 +739,11 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.HttpNotFoundResult](Microsoft.AspNet.Mvc.HttpNotFoundResult.yml) that produces a Not Found (404) response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.HttpNotFoundResult
+        :return: The created [Microsoft.AspNet.Mvc.HttpNotFoundResult](Microsoft.AspNet.Mvc.HttpNotFoundResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -734,13 +754,13 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.HttpNotFoundObjectResult](Microsoft.AspNet.Mvc.HttpNotFoundObjectResult.yml) that produces a Not Found (404) response.
     
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.HttpNotFoundObjectResult
+        :return: The created [Microsoft.AspNet.Mvc.HttpNotFoundObjectResult](Microsoft.AspNet.Mvc.HttpNotFoundObjectResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -751,11 +771,11 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.HttpUnauthorizedResult](Microsoft.AspNet.Mvc.HttpUnauthorizedResult.yml) that produces an Unauthorized (401) response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.HttpUnauthorizedResult
+        :return: The created [Microsoft.AspNet.Mvc.HttpUnauthorizedResult](Microsoft.AspNet.Mvc.HttpUnauthorizedResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -766,13 +786,17 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) object that serializes the specified
+        <paramref name="data" /> object
+        to JSON.
     
         
         :param data: The object to serialize.
         :type data: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.JsonResult
+        :return: The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified
+    <paramref name="data" />
+    to JSON format for the response.
     
         
         .. code-block:: csharp
@@ -783,8 +807,9 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) object that serializes the specified
+        <paramref name="data" /> object
+        to JSON.
     
         
         :param data: The object to serialize.
@@ -792,7 +817,10 @@ Methods
         :param serializerSettings: The @!:JsonSerializerSettings- to be used by
     the formatter.
         :type serializerSettings: JsonSerializerSettings
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.JsonResult
+        :return: The created [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) that serializes the specified
+    <paramref name="data" />
+    as JSON format for the response.
     
         
         .. code-block:: csharp
@@ -803,8 +831,7 @@ Methods
     
         
     
-        
-        
+        Called after the action method is invoked.
     
         
         :param context: The action executed context.
@@ -819,8 +846,7 @@ Methods
     
         
     
-        
-        
+        Called before the action method is invoked.
     
         
         :param context: The action executing context.
@@ -835,8 +861,7 @@ Methods
     
         
     
-        
-        
+        Called before the action method is invoked.
     
         
         :param context: The action executing context.
@@ -844,7 +869,8 @@ Methods
         :param next: The [Microsoft.AspNet.Mvc.ActionExecutionDelegate]() to execute. Invoke this delegate in the body
     of [Microsoft.AspNet.Mvc.Controller.OnActionExecutionAsync(Microsoft.AspNet.Mvc.ActionExecutingContext,Microsoft.AspNet.Mvc.ActionExecutionDelegate)](Microsoft.AspNet.Mvc.Controller.yml) to continue execution of the action.
         :type next: Microsoft.AspNet.Mvc.ActionExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() instance.
     
         
         .. code-block:: csharp
@@ -855,11 +881,11 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object that renders a partial view to the response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.PartialViewResult
+        :return: The created [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -870,13 +896,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object by specifying a
+        <paramref name="model" />
+        to be rendered by the partial view.
     
         
         :param model: The model that is rendered by the partial view.
         :type model: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.PartialViewResult
+        :return: The created [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -887,13 +915,14 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object by specifying a
+        <paramref name="viewName" />.
     
         
         :param viewName: The name of the view that is rendered to the response.
         :type viewName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.PartialViewResult
+        :return: The created [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -904,15 +933,18 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object by specifying a
+        <paramref name="viewName" />
+        and the
+        <paramref name="model" /> to be rendered by the partial view.
     
         
         :param viewName: The name of the partial view that is rendered to the response.
         :type viewName: System.String
         :param model: The model that is rendered by the partial view.
         :type model: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.PartialViewResult
+        :return: The created [Microsoft.AspNet.Mvc.PartialViewResult](Microsoft.AspNet.Mvc.PartialViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -923,13 +955,14 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.RedirectResult](Microsoft.AspNet.Mvc.RedirectResult.yml) object that redirects to the specified
+        <paramref name="url" />.
     
         
         :param url: The URL to redirect to.
         :type url: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectResult](Microsoft.AspNet.Mvc.RedirectResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -940,13 +973,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.RedirectResult](Microsoft.AspNet.Mvc.RedirectResult.yml) object with [Microsoft.AspNet.Mvc.RedirectResult.Permanent](Microsoft.AspNet.Mvc.RedirectResult.yml) set to true
+        using the specified
+        <paramref name="url" />.
     
         
         :param url: The URL to redirect to.
         :type url: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectResult](Microsoft.AspNet.Mvc.RedirectResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -957,13 +992,14 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action using the
+        <paramref name="actionName" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -974,15 +1010,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action using the
+        <paramref name="actionName" />
+        and
+        <paramref name="routeValues" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -993,15 +1032,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action using the
+        <paramref name="actionName" />
+        and the
+        <paramref name="controllerName" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
         :param controllerName: The name of the controller.
         :type controllerName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1012,8 +1054,11 @@ Methods
     
         
     
+        Redirects to the specified action using the specified
+        <paramref name="actionName" />,
         
-        
+        <paramref name="controllerName" />, and
+        <paramref name="routeValues" />.
     
         
         :param actionName: The name of the action.
@@ -1022,7 +1067,8 @@ Methods
         :type controllerName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1033,13 +1079,15 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action with [Microsoft.AspNet.Mvc.RedirectToActionResult.Permanent](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) set to true
+        using the specified
+        <paramref name="actionName" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1050,15 +1098,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action with [Microsoft.AspNet.Mvc.RedirectToActionResult.Permanent](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) set to true
+        using the specified
+        <paramref name="actionName" /> and
+        <paramref name="routeValues" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1069,15 +1120,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action with [Microsoft.AspNet.Mvc.RedirectToActionResult.Permanent](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) set to true
+        using the specified
+        <paramref name="actionName" /> and
+        <paramref name="controllerName" />.
     
         
         :param actionName: The name of the action.
         :type actionName: System.String
         :param controllerName: The name of the controller.
         :type controllerName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1088,8 +1142,12 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified action with [Microsoft.AspNet.Mvc.RedirectToActionResult.Permanent](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) set to true
+        using the specified
+        <paramref name="actionName" />,
+        <paramref name="controllerName" />,
+        and
+        <paramref name="routeValues" />.
     
         
         :param actionName: The name of the action.
@@ -1098,7 +1156,8 @@ Methods
         :type controllerName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToActionResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToActionResult](Microsoft.AspNet.Mvc.RedirectToActionResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1109,13 +1168,14 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route using the specified
+        <paramref name="routeValues" />.
     
         
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1126,13 +1186,14 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route using the specified
+        <paramref name="routeName" />.
     
         
         :param routeName: The name of the route.
         :type routeName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1143,15 +1204,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route using the specified
+        <paramref name="routeName" />
+        and
+        <paramref name="routeValues" />.
     
         
         :param routeName: The name of the route.
         :type routeName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1162,13 +1226,15 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route with [Microsoft.AspNet.Mvc.RedirectToRouteResult.Permanent](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) set to true
+        using the specified
+        <paramref name="routeValues" />.
     
         
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1179,13 +1245,15 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route with [Microsoft.AspNet.Mvc.RedirectToRouteResult.Permanent](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) set to true
+        using the specified
+        <paramref name="routeName" />.
     
         
         :param routeName: The name of the route.
         :type routeName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1196,15 +1264,18 @@ Methods
     
         
     
-        
-        
+        Redirects to the specified route with [Microsoft.AspNet.Mvc.RedirectToRouteResult.Permanent](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) set to true
+        using the specified
+        <paramref name="routeName" /> and
+        <paramref name="routeValues" />.
     
         
         :param routeName: The name of the route.
         :type routeName: System.String
         :param routeValues: The parameters for a route.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RedirectToRouteResult
+        :return: The created [Microsoft.AspNet.Mvc.RedirectToRouteResult](Microsoft.AspNet.Mvc.RedirectToRouteResult.yml) for the response.
     
         
         .. code-block:: csharp
@@ -1215,8 +1286,10 @@ Methods
     
         
     
-        
-        
+        Updates the specified
+        <paramref name="model" /> instance using values from the controller's current
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() and a
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1225,7 +1298,9 @@ Methods
         :type modelType: System.Type
         :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1236,8 +1311,11 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the
+        <paramref name="valueProvider" /> and a
         
-        
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1251,7 +1329,9 @@ Methods
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
         :param predicate: A predicate which can be used to filter properties at runtime.
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1262,13 +1342,16 @@ Methods
     
         
     
-        
-        
+        Updates the specified
+        <paramref name="model" /> instance using values from the controller's current
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]().
     
         
         :param model: The model instance to update.
         :type model: TModel
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1279,15 +1362,19 @@ Methods
     
         
     
-        
-        
+        Updates the specified
+        <paramref name="model" /> instance using values from the controller's current
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() and a
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
         :type model: TModel
         :param prefix: The prefix to use when looking up values in the current [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]()
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1298,8 +1385,11 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the
+        <paramref name="valueProvider" /> and a
         
-        
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1309,7 +1399,9 @@ Methods
         :type prefix: System.String
         :param valueProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() used for looking up values.
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1320,8 +1412,11 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the
+        <paramref name="valueProvider" /> and a
         
-        
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1333,7 +1428,9 @@ Methods
         :type valueProvider: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
         :param predicate: A predicate which can be used to filter properties at runtime.
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1344,8 +1441,11 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the
+        <paramref name="valueProvider" /> and a
         
-        
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1358,7 +1458,9 @@ Methods
         :param includeExpressions: [System.Linq.Expressions.Expression]()(s) which represent top-level properties
     which need to be included for the current model.
         :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1369,8 +1471,10 @@ Methods
     
         
     
-        
-        
+        Updates the specified
+        <paramref name="model" /> instance using values from the controller's current
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() and a
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1379,7 +1483,9 @@ Methods
         :type prefix: System.String
         :param predicate: A predicate which can be used to filter properties at runtime.
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1390,8 +1496,10 @@ Methods
     
         
     
-        
-        
+        Updates the specified
+        <paramref name="model" /> instance using values from the controller's current
+        [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() and a
+        <paramref name="prefix" />.
     
         
         :param model: The model instance to update.
@@ -1401,7 +1509,9 @@ Methods
         :param includeExpressions: [System.Linq.Expressions.Expression]()(s) which represent top-level properties
     which need to be included for the current model.
         :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -1412,13 +1522,15 @@ Methods
     
         
     
-        
-        
+        Validates the specified
+        <paramref name="model" /> instance.
     
         
         :param model: The model to validate.
         :type model: System.Object
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid;
+    <c>false</c> otherwise.
     
         
         .. code-block:: csharp
@@ -1429,15 +1541,17 @@ Methods
     
         
     
-        
-        
+        Validates the specified
+        <paramref name="model" /> instance.
     
         
         :param model: The model to validate.
         :type model: System.Object
         :param prefix: The key to use when looking up information in [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml).
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the [Microsoft.AspNet.Mvc.Controller.ModelState](Microsoft.AspNet.Mvc.Controller.yml) is valid;
+    <c>false</c> otherwise.
     
         
         .. code-block:: csharp
@@ -1448,11 +1562,11 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object that renders a view to the response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewResult
+        :return: The created [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -1463,13 +1577,15 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object by specifying a
+        <paramref name="model" />
+        to be rendered by the view.
     
         
         :param model: The model that is rendered by the view.
         :type model: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewResult
+        :return: The created [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -1480,13 +1596,14 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object by specifying a
+        <paramref name="viewName" />.
     
         
         :param viewName: The name of the view that is rendered to the response.
         :type viewName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewResult
+        :return: The created [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object for the response.
     
         
         .. code-block:: csharp
@@ -1497,15 +1614,18 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object by specifying a
+        <paramref name="viewName" />
+        and the
+        <paramref name="model" /> to be rendered by the view.
     
         
         :param viewName: The name of the view that is rendered to the response.
         :type viewName: System.String
         :param model: The model that is rendered by the view.
         :type model: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewResult
+        :return: The created [Microsoft.AspNet.Mvc.ViewResult](Microsoft.AspNet.Mvc.ViewResult.yml) object for the response.
     
         
         .. code-block:: csharp

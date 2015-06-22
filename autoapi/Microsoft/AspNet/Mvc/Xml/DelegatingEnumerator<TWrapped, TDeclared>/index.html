@@ -139,7 +139,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -234,7 +233,10 @@ with the supplied [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.M
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Xml.DelegatingEnumerator&lt;TWrapped, TDeclared&gt;.DelegatingEnumerator">
 <code class="descname">DelegatingEnumerator</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerator&lt;TDeclared&gt;</em>, <em>Microsoft.AspNet.Mvc.Xml.IWrapperProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.DelegatingEnumerator<TWrapped, TDeclared>.DelegatingEnumerator" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a [Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2](Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2.yml) which enumerates
+over the elements of the original enumerator and wraps them using the supplied
+[Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -264,7 +266,7 @@ with the supplied [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.M
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">TWrapped</td>
 </tr>
 </tbody>
 </table>
@@ -280,7 +282,7 @@ with the supplied [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.M
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -310,7 +312,7 @@ with the supplied [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.M
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>

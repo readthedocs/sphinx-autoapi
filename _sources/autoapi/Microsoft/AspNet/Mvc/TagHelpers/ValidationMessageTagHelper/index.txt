@@ -20,6 +20,7 @@ attribute.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ValidationMessageTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ValidationMessageTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Name to be validated on the current model.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
     
         
         .. code-block:: csharp
@@ -99,7 +98,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ValidationMessageTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -109,7 +108,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ValidationMessageTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -131,7 +130,7 @@ Methods
         :type context: TagHelperContext
         :param output: 
         :type output: TagHelperOutput
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

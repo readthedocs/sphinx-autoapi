@@ -160,7 +160,8 @@ model binding.</p>
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.ResourceExecutingContext">
 <code class="descname">ResourceExecutingContext</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionContext</em>, <em>System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IFilter&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.ResourceExecutingContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ResourceExecutingContext](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -186,11 +187,12 @@ model binding.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.InputFormatters">
 <code class="descname">InputFormatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.InputFormatters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of [Microsoft.AspNet.Mvc.IInputFormatter](Microsoft.AspNet.Mvc.IInputFormatter.yml) instances used by model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}</td>
 </tr>
 </tbody>
 </table>
@@ -202,11 +204,12 @@ model binding.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.ModelBinders">
 <code class="descname">ModelBinders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.ModelBinders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml) instances used by model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}</td>
 </tr>
 </tbody>
 </table>
@@ -218,11 +221,12 @@ model binding.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.OutputFormatters">
 <code class="descname">OutputFormatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.OutputFormatters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of [Microsoft.AspNet.Mvc.IOutputFormatter](Microsoft.AspNet.Mvc.IOutputFormatter.yml) instances used to format the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IOutputFormatter}</td>
 </tr>
 </tbody>
 </table>
@@ -234,11 +238,12 @@ model binding.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.Result">
 <code class="descname">Result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.Result" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the result of the action to be executed.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.IActionResult</td>
 </tr>
 </tbody>
 </table>
@@ -250,11 +255,12 @@ model binding.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.ValidatorProviders">
 <code class="descname">ValidatorProviders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.ValidatorProviders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider.yml) instances used by model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider}</td>
 </tr>
 </tbody>
 </table>
@@ -266,11 +272,12 @@ model binding.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutingContext.ValueProviderFactories">
 <code class="descname">ValueProviderFactories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutingContext.ValueProviderFactories" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of [Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory](Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory.yml) instances used by model binding.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}</td>
 </tr>
 </tbody>
 </table>

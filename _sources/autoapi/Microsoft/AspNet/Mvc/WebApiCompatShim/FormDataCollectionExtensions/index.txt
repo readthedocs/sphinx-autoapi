@@ -13,6 +13,7 @@ FormDataCollectionExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param formData: 
         :type formData: FormDataCollection
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     
         
         .. code-block:: csharp
@@ -67,7 +68,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ Operation<TModel> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -117,7 +118,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>.ShouldSerializevalue()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

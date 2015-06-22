@@ -22,6 +22,7 @@ Represents an entity which can provide model name as metadata.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Model name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

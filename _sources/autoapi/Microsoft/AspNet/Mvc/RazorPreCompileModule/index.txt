@@ -18,6 +18,7 @@ An @!:ICompileModule- implementation that pre-compiles Razor views in the applic
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ICompileModule`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new [Microsoft.AspNet.Mvc.RazorPreCompileModule](Microsoft.AspNet.Mvc.RazorPreCompileModule.yml) instance.
     
         
         :param services: The [System.IServiceProvider]() for the application.
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that determines if symbols (.pdb) file for the precompiled views is generated.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

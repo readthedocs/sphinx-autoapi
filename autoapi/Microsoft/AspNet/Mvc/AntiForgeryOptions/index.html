@@ -171,11 +171,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AntiForgeryOptions.CookieName">
 <code class="descname">CookieName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgeryOptions.CookieName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Specifies the name of the cookie that is used by the anti-forgery
+system.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -187,11 +189,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AntiForgeryOptions.FormFieldName">
 <code class="descname">FormFieldName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgeryOptions.FormFieldName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Specifies the name of the anti-forgery token field that is used by the anti-forgery system.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -203,11 +206,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AntiForgeryOptions.RequireSSL">
 <code class="descname">RequireSSL</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgeryOptions.RequireSSL" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Specifies whether SSL is required for the anti-forgery system
+to operate. If this setting is &#8216;true&#8217; and a non-SSL request
+comes into the system, all anti-forgery APIs will fail.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -219,11 +225,15 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AntiForgeryOptions.SuppressXFrameOptionsHeader">
 <code class="descname">SuppressXFrameOptionsHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AntiForgeryOptions.SuppressXFrameOptionsHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Specifies whether to suppress the generation of X-Frame-Options header
+which is used to prevent ClickJacking. By default, the X-Frame-Options
+header is generated with the value SAMEORIGIN. If this setting is &#8216;true&#8217;,
+the X-Frame-Options header will not be generated for the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>

@@ -149,11 +149,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.IsLayoutBeingRendered">
 <code class="descname">IsLayoutBeingRendered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.IsLayoutBeingRendered" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a flag that determines if the layout of this page is being rendered.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -165,11 +166,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.IsPartial">
 <code class="descname">IsPartial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.IsPartial" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value that determines if the current instance of [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) is being executed
+from a partial view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -181,11 +184,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.Layout">
 <code class="descname">Layout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.Layout" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the path of a layout page.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -197,11 +201,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.PageExecutionContext">
 <code class="descname">PageExecutionContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.PageExecutionContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext]() instance used to instrument the page execution.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext</td>
 </tr>
 </tbody>
 </table>
@@ -213,11 +218,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.Path">
 <code class="descname">Path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.Path" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the application base relative path to the page.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -229,11 +235,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.PreviousSectionWriters">
 <code class="descname">PreviousSectionWriters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.PreviousSectionWriters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the sections that can be rendered by this page.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}</td>
 </tr>
 </tbody>
 </table>
@@ -245,11 +252,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.RenderBodyDelegate">
 <code class="descname">RenderBodyDelegate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.RenderBodyDelegate" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the action invoked to render the body.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Action{System.IO.TextWriter}</td>
 </tr>
 </tbody>
 </table>
@@ -261,11 +269,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.SectionWriters">
 <code class="descname">SectionWriters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.SectionWriters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the sections that are defined by this page.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}</td>
 </tr>
 </tbody>
 </table>
@@ -277,11 +286,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorPage.ViewContext">
 <code class="descname">ViewContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorPage.ViewContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the view context of the renderign view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>
@@ -299,7 +309,9 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.IRazorPage.EnsureRenderedBodyOrSections()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">EnsureRenderedBodyOrSections</span><span class="p">()</span>
+<dd><p>Verifies that all sections defined in [Microsoft.AspNet.Mvc.Razor.IRazorPage.PreviousSectionWriters](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) were rendered, or
+the body was rendered if no sections were defined.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">EnsureRenderedBodyOrSections</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -307,11 +319,14 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.IRazorPage.ExecuteAsync()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Renders the page and writes the output to the [Microsoft.AspNet.Mvc.ViewContext.Writer]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Threading.Tasks.Task</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A task representing the result of executing the page.</td>
 </tr>
 </tbody>
 </table>

@@ -22,6 +22,7 @@ Represents properties and methods that are used by [Microsoft.AspNet.Mvc.Razor.R
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a flag that determines if the layout of this page is being rendered.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -69,11 +69,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that determines if the current instance of [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) is being executed
+        from a partial view.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the path of a layout page.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -99,11 +98,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext]() instance used to instrument the page execution.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext
     
         
         .. code-block:: csharp
@@ -114,11 +112,10 @@ Properties
     
         
     
-        
-        
+        Gets the application base relative path to the page.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -129,11 +126,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the sections that can be rendered by this page.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}
     
         
         .. code-block:: csharp
@@ -144,11 +140,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the action invoked to render the body.
     
         
-        :rtype: 
+        :rtype: System.Action{System.IO.TextWriter}
     
         
         .. code-block:: csharp
@@ -159,11 +154,10 @@ Properties
     
         
     
-        
-        
+        Gets the sections that are defined by this page.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}
     
         
         .. code-block:: csharp
@@ -174,11 +168,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the view context of the renderign view.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -197,8 +190,8 @@ Methods
     
         
     
-        
-        
+        Verifies that all sections defined in [Microsoft.AspNet.Mvc.Razor.IRazorPage.PreviousSectionWriters](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) were rendered, or
+        the body was rendered if no sections were defined.
     
         
     
@@ -211,11 +204,11 @@ Methods
     
         
     
-        
-        
+        Renders the page and writes the output to the [Microsoft.AspNet.Mvc.ViewContext.Writer]().
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A task representing the result of executing the page.
     
         
         .. code-block:: csharp

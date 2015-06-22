@@ -23,6 +23,7 @@ Provides metadata information about the response format to an
 
 
 
+
 Syntax
 ------
 
@@ -55,8 +56,10 @@ Methods
     
         
     
-        
-        
+        Gets a filtered list of content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]()
+        for the
+        <paramref name="declaredType" /> and
+        <paramref name="contentType" />.
     
         
         :param declaredType: The declared type for which the supported content types are desired.
@@ -67,7 +70,8 @@ Methods
     <c>null</c> if any content
     type can be used.
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}
+        :return: Content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]().
     
         
         .. code-block:: csharp

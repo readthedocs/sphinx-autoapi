@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) class.
     
         
         :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
@@ -77,8 +77,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) class.
     
         
         :param encoding: The [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) in which output is written.
@@ -103,11 +102,10 @@ Properties
     
         
     
-        
-        
+        The @!:TagHelperContent- this [Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter](Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.yml) writes to.
     
         
-        :rtype: 
+        :rtype: TagHelperContent
     
         
         .. code-block:: csharp
@@ -117,7 +115,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.Encoding
     
         
-        :rtype: 
+        :rtype: System.Text.Encoding
     
         
         .. code-block:: csharp
@@ -135,7 +133,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.TagHelperContentWrapperTextWriter.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

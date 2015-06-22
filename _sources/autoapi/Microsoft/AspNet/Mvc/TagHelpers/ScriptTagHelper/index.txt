@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).
     
         
         :param logger: The
@@ -92,11 +92,10 @@ Properties
     
         
     
-        
-        
+        Value indicating if file version should be appended to src urls.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Boolean}
     
         
         .. code-block:: csharp
@@ -106,7 +105,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.Cache
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -117,11 +116,10 @@ Properties
     
         
     
-        
-        
+        The URL of a Script tag to fallback to in the case the primary one fails.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -132,11 +130,13 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of JavaScript scripts to exclude from the fallback list, in
+        the case the primary one fails.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.FallbackSrcInclude](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -147,11 +147,12 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of JavaScript scripts to fallback to in the case the
+        primary one fails.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -162,11 +163,10 @@ Properties
     
         
     
-        
-        
+        The script method defined in the primary script to use for the fallback test.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -176,7 +176,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.GlobbingUrlBuilder
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
     
         
         .. code-block:: csharp
@@ -186,7 +186,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.HostingEnvironment
     
         
-        :rtype: 
+        :rtype: IHostingEnvironment
     
         
         .. code-block:: csharp
@@ -196,7 +196,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.HtmlEncoder
     
         
-        :rtype: 
+        :rtype: IHtmlEncoder
     
         
         .. code-block:: csharp
@@ -206,7 +206,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.JavaScriptEncoder
     
         
-        :rtype: 
+        :rtype: IJavaScriptStringEncoder
     
         
         .. code-block:: csharp
@@ -216,7 +216,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.Logger
     
         
-        :rtype: 
+        :rtype: ILogger{Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper}
     
         
         .. code-block:: csharp
@@ -227,11 +227,10 @@ Properties
     
         
     
-        
-        
+        Address of the external script to use.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -242,11 +241,12 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of JavaScript scripts to exclude from loading.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.SrcInclude](Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -257,11 +257,11 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of JavaScript scripts to load.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -271,7 +271,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ScriptTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -293,7 +293,7 @@ Methods
         :type context: TagHelperContext
         :param output: 
         :type output: TagHelperOutput
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

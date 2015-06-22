@@ -13,6 +13,7 @@ ObjectResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ObjectResult.ContentTypes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         
         .. code-block:: csharp
@@ -83,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ObjectResult.DeclaredType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -93,7 +94,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ObjectResult.Formatters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IOutputFormatter}
     
         
         .. code-block:: csharp
@@ -104,11 +105,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTTP status code.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -118,7 +118,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ObjectResult.Value
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -138,7 +138,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -149,8 +149,7 @@ Methods
     
         
     
-        
-        
+        This method is called before the formatter writes to the output stream.
     
         
         :param context: 
@@ -168,7 +167,7 @@ Methods
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
         :param formatters: 
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp
@@ -182,7 +181,7 @@ Methods
         :type formatterContext: Microsoft.AspNet.Mvc.OutputFormatterContext
         :param formatters: 
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp
@@ -198,7 +197,7 @@ Methods
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
         :param acceptableContentTypes: 
         :type acceptableContentTypes: System.Collections.Generic.IEnumerable{MediaTypeHeaderValue}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp
@@ -214,7 +213,7 @@ Methods
         :type formatters: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.IOutputFormatter}
         :param sortedAcceptHeaders: 
         :type sortedAcceptHeaders: System.Collections.Generic.IEnumerable{MediaTypeHeaderValue}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp

@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.CompositeValueProvider()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompositeValueProvider</span><span class="p">()</span>
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">CompositeValueProvider</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -166,7 +167,8 @@
 <dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.CompositeValueProvider">
 <code class="descname">CompositeValueProvider</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.ModelBinding.IValueProvider&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.CompositeValueProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -213,7 +215,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{System.Boolean}</p>
 </td>
 </tr>
 </tbody>
@@ -226,7 +228,11 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Create">
 <code class="descname">Create</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory&gt;</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Create" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml) from the provided
+&lt;paramref name=&#8221;context&#8221; /&gt;
+and
+&lt;paramref name=&#8221;factories&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -236,16 +242,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider](Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.yml) containing all [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() instances</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">CompositeValueProvider</span> <span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IValueProviderFactory</span><span class="p">&gt;</span> <span class="n">factories</span><span class="p">,</span> <span class="n">ValueProviderFactoryContext</span> <span class="n">context</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>created.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">CompositeValueProvider</span> <span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IValueProviderFactory</span><span class="p">&gt;</span> <span class="n">factories</span><span class="p">,</span> <span class="n">ValueProviderFactoryContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Filter">
 <code class="descname">Filter</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.CompositeValueProvider.Filter" title="Permalink to this definition">¶</a></dt>
@@ -258,7 +270,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</p>
 </td>
 </tr>
 </tbody>
@@ -280,7 +292,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.String}}</p>
 </td>
 </tr>
 </tbody>
@@ -302,7 +314,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}</p>
 </td>
 </tr>
 </tbody>

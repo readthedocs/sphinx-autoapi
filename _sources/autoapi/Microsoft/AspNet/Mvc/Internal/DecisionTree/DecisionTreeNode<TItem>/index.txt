@@ -13,6 +13,7 @@ DecisionTreeNode<TItem> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionTreeNode<TItem>.Criteria
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterion{{TItem}}}
     
         
         .. code-block:: csharp
@@ -63,7 +64,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionTreeNode<TItem>.Matches
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{{TItem}}
     
         
         .. code-block:: csharp

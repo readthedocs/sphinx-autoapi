@@ -18,6 +18,7 @@ A default implementation of [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentD
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorCollectionProvider](Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorCollectionProvider.yml).
     
         
         :param descriptorProvider: The [Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider](Microsoft.AspNet.Mvc.ViewComponents.IViewComponentDescriptorProvider.yml).
@@ -82,7 +82,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewComponents.DefaultViewComponentDescriptorCollectionProvider.ViewComponents
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptorCollection
     
         
         .. code-block:: csharp

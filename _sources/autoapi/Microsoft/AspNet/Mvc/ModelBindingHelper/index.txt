@@ -13,6 +13,7 @@ ModelBindingHelper Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Clears [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() entries for [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param modelType: 
@@ -79,7 +79,7 @@ Methods
         :type modelType: System.Type
         :param values: 
         :type values: System.Collections.Generic.IList{{T}}
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -90,15 +90,15 @@ Methods
     
         
     
-        
-        
+        Creates an expression for a predicate to limit the set of properties used in model binding.
     
         
         :param prefix: The model prefix.
         :type prefix: System.String
         :param expressions: Expressions identifying the properties to allow for binding.
         :type expressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
-        :rtype: 
+        :rtype: System.Linq.Expressions.Expression{System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}}
+        :return: An expression which can be used with [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider]().
     
         
         .. code-block:: csharp
@@ -109,8 +109,13 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the specified
+        <paramref name="modelBinder" />
+        and the specified
+        <paramref name="valueProvider" /> and executes validation using the specified
         
-        
+        <paramref name="validatorProvider" />.
     
         
         :param model: The model instance to update and validate.
@@ -139,7 +144,9 @@ Methods
         :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
     on the model instance.
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -150,8 +157,13 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the specified
+        <paramref name="modelBinder" />
+        and the specified
+        <paramref name="valueProvider" /> and executes validation using the specified
         
-        
+        <paramref name="validatorProvider" />.
     
         
         :param model: The model instance to update and validate.
@@ -183,7 +195,9 @@ Methods
         :param predicate: A predicate which can be used to
     filter properties(for inclusion/exclusion) at runtime.
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -194,8 +208,13 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the specified
+        <paramref name="modelBinder" />
+        and the specified
+        <paramref name="valueProvider" /> and executes validation using the specified
         
-        
+        <paramref name="validatorProvider" />.
     
         
         :param model: The model instance to update and validate.
@@ -222,7 +241,9 @@ Methods
         :param validatorProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]() used for executing validation
     on the model instance.
         :type validatorProvider: Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -233,8 +254,13 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the specified
+        <paramref name="modelBinder" />
+        and the specified
+        <paramref name="valueProvider" /> and executes validation using the specified
         
-        
+        <paramref name="validatorProvider" />.
     
         
         :param model: The model instance to update and validate.
@@ -264,7 +290,9 @@ Methods
         :param predicate: A predicate which can be used to
     filter properties(for inclusion/exclusion) at runtime.
         :type predicate: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp
@@ -275,8 +303,13 @@ Methods
     
         
     
+        Updates the specified
+        <paramref name="model" /> instance using the specified
+        <paramref name="modelBinder" />
+        and the specified
+        <paramref name="valueProvider" /> and executes validation using the specified
         
-        
+        <paramref name="validatorProvider" />.
     
         
         :param model: The model instance to update and validate.
@@ -307,7 +340,9 @@ Methods
         :param includeExpressions: Expression(s) which represent top level properties
     which need to be included for the current model.
         :type includeExpressions: System.Linq.Expressions.Expression{System.Func{{TModel},System.Object}}[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
+        :return: A [System.Threading.Tasks.Task]() that on completion returns
+    <c>true</c> if the update is successful
     
         
         .. code-block:: csharp

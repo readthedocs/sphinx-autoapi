@@ -13,6 +13,7 @@ ControllerActionInvokerProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Core.ControllerActionInvokerProvider.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

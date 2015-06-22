@@ -22,6 +22,7 @@ Provides methods for discovery of controller types.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets a [System.Collections.Generic.IEnumerable`1]() of controller [System.Reflection.TypeInfo]()s.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     
         
         .. code-block:: csharp

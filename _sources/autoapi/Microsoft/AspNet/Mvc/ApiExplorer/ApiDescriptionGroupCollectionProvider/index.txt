@@ -13,6 +13,7 @@ ApiDescriptionGroupCollectionProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollectionProvider](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollectionProvider.yml).
     
         
         :param actionDescriptorCollectionProvider: The [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider]().
@@ -79,7 +79,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollectionProvider.ApiDescriptionGroups
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection
     
         
         .. code-block:: csharp

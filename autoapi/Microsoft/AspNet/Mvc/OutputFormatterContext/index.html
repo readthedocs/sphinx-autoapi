@@ -157,11 +157,12 @@ output content negotiation and in writing out the response.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.DeclaredType">
 <code class="descname">DeclaredType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.DeclaredType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The declared return type of the action.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -173,11 +174,13 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.FailedContentNegotiation">
 <code class="descname">FailedContentNegotiation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.FailedContentNegotiation" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a flag to indicate that content-negotiation could not find a formatter based on the
+information on the &#64;!:Http.HttpRequest-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -189,11 +192,12 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.HttpContext">
 <code class="descname">HttpContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.HttpContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.OutputFormatterContext.HttpContext](Microsoft.AspNet.Mvc.OutputFormatterContext.yml) context associated with the current operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">HttpContext</td>
 </tr>
 </tbody>
 </table>
@@ -205,11 +209,12 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.Object">
 <code class="descname">Object</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.Object" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The return value of the action method.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -221,11 +226,12 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.SelectedContentType">
 <code class="descname">SelectedContentType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.SelectedContentType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The content type which is chosen by the selected formatter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">MediaTypeHeaderValue</td>
 </tr>
 </tbody>
 </table>
@@ -237,11 +243,12 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.SelectedEncoding">
 <code class="descname">SelectedEncoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.SelectedEncoding" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The encoding which is chosen by the selected formatter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Text.Encoding</td>
 </tr>
 </tbody>
 </table>
@@ -253,11 +260,12 @@ output content negotiation and in writing out the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatterContext.StatusCode">
 <code class="descname">StatusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatterContext.StatusCode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the status code that should be used for the response when successfully formatting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>

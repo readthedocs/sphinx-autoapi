@@ -18,6 +18,7 @@ Provides programmatic configuration for JSON in the MVC framework.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:JsonSerializerSettings- that are used by this application.
     
         
-        :rtype: 
+        :rtype: JsonSerializerSettings
     
         
         .. code-block:: csharp

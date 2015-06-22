@@ -13,6 +13,7 @@ ViewDataDictionary Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
         :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
@@ -73,8 +73,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
         :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
@@ -96,8 +95,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class.
     
         
         :param metadataProvider: [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]() instance used to calculate
@@ -117,8 +115,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class based entirely on an existing
+        instance.
     
         
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
@@ -133,8 +131,11 @@ Constructors
     
         
     
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class based in part on an existing
+        instance. This constructor is careful to avoid exceptions [Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel(System.Object)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) may throw when
         
-        
+        <paramref name="model" /> is
+        <c>null</c>.
     
         
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
@@ -151,8 +152,11 @@ Constructors
     
         
     
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class based in part on an existing
+        instance. This constructor is careful to avoid exceptions [Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel(System.Object)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) may throw when
         
-        
+        <paramref name="model" /> is
+        <c>null</c>.
     
         
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
@@ -173,8 +177,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) class based in part on an existing
+        instance.
     
         
         :param source: [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance to copy initial values from.
@@ -200,7 +204,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.Count
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -210,7 +214,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.IsReadOnly
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -220,7 +224,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.Item[System.String]
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -230,7 +234,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.Keys
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{System.String}
     
         
         .. code-block:: csharp
@@ -240,7 +244,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.Model
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -251,11 +255,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelExplorer](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) for the [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         
         .. code-block:: csharp
@@ -266,11 +269,12 @@ Properties
     
         
     
-        
-        
+        [Microsoft.AspNet.Mvc.ViewDataDictionary.ModelMetadata](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) for the current [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) value or the declared [System.Type]() if
+        [Microsoft.AspNet.Mvc.ViewDataDictionary.Model](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) is
+        <c>null</c>.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -280,7 +284,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.ModelState
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -290,7 +294,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.TemplateInfo
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TemplateInfo
     
         
         .. code-block:: csharp
@@ -300,7 +304,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary.Values
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{System.Object}
     
         
         .. code-block:: csharp
@@ -353,7 +357,7 @@ Methods
         
         :param item: 
         :type item: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -365,7 +369,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -389,13 +393,15 @@ Methods
     
         
     
-        
-        
+        Gets value of named
+        <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
-        :rtype: 
+        :rtype: System.Object
+        :return: Value of named
+    <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         .. code-block:: csharp
@@ -406,15 +412,21 @@ Methods
     
         
     
-        
-        
+        Gets value of named
+        <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted
+        using given
+        <paramref name="format" />.
     
         
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
         :param format: The composite format [System.String]() (see http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: Value of named
+    <paramref name="expression" /> in this [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml), formatted using
+    given
+    <paramref name="format" />.
     
         
         .. code-block:: csharp
@@ -428,7 +440,7 @@ Methods
         :type value: System.Object
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -439,13 +451,17 @@ Methods
     
         
     
-        
-        
+        Gets [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+        <paramref name="expression" /> in this
+        [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+    <paramref name="expression" /> in this
+    [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
         .. code-block:: csharp
@@ -457,7 +473,7 @@ Methods
         
         :param item: 
         :type item: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -469,7 +485,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -490,7 +506,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -500,7 +516,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ViewDataDictionary.System.Collections.IEnumerable.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerator
     
         
         .. code-block:: csharp
@@ -514,7 +530,7 @@ Methods
         :type key: System.String
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Writes an object to the output stream.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml) class.
     
         
     
@@ -81,11 +81,12 @@ Properties
     
         
     
-        
-        
+        Gets the mutable collection of character encodings supported by
+        this [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml). The encodings are
+        used when writing the data.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.Text.Encoding}
     
         
         .. code-block:: csharp
@@ -96,11 +97,11 @@ Properties
     
         
     
-        
-        
+        Gets the mutable collection of @!:MediaTypeHeaderValue- elements supported by
+        this [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         
         .. code-block:: csharp
@@ -122,7 +123,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :param contentType: 
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -133,15 +134,16 @@ Methods
     
         
     
-        
-        
+        Returns a value indicating whether or not the given type can be written by this serializer.
     
         
         :param declaredType: The declared type.
         :type declaredType: System.Type
         :param runtimeType: The runtime type.
         :type runtimeType: System.Type
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the type can be written, otherwise
+    <c>false</c>.
     
         
         .. code-block:: csharp
@@ -157,7 +159,7 @@ Methods
         :type runtimeType: System.Type
         :param contentType: 
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}
     
         
         .. code-block:: csharp
@@ -168,13 +170,15 @@ Methods
     
         
     
-        
-        
+        Determines the best [System.Text.Encoding]() amongst the supported encodings
+        for reading or writing an HTTP entity body based on the provided
+        <paramref name="contentTypeHeader" />.
     
         
         :param context: The formatter context associated with the call.
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Text.Encoding
+        :return: The [System.Text.Encoding]() to use when reading the request or writing the response.
     
         
         .. code-block:: csharp
@@ -186,7 +190,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -197,13 +201,13 @@ Methods
     
         
     
-        
-        
+        Writes the response body.
     
         
         :param context: The formatter context associated with the call.
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A task which can write the response body.
     
         
         .. code-block:: csharp
@@ -214,8 +218,7 @@ Methods
     
         
     
-        
-        
+        Sets the headers on @!:Microsoft.AspNet.Http.HttpResponse- object.
     
         
         :param context: The formatter context associated with the call.

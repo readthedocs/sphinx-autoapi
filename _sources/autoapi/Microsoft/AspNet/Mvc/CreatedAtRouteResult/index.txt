@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ActionResult]() that returns a Created (201) response w
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) class with the values
+        provided.
     
         
         :param routeValues: The route data to use for generating the URL.
@@ -79,8 +80,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.CreatedAtRouteResult](Microsoft.AspNet.Mvc.CreatedAtRouteResult.yml) class with the values
+        provided.
     
         
         :param routeName: The name of the route to use for generating the URL.
@@ -107,11 +108,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the route to use for generating the URL.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -122,11 +122,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the route data to use for generating the URL.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -137,11 +136,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.IUrlHelper]() used to generate URLs.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IUrlHelper
     
         
         .. code-block:: csharp

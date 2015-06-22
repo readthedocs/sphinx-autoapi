@@ -18,6 +18,7 @@ The context used by an [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.Asp
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
     
         
         :param declaredType: The declared type of the object that needs to be wrapped.
@@ -87,11 +87,11 @@ Properties
     
         
     
-        
-        
+        The declared type which could be wrapped/un-wrapped by a different type
+        during serialization or de-serializatoin.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -102,11 +102,12 @@ Properties
     
         
     
+        <see langword="true" /> if a wrapper provider is invoked during serialization,
         
-        
+        <see langword="false" /> otherwise.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

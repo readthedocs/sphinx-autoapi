@@ -13,6 +13,7 @@ ViewStartProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Methods
         
         :param path: 
         :type path: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Razor.IRazorPage}
     
         
         .. code-block:: csharp

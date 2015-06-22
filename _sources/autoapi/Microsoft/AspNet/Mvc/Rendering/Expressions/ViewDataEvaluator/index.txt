@@ -13,6 +13,7 @@ ViewDataEvaluator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,10 @@ Methods
     
         
     
+        Gets [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+        <paramref name="expression" /> in given
         
-        
+        <paramref name="viewData" />.
     
         
         :param viewData: The [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) that may contain the
@@ -64,7 +67,10 @@ Methods
         :param expression: Expression name, relative to
     <c>viewData.Model</c>.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+    <paramref name="expression" /> in given
+    <paramref name="viewData" />.
     
         
         .. code-block:: csharp
@@ -75,8 +81,10 @@ Methods
     
         
     
+        Gets [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+        <paramref name="expression" /> in given
         
-        
+        <paramref name="indexableObject" />.
     
         
         :param indexableObject: The [System.Object]() that may contain the
@@ -85,7 +93,11 @@ Methods
         :param expression: Expression name, relative to
     <paramref name="indexableObject" />.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo
+        :return: [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) for named
+    <paramref name="expression" /> in given
+    
+    <paramref name="indexableObject" />.
     
         
         .. code-block:: csharp

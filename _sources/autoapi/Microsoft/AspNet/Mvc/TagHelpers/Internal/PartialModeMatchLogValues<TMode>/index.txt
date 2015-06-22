@@ -19,6 +19,7 @@ processing due to missing attributes for one of several possible modes.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ILogValues`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.Internal.PartialModeMatchLogValues`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.PartialModeMatchLogValues`1.yml).
     
         
         :param uniqueId: The unique ID of the HTML element this message applies to.
@@ -87,7 +87,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.PartialModeMatchLogValues<TMode>.GetValues()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -97,7 +97,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.PartialModeMatchLogValues<TMode>.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

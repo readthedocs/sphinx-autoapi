@@ -13,6 +13,7 @@ ViewDataDictionary<TModel> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,8 +56,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class.
     
         
         :param metadataProvider: 
@@ -73,8 +73,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class based in part on an
+        existing [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance.
     
         
         :param source: 
@@ -89,8 +89,11 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class based in part on an
+        existing [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance. This constructor is careful to avoid exceptions
+        [Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel(System.Object)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) may throw when
+        <paramref name="model" /> is
+        <c>null</c>.
     
         
         :param source: 
@@ -114,7 +117,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.Model
     
         
-        :rtype: 
+        :rtype: TModel
     
         
         .. code-block:: csharp

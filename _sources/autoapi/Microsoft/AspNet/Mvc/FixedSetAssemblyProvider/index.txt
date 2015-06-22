@@ -18,6 +18,7 @@ A [Microsoft.AspNet.Mvc.IAssemblyProvider]() with a fixed set of candidate assem
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets the list of candidate assemblies.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.Reflection.Assembly}
     
         
         .. code-block:: csharp
@@ -73,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FixedSetAssemblyProvider.Microsoft.AspNet.Mvc.IAssemblyProvider.CandidateAssemblies
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
     
         
         .. code-block:: csharp

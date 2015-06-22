@@ -13,6 +13,7 @@ WebApiCompatShimOptionsSetup Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`IConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`
@@ -70,7 +71,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -80,7 +81,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptionsSetup.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Represents the result of compilation.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml).
     
         
     
@@ -81,11 +81,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:ICompilationFailure-s produced from parsing or compiling the Razor file.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{ICompilationFailure}
     
         
         .. code-block:: csharp
@@ -96,11 +95,10 @@ Properties
     
         
     
-        
-        
+        Gets (or sets in derived types) the generated C# content that was compiled.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -111,11 +109,10 @@ Properties
     
         
     
-        
-        
+        Gets (or sets in derived types) the type produced as a result of compilation.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -134,11 +131,11 @@ Methods
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
+        :return: The current [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) instance.
     
         
         .. code-block:: csharp
@@ -149,14 +146,14 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) for a failed compilation.
     
         
         :param compilationFailures: @!:ICompilationFailure-s produced from parsing or
     compiling the Razor file.
         :type compilationFailures: System.Collections.Generic.IEnumerable{ICompilationFailure}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
+        :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) instance for a failed compilation.
     
         
         .. code-block:: csharp
@@ -167,13 +164,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) for a successful compilation.
     
         
         :param type: The compiled type.
         :type type: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
+        :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) instance for a successful compilation.
     
         
         .. code-block:: csharp

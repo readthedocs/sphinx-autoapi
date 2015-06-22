@@ -13,6 +13,7 @@ SelectListItem Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that indicates whether this [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) is disabled.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -69,11 +69,12 @@ Properties
     
         
     
-        
-        
+        Represents the optgroup HTML element this item is wrapped into.
+        In a select list, multiple groups with the same name are supported.
+        They are compared with reference equality.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.SelectListGroup
     
         
         .. code-block:: csharp
@@ -83,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.SelectListItem.Selected
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -93,7 +94,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.SelectListItem.Text
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -103,7 +104,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.SelectListItem.Value
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

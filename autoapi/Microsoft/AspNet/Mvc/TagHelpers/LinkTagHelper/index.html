@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -232,7 +231,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.LinkTagHelper">
 <code class="descname">LinkTagHelper</code><span class="sig-paren">(</span><em>ILogger&lt;Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper&gt;</em>, <em>IHostingEnvironment</em>, <em>IMemoryCache</em>, <em>IHtmlEncoder</em>, <em>IJavaScriptStringEncoder</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.LinkTagHelper" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -291,11 +291,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.AppendVersion">
 <code class="descname">AppendVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.AppendVersion" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Value indicating if file version should be appended to the href urls.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +312,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IMemoryCache</td>
 </tr>
 </tbody>
 </table>
@@ -323,11 +324,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref">
 <code class="descname">FallbackHref</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The URL of a CSS stylesheet to fallback to in the case the primary one fails.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -339,11 +341,15 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefExclude">
 <code class="descname">FallbackHrefExclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefExclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of CSS stylesheets to exclude from the fallback list, in
+the case the primary one fails.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -355,11 +361,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude">
 <code class="descname">FallbackHrefInclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of CSS stylesheets to fallback to in the case the primary
+one fails.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -371,11 +380,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass">
 <code class="descname">FallbackTestClass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The class name defined in the stylesheet to use for the fallback test.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -387,11 +399,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty">
 <code class="descname">FallbackTestProperty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The CSS property name to use for the fallback test.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -403,11 +418,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue">
 <code class="descname">FallbackTestValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The CSS property value to use for the fallback test.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -423,7 +441,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder</td>
 </tr>
 </tbody>
 </table>
@@ -439,7 +457,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IHostingEnvironment</td>
 </tr>
 </tbody>
 </table>
@@ -451,11 +469,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.Href">
 <code class="descname">Href</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.Href" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Address of the linked resource.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -467,11 +486,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefExclude">
 <code class="descname">HrefExclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefExclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of CSS stylesheets to exclude from loading.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.
+Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -483,11 +505,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefInclude">
 <code class="descname">HrefInclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefInclude" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A comma separated list of globbed file patterns of CSS stylesheets to load.
+The glob patterns are assessed relative to the application&#8217;s &#8216;webroot&#8217; setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -503,7 +527,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IHtmlEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +543,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IJavaScriptStringEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -535,7 +559,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ILogger{Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper}</td>
 </tr>
 </tbody>
 </table>
@@ -551,7 +575,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>

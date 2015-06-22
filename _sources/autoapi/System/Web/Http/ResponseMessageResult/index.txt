@@ -18,6 +18,7 @@ An action result that returns a specified response message.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) class.
     
         
         :param response: The response message.
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets the response message.
     
         
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
     
         
         .. code-block:: csharp

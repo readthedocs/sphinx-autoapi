@@ -13,6 +13,7 @@ ActionSelectorDecisionTreeProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider](Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider.yml).
     
         
         :param actionDescriptorsCollectionProvider: The [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
@@ -77,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.ActionSelectorDecisionTreeProvider.DecisionTree
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Routing.IActionSelectionDecisionTree
     
         
         .. code-block:: csharp

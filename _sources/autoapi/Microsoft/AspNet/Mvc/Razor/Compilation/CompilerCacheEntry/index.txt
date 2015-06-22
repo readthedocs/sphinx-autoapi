@@ -18,6 +18,7 @@ An entry in [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.As
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was dynamically compiled.
     
         
         :param info: Metadata about the file that was compiled.
@@ -77,8 +77,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was precompiled.
     
         
         :param info: Metadata about the precompiled file.
@@ -103,11 +102,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for the nearest _ViewImports that the compiled type
+        depends on.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry
     
         
         .. code-block:: csharp
@@ -118,11 +117,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Type]() produced as a result of compilation.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -133,11 +131,10 @@ Properties
     
         
     
-        
-        
+        Gets the file hash, should only be available for pre compiled files.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -148,11 +145,10 @@ Properties
     
         
     
-        
-        
+        Gets the version of the hash algorithm used to generate [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Hash](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml).
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -163,11 +159,10 @@ Properties
     
         
     
-        
-        
+        Gets a flag that indicates if the file is precompiled.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -178,11 +173,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a flag that determines if the validity of this cache entry was performed at runtime.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -193,11 +187,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the last modified [System.DateTimeOffset]() for the file at the time of compilation.
     
         
-        :rtype: 
+        :rtype: System.DateTimeOffset
     
         
         .. code-block:: csharp
@@ -208,11 +201,10 @@ Properties
     
         
     
-        
-        
+        Gets the size of file (in bytes) on disk.
     
         
-        :rtype: 
+        :rtype: System.Int64
     
         
         .. code-block:: csharp
@@ -223,11 +215,10 @@ Properties
     
         
     
-        
-        
+        Gets the path of the compiled file relative to the root of the application.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

@@ -17,6 +17,7 @@ LinkGenerationMatch Struct
 
 
 
+
 Syntax
 ------
 
@@ -69,7 +70,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationMatch.Entry
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationMatch.IsFallbackMatch
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

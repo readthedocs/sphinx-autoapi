@@ -18,6 +18,7 @@ Utility methods for @!:ITagHelper-'s that support attributes containing file glo
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder](Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.yml).
     
         
         :param fileProvider: The file provider.
@@ -87,11 +87,10 @@ Properties
     
         
     
-        
-        
+        The @!:IMemoryCache- to cache globbing results in.
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -102,11 +101,10 @@ Properties
     
         
     
-        
-        
+        The @!:IFileProvider- used to watch for changes to file globbing results.
     
         
-        :rtype: 
+        :rtype: IFileProvider
     
         
         .. code-block:: csharp
@@ -117,11 +115,10 @@ Properties
     
         
     
-        
-        
+        The base path of the current request (i.e. @!:HttpRequest.PathBase-).
     
         
-        :rtype: 
+        :rtype: PathString
     
         
         .. code-block:: csharp
@@ -140,8 +137,7 @@ Methods
     
         
     
-        
-        
+        Builds a list of URLs.
     
         
         :param staticUrl: The statically declared URL. This will always be added to the result.
@@ -150,7 +146,8 @@ Methods
         :type includePattern: System.String
         :param excludePattern: The file globbing exclude pattern.
         :type excludePattern: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
+        :return: The list of URLs
     
         
         .. code-block:: csharp

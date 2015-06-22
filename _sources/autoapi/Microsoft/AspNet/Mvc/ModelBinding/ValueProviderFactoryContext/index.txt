@@ -13,6 +13,7 @@ ValueProviderFactoryContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext.HttpContext
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext.RouteValues
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp

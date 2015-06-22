@@ -17,6 +17,7 @@ IActionSelector Interface
 
 
 
+
 Syntax
 ------
 
@@ -50,7 +51,7 @@ Methods
         
         :param context: 
         :type context: VirtualPathContext
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -62,7 +63,7 @@ Methods
         
         :param context: 
         :type context: RouteContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ActionDescriptor}
     
         
         .. code-block:: csharp

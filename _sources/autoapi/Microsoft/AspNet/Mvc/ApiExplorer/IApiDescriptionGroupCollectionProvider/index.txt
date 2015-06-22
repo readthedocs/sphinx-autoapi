@@ -22,6 +22,7 @@ Provides access to a collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescript
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets a collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection
     
         
         .. code-block:: csharp

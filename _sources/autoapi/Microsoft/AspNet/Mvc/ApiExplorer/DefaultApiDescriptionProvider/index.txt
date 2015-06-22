@@ -19,6 +19,7 @@ by [Microsoft.AspNet.Mvc.ControllerActionDescriptor]().
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider](Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.yml).
     
         
         :param optionsAccessor: The accessor for [Microsoft.AspNet.Mvc.MvcOptions]().
@@ -88,7 +88,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApiExplorer.DefaultApiDescriptionProvider.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

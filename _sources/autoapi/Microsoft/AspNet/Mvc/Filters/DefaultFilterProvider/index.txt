@@ -13,6 +13,7 @@ DefaultFilterProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -82,7 +83,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Filters.DefaultFilterProvider.ServiceProvider
     
         
-        :rtype: 
+        :rtype: System.IServiceProvider
     
         
         .. code-block:: csharp

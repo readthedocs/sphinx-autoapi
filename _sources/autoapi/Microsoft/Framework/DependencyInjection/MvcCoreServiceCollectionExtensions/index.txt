@@ -13,6 +13,7 @@ MvcCoreServiceCollectionExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param services: 
         :type services: IServiceCollection
-        :rtype: 
+        :rtype: IServiceCollection
     
         
         .. code-block:: csharp
@@ -66,8 +67,7 @@ Methods
     
         
     
-        
-        
+        Configures a set of [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.Mvc.MvcOptions.yml) for the application.
     
         
         :param services: The services available in the application.

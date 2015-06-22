@@ -18,6 +18,7 @@ Represents a possible format for the body of a response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        The formatter used to output this response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        The media type of the response.
     
         
-        :rtype: 
+        :rtype: MediaTypeHeaderValue
     
         
         .. code-block:: csharp

@@ -22,6 +22,7 @@ Represents a set of data that persists only from one request to the next.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Marks all keys in the dictionary for retention.
     
         
     
@@ -68,8 +68,7 @@ Methods
     
         
     
-        
-        
+        Marks the specified key in the dictionary for retention.
     
         
         :param key: The key to retain in the dictionary.
@@ -84,8 +83,7 @@ Methods
     
         
     
-        
-        
+        Loads the dictionary by using the registered [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml).
     
         
     
@@ -98,13 +96,14 @@ Methods
     
         
     
-        
-        
+        Returns an object that contains the element that is associated with the specified key,
+        without marking the key for deletion.
     
         
         :param key: The key of the element to return.
         :type key: System.String
-        :rtype: 
+        :rtype: System.Object
+        :return: An object that contains the element that is associated with the specified key.
     
         
         .. code-block:: csharp
@@ -115,8 +114,7 @@ Methods
     
         
     
-        
-        
+        Saves the dictionary by using the registered [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml).
     
         
     

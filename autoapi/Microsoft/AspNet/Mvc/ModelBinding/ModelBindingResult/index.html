@@ -157,7 +157,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.ModelBindingResult">
 <code class="descname">ModelBindingResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em>, <em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.ModelBindingResult" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -191,7 +192,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">ModelBindingResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em>, <em>System.Boolean</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -231,7 +233,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">ModelBindingResult</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml) indicating a fatal error.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -256,11 +259,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.IsFatalError">
 <code class="descname">IsFatalError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.IsFatalError" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating the caller should not attempt binding again. This attempt encountered a fatal
+error.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -272,11 +277,18 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.IsModelSet">
 <code class="descname">IsModelSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.IsModelSet" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&lt;para&gt;
+Gets a value indicating whether or not the &lt;see cref=&#8221;P:Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Model&#8221; /&gt; value has been set.
+&lt;/para&gt;
+&lt;para&gt;
+This property can be used to distinguish between a model binder which does not find a value and
+the case where a model binder sets the &lt;c&gt;null&lt;/c&gt; value.
+&lt;/para&gt;</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -288,11 +300,17 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Key">
 <code class="descname">Key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Key" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&lt;para&gt;
+Gets the model name which was used to bind the model.
+&lt;/para&gt;
+&lt;para&gt;
+This property can be used during validation to add model state for a bound model.
+&lt;/para&gt;</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -304,11 +322,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Model">
 <code class="descname">Model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Model" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the model associated with this context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -320,11 +339,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.ValidationNode">
 <code class="descname">ValidationNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.ValidationNode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>A [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) associated with the current [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode</td>
 </tr>
 </tbody>
 </table>

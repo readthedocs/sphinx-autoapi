@@ -18,6 +18,7 @@ Static creation methods for [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchA
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,14 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1.yml).
     
         
         :param mode: 
         :type mode: TMode
         :param presentAttributes: 
         :type presentAttributes: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}
     
         
         .. code-block:: csharp
@@ -78,8 +78,7 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes`1.yml).
     
         
         :param mode: 
@@ -88,7 +87,7 @@ Methods
         :type presentAttributes: System.Collections.Generic.IEnumerable{System.String}
         :param missingAttributes: 
         :type missingAttributes: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}
     
         
         .. code-block:: csharp

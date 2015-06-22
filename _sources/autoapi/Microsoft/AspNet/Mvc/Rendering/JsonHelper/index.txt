@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.Rendering.IJsonHelper](Microsoft
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Rendering.JsonHelper](Microsoft.AspNet.Mvc.Rendering.JsonHelper.yml) that is backed by
+        <paramref name="jsonOutputFormatter" />.
     
         
         :param jsonOutputFormatter: The [Microsoft.AspNet.Mvc.JsonOutputFormatter](Microsoft.AspNet.Mvc.JsonOutputFormatter.yml) used to serialize JSON.
@@ -84,7 +85,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -98,7 +99,7 @@ Methods
         :type value: System.Object
         :param serializerSettings: 
         :type serializerSettings: JsonSerializerSettings
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp

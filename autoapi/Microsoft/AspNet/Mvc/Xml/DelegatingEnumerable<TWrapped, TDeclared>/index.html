@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -231,7 +230,8 @@
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable&lt;TWrapped, TDeclared&gt;.DelegatingEnumerable()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DelegatingEnumerable</span><span class="p">()</span>
+<dd><p>Initializes a [Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2](Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">DelegatingEnumerable</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -239,7 +239,9 @@
 <dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable&lt;TWrapped, TDeclared&gt;.DelegatingEnumerable">
 <code class="descname">DelegatingEnumerable</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;TDeclared&gt;</em>, <em>Microsoft.AspNet.Mvc.Xml.IWrapperProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.DelegatingEnumerable" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a [Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2](Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2.yml) with the original
+[System.Collections.Generic.IEnumerable`1]() and the wrapper provider for wrapping individual elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -265,7 +267,10 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable&lt;TWrapped, TDeclared&gt;.Add">
 <code class="descname">Add</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable<TWrapped, TDeclared>.Add" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The serializer requires every type it encounters can be serialized and deserialized.
+This type will never be used for deserialization, but we are required to implement the add
+method so that the type can be serialized. This will never be called.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -284,11 +289,15 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable&lt;TWrapped, TDeclared&gt;.GetEnumerator()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a delegating enumerator of the original [System.Collections.Generic.IEnumerable`1]() source which is being
+wrapped.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerator{{TWrapped}}</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The delegating enumerator of the original [System.Collections.Generic.IEnumerable`1]() source.</td>
 </tr>
 </tbody>
 </table>
@@ -300,11 +309,15 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable&lt;TWrapped, TDeclared&gt;.System.Collections.IEnumerable.GetEnumerator()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a delegating enumerator of the original [System.Collections.Generic.IEnumerable`1]() source which is being
+wrapped.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.IEnumerator</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The delegating enumerator of the original [System.Collections.Generic.IEnumerable`1]() source.</td>
 </tr>
 </tbody>
 </table>

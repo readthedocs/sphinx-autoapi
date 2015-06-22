@@ -18,6 +18,7 @@ Constraints an action to a route key and value.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a [Microsoft.AspNet.Mvc.RouteDataActionConstraint](Microsoft.AspNet.Mvc.RouteDataActionConstraint.yml) with a key and value, that are
+        required to make the action match.
     
         
         :param routeKey: The route key.
@@ -85,13 +86,13 @@ Methods
     
         
     
-        
-        
+        Create a catch all constraint for the given key.
     
         
         :param routeKey: Route key.
         :type routeKey: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RouteDataActionConstraint
+        :return: a [Microsoft.AspNet.Mvc.RouteDataActionConstraint](Microsoft.AspNet.Mvc.RouteDataActionConstraint.yml) that represents a catch all constraint.
     
         
         .. code-block:: csharp
@@ -110,11 +111,10 @@ Properties
     
         
     
-        
-        
+        The key handling definition for this constraint.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RouteKeyHandling
     
         
         .. code-block:: csharp
@@ -125,11 +125,10 @@ Properties
     
         
     
-        
-        
+        The route key this constraint matches against.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -140,11 +139,10 @@ Properties
     
         
     
-        
-        
+        The route value this constraint matches against.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

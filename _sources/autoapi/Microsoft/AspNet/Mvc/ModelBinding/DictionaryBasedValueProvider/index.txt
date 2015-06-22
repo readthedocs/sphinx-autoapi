@@ -19,6 +19,7 @@ An [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() adapter for data stored 
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider](Microsoft.AspNet.Mvc.ModelBinding.DictionaryBasedValueProvider.yml).
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() of the data.
@@ -88,7 +88,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
     
         
         .. code-block:: csharp
@@ -100,7 +100,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     
         
         .. code-block:: csharp

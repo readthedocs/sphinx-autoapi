@@ -18,6 +18,7 @@ A filter factory which creates a new instance of [Microsoft.AspNet.Mvc.CorsAutho
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Constructors
     
         
     
-        
-        
+        Creates a new insntace of [Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory](Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory.yml).
     
         
-        :param policyName: 
+        :param policyName: None
         :type policyName: System.String
     
         
@@ -82,7 +82,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.CorsAuthorizationFilterFactory.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -102,7 +102,7 @@ Methods
         
         :param serviceProvider: 
         :type serviceProvider: System.IServiceProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp

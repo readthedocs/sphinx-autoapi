@@ -13,6 +13,7 @@ WebApiCompatShimOptions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -70,7 +71,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.WebApiCompatShimOptions.Formatters
     
         
-        :rtype: 
+        :rtype: MediaTypeFormatterCollection
     
         
         .. code-block:: csharp

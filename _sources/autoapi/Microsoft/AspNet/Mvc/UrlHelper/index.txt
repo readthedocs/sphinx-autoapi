@@ -19,6 +19,7 @@ build URLs for ASP.NET MVC within an application.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.UrlHelper](Microsoft.AspNet.Mvc.UrlHelper.yml) class using the specified action context and
+        action selector.
     
         
         :param contextAccessor: The [Microsoft.AspNet.Mvc.IScopedInstance`1](Microsoft.AspNet.Mvc.IScopedInstance`1.yml) to access the action context
@@ -89,7 +90,7 @@ Methods
         
         :param actionContext: 
         :type actionContext: Microsoft.AspNet.Mvc.UrlActionContext
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -101,7 +102,7 @@ Methods
         
         :param contentPath: 
         :type contentPath: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -112,15 +113,16 @@ Methods
     
         
     
-        
-        
+        Generates the absolute path of the url for the specified route values by
+        using the specified route name.
     
         
         :param routeName: The name of the route that is used to generate the URL.
         :type routeName: System.String
         :param values: A dictionary that contains the parameters for a route.
         :type values: System.Collections.Generic.IDictionary{System.String,System.Object}
-        :rtype: 
+        :rtype: System.String
+        :return: The absolute path of the URL.
     
         
         .. code-block:: csharp
@@ -132,7 +134,7 @@ Methods
         
         :param url: 
         :type url: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -146,7 +148,7 @@ Methods
         :type routeName: System.String
         :param values: 
         :type values: System.Object
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -158,7 +160,7 @@ Methods
         
         :param routeContext: 
         :type routeContext: Microsoft.AspNet.Mvc.UrlRouteContext
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

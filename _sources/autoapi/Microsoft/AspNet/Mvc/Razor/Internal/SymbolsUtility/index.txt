@@ -18,6 +18,7 @@ Utility type for determining if a platform supports symbol file generation.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,12 @@ Methods
     
         
     
-        
-        
+        Determines if the current platform supports symbols (pdb) generation.
     
         
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if pdb generation is supported;
+    <c>false</c> otherwise.
     
         
         .. code-block:: csharp

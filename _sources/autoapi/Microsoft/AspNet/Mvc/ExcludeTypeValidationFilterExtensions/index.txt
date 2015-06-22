@@ -18,6 +18,7 @@ Extensions for [System.Collections.Generic.IList`1]().
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,9 @@ Methods
     
         
     
-        
-        
+        Adds a descriptor to the specified
+        <paramref name="excludeTypeValidationFilters" /> that excludes the properties of
+        the type specified and its derived types from validaton.
     
         
         :param excludeTypeValidationFilters: A list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml) which are used to
@@ -78,8 +80,9 @@ Methods
     
         
     
-        
-        
+        Adds a descriptor to the specified
+        <paramref name="excludeTypeValidationFilters" /> that excludes the properties of
+        the [System.Type]() specified and its derived types from validaton.
     
         
         :param excludeTypeValidationFilters: A list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml) which are used to

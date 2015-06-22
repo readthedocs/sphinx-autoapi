@@ -22,6 +22,7 @@ Acceptable validation summary rendering modes.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Fields
     
         
     
-        
-        
+        Validation summary with all errors.
     
         
     
@@ -68,8 +68,7 @@ Fields
     
         
     
-        
-        
+        Validation summary with model-level errors only (excludes all property errors).
     
         
     
@@ -82,8 +81,7 @@ Fields
     
         
     
-        
-        
+        No validation summary.
     
         
     

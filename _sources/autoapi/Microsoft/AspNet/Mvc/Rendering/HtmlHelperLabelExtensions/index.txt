@@ -18,6 +18,7 @@ Label-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Micros
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,16 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the specified
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -78,8 +80,8 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the specified
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -88,7 +90,8 @@ Methods
         :type expression: System.String
         :param labelText: The inner text of the element.
         :type labelText: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -99,13 +102,13 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -116,8 +119,7 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -126,7 +128,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -137,15 +140,15 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param labelText: The inner text of the element.
         :type labelText: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -156,8 +159,7 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -168,7 +170,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -179,15 +182,16 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the specified
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
         :param expression: An expression to be evaluated against the current model.
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -198,8 +202,8 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the specified
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -210,7 +214,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp
@@ -221,8 +226,8 @@ Methods
     
         
     
-        
-        
+        Returns a &lt;label&gt; element for the specified
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -231,7 +236,8 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :param labelText: The inner text of the element.
         :type labelText: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;label&gt; element.
     
         
         .. code-block:: csharp

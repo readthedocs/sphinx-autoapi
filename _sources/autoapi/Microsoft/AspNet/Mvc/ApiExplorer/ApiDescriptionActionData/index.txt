@@ -20,6 +20,7 @@ Represents data used to build an
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,11 +62,13 @@ Properties
     
         
     
-        
-        
+        The
+        <c>ApiDescription.GroupName</c> of
+        <c>ApiDescription</c> objects for the associated
+        action.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

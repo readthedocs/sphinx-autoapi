@@ -20,6 +20,7 @@ They are compared with reference equality.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,11 +62,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that indicates whether this [Microsoft.AspNet.Mvc.Rendering.SelectListGroup](Microsoft.AspNet.Mvc.Rendering.SelectListGroup.yml) is disabled.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -76,11 +76,10 @@ Properties
     
         
     
-        
-        
+        Represents the value of the optgroup's label.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

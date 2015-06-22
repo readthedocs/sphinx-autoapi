@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -231,7 +230,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.CompilerCacheEntry">
 <code class="descname">CompilerCacheEntry</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo</em>, <em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.CompilerCacheEntry" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was dynamically compiled.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -251,7 +251,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">CompilerCacheEntry</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo</em>, <em>System.Type</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for a file that was precompiled.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -277,11 +278,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.AssociatedGlobalFileEntry">
 <code class="descname">AssociatedGlobalFileEntry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.AssociatedGlobalFileEntry" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml) for the nearest _ViewImports that the compiled type
+depends on.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry</td>
 </tr>
 </tbody>
 </table>
@@ -293,11 +296,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.CompiledType">
 <code class="descname">CompiledType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.CompiledType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [System.Type]() produced as a result of compilation.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -309,11 +313,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Hash">
 <code class="descname">Hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Hash" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the file hash, should only be available for pre compiled files.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -325,11 +330,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.HashAlgorithmVersion">
 <code class="descname">HashAlgorithmVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.HashAlgorithmVersion" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the version of the hash algorithm used to generate [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Hash](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -341,11 +347,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.IsPreCompiled">
 <code class="descname">IsPreCompiled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.IsPreCompiled" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a flag that indicates if the file is precompiled.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -357,11 +364,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.IsValidatedPreCompiled">
 <code class="descname">IsValidatedPreCompiled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.IsValidatedPreCompiled" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a flag that determines if the validity of this cache entry was performed at runtime.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -373,11 +381,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.LastModified">
 <code class="descname">LastModified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.LastModified" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the last modified [System.DateTimeOffset]() for the file at the time of compilation.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.DateTimeOffset</td>
 </tr>
 </tbody>
 </table>
@@ -389,11 +398,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Length">
 <code class="descname">Length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.Length" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the size of file (in bytes) on disk.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int64</td>
 </tr>
 </tbody>
 </table>
@@ -405,11 +415,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.RelativePath">
 <code class="descname">RelativePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheEntry.RelativePath" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the path of the compiled file relative to the root of the application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

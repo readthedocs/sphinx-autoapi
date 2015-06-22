@@ -164,7 +164,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -256,7 +255,10 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessage">
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessage" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -266,20 +268,30 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -305,18 +317,27 @@ attributes.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -341,18 +362,27 @@ validation may update the associated CSS class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type message:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -394,18 +424,27 @@ attributes.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -444,18 +483,28 @@ validation may update the associated CSS class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element.
+&lt;c&gt;null&lt;/c&gt; if the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessageFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -465,20 +514,30 @@ validation may update the associated CSS class.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessageFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -503,18 +562,27 @@ validation may update the associated CSS class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type message:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessageFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -556,18 +624,27 @@ attributes.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a [Microsoft.AspNet.Mvc.ViewContext.ValidationMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if the
+&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationMessageFor&lt;TModel, TResult&gt;(Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -606,18 +683,27 @@ validation may update the associated CSS class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element.
+&lt;c&gt;null&lt;/c&gt; if the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">IHtmlHelper</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">&gt;</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationSummary">
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.HtmlHelperValidationExtensions.ValidationSummary" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -626,20 +712,28 @@ validation may update the associated CSS class.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the &amp;lt;ul&amp;gt; element.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>[Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Boolean</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -655,26 +749,33 @@ validation may update the associated CSS class.</p>
 
 <dl class="docutils">
 <dt>&lt;c&gt;true&lt;/c&gt;, display model-level errors only; otherwise display all errors.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">type excludePropertyErrors:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the &amp;lt;ul&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>[Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Boolean</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -690,7 +791,7 @@ validation may update the associated CSS class.</p>
 
 <dl class="docutils">
 <dt>&lt;c&gt;true&lt;/c&gt;, display model-level errors only; otherwise display all errors.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -701,19 +802,28 @@ validation may update the associated CSS class.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">type message:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>[Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which, in turn, wraps the</p>
+<p>&lt;paramref name=&#8221;message&#8221; /&gt;) and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
+is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Boolean</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -757,18 +867,27 @@ the HTML attributes.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+</div></blockquote>
+<p>[Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the</p>
+<p>&lt;paramref name=&#8221;message&#8221; /&gt;) and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
+is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.Boolean</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -810,18 +929,27 @@ the HTML attributes.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element
+and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
+validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -831,20 +959,30 @@ the HTML attributes.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>[Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the</p>
+<p>&lt;paramref name=&#8221;message&#8221; /&gt;) and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
+is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -869,18 +1007,27 @@ the HTML attributes.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
+</div></blockquote>
+<p>[Microsoft.AspNet.Mvc.ViewContext.ValidationSummaryMessageElement](Microsoft.AspNet.Mvc.ViewContext.yml) element (which wraps the</p>
+<p>&lt;paramref name=&#8221;message&#8221; /&gt;) and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model
+is valid and client-side validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -919,18 +1066,27 @@ the HTML attributes.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element
+and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
+validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlHelper</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -954,11 +1110,18 @@ the HTML attributes.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element
+and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
+validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="n">IHtmlHelper</span> <span class="n">htmlHelper</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>

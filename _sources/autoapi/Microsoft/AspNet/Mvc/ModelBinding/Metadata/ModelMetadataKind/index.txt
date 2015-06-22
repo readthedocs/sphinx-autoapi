@@ -22,6 +22,7 @@ Enumeration for the kinds of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](M
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Fields
     
         
     
-        
-        
+        Used for [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) for a property.
     
         
     
@@ -68,8 +68,7 @@ Fields
     
         
     
-        
-        
+        Used for [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) for a [System.Type]().
     
         
     

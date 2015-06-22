@@ -17,6 +17,7 @@ DecisionCriterionValue Struct
 
 
 
+
 Syntax
 ------
 
@@ -69,7 +70,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue.IsCatchAll
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue.Value
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ A [Microsoft.AspNet.Mvc.IControllerTypeProvider]() with a fixed set of types tha
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider](Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.yml).
     
         
     
@@ -73,8 +73,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider](Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.yml).
     
         
         :param controllerTypes: The sequence of controller [System.Reflection.TypeInfo]().
@@ -97,11 +96,10 @@ Properties
     
         
     
-        
-        
+        Gets the list of controller [System.Reflection.TypeInfo]()s.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.Reflection.TypeInfo}
     
         
         .. code-block:: csharp
@@ -111,7 +109,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FixedSetControllerTypeProvider.Microsoft.AspNet.Mvc.IControllerTypeProvider.ControllerTypes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     
         
         .. code-block:: csharp

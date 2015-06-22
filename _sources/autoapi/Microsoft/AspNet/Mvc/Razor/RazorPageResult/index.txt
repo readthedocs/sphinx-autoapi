@@ -18,6 +18,7 @@ Represents the results of locating a [Microsoft.AspNet.Mvc.Razor.IRazorPage](Mic
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorPageResult](Microsoft.AspNet.Mvc.Razor.RazorPageResult.yml) for a successful discovery.
     
         
         :param name: The name of the page that was located.
@@ -77,8 +77,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorPageResult](Microsoft.AspNet.Mvc.Razor.RazorPageResult.yml) for an unsuccessful discovery.
     
         
         :param name: The name of the page that was located.
@@ -103,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets the name of the page being located.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -118,11 +116,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) if found.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.IRazorPage
     
         
         .. code-block:: csharp
@@ -133,11 +130,10 @@ Properties
     
         
     
-        
-        
+        Gets the locations that were searched when [Microsoft.AspNet.Mvc.Razor.RazorPageResult.Page](Microsoft.AspNet.Mvc.Razor.RazorPageResult.yml) could not be located.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp

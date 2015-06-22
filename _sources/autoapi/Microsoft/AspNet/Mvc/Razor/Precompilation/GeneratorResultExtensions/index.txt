@@ -13,6 +13,7 @@ GeneratorResultExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
         :type host: Microsoft.AspNet.Mvc.Razor.IMvcRazorHost
         :param syntaxTree: 
         :type syntaxTree: SyntaxTree
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

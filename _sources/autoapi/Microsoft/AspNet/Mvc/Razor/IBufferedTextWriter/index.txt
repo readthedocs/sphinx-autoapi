@@ -22,6 +22,7 @@ Specifies the contracts for a [System.IO.TextWriter]() that buffers its content.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets a flag that determines if content is currently being buffered.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -77,8 +77,8 @@ Methods
     
         
     
-        
-        
+        Copies the buffered content to the
+        <paramref name="writer" />.
     
         
         :param writer: The writer to copy the contents to.
@@ -93,13 +93,14 @@ Methods
     
         
     
-        
-        
+        Asynchronously copies the buffered content to the
+        <paramref name="writer" />.
     
         
         :param writer: The writer to copy the contents to.
         :type writer: System.IO.TextWriter
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() representing the copy operation.
     
         
         .. code-block:: csharp

@@ -19,6 +19,7 @@ to strongly-typed objects using [System.Xml.Serialization.XmlSerializer]()
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of XmlSerializerInputFormatter.
     
         
     
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Indicates the acceptable input XML depth.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -98,11 +97,11 @@ Properties
     
         
     
-        
-        
+        Gets the list of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml) to
+        provide the wrapping type for de-serialization.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}
     
         
         .. code-block:: csharp
@@ -113,11 +112,11 @@ Properties
     
         
     
-        
-        
+        The quotas include - DefaultMaxDepth, DefaultMaxStringContentLength, DefaultMaxArrayLength,
+        DefaultMaxBytesPerRead, DefaultMaxNameTableCharCount
     
         
-        :rtype: 
+        :rtype: System.Xml.XmlDictionaryReaderQuotas
     
         
         .. code-block:: csharp
@@ -137,7 +136,7 @@ Methods
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -148,13 +147,13 @@ Methods
     
         
     
-        
-        
+        Called during deserialization to get the [System.Xml.Serialization.XmlSerializer]().
     
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Xml.Serialization.XmlSerializer
+        :return: The [System.Xml.Serialization.XmlSerializer]() used during deserialization.
     
         
         .. code-block:: csharp
@@ -165,15 +164,15 @@ Methods
     
         
     
-        
-        
+        Called during deserialization to get the [System.Xml.XmlReader]().
     
         
         :param readStream: The [System.IO.Stream]() from which to read.
         :type readStream: System.IO.Stream
         :param encoding: The [System.Text.Encoding]() used to read the stream.
         :type encoding: System.Text.Encoding
-        :rtype: 
+        :rtype: System.Xml.XmlReader
+        :return: The [System.Xml.XmlReader]() used during deserialization.
     
         
         .. code-block:: csharp
@@ -184,13 +183,13 @@ Methods
     
         
     
-        
-        
+        Gets the cached serializer or creates and caches the serializer for the given type.
     
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Xml.Serialization.XmlSerializer
+        :return: The [System.Xml.Serialization.XmlSerializer]() instance.
     
         
         .. code-block:: csharp
@@ -201,13 +200,13 @@ Methods
     
         
     
-        
-        
+        Gets the type to which the XML will be deserialized.
     
         
         :param declaredType: The declared type.
         :type declaredType: System.Type
-        :rtype: 
+        :rtype: System.Type
+        :return: The type to which the XML will be deserialized.
     
         
         .. code-block:: csharp
@@ -218,13 +217,13 @@ Methods
     
         
     
-        
-        
+        Reads the input XML.
     
         
         :param context: The input formatter context which contains the body to be read.
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Object}
+        :return: Task which reads the input.
     
         
         .. code-block:: csharp

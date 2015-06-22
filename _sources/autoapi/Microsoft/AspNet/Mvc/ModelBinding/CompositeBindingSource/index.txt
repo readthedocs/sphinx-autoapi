@@ -18,6 +18,7 @@ A [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.BindingSources](Micr
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,7 +62,7 @@ Methods
         
         :param bindingSource: 
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -72,8 +73,7 @@ Methods
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource](Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.yml).
     
         
         :param bindingSources: The set of [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) entries.
@@ -81,7 +81,8 @@ Methods
         :type bindingSources: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.BindingSource}
         :param displayName: The display name for the composite source.
         :type displayName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource](Microsoft.AspNet.Mvc.ModelBinding.CompositeBindingSource.yml).
     
         
         .. code-block:: csharp
@@ -100,11 +101,10 @@ Properties
     
         
     
-        
-        
+        Gets the set of [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) entries.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.BindingSource}
     
         
         .. code-block:: csharp

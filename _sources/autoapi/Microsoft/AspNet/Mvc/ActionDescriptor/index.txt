@@ -13,6 +13,7 @@ ActionDescriptor Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -71,11 +72,10 @@ Properties
     
         
     
-        
-        
+        The set of constraints for this action. Must all be satisfied for the action to be selected.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IActionConstraintMetadata}
     
         
         .. code-block:: csharp
@@ -85,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.AttributeRouteInfo
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Routing.AttributeRouteInfo
     
         
         .. code-block:: csharp
@@ -96,11 +96,10 @@ Properties
     
         
     
-        
-        
+        The set of properties which are model bound.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ParameterDescriptor}
     
         
         .. code-block:: csharp
@@ -111,11 +110,10 @@ Properties
     
         
     
-        
-        
+        A friendly name for this action.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -125,7 +123,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.FilterDescriptors
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.FilterDescriptor}
     
         
         .. code-block:: csharp
@@ -136,11 +134,10 @@ Properties
     
         
     
-        
-        
+        Gets an id which uniquely identifies the action.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -150,7 +147,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -160,7 +157,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.Parameters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ParameterDescriptor}
     
         
         .. code-block:: csharp
@@ -171,11 +168,10 @@ Properties
     
         
     
-        
-        
+        Stores arbitrary metadata properties associated with the [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -185,7 +181,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.RouteConstraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.RouteDataActionConstraint}
     
         
         .. code-block:: csharp
@@ -195,7 +191,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionDescriptor.RouteValueDefaults
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp

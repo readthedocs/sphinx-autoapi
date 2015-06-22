@@ -22,6 +22,7 @@ Defines the operations that can be performed on a JSON patch document.
 
 
 
+
 Syntax
 ------
 

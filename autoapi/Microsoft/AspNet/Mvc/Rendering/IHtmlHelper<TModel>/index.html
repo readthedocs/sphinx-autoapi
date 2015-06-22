@@ -164,7 +164,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -249,11 +248,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.ViewData">
 <code class="descname">ViewData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.ViewData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the current view data.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}</td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +271,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.CheckBoxFor">
 <code class="descname">CheckBoxFor</code><span class="sig-paren">(</span><em>System.Linq.Expressions.Expression&lt;System.Func&lt;TModel</em>, <em>System.Boolean&gt;&gt;</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper<TModel>.CheckBoxFor" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;checkbox&#8221; with value &#8220;true&#8221; and an &amp;lt;input&amp;gt; element of type
+&#8220;hidden&#8221; with value &#8220;false&#8221;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -294,7 +296,9 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +310,12 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.DisplayFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns HTML markup for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using a display template, specified HTML field
+name, and additional view data. The template is found using the
+&lt;paramref name=&#8221;templateName&#8221; /&gt; or the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;&#8217;s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -347,7 +356,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
 </tr>
 </tbody>
 </table>
@@ -358,7 +369,10 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.DisplayNameForInnerType&lt;TModelItem, TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModelItem, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the display name for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;
+if the current model represents a collection.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -367,7 +381,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the display name.</p>
 </td>
 </tr>
 </tbody>
@@ -380,7 +397,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.DisplayNameFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the display name for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -389,7 +408,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the display name.</p>
 </td>
 </tr>
 </tbody>
@@ -402,7 +424,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.DisplayTextFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the simple display text for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -411,20 +435,32 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the simple display text.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="n">DisplayTextFor</span><span class="p">&lt;</span><span class="n">TResult</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>If the
+&lt;paramref name=&#8221;expression&#8221; /&gt; result is
+&lt;c&gt;null&lt;/c&gt;, returns
+[Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText]().</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="n">DisplayTextFor</span><span class="p">&lt;</span><span class="n">TResult</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.DropDownListFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a single-selection HTML &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using the
+specified list items, option label, and HTML attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -475,7 +511,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -487,7 +525,12 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.EditorFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns HTML markup for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using an editor template, specified HTML field
+name, and additional view data. The template is found using the
+&lt;paramref name=&#8221;templateName&#8221; /&gt; or the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;&#8217;s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -528,7 +571,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element(s).</td>
 </tr>
 </tbody>
 </table>
@@ -548,7 +593,7 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -570,7 +615,7 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -583,7 +628,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.HiddenFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;hidden&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -606,7 +653,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -618,7 +667,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.IdFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the HTML element Id for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -627,7 +678,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the element Id.</p>
 </td>
 </tr>
 </tbody>
@@ -640,7 +694,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.LabelFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a &amp;lt;label&amp;gt; element for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -664,7 +720,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;label&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -676,7 +734,10 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.ListBoxFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a multi-selection &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using the
+specified list items and HTML attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -713,7 +774,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -725,7 +788,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.NameFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the full HTML element name for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -734,7 +799,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the element name.</p>
 </td>
 </tr>
 </tbody>
@@ -747,7 +815,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.PasswordFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;password&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -770,7 +840,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -782,7 +854,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.RadioButtonFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Object, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;radio&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -818,7 +892,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -839,7 +915,7 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
 </td>
 </tr>
 </tbody>
@@ -861,7 +937,7 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
 </td>
 </tr>
 </tbody>
@@ -874,7 +950,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.TextAreaFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.Int32, System.Int32, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a &amp;lt;textarea&amp;gt; element for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -899,7 +977,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -911,7 +991,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.TextBoxFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.Object)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;text&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -935,7 +1017,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -947,7 +1031,10 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.ValidationMessageFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String, System.Object, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]()
+object for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1001,18 +1088,27 @@ Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containi
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TResult</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element.
+&lt;c&gt;null&lt;/c&gt; if the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="n">ValidationMessageFor</span><span class="p">&lt;</span><span class="n">TResult</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TResult</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper&lt;TModel&gt;.ValueFor&lt;TResult&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TResult&gt;&gt;, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the formatted value for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1022,7 +1118,10 @@ Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containi
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the formatted value.</p>
 </td>
 </tr>
 </tbody>

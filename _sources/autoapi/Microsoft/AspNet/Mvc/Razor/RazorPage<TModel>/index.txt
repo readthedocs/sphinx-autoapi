@@ -18,6 +18,7 @@ Represents the properties and methods that are needed in order to render a view 
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage<TModel>.Model
     
         
-        :rtype: 
+        :rtype: TModel
     
         
         .. code-block:: csharp
@@ -69,7 +70,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage<TModel>.ViewData
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}
     
         
         .. code-block:: csharp
@@ -88,13 +89,15 @@ Methods
     
         
     
-        
-        
+        Returns a [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given
+        <paramref name="expression" />.
     
         
         :param expression: An expression to be evaluated against the current model.
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TValue}}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given
+    <paramref name="expression" />.
     
         
         .. code-block:: csharp

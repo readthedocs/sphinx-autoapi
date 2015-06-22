@@ -13,6 +13,7 @@ FileProviderGlobbingFile Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`FileInfoBase`
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingFile.FullName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingFile.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -94,7 +95,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingFile.ParentDirectory
     
         
-        :rtype: 
+        :rtype: DirectoryInfoBase
     
         
         .. code-block:: csharp

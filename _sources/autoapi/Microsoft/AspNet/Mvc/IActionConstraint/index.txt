@@ -23,6 +23,7 @@ for the given request.
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,10 @@ Properties
     
         
     
-        
-        
+        The constraint order.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -78,13 +78,13 @@ Methods
     
         
     
-        
-        
+        Determines whether an action is a valid candidate for selection.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ActionConstraintContext](Microsoft.AspNet.Mvc.ActionConstraintContext.yml).
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
-        :rtype: 
+        :rtype: System.Boolean
+        :return: True if the action is valid for selection, otherwise false.
     
         
         .. code-block:: csharp

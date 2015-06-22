@@ -19,6 +19,7 @@ with the supplied [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.M
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,9 @@ Constructors
     
         
     
-        
-        
+        Initializes a [Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2](Microsoft.AspNet.Mvc.Xml.DelegatingEnumerable`2.yml) which enumerates
+        over the elements of the original enumerator and wraps them using the supplied
+        [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).
     
         
         :param inner: The original enumerator.
@@ -85,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerator<TWrapped, TDeclared>.Current
     
         
-        :rtype: 
+        :rtype: TWrapped
     
         
         .. code-block:: csharp
@@ -95,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerator<TWrapped, TDeclared>.System.Collections.IEnumerator.Current
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -122,7 +124,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.DelegatingEnumerator<TWrapped, TDeclared>.MoveNext()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

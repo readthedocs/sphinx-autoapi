@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]() which provides data from a
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder](Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.yml).
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](). Must be a single-source (non-composite) with
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets the corresponding [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -109,7 +108,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
         
         .. code-block:: csharp
@@ -120,13 +119,13 @@ Methods
     
         
     
-        
-        
+        Binds the model. Called when the model's supported binding-source matches [Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSourceModelBinder.yml).
     
         
         :param bindingContext: The [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext]().
         :type bindingContext: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
+        :return: A [System.Threading.Tasks.Task]() which will complete when model binding has completed.
     
         
         .. code-block:: csharp

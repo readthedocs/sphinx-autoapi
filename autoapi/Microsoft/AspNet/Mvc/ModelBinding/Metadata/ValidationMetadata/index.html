@@ -156,11 +156,16 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.IsRequired">
 <code class="descname">IsRequired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.IsRequired" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value indicating whether or not the model is a required value. Will be ignored
+if the model metadata being created is not a property. If
+&lt;c&gt;null&lt;/c&gt; then
+[Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired]() will be computed based on the model [System.Type]().
+See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -172,11 +177,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.ValidatorMetadata">
 <code class="descname">ValidatorMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.ValidatorMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of metadata items for validators.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{System.Object}</td>
 </tr>
 </tbody>
 </table>

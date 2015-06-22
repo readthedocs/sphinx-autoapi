@@ -165,7 +165,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}</p>
 </td>
 </tr>
 </tbody>
@@ -178,7 +178,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.CanUpdateProperty">
 <code class="descname">CanUpdateProperty</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.CanUpdateProperty" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets an indication whether a property with the given
+&lt;paramref name=&#8221;propertyMetadata&#8221; /&gt; can be updated.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -187,20 +189,28 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the property can be updated;</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanUpdateProperty</span><span class="p">(</span><span class="n">ModelMetadata</span> <span class="n">propertyMetadata</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;false&lt;/c&gt; otherwise.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanUpdateProperty</span><span class="p">(</span><span class="n">ModelMetadata</span> <span class="n">propertyMetadata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.CreateModel">
 <code class="descname">CreateModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.CreateModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates suitable [System.Object]() for given
+&lt;paramref name=&#8221;bindingContext&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -209,7 +219,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Object]() compatible with [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.ModelType]().</p>
 </td>
 </tr>
 </tbody>
@@ -222,7 +235,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.EnsureModel">
 <code class="descname">EnsureModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.EnsureModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Ensures [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model]() is not
+&lt;c&gt;null&lt;/c&gt; in given</p>
+<p>&lt;paramref name=&#8221;bindingContext&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -241,7 +257,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.GetMetadataForProperties">
 <code class="descname">GetMetadataForProperties</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.GetMetadataForProperties" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -250,7 +267,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for properties this binder should update.</p>
 </td>
 </tr>
 </tbody>
@@ -263,7 +283,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.SetProperty">
 <code class="descname">SetProperty</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.MutableObjectModelBinder.SetProperty" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Updates a property in the current [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext.Model]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

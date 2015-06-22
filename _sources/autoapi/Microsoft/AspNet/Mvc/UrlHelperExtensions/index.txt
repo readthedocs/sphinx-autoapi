@@ -13,6 +13,7 @@ UrlHelperExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method.
     
         
         :param helper: 
         :type helper: Microsoft.AspNet.Mvc.IUrlHelper
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -71,15 +72,15 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name.
     
         
         :param helper: 
         :type helper: Microsoft.AspNet.Mvc.IUrlHelper
         :param action: The name of the action method.
         :type action: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -90,8 +91,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        and route values.
     
         
         :param helper: 
@@ -100,7 +101,8 @@ Methods
         :type action: System.String
         :param values: An object that contains route values.
         :type values: System.Object
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -111,8 +113,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        and controller name.
     
         
         :param helper: 
@@ -121,7 +123,8 @@ Methods
         :type action: System.String
         :param controller: The name of the controller.
         :type controller: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -132,8 +135,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        controller name, and route values.
     
         
         :param helper: 
@@ -144,7 +147,8 @@ Methods
         :type controller: System.String
         :param values: An object that contains route values.
         :type values: System.Object
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -155,8 +159,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        controller name, route values, and protocol to use.
     
         
         :param helper: 
@@ -169,7 +173,8 @@ Methods
         :type values: System.Object
         :param protocol: The protocol for the URL, such as "http" or "https".
         :type protocol: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -180,8 +185,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        controller name, route values, protocol to use, and host name.
     
         
         :param helper: 
@@ -196,7 +201,8 @@ Methods
         :type protocol: System.String
         :param host: The host name for the URL.
         :type host: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -207,8 +213,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for an action method by using the specified action name,
+        controller name, route values, protocol to use, host name and fragment.
     
         
         :param helper: 
@@ -225,7 +231,8 @@ Methods
         :type host: System.String
         :param fragment: The fragment for the URL.
         :type fragment: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL to an action method.
     
         
         .. code-block:: csharp
@@ -236,15 +243,15 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route values.
     
         
         :param helper: 
         :type helper: Microsoft.AspNet.Mvc.IUrlHelper
         :param values: An object that contains route values.
         :type values: System.Object
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp
@@ -255,15 +262,15 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route name.
     
         
         :param helper: 
         :type helper: Microsoft.AspNet.Mvc.IUrlHelper
         :param routeName: The name of the route that is used to generate URL.
         :type routeName: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp
@@ -274,8 +281,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route values by
+        using the specified route name.
     
         
         :param helper: 
@@ -284,7 +291,8 @@ Methods
         :type routeName: System.String
         :param values: An object that contains route values.
         :type values: System.Object
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp
@@ -295,8 +303,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route values by
+        using the specified route name, and protocol to use.
     
         
         :param helper: 
@@ -307,7 +315,8 @@ Methods
         :type values: System.Object
         :param protocol: The protocol for the URL, such as "http" or "https".
         :type protocol: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp
@@ -318,8 +327,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route values by
+        using the specified route name, protocol to use, and host name.
     
         
         :param helper: 
@@ -332,7 +341,8 @@ Methods
         :type protocol: System.String
         :param host: The host name for the URL.
         :type host: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp
@@ -343,8 +353,8 @@ Methods
     
         
     
-        
-        
+        Generates a fully qualified or absolute URL for the specified route values by
+        using the specified route name, protocol to use, host name and fragment.
     
         
         :param helper: 
@@ -359,7 +369,8 @@ Methods
         :type host: System.String
         :param fragment: The fragment for the URL.
         :type fragment: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: The fully qualified or absolute URL.
     
         
         .. code-block:: csharp

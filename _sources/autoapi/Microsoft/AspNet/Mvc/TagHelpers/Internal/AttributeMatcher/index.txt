@@ -18,6 +18,7 @@ Methods for determining how an @!:ITagHelper- should run based on the attributes
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,16 @@ Methods
     
         
     
-        
-        
+        Determines the modes a @!:ITagHelper- can run in based on which modes have all their required
+        attributes present, non null, non empty, and non whitepsace.
     
         
         :param context: The @!:TagHelperContext-.
         :type context: TagHelperContext
         :param modeInfos: The modes and their required attributes.
         :type modeInfos: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes{{TMode}}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult{{TMode}}
+        :return: The [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ DefaultViewComponentInvoker Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -89,7 +90,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -103,7 +104,7 @@ Methods
         :type method: System.Reflection.MethodInfo
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IViewComponentResult
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ DesignTimeRazorPathNormalizer Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -75,7 +76,7 @@ Methods
         
         :param path: 
         :type path: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

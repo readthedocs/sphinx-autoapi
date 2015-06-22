@@ -18,6 +18,7 @@ An attribute that specifies that the value can be bound from the query string or
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: System.Web.Http.FromUriAttribute.BindingSource
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -69,7 +70,7 @@ Properties
     .. dn:property:: System.Web.Http.FromUriAttribute.IsOptional
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Properties
     .. dn:property:: System.Web.Http.FromUriAttribute.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

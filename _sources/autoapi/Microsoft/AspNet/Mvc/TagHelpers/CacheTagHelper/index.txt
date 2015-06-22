@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Fields
     
         
     
-        
-        
+        Prefix used by [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml) instances when creating entries in [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.MemoryCache](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml).
     
         
     
@@ -81,8 +81,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml).
     
         
         :param memoryCache: The @!:IMemoryCache-.
@@ -105,11 +104,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the value which determines if the tag helper is enabled or not.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -120,11 +118,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the duration, from the time the cache entry was added, when it should be evicted.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.TimeSpan}
     
         
         .. code-block:: csharp
@@ -135,11 +132,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the exact [System.DateTimeOffset]() the cache entry should be evicted.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.DateTimeOffset}
     
         
         .. code-block:: csharp
@@ -150,11 +146,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the duration from last access that the cache entry should be evicted.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.TimeSpan}
     
         
         .. code-block:: csharp
@@ -165,11 +160,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:IMemoryCache- instance used to cache entries.
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -180,11 +174,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:CacheItemPriority- policy for the cache entry.
     
         
-        :rtype: 
+        :rtype: System.Nullable{CacheItemPriority}
     
         
         .. code-block:: csharp
@@ -195,11 +188,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a [System.String]() to vary the cached result by.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -210,11 +202,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a comma-delimited set of cookie names to vary the cached result by.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -225,11 +216,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of a HTTP request header to vary the cached result by.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -240,11 +230,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a comma-delimited set of query parameters to vary the cached result by.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -255,11 +244,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a comma-delimited set of route data parameters to vary the cached result by.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -270,11 +258,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value that determines if the cached result is to be varied by the Identity for the logged in
+        @!:HttpContext.User-.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -285,11 +273,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ViewContext](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml) for the current executing View.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -311,7 +298,7 @@ Methods
         :type context: TagHelperContext
         :param output: 
         :type output: TagHelperOutput
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

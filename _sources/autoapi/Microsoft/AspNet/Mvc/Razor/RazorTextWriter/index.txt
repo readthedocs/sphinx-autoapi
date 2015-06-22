@@ -23,6 +23,7 @@ writer for all further write operations.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -66,8 +67,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.Razor.RazorTextWriter](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml).
     
         
         :param unbufferedWriter: The [System.IO.TextWriter]() to write output to when this instance
@@ -92,7 +92,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Encoding
     
         
-        :rtype: 
+        :rtype: System.Text.Encoding
     
         
         .. code-block:: csharp
@@ -102,7 +102,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.IsBuffering
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -133,7 +133,7 @@ Methods
         
         :param writer: 
         :type writer: System.IO.TextWriter
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -144,8 +144,9 @@ Methods
     
         
     
-        
-        
+        Copies the buffered content to the unbuffered writer and invokes flush on it.
+        Additionally causes this instance to no longer buffer and direct all write operations
+        to the unbuffered writer.
     
         
     
@@ -158,11 +159,13 @@ Methods
     
         
     
-        
-        
+        Copies the buffered content to the unbuffered writer and invokes flush on it.
+        Additionally causes this instance to no longer buffer and direct all write operations
+        to the unbuffered writer.
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that represents the asynchronous copy and flush operations.
     
         
         .. code-block:: csharp
@@ -222,7 +225,7 @@ Methods
         
         :param value: 
         :type value: System.Char
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -238,7 +241,7 @@ Methods
         :type index: System.Int32
         :param count: 
         :type count: System.Int32
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -250,7 +253,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -280,7 +283,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorTextWriter.WriteLineAsync()
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -292,7 +295,7 @@ Methods
         
         :param value: 
         :type value: System.Char
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -308,7 +311,7 @@ Methods
         :type start: System.Int32
         :param offset: 
         :type offset: System.Int32
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -320,7 +323,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

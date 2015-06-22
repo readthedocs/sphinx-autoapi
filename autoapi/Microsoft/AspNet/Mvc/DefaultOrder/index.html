@@ -151,7 +151,12 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.DefaultOrder.DefaultCorsSortOrder">
 <code class="descname">DefaultCorsSortOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultOrder.DefaultCorsSortOrder" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultCorsSortOrder</span>
+<dd><p>The default order for
+&lt;c&gt;CorsAuthorizationFilter&lt;/c&gt;,
+&lt;c&gt;CorsAuthorizationFilterFactory&lt;/c&gt;
+and
+&lt;c&gt;DisableCorsAuthorizationFilter&lt;/c&gt;</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultCorsSortOrder</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -159,7 +164,10 @@
 <dl class="field">
 <dt id="Microsoft.AspNet.Mvc.DefaultOrder.DefaultFrameworkSortOrder">
 <code class="descname">DefaultFrameworkSortOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultOrder.DefaultFrameworkSortOrder" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultFrameworkSortOrder</span>
+<dd><p>The default order for sorting is -1000. Other framework code
+the depends on order should be ordered between -1 to -1999.
+User code should order at bigger than 0 or smaller than -2000.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultFrameworkSortOrder</span>
 </pre></div>
 </div>
 </dd></dl>

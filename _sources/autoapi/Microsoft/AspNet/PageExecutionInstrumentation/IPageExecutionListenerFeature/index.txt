@@ -22,6 +22,7 @@ Specifies the contracts for a HTTP feature that provides the context to instrume
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,15 @@ Methods
     
         
     
-        
-        
+        Decorates the [System.IO.TextWriter]() used by web page instances to
+        write the result to.
     
         
         :param writer: The output [System.IO.TextWriter]() for the web page.
         :type writer: System.IO.TextWriter
-        :rtype: 
+        :rtype: System.IO.TextWriter
+        :return: A [System.IO.TextWriter]() that wraps
+    <paramref name="writer" />.
     
         
         .. code-block:: csharp
@@ -71,15 +74,16 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext](Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext.yml) for the specified
+        <paramref name="sourceFilePath" />.
     
         
         :param sourceFilePath: The path of the page.
         :type sourceFilePath: System.String
         :param writer: The [System.IO.TextWriter]() obtained from [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionListenerFeature.DecorateWriter(System.IO.TextWriter)](Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionListenerFeature.yml).
         :type writer: System.IO.TextWriter
-        :rtype: 
+        :rtype: Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext
+        :return: The [Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext](Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext.yml).
     
         
         .. code-block:: csharp

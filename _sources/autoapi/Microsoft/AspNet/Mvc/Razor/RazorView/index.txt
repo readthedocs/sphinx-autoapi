@@ -19,6 +19,7 @@ as parts of its exeuction.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorView](Microsoft.AspNet.Mvc.Razor.RazorView.yml)
     
         
         :param viewEngine: The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) used to locate Layout pages.
@@ -96,11 +96,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that determines if the view is executed as a partial.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -110,7 +109,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorView.Path
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -121,11 +120,10 @@ Properties
     
         
     
-        
-        
+        Gets [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) instance that the views executes on.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.IRazorPage
     
         
         .. code-block:: csharp
@@ -145,7 +143,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ViewContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

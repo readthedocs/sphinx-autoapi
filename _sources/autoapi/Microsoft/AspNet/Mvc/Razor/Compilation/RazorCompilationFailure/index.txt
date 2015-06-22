@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ICompilationFailure`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.yml).
     
         
         :param sourceFilePath: The path of the Razor source file that was compiled.
@@ -87,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.CompiledContent
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -97,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.Messages
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{ICompilationMessage}
     
         
         .. code-block:: csharp
@@ -107,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.SourceFileContent
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -117,7 +117,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationFailure.SourceFilePath
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

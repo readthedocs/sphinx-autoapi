@@ -22,6 +22,7 @@ Provides a return type and a set of possible content types returned by a success
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Optimistic return type of the action.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -77,8 +77,7 @@ Methods
     
         
     
-        
-        
+        Configures a collection of allowed content types which can be produced by the action.
     
         
         :param contentTypes: 

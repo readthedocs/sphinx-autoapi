@@ -22,6 +22,7 @@ Provides methods for creation and disposal of controllers.
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,14 @@ Methods
     
         
     
-        
-        
+        Creates a new controller for the specified
+        <paramref name="actionContext" />.
     
         
         :param actionContext: [Microsoft.AspNet.Mvc.ActionContext]() for the action to execute.
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Object
+        :return: The controller.
     
         
         .. code-block:: csharp
@@ -71,8 +73,7 @@ Methods
     
         
     
-        
-        
+        Releases a controller instance.
     
         
         :param controller: The controller.

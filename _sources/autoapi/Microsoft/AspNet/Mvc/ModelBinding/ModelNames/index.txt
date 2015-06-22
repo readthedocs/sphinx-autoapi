@@ -13,6 +13,7 @@ ModelNames Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -57,7 +58,7 @@ Methods
         :type parentName: System.String
         :param index: 
         :type index: System.Int32
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -71,7 +72,7 @@ Methods
         :type parentName: System.String
         :param index: 
         :type index: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -85,7 +86,7 @@ Methods
         :type prefix: System.String
         :param propertyName: 
         :type propertyName: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

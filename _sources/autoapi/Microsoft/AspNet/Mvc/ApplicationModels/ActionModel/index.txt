@@ -13,6 +13,7 @@ ActionModel Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.ActionConstraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IActionConstraintMetadata}
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.ActionMethod
     
         
-        :rtype: 
+        :rtype: System.Reflection.MethodInfo
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.ActionName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -116,11 +117,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) for this action.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel
     
         
         .. code-block:: csharp
@@ -130,7 +130,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.AttributeRouteModel
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel
     
         
         .. code-block:: csharp
@@ -140,7 +140,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.Attributes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -150,7 +150,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.Controller
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
     
         
         .. code-block:: csharp
@@ -160,7 +160,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.Filters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         
         .. code-block:: csharp
@@ -170,7 +170,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.HttpMethods
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.String}
     
         
         .. code-block:: csharp
@@ -180,7 +180,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.Parameters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel}
     
         
         .. code-block:: csharp
@@ -191,11 +191,11 @@ Properties
     
         
     
-        
-        
+        Gets a set of properties associated with the action.
+        These properties will be copied to [Microsoft.AspNet.Mvc.ActionDescriptor.Properties]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -205,7 +205,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.RouteConstraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IRouteConstraintProvider}
     
         
         .. code-block:: csharp

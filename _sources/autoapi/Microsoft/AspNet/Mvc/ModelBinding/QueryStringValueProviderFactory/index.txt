@@ -19,6 +19,7 @@ read values from the request query-string.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,7 +62,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderFactoryContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
         
         .. code-block:: csharp

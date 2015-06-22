@@ -148,7 +148,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.IBindingSourceValueProvider.Filter">
 <code class="descname">Filter</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.BindingSource</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.IBindingSourceValueProvider.Filter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Filters the value provider based on
+&lt;paramref name=&#8221;bindingSource&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -157,16 +159,23 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.IValueProvider</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The filtered value provider, or</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IValueProvider</span> <span class="nf">Filter</span><span class="p">(</span><span class="n">BindingSource</span> <span class="n">bindingSource</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;null&lt;/c&gt; if the value provider does not match</p>
+<p>&lt;paramref name=&#8221;bindingSource&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IValueProvider</span> <span class="nf">Filter</span><span class="p">(</span><span class="n">BindingSource</span> <span class="n">bindingSource</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

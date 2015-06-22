@@ -22,6 +22,7 @@ Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.Appli
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).
     
         
         :param application: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml).

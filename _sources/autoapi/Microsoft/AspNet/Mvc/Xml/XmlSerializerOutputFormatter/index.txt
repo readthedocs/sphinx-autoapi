@@ -19,6 +19,7 @@ to XML using [System.Xml.Serialization.XmlSerializer]()
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.yml)
+        with default XmlWriterSettings.
     
         
     
@@ -75,8 +76,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.yml)
     
         
         :param writerSettings: The settings to be used by the [System.Xml.Serialization.XmlSerializer]().
@@ -99,11 +99,11 @@ Properties
     
         
     
-        
-        
+        Gets the list of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml) to
+        provide the wrapping type for serialization.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}
     
         
         .. code-block:: csharp
@@ -114,11 +114,10 @@ Properties
     
         
     
-        
-        
+        Gets the settings to be used by the XmlWriter.
     
         
-        :rtype: 
+        :rtype: System.Xml.XmlWriterSettings
     
         
         .. code-block:: csharp
@@ -140,7 +139,7 @@ Methods
         :type declaredType: System.Type
         :param runtimeType: 
         :type runtimeType: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -151,13 +150,13 @@ Methods
     
         
     
-        
-        
+        Create a new instance of [System.Xml.Serialization.XmlSerializer]() for the given object type.
     
         
         :param type: The type of object for which the serializer should be created.
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Xml.Serialization.XmlSerializer
+        :return: A new instance of [System.Xml.Serialization.XmlSerializer]()
     
         
         .. code-block:: csharp
@@ -168,15 +167,15 @@ Methods
     
         
     
-        
-        
+        Creates a new instance of [System.Xml.XmlWriter]() using the given stream and the [Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.WriterSettings](Microsoft.AspNet.Mvc.Xml.XmlSerializerOutputFormatter.yml).
     
         
         :param writeStream: The stream on which the XmlWriter should operate on.
         :type writeStream: System.IO.Stream
         :param xmlWriterSettings: 
         :type xmlWriterSettings: System.Xml.XmlWriterSettings
-        :rtype: 
+        :rtype: System.Xml.XmlWriter
+        :return: A new instance of [System.Xml.XmlWriter]()
     
         
         .. code-block:: csharp
@@ -187,13 +186,13 @@ Methods
     
         
     
-        
-        
+        Gets the cached serializer or creates and caches the serializer for the given type.
     
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Xml.Serialization.XmlSerializer
+        :return: The [System.Xml.Serialization.XmlSerializer]() instance.
     
         
         .. code-block:: csharp
@@ -204,13 +203,13 @@ Methods
     
         
     
-        
-        
+        Gets the type to be serialized.
     
         
         :param type: The original type to be serialized
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Type
+        :return: The original or wrapped type provided by any [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml).
     
         
         .. code-block:: csharp
@@ -221,15 +220,15 @@ Methods
     
         
     
-        
-        
+        Gets the type of the object to be serialized.
     
         
         :param declaredType: The declared type of the object.
         :type declaredType: System.Type
         :param runtimeType: The runtime type of the object
         :type runtimeType: System.Type
-        :rtype: 
+        :rtype: System.Type
+        :return: A type that needs to be serialized.
     
         
         .. code-block:: csharp
@@ -241,7 +240,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

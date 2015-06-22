@@ -135,7 +135,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -229,7 +228,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.GlobbingUrlBuilder">
 <code class="descname">GlobbingUrlBuilder</code><span class="sig-paren">(</span><em>IFileProvider</em>, <em>IMemoryCache</em>, <em>PathString</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.GlobbingUrlBuilder" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder](Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -256,11 +256,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.Cache">
 <code class="descname">Cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.Cache" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#64;!:IMemoryCache- to cache globbing results in.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IMemoryCache</td>
 </tr>
 </tbody>
 </table>
@@ -272,11 +273,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.FileProvider">
 <code class="descname">FileProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.FileProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#64;!:IFileProvider- used to watch for changes to file globbing results.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IFileProvider</td>
 </tr>
 </tbody>
 </table>
@@ -288,11 +290,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.RequestPathBase">
 <code class="descname">RequestPathBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.RequestPathBase" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The base path of the current request (i.e. &#64;!:HttpRequest.PathBase-).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">PathString</td>
 </tr>
 </tbody>
 </table>
@@ -310,7 +313,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.BuildUrlList">
 <code class="descname">BuildUrlList</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder.BuildUrlList" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Builds a list of URLs.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -321,7 +325,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{System.String}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The list of URLs</p>
 </td>
 </tr>
 </tbody>

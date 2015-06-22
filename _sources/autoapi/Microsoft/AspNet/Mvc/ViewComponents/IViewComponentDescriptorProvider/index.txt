@@ -22,6 +22,7 @@ Discovers the View Components in the application.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,11 @@ Methods
     
         
     
-        
-        
+        Gets the set of [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor}
+        :return: A list of [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml).
     
         
         .. code-block:: csharp

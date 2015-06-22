@@ -13,6 +13,7 @@ MvcRazorHost Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`RazorEngineHost`
@@ -54,8 +55,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) using the specified
+        <paramref name="chunkTreeCache" />.
     
         
         :param chunkTreeCache: An [Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache](Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache.yml) rooted at the application base path.
@@ -70,8 +71,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) with the specified
+        <paramref name="root" />.
     
         
         :param root: The path to the application base.
@@ -94,11 +95,10 @@ Properties
     
         
     
-        
-        
+        Gets the method name used to create model expressions.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -109,11 +109,10 @@ Properties
     
         
     
-        
-        
+        Gets the list of chunks that are injected by default by this host.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Chunk}
     
         
         .. code-block:: csharp
@@ -124,11 +123,10 @@ Properties
     
         
     
-        
-        
+        Gets the model type used by default when no model is specified.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -139,11 +137,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name attribute that is used to decorate properties that are injected and need to be
+        activated.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -153,7 +151,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MainClassNamePrefix
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -164,11 +162,10 @@ Properties
     
         
     
-        
-        
+        Gets the type name used to represent @!:ITagHelper- model expression properties.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -190,7 +187,7 @@ Methods
         :type incomingGenerator: CodeGenerator
         :param context: 
         :type context: CodeGeneratorContext
-        :rtype: 
+        :rtype: CodeGenerator
     
         
         .. code-block:: csharp
@@ -202,7 +199,7 @@ Methods
         
         :param incomingCodeParser: 
         :type incomingCodeParser: ParserBase
-        :rtype: 
+        :rtype: ParserBase
     
         
         .. code-block:: csharp
@@ -216,7 +213,7 @@ Methods
         :type razorParser: RazorParser
         :param sourceFileName: 
         :type sourceFileName: System.String
-        :rtype: 
+        :rtype: RazorParser
     
         
         .. code-block:: csharp
@@ -230,7 +227,7 @@ Methods
         :type rootRelativePath: System.String
         :param inputStream: 
         :type inputStream: System.IO.Stream
-        :rtype: 
+        :rtype: GeneratorResults
     
         
         .. code-block:: csharp

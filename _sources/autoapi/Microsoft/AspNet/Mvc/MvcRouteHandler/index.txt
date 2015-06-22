@@ -13,6 +13,7 @@ MvcRouteHandler Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`IRouter`
@@ -55,7 +56,7 @@ Methods
         
         :param context: 
         :type context: VirtualPathContext
-        :rtype: 
+        :rtype: VirtualPathData
     
         
         .. code-block:: csharp
@@ -67,7 +68,7 @@ Methods
         
         :param context: 
         :type context: RouteContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

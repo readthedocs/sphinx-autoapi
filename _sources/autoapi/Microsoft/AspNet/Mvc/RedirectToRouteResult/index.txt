@@ -13,6 +13,7 @@ RedirectToRouteResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -101,7 +102,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectToRouteResult.Permanent
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -111,7 +112,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectToRouteResult.RouteName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -121,7 +122,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectToRouteResult.RouteValues
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -131,7 +132,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RedirectToRouteResult.UrlHelper
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IUrlHelper
     
         
         .. code-block:: csharp

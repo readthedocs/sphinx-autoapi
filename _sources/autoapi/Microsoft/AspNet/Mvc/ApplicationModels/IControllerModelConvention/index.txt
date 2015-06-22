@@ -22,6 +22,7 @@ Allows customization of the of the [Microsoft.AspNet.Mvc.ApplicationModels.Contr
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Called to apply the convention to the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).
     
         
         :param controller: The [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml).

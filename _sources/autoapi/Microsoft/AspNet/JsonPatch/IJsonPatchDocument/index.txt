@@ -17,6 +17,7 @@ IJsonPatchDocument Interface
 
 
 
+
 Syntax
 ------
 
@@ -48,7 +49,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.IJsonPatchDocument.ContractResolver
     
         
-        :rtype: 
+        :rtype: IContractResolver
     
         
         .. code-block:: csharp
@@ -66,7 +67,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.JsonPatch.IJsonPatchDocument.GetOperations()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.List{Microsoft.AspNet.JsonPatch.Operations.Operation}
     
         
         .. code-block:: csharp

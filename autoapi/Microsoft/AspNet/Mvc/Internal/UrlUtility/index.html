@@ -151,7 +151,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Internal.UrlUtility.IsLocalUrl">
 <code class="descname">IsLocalUrl</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Internal.UrlUtility.IsLocalUrl" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a value that indicates whether the URL is local. An URL with an absolute path is considered local
+if it does not have a host/authority part. URLs using the virtual paths (&#8216;~/&#8217;) are also local.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -160,16 +162,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the URL is local; otherwise,</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">IsLocalUrl</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">IsLocalUrl</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

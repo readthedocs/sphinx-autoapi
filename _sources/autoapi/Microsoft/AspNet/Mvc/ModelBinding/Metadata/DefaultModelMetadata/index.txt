@@ -18,6 +18,7 @@ A default [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() implementation.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.yml).
     
         
         :param provider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
@@ -87,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.AdditionalValues
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -98,11 +98,10 @@ Properties
     
         
     
-        
-        
+        Gets the set of attributes for the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
     
         
         .. code-block:: csharp
@@ -112,7 +111,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.BinderModelName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -122,7 +121,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.BinderType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -133,11 +132,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.yml) for the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata
     
         
         .. code-block:: csharp
@@ -147,7 +145,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.BindingSource
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -157,7 +155,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.ConvertEmptyStringToNull
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -167,7 +165,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.DataTypeName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -177,7 +175,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.Description
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -187,7 +185,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.DisplayFormatString
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -198,11 +196,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml) for the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata
     
         
         .. code-block:: csharp
@@ -212,7 +209,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.DisplayName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -222,7 +219,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.EditFormatString
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -232,7 +229,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.ElementMetadata
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -242,7 +239,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.EnumDisplayNamesAndValues
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     
         
         .. code-block:: csharp
@@ -252,7 +249,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.EnumNamesAndValues
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -262,7 +259,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.HasNonDefaultEditFormat
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -272,7 +269,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.HideSurroundingHtml
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -282,7 +279,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.HtmlEncode
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -292,7 +289,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsBindingAllowed
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -302,7 +299,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsBindingRequired
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -312,7 +309,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsEnum
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -322,7 +319,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsFlagsEnum
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -332,7 +329,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsReadOnly
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -342,7 +339,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.IsRequired
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -352,7 +349,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.NullDisplayText
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -362,7 +359,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -372,7 +369,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.Properties
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection
     
         
         .. code-block:: csharp
@@ -382,7 +379,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.PropertyBindingPredicateProvider
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider
     
         
         .. code-block:: csharp
@@ -392,7 +389,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.PropertyGetter
     
         
-        :rtype: 
+        :rtype: System.Func{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -402,7 +399,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.PropertySetter
     
         
-        :rtype: 
+        :rtype: System.Action{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -412,7 +409,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.ShowForDisplay
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -422,7 +419,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.ShowForEdit
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -432,7 +429,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.SimpleDisplayProperty
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -442,7 +439,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.TemplateHint
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -453,11 +450,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.yml) for the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata
     
         
         .. code-block:: csharp
@@ -467,7 +463,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadata.ValidatorMetadata
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp

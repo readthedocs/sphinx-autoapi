@@ -153,7 +153,9 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MvcRazorHost">
 <code class="descname">MvcRazorHost</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.Directives.IChunkTreeCache</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.MvcRazorHost" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) using the specified
+&lt;paramref name=&#8221;chunkTreeCache&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -172,7 +174,9 @@
 <dl class="constructor">
 <dt>
 <code class="descname">MvcRazorHost</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) with the specified
+&lt;paramref name=&#8221;root&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -197,11 +201,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.CreateModelExpressionMethod">
 <code class="descname">CreateModelExpressionMethod</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.CreateModelExpressionMethod" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the method name used to create model expressions.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -213,11 +218,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultInheritedChunks">
 <code class="descname">DefaultInheritedChunks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultInheritedChunks" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the list of chunks that are injected by default by this host.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{Chunk}</td>
 </tr>
 </tbody>
 </table>
@@ -229,11 +235,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultModel">
 <code class="descname">DefaultModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.DefaultModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the model type used by default when no model is specified.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -245,11 +252,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.InjectAttribute">
 <code class="descname">InjectAttribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.InjectAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the name attribute that is used to decorate properties that are injected and need to be
+activated.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -265,7 +274,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -277,11 +286,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.MvcRazorHost.ModelExpressionType">
 <code class="descname">ModelExpressionType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.MvcRazorHost.ModelExpressionType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the type name used to represent &#64;!:ITagHelper- model expression properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -309,7 +319,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeGenerator</p>
 </td>
 </tr>
 </tbody>
@@ -331,7 +341,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ParserBase</p>
 </td>
 </tr>
 </tbody>
@@ -354,7 +364,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">RazorParser</p>
 </td>
 </tr>
 </tbody>
@@ -377,7 +387,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">GeneratorResults</p>
 </td>
 </tr>
 </tbody>

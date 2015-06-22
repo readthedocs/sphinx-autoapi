@@ -17,6 +17,7 @@ IAsyncActionFilter Interface
 
 
 
+
 Syntax
 ------
 
@@ -52,7 +53,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
         :param next: 
         :type next: Microsoft.AspNet.Mvc.ActionExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

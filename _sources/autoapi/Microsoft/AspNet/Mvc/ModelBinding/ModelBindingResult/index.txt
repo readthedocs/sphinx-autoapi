@@ -18,6 +18,7 @@ Contains the result of model binding.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).
     
         
         :param model: The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
@@ -80,8 +80,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).
     
         
         :param model: The model which was created by the [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
@@ -103,8 +102,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml) indicating a fatal error.
     
         
         :param key: The key using which was used to attempt binding the model.
@@ -127,11 +125,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating the caller should not attempt binding again. This attempt encountered a fatal
+        error.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -142,11 +140,16 @@ Properties
     
         
     
-        
-        
+        <para>
+        Gets a value indicating whether or not the <see cref="P:Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.Model" /> value has been set.
+        </para>
+        <para>
+        This property can be used to distinguish between a model binder which does not find a value and
+        the case where a model binder sets the <c>null</c> value.
+        </para>
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -157,11 +160,15 @@ Properties
     
         
     
-        
-        
+        <para>
+        Gets the model name which was used to bind the model.
+        </para>
+        <para>
+        This property can be used during validation to add model state for a bound model.
+        </para>
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -172,11 +179,10 @@ Properties
     
         
     
-        
-        
+        Gets the model associated with this context.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -187,11 +193,10 @@ Properties
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode.yml) associated with the current [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationNode
     
         
         .. code-block:: csharp

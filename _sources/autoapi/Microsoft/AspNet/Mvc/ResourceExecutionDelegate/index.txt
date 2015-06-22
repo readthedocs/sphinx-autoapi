@@ -22,6 +22,7 @@ A delegate which asyncronously returns a [Microsoft.AspNet.Mvc.ResourceExecutedC
 
 
 
+
 Syntax
 ------
 

@@ -22,6 +22,7 @@ An [Microsoft.AspNet.Mvc.Rendering.IViewEngine]() used to render pages that use 
 
 
 
+
 Syntax
 ------
 
@@ -54,15 +55,16 @@ Methods
     
         
     
-        
-        
+        Finds a [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) using the same view discovery semantics used in
+        [Microsoft.AspNet.Mvc.Rendering.IViewEngine.FindPartialView(Microsoft.AspNet.Mvc.ActionContext,System.String)]().
     
         
         :param context: The [Microsoft.AspNet.Mvc.ActionContext]().
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :param page: 
         :type page: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.RazorPageResult
+        :return: A result representing the result of locating the [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml).
     
         
         .. code-block:: csharp

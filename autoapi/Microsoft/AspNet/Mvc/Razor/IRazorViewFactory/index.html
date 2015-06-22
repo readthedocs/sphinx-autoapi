@@ -148,7 +148,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IRazorViewFactory.GetView">
 <code class="descname">GetView</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.IRazorViewEngine</em>, <em>Microsoft.AspNet.Mvc.Razor.IRazorPage</em>, <em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IRazorViewFactory.GetView" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.Razor.RazorView](Microsoft.AspNet.Mvc.Razor.RazorView.yml) providing it with the [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) to execute.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -180,11 +181,16 @@
 </tr>
 <tr class="field-odd field"><th class="field-name">type isPartial:</th><td class="field-body">System.Boolean</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.IView</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.IView]() instance that renders the contents of the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IView</span> <span class="nf">GetView</span><span class="p">(</span><span class="n">IRazorViewEngine</span> <span class="n">viewEngine</span><span class="p">,</span> <span class="n">IRazorPage</span> <span class="n">page</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPartial</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;page&#8221; /&gt;</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IView</span> <span class="nf">GetView</span><span class="p">(</span><span class="n">IRazorViewEngine</span> <span class="n">viewEngine</span><span class="p">,</span> <span class="n">IRazorPage</span> <span class="n">page</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPartial</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>

@@ -148,7 +148,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.BindModelAsync">
 <code class="descname">BindModelAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.BindModelAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Async function to bind to a particular model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -157,16 +158,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Task which on completion returns a [Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult](Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult.yml) which represents the result</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">Task</span><span class="p">&lt;</span><span class="n">ModelBindingResult</span><span class="p">&gt;</span> <span class="n">BindModelAsync</span><span class="p">(</span><span class="n">ModelBindingContext</span> <span class="n">bindingContext</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>of the model binding process.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">Task</span><span class="p">&lt;</span><span class="n">ModelBindingResult</span><span class="p">&gt;</span> <span class="n">BindModelAsync</span><span class="p">(</span><span class="n">ModelBindingContext</span> <span class="n">bindingContext</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

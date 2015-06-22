@@ -13,6 +13,7 @@ ControllerActionDescriptor Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ControllerActionDescriptor.ControllerName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -64,7 +65,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ControllerActionDescriptor.ControllerTypeInfo
     
         
-        :rtype: 
+        :rtype: System.Reflection.TypeInfo
     
         
         .. code-block:: csharp
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ControllerActionDescriptor.DisplayName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ControllerActionDescriptor.MethodInfo
     
         
-        :rtype: 
+        :rtype: System.Reflection.MethodInfo
     
         
         .. code-block:: csharp

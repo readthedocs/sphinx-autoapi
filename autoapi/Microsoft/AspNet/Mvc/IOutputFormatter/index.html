@@ -148,7 +148,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IOutputFormatter.CanWriteResult">
 <code class="descname">CanWriteResult</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.OutputFormatterContext</em>, <em>MediaTypeHeaderValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IOutputFormatter.CanWriteResult" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Determines whether this [Microsoft.AspNet.Mvc.IOutputFormatter](Microsoft.AspNet.Mvc.IOutputFormatter.yml) can serialize
+an object of the specified type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -158,20 +160,31 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if this [Microsoft.AspNet.Mvc.IOutputFormatter](Microsoft.AspNet.Mvc.IOutputFormatter.yml) supports the passed in</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">CanWriteResult</span><span class="p">(</span><span class="n">OutputFormatterContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;contentType&#8221; /&gt; and is able to serialize the object
+represent by
+&lt;paramref name=&#8221;context&#8221; /&gt;&#8217;s Object property.
+False otherwise.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">CanWriteResult</span><span class="p">(</span><span class="n">OutputFormatterContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">MediaTypeHeaderValue</span> <span class="n">contentType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IOutputFormatter.WriteAsync">
 <code class="descname">WriteAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.OutputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IOutputFormatter.WriteAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Writes the object represented by
+&lt;paramref name=&#8221;context&#8221; /&gt;&#8217;s Object property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -180,16 +193,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Task that serializes the value to the</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">Task</span> <span class="nf">WriteAsync</span><span class="p">(</span><span class="n">OutputFormatterContext</span> <span class="n">context</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;context&#8221; /&gt;&#8217;s response message.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">Task</span> <span class="nf">WriteAsync</span><span class="p">(</span><span class="n">OutputFormatterContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

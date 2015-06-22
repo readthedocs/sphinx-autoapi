@@ -18,6 +18,7 @@ Display metadata details for a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets a set of additional values. See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.AdditionalValues]()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -74,11 +74,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether or not empty strings should be treated as
+        <c>null</c>.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ConvertEmptyStringToNull]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -89,11 +90,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the data type.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DataTypeName]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -104,11 +105,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a delegate which is used to get a value for the
+        model description. See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Description]().
     
         
-        :rtype: 
+        :rtype: System.Func{System.String}
     
         
         .. code-block:: csharp
@@ -119,11 +120,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a display format string for the model.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayFormatString]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -134,11 +135,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a delegate delegate which is used to get a value for the
+        display name of the model. See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayName]().
     
         
-        :rtype: 
+        :rtype: System.Func{System.String}
     
         
         .. code-block:: csharp
@@ -149,11 +150,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets an edit format string for the model.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -164,11 +165,13 @@ Properties
     
         
     
-        
-        
+        Gets the ordered display names and values of all [System.Enum]() values in
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType]() or
+        <c>Nullable.GetUnderlyingType(ModelType)</c>. See
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumDisplayNamesAndValues]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     
         
         .. code-block:: csharp
@@ -179,11 +182,12 @@ Properties
     
         
     
-        
-        
+        Gets the names and values of all [System.Enum]() values in [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType]()
+        or
+        <c>Nullable.GetUnderlyingType(ModelType)</c>. See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumNamesAndValues]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -194,11 +198,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether or not the model has a non-default edit format.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HasNonDefaultEditFormat]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -209,11 +213,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating if the surrounding HTML should be hidden.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HideSurroundingHtml]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -224,11 +228,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating if the model value should be HTML encoded.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HtmlEncode]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -239,11 +243,13 @@ Properties
     
         
     
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType]() or
         
-        
+        <c>Nullable.GetUnderlyingType(ModelType)</c> is for an [System.Enum](). See
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsEnum]().
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -254,11 +260,13 @@ Properties
     
         
     
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType]() or
         
-        
+        <c>Nullable.GetUnderlyingType(ModelType)</c> is for an [System.Enum]() with an associated
+        [System.FlagsAttribute](). See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsFlagsEnum]().
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -269,11 +277,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the text to display when the model value is null.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -284,11 +292,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the order.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order]()
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -299,11 +307,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether or not to include in the model value in display.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForDisplay]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -314,11 +322,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value indicating whether or not to include in the model value in an editor.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForEdit]()
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -329,11 +337,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a the property name of a model property to use for display.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.SimpleDisplayProperty]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -344,11 +352,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets a hint for location of a display or editor template.
+        See [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.TemplateHint]()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

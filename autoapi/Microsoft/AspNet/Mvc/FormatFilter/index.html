@@ -159,7 +159,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.FormatFilter">
 <code class="descname">FormatFilter</code><span class="sig-paren">(</span><em>IOptions&lt;Microsoft.AspNet.Mvc.MvcFormatterMappingOptions&gt;</em>, <em>Microsoft.AspNet.Mvc.IScopedInstance&lt;Microsoft.AspNet.Mvc.ActionContext&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.FormatFilter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes an instance of [Microsoft.AspNet.Mvc.FormatFilter](Microsoft.AspNet.Mvc.FormatFilter.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -202,11 +203,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.ContentType">
 <code class="descname">ContentType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.ContentType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&#64;!:MediaTypeHeaderValue- for the format value in the current request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">MediaTypeHeaderValue</td>
 </tr>
 </tbody>
 </table>
@@ -218,11 +220,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.Format">
 <code class="descname">Format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.Format" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Format value in the current request.
+&lt;c&gt;null&lt;/c&gt; if format not present in the current request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -234,11 +238,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.IsActive">
 <code class="descname">IsActive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.IsActive" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&lt;c&gt;true&lt;/c&gt; if the current [Microsoft.AspNet.Mvc.FormatFilter](Microsoft.AspNet.Mvc.FormatFilter.yml) is active and will execute.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -275,7 +280,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.OnResourceExecuting">
 <code class="descname">OnResourceExecuting</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ResourceExecutingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.OnResourceExecuting" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>As a [Microsoft.AspNet.Mvc.IResourceFilter](), this filter looks at the request and rejects it before going ahead if
+1. The format in the request doesnt match any format in the map.
+2. If there is a conflicting producesFilter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -313,7 +321,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.FormatFilter.OnResultExecuting">
 <code class="descname">OnResultExecuting</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ResultExecutingContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FormatFilter.OnResultExecuting" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Sets a Content Type on an  [Microsoft.AspNet.Mvc.ObjectResult]()  using a format value from the request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

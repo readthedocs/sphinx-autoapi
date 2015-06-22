@@ -13,6 +13,7 @@ DefaultActionSelector Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -80,7 +81,7 @@ Methods
         
         :param context: 
         :type context: VirtualPathContext
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -92,7 +93,7 @@ Methods
         
         :param context: 
         :type context: RouteContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ActionDescriptor}
     
         
         .. code-block:: csharp
@@ -103,13 +104,13 @@ Methods
     
         
     
-        
-        
+        Returns the set of best matching actions.
     
         
         :param actions: The set of actions that satisfy all constraints.
         :type actions: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
+        :return: A list of the best matching actions.
     
         
         .. code-block:: csharp

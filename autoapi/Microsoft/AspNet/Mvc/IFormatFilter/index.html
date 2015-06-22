@@ -148,11 +148,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IFormatFilter.ContentType">
 <code class="descname">ContentType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IFormatFilter.ContentType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&#64;!:MediaTypeHeaderValue- for the format value in the current request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">MediaTypeHeaderValue</td>
 </tr>
 </tbody>
 </table>
@@ -164,11 +165,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IFormatFilter.Format">
 <code class="descname">Format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IFormatFilter.Format" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>format value in the current request.
+&lt;c&gt;null&lt;/c&gt; if format not present in the current request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -180,11 +183,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.IFormatFilter.IsActive">
 <code class="descname">IsActive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IFormatFilter.IsActive" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&lt;c&gt;true&lt;/c&gt; if the current [Microsoft.AspNet.Mvc.FormatFilter](Microsoft.AspNet.Mvc.FormatFilter.yml) is active and will execute.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>

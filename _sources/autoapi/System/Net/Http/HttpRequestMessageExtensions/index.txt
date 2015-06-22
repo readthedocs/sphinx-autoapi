@@ -18,6 +18,7 @@ Provides extension methods for the [System.Net.Http.HttpRequestMessage]() class.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,11 @@ Methods
     
         
     
-        
-        
+        Helper method for creating an [System.Net.Http.HttpResponseMessage]() message with a "416 (Requested Range Not
+        Satisfiable)" status code. This response can be used in combination with the
+        @!:ByteRangeStreamContent- to indicate that the requested range or
+        ranges do not overlap with the current resource. The response contains a "Content-Range" header indicating
+        the valid upper and lower bounds for requested ranges.
     
         
         :param request: The request.
@@ -68,7 +72,9 @@ Methods
         :param invalidByteRangeException: An @!:InvalidByteRangeException- instance, typically
     thrown by a @!:ByteRangeStreamContent- instance.
         :type invalidByteRangeException: InvalidByteRangeException
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An 416 (Requested Range Not Satisfiable) error response with a Content-Range header indicating the valid
+    range.
     
         
         .. code-block:: csharp
@@ -79,8 +85,14 @@ Methods
     
         
     
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" />
+        representing an error with an instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> wrapping an
         
-        
+        <see cref="T:System.Web.Http.HttpError" /> for model state
+        <paramref name="modelState" />. If no formatter is found, this
+        method returns a response with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -89,7 +101,10 @@ Methods
         :type statusCode: System.Net.HttpStatusCode
         :param modelState: The model state.
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An error response for
+    <paramref name="modelState" /> with status code
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -100,8 +115,14 @@ Methods
     
         
     
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" />
+        representing an error with an instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> wrapping an
         
-        
+        <see cref="T:System.Web.Http.HttpError" /> for exception
+        <paramref name="exception" />. If no formatter is found, this method
+        returns a response with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -110,7 +131,10 @@ Methods
         :type statusCode: System.Net.HttpStatusCode
         :param exception: The exception.
         :type exception: System.Exception
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An error response for
+    <paramref name="exception" /> with status code
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -121,8 +145,14 @@ Methods
     
         
     
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" />
+        representing an error with an instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> wrapping an
         
-        
+        <see cref="T:System.Web.Http.HttpError" /> with message
+        <paramref name="message" />. If no formatter is found, this method
+        returns a response with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -131,7 +161,11 @@ Methods
         :type statusCode: System.Net.HttpStatusCode
         :param message: The error message.
         :type message: System.String
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An error response with error message
+    <paramref name="message" /> and status code
+    
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -142,8 +176,16 @@ Methods
     
         
     
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" />
+        representing an error with an instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> wrapping an
         
+        <see cref="T:System.Web.Http.HttpError" /> with error message
+        <paramref name="message" /> for exception
         
+        <paramref name="exception" />. If no formatter is found, this method returns a response with status 406
+        NotAcceptable.
     
         
         :param request: The request.
@@ -154,7 +196,12 @@ Methods
         :type message: System.String
         :param exception: The exception.
         :type exception: System.Exception
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An error response for
+    <paramref name="exception" /> with error message
+    <paramref name="message" />
+    and status code
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -165,8 +212,12 @@ Methods
     
         
     
-        
-        
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" />
+        representing an error with an instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> wrapping
+        <paramref name="error" />
+        as the content. If no formatter is found, this method returns a response with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -175,7 +226,10 @@ Methods
         :type statusCode: System.Net.HttpStatusCode
         :param error: The error to wrap.
         :type error: System.Web.Http.HttpError
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: An error response wrapping
+    <paramref name="error" /> with status code
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -186,8 +240,12 @@ Methods
     
         
     
-        
-        
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> as the content if a formatter can be found. If no formatter is
+        found, this method returns a response with status 406 NotAcceptable.
+        configuration.
     
         
         :param request: The request.
@@ -197,7 +255,10 @@ Methods
         :param value: The value to wrap. Can be
     <c>null</c>.
         :type value: T
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -208,8 +269,12 @@ Methods
     
         
     
-        
-        
+        Helper method that creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        <see cref="!:ObjectContent&lt;T&gt;" />
+        instance containing the provided
+        <paramref name="value" /> and the given
+        <paramref name="formatter" />.
     
         
         :param request: The request.
@@ -221,7 +286,10 @@ Methods
         :type value: T
         :param formatter: The formatter to use.
         :type formatter: MediaTypeFormatter
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -232,8 +300,12 @@ Methods
     
         
     
-        
-        
+        Helper method that creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        <see cref="!:ObjectContent&lt;T&gt;" />
+        instance containing the provided
+        <paramref name="value" /> and the given
+        <paramref name="formatter" />.
     
         
         :param request: The request.
@@ -248,7 +320,10 @@ Methods
         :param mediaType: The media type override to set on the response's content. Can be
     <c>null</c>.
         :type mediaType: System.Net.Http.Headers.MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -259,8 +334,12 @@ Methods
     
         
     
-        
-        
+        Helper method that creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        <see cref="!:ObjectContent&lt;T&gt;" />
+        instance containing the provided
+        <paramref name="value" /> and the given
+        <paramref name="formatter" />.
     
         
         :param request: The request.
@@ -275,7 +354,10 @@ Methods
         :param mediaType: The media type override to set on the response's content. Can be
     <c>null</c>.
         :type mediaType: System.String
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -286,8 +368,11 @@ Methods
     
         
     
-        
-        
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> as the content if a formatter can be found. If no formatter is
+        found, this method returns a response with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -299,7 +384,10 @@ Methods
         :type value: T
         :param formatters: 
         :type formatters: System.Collections.Generic.IEnumerable{MediaTypeFormatter}
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -310,8 +398,14 @@ Methods
     
         
     
-        
-        
+        Helper method that creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        <see cref="!:ObjectContent&lt;T&gt;" />
+        instance containing the provided
+        <paramref name="value" />. The given
+        <paramref name="mediaType" /> is used
+        to find an instance of
+        <see cref="!:MediaTypeFormatter" />.
     
         
         :param request: The request.
@@ -323,7 +417,10 @@ Methods
         :type value: T
         :param mediaType: The media type used to look up an instance of @!:MediaTypeFormatter-.
         :type mediaType: System.Net.Http.Headers.MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -334,8 +431,14 @@ Methods
     
         
     
-        
-        
+        Helper method that creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        <see cref="!:ObjectContent&lt;T&gt;" />
+        instance containing the provided
+        <paramref name="value" />. The given
+        <paramref name="mediaType" /> is used
+        to find an instance of
+        <see cref="!:MediaTypeFormatter" />.
     
         
         :param request: The request.
@@ -347,7 +450,10 @@ Methods
         :type value: T
         :param mediaType: The media type used to look up an instance of @!:MediaTypeFormatter-.
         :type mediaType: System.String
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with
+    <paramref name="statusCode" />.
     
         
         .. code-block:: csharp
@@ -358,8 +464,13 @@ Methods
     
         
     
-        
-        
+        Helper method that performs content negotiation and creates a
+        <see cref="T:System.Net.Http.HttpResponseMessage" /> with an
+        instance of
+        <see cref="!:ObjectContent&lt;T&gt;" /> as the content and
+        <see cref="F:System.Net.HttpStatusCode.OK" />
+        as the status code if a formatter can be found. If no formatter is found, this method returns a response
+        with status 406 NotAcceptable.
     
         
         :param request: The request.
@@ -367,7 +478,9 @@ Methods
         :param value: The value to wrap. Can be
     <c>null</c>.
         :type value: T
-        :rtype: 
+        :rtype: System.Net.Http.HttpResponseMessage
+        :return: A response wrapping
+    <paramref name="value" /> with [System.Net.HttpStatusCode.OK]() status code.
     
         
         .. code-block:: csharp

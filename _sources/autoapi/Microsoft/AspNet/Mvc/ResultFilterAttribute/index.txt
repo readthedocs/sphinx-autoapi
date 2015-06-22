@@ -13,6 +13,7 @@ ResultFilterAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultFilterAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -98,7 +99,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
         :param next: 
         :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

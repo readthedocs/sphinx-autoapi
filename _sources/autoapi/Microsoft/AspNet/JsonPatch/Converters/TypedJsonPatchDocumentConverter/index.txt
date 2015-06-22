@@ -13,6 +13,7 @@ TypedJsonPatchDocumentConverter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`JsonConverter`
@@ -55,7 +56,7 @@ Methods
         
         :param objectType: 
         :type objectType: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Methods
         :type existingValue: System.Object
         :param serializer: 
         :type serializer: JsonSerializer
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

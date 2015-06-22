@@ -18,6 +18,7 @@ This attribute can be used on action parameters and types, to indicate model lev
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instace of [Microsoft.AspNet.Mvc.BindAttribute](Microsoft.AspNet.Mvc.BindAttribute.yml).
     
         
         :param include: Names of parameters to include in binding.
@@ -76,8 +76,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.BindAttribute](Microsoft.AspNet.Mvc.BindAttribute.yml).
     
         
         :param predicateProviderType: The type which implements
@@ -101,11 +100,10 @@ Properties
     
         
     
-        
-        
+        Gets the names of properties to include in model binding.
     
         
-        :rtype: 
+        :rtype: System.String[]
     
         
         .. code-block:: csharp
@@ -116,11 +114,10 @@ Properties
     
         
     
-        
-        
+        Represents the model name used during model binding.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -130,7 +127,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.BindAttribute.PredicateProviderType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -141,11 +138,10 @@ Properties
     
         
     
-        
-        
+        Allows a user to specify a particular prefix to match during model binding.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -155,7 +151,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.BindAttribute.PropertyFilter
     
         
-        :rtype: 
+        :rtype: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
     
         
         .. code-block:: csharp

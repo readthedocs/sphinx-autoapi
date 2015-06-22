@@ -13,6 +13,7 @@ ParameterModel Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.Action
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.Attributes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.BindingInfo
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingInfo
     
         
         .. code-block:: csharp
@@ -115,7 +116,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterInfo
     
         
-        :rtype: 
+        :rtype: System.Reflection.ParameterInfo
     
         
         .. code-block:: csharp
@@ -125,7 +126,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.ParameterName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

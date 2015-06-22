@@ -19,6 +19,7 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Constraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,IRouteConstraint}
     
         
         .. code-block:: csharp
@@ -70,11 +71,10 @@ Properties
     
         
     
-        
-        
+        The order of the template.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        The precedence of the template.
     
         
-        :rtype: 
+        :rtype: System.Decimal
     
         
         .. code-block:: csharp
@@ -99,7 +98,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.RouteName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -109,7 +108,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.RouteTemplate
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -119,7 +118,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.Target
     
         
-        :rtype: 
+        :rtype: IRouter
     
         
         .. code-block:: csharp
@@ -129,7 +128,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.AttributeRouteMatchingEntry.TemplateMatcher
     
         
-        :rtype: 
+        :rtype: TemplateMatcher
     
         
         .. code-block:: csharp

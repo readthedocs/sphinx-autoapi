@@ -19,6 +19,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.LabelTagHelper](Microsoft.AspNet.Mvc.TagHelpers.LabelTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        An expression to be evaluated against the current model.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
     
         
         .. code-block:: csharp
@@ -98,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LabelTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -108,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LabelTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -130,7 +129,7 @@ Methods
         :type context: TagHelperContext
         :param output: 
         :type output: TagHelperOutput
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

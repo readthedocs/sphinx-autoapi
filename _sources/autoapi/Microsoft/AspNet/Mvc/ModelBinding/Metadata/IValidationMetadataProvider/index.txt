@@ -22,6 +22,7 @@ Provides [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata](Microso
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Gets the values for properties of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.yml).
     
         
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadataProviderContext.yml).

@@ -18,6 +18,7 @@ Result of [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.AspN
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.yml) for a failed file lookup.
     
         
     
@@ -73,8 +73,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.yml) with the specified
+        [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult.yml).
     
         
         :param compilationResult: The [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml)
@@ -97,11 +97,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
     
         
         .. code-block:: csharp
@@ -112,11 +111,11 @@ Properties
     
         
     
-        
-        
+        Result of [Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache](Microsoft.AspNet.Mvc.Razor.Compilation.ICompilerCache.yml) when the specified file does not exist in the
+        file system.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Select-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Micro
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,16 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -78,8 +80,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -89,7 +92,8 @@ Methods
         :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
     &lt;optgroup&gt; and &lt;option&gt; elements.
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -100,8 +104,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items and HTML attributes.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -114,7 +119,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -125,8 +131,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items and option label.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -139,7 +146,8 @@ Methods
         :param optionLabel: The text for a default empty item. Does not include such an item if argument is
     <c>null</c>.
         :type optionLabel: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -150,8 +158,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        option label.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -161,7 +170,8 @@ Methods
         :param optionLabel: The text for a default empty item. Does not include such an item if argument is
     <c>null</c>.
         :type optionLabel: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -172,8 +182,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -183,7 +194,8 @@ Methods
         :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
     &lt;optgroup&gt; and &lt;option&gt; elements.
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -194,8 +206,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items and HTML attributes.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -208,7 +221,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -219,8 +233,9 @@ Methods
     
         
     
-        
-        
+        Returns a single-selection HTML &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items and option label.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -233,7 +248,8 @@ Methods
         :param optionLabel: The text for a default empty item. Does not include such an item if argument is
     <c>null</c>.
         :type optionLabel: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -244,15 +260,16 @@ Methods
     
         
     
-        
-        
+        Returns a multi-selection &lt;select&gt; element for the
+        <paramref name="expression" />.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param expression: Expression name, relative to the current model.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -263,8 +280,9 @@ Methods
     
         
     
-        
-        
+        Returns a multi-selection &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -274,7 +292,8 @@ Methods
         :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
     &lt;optgroup&gt; and &lt;option&gt; elements.
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -285,8 +304,9 @@ Methods
     
         
     
-        
-        
+        Returns a multi-selection &lt;select&gt; element for the
+        <paramref name="expression" />, using the
+        specified list items.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -296,7 +316,8 @@ Methods
         :param selectList: A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) objects used to populate the &lt;select&gt; element with
     &lt;optgroup&gt; and &lt;option&gt; elements.
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;select&gt; element.
     
         
         .. code-block:: csharp

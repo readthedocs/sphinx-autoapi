@@ -18,6 +18,7 @@ Extension methods for adding filters to the global filters collection.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,15 @@ Methods
     
         
     
-        
-        
+        Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
         :type filterType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
+        :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added type.
     
         
         .. code-block:: csharp
@@ -78,8 +79,7 @@ Methods
     
         
     
-        
-        
+        Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
@@ -88,7 +88,8 @@ Methods
         :type filterType: System.Type
         :param order: The order of the added filter.
         :type order: System.Int32
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
+        :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added type.
     
         
         .. code-block:: csharp
@@ -99,15 +100,15 @@ Methods
     
         
     
-        
-        
+        Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
         :type filters: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
         :param filterType: Type representing an [Microsoft.AspNet.Mvc.IFilter]().
         :type filterType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
+        :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added service type.
     
         
         .. code-block:: csharp
@@ -118,8 +119,7 @@ Methods
     
         
     
-        
-        
+        Adds a type representing an [Microsoft.AspNet.Mvc.IFilter]() to a filter collection.
     
         
         :param filters: A collection of [Microsoft.AspNet.Mvc.IFilter]().
@@ -128,7 +128,8 @@ Methods
         :type filterType: System.Type
         :param order: The order of the added filter.
         :type order: System.Int32
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
+        :return: An [Microsoft.AspNet.Mvc.IFilter]() representing the added service type.
     
         
         .. code-block:: csharp

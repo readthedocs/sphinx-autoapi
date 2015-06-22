@@ -22,6 +22,7 @@ Selects a View Component based on a View Component name.
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,15 @@ Methods
     
         
     
-        
-        
+        Selects a View Component based on
+        <paramref name="componentName" />.
     
         
         :param componentName: The View Component name.
         :type componentName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor
+        :return: A [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml), or
+    <c>null</c> if no match is found.
     
         
         .. code-block:: csharp

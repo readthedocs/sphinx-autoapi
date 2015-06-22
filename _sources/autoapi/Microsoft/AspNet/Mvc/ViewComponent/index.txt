@@ -18,6 +18,7 @@ A base class for view components.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:HttpContext-.
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:HttpRequest-.
     
         
-        :rtype: 
+        :rtype: HttpRequest
     
         
         .. code-block:: csharp
@@ -104,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ViewComponent.RouteData](Microsoft.AspNet.Mvc.ViewComponent.yml) for the current request.
     
         
-        :rtype: 
+        :rtype: RouteData
     
         
         .. code-block:: csharp
@@ -119,11 +116,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.IUrlHelper]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IUrlHelper
     
         
         .. code-block:: csharp
@@ -134,11 +130,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Security.Principal.IPrincipal]() for the current user.
     
         
-        :rtype: 
+        :rtype: System.Security.Principal.IPrincipal
     
         
         .. code-block:: csharp
@@ -149,11 +144,10 @@ Properties
     
         
     
-        
-        
+        Gets the view bag.
     
         
-        :rtype: 
+        :rtype: dynamic
     
         
         .. code-block:: csharp
@@ -163,7 +157,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ViewComponent.ViewComponentContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewComponentContext
     
         
         .. code-block:: csharp
@@ -174,11 +168,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ViewComponent.ViewContext](Microsoft.AspNet.Mvc.ViewComponent.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -189,11 +182,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -204,11 +196,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.Rendering.ICompositeViewEngine](Microsoft.AspNet.Mvc.Rendering.ICompositeViewEngine.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ICompositeViewEngine
     
         
         .. code-block:: csharp
@@ -227,13 +218,13 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render HTML encoded text.
     
         
         :param content: The content, will be HTML encoded before output.
         :type content: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ContentViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.ContentViewComponentResult](Microsoft.AspNet.Mvc.ContentViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -244,13 +235,13 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render JSON text.
     
         
         :param value: The value to output in JSON text.
         :type value: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.JsonViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -261,8 +252,7 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render JSON text.
     
         
         :param value: The value to output in JSON text.
@@ -270,7 +260,8 @@ Methods
         :param serializerSettings: The @!:JsonSerializerSettings- to be used by
     the formatter.
         :type serializerSettings: JsonSerializerSettings
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.JsonViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.JsonViewComponentResult](Microsoft.AspNet.Mvc.JsonViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -281,11 +272,12 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render the partial view with name
+        <c>"Default"</c>.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -296,13 +288,14 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render the partial view with name
+        <paramref name="viewName" />.
     
         
         :param viewName: The name of the partial view to render.
         :type viewName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -313,15 +306,16 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render the partial view with name
+        <paramref name="viewName" />.
     
         
         :param viewName: The name of the partial view to render.
         :type viewName: System.String
         :param model: The model object for the view.
         :type model: TModel
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
     
         
         .. code-block:: csharp
@@ -332,13 +326,14 @@ Methods
     
         
     
-        
-        
+        Returns a result which will render the partial view with name
+        <c>"Default"</c>.
     
         
         :param model: The model object for the view.
         :type model: TModel
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewViewComponentResult
+        :return: A [Microsoft.AspNet.Mvc.ViewViewComponentResult](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
     
         
         .. code-block:: csharp

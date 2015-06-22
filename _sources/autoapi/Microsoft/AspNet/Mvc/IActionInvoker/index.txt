@@ -17,6 +17,7 @@ IActionInvoker Interface
 
 
 
+
 Syntax
 ------
 
@@ -48,7 +49,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.IActionInvoker.InvokeAsync()
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

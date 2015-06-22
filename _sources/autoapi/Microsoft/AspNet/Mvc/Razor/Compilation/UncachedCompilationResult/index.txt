@@ -18,6 +18,7 @@ Represents the result of compilation that does not come from the [Microsoft.AspN
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult.RazorFileContent
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -78,15 +79,16 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult.yml) that represents a success in compilation.
     
         
         :param type: The compiled type.
         :type type: System.Type
         :param compiledContent: The generated C# content that was compiled.
         :type compiledContent: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult
+        :return: An [Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.UncachedCompilationResult.yml) instance that indicates a successful
+    compilation.
     
         
         .. code-block:: csharp

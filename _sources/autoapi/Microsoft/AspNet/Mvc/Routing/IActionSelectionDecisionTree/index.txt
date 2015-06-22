@@ -23,6 +23,7 @@ supplied for the current request by @!:Microsoft.AspNet.Routing.RouteData.Values
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,10 @@ Properties
     
         
     
-        
-        
+        Gets the version. The same as the value of [Microsoft.AspNet.Mvc.ActionDescriptorsCollection.Version](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml).
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -78,13 +78,15 @@ Methods
     
         
     
+        Retrieves a set of [Microsoft.AspNet.Mvc.ActionDescriptor]() based on the route values supplied by
         
-        
+        <paramref name="routeValues" />/
     
         
         :param routeValues: The route values for the current request.
         :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
+        :return: A set of [Microsoft.AspNet.Mvc.ActionDescriptor]() matching the route values.
     
         
         .. code-block:: csharp

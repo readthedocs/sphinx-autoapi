@@ -111,7 +111,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/AspNet/Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Microsoft/Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">System.Web.Http Namespace</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">ApiController Class</a><ul>
@@ -222,11 +221,12 @@
 <dd><dl class="property">
 <dt id="System.Web.Http.ApiController.ActionContext">
 <code class="descname">ActionContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ActionContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the action context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ActionContext</td>
 </tr>
 </tbody>
 </table>
@@ -238,11 +238,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.BindingContext">
 <code class="descname">BindingContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.BindingContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.ActionBindingContext]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ActionBindingContext</td>
 </tr>
 </tbody>
 </table>
@@ -254,11 +255,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.Context">
 <code class="descname">Context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Context" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the http context.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">HttpContext</td>
 </tr>
 </tbody>
 </table>
@@ -270,11 +272,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.MetadataProvider">
 <code class="descname">MetadataProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.MetadataProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
 </tr>
 </tbody>
 </table>
@@ -286,11 +289,13 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.ModelState">
 <code class="descname">ModelState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ModelState" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets model state after the model binding process. This ModelState will be empty before model binding
+happens.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +311,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.Validation.IObjectModelValidator</td>
 </tr>
 </tbody>
 </table>
@@ -318,11 +323,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.Request">
 <code class="descname">Request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Request" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the HTTP request message.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Net.Http.HttpRequestMessage</td>
 </tr>
 </tbody>
 </table>
@@ -334,11 +340,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.Url">
 <code class="descname">Url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Url" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a factory used to generate URLs to other APIs.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.IUrlHelper</td>
 </tr>
 </tbody>
 </table>
@@ -350,11 +357,12 @@
 <dl class="property">
 <dt id="System.Web.Http.ApiController.User">
 <code class="descname">User</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.User" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the current principal associated with this request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Security.Principal.IPrincipal</td>
 </tr>
 </tbody>
 </table>
@@ -372,11 +380,14 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.BadRequest()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.BadRequestResult]() (400 Bad Request).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.BadRequestResult</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A [Microsoft.AspNet.Mvc.BadRequestResult]().</td>
 </tr>
 </tbody>
 </table>
@@ -388,7 +399,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.BadRequest">
 <code class="descname">BadRequest</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.BadRequest" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) (400 Bad Request) with the specified model state.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -397,7 +409,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.InvalidModelStateResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Web.Http.InvalidModelStateResult](System.Web.Http.InvalidModelStateResult.yml) with the specified model state.</p>
 </td>
 </tr>
 </tbody>
@@ -410,7 +425,8 @@
 <dl class="method">
 <dt>
 <code class="descname">BadRequest</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [System.Web.Http.BadRequestErrorMessageResult](System.Web.Http.BadRequestErrorMessageResult.yml) (400 Bad Request) with the specified error message.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -419,7 +435,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.BadRequestErrorMessageResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Web.Http.BadRequestErrorMessageResult](System.Web.Http.BadRequestErrorMessageResult.yml) with the specified error message.</p>
 </td>
 </tr>
 </tbody>
@@ -432,11 +451,14 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.Conflict()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [System.Web.Http.ConflictResult](System.Web.Http.ConflictResult.yml) (409 Conflict).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Web.Http.ConflictResult</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A [System.Web.Http.ConflictResult](System.Web.Http.ConflictResult.yml).</td>
 </tr>
 </tbody>
 </table>
@@ -448,7 +470,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.Content&lt;T&gt;">
 <code class="descname">Content&lt;T&gt;</code><span class="sig-paren">(</span><em>System.Net.HttpStatusCode</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Content<T>" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [System.Web.Http.NegotiatedContentResult`1](System.Web.Http.NegotiatedContentResult`1.yml) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -458,7 +481,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.NegotiatedContentResult{{T}}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Web.Http.NegotiatedContentResult`1](System.Web.Http.NegotiatedContentResult`1.yml) with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -471,7 +497,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.Created">
 <code class="descname">Created</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Created" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.CreatedResult]() (201 Created) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -481,7 +508,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.CreatedResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.CreatedResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -494,7 +524,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Created</code><span class="sig-paren">(</span><em>System.Uri</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.CreatedResult]() (201 Created) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -504,7 +535,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.CreatedResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.CreatedResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -517,7 +551,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.CreatedAtRoute">
 <code class="descname">CreatedAtRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.CreatedAtRoute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.CreatedAtRouteResult]() (201 Created) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -528,7 +563,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.CreatedAtRouteResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.CreatedAtRouteResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -568,11 +606,14 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.InternalServerError()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [System.Web.Http.InternalServerErrorResult](System.Web.Http.InternalServerErrorResult.yml) (500 Internal Server Error).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Web.Http.InternalServerErrorResult</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A [System.Web.Http.InternalServerErrorResult](System.Web.Http.InternalServerErrorResult.yml).</td>
 </tr>
 </tbody>
 </table>
@@ -584,7 +625,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.InternalServerError">
 <code class="descname">InternalServerError</code><span class="sig-paren">(</span><em>System.Exception</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.InternalServerError" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [System.Web.Http.ExceptionResult](System.Web.Http.ExceptionResult.yml) (500 Internal Server Error) with the specified exception.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -593,7 +635,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.ExceptionResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Web.Http.ExceptionResult](System.Web.Http.ExceptionResult.yml) with the specified exception.</p>
 </td>
 </tr>
 </tbody>
@@ -606,7 +651,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.Json&lt;T&gt;">
 <code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Json<T>" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -615,7 +661,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.JsonResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.JsonResult]() with the specified value.</p>
 </td>
 </tr>
 </tbody>
@@ -628,7 +677,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em>, <em>JsonSerializerSettings</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -638,7 +688,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.JsonResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.JsonResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -651,7 +704,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Json&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em>, <em>JsonSerializerSettings</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [Microsoft.AspNet.Mvc.JsonResult]() (200 OK) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -662,7 +716,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.JsonResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.JsonResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -675,11 +732,14 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.NotFound()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [Microsoft.AspNet.Mvc.HttpNotFoundResult]() (404 Not Found).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.HttpNotFoundResult</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A [Microsoft.AspNet.Mvc.HttpNotFoundResult]().</td>
 </tr>
 </tbody>
 </table>
@@ -691,11 +751,14 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.Ok()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [System.Web.Http.OkResult](System.Web.Http.OkResult.yml) (200 OK).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Web.Http.OkResult</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An [System.Web.Http.OkResult](System.Web.Http.OkResult.yml).</td>
 </tr>
 </tbody>
 </table>
@@ -707,7 +770,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.Ok&lt;T&gt;">
 <code class="descname">Ok&lt;T&gt;</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Ok<T>" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an [System.Web.Http.OkNegotiatedContentResult`1](System.Web.Http.OkNegotiatedContentResult`1.yml) (200 OK) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -716,7 +780,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.OkNegotiatedContentResult{{T}}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Web.Http.OkNegotiatedContentResult`1](System.Web.Http.OkNegotiatedContentResult`1.yml) with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -729,7 +796,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.Redirect">
 <code class="descname">Redirect</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.Redirect" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.RedirectResult]() (302 Found) with the specified value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -738,7 +806,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.RedirectResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.RedirectResult]() with the specified value.</p>
 </td>
 </tr>
 </tbody>
@@ -751,7 +822,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Redirect</code><span class="sig-paren">(</span><em>System.Uri</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.RedirectResult]() (302 Found) with the specified value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -760,7 +832,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.RedirectResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.RedirectResult]() with the specified value.</p>
 </td>
 </tr>
 </tbody>
@@ -773,7 +848,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.RedirectToRoute">
 <code class="descname">RedirectToRoute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.RedirectToRoute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.RedirectToRouteResult]() (302 Found) with the specified values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -783,7 +859,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.RedirectToRouteResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.RedirectToRouteResult]() with the specified values.</p>
 </td>
 </tr>
 </tbody>
@@ -796,7 +875,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.ResponseMessage">
 <code class="descname">ResponseMessage</code><span class="sig-paren">(</span><em>System.Net.Http.HttpResponseMessage</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.ResponseMessage" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) with the specified response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -805,7 +885,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Web.Http.ResponseMessageResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Web.Http.ResponseMessageResult](System.Web.Http.ResponseMessageResult.yml) for the specified response.</p>
 </td>
 </tr>
 </tbody>
@@ -818,7 +901,8 @@
 <dl class="method">
 <dt id="System.Web.Http.ApiController.StatusCode">
 <code class="descname">StatusCode</code><span class="sig-paren">(</span><em>System.Net.HttpStatusCode</em><span class="sig-paren">)</span><a class="headerlink" href="#System.Web.Http.ApiController.StatusCode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a [Microsoft.AspNet.Mvc.HttpStatusCodeResult]() with the specified status code.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -827,7 +911,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.HttpStatusCodeResult</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.HttpStatusCodeResult]() with the specified status code.</p>
 </td>
 </tr>
 </tbody>
@@ -840,7 +927,9 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.Validate&lt;TEntity&gt;(TEntity)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Validates the given entity and adds the validation errors to the [System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml)
+under an empty prefix.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -859,7 +948,8 @@
 <dl class="method">
 <dt>
 <code class="descname">System.Web.Http.ApiController.Validate&lt;TEntity&gt;(TEntity, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Validates the given entity and adds the validation errors to the [System.Web.Http.ApiController.ModelState](System.Web.Http.ApiController.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

@@ -13,6 +13,7 @@ ExpressionMetadataProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}
         :param metadataProvider: 
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         
         .. code-block:: csharp
@@ -70,8 +71,10 @@ Methods
     
         
     
+        Gets [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named
+        <paramref name="expression" /> in given
         
-        
+        <paramref name="viewData" />.
     
         
         :param expression: Expression name, relative to
@@ -82,7 +85,10 @@ Methods
         :type viewData: Microsoft.AspNet.Mvc.ViewDataDictionary
         :param metadataProvider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
         :type metadataProvider: Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
+        :return: [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named
+    <paramref name="expression" /> in given
+    <paramref name="viewData" />.
     
         
         .. code-block:: csharp

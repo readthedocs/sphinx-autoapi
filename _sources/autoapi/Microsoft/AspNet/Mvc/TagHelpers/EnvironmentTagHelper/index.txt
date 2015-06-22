@@ -19,6 +19,7 @@ content based on the current value of @!:IHostingEnvironment.EnvironmentName-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper](Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.yml).
     
         
         :param hostingEnvironment: The @!:IHostingEnvironment-.
@@ -83,7 +83,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.EnvironmentTagHelper.HostingEnvironment
     
         
-        :rtype: 
+        :rtype: IHostingEnvironment
     
         
         .. code-block:: csharp
@@ -94,11 +94,10 @@ Properties
     
         
     
-        
-        
+        A comma separated list of environment names in which the content should be rendered.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

@@ -19,6 +19,7 @@ This information is stored as key/value pairs.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.SerializableError](Microsoft.AspNet.Mvc.SerializableError.yml) class.
     
         
     
@@ -75,8 +75,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.SerializableError](Microsoft.AspNet.Mvc.SerializableError.yml).
     
         
         :param modelState: [Microsoft.AspNet.Mvc.ModelBinding.ModelState]() containing the validation errors.

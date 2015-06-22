@@ -18,6 +18,7 @@ Provides programmatic configuration for the [Microsoft.AspNet.Mvc.Razor.RazorVie
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:IFileProvider- used by [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) to locate Razor files on
+        disk.
     
         
-        :rtype: 
+        :rtype: IFileProvider
     
         
         .. code-block:: csharp
@@ -74,11 +75,10 @@ Properties
     
         
     
-        
-        
+        Get a [System.Collections.Generic.IList`1]() used by the [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Razor.IViewLocationExpander}
     
         
         .. code-block:: csharp

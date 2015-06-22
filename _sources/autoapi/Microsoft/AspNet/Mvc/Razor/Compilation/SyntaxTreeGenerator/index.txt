@@ -13,6 +13,7 @@ SyntaxTreeGenerator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
         :type path: System.String
         :param compilationSettings: 
         :type compilationSettings: CompilationSettings
-        :rtype: 
+        :rtype: SyntaxTree
     
         
         .. code-block:: csharp
@@ -71,7 +72,7 @@ Methods
         
         :param compilationSettings: 
         :type compilationSettings: CompilationSettings
-        :rtype: 
+        :rtype: CSharpParseOptions
     
         
         .. code-block:: csharp

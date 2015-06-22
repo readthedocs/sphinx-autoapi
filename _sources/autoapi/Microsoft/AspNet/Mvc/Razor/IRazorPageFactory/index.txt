@@ -22,6 +22,7 @@ Defines methods that are used for creating [Microsoft.AspNet.Mvc.Razor.IRazorPag
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) for the specified path.
     
         
         :param relativePath: The path to locate the page.
         :type relativePath: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.IRazorPage
+        :return: The IRazorPage instance if it exists, null otherwise.
     
         
         .. code-block:: csharp

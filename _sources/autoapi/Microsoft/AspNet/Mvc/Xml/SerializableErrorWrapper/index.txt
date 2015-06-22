@@ -18,6 +18,7 @@ Wrapper class for [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.Serializabl
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -68,8 +69,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) class.
     
         
         :param error: The [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object that needs to be wrapped.
@@ -92,11 +92,11 @@ Properties
     
         
     
-        
-        
+        Gets the wrapped object which is serialized/deserialized into XML
+        representation.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.SerializableError
     
         
         .. code-block:: csharp
@@ -114,7 +114,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.GetSchema()
     
         
-        :rtype: 
+        :rtype: System.Xml.Schema.XmlSchema
     
         
         .. code-block:: csharp
@@ -125,8 +125,7 @@ Methods
     
         
     
-        
-        
+        Generates a [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object from its XML representation.
     
         
         :param reader: The [System.Xml.XmlReader]() stream from which the object is deserialized.
@@ -142,7 +141,7 @@ Methods
         
         :param declaredType: 
         :type declaredType: System.Type
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -153,8 +152,7 @@ Methods
     
         
     
-        
-        
+        Converts the wrapped [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.SerializableError](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapper.yml) object into its XML representation.
     
         
         :param writer: The [System.Xml.XmlWriter]() stream to which the object is serialized.

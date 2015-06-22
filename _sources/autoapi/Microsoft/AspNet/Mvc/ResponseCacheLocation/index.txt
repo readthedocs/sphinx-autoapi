@@ -22,6 +22,7 @@ Determines the value for the "Cache-control" header in the response.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,8 @@ Fields
     
         
     
-        
-        
+        Cached in both proxies and client.
+        Sets "Cache-control" header to "public".
     
         
     
@@ -68,8 +69,8 @@ Fields
     
         
     
-        
-        
+        Cached only in the client.
+        Sets "Cache-control" header to "private".
     
         
     
@@ -82,8 +83,7 @@ Fields
     
         
     
-        
-        
+        "Cache-control" and "Pragma" headers are set to "no-cache".
     
         
     

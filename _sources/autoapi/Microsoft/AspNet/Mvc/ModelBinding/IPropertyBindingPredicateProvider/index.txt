@@ -22,6 +22,7 @@ Provides a predicate which can determines which model properties should be bound
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets a predicate which can determines which model properties should be bound by model binding.
     
         
-        :rtype: 
+        :rtype: System.Func{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext,System.String,System.Boolean}
     
         
         .. code-block:: csharp

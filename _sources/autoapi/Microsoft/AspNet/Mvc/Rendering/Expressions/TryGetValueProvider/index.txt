@@ -13,6 +13,7 @@ TryGetValueProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param targetType: 
         :type targetType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.Expressions.TryGetValueDelegate
     
         
         .. code-block:: csharp

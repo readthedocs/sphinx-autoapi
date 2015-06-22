@@ -13,6 +13,7 @@ DynamicViewData Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -73,7 +74,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.DynamicViewData.GetDynamicMemberNames()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp
@@ -87,7 +88,7 @@ Methods
         :type binder: System.Dynamic.GetMemberBinder
         :param result: 
         :type result: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -101,7 +102,7 @@ Methods
         :type binder: System.Dynamic.SetMemberBinder
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

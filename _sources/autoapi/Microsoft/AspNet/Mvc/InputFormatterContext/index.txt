@@ -18,6 +18,7 @@ A context object used by an input formatter for deserializing the request body i
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.InputFormatterContext](Microsoft.AspNet.Mvc.InputFormatterContext.yml).
     
         
         :param httpContext: The @!:Http.HttpContext- for the current operation.
@@ -87,11 +87,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:Http.HttpContext- associated with the current operation.
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -102,11 +101,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) associated with the current operation.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -117,11 +115,10 @@ Properties
     
         
     
-        
-        
+        Gets the expected [System.Type]() of the model represented by the request body.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp

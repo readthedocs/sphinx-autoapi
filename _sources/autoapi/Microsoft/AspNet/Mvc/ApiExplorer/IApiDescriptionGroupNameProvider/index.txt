@@ -23,6 +23,7 @@ Represents group name metadata for an
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,11 @@ Properties
     
         
     
-        
-        
+        The group name for the
+        <c>ApiDescription</c> of the associated action or controller.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

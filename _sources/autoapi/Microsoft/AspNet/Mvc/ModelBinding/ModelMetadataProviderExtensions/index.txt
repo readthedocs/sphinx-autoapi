@@ -18,6 +18,7 @@ Extensions methods for [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,10 @@ Methods
     
         
     
+        Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for property identified by the provided
         
-        
+        <paramref name="containerType" /> and
+        <paramref name="propertyName" />.
     
         
         :param provider: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
@@ -69,7 +72,8 @@ Methods
         :type containerType: System.Type
         :param propertyName: The property name.
         :type propertyName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for the property.
     
         
         .. code-block:: csharp
@@ -80,8 +84,10 @@ Methods
     
         
     
+        Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for the provided
+        <paramref name="modelType" /> and
         
-        
+        <paramref name="model" />.
     
         
         :param provider: The [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider]().
@@ -90,7 +96,7 @@ Methods
         :type modelType: System.Type
         :param model: The model object.
         :type model: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         
         .. code-block:: csharp

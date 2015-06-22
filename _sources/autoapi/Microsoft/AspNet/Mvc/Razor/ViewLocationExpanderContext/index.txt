@@ -18,6 +18,7 @@ A context for containing information for [Microsoft.AspNet.Mvc.Razor.IViewLocati
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml).
     
         
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext]() for the current executing action.
@@ -87,11 +87,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ActionContext]() for the current executing action.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionContext
     
         
         .. code-block:: csharp
@@ -102,11 +101,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that determines if a partial view is being discovered.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -117,11 +115,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [System.Collections.Generic.IDictionary`2]() that is populated with values as part of
+        [Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.PopulateValues(Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext)](Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -132,11 +130,10 @@ Properties
     
         
     
-        
-        
+        Gets the view name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

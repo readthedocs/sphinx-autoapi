@@ -19,6 +19,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -60,8 +61,7 @@ Fields
     
         
     
-        
-        
+        Key used for selected values in [Microsoft.AspNet.Mvc.FormContext.FormData]().
     
         
     
@@ -82,8 +82,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.SelectTagHelper](Microsoft.AspNet.Mvc.TagHelpers.SelectTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -106,11 +105,10 @@ Properties
     
         
     
-        
-        
+        An expression to be evaluated against the current model.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ModelExpression
     
         
         .. code-block:: csharp
@@ -120,7 +118,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.SelectTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -131,11 +129,11 @@ Properties
     
         
     
-        
-        
+        A collection of [Microsoft.AspNet.Mvc.Rendering.SelectListItem]() objects used to populate the &lt;select&gt; element with
+        &lt;optgroup&gt; and &lt;option&gt; elements.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
     
         
         .. code-block:: csharp
@@ -145,7 +143,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.SelectTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp

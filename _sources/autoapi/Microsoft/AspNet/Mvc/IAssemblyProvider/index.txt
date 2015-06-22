@@ -23,6 +23,7 @@ view components and precompiled views.
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,11 @@ Properties
     
         
     
-        
-        
+        Gets the sequence of candidate [System.Reflection.Assembly]() instances that the application
+        uses for discovery of Mvc specific types.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
     
         
         .. code-block:: csharp

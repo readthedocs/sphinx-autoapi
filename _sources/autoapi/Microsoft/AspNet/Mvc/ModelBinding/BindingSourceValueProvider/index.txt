@@ -18,6 +18,7 @@ A value provider which provides data from a specific [Microsoft.AspNet.Mvc.Model
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.BindingSourceValueProvider](Microsoft.AspNet.Mvc.ModelBinding.BindingSourceValueProvider.yml).
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](). Must be a single-source (non-composite) with
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets the corresponding [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -109,7 +108,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
     
         
         .. code-block:: csharp
@@ -121,7 +120,7 @@ Methods
         
         :param bindingSource: 
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
     
         
         .. code-block:: csharp
@@ -133,7 +132,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     
         
         .. code-block:: csharp

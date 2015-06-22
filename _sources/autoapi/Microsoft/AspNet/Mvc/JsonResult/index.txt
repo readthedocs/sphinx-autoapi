@@ -18,6 +18,7 @@ An action result which formats the given object as JSON.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Fields
     
         
     
-        
-        
+        The list of content-types used for formatting when [Microsoft.AspNet.Mvc.JsonResult.ContentTypes](Microsoft.AspNet.Mvc.JsonResult.yml) is null or empty.
     
         
     
@@ -82,8 +82,8 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+        <paramref name="value" />.
     
         
         :param value: The value to format as JSON.
@@ -98,8 +98,8 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+        <paramref name="value" />.
     
         
         :param value: The value to format as JSON.
@@ -117,8 +117,8 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+        <paramref name="value" />.
     
         
         :param value: The value to format as JSON.
@@ -144,11 +144,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the list of supported Content-Types.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{MediaTypeHeaderValue}
     
         
         .. code-block:: csharp
@@ -159,11 +158,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the formatter.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IOutputFormatter
     
         
         .. code-block:: csharp
@@ -174,11 +172,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTTP status code.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -189,11 +186,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the value to be formatted.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -213,7 +209,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ An implementation of [Microsoft.AspNet.Mvc.IAsyncAuthorizationFilter]()
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Constructors
     
         
     
-        
-        
+        Authorize filter for a specific policy.
     
         
-        :param policy: 
+        :param policy: None
         :type policy: AuthorizationPolicy
     
         
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Authorization policy to be used.
     
         
-        :rtype: 
+        :rtype: AuthorizationPolicy
     
         
         .. code-block:: csharp
@@ -107,7 +106,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

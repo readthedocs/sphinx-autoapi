@@ -13,6 +13,7 @@ FilterContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -75,7 +76,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterContext.Filters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         
         .. code-block:: csharp

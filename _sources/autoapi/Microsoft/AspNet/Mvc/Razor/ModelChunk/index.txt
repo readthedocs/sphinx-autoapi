@@ -13,6 +13,7 @@ ModelChunk Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`Chunk`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Represents the chunk for an [model]()  statement.
     
         
         :param baseType: The base type of the view.
@@ -79,7 +79,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.ModelChunk.BaseType
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -89,7 +89,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.ModelChunk.ModelType
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

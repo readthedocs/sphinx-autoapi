@@ -129,7 +129,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -222,7 +221,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.PrecompilationCacheEntry">
 <code class="descname">PrecompilationCacheEntry</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo</em>, <em>SyntaxTree</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.PrecompilationCacheEntry" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a successful parse.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -242,7 +242,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">PrecompilationCacheEntry</code><span class="sig-paren">(</span><em>System.Collections.Generic.IReadOnlyList&lt;Diagnostic&gt;</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a failed parse.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -280,11 +281,14 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.Diagnostics">
 <code class="descname">Diagnostics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.Diagnostics" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:Diagnostic-s produced from parsing the generated contents of the file
+specified by [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.FileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml). This does not contain &#64;!:Diagnostic-s produced from
+compiling the parsed &#64;!:CodeAnalysis.SyntaxTree-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{Diagnostic}</td>
 </tr>
 </tbody>
 </table>
@@ -296,11 +300,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.FileInfo">
 <code class="descname">FileInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.FileInfo" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml) associated with this cache entry instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo</td>
 </tr>
 </tbody>
 </table>
@@ -312,11 +317,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.Success">
 <code class="descname">Success</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.Success" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value that indicates if parsing was successful.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -328,11 +334,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.SyntaxTree">
 <code class="descname">SyntaxTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.SyntaxTree" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.SyntaxTree](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) produced from parsing the Razor file.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">SyntaxTree</td>
 </tr>
 </tbody>
 </table>

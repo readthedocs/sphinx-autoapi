@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IBindingMetadataProvider]() for [
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`

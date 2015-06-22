@@ -13,6 +13,7 @@ JsonOutputFormatter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -83,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:JsonSerializerSettings- used to configure the @!:JsonSerializer-.
     
         
-        :rtype: 
+        :rtype: JsonSerializerSettings
     
         
         .. code-block:: csharp
@@ -120,7 +120,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ ServiceFilterAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -83,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ServiceFilterAttribute.ServiceType
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -103,7 +104,7 @@ Methods
         
         :param serviceProvider: 
         :type serviceProvider: System.IServiceProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp

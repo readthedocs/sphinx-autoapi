@@ -22,6 +22,7 @@ Defines an interface for objects to be un-wrappable after deserialization.
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Unwraps an object.
     
         
         :param declaredType: The type to which the object should be un-wrapped to.
         :type declaredType: System.Type
-        :rtype: 
+        :rtype: System.Object
+        :return: The un-wrapped object.
     
         
         .. code-block:: csharp

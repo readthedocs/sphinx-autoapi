@@ -22,6 +22,7 @@ Writes an object to the output stream.
 
 
 
+
 Syntax
 ------
 
@@ -54,15 +55,21 @@ Methods
     
         
     
-        
-        
+        Determines whether this [Microsoft.AspNet.Mvc.IOutputFormatter](Microsoft.AspNet.Mvc.IOutputFormatter.yml) can serialize
+        an object of the specified type.
     
         
         :param context: The formatter context associated with the call.
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
         :param contentType: The desired contentType on the response.
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Boolean
+        :return: True if this [Microsoft.AspNet.Mvc.IOutputFormatter](Microsoft.AspNet.Mvc.IOutputFormatter.yml) supports the passed in
+    
+    <paramref name="contentType" /> and is able to serialize the object
+    represent by
+    <paramref name="context" />'s Object property.
+    False otherwise.
     
         
         .. code-block:: csharp
@@ -73,13 +80,15 @@ Methods
     
         
     
-        
-        
+        Writes the object represented by
+        <paramref name="context" />'s Object property.
     
         
         :param context: The formatter context associated with the call.
         :type context: Microsoft.AspNet.Mvc.OutputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A Task that serializes the value to the
+    <paramref name="context" />'s response message.
     
         
         .. code-block:: csharp

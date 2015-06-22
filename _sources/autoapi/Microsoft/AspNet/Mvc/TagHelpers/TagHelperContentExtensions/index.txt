@@ -18,6 +18,7 @@ Extension methods for @!:TagHelperContent-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,9 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> with HTML encoding to given
+        <paramref name="content" />.
     
         
         :param content: The @!:TagHelperContent- to write to.
@@ -73,7 +75,8 @@ Methods
         :type encoding: System.Text.Encoding
         :param value: The [System.Object]() to write.
         :type value: System.Object
-        :rtype: 
+        :rtype: TagHelperContent
+        :return: <paramref name="content" /> after the write operation has completed.
     
         
         .. code-block:: csharp

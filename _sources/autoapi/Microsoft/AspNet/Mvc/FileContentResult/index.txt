@@ -19,6 +19,7 @@ write a binary file to the response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FileContentResult](Microsoft.AspNet.Mvc.FileContentResult.yml) instance with
+        the provided
+        <paramref name="fileContents" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileContents: The bytes that represent the file contents.
@@ -80,8 +84,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FileContentResult](Microsoft.AspNet.Mvc.FileContentResult.yml) instance with
+        the provided
+        <paramref name="fileContents" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileContents: The bytes that represent the file contents.
@@ -106,11 +113,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the file contents.
     
         
-        :rtype: 
+        :rtype: System.Byte[]
     
         
         .. code-block:: csharp
@@ -132,7 +138,7 @@ Methods
         :type response: HttpResponse
         :param cancellation: 
         :type cancellation: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

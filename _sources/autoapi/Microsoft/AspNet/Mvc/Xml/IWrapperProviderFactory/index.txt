@@ -22,6 +22,7 @@ Create a [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IW
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,14 @@ Methods
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml) for the provided context.
     
         
         :param context: The [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
         :type context: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
+        :return: A wrapping provider if the factory decides to wrap the type, else
+    <c>null</c>.
     
         
         .. code-block:: csharp

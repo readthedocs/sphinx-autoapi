@@ -13,6 +13,7 @@ TemplateBuilder Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -86,7 +87,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.Internal.TemplateBuilder.Build()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

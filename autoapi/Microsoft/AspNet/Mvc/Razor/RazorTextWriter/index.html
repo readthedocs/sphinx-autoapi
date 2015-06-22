@@ -165,7 +165,8 @@ writer for all further write operations.</p>
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Razor.RazorTextWriter.RazorTextWriter">
 <code class="descname">RazorTextWriter</code><span class="sig-paren">(</span><em>System.IO.TextWriter</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.RazorTextWriter.RazorTextWriter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new instance of [Microsoft.AspNet.Mvc.Razor.RazorTextWriter](Microsoft.AspNet.Mvc.Razor.RazorTextWriter.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -211,7 +212,7 @@ writer for all further write operations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Text.Encoding</td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +228,7 @@ writer for all further write operations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +274,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -286,7 +287,10 @@ writer for all further write operations.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.Flush()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Flush</span><span class="p">()</span>
+<dd><p>Copies the buffered content to the unbuffered writer and invokes flush on it.
+Additionally causes this instance to no longer buffer and direct all write operations
+to the unbuffered writer.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Flush</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -294,11 +298,16 @@ writer for all further write operations.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.RazorTextWriter.FlushAsync()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copies the buffered content to the unbuffered writer and invokes flush on it.
+Additionally causes this instance to no longer buffer and direct all write operations
+to the unbuffered writer.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Threading.Tasks.Task</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A [System.Threading.Tasks.Task]() that represents the asynchronous copy and flush operations.</td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +406,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -421,7 +430,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -443,7 +452,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -487,7 +496,7 @@ writer for all further write operations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Threading.Tasks.Task</td>
 </tr>
 </tbody>
 </table>
@@ -508,7 +517,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -532,7 +541,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -554,7 +563,7 @@ writer for all further write operations.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

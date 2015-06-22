@@ -165,7 +165,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}</p>
 </td>
 </tr>
 </tbody>
@@ -178,7 +178,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder&lt;TElement&gt;.CopyToModel">
 <code class="descname">CopyToModel</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.Collections.Generic.IEnumerable&lt;TElement&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.CopyToModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Adds values from
+&lt;paramref name=&#8221;sourceCollection&#8221; /&gt; to given
+&lt;paramref name=&#8221;target&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -215,7 +218,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +230,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder&lt;TElement&gt;.GetModel">
 <code class="descname">GetModel</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;TElement&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.CollectionModelBinder<TElement>.GetModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets an [System.Object]() assignable to the collection property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -242,22 +246,27 @@
 
 <dl class="docutils">
 <dt>&lt;c&gt;null&lt;/c&gt; if nothing was bound.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">type newCollection:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{{TElement}}</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">[System.Object]() assignable to the collection property. Or</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">object</span> <span class="nf">GetModel</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">TElement</span><span class="p">&gt;</span> <span class="n">newCollection</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;null&lt;/c&gt; if nothing was bound.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">object</span> <span class="nf">GetModel</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">TElement</span><span class="p">&gt;</span> <span class="n">newCollection</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

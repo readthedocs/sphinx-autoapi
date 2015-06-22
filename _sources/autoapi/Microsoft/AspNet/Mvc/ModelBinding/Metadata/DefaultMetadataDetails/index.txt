@@ -18,6 +18,7 @@ Holds associated metadata objects for a [Microsoft.AspNet.Mvc.ModelBinding.Metad
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml).
     
         
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]().
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.BindingMetadata
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata
     
         
         .. code-block:: csharp
@@ -115,11 +113,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
     
         
         .. code-block:: csharp
@@ -130,11 +127,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the set of model attributes.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
     
         
         .. code-block:: csharp
@@ -145,11 +141,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() entries for the model properties.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata[]
     
         
         .. code-block:: csharp
@@ -160,11 +155,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a property getter delegate to get the property value from a model object.
     
         
-        :rtype: 
+        :rtype: System.Func{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -175,11 +169,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets a property setter delegate to set the property value on a model object.
     
         
-        :rtype: 
+        :rtype: System.Action{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -190,11 +183,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata.yml)
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ValidationMetadata
     
         
         .. code-block:: csharp

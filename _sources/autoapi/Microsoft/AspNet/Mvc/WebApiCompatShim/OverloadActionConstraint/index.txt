@@ -13,6 +13,7 @@ OverloadActionConstraint Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.OverloadActionConstraint.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

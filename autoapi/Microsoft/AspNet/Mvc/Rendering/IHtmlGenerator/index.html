@@ -164,7 +164,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -254,7 +253,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +280,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -303,7 +302,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -326,7 +325,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -355,7 +354,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -377,7 +376,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -390,7 +389,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateCheckBox">
 <code class="descname">GenerateCheckBox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Nullable&lt;System.Boolean&gt;</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateCheckBox" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate a &amp;lt;input type=&#8221;checkbox&#8221;.../&amp;gt; element.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -416,7 +416,9 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;input type=&#8221;checkbox&#8221;.../&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -428,7 +430,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateForm">
 <code class="descname">GenerateForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateForm" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate a &amp;lt;form&amp;gt; element. When the user submits the form, the action with name</p>
+<p>&lt;paramref name=&#8221;actionName&#8221; /&gt; will process the request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -474,7 +478,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -500,7 +506,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -513,7 +519,10 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateHiddenForCheckbox">
 <code class="descname">GenerateHiddenForCheckbox</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateHiddenForCheckbox" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate an additional &amp;lt;input type=&#8221;hidden&#8221;.../&amp;gt; for checkboxes. This addresses scenarios where
+unchecked checkboxes are not sent in the request. Sending a hidden input makes it possible to know that the
+checkbox was present on the page when the request was submitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -524,7 +533,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -550,7 +559,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -576,7 +585,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -603,7 +612,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -616,7 +625,11 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRouteForm">
 <code class="descname">GenerateRouteForm</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateRouteForm" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate a &amp;lt;form&amp;gt; element. The route with name
+&lt;paramref name=&#8221;routeName&#8221; /&gt; generates the
+&amp;lt;form&amp;gt;&#8217;s
+&lt;c&gt;action&lt;/c&gt; attribute value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -661,7 +674,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &amp;lt;/form&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -688,7 +703,7 @@ created using [System.Object]() initializer syntax. Alternatively, an
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -701,7 +716,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateSelect">
 <code class="descname">GenerateSelect</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GenerateSelect" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate a &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -790,7 +807,9 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -802,7 +821,9 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <dl class="method">
 <dt>
 <code class="descname">GenerateSelect</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;</em>, <em>System.Collections.Generic.IReadOnlyCollection&lt;System.String&gt;</em>, <em>System.Boolean</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generate a &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -908,7 +929,9 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.TagBuilder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -934,7 +957,7 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -961,7 +984,7 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -987,7 +1010,7 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -1013,7 +1036,7 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.Rendering.TagBuilder</p>
 </td>
 </tr>
 </tbody>
@@ -1037,7 +1060,7 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}</p>
 </td>
 </tr>
 </tbody>
@@ -1050,7 +1073,9 @@ single-selection &amp;lt;select&amp;gt; element.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GetCurrentValues">
 <code class="descname">GetCurrentValues</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewContext</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em>, <em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.GetCurrentValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the collection of current values for the given
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1099,11 +1124,30 @@ single value.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type allowMultiple:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Boolean</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IReadOnlyCollection{System.String}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">&lt;para&gt;</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">GetCurrentValues</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;c&gt;null&lt;/c&gt; if no &lt;paramref name=&#8221;expression&#8221; /&gt; result is found. Otherwise an
+&lt;see cref=&#8221;T:System.Collections.Generic.IReadOnlyCollection`1&#8221; /&gt; containing current values for the given
+&lt;paramref name=&#8221;expression&#8221; /&gt;.
+&lt;/para&gt;
+&lt;para&gt;
+Converts the &lt;paramref name=&#8221;expression&#8221; /&gt; result to a &lt;see cref=&#8221;T:System.String&#8221; /&gt;. If that result is an
+&lt;see cref=&#8221;T:System.Collections.IEnumerable&#8221; /&gt; type, instead converts each item in the collection and returns
+them separately.
+&lt;/para&gt;
+&lt;para&gt;
+If the &lt;paramref name=&#8221;expression&#8221; /&gt; result or the element type is an &lt;see cref=&#8221;T:System.Enum&#8221; /&gt;, returns a
+&lt;see cref=&#8221;T:System.String&#8221; /&gt; containing the integer representation of the &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; value as well
+as all &lt;see cref=&#8221;T:System.Enum&#8221; /&gt; names for that value. Otherwise returns the default &lt;see cref=&#8221;T:System.String&#8221; /&gt;
+conversion of the value.
+&lt;/para&gt;</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IReadOnlyCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">GetCurrentValues</span><span class="p">(</span><span class="n">ViewContext</span> <span class="n">viewContext</span><span class="p">,</span> <span class="n">ModelExplorer</span> <span class="n">modelExplorer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">allowMultiple</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>

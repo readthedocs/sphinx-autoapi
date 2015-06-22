@@ -20,6 +20,7 @@ for ContainsPrefix are done with a binary search.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -81,7 +82,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -93,7 +94,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -107,7 +108,7 @@ Methods
         :type prefix: System.String
         :param testString: 
         :type testString: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

@@ -23,6 +23,7 @@ Contract for a service supporting [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](M
 
 
 
+
 Syntax
 ------
 
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator.IdAttributeDotReplacement
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,7 +75,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -86,7 +87,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Methods
         :type value: System.Object
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -126,7 +127,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -138,7 +139,7 @@ Methods
         
         :param viewContext: 
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -149,8 +150,7 @@ Methods
     
         
     
-        
-        
+        Generate a &lt;input type="checkbox".../&gt; element.
     
         
         :param viewContext: The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -164,7 +164,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;input type="checkbox".../&gt; element.
     
         
         .. code-block:: csharp
@@ -175,8 +176,9 @@ Methods
     
         
     
+        Generate a &lt;form&gt; element. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -195,7 +197,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
     
         
         .. code-block:: csharp
@@ -217,7 +220,7 @@ Methods
         :type useViewData: System.Boolean
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -228,8 +231,9 @@ Methods
     
         
     
-        
-        
+        Generate an additional &lt;input type="hidden".../&gt; for checkboxes. This addresses scenarios where
+        unchecked checkboxes are not sent in the request. Sending a hidden input makes it possible to know that the
+        checkbox was present on the page when the request was submitted.
     
         
         :param viewContext: 
@@ -238,7 +242,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -258,7 +262,7 @@ Methods
         :type labelText: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -278,7 +282,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -300,7 +304,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -311,8 +315,10 @@ Methods
     
         
     
-        
-        
+        Generate a &lt;form&gt; element. The route with name
+        <paramref name="routeName" /> generates the
+        &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -329,7 +335,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
     
         
         .. code-block:: csharp
@@ -353,7 +360,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -364,8 +371,8 @@ Methods
     
         
     
-        
-        
+        Generate a &lt;select&gt; element for the
+        <paramref name="expression" />.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -395,7 +402,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -406,8 +414,8 @@ Methods
     
         
     
-        
-        
+        Generate a &lt;select&gt; element for the
+        <paramref name="expression" />.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -443,7 +451,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the &lt;select&gt; element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) describing the &lt;select&gt; element.
     
         
         .. code-block:: csharp
@@ -465,7 +474,7 @@ Methods
         :type columns: System.Int32
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -487,7 +496,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -507,7 +516,7 @@ Methods
         :type tag: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -527,7 +536,7 @@ Methods
         :type headerTag: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -543,7 +552,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp
@@ -554,8 +563,8 @@ Methods
     
         
     
-        
-        
+        Gets the collection of current values for the given
+        <paramref name="expression" />.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -573,7 +582,23 @@ Methods
     <paramref name="expression" /> result. Otherwise, treat result as a
     single value.
         :type allowMultiple: System.Boolean
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyCollection{System.String}
+        :return: <para>
+    <c>null</c> if no <paramref name="expression" /> result is found. Otherwise an
+    <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" /> containing current values for the given
+    <paramref name="expression" />.
+    </para>
+    <para>
+    Converts the <paramref name="expression" /> result to a <see cref="T:System.String" />. If that result is an
+    <see cref="T:System.Collections.IEnumerable" /> type, instead converts each item in the collection and returns
+    them separately.
+    </para>
+    <para>
+    If the <paramref name="expression" /> result or the element type is an <see cref="T:System.Enum" />, returns a
+    <see cref="T:System.String" /> containing the integer representation of the <see cref="T:System.Enum" /> value as well
+    as all <see cref="T:System.Enum" /> names for that value. Otherwise returns the default <see cref="T:System.String" />
+    conversion of the value.
+    </para>
     
         
         .. code-block:: csharp

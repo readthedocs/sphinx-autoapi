@@ -19,6 +19,7 @@ response when it succeeds.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,8 +64,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.OkNegotiatedContentResult`1](System.Web.Http.OkNegotiatedContentResult`1.yml) class with the values
+        provided.
     
         
         :param content: The content value to negotiate and format in the entity body.

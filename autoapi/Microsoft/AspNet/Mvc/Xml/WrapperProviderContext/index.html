@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -231,7 +230,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.WrapperProviderContext">
 <code class="descname">WrapperProviderContext</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Boolean</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.WrapperProviderContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -270,11 +270,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.DeclaredType">
 <code class="descname">DeclaredType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.DeclaredType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The declared type which could be wrapped/un-wrapped by a different type
+during serialization or de-serializatoin.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -286,11 +288,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.IsSerialization">
 <code class="descname">IsSerialization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.IsSerialization" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>&lt;see langword=&#8221;true&#8221; /&gt; if a wrapper provider is invoked during serialization,</p>
+<p>&lt;see langword=&#8221;false&#8221; /&gt; otherwise.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>

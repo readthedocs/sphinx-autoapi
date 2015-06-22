@@ -18,6 +18,7 @@ A descriptor for a View Component.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the full name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the short name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.Type](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptor.yml).
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp

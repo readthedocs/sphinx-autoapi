@@ -13,6 +13,7 @@ RouteBuilderExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
         :type name: System.String
         :param template: 
         :type template: System.String
-        :rtype: 
+        :rtype: IRouteBuilder
     
         
         .. code-block:: csharp
@@ -77,7 +78,7 @@ Methods
         :type template: System.String
         :param defaults: 
         :type defaults: System.Object
-        :rtype: 
+        :rtype: IRouteBuilder
     
         
         .. code-block:: csharp
@@ -97,7 +98,7 @@ Methods
         :type defaults: System.Object
         :param constraints: 
         :type constraints: System.Object
-        :rtype: 
+        :rtype: IRouteBuilder
     
         
         .. code-block:: csharp
@@ -119,7 +120,7 @@ Methods
         :type constraints: System.Object
         :param dataTokens: 
         :type dataTokens: System.Object
-        :rtype: 
+        :rtype: IRouteBuilder
     
         
         .. code-block:: csharp

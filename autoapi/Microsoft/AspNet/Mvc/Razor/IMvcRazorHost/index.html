@@ -149,7 +149,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.GenerateCode">
 <code class="descname">GenerateCode</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.IO.Stream</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.GenerateCode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Parses and generates the contents of a Razor file represented by
+&lt;paramref name=&#8221;inputStream&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -177,7 +179,9 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">type inputStream:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.IO.Stream</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">GeneratorResults</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A &#64;!:GeneratorResults- instance that represents the results of code generation.</td>
 </tr>
 </tbody>
 </table>
@@ -195,11 +199,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.DefaultNamespace">
 <code class="descname">DefaultNamespace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.DefaultNamespace" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Represent the namespace the main entry class in the view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -211,11 +216,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.MainClassNamePrefix">
 <code class="descname">MainClassNamePrefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IMvcRazorHost.MainClassNamePrefix" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Represent the prefix off the main entry class in the view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

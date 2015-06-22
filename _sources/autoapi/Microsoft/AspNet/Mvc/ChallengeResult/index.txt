@@ -13,6 +13,7 @@ ChallengeResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -130,7 +131,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ChallengeResult.AuthenticationSchemes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.String}
     
         
         .. code-block:: csharp
@@ -140,7 +141,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ChallengeResult.Properties
     
         
-        :rtype: 
+        :rtype: AuthenticationProperties
     
         
         .. code-block:: csharp

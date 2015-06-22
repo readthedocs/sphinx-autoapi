@@ -148,7 +148,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Get">
 <code class="descname">Get</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Get" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a cached view location based on the specified
+&lt;paramref name=&#8221;context&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -163,25 +165,32 @@
 
 <dl class="docutils">
 <dt>expansion.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type context:</th><td class="field-body">Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The cached location, if available,</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">Get</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;c&gt;null&lt;/c&gt; otherwise.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">Get</span><span class="p">(</span><span class="n">ViewLocationExpanderContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Set">
 <code class="descname">Set</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationCache.Set" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Adds a cache entry for values specified by
+&lt;paramref name=&#8221;context&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

@@ -22,6 +22,7 @@ Specifies the contract for a view.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets the path of the view as resolved by the [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -77,13 +77,14 @@ Methods
     
         
     
-        
-        
+        Asynchronously renders the view using the specified
+        <paramref name="context" />.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml).
         :type context: Microsoft.AspNet.Mvc.ViewContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that on completion renders the view.
     
         
         .. code-block:: csharp

@@ -19,6 +19,7 @@ Uses ModelBinding to populate action parameters.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -86,7 +87,7 @@ Methods
         :type actionBindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
         :param controller: 
         :type controller: System.Object
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -102,7 +103,7 @@ Methods
         :type modelState: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
         :param operationContext: 
         :type operationContext: Microsoft.AspNet.Mvc.ModelBinding.OperationBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ModelBindingResult}
     
         
         .. code-block:: csharp

@@ -134,7 +134,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -227,11 +226,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult&lt;TMode&gt;.FullMatches">
 <code class="descname">FullMatches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.FullMatches" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Modes that had all attributes present.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}}</td>
 </tr>
 </tbody>
 </table>
@@ -243,11 +243,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult&lt;TMode&gt;.PartialMatches">
 <code class="descname">PartialMatches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.PartialMatches" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Modes that were missing attributes but had at least one attribute present.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}}</td>
 </tr>
 </tbody>
 </table>
@@ -259,11 +260,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult&lt;TMode&gt;.PartiallyMatchedAttributes">
 <code class="descname">PartiallyMatchedAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult<TMode>.PartiallyMatchedAttributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Attributes that are present in at least one mode in [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.PartialMatches](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml), but in no modes in
+[Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.FullMatches](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{System.String}</td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +284,8 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult&lt;TMode&gt;.LogDetails&lt;TTagHelper&gt;(ILogger, TTagHelper, System.String, System.String)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Logs the details of the [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

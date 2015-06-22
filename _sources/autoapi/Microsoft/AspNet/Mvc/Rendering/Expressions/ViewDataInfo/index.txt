@@ -13,6 +13,7 @@ ViewDataInfo Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) class with info about a
+        [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) lookup which has already been evaluated.
     
         
         :param container: 
@@ -72,8 +73,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) class with info about a
+        [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) lookup which is evaluated when [Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.Value](Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.yml) is read.
     
         
         :param container: 
@@ -99,7 +100,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.Container
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -109,7 +110,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.PropertyInfo
     
         
-        :rtype: 
+        :rtype: System.Reflection.PropertyInfo
     
         
         .. code-block:: csharp
@@ -119,7 +120,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.Expressions.ViewDataInfo.Value
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

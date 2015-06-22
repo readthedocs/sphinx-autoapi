@@ -164,7 +164,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -217,25 +216,25 @@
 <h1>IHtmlHelper Interface<a class="headerlink" href="#ihtmlhelper-interface" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#summary" id="id1">Summary</a></li>
-<li><a class="reference internal" href="#syntax" id="id2">Syntax</a></li>
-<li><a class="reference internal" href="#github" id="id3">GitHub</a></li>
-<li><a class="reference internal" href="#properties" id="id4">Properties</a></li>
-<li><a class="reference internal" href="#methods" id="id5">Methods</a></li>
+<li><a class="reference internal" href="#summary" id="id3">Summary</a></li>
+<li><a class="reference internal" href="#syntax" id="id4">Syntax</a></li>
+<li><a class="reference internal" href="#github" id="id5">GitHub</a></li>
+<li><a class="reference internal" href="#properties" id="id6">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id7">Methods</a></li>
 </ul>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id1">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>Base HTML helpers.</p>
 </div>
 <div class="section" id="syntax">
-<h2><a class="toc-backref" href="#id2">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">interface</span> <span class="n">IHtmlHelper</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="github">
-<h2><a class="toc-backref" href="#id3">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">GitHub</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/aspnet/mvc/blob/master/src/Microsoft.AspNet.Mvc.Extensions/Rendering/IHtmlHelper.cs">View on GitHub</a></p>
 <dl class="interface">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper">
@@ -244,16 +243,19 @@
 
 </div>
 <div class="section" id="properties">
-<h2><a class="toc-backref" href="#id4">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <dl class="interface">
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Html5DateRenderingMode">
 <code class="descname">Html5DateRenderingMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Html5DateRenderingMode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Set this property to [Microsoft.AspNet.Mvc.Rendering.Html5DateRenderingMode.Rfc3339](Microsoft.AspNet.Mvc.Rendering.Html5DateRenderingMode.yml) to have templated helpers such as
+[Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Editor(System.String,System.String,System.String,System.Object)](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) and [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.EditorFor``1(System.Linq.Expressions.Expression{System.Func{<a href="#id1"><span class="problematic" id="id2">`</span></a>0,``0}},System.String,System.String,System.Object)](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) render date and time values as RFC
+3339 compliant strings. By default these helpers render dates and times using the current culture.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.Html5DateRenderingMode</td>
 </tr>
 </tbody>
 </table>
@@ -265,11 +267,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.HtmlEncoder">
 <code class="descname">HtmlEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.HtmlEncoder" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:IHtmlEncoder- to be used for encoding HTML.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IHtmlEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -281,11 +284,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.IdAttributeDotReplacement">
 <code class="descname">IdAttributeDotReplacement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.IdAttributeDotReplacement" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [System.String]() that replaces periods in the ID attribute of an element.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -297,11 +301,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.JavaScriptStringEncoder">
 <code class="descname">JavaScriptStringEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.JavaScriptStringEncoder" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:IJavaScriptStringEncoder- to be used for encoding JavaScript.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IJavaScriptStringEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -313,11 +318,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.MetadataProvider">
 <code class="descname">MetadataProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.MetadataProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the metadata provider. Intended for use in [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) extension methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
 </tr>
 </tbody>
 </table>
@@ -329,11 +335,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TempData">
 <code class="descname">TempData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TempData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the current [Microsoft.AspNet.Mvc.ITempDataDictionary]() instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ITempDataDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -345,11 +352,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.UrlEncoder">
 <code class="descname">UrlEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.UrlEncoder" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:IUrlEncoder- to be used for encoding a URL.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IUrlEncoder</td>
 </tr>
 </tbody>
 </table>
@@ -361,11 +369,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewBag">
 <code class="descname">ViewBag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewBag" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the view bag.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dynamic</td>
 </tr>
 </tbody>
 </table>
@@ -377,11 +386,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewContext">
 <code class="descname">ViewContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the context information about the view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>
@@ -393,11 +403,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewData">
 <code class="descname">ViewData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ViewData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the current view data.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -410,12 +421,13 @@
 
 </div>
 <div class="section" id="methods">
-<h2><a class="toc-backref" href="#id5">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="interface">
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ActionLink">
 <code class="descname">ActionLink</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ActionLink" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an anchor (&amp;lt;a&amp;gt;) element that contains a URL path to the specified action.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -493,7 +505,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
 </tr>
 </tbody>
 </table>
@@ -505,11 +519,15 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.AntiForgeryToken()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a &amp;lt;hidden&amp;gt; element (anti-forgery token) that will be validated when the containing
+&amp;lt;form&amp;gt; is submitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;hidden&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -521,7 +539,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.BeginForm">
 <code class="descname">BeginForm</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.BeginForm" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Renders a &amp;lt;form&amp;gt; start tag to the response. When the user submits the form, the action with name</p>
+<p>&lt;paramref name=&#8221;actionName&#8221; /&gt; will process the request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -566,7 +586,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
 </tr>
 </tbody>
 </table>
@@ -578,7 +600,11 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.BeginRouteForm">
 <code class="descname">BeginRouteForm</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.Rendering.FormMethod</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.BeginRouteForm" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Renders a &amp;lt;form&amp;gt; start tag to the response. The route with name
+&lt;paramref name=&#8221;routeName&#8221; /&gt;
+generates the &amp;lt;form&amp;gt;&#8217;s
+&lt;c&gt;action&lt;/c&gt; attribute value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -622,7 +648,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.MvcForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &amp;lt;/form&amp;gt; end tag when disposed.</td>
 </tr>
 </tbody>
 </table>
@@ -634,7 +662,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.CheckBox">
 <code class="descname">CheckBox</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Nullable&lt;System.Boolean&gt;</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.CheckBox" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;checkbox&#8221; with value &#8220;true&#8221; and an &amp;lt;input&amp;gt; element of type
+&#8220;hidden&#8221; with value &#8220;false&#8221;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -670,7 +700,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; elements.</td>
 </tr>
 </tbody>
 </table>
@@ -682,7 +714,12 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Display">
 <code class="descname">Display</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Display" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns HTML markup for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using a display template, specified HTML field
+name, and additional view data. The template is found using the
+&lt;paramref name=&#8221;templateName&#8221; /&gt; or the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;&#8217;s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -741,7 +778,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the created HTML.</td>
 </tr>
 </tbody>
 </table>
@@ -752,7 +791,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DisplayName">
 <code class="descname">DisplayName</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DisplayName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the display name for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -761,7 +802,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the display name.</p>
 </td>
 </tr>
 </tbody>
@@ -774,7 +818,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DisplayText">
 <code class="descname">DisplayText</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DisplayText" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the simple display text for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -783,20 +829,30 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the simple display text.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">DisplayText</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>If the expression result is
+&lt;c&gt;null&lt;/c&gt;, returns [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText]().</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">string</span> <span class="nf">DisplayText</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DropDownList">
 <code class="descname">DropDownList</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.DropDownList" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a single-selection HTML &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;,
+using the specified list items, option label, and HTML attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -847,7 +903,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -859,7 +917,12 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Editor">
 <code class="descname">Editor</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Editor" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns HTML markup for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using an editor template, specified HTML field
+name, and additional view data. The template is found using the
+&lt;paramref name=&#8221;templateName&#8221; /&gt; or the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;&#8217;s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -918,7 +981,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type additionalViewData:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element(s).</td>
 </tr>
 </tbody>
 </table>
@@ -929,7 +994,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Encode">
 <code class="descname">Encode</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Encode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Converts the
+&lt;paramref name=&#8221;value&#8221; /&gt; to an HTML-encoded [System.String]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -938,7 +1005,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The HTML-encoded [System.String]().</p>
 </td>
 </tr>
 </tbody>
@@ -951,7 +1021,8 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Encode</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Converts the specified [System.String]() to an HTML-encoded [System.String]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -960,7 +1031,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The HTML-encoded [System.String]().</p>
 </td>
 </tr>
 </tbody>
@@ -973,7 +1047,8 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.EndForm()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">EndForm</span><span class="p">()</span>
+<dd><p>Renders the &amp;lt;/form&amp;gt; end tag to the response.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">EndForm</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -981,7 +1056,8 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.FormatValue">
 <code class="descname">FormatValue</code><span class="sig-paren">(</span><em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.FormatValue" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Formats the value.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -991,7 +1067,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the formatted value.</p>
 </td>
 </tr>
 </tbody>
@@ -1004,7 +1083,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GenerateIdFromName">
 <code class="descname">GenerateIdFromName</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GenerateIdFromName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an HTML element Id for the specified expression
+&lt;paramref name=&#8221;fullName&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1025,7 +1106,9 @@ template.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type fullName:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.String]() containing the element Id.</td>
 </tr>
 </tbody>
 </table>
@@ -1037,7 +1120,10 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GetClientValidationRules">
 <code class="descname">GetClientValidationRules</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GetClientValidationRules" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns information about about client validation rules for the specified
+&lt;paramref name=&#8221;metadata&#8221; /&gt; or</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;. Intended for use in [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) extension methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1061,7 +1147,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type expression:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">An [System.Collections.Generic.IEnumerable`1]() containing the relevant rules.</td>
 </tr>
 </tbody>
 </table>
@@ -1072,7 +1160,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GetEnumSelectList">
 <code class="descname">GetEnumSelectList</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GetEnumSelectList" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a select list for the given
+&lt;paramref name=&#8221;enumType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1081,36 +1171,51 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">(</span><span class="n">Type</span> <span class="n">enumType</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;enumType&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">(</span><span class="n">Type</span> <span class="n">enumType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.GetEnumSelectList&lt;TEnum&gt;()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a select list for the given
+&lt;typeparamref name=&#8221;TEnum&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An [System.Collections.Generic.IEnumerable`1]() containing the select list for the given</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">&lt;</span><span class="n">TEnum</span><span class="p">&gt;()</span><span class="k">where</span> <span class="n">TEnum</span> <span class="p">:</span> <span class="k">struct</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;typeparamref name=&#8221;TEnum&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">GetEnumSelectList</span><span class="p">&lt;</span><span class="n">TEnum</span><span class="p">&gt;()</span><span class="k">where</span> <span class="n">TEnum</span> <span class="p">:</span> <span class="k">struct</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Hidden">
 <code class="descname">Hidden</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Hidden" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;hidden&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1146,7 +1251,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1158,7 +1265,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Id">
 <code class="descname">Id</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Id" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the HTML element Id for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1167,7 +1276,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the element Id.</p>
 </td>
 </tr>
 </tbody>
@@ -1180,7 +1292,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Label">
 <code class="descname">Label</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Label" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a &amp;lt;label&amp;gt; element for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1204,7 +1318,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;label&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1216,7 +1332,10 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ListBox">
 <code class="descname">ListBox</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Collections.Generic.IEnumerable&lt;Microsoft.AspNet.Mvc.Rendering.SelectListItem&gt;</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ListBox" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a multi-selection &amp;lt;select&amp;gt; element for the
+&lt;paramref name=&#8221;expression&#8221; /&gt;, using the
+specified list items and HTML attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1253,7 +1372,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;select&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1265,7 +1386,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Name">
 <code class="descname">Name</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Name" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the full HTML element name for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1274,7 +1397,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the element name.</p>
 </td>
 </tr>
 </tbody>
@@ -1287,7 +1413,8 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.PartialAsync">
 <code class="descname">PartialAsync</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.ViewDataDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.PartialAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns HTML markup for the specified partial view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1302,7 +1429,7 @@ template.</p>
 
 <dl class="docutils">
 <dt>&lt;c&gt;null&lt;/c&gt;.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1317,19 +1444,26 @@ template.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">type viewData:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that on completion returns a new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="n">Task</span><span class="p">&lt;</span><span class="n">HtmlString</span><span class="p">&gt;</span> <span class="n">PartialAsync</span><span class="p">(</span><span class="kt">string</span> <span class="n">partialViewName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>the created HTML.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">Task</span><span class="p">&lt;</span><span class="n">HtmlString</span><span class="p">&gt;</span> <span class="n">PartialAsync</span><span class="p">(</span><span class="kt">string</span> <span class="n">partialViewName</span><span class="p">,</span> <span class="kt">object</span> <span class="n">model</span><span class="p">,</span> <span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Password">
 <code class="descname">Password</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Password" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;password&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1365,7 +1499,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1377,7 +1513,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RadioButton">
 <code class="descname">RadioButton</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.Nullable&lt;System.Boolean&gt;</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RadioButton" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;radio&#8221; for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1436,7 +1574,9 @@ template.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1448,7 +1588,9 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Raw">
 <code class="descname">Raw</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Raw" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Wraps HTML markup from the string representation of an [System.Object]() in an
+[Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml), without HTML-encoding the string representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1457,7 +1599,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the wrapped string representation.</p>
 </td>
 </tr>
 </tbody>
@@ -1470,7 +1615,9 @@ template.</p>
 <dl class="method">
 <dt>
 <code class="descname">Raw</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Wraps HTML markup in an [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml), without HTML-encoding the specified</p>
+<p>&lt;paramref name=&#8221;value&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1479,7 +1626,10 @@ template.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.HtmlString</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the wrapped [System.String]().</p>
 </td>
 </tr>
 </tbody>
@@ -1492,7 +1642,8 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RenderPartialAsync">
 <code class="descname">RenderPartialAsync</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>Microsoft.AspNet.Mvc.ViewDataDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RenderPartialAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Renders HTML markup for the specified partial view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1522,7 +1673,9 @@ template.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">type viewData:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Threading.Tasks.Task</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [System.Threading.Tasks.Task]() that renders the created HTML when it executes.</td>
 </tr>
 </tbody>
 </table>
@@ -1534,7 +1687,8 @@ template.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RouteLink">
 <code class="descname">RouteLink</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.RouteLink" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an anchor (&amp;lt;a&amp;gt;) element that contains a URL path to the specified route.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1605,7 +1759,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the anchor element.</td>
 </tr>
 </tbody>
 </table>
@@ -1617,7 +1773,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TextArea">
 <code class="descname">TextArea</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Int32</em>, <em>System.Int32</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TextArea" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a &amp;lt;textarea&amp;gt; element for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1661,7 +1819,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;textarea&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1673,7 +1833,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TextBox">
 <code class="descname">TextBox</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em>, <em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.TextBox" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an &amp;lt;input&amp;gt; element of type &#8220;text&#8221; for the specified
+&lt;paramref name=&#8221;current&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1713,7 +1875,9 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <tr class="field-odd field"><th class="field-name" colspan="2">type htmlAttributes:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &amp;lt;input&amp;gt; element.</td>
 </tr>
 </tbody>
 </table>
@@ -1725,7 +1889,10 @@ created using [System.Object]() initializer syntax. Alternatively, an
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ValidationMessage">
 <code class="descname">ValidationMessage</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ValidationMessage" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the validation message if an error exists in the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object
+for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1779,18 +1946,27 @@ Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containi
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element.
+&lt;c&gt;null&lt;/c&gt; if the</p>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt; is valid and client-side validation is disabled.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="nf">ValidationMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ValidationSummary">
 <code class="descname">ValidationSummary</code><span class="sig-paren">(</span><em>System.Boolean</em>, <em>System.String</em>, <em>System.Object</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.ValidationSummary" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an unordered list (&amp;lt;ul&amp;gt; element) of validation messages that are in the
+[Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]() object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1845,18 +2021,27 @@ Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containi
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">type tag:</th><td class="field-body">System.String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.HtmlString</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">New [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing a &amp;lt;div&amp;gt; element wrapping the</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
+</div></blockquote>
+<p>&lt;paramref name=&#8221;tag&#8221; /&gt; element
+and the &amp;lt;ul&amp;gt; element. [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) if the current model is valid and client-side
+validation is disabled).</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="n">HtmlString</span> <span class="nf">ValidationSummary</span><span class="p">(</span><span class="kt">bool</span> <span class="n">excludePropertyErrors</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">object</span> <span class="n">htmlAttributes</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Value">
 <code class="descname">Value</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.Value" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the formatted value for the specified
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1866,7 +2051,10 @@ Alternatively, an [System.Collections.Generic.IDictionary`2]() instance containi
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.String]() containing the formatted value.</p>
 </td>
 </tr>
 </tbody>

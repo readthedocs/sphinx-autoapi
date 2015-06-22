@@ -22,6 +22,7 @@ Specifies the localized view format for [Microsoft.AspNet.Mvc.Razor.LanguageView
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Fields
     
         
     
-        
-        
+        Locale is a subfolder under which the view exisits.
     
         
     
@@ -68,8 +68,7 @@ Fields
     
         
     
-        
-        
+        Locale is part of the view name as a suffix.
     
         
     

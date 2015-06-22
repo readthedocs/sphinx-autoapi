@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ObjectResult]() that when executed will produce a Not F
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.HttpNotFoundObjectResult](Microsoft.AspNet.Mvc.HttpNotFoundObjectResult.yml) instance.
     
         
         :param value: The value to format in the entity body.

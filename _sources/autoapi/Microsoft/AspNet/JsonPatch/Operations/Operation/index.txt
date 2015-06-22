@@ -13,6 +13,7 @@ Operation Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -103,7 +104,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.JsonPatch.Operations.Operation.value
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

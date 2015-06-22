@@ -124,7 +124,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -209,7 +208,11 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApiExplorer.IApiResponseFormatMetadataProvider.GetSupportedContentTypes">
 <code class="descname">GetSupportedContentTypes</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Type</em>, <em>MediaTypeHeaderValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApiExplorer.IApiResponseFormatMetadataProvider.GetSupportedContentTypes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a filtered list of content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]()
+for the
+&lt;paramref name=&#8221;declaredType&#8221; /&gt; and
+&lt;paramref name=&#8221;contentType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -234,7 +237,9 @@ type can be used.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type contentType:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">MediaTypeHeaderValue</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">Content types which are supported by the [Microsoft.AspNet.Mvc.IOutputFormatter]().</td>
 </tr>
 </tbody>
 </table>

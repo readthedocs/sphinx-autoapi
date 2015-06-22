@@ -13,6 +13,7 @@ ActionDescriptorProviderContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Core.ActionDescriptorProviderContext.Results
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ActionDescriptor}
     
         
         .. code-block:: csharp

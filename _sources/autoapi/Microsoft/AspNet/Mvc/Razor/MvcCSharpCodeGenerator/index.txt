@@ -13,6 +13,7 @@ MvcCSharpCodeGenerator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`CSharpCodeGenerator`
@@ -80,7 +81,7 @@ Methods
         
         :param writer: 
         :type writer: CSharpCodeWriter
-        :rtype: 
+        :rtype: CSharpCodeWritingScope
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Methods
         :type writer: CSharpCodeWriter
         :param context: 
         :type context: CodeGeneratorContext
-        :rtype: 
+        :rtype: CSharpCodeVisitor
     
         
         .. code-block:: csharp

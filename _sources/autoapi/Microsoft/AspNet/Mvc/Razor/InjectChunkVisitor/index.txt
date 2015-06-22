@@ -13,6 +13,7 @@ InjectChunkVisitor Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`CodeVisitor{CSharpCodeWriter}`
@@ -78,7 +79,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.InjectChunkVisitor.InjectChunks
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Razor.InjectChunk}
     
         
         .. code-block:: csharp

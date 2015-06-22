@@ -13,6 +13,7 @@ ViewComponentHelperExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -57,7 +58,7 @@ Methods
         :type helper: Microsoft.AspNet.Mvc.IViewComponentHelper
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -71,7 +72,7 @@ Methods
         :type helper: Microsoft.AspNet.Mvc.IViewComponentHelper
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -85,7 +86,7 @@ Methods
         :type helper: Microsoft.AspNet.Mvc.IViewComponentHelper
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

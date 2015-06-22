@@ -18,6 +18,7 @@ A metadata object representing a source of data for model binding.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for the request body.
     
         
     
@@ -73,8 +73,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for a custom model binder (unknown data source).
     
         
     
@@ -87,8 +86,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for the request form-data.
     
         
     
@@ -101,8 +99,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for the request headers.
     
         
     
@@ -115,8 +112,8 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for model binding. Includes form-data, query-string
+        and route data from the request.
     
         
     
@@ -129,8 +126,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for the request url path.
     
         
     
@@ -143,8 +139,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for the request query-string.
     
         
     
@@ -157,8 +152,7 @@ Fields
     
         
     
-        
-        
+        A [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) for request services.
     
         
     
@@ -179,8 +173,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml).
     
         
         :param id: The id, a unique identifier.
@@ -209,11 +202,10 @@ Properties
     
         
     
-        
-        
+        Gets the display name for the source.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -224,11 +216,10 @@ Properties
     
         
     
-        
-        
+        Gets the unique identifier for the source. Sources are compared based on their Id.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -239,11 +230,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the binding source uses input from the current HTTP request.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -254,11 +244,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not a source is greedy. A greedy source will bind a model in
+        a single operation, and will not decompose the model into sub-properties.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -277,13 +267,16 @@ Methods
     
         
     
-        
-        
+        Gets a value indicating whether or not the [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) can accept
+        data from
+        <paramref name="bindingSource" />.
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) to consider as input.
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>True</c> if the source is compatible, otherwise
+    <c>false</c>.
     
         
         .. code-block:: csharp
@@ -295,7 +288,7 @@ Methods
         
         :param other: 
         :type other: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -307,7 +300,7 @@ Methods
         
         :param obj: 
         :type obj: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -317,7 +310,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.BindingSource.GetHashCode()
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

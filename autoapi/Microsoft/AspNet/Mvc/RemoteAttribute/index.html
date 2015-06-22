@@ -161,7 +161,8 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.RemoteAttribute.RemoteAttribute()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">RemoteAttribute</span><span class="p">()</span>
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">RemoteAttribute</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -169,7 +170,8 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.RemoteAttribute">
 <code class="descname">RemoteAttribute</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.RemoteAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -188,7 +190,8 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="constructor">
 <dt>
 <code class="descname">RemoteAttribute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -208,7 +211,8 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="constructor">
 <dt>
 <code class="descname">RemoteAttribute</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -247,11 +251,12 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.AdditionalFields">
 <code class="descname">AdditionalFields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.AdditionalFields" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the comma-separated names of fields the client should include in a validation request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -263,11 +268,15 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.HttpMethod">
 <code class="descname">HttpMethod</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.HttpMethod" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the HTTP method (
+&lt;c&gt;&#8221;Get&#8221;&lt;/c&gt; or
+&lt;c&gt;&#8221;Post&#8221;&lt;/c&gt;) client should use when sending a validation
+request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -279,11 +288,13 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.RouteData">
 <code class="descname">RouteData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.RouteData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:RouteValueDictionary- used when generating the URL where client should send a
+validation request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">RouteValueDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -295,11 +306,12 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.RouteName">
 <code class="descname">RouteName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.RouteName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the route name used when generating the URL where client should send a validation request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +329,9 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.FormatAdditionalFieldsForClientValidation">
 <code class="descname">FormatAdditionalFieldsForClientValidation</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.FormatAdditionalFieldsForClientValidation" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Formats
+&lt;paramref name=&#8221;property&#8221; /&gt; and [Microsoft.AspNet.Mvc.RemoteAttribute.AdditionalFields](Microsoft.AspNet.Mvc.RemoteAttribute.yml) for use in generated HTML.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -326,7 +340,10 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Comma-separated names of fields the client should include in a validation request.</p>
 </td>
 </tr>
 </tbody>
@@ -348,7 +365,7 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>
@@ -361,7 +378,9 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.FormatPropertyForClientValidation">
 <code class="descname">FormatPropertyForClientValidation</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.FormatPropertyForClientValidation" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Formats
+&lt;paramref name=&#8221;property&#8221; /&gt; for use in generated HTML.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -370,7 +389,10 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Name of a field the client should include in a validation request.</p>
 </td>
 </tr>
 </tbody>
@@ -392,7 +414,7 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}</p>
 </td>
 </tr>
 </tbody>
@@ -405,7 +427,8 @@ web site. The invoked action should return JSON indicating whether the value is 
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.RemoteAttribute.GetUrl">
 <code class="descname">GetUrl</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RemoteAttribute.GetUrl" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the URL where the client should send a validation request.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -414,7 +437,10 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The URL where the client should send a validation request.</p>
 </td>
 </tr>
 </tbody>
@@ -436,7 +462,7 @@ web site. The invoked action should return JSON indicating whether the value is 
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
 </td>
 </tr>
 </tbody>

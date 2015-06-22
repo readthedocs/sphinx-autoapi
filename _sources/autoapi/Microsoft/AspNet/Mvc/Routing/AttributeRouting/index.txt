@@ -13,6 +13,7 @@ AttributeRouting Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -71,15 +72,15 @@ Methods
     
         
     
-        
-        
+        Creates an attribute route using the provided services and provided target router.
     
         
         :param target: The router to invoke when a route entry matches.
         :type target: IRouter
         :param services: The application services.
         :type services: System.IServiceProvider
-        :rtype: 
+        :rtype: IRouter
+        :return: An attribute route.
     
         
         .. code-block:: csharp

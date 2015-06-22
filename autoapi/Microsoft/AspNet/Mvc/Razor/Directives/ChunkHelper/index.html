@@ -128,7 +128,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -220,7 +219,10 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.EnsureChunk&lt;TChunk&gt;(Chunk)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Attempts to cast the passed in &#64;!:Chunk- to type
+&lt;typeparamref name=&#8221;TChunk&#8221; /&gt; and throws if the
+cast fails.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -229,20 +231,30 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">TChunk</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">TChunk</span> <span class="n">EnsureChunk</span><span class="p">&lt;</span><span class="n">TChunk</span><span class="p">&gt;(</span><span class="n">Chunk</span> <span class="n">chunk</span><span class="p">)</span><span class="k">where</span> <span class="n">TChunk</span> <span class="p">:</span> <span class="n">Chunk</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;chunk&#8221; /&gt; cast to
+&lt;typeparamref name=&#8221;TChunk&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">TChunk</span> <span class="n">EnsureChunk</span><span class="p">&lt;</span><span class="n">TChunk</span><span class="p">&gt;(</span><span class="n">Chunk</span> <span class="n">chunk</span><span class="p">)</span><span class="k">where</span> <span class="n">TChunk</span> <span class="p">:</span> <span class="n">Chunk</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelChunk">
 <code class="descname">GetModelChunk</code><span class="sig-paren">(</span><em>ChunkTree</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelChunk" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml) used to determine the model name for the page generated
+using the specified
+&lt;paramref name=&#8221;chunkTree&#8221; /&gt;</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -251,20 +263,28 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Razor.ModelChunk</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The last [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml) in the &#64;!:ChunkTree- if found,</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ModelChunk</span> <span class="nf">GetModelChunk</span><span class="p">(</span><span class="n">ChunkTree</span> <span class="n">chunkTree</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;null&lt;/c&gt; otherwise.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ModelChunk</span> <span class="nf">GetModelChunk</span><span class="p">(</span><span class="n">ChunkTree</span> <span class="n">chunkTree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelTypeName">
 <code class="descname">GetModelTypeName</code><span class="sig-paren">(</span><em>ChunkTree</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.GetModelTypeName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns the type name of the Model specified via a [Microsoft.AspNet.Mvc.Razor.ModelChunk](Microsoft.AspNet.Mvc.Razor.ModelChunk.yml) in the</p>
+<p>&lt;paramref name=&#8221;chunkTree&#8221; /&gt; if specified or the default model type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -274,7 +294,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The model type name for the generated page.</p>
 </td>
 </tr>
 </tbody>
@@ -287,7 +310,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.ReplaceTModel">
 <code class="descname">ReplaceTModel</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.Directives.ChunkHelper.ReplaceTModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a string with the &amp;lt;TModel&amp;gt; token replaced with the value specified in</p>
+<p>&lt;paramref name=&#8221;modelName&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -297,7 +322,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A string with the token replaced.</p>
 </td>
 </tr>
 </tbody>

@@ -18,6 +18,7 @@ An entry in the cache used by [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorPr
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a successful parse.
     
         
         :param fileInfo: The [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml) of the file being cached.
@@ -77,8 +77,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) for a failed parse.
     
         
         :param diagnostics: The [System.Collections.Generic.IReadOnlyList`1]() produced from parsing the Razor
@@ -103,11 +102,12 @@ Properties
     
         
     
-        
-        
+        Gets the @!:Diagnostic-s produced from parsing the generated contents of the file
+        specified by [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.FileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml). This does not contain @!:Diagnostic-s produced from
+        compiling the parsed @!:CodeAnalysis.SyntaxTree-.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Diagnostic}
     
         
         .. code-block:: csharp
@@ -118,11 +118,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml) associated with this cache entry instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo
     
         
         .. code-block:: csharp
@@ -133,11 +132,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that indicates if parsing was successful.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -148,11 +146,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.SyntaxTree](Microsoft.AspNet.Mvc.Razor.Precompilation.PrecompilationCacheEntry.yml) produced from parsing the Razor file.
     
         
-        :rtype: 
+        :rtype: SyntaxTree
     
         
         .. code-block:: csharp

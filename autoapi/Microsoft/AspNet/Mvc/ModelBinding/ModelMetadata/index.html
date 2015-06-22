@@ -159,7 +159,8 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DefaultOrder">
 <code class="descname">DefaultOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DefaultOrder" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultOrder</span>
+<dd><p>The default value of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">DefaultOrder</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -173,7 +174,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelMetadata">
 <code class="descname">ModelMetadata</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -198,11 +200,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.AdditionalValues">
 <code class="descname">AdditionalValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.AdditionalValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a collection of additional information about the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyDictionary{System.Object,System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -214,11 +217,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderModelName">
 <code class="descname">BinderModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderModelName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the name of a model if specified explicitly using [Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -230,11 +234,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderType">
 <code class="descname">BinderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BinderType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [System.Type]() of an [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml) of a model if specified explicitly using
+[Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata](Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -246,11 +252,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BindingSource">
 <code class="descname">BindingSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.BindingSource" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a binder metadata for this model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.BindingSource</td>
 </tr>
 </tbody>
 </table>
@@ -262,11 +269,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ContainerType">
 <code class="descname">ContainerType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ContainerType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the container type of this metadata if it represents a property, otherwise
+&lt;c&gt;null&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -278,11 +287,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ConvertEmptyStringToNull">
 <code class="descname">ConvertEmptyStringToNull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ConvertEmptyStringToNull" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not to convert an empty string value to
+&lt;c&gt;null&lt;/c&gt; when
+representing a model as text.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -294,11 +306,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DataTypeName">
 <code class="descname">DataTypeName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DataTypeName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the name of the model&#8217;s datatype.  Overrides [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) in some
+display scenarios.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -310,11 +324,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Description">
 <code class="descname">Description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Description" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the description of the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -326,11 +341,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayFormatString">
 <code class="descname">DisplayFormatString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayFormatString" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the composite format [System.String]() (see
+<a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>) used to display the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -342,11 +359,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayName">
 <code class="descname">DisplayName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.DisplayName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the display name of the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -358,11 +376,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString">
 <code class="descname">EditFormatString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the composite format [System.String]() (see
+<a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>) used to edit the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -374,11 +394,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ElementMetadata">
 <code class="descname">ElementMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ElementMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) for elements of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) if that [System.Type]()
+implements [System.Collections.IEnumerable]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</td>
 </tr>
 </tbody>
 </table>
@@ -390,11 +412,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumDisplayNamesAndValues">
 <code class="descname">EnumDisplayNamesAndValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumDisplayNamesAndValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the ordered display names and values of all [System.Enum]() values in [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or</p>
+<p>&lt;c&gt;Nullable.GetUnderlyingType(ModelType)&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}</td>
 </tr>
 </tbody>
 </table>
@@ -406,11 +430,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumNamesAndValues">
 <code class="descname">EnumNamesAndValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EnumNamesAndValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the names and values of all [System.Enum]() values in [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or</p>
+<p>&lt;c&gt;Nullable.GetUnderlyingType(ModelType)&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}</td>
 </tr>
 </tbody>
 </table>
@@ -422,11 +448,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HasNonDefaultEditFormat">
 <code class="descname">HasNonDefaultEditFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HasNonDefaultEditFormat" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) has a non-
+&lt;c&gt;null&lt;/c&gt;, non-empty
+value different from the default for the datatype.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -438,11 +467,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HideSurroundingHtml">
 <code class="descname">HideSurroundingHtml</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HideSurroundingHtml" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether the &#8220;HiddenInput&#8221; display template should return</p>
+<p>&lt;c&gt;string.Empty&lt;/c&gt; (not the expression value) and whether the &#8220;HiddenInput&#8221; editor template should not
+also return the expression value (together with the hidden &amp;lt;input&amp;gt; element).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -454,11 +486,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HtmlEncode">
 <code class="descname">HtmlEncode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.HtmlEncode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether the value should be HTML-encoded.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -470,11 +503,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Identity">
 <code class="descname">Identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Identity" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the key for the current instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity</td>
 </tr>
 </tbody>
 </table>
@@ -486,11 +520,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingAllowed">
 <code class="descname">IsBindingAllowed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingAllowed" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not the model value can be bound by model binding. This is only
+applicable when the current instance represents a property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -502,11 +538,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingRequired">
 <code class="descname">IsBindingRequired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsBindingRequired" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not the model value is required by model binding. This is only
+applicable when the current instance represents a property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -518,11 +556,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsCollectionType">
 <code class="descname">IsCollectionType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsCollectionType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a collection type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -534,11 +573,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsComplexType">
 <code class="descname">IsComplexType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsComplexType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a simple type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -550,11 +590,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsEnum">
 <code class="descname">IsEnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsEnum" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
+&lt;c&gt;Nullable.GetUnderlyingType(ModelType)&lt;/c&gt; is
+for an [System.Enum]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -566,11 +609,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsFlagsEnum">
 <code class="descname">IsFlagsEnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsFlagsEnum" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
+&lt;c&gt;Nullable.GetUnderlyingType(ModelType)&lt;/c&gt; is
+for an [System.Enum]() with an associated [System.FlagsAttribute]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -582,11 +628,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsNullableValueType">
 <code class="descname">IsNullableValueType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsNullableValueType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a [System.Nullable`1]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -598,11 +645,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsReadOnly">
 <code class="descname">IsReadOnly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsReadOnly" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not the model value is read-only. This is only applicable when
+the current instance represents a property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -614,11 +663,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired">
 <code class="descname">IsRequired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.IsRequired" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating whether or not the model value is required. This is only applicable when
+the current instance represents a property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -630,11 +681,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.MetadataKind">
 <code class="descname">MetadataKind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.MetadataKind" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating the kind of metadata element represented by the current instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataKind</td>
 </tr>
 </tbody>
 </table>
@@ -646,11 +698,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType">
 <code class="descname">ModelType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the model type represented by the current instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Type</td>
 </tr>
 </tbody>
 </table>
@@ -662,11 +715,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText">
 <code class="descname">NullDisplayText</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.NullDisplayText" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the text to display when the model is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -678,11 +733,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order">
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value indicating where the current metadata should be ordered relative to other properties
+in its containing type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -694,11 +751,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Properties">
 <code class="descname">Properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Properties" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instances for the model&#8217;s properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection</td>
 </tr>
 </tbody>
 </table>
@@ -710,11 +768,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyBindingPredicateProvider">
 <code class="descname">PropertyBindingPredicateProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyBindingPredicateProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider](Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider.yml), which can determine which properties
+should be model bound.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider</td>
 </tr>
 </tbody>
 </table>
@@ -726,11 +786,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyGetter">
 <code class="descname">PropertyGetter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyGetter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a property getter delegate to get the property value from a model object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Func{System.Object,System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -742,11 +803,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyName">
 <code class="descname">PropertyName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertyName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the property name represented by the current instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -758,11 +820,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertySetter">
 <code class="descname">PropertySetter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.PropertySetter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a property setter delegate to set the property value on a model object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Action{System.Object,System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -774,11 +837,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForDisplay">
 <code class="descname">ShowForDisplay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForDisplay" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value that indicates whether the property should be displayed in read-only views.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -790,11 +854,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForEdit">
 <code class="descname">ShowForEdit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ShowForEdit" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a value that indicates whether the property should be displayed in editable views.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -806,11 +871,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.SimpleDisplayProperty">
 <code class="descname">SimpleDisplayProperty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.SimpleDisplayProperty" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets  a value which is the name of the property used to display the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -822,11 +888,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.TemplateHint">
 <code class="descname">TemplateHint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.TemplateHint" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a string used by the templating system to discover display-templates and editor-templates.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -838,11 +905,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ValidatorMetadata">
 <code class="descname">ValidatorMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ValidatorMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a collection of metadata items for validators.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -860,11 +928,14 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.GetDisplayName()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a display name for the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The display name.</td>
 </tr>
 </tbody>
 </table>

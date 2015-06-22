@@ -137,7 +137,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -229,25 +228,34 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProviderFactory.GetProvider">
 <code class="descname">GetProvider</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Xml.WrapperProviderContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProviderFactory.GetProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates an instance of [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.yml) if the provided
+declared type is [Microsoft.AspNet.Mvc.SerializableError]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>context</strong> (<a class="reference internal" href="../WrapperProviderContext/index.html#Microsoft.AspNet.Mvc.Xml.WrapperProviderContext" title="Microsoft.AspNet.Mvc.Xml.WrapperProviderContext"><em>Microsoft.AspNet.Mvc.Xml.WrapperProviderContext</em></a>) &#8211; </li>
+<li><strong>context</strong> (<a class="reference internal" href="../WrapperProviderContext/index.html#Microsoft.AspNet.Mvc.Xml.WrapperProviderContext" title="Microsoft.AspNet.Mvc.Xml.WrapperProviderContext"><em>Microsoft.AspNet.Mvc.Xml.WrapperProviderContext</em></a>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Xml.IWrapperProvider</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An instance of [Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider](Microsoft.AspNet.Mvc.Xml.SerializableErrorWrapperProvider.yml) if the provided</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IWrapperProvider</span> <span class="nf">GetProvider</span><span class="p">(</span><span class="n">WrapperProviderContext</span> <span class="n">context</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>declared type is [Microsoft.AspNet.Mvc.SerializableError](), else
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">IWrapperProvider</span> <span class="nf">GetProvider</span><span class="p">(</span><span class="n">WrapperProviderContext</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

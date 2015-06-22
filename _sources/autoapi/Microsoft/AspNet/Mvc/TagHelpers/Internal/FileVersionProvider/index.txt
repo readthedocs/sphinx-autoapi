@@ -18,6 +18,7 @@ Provides version hash for a specified file.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.TagHelpers.Internal.FileVersionProvider](Microsoft.AspNet.Mvc.TagHelpers.Internal.FileVersionProvider.yml).
     
         
         :param fileProvider: The file provider to get and watch files.
@@ -87,13 +87,13 @@ Methods
     
         
     
-        
-        
+        Adds version query parameter to the specified file path.
     
         
         :param path: The path of the file to which version should be added.
         :type path: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: Path containing the version query string.
     
         
         .. code-block:: csharp

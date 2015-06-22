@@ -13,6 +13,7 @@ PositionTagged<T> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Position
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.Value
     
         
-        :rtype: 
+        :rtype: T
     
         
         .. code-block:: csharp
@@ -102,7 +103,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.PositionTagged<T>.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

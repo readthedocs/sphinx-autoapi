@@ -18,6 +18,7 @@ Metadata for JsonProperty.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance.
     
         
         :param property: 
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets Parent.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets JsonProperty.
     
         
-        :rtype: 
+        :rtype: JsonProperty
     
         
         .. code-block:: csharp

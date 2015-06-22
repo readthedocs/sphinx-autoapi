@@ -13,6 +13,7 @@ DefaultApplicationModelProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.DefaultApplicationModelProvider.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -91,15 +92,18 @@ Methods
     
         
     
-        
-        
+        Creates the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) instances for the given action [System.Reflection.MethodInfo]().
     
         
         :param typeInfo: The controller [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
         :param methodInfo: The action [System.Reflection.MethodInfo]().
         :type methodInfo: System.Reflection.MethodInfo
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.ActionModel}
+        :return: A set of [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml) instances for the given action [System.Reflection.MethodInfo]() or
+    
+    <c>null</c> if the
+    <paramref name="methodInfo" /> does not represent an action.
     
         
         .. code-block:: csharp
@@ -110,13 +114,16 @@ Methods
     
         
     
-        
-        
+        Creates the [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) instances for the given controller [System.Reflection.TypeInfo]().
     
         
         :param typeInfo: The controller [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel}
+        :return: A set of [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) instances for the given controller [System.Reflection.TypeInfo]() or
+    
+    <c>null</c> if the
+    <paramref name="typeInfo" /> does not represent a controller.
     
         
         .. code-block:: csharp
@@ -127,15 +134,15 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml) for the given [System.Reflection.MethodInfo]().
     
         
         :param methodInfo: The [System.Reflection.MethodInfo]().
         :type methodInfo: System.Reflection.MethodInfo
         :param attributes: The set of attributes to use as metadata.
         :type attributes: System.Collections.Generic.IReadOnlyList{System.Object}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ActionModel
+        :return: An [Microsoft.AspNet.Mvc.ApplicationModels.ActionModel](Microsoft.AspNet.Mvc.ApplicationModels.ActionModel.yml) for the given [System.Reflection.MethodInfo]().
     
         
         .. code-block:: csharp
@@ -146,13 +153,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) for the given [System.Reflection.TypeInfo]().
     
         
         :param typeInfo: The [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel
+        :return: A [Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel](Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.yml) for the given [System.Reflection.TypeInfo]().
     
         
         .. code-block:: csharp
@@ -163,13 +170,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel](Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.yml) for the given [System.Reflection.ParameterInfo]().
     
         
         :param parameterInfo: The [System.Reflection.ParameterInfo]().
         :type parameterInfo: System.Reflection.ParameterInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel
+        :return: A [Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel](Microsoft.AspNet.Mvc.ApplicationModels.ParameterModel.yml) for the given [System.Reflection.ParameterInfo]().
     
         
         .. code-block:: csharp
@@ -180,13 +187,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml) for the given [System.Reflection.PropertyInfo]().
     
         
         :param propertyInfo: The [System.Reflection.PropertyInfo]().
         :type propertyInfo: System.Reflection.PropertyInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel
+        :return: A [Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel](Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel.yml) for the given [System.Reflection.PropertyInfo]().
     
         
         .. code-block:: csharp
@@ -197,15 +204,20 @@ Methods
     
         
     
-        
-        
+        Returns
+        <c>true</c> if the
+        <paramref name="methodInfo" /> is an action. Otherwise
+        <c>false</c>.
     
         
         :param typeInfo: The [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
         :param methodInfo: The [System.Reflection.MethodInfo]().
         :type methodInfo: System.Reflection.MethodInfo
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the
+    <paramref name="methodInfo" /> is an action. Otherwise
+    <c>false</c>.
     
         
         .. code-block:: csharp

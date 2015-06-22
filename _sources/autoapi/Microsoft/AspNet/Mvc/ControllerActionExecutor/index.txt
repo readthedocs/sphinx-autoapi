@@ -13,6 +13,7 @@ ControllerActionExecutor Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
         :type instance: System.Object
         :param actionArguments: 
         :type actionArguments: System.Collections.Generic.IDictionary{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Object}
     
         
         .. code-block:: csharp
@@ -75,7 +76,7 @@ Methods
         :type instance: System.Object
         :param orderedActionArguments: 
         :type orderedActionArguments: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Object}
     
         
         .. code-block:: csharp

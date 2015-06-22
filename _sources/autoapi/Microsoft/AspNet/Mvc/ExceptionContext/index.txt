@@ -13,6 +13,7 @@ ExceptionContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ExceptionContext.Exception
     
         
-        :rtype: 
+        :rtype: System.Exception
     
         
         .. code-block:: csharp
@@ -86,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ExceptionContext.ExceptionDispatchInfo
     
         
-        :rtype: 
+        :rtype: System.Runtime.ExceptionServices.ExceptionDispatchInfo
     
         
         .. code-block:: csharp
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ExceptionContext.Result
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionResult
     
         
         .. code-block:: csharp

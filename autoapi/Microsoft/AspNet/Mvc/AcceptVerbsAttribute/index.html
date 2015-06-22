@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.AcceptVerbsAttribute.AcceptVerbsAttribute">
 <code class="descname">AcceptVerbsAttribute</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AcceptVerbsAttribute.AcceptVerbsAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.AcceptVerbsAttribute](Microsoft.AspNet.Mvc.AcceptVerbsAttribute.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -177,7 +178,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">AcceptVerbsAttribute</code><span class="sig-paren">(</span><em>System.String[]</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.AcceptVerbsAttribute](Microsoft.AspNet.Mvc.AcceptVerbsAttribute.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -202,11 +204,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AcceptVerbsAttribute.HttpMethods">
 <code class="descname">HttpMethods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AcceptVerbsAttribute.HttpMethods" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the HTTP methods the action supports.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
 </tr>
 </tbody>
 </table>
@@ -222,7 +225,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -238,7 +241,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -254,7 +257,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -266,11 +269,15 @@
 <dl class="property">
 <dt>
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the route order. The order determines the order of route execution. Routes with a lower
+order value are tried first. When a route doesn&#8217;t specify a value, it gets the value of the
+[Microsoft.AspNet.Mvc.RouteAttribute.Order](Microsoft.AspNet.Mvc.RouteAttribute.yml) or a default value of 0 if the [Microsoft.AspNet.Mvc.RouteAttribute](Microsoft.AspNet.Mvc.RouteAttribute.yml)
+doesn&#8217;t define a value on the controller.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -282,11 +289,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.AcceptVerbsAttribute.Route">
 <code class="descname">Route</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.AcceptVerbsAttribute.Route" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The route template. May be null.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

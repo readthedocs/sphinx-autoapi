@@ -18,6 +18,7 @@ Specifies an attribute route on a controller.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.RouteAttribute](Microsoft.AspNet.Mvc.RouteAttribute.yml) with the given route template.
     
         
         :param template: The route template. May not be null.
@@ -83,7 +83,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteAttribute.Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.Order
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Int32}
     
         
         .. code-block:: csharp
@@ -93,7 +93,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteAttribute.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -104,11 +104,14 @@ Properties
     
         
     
-        
-        
+        Gets the route order. The order determines the order of route execution. Routes with a lower order
+        value are tried first. If an action defines a route by providing an [Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider](Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider.yml)
+        with a non
+        <c>null</c> order, that order is used instead of this value. If neither the action nor the
+        controller defines an order, a default value of 0 is used.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -118,7 +121,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteAttribute.Template
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

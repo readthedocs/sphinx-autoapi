@@ -20,6 +20,7 @@ even when Close() or Dispose() is called.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,8 +64,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new [Microsoft.AspNet.Mvc.Internal.NonDisposableStream](Microsoft.AspNet.Mvc.Internal.NonDisposableStream.yml).
     
         
         :param innerStream: The stream which should not be closed or flushed.
@@ -86,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.CanRead
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -96,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.CanSeek
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -106,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.CanTimeout
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -116,7 +116,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.CanWrite
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -127,11 +127,10 @@ Properties
     
         
     
-        
-        
+        The inner stream this object delegates to.
     
         
-        :rtype: 
+        :rtype: System.IO.Stream
     
         
         .. code-block:: csharp
@@ -141,7 +140,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Length
     
         
-        :rtype: 
+        :rtype: System.Int64
     
         
         .. code-block:: csharp
@@ -151,7 +150,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.Position
     
         
-        :rtype: 
+        :rtype: System.Int64
     
         
         .. code-block:: csharp
@@ -161,7 +160,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.ReadTimeout
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -171,7 +170,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.WriteTimeout
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -199,7 +198,7 @@ Methods
         :type callback: System.AsyncCallback
         :param state: 
         :type state: System.Object
-        :rtype: 
+        :rtype: System.IAsyncResult
     
         
         .. code-block:: csharp
@@ -219,7 +218,7 @@ Methods
         :type callback: System.AsyncCallback
         :param state: 
         :type state: System.Object
-        :rtype: 
+        :rtype: System.IAsyncResult
     
         
         .. code-block:: csharp
@@ -244,7 +243,7 @@ Methods
         :type bufferSize: System.Int32
         :param cancellationToken: 
         :type cancellationToken: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -267,7 +266,7 @@ Methods
         
         :param asyncResult: 
         :type asyncResult: System.IAsyncResult
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -299,7 +298,7 @@ Methods
         
         :param cancellationToken: 
         :type cancellationToken: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -315,7 +314,7 @@ Methods
         :type offset: System.Int32
         :param count: 
         :type count: System.Int32
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -333,7 +332,7 @@ Methods
         :type count: System.Int32
         :param cancellationToken: 
         :type cancellationToken: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Int32}
     
         
         .. code-block:: csharp
@@ -343,7 +342,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Internal.NonDisposableStream.ReadByte()
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -357,7 +356,7 @@ Methods
         :type offset: System.Int64
         :param origin: 
         :type origin: System.IO.SeekOrigin
-        :rtype: 
+        :rtype: System.Int64
     
         
         .. code-block:: csharp
@@ -401,7 +400,7 @@ Methods
         :type count: System.Int32
         :param cancellationToken: 
         :type cancellationToken: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

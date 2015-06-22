@@ -19,6 +19,7 @@ produce an HTTP response with the given response status code.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,9 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.HttpStatusCodeResult](Microsoft.AspNet.Mvc.HttpStatusCodeResult.yml) class
+        with the given
+        <paramref name="statusCode" />.
     
         
         :param statusCode: The HTTP status code of the response.
@@ -85,11 +87,10 @@ Properties
     
         
     
-        
-        
+        Gets the HTTP status code.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

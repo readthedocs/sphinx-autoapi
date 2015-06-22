@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.OutputFormatter.OutputFormatter()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">OutputFormatter</span><span class="p">()</span>
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml) class.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="nf">OutputFormatter</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -172,11 +173,14 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.SupportedEncodings">
 <code class="descname">SupportedEncodings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.SupportedEncodings" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the mutable collection of character encodings supported by
+this [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml). The encodings are
+used when writing the data.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{System.Text.Encoding}</td>
 </tr>
 </tbody>
 </table>
@@ -188,11 +192,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.SupportedMediaTypes">
 <code class="descname">SupportedMediaTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.SupportedMediaTypes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the mutable collection of &#64;!:MediaTypeHeaderValue- elements supported by
+this [Microsoft.AspNet.Mvc.OutputFormatter](Microsoft.AspNet.Mvc.OutputFormatter.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{MediaTypeHeaderValue}</td>
 </tr>
 </tbody>
 </table>
@@ -220,7 +226,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
 </td>
 </tr>
 </tbody>
@@ -233,7 +239,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.CanWriteType">
 <code class="descname">CanWriteType</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.CanWriteType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a value indicating whether or not the given type can be written by this serializer.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -243,16 +250,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the type can be written, otherwise</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanWriteType</span><span class="p">(</span><span class="n">Type</span> <span class="n">declaredType</span><span class="p">,</span> <span class="n">Type</span> <span class="n">runtimeType</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">CanWriteType</span><span class="p">(</span><span class="n">Type</span> <span class="n">declaredType</span><span class="p">,</span> <span class="n">Type</span> <span class="n">runtimeType</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.GetSupportedContentTypes">
 <code class="descname">GetSupportedContentTypes</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Type</em>, <em>MediaTypeHeaderValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.GetSupportedContentTypes" title="Permalink to this definition">¶</a></dt>
@@ -267,7 +280,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Collections.Generic.IReadOnlyList{MediaTypeHeaderValue}</p>
 </td>
 </tr>
 </tbody>
@@ -280,7 +293,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.SelectCharacterEncoding">
 <code class="descname">SelectCharacterEncoding</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.OutputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.SelectCharacterEncoding" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Determines the best [System.Text.Encoding]() amongst the supported encodings
+for reading or writing an HTTP entity body based on the provided
+&lt;paramref name=&#8221;contentTypeHeader&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -289,7 +305,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Text.Encoding</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The [System.Text.Encoding]() to use when reading the request or writing the response.</p>
 </td>
 </tr>
 </tbody>
@@ -311,7 +330,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -324,7 +343,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.WriteResponseBodyAsync">
 <code class="descname">WriteResponseBodyAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.OutputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.WriteResponseBodyAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Writes the response body.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -333,7 +353,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A task which can write the response body.</p>
 </td>
 </tr>
 </tbody>
@@ -346,7 +369,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.OutputFormatter.WriteResponseHeaders">
 <code class="descname">WriteResponseHeaders</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.OutputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.OutputFormatter.WriteResponseHeaders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Sets the headers on &#64;!:Microsoft.AspNet.Http.HttpResponse- object.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

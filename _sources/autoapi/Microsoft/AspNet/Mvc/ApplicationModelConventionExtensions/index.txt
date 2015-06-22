@@ -18,6 +18,7 @@ Contains the extension methods for [Microsoft.AspNet.Mvc.MvcOptions.Conventions]
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Methods
     
         
     
-        
-        
+        Adds a [Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IActionModelConvention.yml) to all the actions in the application.
     
         
         :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml)
@@ -79,8 +79,7 @@ Methods
     
         
     
-        
-        
+        Adds a [Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IControllerModelConvention.yml) to all the controllers in the application.
     
         
         :param conventions: The list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml)

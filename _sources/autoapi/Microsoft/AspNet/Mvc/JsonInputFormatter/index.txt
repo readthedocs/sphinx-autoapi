@@ -13,6 +13,7 @@ JsonInputFormatter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -83,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:JsonSerializerSettings- used to configure the @!:JsonSerializer-.
     
         
-        :rtype: 
+        :rtype: JsonSerializerSettings
     
         
         .. code-block:: csharp
@@ -106,8 +106,7 @@ Methods
     
         
     
-        
-        
+        Called during deserialization to get the @!:JsonReader-.
     
         
         :param context: The [Microsoft.AspNet.Mvc.InputFormatterContext]() for the read.
@@ -116,7 +115,8 @@ Methods
         :type readStream: System.IO.Stream
         :param effectiveEncoding: The [System.Text.Encoding]() to use when reading.
         :type effectiveEncoding: System.Text.Encoding
-        :rtype: 
+        :rtype: JsonReader
+        :return: The @!:JsonReader- used during deserialization.
     
         
         .. code-block:: csharp
@@ -127,11 +127,11 @@ Methods
     
         
     
-        
-        
+        Called during deserialization to get the @!:JsonSerializer-.
     
         
-        :rtype: 
+        :rtype: JsonSerializer
+        :return: The @!:JsonSerializer- used during serialization and deserialization.
     
         
         .. code-block:: csharp
@@ -143,7 +143,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Object}
     
         
         .. code-block:: csharp

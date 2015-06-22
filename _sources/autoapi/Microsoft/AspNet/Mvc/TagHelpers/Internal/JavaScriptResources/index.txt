@@ -18,6 +18,7 @@ Methods for loading JavaScript from assembly embedded resources.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,12 @@ Methods
     
         
     
-        
-        
+        Gets an embedded JavaScript file resource and decodes it for use as a .NET format string.
     
         
         :param resourceName: 
         :type resourceName: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

@@ -187,11 +187,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.JsonInputFormatter.SerializerSettings">
 <code class="descname">SerializerSettings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonInputFormatter.SerializerSettings" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the &#64;!:JsonSerializerSettings- used to configure the &#64;!:JsonSerializer-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">JsonSerializerSettings</td>
 </tr>
 </tbody>
 </table>
@@ -209,7 +210,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.JsonInputFormatter.CreateJsonReader">
 <code class="descname">CreateJsonReader</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.InputFormatterContext</em>, <em>System.IO.Stream</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonInputFormatter.CreateJsonReader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Called during deserialization to get the &#64;!:JsonReader-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -220,7 +222,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">JsonReader</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The &#64;!:JsonReader- used during deserialization.</p>
 </td>
 </tr>
 </tbody>
@@ -233,11 +238,14 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.JsonInputFormatter.CreateJsonSerializer()</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Called during deserialization to get the &#64;!:JsonSerializer-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">JsonSerializer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The &#64;!:JsonSerializer- used during serialization and deserialization.</td>
 </tr>
 </tbody>
 </table>
@@ -258,7 +266,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task{System.Object}</p>
 </td>
 </tr>
 </tbody>

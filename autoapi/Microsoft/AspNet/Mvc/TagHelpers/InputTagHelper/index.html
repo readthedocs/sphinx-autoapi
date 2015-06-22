@@ -138,7 +138,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -233,7 +232,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.InputTagHelper">
 <code class="descname">InputTagHelper</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.InputTagHelper" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper](Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -258,11 +258,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.For">
 <code class="descname">For</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.For" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>An expression to be evaluated against the current model.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.ModelExpression</td>
 </tr>
 </tbody>
 </table>
@@ -274,11 +275,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Format">
 <code class="descname">Format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Format" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The composite format [System.String]() (see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/txafckwd.aspx">http://msdn.microsoft.com/en-us/library/txafckwd.aspx</a>) to
+apply when converting the [Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.For](Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.yml) result to a [System.String](). Sets the generated &#8220;value&#8221;
+attribute to that formatted [System.String]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -294,7 +298,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator</td>
 </tr>
 </tbody>
 </table>
@@ -306,11 +310,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.InputTypeName">
 <code class="descname">InputTypeName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.InputTypeName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The type of the &amp;lt;input&amp;gt; element.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -322,11 +327,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Value">
 <code class="descname">Value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.InputTagHelper.Value" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The value of the &amp;lt;input&amp;gt; element.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +348,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>

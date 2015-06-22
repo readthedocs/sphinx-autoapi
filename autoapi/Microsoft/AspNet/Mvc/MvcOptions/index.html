@@ -171,11 +171,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.Conventions">
 <code class="descname">Conventions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.Conventions" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml) instances that will be applied to
+the [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) when discovering actions.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention}</td>
 </tr>
 </tbody>
 </table>
@@ -187,11 +189,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.Filters">
 <code class="descname">Filters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.Filters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.IFilter]() which are used to construct filters that
+apply to all actions.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}</td>
 </tr>
 </tbody>
 </table>
@@ -203,11 +207,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.InputFormatters">
 <code class="descname">InputFormatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.InputFormatters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.IInputFormatter]()s that are used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}</td>
 </tr>
 </tbody>
 </table>
@@ -219,11 +224,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.MaxModelValidationErrors">
 <code class="descname">MaxModelValidationErrors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.MaxModelValidationErrors" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the maximum number of validation errors that are allowed by this application before further
+errors are ignored.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -235,11 +242,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.ModelBinders">
 <code class="descname">ModelBinders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.ModelBinders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]()s used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}</td>
 </tr>
 </tbody>
 </table>
@@ -251,11 +259,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.ModelMetadataDetailsProviders">
 <code class="descname">ModelMetadataDetailsProviders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.ModelMetadataDetailsProviders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider.yml) instances that will be used to
+create [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider}</td>
 </tr>
 </tbody>
 </table>
@@ -267,11 +277,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.ModelValidatorProviders">
 <code class="descname">ModelValidatorProviders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.ModelValidatorProviders" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]()s used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider}</td>
 </tr>
 </tbody>
 </table>
@@ -283,11 +294,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.OutputFormatters">
 <code class="descname">OutputFormatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.OutputFormatters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.IOutputFormatter]()s that are used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IOutputFormatter}</td>
 </tr>
 </tbody>
 </table>
@@ -299,11 +311,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.RespectBrowserAcceptHeader">
 <code class="descname">RespectBrowserAcceptHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.RespectBrowserAcceptHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the flag which causes content negotiation to ignore Accept header
+when it contains the media type <em>/</em>.
+&lt;see langword=&#8221;false&#8221; /&gt; by default.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -315,11 +330,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.ValidationExcludeFilters">
 <code class="descname">ValidationExcludeFilters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.ValidationExcludeFilters" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that are used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter}</td>
 </tr>
 </tbody>
 </table>
@@ -331,11 +347,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.MvcOptions.ValueProviderFactories">
 <code class="descname">ValueProviderFactories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.MvcOptions.ValueProviderFactories" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory]() used by this application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}</td>
 </tr>
 </tbody>
 </table>

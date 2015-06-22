@@ -17,6 +17,7 @@ IViewComponentInvoker Interface
 
 
 
+
 Syntax
 ------
 
@@ -61,7 +62,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

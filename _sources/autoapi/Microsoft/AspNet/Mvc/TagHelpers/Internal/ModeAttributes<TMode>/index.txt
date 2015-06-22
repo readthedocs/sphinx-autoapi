@@ -18,6 +18,7 @@ A mapping of a @!:ITagHelper- mode to its required attributes.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        The names of attributes required for this mode.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        The @!:ITagHelper-'s mode.
     
         
-        :rtype: 
+        :rtype: TMode
     
         
         .. code-block:: csharp

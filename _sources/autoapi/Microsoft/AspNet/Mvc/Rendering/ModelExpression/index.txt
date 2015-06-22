@@ -18,6 +18,7 @@ Describes an [System.Linq.Expressions.Expression]() passed to a tag helper.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.ModelExpression](Microsoft.AspNet.Mvc.Rendering.ModelExpression.yml) class.
     
         
         :param name: String representation of the [System.Linq.Expressions.Expression]() of interest.
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Metadata about the [System.Linq.Expressions.Expression]() of interest.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        Gets the model object for the [System.Linq.Expressions.Expression]() of interest.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -115,11 +113,10 @@ Properties
     
         
     
-        
-        
+        Gets the model explorer for the [System.Linq.Expressions.Expression]() of interest.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         
         .. code-block:: csharp
@@ -130,11 +127,10 @@ Properties
     
         
     
-        
-        
+        String representation of the [System.Linq.Expressions.Expression]() of interest.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

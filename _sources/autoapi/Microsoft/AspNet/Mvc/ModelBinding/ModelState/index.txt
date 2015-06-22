@@ -13,6 +13,7 @@ ModelState Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelState.Errors
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelErrorCollection
     
         
         .. code-block:: csharp
@@ -63,7 +64,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelState.ValidationState
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelState.Value
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult
     
         
         .. code-block:: csharp

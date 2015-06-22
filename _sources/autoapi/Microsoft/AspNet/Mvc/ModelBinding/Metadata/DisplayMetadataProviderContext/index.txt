@@ -18,6 +18,7 @@ A context for and [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IDisplayMetadataPr
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext.yml).
     
         
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() for the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Gets the attributes.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata
     
         
         .. code-block:: csharp
@@ -115,11 +113,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
     
         
         .. code-block:: csharp
@@ -130,11 +127,10 @@ Properties
     
         
     
-        
-        
+        Gets the property attributes.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -145,11 +141,10 @@ Properties
     
         
     
-        
-        
+        Gets the type attributes.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp

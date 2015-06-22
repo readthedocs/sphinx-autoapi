@@ -18,6 +18,7 @@ Editor-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Micro
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,10 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template. The template is found
+        using the
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -68,7 +71,8 @@ Methods
         :param expression: Expression name, relative to the current model. May identify a single property or an
     [System.Object]() that contains the properties to edit.
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -79,8 +83,11 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified
+        additional view data. The template is found using the
+        <paramref name="expression" />'s
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -92,7 +99,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -103,8 +111,12 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template. The template is found
+        using the
+        <paramref name="templateName" /> or the
+        <paramref name="expression" />'s
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -114,7 +126,8 @@ Methods
         :type expression: System.String
         :param templateName: The name of the template used to create the HTML markup.
         :type templateName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -125,8 +138,12 @@ Methods
     
         
     
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified
+        additional view data. The template is found using the
+        <paramref name="templateName" /> or the
         
-        
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -140,7 +157,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -151,8 +169,12 @@ Methods
     
         
     
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified HTML
+        field name. The template is found using the
+        <paramref name="templateName" /> or the
         
-        
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -165,7 +187,8 @@ Methods
         :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for
     properties that have the same name.
         :type htmlFieldName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -176,13 +199,14 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the current model, using an editor template. The template is found using the
+        model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -193,8 +217,8 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the current model, using an editor template and specified additional view data. The
+        template is found using the model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -203,7 +227,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -214,15 +239,17 @@ Methods
     
         
     
+        Returns HTML markup for the current model, using an editor template. The template is found using the
         
-        
+        <paramref name="templateName" /> or the model's [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param templateName: The name of the template used to create the HTML markup.
         :type templateName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -233,8 +260,10 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the current model, using an editor template and specified additional view data. The
+        template is found using the
+        <paramref name="templateName" /> or the model's
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -245,7 +274,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -256,8 +286,10 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the current model, using an editor template and specified HTML field name. The
+        template is found using the
+        <paramref name="templateName" /> or the model's
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -267,7 +299,8 @@ Methods
         :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for
     properties that have the same name.
         :type htmlFieldName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -278,8 +311,10 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the current model, using an editor template, specified HTML field name, and
+        additional view data. The template is found using the
+        <paramref name="templateName" /> or the model's
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -293,7 +328,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -304,15 +340,18 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template. The template is found
+        using the
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper{{TModel}}
         :param expression: An expression to be evaluated against the current model.
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -323,8 +362,11 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified
+        additional view data. The template is found using the
+        <paramref name="expression" />'s
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -335,7 +377,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -346,8 +389,12 @@ Methods
     
         
     
-        
-        
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template. The template is found
+        using the
+        <paramref name="templateName" /> or the
+        <paramref name="expression" />'s
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -356,7 +403,8 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :param templateName: The name of the template that is used to create the HTML markup.
         :type templateName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -367,8 +415,12 @@ Methods
     
         
     
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified
+        additional view data. The template is found using the
+        <paramref name="templateName" /> or the
         
-        
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -381,7 +433,8 @@ Methods
     that can contain additional view data that will be merged into the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml)
     instance created for the template.
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp
@@ -392,8 +445,12 @@ Methods
     
         
     
+        Returns HTML markup for the
+        <paramref name="expression" />, using an editor template and specified HTML
+        field name. The template is found using the
+        <paramref name="templateName" /> or the
         
-        
+        <paramref name="expression" />'s [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]().
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper`1.yml) instance this method extends.
@@ -405,7 +462,8 @@ Methods
         :param htmlFieldName: A [System.String]() used to disambiguate the names of HTML elements that are created for properties
     that have the same name.
         :type htmlFieldName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A new [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) containing the &lt;input&gt; element(s).
     
         
         .. code-block:: csharp

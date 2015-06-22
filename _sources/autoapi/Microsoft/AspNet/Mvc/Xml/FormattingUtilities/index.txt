@@ -18,6 +18,7 @@ Contains methods which are used by Xml input formatters.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,11 +86,11 @@ Methods
     
         
     
-        
-        
+        Gets the default Reader Quotas for XmlReader.
     
         
-        :rtype: 
+        :rtype: System.Xml.XmlDictionaryReaderQuotas
+        :return: XmlReaderQuotas with default values
     
         
         .. code-block:: csharp
@@ -100,11 +101,11 @@ Methods
     
         
     
-        
-        
+        Gets the default XmlWriterSettings.
     
         
-        :rtype: 
+        :rtype: System.Xml.XmlWriterSettings
+        :return: Default [System.Xml.XmlWriterSettings]()
     
         
         .. code-block:: csharp

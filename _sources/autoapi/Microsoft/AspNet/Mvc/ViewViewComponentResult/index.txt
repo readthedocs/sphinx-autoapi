@@ -18,6 +18,7 @@ A [Microsoft.AspNet.Mvc.IViewComponentResult](Microsoft.AspNet.Mvc.IViewComponen
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ITempDataDictionary]() instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ITempDataDictionary
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewEngine](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IViewEngine
     
         
         .. code-block:: csharp
@@ -104,11 +102,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the view name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -127,8 +124,10 @@ Methods
     
         
     
-        
-        
+        Locates and renders a view specified by [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml). If [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml) is
+        <c>null</c>,
+        then the view name searched for is
+        <c>"Default"</c>.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
@@ -143,13 +142,16 @@ Methods
     
         
     
-        
-        
+        Locates and renders a view specified by [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml). If [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml) is
+        <c>null</c>,
+        then the view name searched for is
+        <c>"Default"</c>.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() which will complete when view rendering is completed.
     
         
         .. code-block:: csharp

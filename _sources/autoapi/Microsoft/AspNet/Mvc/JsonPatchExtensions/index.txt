@@ -18,6 +18,7 @@ Extensions for [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]()
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Methods
     
         
     
-        
-        
+        Applies JSON patch operations on object and logs errors in [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
     
         
         :param patchDoc: The [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]().
@@ -79,8 +79,7 @@ Methods
     
         
     
-        
-        
+        Applies JSON patch operations on object and logs errors in [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary]().
     
         
         :param patchDoc: The [Microsoft.AspNet.JsonPatch.JsonPatchDocument`1]().

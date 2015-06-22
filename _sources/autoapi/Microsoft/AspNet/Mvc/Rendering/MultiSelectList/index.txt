@@ -13,6 +13,7 @@ MultiSelectList Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -110,8 +111,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the MultiSelectList class by using the items to include in the list,
+        the data value field, the data text field, the selected values, and the data group field.
     
         
         :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
@@ -146,11 +147,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the data group field.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -160,7 +160,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.DataTextField
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -170,7 +170,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.DataValueField
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -180,7 +180,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.Items
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerable
     
         
         .. code-block:: csharp
@@ -190,7 +190,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.SelectedValues
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerable
     
         
         .. code-block:: csharp
@@ -208,7 +208,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerator{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
     
         
         .. code-block:: csharp
@@ -218,7 +218,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.MultiSelectList.System.Collections.IEnumerable.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerator
     
         
         .. code-block:: csharp

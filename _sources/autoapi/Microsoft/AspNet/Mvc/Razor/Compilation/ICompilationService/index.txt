@@ -22,6 +22,7 @@ Provides methods for compilation of a Razor page.
 
 
 
+
 Syntax
 ------
 
@@ -54,15 +55,15 @@ Methods
     
         
     
-        
-        
+        Compiles content and returns the result of compilation.
     
         
         :param fileInfo: The [Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo](Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo.yml) for the Razor file that was compiled.
         :type fileInfo: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
         :param compilationContent: The generated C# content to be compiled.
         :type compilationContent: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
+        :return: A [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult.yml) representing the result of compilation.
     
         
         .. code-block:: csharp

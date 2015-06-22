@@ -19,6 +19,7 @@ they were route value strings.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -63,7 +64,7 @@ Methods
         :type x: System.Object
         :param y: 
         :type y: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -75,7 +76,7 @@ Methods
         
         :param obj: 
         :type obj: System.Object
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

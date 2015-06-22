@@ -18,6 +18,7 @@ Recursively validate an object.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultObjectValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultObjectValidator.yml).
     
         
         :param excludeFilters: [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that determine

@@ -13,6 +13,7 @@ ResultExecutingContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -80,7 +81,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Cancel
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -90,7 +91,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Controller
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutingContext.Result
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionResult
     
         
         .. code-block:: csharp

@@ -19,6 +19,7 @@ for a given request. See [Microsoft.AspNet.Mvc.IActionConstraint]().
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,7 +61,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionMethodSelectorAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -80,7 +81,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionConstraintContext
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -91,15 +92,17 @@ Methods
     
         
     
-        
-        
+        Determines whether the action selection is valid for the specified route context.
     
         
         :param routeContext: The route context.
         :type routeContext: RouteContext
         :param action: Information about the action.
         :type action: Microsoft.AspNet.Mvc.ActionDescriptor
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <see langword="true" /> if the action  selection is valid for the specified context;
+    otherwise,
+    <see langword="false" />.
     
         
         .. code-block:: csharp

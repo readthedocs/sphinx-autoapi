@@ -13,6 +13,7 @@ ActionFilterAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionFilterAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -98,7 +99,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionExecutingContext
         :param next: 
         :type next: Microsoft.AspNet.Mvc.ActionExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -134,7 +135,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
         :param next: 
         :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

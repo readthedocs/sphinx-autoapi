@@ -13,6 +13,7 @@ ValidateAntiForgeryTokenAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,7 +55,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ValidateAntiForgeryTokenAttribute.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -74,7 +75,7 @@ Methods
         
         :param serviceProvider: 
         :type serviceProvider: System.IServiceProvider
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp

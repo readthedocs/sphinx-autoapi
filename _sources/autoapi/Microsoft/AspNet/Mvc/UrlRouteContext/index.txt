@@ -18,6 +18,7 @@ Context object to be used for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.Rou
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        The fragment for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        The host name for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -89,11 +88,11 @@ Properties
     
         
     
-        
-        
+        The protocol for the URLs that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) generates
+        such as "http" or "https"
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -104,11 +103,10 @@ Properties
     
         
     
-        
-        
+        The name of the route that [Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl(Microsoft.AspNet.Mvc.UrlRouteContext)](Microsoft.AspNet.Mvc.IUrlHelper.yml) uses to generate URLs.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -119,11 +117,10 @@ Properties
     
         
     
-        
-        
+        The object that contains the route values for the generated URLs.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

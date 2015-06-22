@@ -22,6 +22,7 @@ Metadata which specificies the data source for model binding.
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.IBindingSourceMetadata.BindingSource](Microsoft.AspNet.Mvc.ModelBinding.IBindingSourceMetadata.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp

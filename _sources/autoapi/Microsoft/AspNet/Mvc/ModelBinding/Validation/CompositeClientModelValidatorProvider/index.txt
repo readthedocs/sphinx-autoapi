@@ -18,6 +18,7 @@ Aggregate of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.CompositeClientModelValidatorProvider.yml).
     
         
         :param providers: A collection of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() instances.
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider]() instances.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider}
     
         
         .. code-block:: csharp

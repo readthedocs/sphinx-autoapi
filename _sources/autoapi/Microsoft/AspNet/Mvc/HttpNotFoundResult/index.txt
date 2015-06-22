@@ -19,6 +19,7 @@ executed will produce a Not Found (404) response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.HttpNotFoundResult](Microsoft.AspNet.Mvc.HttpNotFoundResult.yml) instance.
     
         
     

@@ -18,6 +18,7 @@ Specifies metadata about precompiled views.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the resource containing the precompiled binary.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Collections.Generic.IReadOnlyList`1]() of [Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo](Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo.yml)s.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.Razor.Precompilation.RazorFileInfo}
     
         
         .. code-block:: csharp
@@ -89,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the resource that contains the symbols (pdb).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -112,13 +110,13 @@ Methods
     
         
     
-        
-        
+        Loads the assembly containing precompiled views.
     
         
         :param loadContext: The @!:IAssemblyLoadContext-.
         :type loadContext: IAssemblyLoadContext
-        :rtype: 
+        :rtype: System.Reflection.Assembly
+        :return: The [System.Reflection.Assembly]() containing precompiled views.
     
         
         .. code-block:: csharp

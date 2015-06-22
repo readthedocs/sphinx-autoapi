@@ -157,11 +157,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.TempData">
 <code class="descname">TempData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.TempData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ITempDataDictionary]() instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ITempDataDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -173,11 +174,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewData">
 <code class="descname">ViewData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewData" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary</td>
 </tr>
 </tbody>
 </table>
@@ -189,11 +191,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewEngine">
 <code class="descname">ViewEngine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewEngine" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewEngine](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Rendering.IViewEngine</td>
 </tr>
 </tbody>
 </table>
@@ -205,11 +208,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName">
 <code class="descname">ViewName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the view name.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +231,11 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.Execute">
 <code class="descname">Execute</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewComponentContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.Execute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Locates and renders a view specified by [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml). If [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml) is
+&lt;c&gt;null&lt;/c&gt;,
+then the view name searched for is
+&lt;c&gt;&#8221;Default&#8221;&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -246,7 +254,11 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ViewViewComponentResult.ExecuteAsync">
 <code class="descname">ExecuteAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewComponentContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewViewComponentResult.ExecuteAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Locates and renders a view specified by [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml). If [Microsoft.AspNet.Mvc.ViewViewComponentResult.ViewName](Microsoft.AspNet.Mvc.ViewViewComponentResult.yml) is
+&lt;c&gt;null&lt;/c&gt;,
+then the view name searched for is
+&lt;c&gt;&#8221;Default&#8221;&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -255,7 +267,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() which will complete when view rendering is completed.</p>
 </td>
 </tr>
 </tbody>

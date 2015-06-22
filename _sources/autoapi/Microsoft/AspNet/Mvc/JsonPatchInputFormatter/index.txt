@@ -13,6 +13,7 @@ JsonPatchInputFormatter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -97,7 +98,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.InputFormatterContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Object}
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ ControllerActionInvoker Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -103,7 +104,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :param bindingContext: 
         :type bindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -113,7 +114,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.ControllerActionInvoker.CreateInstance()
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -125,7 +126,7 @@ Methods
         
         :param actionExecutingContext: 
         :type actionExecutingContext: Microsoft.AspNet.Mvc.ActionExecutingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.IActionResult}
     
         
         .. code-block:: csharp

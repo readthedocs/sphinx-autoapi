@@ -22,6 +22,7 @@ A value provider which is which can filter its contents based on [Microsoft.AspN
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,17 @@ Methods
     
         
     
-        
-        
+        Filters the value provider based on
+        <paramref name="bindingSource" />.
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() associated with a model.
         :type bindingSource: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IValueProvider
+        :return: The filtered value provider, or
+    <c>null</c> if the value provider does not match
+    
+    <paramref name="bindingSource" />.
     
         
         .. code-block:: csharp

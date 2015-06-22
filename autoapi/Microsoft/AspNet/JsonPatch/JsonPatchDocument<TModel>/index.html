@@ -125,7 +125,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -252,7 +251,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IContractResolver</td>
 </tr>
 </tbody>
 </table>
@@ -268,7 +267,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.List{Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}}</td>
 </tr>
 </tbody>
 </table>
@@ -286,7 +285,8 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Add&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, TProp)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>At value at end of list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -296,7 +296,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -309,7 +309,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Add&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, TProp, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Add value to list at given position</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -320,7 +321,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -333,7 +334,9 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Add&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, TProp)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Add operation.  Will result in, for example,
+{ &#8220;op&#8221;: &#8220;add&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221;, &#8220;value&#8221;: [ &#8220;foo&#8221;, &#8220;bar&#8221; ] }</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -343,7 +346,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -415,18 +418,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy from a position in a list to the end of another list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -439,19 +443,20 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy from a position in a list to a new location in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 <li><strong>positionTo</strong> (<em>System.Int32</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -464,18 +469,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy from a position in a list to a new location</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -488,17 +494,18 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy to the end of a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -511,18 +518,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy from a property to a location in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 <li><strong>positionTo</strong> (<em>System.Int32</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -535,17 +543,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Copy&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Copy the value at specified location to the target location.  Willr esult in, for example:
+{ &#8220;op&#8221;: &#8220;copy&#8221;, &#8220;from&#8221;: &#8220;/a/b/c&#8221;, &#8220;path&#8221;: &#8220;/a/b/e&#8221; }</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -562,7 +572,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.List{Microsoft.AspNet.JsonPatch.Operations.Operation}</td>
 </tr>
 </tbody>
 </table>
@@ -574,18 +584,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Move from a position in a list to the end of another list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -598,19 +609,20 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Move from a position in a list to another location in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 <li><strong>positionTo</strong> (<em>System.Int32</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -623,18 +635,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Move from a position in a list to a new location</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
-<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
+<li><strong>positionFrom</strong> (<em>System.Int32</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -647,17 +660,18 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Move to the end of a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -670,18 +684,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Move from a property to a location in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},System.Collections.Generic.IList{{TProp}}}}</em>) &#8211; None</li>
 <li><strong>positionTo</strong> (<em>System.Int32</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -694,17 +709,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Move&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Removes value at specified location and add it to the target location.  Will result in, for example:
+{ &#8220;op&#8221;: &#8220;move&#8221;, &#8220;from&#8221;: &#8220;/a/b/c&#8221;, &#8220;path&#8221;: &#8220;/a/b/d&#8221; }</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
+<li><strong>from</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -717,7 +734,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Remove&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Remove value from end of list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -726,7 +744,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -739,7 +757,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Remove&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Remove value from list at given position</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -749,7 +768,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -762,16 +781,18 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Remove&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Remove value at target location.  Will result in, for example,
+{ &#8220;op&#8221;: &#8220;remove&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221; }</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -784,7 +805,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Replace&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, TProp)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Replace value at end of a list</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -794,7 +816,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -807,7 +829,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Replace&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, System.Collections.Generic.IList&lt;TProp&gt;&gt;&gt;, TProp, System.Int32)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Replace value in a list at given position</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -818,7 +841,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>
@@ -831,17 +854,19 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.JsonPatch.JsonPatchDocument&lt;TModel&gt;.Replace&lt;TProp&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TProp&gt;&gt;, TProp)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Replace value.  Will result in, for example,
+{ &#8220;op&#8221;: &#8220;replace&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221;, &#8220;value&#8221;: 42 }</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; </li>
-<li><strong>value</strong> (<em>TProp</em>) &#8211; </li>
+<li><strong>path</strong> (<em>System.Linq.Expressions.Expression{System.Func{{TModel},{TProp}}}</em>) &#8211; None</li>
+<li><strong>value</strong> (<em>TProp</em>) &#8211; None</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.JsonPatch.JsonPatchDocument`1</p>
 </td>
 </tr>
 </tbody>

@@ -19,6 +19,7 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,11 +61,10 @@ Properties
     
         
     
-        
-        
+        The @!:TemplateBinder-.
     
         
-        :rtype: 
+        :rtype: TemplateBinder
     
         
         .. code-block:: csharp
@@ -75,11 +75,10 @@ Properties
     
         
     
-        
-        
+        The route constraints.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,IRouteConstraint}
     
         
         .. code-block:: csharp
@@ -90,11 +89,10 @@ Properties
     
         
     
-        
-        
+        The route defaults.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -105,11 +103,10 @@ Properties
     
         
     
-        
-        
+        The name of the route.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -120,11 +117,10 @@ Properties
     
         
     
-        
-        
+        The order of the template.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -135,11 +131,10 @@ Properties
     
         
     
-        
-        
+        The precedence of the template.
     
         
-        :rtype: 
+        :rtype: System.Decimal
     
         
         .. code-block:: csharp
@@ -150,11 +145,10 @@ Properties
     
         
     
-        
-        
+        The set of values that must be present for link genration.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -165,11 +159,10 @@ Properties
     
         
     
-        
-        
+        The route group.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -180,11 +173,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Template](Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.yml).
     
         
-        :rtype: 
+        :rtype: RouteTemplate
     
         
         .. code-block:: csharp
@@ -195,11 +187,10 @@ Properties
     
         
     
-        
-        
+        The original [System.String]() representing the route template.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

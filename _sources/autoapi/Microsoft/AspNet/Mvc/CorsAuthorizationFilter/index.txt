@@ -18,6 +18,7 @@ A filter which applies the given @!:CorsPolicy- and adds appropriate response he
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instace of [Microsoft.AspNet.Mvc.CorsAuthorizationFilter](Microsoft.AspNet.Mvc.CorsAuthorizationFilter.yml).
     
         
         :param corsService: The @!:ICorsService-.
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.CorsAuthorizationFilter.Order
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -95,11 +95,10 @@ Properties
     
         
     
-        
-        
+        The policy name used to fetch a @!:CorsPolicy-.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -119,7 +118,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

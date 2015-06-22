@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper](Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        The name of the action method.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -98,11 +97,10 @@ Properties
     
         
     
-        
-        
+        The name of the controller.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -113,11 +111,10 @@ Properties
     
         
     
-        
-        
+        The URL fragment name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -127,7 +124,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.AnchorTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -138,11 +135,10 @@ Properties
     
         
     
-        
-        
+        The host name.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -153,11 +149,10 @@ Properties
     
         
     
-        
-        
+        The protocol for the URL, such as "http" or "https".
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -168,11 +163,10 @@ Properties
     
         
     
-        
-        
+        Name of the route.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -183,11 +177,10 @@ Properties
     
         
     
-        
-        
+        Additional parameters for the route.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.String}
     
         
         .. code-block:: csharp

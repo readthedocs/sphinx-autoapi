@@ -18,6 +18,7 @@ A read-only list of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection](Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.yml).
     
         
         :param properties: The properties.
@@ -82,7 +82,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.Count
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -92,7 +92,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.Item[System.Int32]
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -103,11 +103,14 @@ Properties
     
         
     
-        
-        
+        Gets a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instance for the property corresponding to
+        <paramref name="propertyName" />.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :return: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instance for the property specified by
+    <paramref name="propertyName" />, or null
+    if no match can be found.
     
         
         .. code-block:: csharp
@@ -125,7 +128,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerator{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
         
         .. code-block:: csharp
@@ -135,7 +138,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection.System.Collections.IEnumerable.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerator
     
         
         .. code-block:: csharp

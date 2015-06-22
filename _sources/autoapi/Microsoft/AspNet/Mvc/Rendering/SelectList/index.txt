@@ -13,6 +13,7 @@ SelectList Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -111,8 +112,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the SelectList class by using the specified items for the list,
+        the data value field, the data text field, a selected value, and the data group field.
     
         
         :param items: The items used to build each [Microsoft.AspNet.Mvc.Rendering.SelectListItem](Microsoft.AspNet.Mvc.Rendering.SelectListItem.yml) of the list.
@@ -146,7 +147,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.SelectList.SelectedValue
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Represents properties and methods that are needed in order to render a view that
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -75,7 +76,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.Context
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -86,11 +87,10 @@ Properties
     
         
     
-        
-        
+        Gets the @!:IHtmlEncoder- to be used for encoding HTML.
     
         
-        :rtype: 
+        :rtype: IHtmlEncoder
     
         
         .. code-block:: csharp
@@ -100,7 +100,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.IsLayoutBeingRendered
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -110,7 +110,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.IsPartial
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -120,7 +120,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.Layout
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -131,11 +131,10 @@ Properties
     
         
     
-        
-        
+        Gets the TextWriter that the page is writing output to.
     
         
-        :rtype: 
+        :rtype: System.IO.TextWriter
     
         
         .. code-block:: csharp
@@ -145,7 +144,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.PageExecutionContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.PageExecutionInstrumentation.IPageExecutionContext
     
         
         .. code-block:: csharp
@@ -155,7 +154,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.Path
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -165,7 +164,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.PreviousSectionWriters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}
     
         
         .. code-block:: csharp
@@ -175,7 +174,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.RenderBodyDelegate
     
         
-        :rtype: 
+        :rtype: System.Action{System.IO.TextWriter}
     
         
         .. code-block:: csharp
@@ -185,7 +184,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.SectionWriters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Razor.RenderAsyncDelegate}
     
         
         .. code-block:: csharp
@@ -196,11 +195,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ITempDataDictionary]() from the [Microsoft.AspNet.Mvc.Razor.RazorPage.ViewContext](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ITempDataDictionary
     
         
         .. code-block:: csharp
@@ -210,7 +208,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.User
     
         
-        :rtype: 
+        :rtype: System.Security.Claims.ClaimsPrincipal
     
         
         .. code-block:: csharp
@@ -220,7 +218,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.ViewBag
     
         
-        :rtype: 
+        :rtype: dynamic
     
         
         .. code-block:: csharp
@@ -230,7 +228,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.RazorPage.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -264,11 +262,11 @@ Methods
     
         
     
-        
-        
+        Creates and activates a @!:ITagHelper-.
     
         
-        :rtype: 
+        :rtype: TTagHelper
+        :return: The activated @!:ITagHelper-.
     
         
         .. code-block:: csharp
@@ -279,8 +277,8 @@ Methods
     
         
     
-        
-        
+        Creates a named content section in the page that can be invoked in a Layout page using
+        [Microsoft.AspNet.Mvc.Razor.RazorPage.RenderSection(System.String)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) or [Microsoft.AspNet.Mvc.Razor.RazorPage.RenderSectionAsync(System.String,System.Boolean)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
         :param name: The name of the section to create.
@@ -306,11 +304,12 @@ Methods
     
         
     
-        
-        
+        Ends the current writing scope that was started by calling [Microsoft.AspNet.Mvc.Razor.RazorPage.StartTagHelperWritingScope](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
-        :rtype: 
+        :rtype: TagHelperContent
+        :return: The [System.IO.TextWriter]() that contains the content written to the [Microsoft.AspNet.Mvc.Razor.RazorPage.Output](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) or
+    [Microsoft.AspNet.Mvc.ViewContext.Writer]() during the writing scope.
     
         
         .. code-block:: csharp
@@ -329,7 +328,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorPage.ExecuteAsync()
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -340,11 +339,13 @@ Methods
     
         
     
-        
-        
+        Invokes [System.IO.TextWriter.FlushAsync]() on [Microsoft.AspNet.Mvc.Razor.RazorPage.Output](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) writing out any buffered
+        content to the @!:HttpResponse.Body-.
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
+        :return: A [System.Threading.Tasks.Task`1]() that represents the asynchronous flush operation and on
+    completion returns a [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]().
     
         
         .. code-block:: csharp
@@ -356,7 +357,7 @@ Methods
         
         :param contentPath: 
         :type contentPath: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -367,8 +368,8 @@ Methods
     
         
     
-        
-        
+        Format an error message about using an indexer when the tag helper property is
+        <c>null</c>.
     
         
         :param attributeName: Name of the HTML attribute associated with the indexer.
@@ -377,7 +378,9 @@ Methods
         :type tagHelperTypeName: System.String
         :param propertyName: Dictionary property in the tag helper.
         :type propertyName: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: An error message about using an indexer when the tag helper property is
+    <c>null</c>.
     
         
         .. code-block:: csharp
@@ -389,7 +392,7 @@ Methods
         
         :param name: 
         :type name: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -399,7 +402,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Razor.RazorPage.RenderBody()
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.HelperResult
     
         
         .. code-block:: csharp
@@ -410,13 +413,15 @@ Methods
     
         
     
-        
-        
+        In layout pages, renders the content of the section named
+        <paramref name="name" />.
     
         
         :param name: The name of the section to render.
         :type name: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: Returns [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]() to allow the [Microsoft.AspNet.Mvc.Razor.RazorPage.Write(System.Object)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) call to
+    succeed.
     
         
         .. code-block:: csharp
@@ -427,15 +432,17 @@ Methods
     
         
     
-        
-        
+        In layout pages, renders the content of the section named
+        <paramref name="name" />.
     
         
         :param name: The section to render.
         :type name: System.String
         :param required: Indicates if this section must be rendered.
         :type required: System.Boolean
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: Returns [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]() to allow the [Microsoft.AspNet.Mvc.Razor.RazorPage.Write(System.Object)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) call to
+    succeed.
     
         
         .. code-block:: csharp
@@ -446,13 +453,15 @@ Methods
     
         
     
-        
-        
+        In layout pages, asynchronously renders the content of the section named
+        <paramref name="name" />.
     
         
         :param name: The section to render.
         :type name: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
+        :return: A [System.Threading.Tasks.Task`1]() that on completion returns [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]() that
+    allows the [Microsoft.AspNet.Mvc.Razor.RazorPage.Write(System.Object)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) call to succeed.
     
         
         .. code-block:: csharp
@@ -463,15 +472,17 @@ Methods
     
         
     
-        
-        
+        In layout pages, asynchronously renders the content of the section named
+        <paramref name="name" />.
     
         
         :param name: The section to render.
         :type name: System.String
         :param required: 
         :type required: System.Boolean
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
+        :return: A [System.Threading.Tasks.Task`1]() that on completion returns [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]() that
+    allows the [Microsoft.AspNet.Mvc.Razor.RazorPage.Write(System.Object)](Microsoft.AspNet.Mvc.Razor.RazorPage.yml) call to succeed.
     
         
         .. code-block:: csharp
@@ -482,11 +493,11 @@ Methods
     
         
     
-        
-        
+        Sets anti-forgery cookie and X-Frame-Options header on the response.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
+        :return: A [Microsoft.AspNet.Mvc.Rendering.HtmlString]() that returns a [Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty]().
     
         
         .. code-block:: csharp
@@ -497,8 +508,7 @@ Methods
     
         
     
-        
-        
+        Starts a new writing scope.
     
         
     
@@ -511,8 +521,8 @@ Methods
     
         
     
-        
-        
+        Starts a new writing scope with the given
+        <paramref name="writer" />.
     
         
         :param writer: 
@@ -527,8 +537,8 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> with HTML encoding to [Microsoft.AspNet.Mvc.Razor.RazorPage.Output](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
         :param value: The [System.Object]() to write.
@@ -579,8 +589,8 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> without HTML encoding to [Microsoft.AspNet.Mvc.Razor.RazorPage.Output](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
         :param value: The [System.Object]() to write.
@@ -595,8 +605,9 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> without HTML encoding to the
+        <paramref name="writer" />.
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.
@@ -613,8 +624,8 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> without HTML encoding to [Microsoft.AspNet.Mvc.Razor.RazorPage.Output](Microsoft.AspNet.Mvc.Razor.RazorPage.yml).
     
         
         :param writer: 
@@ -631,13 +642,15 @@ Methods
     
         
     
-        
-        
+        Writes the content of a specified
+        <paramref name="tagHelperExecutionContext" />.
     
         
         :param tagHelperExecutionContext: The execution context containing the content.
         :type tagHelperExecutionContext: TagHelperExecutionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that on completion writes the
+    <paramref name="tagHelperExecutionContext" /> content.
     
         
         .. code-block:: csharp
@@ -648,15 +661,21 @@ Methods
     
         
     
+        Writes the content of a specified
+        <paramref name="tagHelperExecutionContext" /> to the specified
         
-        
+        <paramref name="writer" />.
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.
         :type writer: System.IO.TextWriter
         :param tagHelperExecutionContext: The execution context containing the content.
         :type tagHelperExecutionContext: TagHelperExecutionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that on completion writes the
+    <paramref name="tagHelperExecutionContext" /> content
+    to the
+    <paramref name="writer" />.
     
         
         .. code-block:: csharp
@@ -667,8 +686,9 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> with HTML encoding to given
+        <paramref name="writer" />.
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.
@@ -693,8 +713,9 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> with HTML encoding to
+        <paramref name="writer" />.
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.
@@ -711,8 +732,9 @@ Methods
     
         
     
-        
-        
+        Writes the specified
+        <paramref name="value" /> with HTML encoding to
+        <paramref name="writer" />.
     
         
         :param writer: The [System.IO.TextWriter]() instance to write to.

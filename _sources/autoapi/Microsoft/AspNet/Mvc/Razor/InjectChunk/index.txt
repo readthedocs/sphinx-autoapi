@@ -13,6 +13,7 @@ InjectChunk Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`Chunk`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Represents the chunk for an [inject]()  statement.
     
         
         :param typeName: The type name of the property to be injected
@@ -80,11 +80,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the name of the property to be injected.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -95,11 +94,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the type name of the property to be injected.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

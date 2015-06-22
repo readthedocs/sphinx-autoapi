@@ -18,6 +18,7 @@ Descriptor for an [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.ym
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FilterDescriptor](Microsoft.AspNet.Mvc.FilterDescriptor.yml).
     
         
         :param filter: The [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml).
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.IFilter](Microsoft.AspNet.Mvc.IFilter.yml) instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        The filter order.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -115,11 +113,10 @@ Properties
     
         
     
-        
-        
+        The filter scope.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

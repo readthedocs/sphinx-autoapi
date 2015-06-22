@@ -13,6 +13,7 @@ TempDataDictionary Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.TempDataDictionary](Microsoft.AspNet.Mvc.TempDataDictionary.yml) class.
     
         
         :param context: The @!:IHttpContextAccessor- that provides the HttpContext.
@@ -79,7 +79,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Count
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -89,7 +89,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Item[System.String]
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -99,7 +99,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Keys
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{System.String}
     
         
         .. code-block:: csharp
@@ -109,7 +109,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>.IsReadOnly
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -119,7 +119,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TempDataDictionary.Values
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{System.Object}
     
         
         .. code-block:: csharp
@@ -161,7 +161,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -173,7 +173,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -183,7 +183,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -224,7 +224,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -236,7 +236,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -268,7 +268,7 @@ Methods
         
         :param keyValuePair: 
         :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -293,7 +293,7 @@ Methods
         
         :param keyValuePair: 
         :type keyValuePair: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -303,7 +303,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TempDataDictionary.System.Collections.IEnumerable.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerator
     
         
         .. code-block:: csharp
@@ -317,7 +317,7 @@ Methods
         :type key: System.String
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

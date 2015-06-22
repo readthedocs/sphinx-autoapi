@@ -13,6 +13,7 @@ DefaultHtmlGenerator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator](Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.yml) class.
     
         
         :param antiForgery: The [Microsoft.AspNet.Mvc.AntiForgery](Microsoft.AspNet.Mvc.AntiForgery.yml) instance which is used to generate anti-forgery
@@ -86,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.DefaultHtmlGenerator.IdAttributeDotReplacement
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -106,7 +106,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -118,7 +118,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -132,7 +132,7 @@ Methods
         :type value: System.Object
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -158,7 +158,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -170,7 +170,7 @@ Methods
         
         :param viewContext: 
         :type viewContext: Microsoft.AspNet.Mvc.ViewContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -190,7 +190,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -212,7 +212,7 @@ Methods
         :type method: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -223,8 +223,7 @@ Methods
     
         
     
-        
-        
+        Generate a &lt;form&gt; element.
     
         
         :param viewContext: A [Microsoft.AspNet.Mvc.ViewContext](Microsoft.AspNet.Mvc.ViewContext.yml) instance for the current scope.
@@ -236,7 +235,8 @@ Methods
         :param htmlAttributes: An [System.Object]() that contains the HTML attributes for the element. Alternatively, an
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
+        :return: A [Microsoft.AspNet.Mvc.Rendering.TagBuilder](Microsoft.AspNet.Mvc.Rendering.TagBuilder.yml) instance for the &lt;/form&gt; element.
     
         
         .. code-block:: csharp
@@ -258,7 +258,7 @@ Methods
         :type useViewData: System.Boolean
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -274,7 +274,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -306,7 +306,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Collections.Generic.IDictionary{System.String,System.Object}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -326,7 +326,7 @@ Methods
         :type labelText: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -342,7 +342,7 @@ Methods
         :type url: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -362,7 +362,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -384,7 +384,7 @@ Methods
         :type isChecked: System.Nullable{System.Boolean}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -404,7 +404,7 @@ Methods
         :type method: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -428,7 +428,7 @@ Methods
         :type routeValues: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -452,7 +452,7 @@ Methods
         :type allowMultiple: System.Boolean
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -478,7 +478,7 @@ Methods
         :type allowMultiple: System.Boolean
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -500,7 +500,7 @@ Methods
         :type columns: System.Int32
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -522,7 +522,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -542,7 +542,7 @@ Methods
         :type tag: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -562,7 +562,7 @@ Methods
         :type headerTag: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.TagBuilder
     
         
         .. code-block:: csharp
@@ -578,7 +578,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp
@@ -596,7 +596,7 @@ Methods
         :type expression: System.String
         :param allowMultiple: 
         :type allowMultiple: System.Boolean
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyCollection{System.String}
     
         
         .. code-block:: csharp
@@ -612,7 +612,7 @@ Methods
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp

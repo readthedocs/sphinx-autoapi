@@ -148,7 +148,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IUrlHelper.Action">
 <code class="descname">Action</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.UrlActionContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IUrlHelper.Action" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generates a fully qualified or absolute URL specified by [Microsoft.AspNet.Mvc.UrlActionContext](Microsoft.AspNet.Mvc.UrlActionContext.yml) for an action
+method, which contains action name, controller name, route values, protocol to use, host name, and fragment.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -157,7 +159,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The fully qualified or absolute URL to an action method.</p>
 </td>
 </tr>
 </tbody>
@@ -170,7 +175,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IUrlHelper.Content">
 <code class="descname">Content</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IUrlHelper.Content" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Converts a virtual (relative) path to an application absolute path.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -179,7 +185,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The application absolute path.</p>
 </td>
 </tr>
 </tbody>
@@ -192,7 +201,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IUrlHelper.IsLocalUrl">
 <code class="descname">IsLocalUrl</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IUrlHelper.IsLocalUrl" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a value that indicates whether the URL is local. An URL with an absolute path is considered local
+if it does not have a host/authority part. URLs using the virtual paths (&#8216;~/&#8217;) are also local.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -201,20 +212,27 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the URL is local; otherwise,</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">IsLocalUrl</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">IsLocalUrl</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IUrlHelper.Link">
 <code class="descname">Link</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IUrlHelper.Link" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generates an absolute URL using the specified route name and values.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -224,7 +242,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The generated absolute URL.</p>
 </td>
 </tr>
 </tbody>
@@ -237,7 +258,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl">
 <code class="descname">RouteUrl</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.UrlRouteContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.IUrlHelper.RouteUrl" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Generates a fully qualified or absolute URL specified by [Microsoft.AspNet.Mvc.UrlRouteContext](Microsoft.AspNet.Mvc.UrlRouteContext.yml), which
+contains the route name, the route values, protocol to use, host name and fragment.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -246,7 +269,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The fully qualified or absolute URL.</p>
 </td>
 </tr>
 </tbody>

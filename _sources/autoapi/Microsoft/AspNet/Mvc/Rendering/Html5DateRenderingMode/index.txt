@@ -23,6 +23,7 @@ datetime-local.
 
 
 
+
 Syntax
 ------
 
@@ -55,8 +56,7 @@ Fields
     
         
     
-        
-        
+        Render date and time values according to the current culture's ToString behavior.
     
         
     
@@ -69,8 +69,8 @@ Fields
     
         
     
-        
-        
+        Render date and time values as Rfc3339 compliant strings to support HTML5 date and time types of input
+        elements.
     
         
     

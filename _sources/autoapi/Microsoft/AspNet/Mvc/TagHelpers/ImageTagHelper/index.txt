@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.yml).
     
         
         :param hostingEnvironment: The @!:IHostingEnvironment-.
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Value indicating if file version should be appended to the src urls.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -99,7 +98,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.Cache
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -109,7 +108,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.HostingEnvironment
     
         
-        :rtype: 
+        :rtype: IHostingEnvironment
     
         
         .. code-block:: csharp
@@ -120,11 +119,10 @@ Properties
     
         
     
-        
-        
+        Source of the image.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -134,7 +132,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ImageTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp

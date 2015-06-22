@@ -13,6 +13,7 @@ FilterItem Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterItem.Descriptor
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FilterDescriptor
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterItem.Filter
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp

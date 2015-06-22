@@ -153,7 +153,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ViewDataDictionary&lt;TModel&gt;.ViewDataDictionary">
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ViewDataDictionary<TModel>.ViewDataDictionary" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -173,7 +174,9 @@
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class based in part on an
+existing [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -192,7 +195,12 @@
 <dl class="constructor">
 <dt>
 <code class="descname">ViewDataDictionary</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>System.Object</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of the [Microsoft.AspNet.Mvc.ViewDataDictionary`1](Microsoft.AspNet.Mvc.ViewDataDictionary`1.yml) class based in part on an
+existing [Microsoft.AspNet.Mvc.ViewDataDictionary](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) instance. This constructor is careful to avoid exceptions
+[Microsoft.AspNet.Mvc.ViewDataDictionary.SetModel(System.Object)](Microsoft.AspNet.Mvc.ViewDataDictionary.yml) may throw when
+&lt;paramref name=&#8221;model&#8221; /&gt; is
+&lt;c&gt;null&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -222,7 +230,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">TModel</td>
 </tr>
 </tbody>
 </table>

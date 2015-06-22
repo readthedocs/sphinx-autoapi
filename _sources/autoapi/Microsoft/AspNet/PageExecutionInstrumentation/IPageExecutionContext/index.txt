@@ -22,6 +22,7 @@ Specifies the contracts for a execution context that instruments web page execut
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Invoked at the start of a write operation.
     
         
         :param position: The absolute character position of the expression or text in the Razor file.
@@ -75,8 +75,7 @@ Methods
     
         
     
-        
-        
+        Invoked at the end of a write operation.
     
         
     

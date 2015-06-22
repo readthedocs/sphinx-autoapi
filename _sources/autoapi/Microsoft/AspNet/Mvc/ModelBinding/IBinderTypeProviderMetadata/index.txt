@@ -22,6 +22,7 @@ Provides a [System.Type]() which implements [Microsoft.AspNet.Mvc.ModelBinding.I
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        A [System.Type]() which implements either [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml).
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp

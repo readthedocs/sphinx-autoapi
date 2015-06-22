@@ -19,6 +19,7 @@ Represents the default [Microsoft.AspNet.Mvc.Razor.IRazorViewFactory](Microsoft.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of RazorViewFactory
     
         
         :param pageActivator: The [Microsoft.AspNet.Mvc.Razor.IRazorPageActivator](Microsoft.AspNet.Mvc.Razor.IRazorPageActivator.yml) used to activate pages.
@@ -92,7 +92,7 @@ Methods
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
         :param isPartial: 
         :type isPartial: System.Boolean
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IView
     
         
         .. code-block:: csharp

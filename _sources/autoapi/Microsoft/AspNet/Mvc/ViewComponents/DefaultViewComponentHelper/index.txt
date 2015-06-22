@@ -13,6 +13,7 @@ DefaultViewComponentHelper Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -91,7 +92,7 @@ Methods
         :type name: System.String
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -105,7 +106,7 @@ Methods
         :type componentType: System.Type
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -119,7 +120,7 @@ Methods
         :type name: System.String
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -133,7 +134,7 @@ Methods
         :type componentType: System.Type
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -173,7 +174,7 @@ Methods
         :type name: System.String
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -187,7 +188,7 @@ Methods
         :type componentType: System.Type
         :param arguments: 
         :type arguments: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

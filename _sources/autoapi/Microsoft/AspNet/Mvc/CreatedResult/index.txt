@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ActionResult]() that returns a Created (201) response w
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.CreatedResult](Microsoft.AspNet.Mvc.CreatedResult.yml) class with the values
+        provided.
     
         
         :param location: The location at which the content has been created.
@@ -87,11 +88,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the location at which the content has been created.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

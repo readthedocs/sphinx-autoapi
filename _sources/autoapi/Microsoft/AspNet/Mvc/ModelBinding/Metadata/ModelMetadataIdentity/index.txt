@@ -22,6 +22,7 @@ A key type which identifies a [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml) for the provided property.
     
         
         :param modelType: The model type.
@@ -64,7 +64,8 @@ Methods
         :type name: System.String
         :param containerType: The container type of the model property.
         :type containerType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
     
         
         .. code-block:: csharp
@@ -75,13 +76,13 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml) for the provided model [System.Type]().
     
         
         :param modelType: The model [System.Type]().
         :type modelType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
     
         
         .. code-block:: csharp
@@ -100,11 +101,12 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Type]() defining the model property respresented by the current
+        instance, or
+        <c>null</c> if the current instance does not represent a property.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -115,11 +117,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating the kind of metadata represented by the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataKind
     
         
         .. code-block:: csharp
@@ -130,11 +131,10 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Type]() represented by the current instance.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -145,11 +145,12 @@ Properties
     
         
     
-        
-        
+        Gets the name of the current instance if it represents a parameter or property, or
+        <c>null</c> if
+        the current instance represents a type.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

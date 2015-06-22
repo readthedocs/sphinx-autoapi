@@ -123,7 +123,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -212,7 +211,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.ObjectAdapter">
 <code class="descname">ObjectAdapter</code><span class="sig-paren">(</span><em>IContractResolver</em>, <em>System.Action&lt;Microsoft.AspNet.JsonPatch.JsonPatchError&lt;TModel&gt;&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.ObjectAdapter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter`1](Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter`1.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -238,11 +238,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.ContractResolver">
 <code class="descname">ContractResolver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.ContractResolver" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the &#64;!:IContractResolver-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IContractResolver</td>
 </tr>
 </tbody>
 </table>
@@ -254,11 +255,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.LogErrorAction">
 <code class="descname">LogErrorAction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.LogErrorAction" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Action for logging [Microsoft.AspNet.JsonPatch.JsonPatchError`1](Microsoft.AspNet.JsonPatch.JsonPatchError`1.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Action{Microsoft.AspNet.JsonPatch.JsonPatchError{{TModel}}}</td>
 </tr>
 </tbody>
 </table>
@@ -276,7 +278,47 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.Add">
 <code class="descname">Add</code><span class="sig-paren">(</span><em>Microsoft.AspNet.JsonPatch.Operations.Operation&lt;TModel&gt;</em>, <em>TModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.Add" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#8220;add&#8221; operation performs one of the following functions,
+depending upon what the target location references:</p>
+<p>o  If the target location specifies an array index, a new value is
+inserted into the array at the specified index.</p>
+<p>o  If the target location specifies an object member that does not
+already exist, a new member is added to the object.</p>
+<p>o  If the target location specifies an object member that does exist,
+that member&#8217;s value is replaced.</p>
+<p>The operation object MUST contain a &#8220;value&#8221; member whose content
+specifies the value to be added.</p>
+<p>For example:</p>
+<p>{ &#8220;op&#8221;: &#8220;add&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221;, &#8220;value&#8221;: [ &#8220;foo&#8221;, &#8220;bar&#8221; ] }</p>
+<p>When the operation is applied, the target location MUST reference one
+of:</p>
+<p>o  The root of the target document - whereupon the specified value
+becomes the entire content of the target document.</p>
+<p>o  A member to add to an existing object - whereupon the supplied
+value is added to that object at the indicated location.  If the
+member already exists, it is replaced by the specified value.</p>
+<p>o  An element to add to an existing array - whereupon the supplied
+value is added to the array at the indicated location.  Any
+elements at or above the specified index are shifted one position
+to the right.  The specified index MUST NOT be greater than the
+number of elements in the array.  If the &#8220;-&#8221; character is used to
+index the end of the array (see [RFC6901]), this has the effect of
+appending the value to the array.</p>
+<p>Because this operation is designed to add to existing objects and
+arrays, its target location will often not exist.  Although the
+pointer&#8217;s error handling algorithm will thus be invoked, this
+specification defines the error handling behavior for &#8220;add&#8221; pointers
+to ignore that error and add the value as specified.</p>
+<p>However, the object itself or an array containing it does need to
+exist, and it remains an error for that not to be the case.  For
+example, an &#8220;add&#8221; with a target location of &#8220;/a/b&#8221; starting with this
+document:</p>
+<p>{ &#8220;a&#8221;: { &#8220;foo&#8221;: 1 } }</p>
+<p>is not an error, because &#8220;a&#8221; exists, and &#8220;b&#8221; will be added to its
+value.  It is an error in this document:</p>
+<p>{ &#8220;q&#8221;: { &#8220;bar&#8221;: 2 } }</p>
+<p>because &#8220;a&#8221; does not exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -296,7 +338,19 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.Copy">
 <code class="descname">Copy</code><span class="sig-paren">(</span><em>Microsoft.AspNet.JsonPatch.Operations.Operation&lt;TModel&gt;</em>, <em>TModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.Copy" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#8220;copy&#8221; operation copies the value at a specified location to the
+target location.</p>
+<p>The operation object MUST contain a &#8220;from&#8221; member, which is a string
+containing a JSON Pointer value that references the location in the
+target document to copy the value from.</p>
+<p>The &#8220;from&#8221; location MUST exist for the operation to be successful.</p>
+<p>For example:</p>
+<p>{ &#8220;op&#8221;: &#8220;copy&#8221;, &#8220;from&#8221;: &#8220;/a/b/c&#8221;, &#8220;path&#8221;: &#8220;/a/b/e&#8221; }</p>
+<p>This operation is functionally identical to an &#8220;add&#8221; operation at the
+target location using the value specified in the &#8220;from&#8221; member.</p>
+<p>Note: even though it&#8217;s the same functionally, we do not call add with
+the value specified in from for performance reasons (multiple checks of same requirements).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -316,7 +370,20 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.Move">
 <code class="descname">Move</code><span class="sig-paren">(</span><em>Microsoft.AspNet.JsonPatch.Operations.Operation&lt;TModel&gt;</em>, <em>TModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.Move" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#8220;move&#8221; operation removes the value at a specified location and
+adds it to the target location.</p>
+<p>The operation object MUST contain a &#8220;from&#8221; member, which is a string
+containing a JSON Pointer value that references the location in the
+target document to move the value from.</p>
+<p>The &#8220;from&#8221; location MUST exist for the operation to be successful.</p>
+<p>For example:</p>
+<p>{ &#8220;op&#8221;: &#8220;move&#8221;, &#8220;from&#8221;: &#8220;/a/b/c&#8221;, &#8220;path&#8221;: &#8220;/a/b/d&#8221; }</p>
+<p>This operation is functionally identical to a &#8220;remove&#8221; operation on
+the &#8220;from&#8221; location, followed immediately by an &#8220;add&#8221; operation at
+the target location with the value that was just removed.</p>
+<p>The &#8220;from&#8221; location MUST NOT be a proper prefix of the &#8220;path&#8221;
+location; i.e., a location cannot be moved into one of its children.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -336,7 +403,13 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.Remove">
 <code class="descname">Remove</code><span class="sig-paren">(</span><em>Microsoft.AspNet.JsonPatch.Operations.Operation&lt;TModel&gt;</em>, <em>TModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.Remove" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#8220;remove&#8221; operation removes the value at the target location.</p>
+<p>The target location MUST exist for the operation to be successful.</p>
+<p>For example:</p>
+<p>{ &#8220;op&#8221;: &#8220;remove&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221; }</p>
+<p>If removing an element from an array, any elements above the
+specified index are shifted one position to the left.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -356,7 +429,18 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter&lt;TModel&gt;.Replace">
 <code class="descname">Replace</code><span class="sig-paren">(</span><em>Microsoft.AspNet.JsonPatch.Operations.Operation&lt;TModel&gt;</em>, <em>TModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.JsonPatch.Adapters.ObjectAdapter<TModel>.Replace" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#8220;replace&#8221; operation replaces the value at the target location
+with a new value.  The operation object MUST contain a &#8220;value&#8221; member
+whose content specifies the replacement value.</p>
+<p>The target location MUST exist for the operation to be successful.</p>
+<p>For example:</p>
+<p>{ &#8220;op&#8221;: &#8220;replace&#8221;, &#8220;path&#8221;: &#8220;/a/b/c&#8221;, &#8220;value&#8221;: 42 }</p>
+<p>This operation is functionally identical to a &#8220;remove&#8221; operation for
+a value, followed immediately by an &#8220;add&#8221; operation at the same
+location with the replacement value.</p>
+<p>Note: even though it&#8217;s the same functionally, we do not call remove + add
+for performance reasons (multiple checks of same requirements).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

@@ -13,6 +13,7 @@ HtmlHelper<TModel> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,8 +56,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Rendering.HtmlHelper`1](Microsoft.AspNet.Mvc.Rendering.HtmlHelper`1.yml) class.
     
         
         :param htmlGenerator: 
@@ -88,7 +88,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlHelper<TModel>.ViewData
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}
     
         
         .. code-block:: csharp
@@ -110,7 +110,7 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},System.Boolean}}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -139,7 +139,7 @@ Methods
         :type htmlFieldName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -151,7 +151,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModelItem},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -163,7 +163,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -175,7 +175,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -193,7 +193,7 @@ Methods
         :type optionLabel: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -211,7 +211,7 @@ Methods
         :type htmlFieldName: System.String
         :param additionalViewData: 
         :type additionalViewData: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -223,7 +223,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -235,7 +235,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
     
         
         .. code-block:: csharp
@@ -249,7 +249,7 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -261,7 +261,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -277,7 +277,7 @@ Methods
         :type labelText: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -293,7 +293,7 @@ Methods
         :type selectList: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.Rendering.SelectListItem}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -305,7 +305,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -319,7 +319,7 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -335,7 +335,7 @@ Methods
         :type value: System.Object
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -353,7 +353,7 @@ Methods
         :type columns: System.Int32
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -369,7 +369,7 @@ Methods
         :type format: System.String
         :param htmlAttributes: 
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -387,7 +387,7 @@ Methods
         :type htmlAttributes: System.Object
         :param tag: 
         :type tag: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -401,7 +401,7 @@ Methods
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
         :param format: 
         :type format: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

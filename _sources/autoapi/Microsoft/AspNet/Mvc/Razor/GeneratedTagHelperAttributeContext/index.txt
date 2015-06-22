@@ -19,6 +19,7 @@ generation process.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,11 +61,11 @@ Properties
     
         
     
-        
-        
+        Name the method to create
+        <c>ModelExpression</c>s.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -75,11 +76,10 @@ Properties
     
         
     
-        
-        
+        Name of the model expression type.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

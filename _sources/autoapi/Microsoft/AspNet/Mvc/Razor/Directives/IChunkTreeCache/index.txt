@@ -22,6 +22,7 @@ A cache for parsed @!:ChunkTree-s.
 
 
 
+
 Syntax
 ------
 
@@ -54,15 +55,19 @@ Methods
     
         
     
-        
-        
+        Get an existing @!:ChunkTree-, or create and add a new one if it is
+        not available in the cache or is expired.
     
         
         :param pagePath: The application relative path of the Razor page.
         :type pagePath: System.String
         :param getChunkTree: A delegate that creates a new @!:ChunkTree-.
         :type getChunkTree: System.Func{IFileInfo,ChunkTree}
-        :rtype: 
+        :rtype: ChunkTree
+        :return: The @!:ChunkTree- if a file exists at
+    <paramref name="pagePath" />,
+    
+    <c>null</c> otherwise.
     
         
         .. code-block:: csharp

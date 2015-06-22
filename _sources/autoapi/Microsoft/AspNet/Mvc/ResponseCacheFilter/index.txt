@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ActionFilterAttribute](Microsoft.AspNet.Mvc.ActionFilte
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml)
     
         
         :param cacheProfile: The profile which contains the settings for
@@ -84,11 +84,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets the duration in seconds for which the response is cached.
+        This is a required parameter.
+        This sets "max-age" in "Cache-control" header.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -99,11 +100,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the location where the data from a particular URL must be cached.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ResponseCacheLocation
     
         
         .. code-block:: csharp
@@ -114,11 +114,14 @@ Properties
     
         
     
-        
-        
+        Gets or sets the value which determines whether the data should be stored or not.
+        When set to
+        <see langword="true" />, it sets "Cache-control" header to "no-store".
+        Ignores the "Location" parameter for values other than "None".
+        Ignores the "duration" parameter.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -129,11 +132,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the value for the Vary response header.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

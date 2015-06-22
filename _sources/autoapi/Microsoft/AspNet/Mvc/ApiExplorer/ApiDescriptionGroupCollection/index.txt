@@ -18,6 +18,7 @@ A cached collection of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Mi
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroupCollection.yml).
     
         
         :param items: The list of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup.yml).
@@ -85,11 +85,10 @@ Properties
     
         
     
-        
-        
+        Returns the list of [System.Collections.Generic.IReadOnlyList`1]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ApiExplorer.ApiDescriptionGroup}
     
         
         .. code-block:: csharp
@@ -100,11 +99,10 @@ Properties
     
         
     
-        
-        
+        Returns the unique version of the current items.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

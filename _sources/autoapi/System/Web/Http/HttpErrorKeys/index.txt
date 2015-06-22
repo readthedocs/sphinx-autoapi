@@ -18,6 +18,7 @@ Provides keys to look up error information stored in the [System.Web.Http.HttpEr
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the ErrorCode.
     
         
     
@@ -73,8 +73,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the ExceptionMessage.
     
         
     
@@ -87,8 +86,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the ExceptionType.
     
         
     
@@ -101,8 +99,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the InnerException.
     
         
     
@@ -115,8 +112,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the MessageDetail.
     
         
     
@@ -129,8 +125,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the Message.
     
         
     
@@ -143,8 +138,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the MessageLanguage.
     
         
     
@@ -157,8 +151,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the ModelState.
     
         
     
@@ -171,8 +164,7 @@ Fields
     
         
     
-        
-        
+        Provides a key for the StackTrace.
     
         
     

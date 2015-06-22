@@ -139,7 +139,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -234,7 +233,8 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.CacheKeyPrefix">
 <code class="descname">CacheKeyPrefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.CacheKeyPrefix" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">CacheKeyPrefix</span>
+<dd><p>Prefix used by [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml) instances when creating entries in [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.MemoryCache](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">CacheKeyPrefix</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -248,7 +248,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.CacheTagHelper">
 <code class="descname">CacheTagHelper</code><span class="sig-paren">(</span><em>IMemoryCache</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.CacheTagHelper" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -273,11 +274,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.Enabled">
 <code class="descname">Enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.Enabled" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value which determines if the tag helper is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -289,11 +291,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresAfter">
 <code class="descname">ExpiresAfter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresAfter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the duration, from the time the cache entry was added, when it should be evicted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.TimeSpan}</td>
 </tr>
 </tbody>
 </table>
@@ -305,11 +308,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresOn">
 <code class="descname">ExpiresOn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresOn" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the exact [System.DateTimeOffset]() the cache entry should be evicted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.DateTimeOffset}</td>
 </tr>
 </tbody>
 </table>
@@ -321,11 +325,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresSliding">
 <code class="descname">ExpiresSliding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ExpiresSliding" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the duration from last access that the cache entry should be evicted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.TimeSpan}</td>
 </tr>
 </tbody>
 </table>
@@ -337,11 +342,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.MemoryCache">
 <code class="descname">MemoryCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.MemoryCache" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:IMemoryCache- instance used to cache entries.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IMemoryCache</td>
 </tr>
 </tbody>
 </table>
@@ -353,11 +359,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.Priority">
 <code class="descname">Priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.Priority" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the &#64;!:CacheItemPriority- policy for the cache entry.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{CacheItemPriority}</td>
 </tr>
 </tbody>
 </table>
@@ -369,11 +376,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryBy">
 <code class="descname">VaryBy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryBy" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a [System.String]() to vary the cached result by.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -385,11 +393,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByCookie">
 <code class="descname">VaryByCookie</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByCookie" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a comma-delimited set of cookie names to vary the cached result by.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -401,11 +410,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByHeader">
 <code class="descname">VaryByHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the name of a HTTP request header to vary the cached result by.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -417,11 +427,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByQuery">
 <code class="descname">VaryByQuery</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByQuery" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a comma-delimited set of query parameters to vary the cached result by.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -433,11 +444,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByRoute">
 <code class="descname">VaryByRoute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByRoute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a comma-delimited set of route data parameters to vary the cached result by.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -449,11 +461,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByUser">
 <code class="descname">VaryByUser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.VaryByUser" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value that determines if the cached result is to be varied by the Identity for the logged in
+&#64;!:HttpContext.User-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -465,11 +479,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ViewContext">
 <code class="descname">ViewContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ViewContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.ViewContext](Microsoft.AspNet.Mvc.TagHelpers.CacheTagHelper.yml) for the current executing View.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewContext</td>
 </tr>
 </tbody>
 </table>
@@ -497,7 +512,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

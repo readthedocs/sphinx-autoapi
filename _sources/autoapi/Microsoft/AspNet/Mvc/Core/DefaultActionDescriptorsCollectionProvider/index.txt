@@ -19,6 +19,7 @@ This implementation caches the results at first call, and is not responsible for
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.Core.DefaultActionDescriptorsCollectionProvider.yml) class.
     
         
         :param serviceProvider: The application IServiceProvider.
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Returns a cached collection of [Microsoft.AspNet.Mvc.ActionDescriptor]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionDescriptorsCollection
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ RazorFileHash Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Fields
     
         
     
-        
-        
+        Version 1 of the hash algorithm used for generating hashes of Razor files.
     
         
     
@@ -79,7 +79,7 @@ Methods
         :type file: IFileInfo
         :param hashAlgorithmVersion: 
         :type hashAlgorithmVersion: System.Int32
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

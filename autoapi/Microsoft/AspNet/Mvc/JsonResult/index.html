@@ -160,7 +160,8 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.DefaultContentTypes">
 <code class="descname">DefaultContentTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.DefaultContentTypes" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">MediaTypeHeaderValue</span><span class="p">&gt;</span> <span class="n">DefaultContentTypes</span>
+<dd><p>The list of content-types used for formatting when [Microsoft.AspNet.Mvc.JsonResult.ContentTypes](Microsoft.AspNet.Mvc.JsonResult.yml) is null or empty.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="n">MediaTypeHeaderValue</span><span class="p">&gt;</span> <span class="n">DefaultContentTypes</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -174,7 +175,9 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.JsonResult">
 <code class="descname">JsonResult</code><span class="sig-paren">(</span><em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.JsonResult" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+&lt;paramref name=&#8221;value&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -193,7 +196,9 @@
 <dl class="constructor">
 <dt>
 <code class="descname">JsonResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>JsonSerializerSettings</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+&lt;paramref name=&#8221;value&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -226,7 +231,9 @@
 <dl class="constructor">
 <dt>
 <code class="descname">JsonResult</code><span class="sig-paren">(</span><em>System.Object</em>, <em>Microsoft.AspNet.Mvc.IOutputFormatter</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.JsonResult](Microsoft.AspNet.Mvc.JsonResult.yml) with the given
+&lt;paramref name=&#8221;value&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -264,11 +271,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.ContentTypes">
 <code class="descname">ContentTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.ContentTypes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the list of supported Content-Types.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{MediaTypeHeaderValue}</td>
 </tr>
 </tbody>
 </table>
@@ -280,11 +288,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.Formatter">
 <code class="descname">Formatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.Formatter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the formatter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.IOutputFormatter</td>
 </tr>
 </tbody>
 </table>
@@ -296,11 +305,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.StatusCode">
 <code class="descname">StatusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.StatusCode" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the HTTP status code.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -312,11 +322,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.JsonResult.Value">
 <code class="descname">Value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.JsonResult.Value" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value to be formatted.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Object</td>
 </tr>
 </tbody>
 </table>
@@ -343,7 +354,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

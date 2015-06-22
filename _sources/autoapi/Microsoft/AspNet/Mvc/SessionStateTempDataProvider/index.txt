@@ -18,6 +18,7 @@ Provides session-state data to the current [Microsoft.AspNet.Mvc.ITempDataDictio
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,7 +61,7 @@ Methods
         
         :param context: 
         :type context: HttpContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp

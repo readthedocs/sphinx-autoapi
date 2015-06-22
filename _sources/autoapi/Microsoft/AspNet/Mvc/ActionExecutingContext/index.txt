@@ -13,6 +13,7 @@ ActionExecutingContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -80,7 +81,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.ActionArguments
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
     
         
         .. code-block:: csharp
@@ -90,7 +91,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.Controller
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ActionExecutingContext.Result
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionResult
     
         
         .. code-block:: csharp

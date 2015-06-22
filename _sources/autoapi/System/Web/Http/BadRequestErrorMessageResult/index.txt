@@ -19,6 +19,7 @@ content negotiation on an [System.Web.Http.HttpError](System.Web.Http.HttpError.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.BadRequestErrorMessageResult](System.Web.Http.BadRequestErrorMessageResult.yml) class.
     
         
         :param message: The user-visible error message.
@@ -86,11 +86,10 @@ Properties
     
         
     
-        
-        
+        Gets the error message.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -110,7 +109,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

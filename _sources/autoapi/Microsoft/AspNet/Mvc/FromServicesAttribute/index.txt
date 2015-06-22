@@ -18,6 +18,7 @@ Specifies that a parameter or property should be bound using the request service
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FromServicesAttribute.BindingSource
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp

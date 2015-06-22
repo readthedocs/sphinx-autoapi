@@ -18,6 +18,7 @@ Helper class which provides @!:JsonSerializerSettings-.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,11 @@ Methods
     
         
     
-        
-        
+        Creates default @!:JsonSerializerSettings-.
     
         
-        :rtype: 
+        :rtype: JsonSerializerSettings
+        :return: Default @!:JsonSerializerSettings-.
     
         
         .. code-block:: csharp

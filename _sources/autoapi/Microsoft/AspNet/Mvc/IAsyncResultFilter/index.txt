@@ -17,6 +17,7 @@ IAsyncResultFilter Interface
 
 
 
+
 Syntax
 ------
 
@@ -52,7 +53,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ResultExecutingContext
         :param next: 
         :type next: Microsoft.AspNet.Mvc.ResultExecutionDelegate
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

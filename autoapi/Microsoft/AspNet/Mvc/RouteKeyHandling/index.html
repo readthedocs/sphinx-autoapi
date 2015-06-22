@@ -143,7 +143,10 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll">
 <code class="descname">CatchAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RouteKeyHandling.CatchAll" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">CatchAll</span> <span class="p">=</span> <span class="m">2</span>
+<dd><p>Requires that the key will be in the route values, but ignore the content.
+Constraints with this value are considered less important than ones with
+[Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey](Microsoft.AspNet.Mvc.RouteKeyHandling.yml)</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">CatchAll</span> <span class="p">=</span> <span class="m">2</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -151,7 +154,8 @@
 <dl class="field">
 <dt id="Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey">
 <code class="descname">DenyKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RouteKeyHandling.DenyKey" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">DenyKey</span> <span class="p">=</span> <span class="m">1</span>
+<dd><p>Requires that the key will not be in the route values.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">DenyKey</span> <span class="p">=</span> <span class="m">1</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -159,7 +163,8 @@
 <dl class="field">
 <dt id="Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey">
 <code class="descname">RequireKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">RequireKey</span> <span class="p">=</span> <span class="m">0</span>
+<dd><p>Requires that the key will be in the route values, and that the content matches.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">RequireKey</span> <span class="p">=</span> <span class="m">0</span>
 </pre></div>
 </div>
 </dd></dl>

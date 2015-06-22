@@ -126,7 +126,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -224,7 +223,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</p>
 </td>
 </tr>
 </tbody>
@@ -237,7 +236,10 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Rendering.Expressions.ExpressionMetadataProvider.FromStringExpression">
 <code class="descname">FromStringExpression</code><span class="sig-paren">(</span><em>System.String</em>, <em>Microsoft.AspNet.Mvc.ViewDataDictionary</em>, <em>Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Rendering.Expressions.ExpressionMetadataProvider.FromStringExpression" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets [Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named
+&lt;paramref name=&#8221;expression&#8221; /&gt; in given</p>
+<p>&lt;paramref name=&#8221;viewData&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -265,7 +267,7 @@
 </table>
 </dd>
 <dt>&lt;paramref name=&#8221;expression&#8221; /&gt; value.</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<dd><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -277,15 +279,21 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">type metadataProvider:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataProvider</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">[Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer]() for named</td>
 </tr>
 </tbody>
 </table>
-<div class="last highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ModelExplorer</span> <span class="nf">FromStringExpression</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd>
 </dl>
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt; in given
+&lt;paramref name=&#8221;viewData&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">ModelExplorer</span> <span class="nf">FromStringExpression</span><span class="p">(</span><span class="kt">string</span> <span class="n">expression</span><span class="p">,</span> <span class="n">ViewDataDictionary</span> <span class="n">viewData</span><span class="p">,</span> <span class="n">IModelMetadataProvider</span> <span class="n">metadataProvider</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

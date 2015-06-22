@@ -158,7 +158,10 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.HttpMethodAttribute.HttpMethodAttribute">
 <code class="descname">HttpMethodAttribute</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;System.String&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.HttpMethodAttribute.HttpMethodAttribute" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.HttpMethodAttribute](Microsoft.AspNet.Mvc.HttpMethodAttribute.yml) with the given
+set of HTTP methods.</p>
+<p>&lt;param name=&#8221;httpMethods&#8221;&gt;The set of supported HTTP methods.&lt;/param&gt;</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -177,7 +180,9 @@
 <dl class="constructor">
 <dt>
 <code class="descname">HttpMethodAttribute</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;System.String&gt;</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.HttpMethodAttribute](Microsoft.AspNet.Mvc.HttpMethodAttribute.yml) with the given
+set of HTTP methods an the given route template.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -207,7 +212,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
 </tr>
 </tbody>
 </table>
@@ -223,7 +228,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -239,7 +244,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -251,11 +256,15 @@
 <dl class="property">
 <dt>
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the route order. The order determines the order of route execution. Routes with a lower
+order value are tried first. When a route doesn&#8217;t specify a value, it gets the value of the
+[Microsoft.AspNet.Mvc.RouteAttribute.Order](Microsoft.AspNet.Mvc.RouteAttribute.yml) or a default value of 0 if the [Microsoft.AspNet.Mvc.RouteAttribute](Microsoft.AspNet.Mvc.RouteAttribute.yml)
+doesn&#8217;t define a value on the controller.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +280,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

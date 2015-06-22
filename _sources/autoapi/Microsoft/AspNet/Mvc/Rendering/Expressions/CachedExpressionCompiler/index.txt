@@ -13,6 +13,7 @@ CachedExpressionCompiler Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression{System.Func{{TModel},{TResult}}}
-        :rtype: 
+        :rtype: System.Func{{TModel},{TResult}}
     
         
         .. code-block:: csharp

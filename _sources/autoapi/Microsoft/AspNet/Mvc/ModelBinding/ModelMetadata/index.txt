@@ -18,6 +18,7 @@ A metadata representation of a model type, property or parameter.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Fields
     
         
     
-        
-        
+        The default value of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.Order](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
     
         
     
@@ -81,8 +81,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
     
         
         :param identity: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity.yml).
@@ -105,11 +104,10 @@ Properties
     
         
     
-        
-        
+        Gets a collection of additional information about the model.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -120,11 +118,10 @@ Properties
     
         
     
-        
-        
+        Gets the name of a model if specified explicitly using [Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider](Microsoft.AspNet.Mvc.ModelBinding.IModelNameProvider.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -135,11 +132,11 @@ Properties
     
         
     
-        
-        
+        Gets the [System.Type]() of an [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder](Microsoft.AspNet.Mvc.ModelBinding.IModelBinder.yml) of a model if specified explicitly using
+        [Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata](Microsoft.AspNet.Mvc.ModelBinding.IBinderTypeProviderMetadata.yml).
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -150,11 +147,10 @@ Properties
     
         
     
-        
-        
+        Gets a binder metadata for this model.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingSource
     
         
         .. code-block:: csharp
@@ -165,11 +161,11 @@ Properties
     
         
     
-        
-        
+        Gets the container type of this metadata if it represents a property, otherwise
+        <c>null</c>.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -180,11 +176,12 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not to convert an empty string value to
+        <c>null</c> when
+        representing a model as text.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -195,11 +192,11 @@ Properties
     
         
     
-        
-        
+        Gets the name of the model's datatype.  Overrides [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) in some
+        display scenarios.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -210,11 +207,10 @@ Properties
     
         
     
-        
-        
+        Gets the description of the model.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -225,11 +221,11 @@ Properties
     
         
     
-        
-        
+        Gets the composite format [System.String]() (see
+        http://msdn.microsoft.com/en-us/library/txafckwd.aspx) used to display the model.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -240,11 +236,10 @@ Properties
     
         
     
-        
-        
+        Gets the display name of the model.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -255,11 +250,11 @@ Properties
     
         
     
-        
-        
+        Gets the composite format [System.String]() (see
+        http://msdn.microsoft.com/en-us/library/txafckwd.aspx) used to edit the model.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -270,11 +265,11 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) for elements of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) if that [System.Type]()
+        implements [System.Collections.IEnumerable]().
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -285,11 +280,12 @@ Properties
     
         
     
+        Gets the ordered display names and values of all [System.Enum]() values in [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
         
-        
+        <c>Nullable.GetUnderlyingType(ModelType)</c>.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     
         
         .. code-block:: csharp
@@ -300,11 +296,12 @@ Properties
     
         
     
+        Gets the names and values of all [System.Enum]() values in [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
         
-        
+        <c>Nullable.GetUnderlyingType(ModelType)</c>.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
     
         
         .. code-block:: csharp
@@ -315,11 +312,12 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.EditFormatString](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) has a non-
+        <c>null</c>, non-empty
+        value different from the default for the datatype.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -330,11 +328,13 @@ Properties
     
         
     
+        Gets a value indicating whether the "HiddenInput" display template should return
         
-        
+        <c>string.Empty</c> (not the expression value) and whether the "HiddenInput" editor template should not
+        also return the expression value (together with the hidden &lt;input&gt; element).
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -345,11 +345,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether the value should be HTML-encoded.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -360,11 +359,10 @@ Properties
     
         
     
-        
-        
+        Gets the key for the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
     
         
         .. code-block:: csharp
@@ -375,11 +373,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the model value can be bound by model binding. This is only
+        applicable when the current instance represents a property.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -390,11 +388,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the model value is required by model binding. This is only
+        applicable when the current instance represents a property.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -405,11 +403,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a collection type.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -420,11 +417,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a simple type.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -435,11 +431,12 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
+        <c>Nullable.GetUnderlyingType(ModelType)</c> is
+        for an [System.Enum]().
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -450,11 +447,12 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) or
+        <c>Nullable.GetUnderlyingType(ModelType)</c> is
+        for an [System.Enum]() with an associated [System.FlagsAttribute]().
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -465,11 +463,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.ModelType](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) is a [System.Nullable`1]().
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -480,11 +477,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the model value is read-only. This is only applicable when
+        the current instance represents a property.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -495,11 +492,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the model value is required. This is only applicable when
+        the current instance represents a property.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -510,11 +507,10 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating the kind of metadata element represented by the current instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataKind
     
         
         .. code-block:: csharp
@@ -525,11 +521,10 @@ Properties
     
         
     
-        
-        
+        Gets the model type represented by the current instance.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -540,11 +535,11 @@ Properties
     
         
     
-        
-        
+        Gets the text to display when the model is
+        <c>null</c>.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -555,11 +550,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating where the current metadata should be ordered relative to other properties
+        in its containing type.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -570,11 +565,10 @@ Properties
     
         
     
-        
-        
+        Gets the collection of [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) instances for the model's properties.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelPropertyCollection
     
         
         .. code-block:: csharp
@@ -585,11 +579,11 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider](Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider.yml), which can determine which properties
+        should be model bound.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.IPropertyBindingPredicateProvider
     
         
         .. code-block:: csharp
@@ -600,11 +594,10 @@ Properties
     
         
     
-        
-        
+        Gets a property getter delegate to get the property value from a model object.
     
         
-        :rtype: 
+        :rtype: System.Func{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -615,11 +608,10 @@ Properties
     
         
     
-        
-        
+        Gets the property name represented by the current instance.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -630,11 +622,10 @@ Properties
     
         
     
-        
-        
+        Gets a property setter delegate to set the property value on a model object.
     
         
-        :rtype: 
+        :rtype: System.Action{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -645,11 +636,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that indicates whether the property should be displayed in read-only views.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -660,11 +650,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that indicates whether the property should be displayed in editable views.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -675,11 +664,10 @@ Properties
     
         
     
-        
-        
+        Gets  a value which is the name of the property used to display the model.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -690,11 +678,10 @@ Properties
     
         
     
-        
-        
+        Gets a string used by the templating system to discover display-templates and editor-templates.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -705,11 +692,10 @@ Properties
     
         
     
-        
-        
+        Gets a collection of metadata items for validators.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -728,11 +714,11 @@ Methods
     
         
     
-        
-        
+        Gets a display name for the model.
     
         
-        :rtype: 
+        :rtype: System.String
+        :return: The display name.
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ AttributeValue Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.AttributeValue.Literal
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -86,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.AttributeValue.Prefix
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.PositionTagged{System.String}
     
         
         .. code-block:: csharp
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.AttributeValue.Value
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.PositionTagged{System.Object}
     
         
         .. code-block:: csharp
@@ -116,7 +117,7 @@ Methods
         
         :param value: 
         :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
     
         
         .. code-block:: csharp
@@ -128,7 +129,7 @@ Methods
         
         :param value: 
         :type value: System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.AttributeValue
     
         
         .. code-block:: csharp

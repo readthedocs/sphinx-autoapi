@@ -23,6 +23,7 @@ Represents visibility metadata for an
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,13 @@ Properties
     
         
     
-        
-        
+        If
+        <c>false</c> then no
+        <c>ApiDescription</c> objects will be created for the associated controller
+        or action.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

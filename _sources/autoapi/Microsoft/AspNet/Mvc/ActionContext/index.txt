@@ -18,6 +18,7 @@ Context object for execution of action which has been selected as part of an HTT
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates an empty [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
     
         
     
@@ -73,8 +73,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
     
         
         :param httpContext: The @!:Http.HttpContext- for the current request.
@@ -93,8 +92,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
     
         
         :param httpContext: The @!:Http.HttpContext- for the current request.
@@ -115,8 +113,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
     
         
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml) to copy.
@@ -139,11 +136,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ActionDescriptor](Microsoft.AspNet.Mvc.ActionDescriptor.yml) for the selected action.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionDescriptor
     
         
         .. code-block:: csharp
@@ -154,11 +150,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:Http.HttpContext- for the current request.
     
         
-        :rtype: 
+        :rtype: HttpContext
     
         
         .. code-block:: csharp
@@ -169,11 +164,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary
     
         
         .. code-block:: csharp
@@ -184,11 +178,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the @!:AspNet.Routing.RouteData- for the current request.
     
         
-        :rtype: 
+        :rtype: RouteData
     
         
         .. code-block:: csharp

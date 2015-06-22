@@ -132,7 +132,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -225,11 +224,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Binder">
 <code class="descname">Binder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Binder" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The &#64;!:TemplateBinder-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">TemplateBinder</td>
 </tr>
 </tbody>
 </table>
@@ -241,11 +241,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Constraints">
 <code class="descname">Constraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Constraints" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The route constraints.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyDictionary{System.String,IRouteConstraint}</td>
 </tr>
 </tbody>
 </table>
@@ -257,11 +258,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Defaults">
 <code class="descname">Defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Defaults" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The route defaults.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -273,11 +275,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Name">
 <code class="descname">Name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Name" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The name of the route.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -289,11 +292,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Order">
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Order" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The order of the template.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -305,11 +309,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Precedence">
 <code class="descname">Precedence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Precedence" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The precedence of the template.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Decimal</td>
 </tr>
 </tbody>
 </table>
@@ -321,11 +326,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.RequiredLinkValues">
 <code class="descname">RequiredLinkValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.RequiredLinkValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The set of values that must be present for link genration.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IDictionary{System.String,System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -337,11 +343,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.RouteGroup">
 <code class="descname">RouteGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.RouteGroup" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The route group.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -353,11 +360,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Template">
 <code class="descname">Template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Template" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The [Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.Template](Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">RouteTemplate</td>
 </tr>
 </tbody>
 </table>
@@ -369,11 +377,12 @@ aggregated into the [Microsoft.AspNet.Mvc.Routing.InnerAttributeRoute](Microsoft
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.TemplateText">
 <code class="descname">TemplateText</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Routing.AttributeRouteLinkGenerationEntry.TemplateText" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The original [System.String]() representing the route template.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

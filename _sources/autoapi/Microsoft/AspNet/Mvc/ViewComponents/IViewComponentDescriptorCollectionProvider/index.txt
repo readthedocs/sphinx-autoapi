@@ -22,6 +22,7 @@ Provides the currently cached collection of [Microsoft.AspNet.Mvc.ViewComponents
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,10 @@ Properties
     
         
     
-        
-        
+        Returns the current cached [Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptorCollection](Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptorCollection.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewComponents.ViewComponentDescriptorCollection
     
         
         .. code-block:: csharp

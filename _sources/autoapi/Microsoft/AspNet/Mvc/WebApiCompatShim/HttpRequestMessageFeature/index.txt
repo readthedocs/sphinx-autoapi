@@ -13,6 +13,7 @@ HttpRequestMessageFeature Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.WebApiCompatShim.HttpRequestMessageFeature.HttpRequestMessage
     
         
-        :rtype: 
+        :rtype: System.Net.Http.HttpRequestMessage
     
         
         .. code-block:: csharp

@@ -158,11 +158,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.CacheProfileName">
 <code class="descname">CacheProfileName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.CacheProfileName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value of the cache profile name.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -174,11 +175,13 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.Duration">
 <code class="descname">Duration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.Duration" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the duration in seconds for which the response is cached.
+This sets &#8220;max-age&#8221; in &#8220;Cache-control&#8221; header.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -190,11 +193,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.Location">
 <code class="descname">Location</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.Location" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the location where the data from a particular URL must be cached.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ResponseCacheLocation</td>
 </tr>
 </tbody>
 </table>
@@ -206,11 +210,16 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.NoStore">
 <code class="descname">NoStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.NoStore" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value which determines whether the data should be stored or not.
+When set to
+&lt;see langword=&#8221;true&#8221; /&gt;, it sets &#8220;Cache-control&#8221; header to &#8220;no-store&#8221;.
+Ignores the &#8220;Location&#8221; parameter for values other than &#8220;None&#8221;.
+Ignores the &#8220;duration&#8221; parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -222,11 +231,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.Order">
 <code class="descname">Order</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.Order" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The order of the filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -238,11 +248,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheAttribute.VaryByHeader">
 <code class="descname">VaryByHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheAttribute.VaryByHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value for the Vary response header.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +280,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Microsoft.AspNet.Mvc.IFilter</p>
 </td>
 </tr>
 </tbody>

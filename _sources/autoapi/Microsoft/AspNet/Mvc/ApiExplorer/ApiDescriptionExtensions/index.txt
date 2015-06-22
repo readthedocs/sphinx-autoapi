@@ -18,6 +18,7 @@ Extension methods for [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsof
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,16 @@ Methods
     
         
     
-        
-        
+        Gets the value of a property from the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.Properties](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) collection
+        using the provided value of
+        <typeparamref name="T" /> as the key.
     
         
         :param apiDescription: The [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
         :type apiDescription: Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription
-        :rtype: 
+        :rtype: T
+        :return: The property or the default value of
+    <typeparamref name="T" />.
     
         
         .. code-block:: csharp
@@ -76,8 +80,9 @@ Methods
     
         
     
-        
-        
+        Sets the value of an property in the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.Properties](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) collection using
+        the provided value of
+        <typeparamref name="T" /> as the key.
     
         
         :param apiDescription: The [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).

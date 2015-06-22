@@ -13,6 +13,7 @@ MvcTagHelperAttributeValueCodeRenderer Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelperAttributeValueCodeRenderer`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new instance of [Microsoft.AspNet.Mvc.Razor.MvcTagHelperAttributeValueCodeRenderer](Microsoft.AspNet.Mvc.Razor.MvcTagHelperAttributeValueCodeRenderer.yml).
     
         
         :param context: Contains code generation information for rendering attribute values.

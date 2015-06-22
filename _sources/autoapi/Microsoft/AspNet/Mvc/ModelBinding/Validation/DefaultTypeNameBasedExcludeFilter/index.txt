@@ -19,6 +19,7 @@ based on a type full name.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultTypeNameBasedExcludeFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.DefaultTypeNameBasedExcludeFilter.yml)
     
         
         :param typeFullName: Fully qualified name of the type which needs to be excluded.
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        Gets the type full name which is excluded from validation.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -108,7 +107,7 @@ Methods
         
         :param propertyType: 
         :type propertyType: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

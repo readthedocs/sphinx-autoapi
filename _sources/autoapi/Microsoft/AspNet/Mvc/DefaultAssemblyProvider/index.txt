@@ -13,6 +13,7 @@ DefaultAssemblyProvider Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.DefaultAssemblyProvider.CandidateAssemblies
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
     
         
         .. code-block:: csharp
@@ -83,11 +84,11 @@ Properties
     
         
     
-        
-        
+        Gets the set of assembly names that are used as root for discovery of
+        MVC controllers, view components and views.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.HashSet{System.String}
     
         
         .. code-block:: csharp
@@ -106,11 +107,13 @@ Methods
     
         
     
-        
-        
+        Returns a list of libraries that references the assemblies in [Microsoft.AspNet.Mvc.DefaultAssemblyProvider.ReferenceAssemblies](Microsoft.AspNet.Mvc.DefaultAssemblyProvider.yml).
+        By default it returns all assemblies that reference any of the primary MVC assemblies
+        while ignoring MVC assemblies.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{ILibraryInformation}
+        :return: A set of @!:ILibraryInformation-.
     
         
         .. code-block:: csharp

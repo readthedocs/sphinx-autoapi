@@ -18,6 +18,7 @@ Provides access to the  combined list of attributes associated a [System.Type]()
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a [System.Type]().
     
         
         :param typeAttributes: The set of attributes for the [System.Type]().
@@ -75,8 +75,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a property.
     
         
         :param propertyAttributes: The set of attributes for the property.
@@ -101,11 +100,11 @@ Properties
     
         
     
-        
-        
+        Gets the set of all attributes. If this instance represents the attributes for a property, the attributes
+        on the property definition are before those on the property's [System.Type]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -116,11 +115,12 @@ Properties
     
         
     
-        
-        
+        Gets the set of attributes on the property, or
+        <c>null</c> if this instance represents the attributes
+        for a [System.Type]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -131,11 +131,12 @@ Properties
     
         
     
-        
-        
+        Gets the set of attributes on the [System.Type](). If this instance represents a property,
+        then [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.TypeAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) contains attributes retrieved from
+        [System.Reflection.PropertyInfo.PropertyType]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -154,8 +155,8 @@ Methods
     
         
     
-        
-        
+        Gets the attributes for the given
+        <paramref name="property" />.
     
         
         :param type: The [System.Type]() in which caller found
@@ -163,7 +164,8 @@ Methods
         :type type: System.Type
         :param property: A [System.Reflection.PropertyInfo]() for which attributes need to be resolved.
         :type property: System.Reflection.PropertyInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the property.
     
         
         .. code-block:: csharp
@@ -174,13 +176,14 @@ Methods
     
         
     
-        
-        
+        Gets the attributes for the given
+        <paramref name="type" />.
     
         
         :param type: The [System.Type]() for which attributes need to be resolved.
         :type type: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes
+        :return: A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the [System.Type]().
     
         
         .. code-block:: csharp

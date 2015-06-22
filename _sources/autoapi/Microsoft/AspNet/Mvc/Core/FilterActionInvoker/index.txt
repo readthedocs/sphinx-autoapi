@@ -13,6 +13,7 @@ FilterActionInvoker Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -90,7 +91,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.ActionBindingContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionBindingContext
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.ActionContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionContext
     
         
         .. code-block:: csharp
@@ -110,7 +111,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.Instance
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -132,7 +133,7 @@ Methods
         :type context: Microsoft.AspNet.Mvc.ActionContext
         :param bindingContext: 
         :type bindingContext: Microsoft.AspNet.Mvc.ActionBindingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.Object}}
     
         
         .. code-block:: csharp
@@ -143,11 +144,12 @@ Methods
     
         
     
-        
-        
+        Called to create an instance of an object which will act as the reciever of the action invocation.
     
         
-        :rtype: 
+        :rtype: System.Object
+        :return: The constructed instance or
+    <c>null</c>.
     
         
         .. code-block:: csharp
@@ -159,7 +161,7 @@ Methods
         
         :param actionExecutingContext: 
         :type actionExecutingContext: Microsoft.AspNet.Mvc.ActionExecutingContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.IActionResult}
     
         
         .. code-block:: csharp
@@ -169,7 +171,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Core.FilterActionInvoker.InvokeAsync()
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -180,8 +182,7 @@ Methods
     
         
     
-        
-        
+        Called to create an instance of an object which will act as the reciever of the action invocation.
     
         
         :param instance: The instance to release.

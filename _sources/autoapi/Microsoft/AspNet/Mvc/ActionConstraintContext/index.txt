@@ -18,6 +18,7 @@ Context for [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActio
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,11 @@ Properties
     
         
     
-        
-        
+        The list of [Microsoft.AspNet.Mvc.ActionSelectorCandidate](Microsoft.AspNet.Mvc.ActionSelectorCandidate.yml). This includes all actions that are valid for the current
+        request, as well as their constraints.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionSelectorCandidate}
     
         
         .. code-block:: csharp
@@ -74,11 +75,10 @@ Properties
     
         
     
-        
-        
+        The current [Microsoft.AspNet.Mvc.ActionSelectorCandidate](Microsoft.AspNet.Mvc.ActionSelectorCandidate.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionSelectorCandidate
     
         
         .. code-block:: csharp
@@ -89,11 +89,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.ActionConstraintContext.RouteContext](Microsoft.AspNet.Mvc.ActionConstraintContext.yml).
     
         
-        :rtype: 
+        :rtype: RouteContext
     
         
         .. code-block:: csharp

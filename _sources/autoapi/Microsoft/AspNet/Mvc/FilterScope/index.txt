@@ -21,6 +21,7 @@ defined by how a filter is registered.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`

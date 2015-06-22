@@ -18,6 +18,7 @@ Result of determining the mode an @!:ITagHelper- will run in.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,10 @@ Properties
     
         
     
-        
-        
+        Modes that had all attributes present.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}}
     
         
         .. code-block:: csharp
@@ -74,11 +74,10 @@ Properties
     
         
     
-        
-        
+        Modes that were missing attributes but had at least one attribute present.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchAttributes{{TMode}}}
     
         
         .. code-block:: csharp
@@ -89,11 +88,11 @@ Properties
     
         
     
-        
-        
+        Attributes that are present in at least one mode in [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.PartialMatches](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml), but in no modes in
+        [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.FullMatches](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{System.String}
     
         
         .. code-block:: csharp
@@ -112,8 +111,7 @@ Methods
     
         
     
-        
-        
+        Logs the details of the [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeMatchResult`1.yml).
     
         
         :param logger: The @!:ILogger-.

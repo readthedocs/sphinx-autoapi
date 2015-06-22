@@ -18,6 +18,7 @@ Provides programmatic configuration for caching in the MVC framework.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,11 @@ Properties
     
         
     
-        
-        
+        Gets a Dictionary of CacheProfile Names, [Microsoft.AspNet.Mvc.CacheProfile](Microsoft.AspNet.Mvc.CacheProfile.yml) which are pre-defined settings for
+        [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.CacheProfile}
     
         
         .. code-block:: csharp

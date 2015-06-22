@@ -18,6 +18,7 @@ A context for resource filters.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ResourceExecutedContext](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).
     
         
         :param actionContext: The [Microsoft.AspNet.Mvc.ActionContext](Microsoft.AspNet.Mvc.ActionContext.yml).
@@ -87,11 +87,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets a value which indicates whether or not execution was canceled by a resource filter.
+        If true, then a resource filter short-circuted execution by setting
+        [Microsoft.AspNet.Mvc.ResourceExecutingContext.Result](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -102,11 +103,10 @@ Properties
     
         
     
-        
-        
+        Gets or set the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).
     
         
-        :rtype: 
+        :rtype: System.Exception
     
         
         .. code-block:: csharp
@@ -117,11 +117,10 @@ Properties
     
         
     
-        
-        
+        Gets or set the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).
     
         
-        :rtype: 
+        :rtype: System.Runtime.ExceptionServices.ExceptionDispatchInfo
     
         
         .. code-block:: csharp
@@ -132,11 +131,14 @@ Properties
     
         
     
+        Gets or sets a value indicating whether or not the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml) has been handled.
         
-        
+        If
+        <c>false</c> the [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml) will be rethrown by the runtime after resource filters
+        have executed.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -147,11 +149,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the result.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionResult
     
         
         .. code-block:: csharp

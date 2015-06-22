@@ -148,7 +148,8 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ITempDataDictionary.Keep()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Keep</span><span class="p">()</span>
+<dd><p>Marks all keys in the dictionary for retention.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Keep</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -156,7 +157,8 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ITempDataDictionary.Keep">
 <code class="descname">Keep</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ITempDataDictionary.Keep" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Marks the specified key in the dictionary for retention.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -175,7 +177,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ITempDataDictionary.Load()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Load</span><span class="p">()</span>
+<dd><p>Loads the dictionary by using the registered [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Load</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -183,7 +186,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ITempDataDictionary.Peek">
 <code class="descname">Peek</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ITempDataDictionary.Peek" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns an object that contains the element that is associated with the specified key,
+without marking the key for deletion.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -192,7 +197,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An object that contains the element that is associated with the specified key.</p>
 </td>
 </tr>
 </tbody>
@@ -205,7 +213,8 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.ITempDataDictionary.Save()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Save</span><span class="p">()</span>
+<dd><p>Saves the dictionary by using the registered [Microsoft.AspNet.Mvc.ITempDataProvider](Microsoft.AspNet.Mvc.ITempDataProvider.yml).</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">void</span> <span class="nf">Save</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>

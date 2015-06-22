@@ -22,6 +22,7 @@ Provides [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Gets the values for properties of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadata.yml).
     
         
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DisplayMetadataProviderContext.yml).

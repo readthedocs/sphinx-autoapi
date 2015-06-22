@@ -149,7 +149,8 @@ determine search paths for a view.</p>
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.ExpandViewLocations">
 <code class="descname">ExpandViewLocations</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em>, <em>System.Collections.Generic.IEnumerable&lt;System.String&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.ExpandViewLocations" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Invoked by a [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) to determine potential locations for a view.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -176,7 +177,9 @@ determine search paths for a view.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">type viewLocations:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.String}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A list of expanded view locations.</td>
 </tr>
 </tbody>
 </table>
@@ -188,7 +191,10 @@ determine search paths for a view.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.PopulateValues">
 <code class="descname">PopulateValues</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.PopulateValues" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Invoked by a [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) to determine the values that would be consumed by this instance
+of [Microsoft.AspNet.Mvc.Razor.IViewLocationExpander](Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.yml). The calculated values are used to determine if the view location
+has changed since the last time it was located.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">

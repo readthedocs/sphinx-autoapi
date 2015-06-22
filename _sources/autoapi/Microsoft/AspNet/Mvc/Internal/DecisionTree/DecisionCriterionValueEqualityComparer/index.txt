@@ -13,6 +13,7 @@ DecisionCriterionValueEqualityComparer Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValueEqualityComparer.InnerComparer
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEqualityComparer{System.Object}
     
         
         .. code-block:: csharp
@@ -94,7 +95,7 @@ Methods
         :type x: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
         :param y: 
         :type y: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Methods
         
         :param obj: 
         :type obj: Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

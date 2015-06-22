@@ -19,6 +19,7 @@ Represents an [Microsoft.AspNet.Mvc.IActionConstraintMetadata](Microsoft.AspNet.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem](Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem.yml).
     
         
         :param metadata: The [Microsoft.AspNet.Mvc.IActionConstraintMetadata](Microsoft.AspNet.Mvc.IActionConstraintMetadata.yml) instance.
@@ -84,11 +84,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.IActionConstraint](Microsoft.AspNet.Mvc.IActionConstraint.yml) associated with [Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem.Metadata](Microsoft.AspNet.Mvc.ActionConstraints.ActionConstraintItem.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionConstraint
     
         
         .. code-block:: csharp
@@ -99,11 +98,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.IActionConstraintMetadata](Microsoft.AspNet.Mvc.IActionConstraintMetadata.yml) instance.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionConstraintMetadata
     
         
         .. code-block:: csharp

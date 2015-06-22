@@ -159,7 +159,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.ResourceExecutedContext">
 <code class="descname">ResourceExecutedContext</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ActionContext</em>, <em>System.Collections.Generic.IList&lt;Microsoft.AspNet.Mvc.IFilter&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.ResourceExecutedContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ResourceExecutedContext](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -185,11 +186,14 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.Canceled">
 <code class="descname">Canceled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.Canceled" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value which indicates whether or not execution was canceled by a resource filter.
+If true, then a resource filter short-circuted execution by setting
+[Microsoft.AspNet.Mvc.ResourceExecutingContext.Result](Microsoft.AspNet.Mvc.ResourceExecutingContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -201,11 +205,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception">
 <code class="descname">Exception</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or set the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Exception</td>
 </tr>
 </tbody>
 </table>
@@ -217,11 +222,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.ExceptionDispatchInfo">
 <code class="descname">ExceptionDispatchInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.ExceptionDispatchInfo" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or set the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Runtime.ExceptionServices.ExceptionDispatchInfo</td>
 </tr>
 </tbody>
 </table>
@@ -233,11 +239,15 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.ExceptionHandled">
 <code class="descname">ExceptionHandled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.ExceptionHandled" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets a value indicating whether or not the current [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml) has been handled.</p>
+<p>If
+&lt;c&gt;false&lt;/c&gt; the [Microsoft.AspNet.Mvc.ResourceExecutedContext.Exception](Microsoft.AspNet.Mvc.ResourceExecutedContext.yml) will be rethrown by the runtime after resource filters
+have executed.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -249,11 +259,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResourceExecutedContext.Result">
 <code class="descname">Result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResourceExecutedContext.Result" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the result.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.IActionResult</td>
 </tr>
 </tbody>
 </table>

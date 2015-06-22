@@ -13,6 +13,7 @@ ViewEngineResult Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.SearchedLocations
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
     
         
         .. code-block:: csharp
@@ -63,7 +64,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.Success
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.View
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IView
     
         
         .. code-block:: csharp
@@ -83,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.ViewName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -101,7 +102,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult.EnsureSuccessful()
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
         
         .. code-block:: csharp
@@ -115,7 +116,7 @@ Methods
         :type viewName: System.String
         :param view: 
         :type view: Microsoft.AspNet.Mvc.Rendering.IView
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
         
         .. code-block:: csharp
@@ -129,7 +130,7 @@ Methods
         :type viewName: System.String
         :param searchedLocations: 
         :type searchedLocations: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.ViewEngineResult
     
         
         .. code-block:: csharp

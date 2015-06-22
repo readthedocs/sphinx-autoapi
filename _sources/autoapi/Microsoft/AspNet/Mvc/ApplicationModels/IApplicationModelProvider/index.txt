@@ -22,6 +22,7 @@ Builds or modifies an [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](
 
 
 
+
 Syntax
 ------
 
@@ -54,11 +55,11 @@ Properties
     
         
     
-        
-        
+        Gets the order value for determining the order of execution of providers. Providers execute in
+        ascending numeric value of the [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.Order](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml) property.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -77,8 +78,7 @@ Methods
     
         
     
-        
-        
+        Executed for the second pass of [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) building. See [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.Order](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
     
         
         :param context: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.yml).
@@ -93,8 +93,7 @@ Methods
     
         
     
-        
-        
+        Executed for the first pass of [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) building. See [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.Order](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelProvider.yml).
     
         
         :param context: The [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModelProviderContext.yml).

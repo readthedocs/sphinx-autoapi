@@ -162,7 +162,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">TModel</td>
 </tr>
 </tbody>
 </table>
@@ -178,7 +178,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ViewDataDictionary{{TModel}}</td>
 </tr>
 </tbody>
 </table>
@@ -196,7 +196,9 @@
 <dd><dl class="method">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Razor.RazorPage&lt;TModel&gt;.CreateModelExpression&lt;TValue&gt;(System.Linq.Expressions.Expression&lt;System.Func&lt;TModel, TValue&gt;&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns a [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given
+&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -205,16 +207,22 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.Rendering.ModelExpression</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new [Microsoft.AspNet.Mvc.Rendering.ModelExpression]() instance describing the given</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelExpression</span> <span class="n">CreateModelExpression</span><span class="p">&lt;</span><span class="n">TValue</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TValue</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;expression&#8221; /&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="n">ModelExpression</span> <span class="n">CreateModelExpression</span><span class="p">&lt;</span><span class="n">TValue</span><span class="p">&gt;(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TModel</span><span class="p">,</span> <span class="n">TValue</span><span class="p">&gt;&gt;</span> <span class="n">expression</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

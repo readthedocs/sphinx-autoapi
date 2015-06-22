@@ -136,7 +136,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -281,7 +280,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.Routing.IRouteTemplateProvider</td>
 </tr>
 </tbody>
 </table>
@@ -297,7 +296,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -313,7 +312,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +328,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +344,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -363,7 +362,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.CombineAttributeRouteModel">
 <code class="descname">CombineAttributeRouteModel</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel</em>, <em>Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.CombineAttributeRouteModel" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Combines two [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instances and returns
+a new [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instance with the result.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -373,16 +374,25 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new instance of [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) that represents the</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">AttributeRouteModel</span> <span class="nf">CombineAttributeRouteModel</span><span class="p">(</span><span class="n">AttributeRouteModel</span> <span class="n">left</span><span class="p">,</span> <span class="n">AttributeRouteModel</span> <span class="n">right</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>combination of the two [Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel](Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.yml) instances or
+&lt;c&gt;null&lt;/c&gt; if both
+parameters are
+&lt;c&gt;null&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="n">AttributeRouteModel</span> <span class="nf">CombineAttributeRouteModel</span><span class="p">(</span><span class="n">AttributeRouteModel</span> <span class="n">left</span><span class="p">,</span> <span class="n">AttributeRouteModel</span> <span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.ReplaceTokens">
 <code class="descname">ReplaceTokens</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.Collections.Generic.IDictionary&lt;System.String</em>, <em>System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel.ReplaceTokens" title="Permalink to this definition">¶</a></dt>
@@ -396,7 +406,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.String</p>
 </td>
 </tr>
 </tbody>

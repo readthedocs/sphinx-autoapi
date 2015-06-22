@@ -136,7 +136,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -228,7 +227,10 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions.Append">
 <code class="descname">Append</code><span class="sig-paren">(</span><em>TagHelperContent</em>, <em>IHtmlEncoder</em>, <em>System.Text.Encoding</em>, <em>System.Object</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.TagHelpers.TagHelperContentExtensions.Append" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Writes the specified
+&lt;paramref name=&#8221;value&#8221; /&gt; with HTML encoding to given
+&lt;paramref name=&#8221;content&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -266,7 +268,9 @@
 </tr>
 <tr class="field-odd field"><th class="field-name">type value:</th><td class="field-body">System.Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">TagHelperContent</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">&lt;paramref name=&#8221;content&#8221; /&gt; after the write operation has completed.</td>
 </tr>
 </tbody>
 </table>

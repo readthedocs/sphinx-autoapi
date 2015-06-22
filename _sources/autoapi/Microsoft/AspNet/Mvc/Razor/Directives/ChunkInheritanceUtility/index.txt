@@ -19,6 +19,7 @@ A utility type for supporting inheritance of directives into a page from applica
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility](Microsoft.AspNet.Mvc.Razor.Directives.ChunkInheritanceUtility.yml).
     
         
         :param razorHost: The [Microsoft.AspNet.Mvc.Razor.MvcRazorHost](Microsoft.AspNet.Mvc.Razor.MvcRazorHost.yml) used to parse
@@ -89,13 +89,21 @@ Methods
     
         
     
+        Gets an ordered [System.Collections.Generic.IReadOnlyList`1]() of parsed @!:ChunkTree- for each
         
+        <c>_ViewImports</c> that is applicable to the page located at
+        <paramref name="pagePath" />. The list is
+        ordered so that the @!:ChunkTree- for the
+        <c>_ViewImports</c> closest to the
         
+        <paramref name="pagePath" /> in the file system appears first.
     
         
         :param pagePath: The path of the page to locate inherited chunks for.
         :type pagePath: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{ChunkTree}
+        :return: A [System.Collections.Generic.IReadOnlyList`1]() of parsed
+    <c>_ViewImports</c>@!:ChunkTree-s.
     
         
         .. code-block:: csharp
@@ -106,8 +114,10 @@ Methods
     
         
     
+        Merges @!:Chunk- inherited by default and @!:ChunkTree- instances produced by parsing
         
-        
+        <c>_ViewImports</c> files into the specified
+        <paramref name="chunkTree" />.
     
         
         :param chunkTree: The @!:ChunkTree- to merge in to.

@@ -17,6 +17,7 @@ IOrderedFilter Interface
 
 
 
+
 Syntax
 ------
 
@@ -49,11 +50,11 @@ Properties
     
         
     
-        
-        
+        Gets the order value for determining the order of execution of filters. Filters execute in
+        ascending numeric value of the [Microsoft.AspNet.Mvc.IOrderedFilter.Order](Microsoft.AspNet.Mvc.IOrderedFilter.yml) property.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

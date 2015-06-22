@@ -18,6 +18,7 @@ Sets up default options for [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions}`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions]().
     
         
         :param applicationEnvironment: @!:IApplicationEnvironment- for the application.

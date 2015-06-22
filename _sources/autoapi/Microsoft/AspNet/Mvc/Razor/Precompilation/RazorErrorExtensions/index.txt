@@ -13,6 +13,7 @@ RazorErrorExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -57,7 +58,7 @@ Methods
         :type error: RazorError
         :param filePath: 
         :type filePath: System.String
-        :rtype: 
+        :rtype: Diagnostic
     
         
         .. code-block:: csharp

@@ -139,7 +139,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -235,7 +234,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.XmlDataContractSerializerInputFormatter()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">XmlDataContractSerializerInputFormatter</span><span class="p">()</span>
+<dd><p>Initializes a new instance of DataContractSerializerInputFormatter</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">XmlDataContractSerializerInputFormatter</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -249,11 +249,12 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.MaxDepth">
 <code class="descname">MaxDepth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.MaxDepth" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Indicates the acceptable input XML depth.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -265,11 +266,13 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.SerializerSettings">
 <code class="descname">SerializerSettings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.SerializerSettings" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [System.Runtime.Serialization.DataContractSerializerSettings]() used to configure the
+[System.Runtime.Serialization.DataContractSerializer]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Runtime.Serialization.DataContractSerializerSettings</td>
 </tr>
 </tbody>
 </table>
@@ -281,11 +284,13 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.WrapperProviderFactories">
 <code class="descname">WrapperProviderFactories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.WrapperProviderFactories" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the list of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml) to
+provide the wrapping type for de-serialization.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}</td>
 </tr>
 </tbody>
 </table>
@@ -297,11 +302,13 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.XmlDictionaryReaderQuotas">
 <code class="descname">XmlDictionaryReaderQuotas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.XmlDictionaryReaderQuotas" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>The quotas include - DefaultMaxDepth, DefaultMaxStringContentLength, DefaultMaxArrayLength,
+DefaultMaxBytesPerRead, DefaultMaxNameTableCharCount</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Xml.XmlDictionaryReaderQuotas</td>
 </tr>
 </tbody>
 </table>
@@ -328,7 +335,7 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
 </td>
 </tr>
 </tbody>
@@ -341,7 +348,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateSerializer">
 <code class="descname">CreateSerializer</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Called during deserialization to get the [System.Runtime.Serialization.DataContractSerializer]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -350,7 +358,10 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Runtime.Serialization.DataContractSerializer</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The [System.Runtime.Serialization.DataContractSerializer]() used during deserialization.</p>
 </td>
 </tr>
 </tbody>
@@ -363,7 +374,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateXmlReader">
 <code class="descname">CreateXmlReader</code><span class="sig-paren">(</span><em>System.IO.Stream</em>, <em>System.Text.Encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.CreateXmlReader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Called during deserialization to get the [System.Xml.XmlReader]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -373,7 +385,10 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Xml.XmlReader</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The [System.Xml.XmlReader]() used during deserialization.</p>
 </td>
 </tr>
 </tbody>
@@ -386,7 +401,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetCachedSerializer">
 <code class="descname">GetCachedSerializer</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetCachedSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the cached serializer or creates and caches the serializer for the given type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -395,7 +411,10 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Runtime.Serialization.DataContractSerializer</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The [System.Runtime.Serialization.DataContractSerializer]() instance.</p>
 </td>
 </tr>
 </tbody>
@@ -408,7 +427,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetSerializableType">
 <code class="descname">GetSerializableType</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.GetSerializableType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the type to which the XML will be deserialized.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -417,7 +437,10 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Type</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The type to which the XML will be deserialized.</p>
 </td>
 </tr>
 </tbody>
@@ -430,7 +453,8 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.ReadRequestBodyAsync">
 <code class="descname">ReadRequestBodyAsync</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.InputFormatterContext</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerInputFormatter.ReadRequestBodyAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Reads the input XML.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -439,7 +463,10 @@ to strongly-typed objects using [System.Runtime.Serialization.DataContractSerial
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task{System.Object}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Task which reads the input.</p>
 </td>
 </tr>
 </tbody>

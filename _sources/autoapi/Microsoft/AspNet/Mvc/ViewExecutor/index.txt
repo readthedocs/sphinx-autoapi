@@ -18,6 +18,7 @@ Utility type for rendering a [Microsoft.AspNet.Mvc.Rendering.IView](Microsoft.As
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,8 @@ Methods
     
         
     
-        
-        
+        Asynchronously renders the specified
+        <paramref name="view" /> to the response body.
     
         
         :param view: The [Microsoft.AspNet.Mvc.Rendering.IView](Microsoft.AspNet.Mvc.Rendering.IView.yml) to render.
@@ -75,7 +76,8 @@ Methods
         :type htmlHelperOptions: Microsoft.AspNet.Mvc.Rendering.HtmlHelperOptions
         :param contentType: 
         :type contentType: MediaTypeHeaderValue
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that represents the asynchronous rendering.
     
         
         .. code-block:: csharp

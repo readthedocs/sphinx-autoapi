@@ -22,6 +22,7 @@ Provides methods to activate properties on a [Microsoft.AspNet.Mvc.Razor.IRazorP
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        When implemented in a type, activates an instantiated page.
     
         
         :param page: The page to activate.

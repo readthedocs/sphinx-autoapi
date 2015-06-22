@@ -13,6 +13,7 @@ MutableObjectBinderContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.MutableObjectBinderContext.ModelBindingContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelBindingContext
     
         
         .. code-block:: csharp
@@ -63,7 +64,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.MutableObjectBinderContext.PropertyMetadata
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
         
         .. code-block:: csharp

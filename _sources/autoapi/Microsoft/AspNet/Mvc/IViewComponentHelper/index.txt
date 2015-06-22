@@ -17,6 +17,7 @@ IViewComponentHelper Interface
 
 
 
+
 Syntax
 ------
 
@@ -52,7 +53,7 @@ Methods
         :type name: System.String
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -66,7 +67,7 @@ Methods
         :type componentType: System.Type
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -80,7 +81,7 @@ Methods
         :type name: System.String
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -94,7 +95,7 @@ Methods
         :type componentType: System.Type
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.Rendering.HtmlString}
     
         
         .. code-block:: csharp
@@ -134,7 +135,7 @@ Methods
         :type name: System.String
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -148,7 +149,7 @@ Methods
         :type componentType: System.Type
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ICompilationMessage`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.yml) with the specified message.
     
         
         :param razorError: A @!:RazorError-.
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.EndColumn
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -94,7 +94,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.EndLine
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -104,7 +104,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.FormattedMessage
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -115,11 +115,10 @@ Properties
     
         
     
-        
-        
+        Gets a message produced from compilation.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -129,7 +128,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.Severity
     
         
-        :rtype: 
+        :rtype: CompilationMessageSeverity
     
         
         .. code-block:: csharp
@@ -139,7 +138,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.SourceFilePath
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -149,7 +148,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.StartColumn
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -159,7 +158,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.StartLine
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -178,11 +177,11 @@ Methods
     
         
     
-        
-        
+        Returns a [System.String]() representation of this instance of [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.yml).
     
         
-        :rtype: 
+        :rtype: System.String
+        :return: A [System.String]() representing this [Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage](Microsoft.AspNet.Mvc.Razor.Compilation.RazorCompilationMessage.yml) instance.
     
         
         .. code-block:: csharp

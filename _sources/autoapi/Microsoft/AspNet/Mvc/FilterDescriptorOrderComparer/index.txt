@@ -13,6 +13,7 @@ FilterDescriptorOrderComparer Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -53,7 +54,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterDescriptorOrderComparer.Comparer
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FilterDescriptorOrderComparer
     
         
         .. code-block:: csharp
@@ -75,7 +76,7 @@ Methods
         :type x: Microsoft.AspNet.Mvc.FilterDescriptor
         :param y: 
         :type y: Microsoft.AspNet.Mvc.FilterDescriptor
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp

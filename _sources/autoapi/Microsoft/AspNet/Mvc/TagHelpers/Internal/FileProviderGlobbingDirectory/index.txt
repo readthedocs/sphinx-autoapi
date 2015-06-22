@@ -13,6 +13,7 @@ FileProviderGlobbingDirectory Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`DirectoryInfoBase`
@@ -76,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.FullName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -86,7 +87,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.Name
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.ParentDirectory
     
         
-        :rtype: 
+        :rtype: DirectoryInfoBase
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.RelativePath
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -124,7 +125,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.TagHelpers.Internal.FileProviderGlobbingDirectory.EnumerateFileSystemInfos()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{FileSystemInfoBase}
     
         
         .. code-block:: csharp
@@ -136,7 +137,7 @@ Methods
         
         :param path: 
         :type path: System.String
-        :rtype: 
+        :rtype: DirectoryInfoBase
     
         
         .. code-block:: csharp
@@ -148,7 +149,7 @@ Methods
         
         :param path: 
         :type path: System.String
-        :rtype: 
+        :rtype: FileInfoBase
     
         
         .. code-block:: csharp

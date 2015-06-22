@@ -19,6 +19,7 @@ write a file from a stream to the response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FileStreamResult](Microsoft.AspNet.Mvc.FileStreamResult.yml) instance with
+        the provided
+        <paramref name="fileStream" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileStream: The stream with the file.
@@ -80,8 +84,11 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.FileStreamResult](Microsoft.AspNet.Mvc.FileStreamResult.yml) instance with
+        the provided
+        <paramref name="fileStream" /> and the
+        provided
+        <paramref name="contentType" />.
     
         
         :param fileStream: The stream with the file.
@@ -106,11 +113,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the stream with the file that will be sent back as the response.
     
         
-        :rtype: 
+        :rtype: System.IO.Stream
     
         
         .. code-block:: csharp
@@ -132,7 +138,7 @@ Methods
         :type response: HttpResponse
         :param cancellation: 
         :type cancellation: System.Threading.CancellationToken
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

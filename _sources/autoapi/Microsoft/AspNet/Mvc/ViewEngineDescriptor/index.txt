@@ -18,6 +18,7 @@ Encapsulates information that describes an [Microsoft.AspNet.Mvc.Rendering.IView
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml) using the specified type.
     
         
         :param viewEngine: An instance of [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) that the descriptor represents.
@@ -75,8 +75,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml).
     
         
         :param type: The [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) type that the descriptor represents.
@@ -99,11 +98,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) instance described by this [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IViewEngine
     
         
         .. code-block:: csharp
@@ -114,11 +112,10 @@ Properties
     
         
     
-        
-        
+        Gets the type of the [Microsoft.AspNet.Mvc.Rendering.IViewEngine](Microsoft.AspNet.Mvc.Rendering.IViewEngine.yml) described by this [Microsoft.AspNet.Mvc.ViewEngineDescriptor](Microsoft.AspNet.Mvc.ViewEngineDescriptor.yml).
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp

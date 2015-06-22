@@ -13,6 +13,7 @@ TemplateInfo Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -82,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the formatted model value.
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -97,11 +97,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTML field prefix.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -111,7 +110,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TemplateInfo.TemplateDepth
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -131,7 +130,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -143,7 +142,7 @@ Methods
         
         :param partialFieldName: 
         :type partialFieldName: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -155,7 +154,7 @@ Methods
         
         :param modelExplorer: 
         :type modelExplorer: Microsoft.AspNet.Mvc.ModelBinding.ModelExplorer
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ TagHelperInitializer<TTagHelper> Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.TagHelperInitializer`1](Microsoft.AspNet.Mvc.Razor.TagHelperInitializer`1.yml).
     
         
         :param action: The initialization delegate.

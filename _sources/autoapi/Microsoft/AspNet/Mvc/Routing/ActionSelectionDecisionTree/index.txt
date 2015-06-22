@@ -13,6 +13,7 @@ ActionSelectionDecisionTree Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,8 +55,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree](Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.yml).
     
         
         :param actions: The [Microsoft.AspNet.Mvc.ActionDescriptorsCollection](Microsoft.AspNet.Mvc.ActionDescriptorsCollection.yml).
@@ -77,7 +77,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree.Version
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -97,7 +97,7 @@ Methods
         
         :param routeValues: 
         :type routeValues: System.Collections.Generic.IDictionary{System.String,System.Object}
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{Microsoft.AspNet.Mvc.ActionDescriptor}
     
         
         .. code-block:: csharp

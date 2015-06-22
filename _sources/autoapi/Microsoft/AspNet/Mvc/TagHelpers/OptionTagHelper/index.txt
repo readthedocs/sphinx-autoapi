@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper](Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -82,7 +82,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -93,11 +93,10 @@ Properties
     
         
     
-        
-        
+        Specifies a value for the &lt;option&gt; element.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -107,7 +106,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.OptionTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp
@@ -129,7 +128,7 @@ Methods
         :type context: TagHelperContext
         :param output: 
         :type output: TagHelperOutput
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

@@ -19,6 +19,7 @@ specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.A
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.DefaultControllerTypeProvider](Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.yml).
     
         
         :param assemblyProvider: [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.AspNet.Mvc.IAssemblyProvider.yml) that provides assemblies to look for
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.ControllerTypes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     
         
         .. code-block:: csharp
@@ -103,15 +103,20 @@ Methods
     
         
     
-        
-        
+        Returns
+        <c>true</c> if the
+        <paramref name="typeInfo" /> is a controller. Otherwise
+        <c>false</c>.
     
         
         :param typeInfo: The [System.Reflection.TypeInfo]().
         :type typeInfo: System.Reflection.TypeInfo
         :param candidateAssemblies: The set of candidate assemblies.
         :type candidateAssemblies: System.Collections.Generic.ISet{System.Reflection.Assembly}
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>true</c> if the
+    <paramref name="typeInfo" /> is a controller. Otherwise
+    <c>false</c>.
     
         
         .. code-block:: csharp

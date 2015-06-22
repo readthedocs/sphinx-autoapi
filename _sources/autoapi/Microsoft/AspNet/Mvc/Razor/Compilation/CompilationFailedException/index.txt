@@ -18,6 +18,7 @@ An [System.Exception]() thrown when accessing the result of a failed compilation
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Instantiates a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException](Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException.yml).
     
         
         :param compilationFailures: @!:ICompilationFailure-s containing
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationFailedException.CompilationFailures
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{ICompilationFailure}
     
         
         .. code-block:: csharp

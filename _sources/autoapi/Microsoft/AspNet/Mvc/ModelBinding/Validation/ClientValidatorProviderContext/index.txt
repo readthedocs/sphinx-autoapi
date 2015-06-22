@@ -18,6 +18,7 @@ A context for [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidato
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.yml).
     
         
         :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml) for the model being validated.
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -98,11 +97,10 @@ Properties
     
         
     
-        
-        
+        Gets the validator metadata.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -113,11 +111,13 @@ Properties
     
         
     
-        
-        
+        Gets the list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator.yml) instances. [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.yml)
+        instances should add validators to this list when
+        [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.GetValidators(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext)](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.yml)
+        is called.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator}
     
         
         .. code-block:: csharp

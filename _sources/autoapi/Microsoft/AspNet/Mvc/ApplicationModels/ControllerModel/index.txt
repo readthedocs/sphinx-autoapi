@@ -13,6 +13,7 @@ ControllerModel Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -85,7 +86,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ActionConstraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IActionConstraintMetadata}
     
         
         .. code-block:: csharp
@@ -95,7 +96,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.Actions
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.ActionModel}
     
         
         .. code-block:: csharp
@@ -106,11 +107,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) for this controller.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel
     
         
         .. code-block:: csharp
@@ -120,7 +120,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.Application
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel
     
         
         .. code-block:: csharp
@@ -130,7 +130,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.AttributeRoutes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.AttributeRouteModel}
     
         
         .. code-block:: csharp
@@ -140,7 +140,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.Attributes
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IReadOnlyList{System.Object}
     
         
         .. code-block:: csharp
@@ -150,7 +150,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ControllerName
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -160,7 +160,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ControllerProperties
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.PropertyModel}
     
         
         .. code-block:: csharp
@@ -170,7 +170,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.ControllerType
     
         
-        :rtype: 
+        :rtype: System.Reflection.TypeInfo
     
         
         .. code-block:: csharp
@@ -180,7 +180,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.Filters
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IFilter}
     
         
         .. code-block:: csharp
@@ -191,11 +191,11 @@ Properties
     
         
     
-        
-        
+        Gets a set of properties associated with the controller.
+        These properties will be copied to [Microsoft.AspNet.Mvc.ActionDescriptor.Properties]().
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -205,7 +205,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ApplicationModels.ControllerModel.RouteConstraints
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IRouteConstraintProvider}
     
         
         .. code-block:: csharp

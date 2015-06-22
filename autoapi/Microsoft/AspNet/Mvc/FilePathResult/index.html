@@ -162,7 +162,12 @@ by the host.</p>
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.FilePathResult.FilePathResult">
 <code class="descname">FilePathResult</code><span class="sig-paren">(</span><em>System.String</em>, <em>MediaTypeHeaderValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FilePathResult.FilePathResult" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) instance with
+the provided
+&lt;paramref name=&#8221;fileName&#8221; /&gt; and the
+provided
+&lt;paramref name=&#8221;contentType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -199,7 +204,12 @@ by the host.</p>
 <dl class="constructor">
 <dt>
 <code class="descname">FilePathResult</code><span class="sig-paren">(</span><em>System.String</em>, <em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.FilePathResult](Microsoft.AspNet.Mvc.FilePathResult.yml) instance with
+the provided
+&lt;paramref name=&#8221;fileName&#8221; /&gt; and the
+provided
+&lt;paramref name=&#8221;contentType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -242,11 +252,12 @@ by the host.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FilePathResult.FileName">
 <code class="descname">FileName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FilePathResult.FileName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the path to the file that will be sent back as the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -258,11 +269,12 @@ by the host.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FilePathResult.FileProvider">
 <code class="descname">FileProvider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FilePathResult.FileProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the &#64;!:IFileProvider- used to resolve paths.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">IFileProvider</td>
 </tr>
 </tbody>
 </table>
@@ -280,7 +292,9 @@ by the host.</p>
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.FilePathResult.IsPathRooted">
 <code class="descname">IsPathRooted</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FilePathResult.IsPathRooted" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Determines if the provided path is absolute or relative. The default implementation considers
+paths starting with &#8216;/&#8217; to be relative.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -289,7 +303,10 @@ by the host.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if the path is absolute.</p>
 </td>
 </tr>
 </tbody>
@@ -302,7 +319,12 @@ by the host.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.FilePathResult.NormalizePath">
 <code class="descname">NormalizePath</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FilePathResult.NormalizePath" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a normalized representation of the given
+&lt;paramref name=&#8221;path&#8221; /&gt;. The default
+implementation doesn&#8217;t support files with &#8216;&#8217; in the file name and treats the &#8216;&#8217; as
+a directory separator. The default implementation will convert all the &#8216;&#8217; into &#8216;/&#8217;
+and will remove leading &#8216;~&#8217; characters.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -311,7 +333,10 @@ by the host.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.String</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The normalized path.</p>
 </td>
 </tr>
 </tbody>
@@ -334,7 +359,7 @@ by the host.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

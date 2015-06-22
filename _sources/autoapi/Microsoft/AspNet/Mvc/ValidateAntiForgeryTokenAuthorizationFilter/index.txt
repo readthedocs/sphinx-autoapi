@@ -13,6 +13,7 @@ ValidateAntiForgeryTokenAuthorizationFilter Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.AuthorizationContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

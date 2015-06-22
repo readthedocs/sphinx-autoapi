@@ -18,6 +18,7 @@ An [Microsoft.AspNet.Mvc.ModelBinding.IValueProvider]() adapter for data stored 
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,7 @@ Constructors
     
         
     
-        
-        
+        Creates a provider for @!:IReadableStringCollection- wrapping an existing set of key value pairs.
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
@@ -80,8 +80,8 @@ Constructors
     
         
     
-        
-        
+        Creates a provider for @!:IReadableStringCollection- wrapping an
+        existing set of key value pairs provided by the delegate.
     
         
         :param bindingSource: The [Microsoft.AspNet.Mvc.ModelBinding.BindingSource]() for the data.
@@ -107,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ReadableStringCollectionValueProvider.Culture
     
         
-        :rtype: 
+        :rtype: System.Globalization.CultureInfo
     
         
         .. code-block:: csharp
@@ -127,7 +127,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Boolean}
     
         
         .. code-block:: csharp
@@ -139,7 +139,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.String,System.String}}
     
         
         .. code-block:: csharp
@@ -151,7 +151,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task{Microsoft.AspNet.Mvc.ModelBinding.ValueProviderResult}
     
         
         .. code-block:: csharp

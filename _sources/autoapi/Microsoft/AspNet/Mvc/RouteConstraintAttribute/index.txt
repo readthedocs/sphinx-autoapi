@@ -25,6 +25,7 @@ actions defined by the controller.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -67,8 +68,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.RouteConstraintAttribute](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml).
     
         
         :param routeKey: The route value key.
@@ -86,8 +86,8 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.RouteConstraintAttribute](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) with
+        [Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling](Microsoft.AspNet.Mvc.RouteConstraintAttribute.yml) set to [Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey]().
     
         
         :param routeKey: The route value key.
@@ -113,7 +113,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.BlockNonAttributedActions
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -123,7 +123,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKey
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -133,7 +133,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteKeyHandling
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.RouteKeyHandling
     
         
         .. code-block:: csharp
@@ -143,7 +143,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.RouteConstraintAttribute.RouteValue
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

@@ -159,7 +159,8 @@ specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.A
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.DefaultControllerTypeProvider">
 <code class="descname">DefaultControllerTypeProvider</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.IAssemblyProvider</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.DefaultControllerTypeProvider" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.DefaultControllerTypeProvider](Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -201,7 +202,7 @@ specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.A
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}</td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +220,11 @@ specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.A
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.IsController">
 <code class="descname">IsController</code><span class="sig-paren">(</span><em>System.Reflection.TypeInfo</em>, <em>System.Collections.Generic.ISet&lt;System.Reflection.Assembly&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.DefaultControllerTypeProvider.IsController" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Returns
+&lt;c&gt;true&lt;/c&gt; if the
+&lt;paramref name=&#8221;typeInfo&#8221; /&gt; is a controller. Otherwise
+&lt;c&gt;false&lt;/c&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -229,16 +234,23 @@ specified by the registered [Microsoft.AspNet.Mvc.IAssemblyProvider](Microsoft.A
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&lt;c&gt;true&lt;/c&gt; if the</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsController</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">ISet</span><span class="p">&lt;</span><span class="n">Assembly</span><span class="p">&gt;</span> <span class="n">candidateAssemblies</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
+<p>&lt;paramref name=&#8221;typeInfo&#8221; /&gt; is a controller. Otherwise
+&lt;c&gt;false&lt;/c&gt;.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span class="k">protected</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsController</span><span class="p">(</span><span class="n">TypeInfo</span> <span class="n">typeInfo</span><span class="p">,</span> <span class="n">ISet</span><span class="p">&lt;</span><span class="n">Assembly</span><span class="p">&gt;</span> <span class="n">candidateAssemblies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>

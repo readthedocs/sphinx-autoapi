@@ -18,6 +18,7 @@ Sets up default options for [Microsoft.AspNet.Mvc.MvcOptions](Microsoft.AspNet.M
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`

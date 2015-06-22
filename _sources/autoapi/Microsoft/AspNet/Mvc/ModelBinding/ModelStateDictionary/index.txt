@@ -19,6 +19,7 @@ validation information.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,8 @@ Fields
     
         
     
-        
-        
+        The default value for [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) of
+        <c>200</c>.
     
         
     
@@ -82,8 +83,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) class.
     
         
     
@@ -96,8 +96,9 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) class by using values that are copied
+        from the specified
+        <paramref name="dictionary" />.
     
         
         :param dictionary: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to copy values from.
@@ -112,8 +113,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) class.
     
         
         :param maxAllowedErrors: 
@@ -135,7 +135,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Count
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -146,11 +146,11 @@ Properties
     
         
     
-        
-        
+        Gets the number of errors added to this instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) via
+        [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.AddModelError(System.String,System.Exception)](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) or [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.TryAddModelError(System.String,System.Exception)](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -161,11 +161,11 @@ Properties
     
         
     
-        
-        
+        Gets a value indicating whether or not the maximum number of errors have been
+        recorded.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -175,7 +175,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.IsReadOnly
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -186,11 +186,10 @@ Properties
     
         
     
-        
-        
+        Gets a value that indicates whether any model state values in this model state dictionary is invalid or not validated.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -200,7 +199,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Item[System.String]
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelState
     
         
         .. code-block:: csharp
@@ -210,7 +209,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Keys
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{System.String}
     
         
         .. code-block:: csharp
@@ -221,11 +220,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets the maximum allowed model state errors in this instance of [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
+        Defaults to
+        <c>200</c>.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -235,7 +235,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.ValidationState
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState
     
         
         .. code-block:: csharp
@@ -245,7 +245,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.Values
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.ModelBinding.ModelState}
     
         
         .. code-block:: csharp
@@ -288,8 +288,10 @@ Methods
     
         
     
-        
-        
+        Adds the specified
+        <paramref name="exception" /> to the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.Errors](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) instance
+        that is associated with the specified
+        <paramref name="key" />.
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
@@ -306,8 +308,10 @@ Methods
     
         
     
-        
-        
+        Adds the specified
+        <paramref name="errorMessage" /> to the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.Errors](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) instance
+        that is associated with the specified
+        <paramref name="key" />.
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
@@ -333,8 +337,7 @@ Methods
     
         
     
-        
-        
+        Clears [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) entries that match the key that is passed as parameter.
     
         
         :param key: The key of [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to clear.
@@ -350,7 +353,7 @@ Methods
         
         :param item: 
         :type item: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -362,7 +365,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -387,7 +390,7 @@ Methods
         
         :param prefix: 
         :type prefix: System.String
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}}
     
         
         .. code-block:: csharp
@@ -397,7 +400,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}}
     
         
         .. code-block:: csharp
@@ -408,13 +411,17 @@ Methods
     
         
     
-        
-        
+        Returns the aggregate [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) for items starting with the
+        specified
+        <paramref name="key" />.
     
         
         :param key: The key to look up model state errors for.
         :type key: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState
+        :return: Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entries are found for the specified
+    key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if at least one instance is found with one or more model
+    state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.
     
         
         .. code-block:: csharp
@@ -425,13 +432,16 @@ Methods
     
         
     
-        
-        
+        Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) for the
+        <paramref name="key" />.
     
         
         :param key: The key to look up model state errors for.
         :type key: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState
+        :return: Returns [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Unvalidated](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if no entry is found for the specified
+    key, [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Invalid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) if an instance is found with one or more model
+    state errors; [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml) otherwise.
     
         
         .. code-block:: csharp
@@ -442,8 +452,9 @@ Methods
     
         
     
-        
-        
+        Marks the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.ValidationState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) for the entry with the specified
+        <paramref name="key" />
+        as [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Skipped](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml).
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to mark as skipped.
@@ -458,8 +469,9 @@ Methods
     
         
     
-        
-        
+        Marks the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.ValidationState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) for the entry with the specified
+        <paramref name="key" />
+        as [Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.Valid](Microsoft.AspNet.Mvc.ModelBinding.ModelValidationState.yml).
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to mark as valid.
@@ -474,8 +486,9 @@ Methods
     
         
     
-        
-        
+        Copies the values from the specified
+        <paramref name="dictionary" /> into this instance, overwriting
+        existing values if keys are the same.
     
         
         :param dictionary: The [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml) to copy values from.
@@ -491,7 +504,7 @@ Methods
         
         :param item: 
         :type item: System.Collections.Generic.KeyValuePair{System.String,Microsoft.AspNet.Mvc.ModelBinding.ModelState}
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -503,7 +516,7 @@ Methods
         
         :param key: 
         :type key: System.String
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -514,8 +527,10 @@ Methods
     
         
     
-        
-        
+        Sets the value for the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) with the specified
+        <paramref name="key" /> to the
+        specified
+        <paramref name="value" />.
     
         
         :param key: The key for the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) entry.
@@ -531,7 +546,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.System.Collections.IEnumerable.GetEnumerator()
     
         
-        :rtype: 
+        :rtype: System.Collections.IEnumerator
     
         
         .. code-block:: csharp
@@ -542,15 +557,21 @@ Methods
     
         
     
-        
-        
+        Attempts to add the specified
+        <paramref name="exception" /> to the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.Errors](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml)
+        instance that is associated with the specified
+        <paramref name="key" />. If the maximum number of allowed
+        errors has already been recorded, records a [Microsoft.AspNet.Mvc.ModelBinding.TooManyModelErrorsException](Microsoft.AspNet.Mvc.ModelBinding.TooManyModelErrorsException.yml) exception instead.
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
         :type key: System.String
         :param exception: The [System.Exception]() to add.
         :type exception: System.Exception
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>True</c> if the given error was added,
+    <c>false</c> if the error was ignored.
+    See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
     
         
         .. code-block:: csharp
@@ -561,15 +582,21 @@ Methods
     
         
     
-        
-        
+        Attempts to add the specified
+        <paramref name="errorMessage" /> to the [Microsoft.AspNet.Mvc.ModelBinding.ModelState.Errors](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml)
+        instance that is associated with the specified
+        <paramref name="key" />. If the maximum number of allowed
+        errors has already been recorded, records a [Microsoft.AspNet.Mvc.ModelBinding.TooManyModelErrorsException](Microsoft.AspNet.Mvc.ModelBinding.TooManyModelErrorsException.yml) exception instead.
     
         
         :param key: The key of the [Microsoft.AspNet.Mvc.ModelBinding.ModelState](Microsoft.AspNet.Mvc.ModelBinding.ModelState.yml) to add errors to.
         :type key: System.String
         :param errorMessage: The error message to add.
         :type errorMessage: System.String
-        :rtype: 
+        :rtype: System.Boolean
+        :return: <c>True</c> if the given error was added,
+    <c>false</c> if the error was ignored.
+    See [Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.MaxAllowedErrors](Microsoft.AspNet.Mvc.ModelBinding.ModelStateDictionary.yml).
     
         
         .. code-block:: csharp
@@ -583,7 +610,7 @@ Methods
         :type key: System.String
         :param value: 
         :type value: Microsoft.AspNet.Mvc.ModelBinding.ModelState
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

@@ -160,7 +160,10 @@ write a file as the response.</p>
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.FileResult.FileResult">
 <code class="descname">FileResult</code><span class="sig-paren">(</span><em>MediaTypeHeaderValue</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FileResult.FileResult" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.FileResult](Microsoft.AspNet.Mvc.FileResult.yml) instance with
+the provided
+&lt;paramref name=&#8221;contentType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -179,7 +182,10 @@ write a file as the response.</p>
 <dl class="constructor">
 <dt>
 <code class="descname">FileResult</code><span class="sig-paren">(</span><em>System.String</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.FileResult](Microsoft.AspNet.Mvc.FileResult.yml) instance with
+the provided
+&lt;paramref name=&#8221;contentType&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -204,11 +210,12 @@ write a file as the response.</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FileResult.ContentType">
 <code class="descname">ContentType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FileResult.ContentType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the &#64;!:MediaTypeHeaderValue- representing the Content-Type header of the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">MediaTypeHeaderValue</td>
 </tr>
 </tbody>
 </table>
@@ -220,11 +227,12 @@ write a file as the response.</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.FileResult.FileDownloadName">
 <code class="descname">FileDownloadName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FileResult.FileDownloadName" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the file name that will be used in the Content-Disposition header of the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>
@@ -251,7 +259,7 @@ write a file as the response.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>
@@ -264,7 +272,8 @@ write a file as the response.</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.FileResult.WriteFileAsync">
 <code class="descname">WriteFileAsync</code><span class="sig-paren">(</span><em>HttpResponse</em>, <em>System.Threading.CancellationToken</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.FileResult.WriteFileAsync" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Writes the file to the response.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -274,7 +283,10 @@ write a file as the response.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Threading.Tasks.Task</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [System.Threading.Tasks.Task]() that will complete when the file has been written to the response.</p>
 </td>
 </tr>
 </tbody>

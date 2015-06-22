@@ -17,6 +17,7 @@ IFilterContainer Interface
 
 
 
+
 Syntax
 ------
 
@@ -48,7 +49,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Filters.IFilterContainer.FilterDefinition
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IFilter
     
         
         .. code-block:: csharp

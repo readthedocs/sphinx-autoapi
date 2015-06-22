@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheFilter.ResponseCacheFilter">
 <code class="descname">ResponseCacheFilter</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.CacheProfile</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheFilter.ResponseCacheFilter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new instance of [Microsoft.AspNet.Mvc.ResponseCacheFilter](Microsoft.AspNet.Mvc.ResponseCacheFilter.yml)</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -196,11 +197,14 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheFilter.Duration">
 <code class="descname">Duration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheFilter.Duration" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the duration in seconds for which the response is cached.
+This is a required parameter.
+This sets &#8220;max-age&#8221; in &#8220;Cache-control&#8221; header.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Int32</td>
 </tr>
 </tbody>
 </table>
@@ -212,11 +216,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheFilter.Location">
 <code class="descname">Location</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheFilter.Location" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the location where the data from a particular URL must be cached.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ResponseCacheLocation</td>
 </tr>
 </tbody>
 </table>
@@ -228,11 +233,16 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheFilter.NoStore">
 <code class="descname">NoStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheFilter.NoStore" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value which determines whether the data should be stored or not.
+When set to
+&lt;see langword=&#8221;true&#8221; /&gt;, it sets &#8220;Cache-control&#8221; header to &#8220;no-store&#8221;.
+Ignores the &#8220;Location&#8221; parameter for values other than &#8220;None&#8221;.
+Ignores the &#8220;duration&#8221; parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -244,11 +254,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheFilter.VaryByHeader">
 <code class="descname">VaryByHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheFilter.VaryByHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value for the Vary response header.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

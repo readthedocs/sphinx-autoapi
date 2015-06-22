@@ -19,6 +19,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule](Microsoft.AspNet.Mvc.Internal.ModelClientValidationRemoteRule.yml) class.
     
         
         :param errorMessage: Error message client should display when validation fails.

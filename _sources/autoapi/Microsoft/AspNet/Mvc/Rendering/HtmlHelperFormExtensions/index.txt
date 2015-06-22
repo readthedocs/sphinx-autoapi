@@ -18,6 +18,7 @@ DisplayName-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,15 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The &lt;form&gt;'s
+        <c>action</c> attribute value will
+        match the current request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -76,15 +79,16 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the
+        current action will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param method: The HTTP method for processing the form, either GET or POST.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -95,8 +99,8 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the
+        current action will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -107,7 +111,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -118,8 +123,8 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the
+        current action will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -130,7 +135,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the route
     parameters.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -141,8 +147,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -151,7 +158,8 @@ Methods
         :type actionName: System.String
         :param controllerName: The name of the controller.
         :type controllerName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -162,8 +170,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -174,7 +183,8 @@ Methods
         :type controllerName: System.String
         :param method: The HTTP method for processing the form, either GET or POST.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -185,8 +195,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -201,7 +212,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -212,8 +224,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -228,7 +241,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the route
     parameters.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -239,8 +253,9 @@ Methods
     
         
     
+        Renders a &lt;form&gt; start tag to the response. When the user submits the form, the action with name
         
-        
+        <paramref name="actionName" /> will process the request.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -257,7 +272,8 @@ Methods
         :type routeValues: System.Object
         :param method: The HTTP method for processing the form, either GET or POST.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -268,8 +284,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The first route that can provide a URL with the
+        specified
+        <paramref name="routeValues" /> generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -280,7 +298,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the route
     parameters.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -291,15 +310,18 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
         :param routeName: The name of the route.
         :type routeName: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -310,8 +332,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -320,7 +344,8 @@ Methods
         :type routeName: System.String
         :param method: The HTTP method for processing the form, either GET or POST.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -331,8 +356,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -345,7 +372,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the HTML
     attributes.
         :type htmlAttributes: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -356,8 +384,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -370,7 +400,8 @@ Methods
     [System.Collections.Generic.IDictionary`2]() instance containing the route
     parameters.
         :type routeValues: System.Object
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp
@@ -381,8 +412,10 @@ Methods
     
         
     
-        
-        
+        Renders a &lt;form&gt; start tag to the response. The route with name
+        <paramref name="routeName" />
+        generates the &lt;form&gt;'s
+        <c>action</c> attribute value.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
@@ -397,7 +430,8 @@ Methods
         :type routeValues: System.Object
         :param method: The HTTP method for processing the form, either GET or POST.
         :type method: Microsoft.AspNet.Mvc.Rendering.FormMethod
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.MvcForm
+        :return: An [Microsoft.AspNet.Mvc.Rendering.MvcForm](Microsoft.AspNet.Mvc.Rendering.MvcForm.yml) instance which renders the &lt;/form&gt; end tag when disposed.
     
         
         .. code-block:: csharp

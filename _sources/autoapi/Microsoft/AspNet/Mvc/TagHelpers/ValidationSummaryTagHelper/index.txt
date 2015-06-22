@@ -20,6 +20,7 @@ attribute.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper](Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper.yml).
     
         
         :param generator: The [Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator]().
@@ -84,7 +84,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper.Generator
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IHtmlGenerator
     
         
         .. code-block:: csharp
@@ -95,11 +95,11 @@ Properties
     
         
     
-        
-        
+        If [Microsoft.AspNet.Mvc.ValidationSummary.All](Microsoft.AspNet.Mvc.ValidationSummary.yml) or [Microsoft.AspNet.Mvc.ValidationSummary.ModelOnly](Microsoft.AspNet.Mvc.ValidationSummary.yml), appends a validation
+        summary. Otherwise ([Microsoft.AspNet.Mvc.ValidationSummary.None](Microsoft.AspNet.Mvc.ValidationSummary.yml), the default), this tag helper does nothing.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ValidationSummary
     
         
         .. code-block:: csharp
@@ -109,7 +109,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.ValidationSummaryTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp

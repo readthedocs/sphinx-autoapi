@@ -13,6 +13,7 @@ JsonMvcOptionsSetup Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`ConfigureOptions{Microsoft.AspNet.Mvc.MvcOptions}`

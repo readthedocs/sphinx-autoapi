@@ -18,6 +18,7 @@ Provides programmatic configuration for the MVC framework.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,11 +77,11 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention](Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention.yml) instances that will be applied to
+        the [Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel](Microsoft.AspNet.Mvc.ApplicationModels.ApplicationModel.yml) when discovering actions.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApplicationModels.IApplicationModelConvention}
     
         
         .. code-block:: csharp
@@ -91,11 +92,11 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.IFilter]() which are used to construct filters that
+        apply to all actions.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.ICollection{Microsoft.AspNet.Mvc.IFilter}
     
         
         .. code-block:: csharp
@@ -106,11 +107,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.IInputFormatter]()s that are used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IInputFormatter}
     
         
         .. code-block:: csharp
@@ -121,11 +121,11 @@ Properties
     
         
     
-        
-        
+        Gets or sets the maximum number of validation errors that are allowed by this application before further
+        errors are ignored.
     
         
-        :rtype: 
+        :rtype: System.Int32
     
         
         .. code-block:: csharp
@@ -136,11 +136,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.IModelBinder]()s used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IModelBinder}
     
         
         .. code-block:: csharp
@@ -151,11 +150,11 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider.yml) instances that will be used to
+        create [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() instances.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Metadata.IMetadataDetailsProvider}
     
         
         .. code-block:: csharp
@@ -166,11 +165,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider]()s used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IModelValidatorProvider}
     
         
         .. code-block:: csharp
@@ -181,11 +179,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.IOutputFormatter]()s that are used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.IOutputFormatter}
     
         
         .. code-block:: csharp
@@ -196,11 +193,12 @@ Properties
     
         
     
-        
-        
+        Gets or sets the flag which causes content negotiation to ignore Accept header
+        when it contains the media type */*.
+        <see langword="false" /> by default.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -211,11 +209,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter](Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter.yml)s that are used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IExcludeTypeValidationFilter}
     
         
         .. code-block:: csharp
@@ -226,11 +223,10 @@ Properties
     
         
     
-        
-        
+        Gets a list of [Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory]() used by this application.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.IValueProviderFactory}
     
         
         .. code-block:: csharp

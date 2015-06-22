@@ -139,7 +139,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../PageExecutionInstrumentation/index.html">Microsoft.AspNet.PageExecutionInstrumentation Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Razor/Generator/index.html">Microsoft.AspNet.Razor.Generator Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Framework/DependencyInjection/index.html">Microsoft.Framework.DependencyInjection Namespace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../MvcMinimalSample/Web/index.html">MvcMinimalSample.Web Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Net/Http/index.html">System.Net.Http Namespace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../System/Web/Http/index.html">System.Web.Http Namespace</a></li>
 </ul>
@@ -235,7 +234,9 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dd><dl class="constructor">
 <dt>
 <code class="descname">Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.XmlDataContractSerializerOutputFormatter()</code></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">XmlDataContractSerializerOutputFormatter</span><span class="p">()</span>
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.yml)
+with default XmlWriterSettings</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="nf">XmlDataContractSerializerOutputFormatter</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -243,7 +244,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.XmlDataContractSerializerOutputFormatter">
 <code class="descname">XmlDataContractSerializerOutputFormatter</code><span class="sig-paren">(</span><em>System.Xml.XmlWriterSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.XmlDataContractSerializerOutputFormatter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Initializes a new instance of [Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter](Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.yml)</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -268,11 +270,13 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.SerializerSettings">
 <code class="descname">SerializerSettings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.SerializerSettings" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the [System.Runtime.Serialization.DataContractSerializerSettings]() used to configure the
+[System.Runtime.Serialization.DataContractSerializer]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Runtime.Serialization.DataContractSerializerSettings</td>
 </tr>
 </tbody>
 </table>
@@ -284,11 +288,13 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.WrapperProviderFactories">
 <code class="descname">WrapperProviderFactories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.WrapperProviderFactories" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the list of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml) to
+provide the wrapping type for serialization.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory}</td>
 </tr>
 </tbody>
 </table>
@@ -300,11 +306,12 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.WriterSettings">
 <code class="descname">WriterSettings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.WriterSettings" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the settings to be used by the XmlWriter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Xml.XmlWriterSettings</td>
 </tr>
 </tbody>
 </table>
@@ -332,7 +339,7 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Boolean</p>
 </td>
 </tr>
 </tbody>
@@ -345,7 +352,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.CreateSerializer">
 <code class="descname">CreateSerializer</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.CreateSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Create a new instance of [System.Runtime.Serialization.DataContractSerializer]() for the given object type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -354,7 +362,10 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Runtime.Serialization.DataContractSerializer</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new instance of [System.Runtime.Serialization.DataContractSerializer]()</p>
 </td>
 </tr>
 </tbody>
@@ -367,7 +378,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.CreateXmlWriter">
 <code class="descname">CreateXmlWriter</code><span class="sig-paren">(</span><em>System.IO.Stream</em>, <em>System.Xml.XmlWriterSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.CreateXmlWriter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new instance of [System.Xml.XmlWriter]() using the given stream and the [Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.WriterSettings](Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -377,7 +389,10 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Xml.XmlWriter</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new instance of [System.Xml.XmlWriter]()</p>
 </td>
 </tr>
 </tbody>
@@ -390,7 +405,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.GetCachedSerializer">
 <code class="descname">GetCachedSerializer</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.GetCachedSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the cached serializer or creates and caches the serializer for the given type.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -399,7 +415,10 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Runtime.Serialization.DataContractSerializer</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The [System.Runtime.Serialization.DataContractSerializer]() instance.</p>
 </td>
 </tr>
 </tbody>
@@ -412,7 +431,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.GetSerializableType">
 <code class="descname">GetSerializableType</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.GetSerializableType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the type to be serialized.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -421,7 +441,10 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Type</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The original or wrapped type provided by any [Microsoft.AspNet.Mvc.Xml.IWrapperProvider](Microsoft.AspNet.Mvc.Xml.IWrapperProvider.yml)s.</p>
 </td>
 </tr>
 </tbody>
@@ -434,7 +457,8 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.ResolveType">
 <code class="descname">ResolveType</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.Xml.XmlDataContractSerializerOutputFormatter.ResolveType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the type of the object to be serialized.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -444,7 +468,10 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">System.Type</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The type of the object to be serialized.</p>
 </td>
 </tr>
 </tbody>
@@ -466,7 +493,7 @@ to XML using [System.Runtime.Serialization.DataContractSerializer]()</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">System.Threading.Tasks.Task</p>
 </td>
 </tr>
 </tbody>

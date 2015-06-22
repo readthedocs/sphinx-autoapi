@@ -23,6 +23,7 @@ Stores an [Microsoft.AspNet.Mvc.Routing.ActionSelectionDecisionTree](Microsoft.A
 
 
 
+
 Syntax
 ------
 
@@ -55,11 +56,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider](Microsoft.AspNet.Mvc.IActionDescriptorsCollectionProvider.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Routing.IActionSelectionDecisionTree
     
         
         .. code-block:: csharp

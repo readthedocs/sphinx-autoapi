@@ -156,11 +156,15 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.CacheProfile.Duration">
 <code class="descname">Duration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.CacheProfile.Duration" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the duration in seconds for which the response is cached.
+If this property is set to a non null value,
+the &#8220;max-age&#8221; in &#8220;Cache-control&#8221; header is set in the
+&#64;!:Microsoft.AspNet.Http.HttpContext.Response-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Int32}</td>
 </tr>
 </tbody>
 </table>
@@ -172,11 +176,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.CacheProfile.Location">
 <code class="descname">Location</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.CacheProfile.Location" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the location where the data from a particular URL must be cached.
+If this property is set to a non null value,
+the &#8220;Cache-control&#8221; header is set in the &#64;!:Microsoft.AspNet.Http.HttpContext.Response-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{Microsoft.AspNet.Mvc.ResponseCacheLocation}</td>
 </tr>
 </tbody>
 </table>
@@ -188,11 +195,17 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.CacheProfile.NoStore">
 <code class="descname">NoStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.CacheProfile.NoStore" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value which determines whether the data should be stored or not.
+When set to
+&lt;see langword=&#8221;true&#8221; /&gt;, it sets &#8220;Cache-control&#8221; header in
+&#64;!:Microsoft.AspNet.Http.HttpContext.Response- to &#8220;no-store&#8221;.
+Ignores the &#8220;Location&#8221; parameter for values other than &#8220;None&#8221;.
+Ignores the &#8220;Duration&#8221; parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Nullable{System.Boolean}</td>
 </tr>
 </tbody>
 </table>
@@ -204,11 +217,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.CacheProfile.VaryByHeader">
 <code class="descname">VaryByHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.CacheProfile.VaryByHeader" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets or sets the value for the Vary header in &#64;!:Microsoft.AspNet.Http.HttpContext.Response-.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.String</td>
 </tr>
 </tbody>
 </table>

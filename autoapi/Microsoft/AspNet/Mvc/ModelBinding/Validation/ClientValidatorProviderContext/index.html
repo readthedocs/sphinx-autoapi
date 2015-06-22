@@ -157,7 +157,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ClientValidatorProviderContext">
 <code class="descname">ClientValidatorProviderContext</code><span class="sig-paren">(</span><em>Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ClientValidatorProviderContext" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext](Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -182,11 +183,12 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ModelMetadata">
 <code class="descname">ModelMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ModelMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata](Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata.yml).</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata</td>
 </tr>
 </tbody>
 </table>
@@ -198,11 +200,12 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ValidatorMetadata">
 <code class="descname">ValidatorMetadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.ValidatorMetadata" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the validator metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -214,11 +217,15 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.Validators">
 <code class="descname">Validators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext.Validators" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the list of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator.yml) instances. [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.yml)
+instances should add validators to this list when
+[Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.GetValidators(Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientValidatorProviderContext)](Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidatorProvider.yml)
+is called.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelValidator}</td>
 </tr>
 </tbody>
 </table>

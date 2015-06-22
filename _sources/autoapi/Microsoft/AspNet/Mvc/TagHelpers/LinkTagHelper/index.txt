@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`TagHelper`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
         :param logger: The
@@ -92,11 +92,10 @@ Properties
     
         
     
-        
-        
+        Value indicating if file version should be appended to the href urls.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Boolean}
     
         
         .. code-block:: csharp
@@ -106,7 +105,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.Cache
     
         
-        :rtype: 
+        :rtype: IMemoryCache
     
         
         .. code-block:: csharp
@@ -117,11 +116,10 @@ Properties
     
         
     
-        
-        
+        The URL of a CSS stylesheet to fallback to in the case the primary one fails.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -132,11 +130,13 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of CSS stylesheets to exclude from the fallback list, in
+        the case the primary one fails.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -147,11 +147,12 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of CSS stylesheets to fallback to in the case the primary
+        one fails.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -162,11 +163,12 @@ Properties
     
         
     
-        
-        
+        The class name defined in the stylesheet to use for the fallback test.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+        and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -177,11 +179,12 @@ Properties
     
         
     
-        
-        
+        The CSS property name to use for the fallback test.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestValue](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+        and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -192,11 +195,12 @@ Properties
     
         
     
-        
-        
+        The CSS property value to use for the fallback test.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestClass](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) and [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackTestProperty](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml),
+        and either [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHref](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml) or [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.FallbackHrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -206,7 +210,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.GlobbingUrlBuilder
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.GlobbingUrlBuilder
     
         
         .. code-block:: csharp
@@ -216,7 +220,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HostingEnvironment
     
         
-        :rtype: 
+        :rtype: IHostingEnvironment
     
         
         .. code-block:: csharp
@@ -227,11 +231,10 @@ Properties
     
         
     
-        
-        
+        Address of the linked resource.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -242,11 +245,12 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of CSS stylesheets to exclude from loading.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
+        Must be used in conjunction with [Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HrefInclude](Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.yml).
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -257,11 +261,11 @@ Properties
     
         
     
-        
-        
+        A comma separated list of globbed file patterns of CSS stylesheets to load.
+        The glob patterns are assessed relative to the application's 'webroot' setting.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -271,7 +275,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.HtmlEncoder
     
         
-        :rtype: 
+        :rtype: IHtmlEncoder
     
         
         .. code-block:: csharp
@@ -281,7 +285,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.JavaScriptEncoder
     
         
-        :rtype: 
+        :rtype: IJavaScriptStringEncoder
     
         
         .. code-block:: csharp
@@ -291,7 +295,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.Logger
     
         
-        :rtype: 
+        :rtype: ILogger{Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper}
     
         
         .. code-block:: csharp
@@ -301,7 +305,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.TagHelpers.LinkTagHelper.ViewContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ViewContext
     
         
         .. code-block:: csharp

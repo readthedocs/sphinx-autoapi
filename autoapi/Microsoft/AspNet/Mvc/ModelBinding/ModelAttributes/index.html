@@ -158,7 +158,8 @@
 <dd><dl class="constructor">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.ModelAttributes">
 <code class="descname">ModelAttributes</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;System.Object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.ModelAttributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a [System.Type]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -177,7 +178,8 @@
 <dl class="constructor">
 <dt>
 <code class="descname">ModelAttributes</code><span class="sig-paren">(</span><em>System.Collections.Generic.IEnumerable&lt;System.Object&gt;</em>, <em>System.Collections.Generic.IEnumerable&lt;System.Object&gt;</em><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) for a property.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -203,11 +205,13 @@
 <dd><dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.Attributes">
 <code class="descname">Attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.Attributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the set of all attributes. If this instance represents the attributes for a property, the attributes
+on the property definition are before those on the property&#8217;s [System.Type]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -219,11 +223,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.PropertyAttributes">
 <code class="descname">PropertyAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.PropertyAttributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the set of attributes on the property, or
+&lt;c&gt;null&lt;/c&gt; if this instance represents the attributes
+for a [System.Type]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -235,11 +242,14 @@
 <dl class="property">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.TypeAttributes">
 <code class="descname">TypeAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.TypeAttributes" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the set of attributes on the [System.Type](). If this instance represents a property,
+then [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.TypeAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) contains attributes retrieved from
+[System.Reflection.PropertyInfo.PropertyType]().</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">System.Collections.Generic.IReadOnlyList{System.Object}</td>
 </tr>
 </tbody>
 </table>
@@ -257,7 +267,9 @@
 <dd><dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.GetAttributesForProperty">
 <code class="descname">GetAttributesForProperty</code><span class="sig-paren">(</span><em>System.Type</em>, <em>System.Reflection.PropertyInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.GetAttributesForProperty" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the attributes for the given
+&lt;paramref name=&#8221;property&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -282,7 +294,9 @@
 </tr>
 <tr class="field-odd field"><th class="field-name">type property:</th><td class="field-body">System.Reflection.PropertyInfo</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the property.</td>
 </tr>
 </tbody>
 </table>
@@ -294,7 +308,9 @@
 <dl class="method">
 <dt id="Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.GetAttributesForType">
 <code class="descname">GetAttributesForType</code><span class="sig-paren">(</span><em>System.Type</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.GetAttributesForType" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Gets the attributes for the given
+&lt;paramref name=&#8221;type&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -303,7 +319,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A [Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes](Microsoft.AspNet.Mvc.ModelBinding.ModelAttributes.yml) instance with the attributes of the [System.Type]().</p>
 </td>
 </tr>
 </tbody>

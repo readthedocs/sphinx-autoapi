@@ -19,6 +19,7 @@ It does not write the BOM and also does not close the stream.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -97,7 +98,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.Encoding
     
         
-        :rtype: 
+        :rtype: System.Text.Encoding
     
         
         .. code-block:: csharp
@@ -135,7 +136,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.HttpResponseStreamWriter.FlushAsync()
     
         
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -184,7 +185,7 @@ Methods
         
         :param value: 
         :type value: System.Char
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -200,7 +201,7 @@ Methods
         :type index: System.Int32
         :param count: 
         :type count: System.Int32
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp
@@ -212,7 +213,7 @@ Methods
         
         :param value: 
         :type value: System.String
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

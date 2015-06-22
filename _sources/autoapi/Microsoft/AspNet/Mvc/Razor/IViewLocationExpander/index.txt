@@ -23,6 +23,7 @@ determine search paths for a view.
 
 
 
+
 Syntax
 ------
 
@@ -55,8 +56,7 @@ Methods
     
         
     
-        
-        
+        Invoked by a [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) to determine potential locations for a view.
     
         
         :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location
@@ -64,7 +64,8 @@ Methods
         :type context: Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext
         :param viewLocations: The sequence of view locations to expand.
         :type viewLocations: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{System.String}
+        :return: A list of expanded view locations.
     
         
         .. code-block:: csharp
@@ -75,8 +76,9 @@ Methods
     
         
     
-        
-        
+        Invoked by a [Microsoft.AspNet.Mvc.Razor.RazorViewEngine](Microsoft.AspNet.Mvc.Razor.RazorViewEngine.yml) to determine the values that would be consumed by this instance
+        of [Microsoft.AspNet.Mvc.Razor.IViewLocationExpander](Microsoft.AspNet.Mvc.Razor.IViewLocationExpander.yml). The calculated values are used to determine if the view location
+        has changed since the last time it was located.
     
         
         :param context: The [Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext](Microsoft.AspNet.Mvc.Razor.ViewLocationExpanderContext.yml) for the current view location

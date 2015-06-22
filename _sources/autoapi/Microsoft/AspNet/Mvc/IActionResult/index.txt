@@ -17,6 +17,7 @@ IActionResult Interface
 
 
 
+
 Syntax
 ------
 
@@ -50,7 +51,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
     
         
         .. code-block:: csharp

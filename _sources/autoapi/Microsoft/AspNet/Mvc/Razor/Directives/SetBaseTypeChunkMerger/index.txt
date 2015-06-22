@@ -18,6 +18,7 @@ A [Microsoft.AspNet.Mvc.Razor.Directives.IChunkMerger](Microsoft.AspNet.Mvc.Razo
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger](Microsoft.AspNet.Mvc.Razor.Directives.SetBaseTypeChunkMerger.yml).
     
         
         :param modelType: 

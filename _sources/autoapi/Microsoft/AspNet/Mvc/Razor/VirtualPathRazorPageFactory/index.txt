@@ -19,6 +19,7 @@ from razor files in the file system.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -82,7 +83,7 @@ Methods
         
         :param relativePath: 
         :type relativePath: System.String
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.IRazorPage
     
         
         .. code-block:: csharp

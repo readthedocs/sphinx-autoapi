@@ -18,6 +18,7 @@ Static creation methods for [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttrib
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,15 +60,14 @@ Methods
     
         
     
-        
-        
+        Creates an [Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1](Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes`1.yml)/
     
         
         :param mode: 
         :type mode: TMode
         :param attributes: 
         :type attributes: System.Collections.Generic.IEnumerable{System.String}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.TagHelpers.Internal.ModeAttributes{{TMode}}
     
         
         .. code-block:: csharp

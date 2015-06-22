@@ -20,6 +20,7 @@ helpers from
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`RazorParser`
@@ -61,8 +62,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.MvcRazorParser](Microsoft.AspNet.Mvc.Razor.MvcRazorParser.yml).
     
         
         :param parser: The @!:RazorParser- to copy properties from.
@@ -96,7 +96,7 @@ Methods
         :type documentRoot: Block
         :param errorSink: 
         :type errorSink: ErrorSink
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{TagHelperDescriptor}
     
         
         .. code-block:: csharp

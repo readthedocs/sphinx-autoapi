@@ -26,6 +26,7 @@ This has no impact when used without WebAPI action overloading.
 
 
 
+
 Syntax
 ------
 
@@ -57,7 +58,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.IOptionalBinderMetadata.IsOptional
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

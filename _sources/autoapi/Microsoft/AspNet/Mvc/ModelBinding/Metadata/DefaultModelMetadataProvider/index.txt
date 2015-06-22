@@ -18,6 +18,7 @@ A default implementation of [Microsoft.AspNet.Mvc.ModelBinding.IModelMetadataPro
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider.yml).
     
         
         :param detailsProvider: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider.yml).
@@ -83,11 +83,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider](Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider.yml).
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ICompositeMetadataDetailsProvider
     
         
         .. code-block:: csharp
@@ -106,13 +105,13 @@ Methods
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() from a [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml).
     
         
         :param entry: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml) entry with cached data.
         :type entry: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
+        :return: A new [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() instance.
     
         
         .. code-block:: csharp
@@ -123,13 +122,14 @@ Methods
     
         
     
-        
-        
+        Creates the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml) entries for the properties of a model
+        [System.Type]().
     
         
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() identifying the model [System.Type]().
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails[]
+        :return: A details object for each property of the model [System.Type]().
     
         
         .. code-block:: csharp
@@ -140,13 +140,13 @@ Methods
     
         
     
-        
-        
+        Creates the [Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails](Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails.yml) entry for a model [System.Type]().
     
         
         :param key: The [Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity]() identifying the model [System.Type]().
         :type key: Microsoft.AspNet.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.Metadata.DefaultMetadataDetails
+        :return: A details object for the model [System.Type]().
     
         
         .. code-block:: csharp
@@ -158,7 +158,7 @@ Methods
         
         :param modelType: 
         :type modelType: System.Type
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata}
     
         
         .. code-block:: csharp
@@ -170,7 +170,7 @@ Methods
         
         :param modelType: 
         :type modelType: System.Type
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp

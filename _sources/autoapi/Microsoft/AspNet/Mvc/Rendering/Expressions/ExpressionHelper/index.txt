@@ -13,6 +13,7 @@ ExpressionHelper Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.LambdaExpression
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -67,7 +68,7 @@ Methods
         
         :param expression: 
         :type expression: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -79,7 +80,7 @@ Methods
         
         :param expression: 
         :type expression: System.Linq.Expressions.Expression
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

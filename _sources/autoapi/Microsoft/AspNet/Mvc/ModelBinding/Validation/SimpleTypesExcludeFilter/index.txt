@@ -18,6 +18,7 @@ Identifies the simple types that the default model binding validation will exclu
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,12 @@ Methods
     
         
     
-        
-        
+        Returns true if the given type is the underlying types that [Microsoft.AspNet.Mvc.ModelBinding.Validation.SimpleTypesExcludeFilter.IsTypeExcluded(System.Type)](Microsoft.AspNet.Mvc.ModelBinding.Validation.SimpleTypesExcludeFilter.yml) will exclude.
     
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -76,13 +76,12 @@ Methods
     
         
     
-        
-        
+        Returns true if the given type will be excluded from the default model validation.
     
         
         :param type: 
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ DataAnnotationsModelValidator Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -72,7 +73,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidator.Attribute
     
         
-        :rtype: 
+        :rtype: System.ComponentModel.DataAnnotations.ValidationAttribute
     
         
         .. code-block:: csharp
@@ -82,7 +83,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsModelValidator.IsRequired
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -102,7 +103,7 @@ Methods
         
         :param validationContext: 
         :type validationContext: Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelValidationResult}
     
         
         .. code-block:: csharp

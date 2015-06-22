@@ -22,6 +22,7 @@ Result type of a [Microsoft.AspNet.Mvc.ViewComponent](Microsoft.AspNet.Mvc.ViewC
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,8 @@ Methods
     
         
     
-        
-        
+        Executes the result of a [Microsoft.AspNet.Mvc.ViewComponent](Microsoft.AspNet.Mvc.ViewComponent.yml) using the specified
+        <paramref name="context" />.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
@@ -70,13 +71,15 @@ Methods
     
         
     
+        Asynchronously executes the result of a [Microsoft.AspNet.Mvc.ViewComponent](Microsoft.AspNet.Mvc.ViewComponent.yml) using the specified
         
-        
+        <paramref name="context" />.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ViewComponentContext](Microsoft.AspNet.Mvc.ViewComponentContext.yml) for the current component execution.
         :type context: Microsoft.AspNet.Mvc.ViewComponentContext
-        :rtype: 
+        :rtype: System.Threading.Tasks.Task
+        :return: A [System.Threading.Tasks.Task]() that represents the asynchronous execution.
     
         
         .. code-block:: csharp

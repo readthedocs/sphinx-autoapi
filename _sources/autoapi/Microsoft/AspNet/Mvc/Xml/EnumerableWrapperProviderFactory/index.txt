@@ -19,6 +19,7 @@ Creates an [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,8 +61,8 @@ Constructors
     
         
     
-        
-        
+        Initializes an [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProviderFactory.yml) with a list
+        [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml).
     
         
         :param wrapperProviderFactories: List of [Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory](Microsoft.AspNet.Mvc.Xml.IWrapperProviderFactory.yml).
@@ -84,13 +85,14 @@ Methods
     
         
     
-        
-        
+        Gets an [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml) for the provided context.
     
         
         :param context: The [Microsoft.AspNet.Mvc.Xml.WrapperProviderContext](Microsoft.AspNet.Mvc.Xml.WrapperProviderContext.yml).
         :type context: Microsoft.AspNet.Mvc.Xml.WrapperProviderContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Xml.IWrapperProvider
+        :return: An instance of [Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider](Microsoft.AspNet.Mvc.Xml.EnumerableWrapperProvider.yml) if the declared type is
+    an interface and implements [System.Collections.Generic.IEnumerable`1]().
     
         
         .. code-block:: csharp

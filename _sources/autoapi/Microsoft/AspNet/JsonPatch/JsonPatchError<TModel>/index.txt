@@ -18,6 +18,7 @@ Captures error message and the related entity and the operation that caused it.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.JsonPatch.JsonPatchError`1](Microsoft.AspNet.JsonPatch.JsonPatchError`1.yml).
     
         
         :param affectedObject: The object that is affected by the error.
@@ -87,11 +87,10 @@ Properties
     
         
     
-        
-        
+        Gets the object that is affected by the error.
     
         
-        :rtype: 
+        :rtype: TModel
     
         
         .. code-block:: csharp
@@ -102,11 +101,10 @@ Properties
     
         
     
-        
-        
+        Gets the error message.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -117,11 +115,10 @@ Properties
     
         
     
-        
-        
+        Gets the [Microsoft.AspNet.JsonPatch.Operations.Operation`1](Microsoft.AspNet.JsonPatch.Operations.Operation`1.yml) that caused the error.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}
     
         
         .. code-block:: csharp

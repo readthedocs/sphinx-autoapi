@@ -22,6 +22,7 @@ Defines the contract for merging @!:Chunk- instances from _ViewStart files.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Merges an inherited @!:Chunk- into the @!:ChunkTree-.
     
         
         :param chunkTree: 
@@ -72,8 +72,7 @@ Methods
     
         
     
-        
-        
+        Visits a @!:Chunk- from the @!:ChunkTree- to merge into.
     
         
         :param chunk: A @!:Chunk- from the tree.

@@ -148,7 +148,9 @@
 <dd><dl class="field">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheLocation.Any">
 <code class="descname">Any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheLocation.Any" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">Any</span> <span class="p">=</span> <span class="m">0</span>
+<dd><p>Cached in both proxies and client.
+Sets &#8220;Cache-control&#8221; header to &#8220;public&#8221;.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">Any</span> <span class="p">=</span> <span class="m">0</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -156,7 +158,9 @@
 <dl class="field">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheLocation.Client">
 <code class="descname">Client</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheLocation.Client" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">Client</span> <span class="p">=</span> <span class="m">1</span>
+<dd><p>Cached only in the client.
+Sets &#8220;Cache-control&#8221; header to &#8220;private&#8221;.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">Client</span> <span class="p">=</span> <span class="m">1</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -164,7 +168,8 @@
 <dl class="field">
 <dt id="Microsoft.AspNet.Mvc.ResponseCacheLocation.None">
 <code class="descname">None</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.AspNet.Mvc.ResponseCacheLocation.None" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-csharp"><div class="highlight"><pre><span class="n">None</span> <span class="p">=</span> <span class="m">2</span>
+<dd><p>&#8220;Cache-control&#8221; and &#8220;Pragma&#8221; headers are set to &#8220;no-cache&#8221;.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">None</span> <span class="p">=</span> <span class="m">2</span>
 </pre></div>
 </div>
 </dd></dl>

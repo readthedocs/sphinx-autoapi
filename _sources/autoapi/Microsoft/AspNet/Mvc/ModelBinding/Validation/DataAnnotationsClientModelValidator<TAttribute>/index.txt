@@ -18,6 +18,7 @@ An implementation of [Microsoft.AspNet.Mvc.ModelBinding.Validation.IClientModelV
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Create a new instance of [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).
     
         
         :param attribute: The
@@ -84,11 +84,11 @@ Properties
     
         
     
-        
-        
+        Gets the
+        <typeparamref name="TAttribute" /> instance.
     
         
-        :rtype: 
+        :rtype: TAttribute
     
         
         .. code-block:: csharp
@@ -108,7 +108,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp
@@ -119,14 +119,14 @@ Methods
     
         
     
-        
-        
+        Gets the error message formatted using the [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.Attribute](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).
     
         
         :param modelMetadata: The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() associated with the model annotated with
     [Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.Attribute](Microsoft.AspNet.Mvc.ModelBinding.Validation.DataAnnotationsClientModelValidator`1.yml).
         :type modelMetadata: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
-        :rtype: 
+        :rtype: System.String
+        :return: Formatted error string.
     
         
         .. code-block:: csharp

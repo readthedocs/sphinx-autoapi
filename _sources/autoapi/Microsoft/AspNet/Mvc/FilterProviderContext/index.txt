@@ -13,6 +13,7 @@ FilterProviderContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterProviderContext.ActionContext
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionContext
     
         
         .. code-block:: csharp
@@ -84,7 +85,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.FilterProviderContext.Results
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.FilterItem}
     
         
         .. code-block:: csharp

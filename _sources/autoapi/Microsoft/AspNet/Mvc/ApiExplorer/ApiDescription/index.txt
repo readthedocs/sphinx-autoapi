@@ -18,6 +18,7 @@ Represents an API exposed by this application.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
     
         
     
@@ -81,11 +81,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.ActionDescriptor](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) for this api.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ActionDescriptor
     
         
         .. code-block:: csharp
@@ -96,11 +95,10 @@ Properties
     
         
     
-        
-        
+        The group name for this api.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -111,11 +109,10 @@ Properties
     
         
     
-        
-        
+        The supported HTTP method for this api, or null if all HTTP methods are supported.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -126,11 +123,10 @@ Properties
     
         
     
-        
-        
+        The list of [Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterDescription.yml) for this api.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApiExplorer.ApiParameterDescription}
     
         
         .. code-block:: csharp
@@ -141,11 +137,10 @@ Properties
     
         
     
-        
-        
+        Stores arbitrary metadata properties associated with the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml).
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.Object,System.Object}
     
         
         .. code-block:: csharp
@@ -156,11 +151,10 @@ Properties
     
         
     
-        
-        
+        The relative url path template (relative to application root) for this api.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -171,11 +165,10 @@ Properties
     
         
     
-        
-        
+        The [Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata]() for the [Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.ResponseType](Microsoft.AspNet.Mvc.ApiExplorer.ApiDescription.yml) or null.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.ModelMetadata
     
         
         .. code-block:: csharp
@@ -186,11 +179,10 @@ Properties
     
         
     
-        
-        
+        The CLR data type of the response or null.
     
         
-        :rtype: 
+        :rtype: System.Type
     
         
         .. code-block:: csharp
@@ -201,11 +193,10 @@ Properties
     
         
     
-        
-        
+        A list of possible formats for a response.
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.ApiExplorer.ApiResponseFormat}
     
         
         .. code-block:: csharp

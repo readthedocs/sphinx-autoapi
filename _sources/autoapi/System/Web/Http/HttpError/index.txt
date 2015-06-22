@@ -20,6 +20,7 @@ on the [System.Web.Http.HttpErrorKeys](System.Web.Http.HttpErrorKeys.yml) type.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) class.
     
         
     
@@ -76,8 +76,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) class for
+        <paramref name="modelState" />.
     
         
         :param modelState: The invalid model state to use for error information.
@@ -95,8 +95,8 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) class for
+        <paramref name="exception" />.
     
         
         :param exception: The exception to use for error information.
@@ -114,8 +114,9 @@ Constructors
     
         
     
+        Initializes a new instance of the [System.Web.Http.HttpError](System.Web.Http.HttpError.yml) class containing error message
         
-        
+        <paramref name="message" />.
     
         
         :param message: The error message to associate with this instance.
@@ -138,11 +139,10 @@ Properties
     
         
     
-        
-        
+        The message of the [System.Exception]() if available.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -153,11 +153,10 @@ Properties
     
         
     
-        
-        
+        The type of the [System.Exception]() if available.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -168,11 +167,10 @@ Properties
     
         
     
-        
-        
+        The inner [System.Exception]() associated with this instance if available.
     
         
-        :rtype: 
+        :rtype: System.Web.Http.HttpError
     
         
         .. code-block:: csharp
@@ -183,11 +181,13 @@ Properties
     
         
     
-        
-        
+        The high-level, user-visible message explaining the cause of the error. Information carried in this field
+        should be considered public in that it will go over the wire regardless of the value of error detail
+        policy. As a result care should be taken not to disclose sensitive information about the server or the
+        application.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -198,11 +198,10 @@ Properties
     
         
     
-        
-        
+        A detailed description of the error intended for the developer to understand exactly what failed.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -213,11 +212,10 @@ Properties
     
         
     
-        
-        
+        The [System.Web.Http.HttpError.ModelState](System.Web.Http.HttpError.yml) containing information about the errors that occurred during model binding.
     
         
-        :rtype: 
+        :rtype: System.Web.Http.HttpError
     
         
         .. code-block:: csharp
@@ -228,11 +226,10 @@ Properties
     
         
     
-        
-        
+        The stack trace information associated with this instance if available.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -251,13 +248,13 @@ Methods
     
         
     
-        
-        
+        Gets a particular property value from this error instance.
     
         
         :param key: The name of the error property.
         :type key: System.String
-        :rtype: 
+        :rtype: TValue
+        :return: The value of the error property.
     
         
         .. code-block:: csharp
@@ -267,7 +264,7 @@ Methods
     .. dn:method:: System.Web.Http.HttpError.System.Xml.Serialization.IXmlSerializable.GetSchema()
     
         
-        :rtype: 
+        :rtype: System.Xml.Schema.XmlSchema
     
         
         .. code-block:: csharp

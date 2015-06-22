@@ -13,6 +13,7 @@ ModelError Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -96,7 +97,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelError.ErrorMessage
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.ModelError.Exception
     
         
-        :rtype: 
+        :rtype: System.Exception
     
         
         .. code-block:: csharp

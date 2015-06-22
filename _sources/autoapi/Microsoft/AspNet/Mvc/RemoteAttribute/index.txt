@@ -19,6 +19,7 @@ web site. The invoked action should return JSON indicating whether the value is 
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
     
@@ -76,8 +76,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
         :param routeName: The route name used when generating the URL where client should send a validation request.
@@ -92,8 +91,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
         :param action: The action name used when generating the URL where client should send a validation request.
@@ -110,8 +108,7 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of the [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) class.
     
         
         :param action: The action name used when generating the URL where client should send a validation request.
@@ -139,11 +136,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the comma-separated names of fields the client should include in a validation request.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -154,11 +150,13 @@ Properties
     
         
     
-        
-        
+        Gets or sets the HTTP method (
+        <c>"Get"</c> or
+        <c>"Post"</c>) client should use when sending a validation
+        request.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -169,11 +167,11 @@ Properties
     
         
     
-        
-        
+        Gets the @!:RouteValueDictionary- used when generating the URL where client should send a
+        validation request.
     
         
-        :rtype: 
+        :rtype: RouteValueDictionary
     
         
         .. code-block:: csharp
@@ -184,11 +182,10 @@ Properties
     
         
     
-        
-        
+        Gets or sets the route name used when generating the URL where client should send a validation request.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -207,13 +204,14 @@ Methods
     
         
     
-        
-        
+        Formats
+        <paramref name="property" /> and [Microsoft.AspNet.Mvc.RemoteAttribute.AdditionalFields](Microsoft.AspNet.Mvc.RemoteAttribute.yml) for use in generated HTML.
     
         
         :param property: Name of the property associated with this [Microsoft.AspNet.Mvc.RemoteAttribute](Microsoft.AspNet.Mvc.RemoteAttribute.yml) instance.
         :type property: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: Comma-separated names of fields the client should include in a validation request.
     
         
         .. code-block:: csharp
@@ -225,7 +223,7 @@ Methods
         
         :param name: 
         :type name: System.String
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -236,13 +234,14 @@ Methods
     
         
     
-        
-        
+        Formats
+        <paramref name="property" /> for use in generated HTML.
     
         
         :param property: One field name the client should include in a validation request.
         :type property: System.String
-        :rtype: 
+        :rtype: System.String
+        :return: Name of a field the client should include in a validation request.
     
         
         .. code-block:: csharp
@@ -254,7 +253,7 @@ Methods
         
         :param context: 
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IEnumerable{Microsoft.AspNet.Mvc.ModelBinding.Validation.ModelClientValidationRule}
     
         
         .. code-block:: csharp
@@ -265,13 +264,13 @@ Methods
     
         
     
-        
-        
+        Returns the URL where the client should send a validation request.
     
         
         :param context: The [Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext]() used to generate the URL.
         :type context: Microsoft.AspNet.Mvc.ModelBinding.Validation.ClientModelValidationContext
-        :rtype: 
+        :rtype: System.String
+        :return: The URL where the client should send a validation request.
     
         
         .. code-block:: csharp
@@ -283,7 +282,7 @@ Methods
         
         :param value: 
         :type value: System.Object
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

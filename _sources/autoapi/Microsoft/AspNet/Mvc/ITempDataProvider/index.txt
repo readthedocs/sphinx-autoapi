@@ -22,6 +22,7 @@ Defines the contract for temporary-data providers that store data that is viewed
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Loads the temporary data.
     
         
         :param context: The @!:HttpContext-.
         :type context: HttpContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,System.Object}
+        :return: The temporary data.
     
         
         .. code-block:: csharp
@@ -71,8 +72,7 @@ Methods
     
         
     
-        
-        
+        Saves the temporary data.
     
         
         :param context: The @!:HttpContext-.

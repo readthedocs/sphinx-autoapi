@@ -13,6 +13,7 @@ BindingBehaviorAttribute Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -73,7 +74,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ModelBinding.BindingBehaviorAttribute.Behavior
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.ModelBinding.BindingBehavior
     
         
         .. code-block:: csharp

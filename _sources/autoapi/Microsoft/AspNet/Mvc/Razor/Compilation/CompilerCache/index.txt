@@ -18,6 +18,7 @@ Caches the result of runtime compilation of Razor files for the duration of the 
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,9 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCache](Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCache.yml) populated with precompiled views
+        discovered using
+        <paramref name="provider" />.
     
         
         :param assemblyProvider: The [Microsoft.AspNet.Mvc.IAssemblyProvider]() that provides assemblies
@@ -91,7 +93,7 @@ Methods
         :type relativePath: System.String
         :param compile: 
         :type compile: System.Func{Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo,Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult}
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilerCacheResult
     
         
         .. code-block:: csharp

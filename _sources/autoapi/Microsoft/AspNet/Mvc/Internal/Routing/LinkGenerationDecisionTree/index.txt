@@ -13,6 +13,7 @@ LinkGenerationDecisionTree Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Methods
         
         :param context: 
         :type context: VirtualPathContext
-        :rtype: 
+        :rtype: System.Collections.Generic.IList{Microsoft.AspNet.Mvc.Internal.Routing.LinkGenerationMatch}
     
         
         .. code-block:: csharp

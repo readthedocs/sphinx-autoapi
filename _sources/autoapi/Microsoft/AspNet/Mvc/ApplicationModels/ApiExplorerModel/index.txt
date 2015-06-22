@@ -18,6 +18,7 @@ A model for ApiExplorer properties associated with a controller or action.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,8 +60,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml).
     
         
     
@@ -73,8 +73,8 @@ Constructors
     
         
     
-        
-        
+        Creates a new [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) with properties copied from
+        <paramref name="other" />.
     
         
         :param other: The [Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel](Microsoft.AspNet.Mvc.ApplicationModels.ApiExplorerModel.yml) to copy.
@@ -97,11 +97,13 @@ Properties
     
         
     
+        The value for
+        <c>APIExplorer.ApiDescription.GroupName</c> of
         
-        
+        <c>APIExplorer.ApiDescription</c> objects created for the associated controller or action.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -112,11 +114,13 @@ Properties
     
         
     
-        
-        
+        If
+        <c>true</c>,
+        <c>APIExplorer.ApiDescription</c> objects will be created for the associated
+        controller or action.
     
         
-        :rtype: 
+        :rtype: System.Nullable{System.Boolean}
     
         
         .. code-block:: csharp

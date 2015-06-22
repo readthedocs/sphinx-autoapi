@@ -18,6 +18,7 @@ Computes precedence for an attribute route template.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,7 +61,7 @@ Methods
         
         :param template: 
         :type template: RouteTemplate
-        :rtype: 
+        :rtype: System.Decimal
     
         
         .. code-block:: csharp

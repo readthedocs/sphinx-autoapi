@@ -19,6 +19,7 @@ executed will produce a UnsupportedMediaType (415) response.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -62,8 +63,7 @@ Constructors
     
         
     
-        
-        
+        Creates a new instance of [Microsoft.AspNet.Mvc.UnsupportedMediaTypeResult](Microsoft.AspNet.Mvc.UnsupportedMediaTypeResult.yml).
     
         
     

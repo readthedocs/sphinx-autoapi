@@ -13,6 +13,7 @@ ActionInvokerFactory Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -74,7 +75,7 @@ Methods
         
         :param actionContext: 
         :type actionContext: Microsoft.AspNet.Mvc.ActionContext
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionInvoker
     
         
         .. code-block:: csharp

@@ -22,6 +22,7 @@ Represents state of models which are bound using body.
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,8 @@ Fields
     
         
     
-        
-        
+        Represents if there is a [Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Form](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) that
+        has been found during the current model binding process.
     
         
     
@@ -68,8 +69,8 @@ Fields
     
         
     
-        
-        
+        Represents if there is a [Microsoft.AspNet.Mvc.ModelBinding.BindingSource.Body](Microsoft.AspNet.Mvc.ModelBinding.BindingSource.yml) that
+        has been found during the current model binding process.
     
         
     
@@ -82,8 +83,8 @@ Fields
     
         
     
-        
-        
+        Represents if there has been no metadata found which needs to read the body during the current
+        model binding process.
     
         
     

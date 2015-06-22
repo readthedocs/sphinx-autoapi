@@ -18,6 +18,7 @@ Provides programmatic configuration for formatter mappings in the MVC framework.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,11 +60,11 @@ Properties
     
         
     
-        
-        
+        Used to specify mapping between the URL Format and corresponding
+        @!:Net.Http.Headers.MediaTypeHeaderValue-.
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.FormatterMappings
     
         
         .. code-block:: csharp

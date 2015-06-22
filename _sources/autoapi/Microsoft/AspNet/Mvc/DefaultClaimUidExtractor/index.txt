@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.IClaimUidExtractor](Microsoft.As
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -60,7 +61,7 @@ Methods
         
         :param claimsIdentity: 
         :type claimsIdentity: System.Security.Claims.ClaimsIdentity
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp

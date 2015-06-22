@@ -18,6 +18,7 @@ Name-related extensions for [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microso
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,13 +60,13 @@ Methods
     
         
     
-        
-        
+        Returns the HTML element Id for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :rtype: 
+        :rtype: System.String
+        :return: A [System.String]() containing the element Id.
     
         
         .. code-block:: csharp
@@ -76,13 +77,13 @@ Methods
     
         
     
-        
-        
+        Returns the full HTML element name for the current model.
     
         
         :param htmlHelper: The [Microsoft.AspNet.Mvc.Rendering.IHtmlHelper](Microsoft.AspNet.Mvc.Rendering.IHtmlHelper.yml) instance this method extends.
         :type htmlHelper: Microsoft.AspNet.Mvc.Rendering.IHtmlHelper
-        :rtype: 
+        :rtype: System.String
+        :return: A [System.String]() containing the element name.
     
         
         .. code-block:: csharp

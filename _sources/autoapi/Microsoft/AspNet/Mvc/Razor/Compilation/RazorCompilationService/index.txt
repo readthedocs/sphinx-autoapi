@@ -18,6 +18,7 @@ Default implementation of [Microsoft.AspNet.Mvc.Razor.Compilation.IRazorCompilat
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -83,7 +84,7 @@ Methods
         
         :param file: 
         :type file: Microsoft.AspNet.Mvc.Razor.Compilation.RelativeFileInfo
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Razor.Compilation.CompilationResult
     
         
         .. code-block:: csharp

@@ -13,6 +13,7 @@ HttpRequestMessageHttpContextExtensions Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -55,7 +56,7 @@ Methods
         
         :param httpContext: 
         :type httpContext: HttpContext
-        :rtype: 
+        :rtype: System.Net.Http.HttpRequestMessage
     
         
         .. code-block:: csharp

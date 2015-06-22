@@ -13,6 +13,7 @@ ResultExecutedContext Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -80,7 +81,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.Canceled
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -90,7 +91,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.Controller
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -100,7 +101,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.Exception
     
         
-        :rtype: 
+        :rtype: System.Exception
     
         
         .. code-block:: csharp
@@ -110,7 +111,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.ExceptionDispatchInfo
     
         
-        :rtype: 
+        :rtype: System.Runtime.ExceptionServices.ExceptionDispatchInfo
     
         
         .. code-block:: csharp
@@ -120,7 +121,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.ExceptionHandled
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -130,7 +131,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.ResultExecutedContext.Result
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.IActionResult
     
         
         .. code-block:: csharp

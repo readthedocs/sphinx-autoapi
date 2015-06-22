@@ -13,6 +13,7 @@ ViewComponentMethodSelector Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -83,7 +84,7 @@ Methods
         :type componentType: System.Reflection.TypeInfo
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Reflection.MethodInfo
     
         
         .. code-block:: csharp
@@ -97,7 +98,7 @@ Methods
         :type componentType: System.Reflection.TypeInfo
         :param args: 
         :type args: System.Object[]
-        :rtype: 
+        :rtype: System.Reflection.MethodInfo
     
         
         .. code-block:: csharp

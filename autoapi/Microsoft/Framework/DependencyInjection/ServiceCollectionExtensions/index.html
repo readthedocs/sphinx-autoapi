@@ -156,7 +156,8 @@
 <dd><dl class="method">
 <dt id="Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions.ConfigureRazorViewEngine">
 <code class="descname">ConfigureRazorViewEngine</code><span class="sig-paren">(</span><em>IServiceCollection</em>, <em>System.Action&lt;Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions.ConfigureRazorViewEngine" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Configures a set of [Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions](Microsoft.AspNet.Mvc.Razor.RazorViewEngineOptions.yml) for the application.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -176,7 +177,9 @@
 <dl class="method">
 <dt>
 <code class="descname">Microsoft.Framework.DependencyInjection.ServiceCollectionExtensions.InitializeTagHelper&lt;TTagHelper&gt;(IServiceCollection, System.Action&lt;TTagHelper, Microsoft.AspNet.Mvc.ViewContext&gt;)</code></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Adds an initialization callback for a given
+&lt;typeparamref name=&#8221;TTagHelper&#8221; /&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -199,7 +202,9 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">type initialize:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">System.Action{{TTagHelper},Microsoft.AspNet.Mvc.ViewContext}</td>
 </tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">IServiceCollection</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The &#64;!:IServiceCollection- instance this method extends.</td>
 </tr>
 </tbody>
 </table>

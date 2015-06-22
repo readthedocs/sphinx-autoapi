@@ -17,6 +17,7 @@ IClassifier<TItem> Interface
 
 
 
+
 Syntax
 ------
 
@@ -50,7 +51,7 @@ Methods
         
         :param item: 
         :type item: TItem
-        :rtype: 
+        :rtype: System.Collections.Generic.IDictionary{System.String,Microsoft.AspNet.Mvc.Internal.DecisionTree.DecisionCriterionValue}
     
         
         .. code-block:: csharp
@@ -68,7 +69,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Internal.DecisionTree.IClassifier<TItem>.ValueComparer
     
         
-        :rtype: 
+        :rtype: System.Collections.Generic.IEqualityComparer{System.Object}
     
         
         .. code-block:: csharp

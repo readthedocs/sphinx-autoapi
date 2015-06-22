@@ -18,6 +18,7 @@ Summary
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -59,7 +60,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.ModelBinding.DictionaryModelBinder<TKey, TValue>.CreateEmptyCollection()
     
         
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp
@@ -71,7 +72,7 @@ Methods
         
         :param newCollection: 
         :type newCollection: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
-        :rtype: 
+        :rtype: System.Object
     
         
         .. code-block:: csharp

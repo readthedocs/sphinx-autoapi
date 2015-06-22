@@ -22,6 +22,7 @@ Provides an interface which is used to determine if [System.Type]()s are exclude
 
 
 
+
 Syntax
 ------
 
@@ -54,13 +55,13 @@ Methods
     
         
     
-        
-        
+        Determines if the given type is excluded from validation.
     
         
         :param type: The [System.Type]() for which the check is to be performed.
         :type type: System.Type
-        :rtype: 
+        :rtype: System.Boolean
+        :return: True if the type is to be excluded. False otherwise.
     
         
         .. code-block:: csharp

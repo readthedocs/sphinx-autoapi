@@ -18,6 +18,7 @@ Provides programmatic configuration for the anti-forgery token system.
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -76,11 +77,11 @@ Properties
     
         
     
-        
-        
+        Specifies the name of the cookie that is used by the anti-forgery
+        system.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -91,11 +92,10 @@ Properties
     
         
     
-        
-        
+        Specifies the name of the anti-forgery token field that is used by the anti-forgery system.
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -106,11 +106,12 @@ Properties
     
         
     
-        
-        
+        Specifies whether SSL is required for the anti-forgery system
+        to operate. If this setting is 'true' and a non-SSL request
+        comes into the system, all anti-forgery APIs will fail.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp
@@ -121,11 +122,13 @@ Properties
     
         
     
-        
-        
+        Specifies whether to suppress the generation of X-Frame-Options header
+        which is used to prevent ClickJacking. By default, the X-Frame-Options
+        header is generated with the value SAMEORIGIN. If this setting is 'true',
+        the X-Frame-Options header will not be generated for the response.
     
         
-        :rtype: 
+        :rtype: System.Boolean
     
         
         .. code-block:: csharp

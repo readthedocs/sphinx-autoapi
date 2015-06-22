@@ -13,6 +13,7 @@ HtmlString Class
 
 
 
+
 Inheritance Hierarchy
 ---------------------
 * :dn:cls:`System.Object`
@@ -54,11 +55,11 @@ Constructors
     
         
     
-        
-        
+        Initializes a new instance of [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) that is backed by
+        <paramref name="writer" />.
     
         
-        :param writer: 
+        :param writer: None
         :type writer: Microsoft.AspNet.Mvc.Rendering.StringCollectionTextWriter
     
         
@@ -88,7 +89,7 @@ Properties
     .. dn:property:: Microsoft.AspNet.Mvc.Rendering.HtmlString.Empty
     
         
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.HtmlString
     
         
         .. code-block:: csharp
@@ -106,7 +107,7 @@ Methods
     .. dn:method:: Microsoft.AspNet.Mvc.Rendering.HtmlString.ToString()
     
         
-        :rtype: 
+        :rtype: System.String
     
         
         .. code-block:: csharp
@@ -117,8 +118,8 @@ Methods
     
         
     
-        
-        
+        Writes the value in this instance of [Microsoft.AspNet.Mvc.Rendering.HtmlString](Microsoft.AspNet.Mvc.Rendering.HtmlString.yml) to the target
+        <paramref name="targetWriter" />.
     
         
         :param targetWriter: The [System.IO.TextWriter]() to write contents to.

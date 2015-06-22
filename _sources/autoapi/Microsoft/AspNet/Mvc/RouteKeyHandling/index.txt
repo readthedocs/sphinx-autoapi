@@ -17,6 +17,7 @@ RouteKeyHandling Enum
 
 
 
+
 Syntax
 ------
 
@@ -49,8 +50,9 @@ Fields
     
         
     
-        
-        
+        Requires that the key will be in the route values, but ignore the content.
+        Constraints with this value are considered less important than ones with
+        [Microsoft.AspNet.Mvc.RouteKeyHandling.RequireKey](Microsoft.AspNet.Mvc.RouteKeyHandling.yml)
     
         
     
@@ -63,8 +65,7 @@ Fields
     
         
     
-        
-        
+        Requires that the key will not be in the route values.
     
         
     
@@ -77,8 +78,7 @@ Fields
     
         
     
-        
-        
+        Requires that the key will be in the route values, and that the content matches.
     
         
     

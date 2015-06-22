@@ -22,6 +22,7 @@ Defines methods to create [Microsoft.AspNet.Mvc.Razor.RazorView](Microsoft.AspNe
 
 
 
+
 Syntax
 ------
 
@@ -54,8 +55,7 @@ Methods
     
         
     
-        
-        
+        Creates a [Microsoft.AspNet.Mvc.Razor.RazorView](Microsoft.AspNet.Mvc.Razor.RazorView.yml) providing it with the [Microsoft.AspNet.Mvc.Razor.IRazorPage](Microsoft.AspNet.Mvc.Razor.IRazorPage.yml) to execute.
     
         
         :param viewEngine: The [Microsoft.AspNet.Mvc.Razor.IRazorViewEngine](Microsoft.AspNet.Mvc.Razor.IRazorViewEngine.yml) that was used to locate Layout pages
@@ -66,7 +66,9 @@ Methods
         :type page: Microsoft.AspNet.Mvc.Razor.IRazorPage
         :param isPartial: Determines if the view is to be executed as a partial.
         :type isPartial: System.Boolean
-        :rtype: 
+        :rtype: Microsoft.AspNet.Mvc.Rendering.IView
+        :return: A [Microsoft.AspNet.Mvc.Rendering.IView]() instance that renders the contents of the
+    <paramref name="page" />
     
         
         .. code-block:: csharp
