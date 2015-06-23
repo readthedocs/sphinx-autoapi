@@ -3,91 +3,55 @@ import shutil
 import subprocess as sp
 import unittest
 
-__author__ = 'swenson'
+from sphinx.application import Sphinx
 
 
 class LanguageIntegrationTests(unittest.TestCase):
 
-    def test_full_py(self):
-        os.chdir('tests/pyexample')
-        try:
-            if os.path.exists('_build'):
-                shutil.rmtree('_build')
-            os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
+    tests = (
+        (
+            'pyexample',
+            '_build/text/autoapi/example/index.txt',
+            'Compute the square root of x and return it'
+        ),
+        (
+            'jsexample',
+            '_build/text/autoapi/Circle/index.txt',
+            'Creates an instance of Circle'
+        ),
+        (
+            'goexample',
+            '_build/text/autoapi/main/index.txt',
+            'CopyFuncs produces a json-annotated array of Func objects'
+        ),
+        (
+            'dotnetexample',
+            '_build/text/autoapi/Microsoft/CodeAnalysis/AdhocWorkspace/index.txt',
+            'A workspace that allows full manipulation of projects and documents'
+        ),
+        (
+            'templateexample',
+            '_build/text/autoapi/example/index.txt',
+            'This is a fuction template override'
+        ),
+    )
 
-            with open('_build/text/autoapi/example/index.txt') as fin:
-                text = fin.read().strip()
-            self.assertIn('Compute the square root of x and return it.', text)
-        finally:
-            os.chdir('../..')
-
-    def test_full_js(self):
-        os.chdir('tests/jsexample')
-        try:
-            if os.path.exists('_build'):
-                shutil.rmtree('_build')
-            os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
-
-            with open('_build/text/autoapi/Circle/index.txt') as fin:
-                text = fin.read().strip()
-                self.assertIn('Creates an instance of Circle', text)
-        finally:
-            os.chdir('../..')
-
-    def test_full_go(self):
-        os.chdir('tests/goexample')
-        try:
-            if os.path.exists('_build'):
-                shutil.rmtree('_build')
-            os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
-
-            with open('_build/text/autoapi/main/index.txt') as fin:
-                text = fin.read().strip()
-                self.assertIn(
-                    'CopyFuncs produces a json-annotated array of Func objects',
-                    text
+    def test_basic_integration(self):
+        for test_dir, test_file, test_string in self.tests:
+            os.chdir('tests/{0}'.format(test_dir))
+            try:
+                app = Sphinx(
+                    srcdir='.',
+                    confdir='.',
+                    outdir='_build/text',
+                    doctreedir='_build/.doctrees',
+                    buildername='text',
                 )
-        finally:
-            os.chdir('../..')
-
-    def test_full_dotnet(self):
-        os.chdir('tests/dotnetexample')
-        try:
-            if os.path.exists('_build'):
+                app.build(force_all=True)
+                with open(test_file) as fin:
+                    text = fin.read().strip()
+                    self.assertIn(test_string, text)
+            finally:
                 shutil.rmtree('_build')
-            os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
+                os.chdir('../..')
 
-            with open('_build/text/autoapi/Microsoft/CodeAnalysis/AdhocWorkspace/index.txt') as fin:
-                text = fin.read().strip()
-                self.assertIn(
-                    'A workspace that allows full manipulation of projects and documents',
-                    text
-                )
-        finally:
-            os.chdir('../..')
-
-
-class FeatureIntegrationTests(unittest.TestCase):
-
-    def test_template_override(self):
-        """
-        Test that we are overriding the template properly.
-
-        This uses the ``template_overrides/python/function.rst`` template to override content.
-        """
-        os.chdir('tests/templateexample')
-        try:
-            if os.path.exists('_build'):
-                shutil.rmtree('_build')
-            os.mkdir('_build')
-            sp.check_call('sphinx-build -b text -d _build/doctrees . _build/text', shell=True)
-
-            with open('_build/text/autoapi/example/index.txt') as fin:
-                text = fin.read().strip()
-                self.assertIn('This is a fuction template override!', text)
-        finally:
-            os.chdir('../..')
