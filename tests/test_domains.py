@@ -82,6 +82,7 @@ class DomainTests(unittest.TestCase):
         with nested(
                 patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find),
                 patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read),
+                patch('subprocess.check_output', lambda foo: foo),
         ):
             dom = dotnet.DotNetSphinxMapper(self.application)
             dom.load('', '', '')
