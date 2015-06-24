@@ -1,0 +1,297 @@
+[
+    {
+        "comment": "/**\n * Creates an instance of Circle.\n *\n * @constructor\n * @this {Circle}\n * @param {number} r The desired radius of the circle.\n */",
+        "kind": "class",
+        "description": "Creates an instance of Circle.",
+        "this": "{Circle}",
+        "see": [],
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                134,
+                251
+            ],
+            "code": {
+                "node": "<Object>",
+                "paramnames": [
+                    "r"
+                ],
+                "type": "function",
+                "id": "astnode194706439",
+                "name": "Circle"
+            },
+            "lineno": 8,
+            "filename": "jsdoc-example.js"
+        },
+        "params": [
+            {
+                "description": "The desired radius of the circle.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined",
+                "name": "r"
+            }
+        ],
+        "longname": "Circle",
+        "scope": "global",
+        "name": "Circle"
+    },
+    {
+        "comment": "/** @private */",
+        "kind": "member",
+        "name": "radius",
+        "memberof": "{Circle}",
+        "access": "private",
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                175,
+                190
+            ],
+            "code": {
+                "node": "<Object>",
+                "type": "NAME",
+                "id": "astnode1413378318",
+                "value": "r",
+                "name": "this.radius"
+            },
+            "lineno": 9,
+            "filename": "jsdoc-example.js"
+        },
+        "longname": "{Circle}#radius",
+        "scope": "instance"
+    },
+    {
+        "comment": "/** @private */",
+        "kind": "member",
+        "name": "circumference",
+        "memberof": "{Circle}",
+        "access": "private",
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                212,
+                248
+            ],
+            "code": {
+                "node": "<Object>",
+                "type": "MUL",
+                "id": "astnode1157058691",
+                "value": "MUL",
+                "name": "this.circumference"
+            },
+            "lineno": 10,
+            "filename": "jsdoc-example.js"
+        },
+        "longname": "{Circle}#circumference",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n * Creates a new Circle from a diameter.\n *\n * @param {number} d The desired diameter of the circle.\n * @return {Circle} The new Circle object.\n */",
+        "kind": "function",
+        "description": "Creates a new Circle from a diameter.",
+        "memberof": "Circle",
+        "returns": [
+            {
+                "description": "The new Circle object.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "Circle"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined"
+            }
+        ],
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                406,
+                474
+            ],
+            "code": {
+                "node": "<Object>",
+                "paramnames": [
+                    "d"
+                ],
+                "name": "Circle.fromDiameter",
+                "value": "FUNCTION",
+                "type": "FUNCTION",
+                "id": "astnode398110318"
+            },
+            "lineno": 19,
+            "filename": "jsdoc-example.js"
+        },
+        "params": [
+            {
+                "description": "The desired diameter of the circle.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined",
+                "name": "d"
+            }
+        ],
+        "longname": "Circle.fromDiameter",
+        "scope": "static",
+        "name": "fromDiameter"
+    },
+    {
+        "comment": "/**\n * Calculates the circumference of the Circle.\n *\n * @deprecated\n * @this {Circle}\n * @return {number} The circumference of the circle.\n */",
+        "kind": "function",
+        "description": "Calculates the circumference of the Circle.",
+        "this": "{Circle}",
+        "deprecated": true,
+        "longname": "Circle#calculateCircumference",
+        "returns": [
+            {
+                "description": "The circumference of the circle.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined"
+            }
+        ],
+        "see": [],
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                622,
+                717
+            ],
+            "code": {
+                "node": "<Object>",
+                "paramnames": [],
+                "name": "Circle.prototype.calculateCircumference",
+                "value": "FUNCTION",
+                "type": "FUNCTION",
+                "id": "astnode1582785598"
+            },
+            "lineno": 30,
+            "filename": "jsdoc-example.js"
+        },
+        "memberof": "Circle",
+        "scope": "instance",
+        "name": "calculateCircumference"
+    },
+    {
+        "comment": "/**\n * Returns the pre-computed circumference of the Circle.\n *\n * @this {Circle}\n * @return {number} The circumference of the circle.\n */",
+        "kind": "function",
+        "description": "Returns the pre-computed circumference of the Circle.",
+        "this": "{Circle}",
+        "memberof": "Circle",
+        "returns": [
+            {
+                "description": "The circumference of the circle.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined"
+            }
+        ],
+        "see": [],
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                860,
+                942
+            ],
+            "code": {
+                "node": "<Object>",
+                "paramnames": [],
+                "name": "Circle.prototype.getCircumference",
+                "value": "FUNCTION",
+                "type": "FUNCTION",
+                "id": "astnode2134991632"
+            },
+            "lineno": 40,
+            "filename": "jsdoc-example.js"
+        },
+        "longname": "Circle#getCircumference",
+        "scope": "instance",
+        "name": "getCircumference"
+    },
+    {
+        "comment": "/**\n * Find a String representation of the Circle.\n *\n * @override\n * @this {Circle}\n * @return {string} Human-readable representation of this Circle.\n */",
+        "kind": "function",
+        "description": "Find a String representation of the Circle.",
+        "tags": [
+            {
+                "originalTitle": "override",
+                "text": "",
+                "title": "override"
+            }
+        ],
+        "this": "{Circle}",
+        "memberof": "Circle",
+        "returns": [
+            {
+                "description": "Human-readable representation of this Circle.",
+                "nullable": "undefined",
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "defaultvalue": "undefined",
+                "variable": "undefined",
+                "optional": "undefined"
+            }
+        ],
+        "see": [],
+        "meta": {
+            "path": "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example",
+            "range": [
+                1101,
+                1210
+            ],
+            "code": {
+                "node": "<Object>",
+                "paramnames": [],
+                "name": "Circle.prototype.toString",
+                "value": "FUNCTION",
+                "type": "FUNCTION",
+                "id": "astnode1822383117"
+            },
+            "lineno": 51,
+            "filename": "jsdoc-example.js"
+        },
+        "longname": "Circle#toString",
+        "scope": "instance",
+        "name": "toString"
+    },
+    {
+        "files": [
+            "/Users/eric/projects/sphinx-autoapi/tests/jsexample/example/jsdoc-example.js"
+        ],
+        "kind": "package",
+        "description": "undefined",
+        "version": "undefined",
+        "longname": "package:undefined",
+        "licenses": "undefined",
+        "name": "undefined"
+    }
+]

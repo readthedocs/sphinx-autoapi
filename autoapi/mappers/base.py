@@ -120,15 +120,6 @@ class SphinxMapperBase(object):
 
     '''
 
-    # Mapping of {filepath -> raw data}
-    paths = OrderedDict()
-    # Mapping of {object id -> Python Object}
-    objects = OrderedDict()
-    # Mapping of {namespace id -> Python Object}
-    namespaces = OrderedDict()
-    # Mapping of {namespace id -> Python Object}
-    top_level_objects = OrderedDict()
-
     def __init__(self, app, template_dir=None):
         self.app = app
 
@@ -144,6 +135,15 @@ class SphinxMapperBase(object):
             # trim_blocks=True,
             # lstrip_blocks=True,
         )
+
+        # Mapping of {filepath -> raw data}
+        self.paths = OrderedDict()
+        # Mapping of {object id -> Python Object}
+        self.objects = OrderedDict()
+        # Mapping of {namespace id -> Python Object}
+        self.namespaces = OrderedDict()
+        # Mapping of {namespace id -> Python Object}
+        self.top_level_objects = OrderedDict()
 
     def load(self, pattern, dir, ignore=[]):
         '''
