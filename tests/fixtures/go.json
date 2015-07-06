@@ -1,0 +1,100 @@
+{
+    "funcs": [
+        {
+            "name": "CopyFuncs",
+            "doc": "CopyFuncs produces a json-annotated array of Func objects from an array of GoDoc Func objects.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "recv": "",
+            "orig": ""
+        },
+        {
+            "name": "CopyValues",
+            "doc": "CopyValues produces a json-annotated array of Value objects from an array of GoDoc Value objects.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "recv": "",
+            "orig": ""
+        }
+    ],
+    "name": "main",
+    "vars": [],
+    "doc": "",
+    "notes": {},
+    "bugs": null,
+    "filenames": [
+        "example/godocjson.go"
+    ],
+    "importPath": "example",
+    "consts": [],
+    "imports": [
+        "encoding/json",
+        "fmt",
+        "go/doc",
+        "go/parser",
+        "go/token",
+        "os"
+    ],
+    "type": "package",
+    "types": [
+        {
+            "funcs": [],
+            "name": "Func",
+            "vars": [],
+            "doc": "Func represents a function declaration.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "consts": [],
+            "methods": []
+        },
+        {
+            "funcs": [],
+            "name": "Note",
+            "vars": [],
+            "doc": "Note represents a note comment.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "consts": [],
+            "methods": []
+        },
+        {
+            "funcs": [
+                {
+                    "name": "CopyPackage",
+                    "doc": "CopyPackage produces a json-annotated Package object from a GoDoc Package object.\n",
+                    "packageName": "main",
+                    "packageImportPath": "example",
+                    "recv": "",
+                    "orig": ""
+                }
+            ],
+            "name": "Package",
+            "vars": [],
+            "doc": "Package represents a package declaration.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "consts": [],
+            "methods": []
+        },
+        {
+            "funcs": [],
+            "name": "Type",
+            "vars": [],
+            "doc": "Type represents a type declaration.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "consts": [],
+            "methods": []
+        },
+        {
+            "funcs": [],
+            "name": "Value",
+            "vars": [],
+            "doc": "Value represents a value declaration.\n",
+            "packageName": "main",
+            "packageImportPath": "example",
+            "consts": [],
+            "methods": []
+        }
+    ]
+}

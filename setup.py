@@ -7,6 +7,8 @@ try:
             'epyparse',
             'epydoc',
             'sphinx',
+            'sphinxcontrib-golangdomain',
+            'sphinxcontrib-dotnetdomain',
         ],
         test_suite='nose.collector',
         tests_require=['nose', 'mock'],
@@ -19,6 +21,8 @@ except ImportError:
             'epyparse',
             'epydoc',
             'sphinx'
+            'sphinxcontrib-golangdomain',
+            'sphinxcontrib-dotnetdomain',
         ],
     )
 
