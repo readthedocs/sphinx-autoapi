@@ -51,7 +51,7 @@ def run_autoapi(app):
     domain = mapping[app.config.autoapi_type]
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
-    if app.config.autoapi_file_pattern:
+    if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_pattern
     else:
         file_patterns = default_file_mapping[app.config.autoapi_type]
@@ -111,7 +111,7 @@ def setup(app):
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
-    app.add_config_value('autoapi_file_pattern', None, 'html')
+    app.add_config_value('autoapi_file_patterns', None, 'html')
     app.add_config_value('autoapi_dir', 'autoapi', 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
