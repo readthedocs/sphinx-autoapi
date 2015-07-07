@@ -79,6 +79,7 @@ def doctree_read(app, doctree):
                 (None, u'%s/index' % app.config.autoapi_root)
             )
             nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
+            app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
 
 
 def setup(app):

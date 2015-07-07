@@ -95,3 +95,13 @@ class IntegrationTests(LanguageIntegrationTests):
             '_build/text/autoapi/example/index.txt',
             'This is a fuction template override'
         )
+
+
+class TOCTreeTests(LanguageIntegrationTests):
+
+    def test_toctree_overrides(self):
+        self._run_test(
+            'toctreeexample',
+            '_build/text/index.txt',
+            'AutoAPI Index'
+        )
