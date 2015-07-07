@@ -24,6 +24,14 @@ def run_autoapi(app):
         print "You must configure an autodapi_dir setting."
         return
 
+    # Make sure the paths are full
+    if os.path.isabs(app.config.autoapi_dir):
+        normalized_dir = app.config.autoapi_dir
+    else:
+        normalized_dir = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_dir))
+
+    normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
+
     app.env.autoapi_data = []
 
     mapping = {
@@ -33,13 +41,25 @@ def run_autoapi(app):
         'javascript': JavaScriptSphinxMapper,
     }
 
+    default_file_mapping = {
+        'python': ['*.py'],
+        'dotnet': ['project.json', '*.csproj'],
+        'go': ['*.go'],
+        'javascript': ['*.js'],
+    }
+
     domain = mapping[app.config.autoapi_type]
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
+    if app.config.autoapi_file_pattern:
+        file_patterns = app.config.autoapi_file_pattern
+    else:
+        file_patterns = default_file_mapping[app.config.autoapi_type]
+
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
-        pattern=app.config.autoapi_file_pattern,
-        dir=os.path.normpath(app.config.autoapi_dir),
+        patterns=file_patterns,
+        dir=normalized_dir,
         ignore=app.config.autoapi_ignore,
     )
 
@@ -48,7 +68,7 @@ def run_autoapi(app):
 
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
-        root=app.config.autoapi_root,
+        root=normalized_root,
         # TODO: Better way to determine suffix?
         source_suffix=app.config.source_suffix[0],
     )
@@ -56,9 +76,10 @@ def run_autoapi(app):
 
 def build_finished(app, exception):
     if not app.config.autoapi_keep_files:
+        normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
         if app.verbosity > 1:
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
-        shutil.rmtree(app.config.autoapi_root)
+        shutil.rmtree(normalized_root)
 
 
 def doctree_read(app, doctree):
@@ -90,7 +111,7 @@ def setup(app):
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
-    app.add_config_value('autoapi_file_pattern', '*', 'html')
+    app.add_config_value('autoapi_file_pattern', None, 'html')
     app.add_config_value('autoapi_dir', 'autoapi', 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')

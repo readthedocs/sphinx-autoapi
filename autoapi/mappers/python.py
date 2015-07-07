@@ -29,6 +29,8 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         except TypeError:
             self.app.warn('Error reading file: {0}'.format(path))
+        except ImportError:
+            self.app.warn('Error reading file: {0}'.format(path))
         return None
 
     def create_class(self, data, options=None, **kwargs):
