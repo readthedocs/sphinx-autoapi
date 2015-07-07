@@ -76,7 +76,7 @@ Then add it to your Sphinx project's ``conf.py``:
 	autoapi_type = 'go'
 	autoapi_dir = 'path/to/go/files'
 
-AutoAPI will automatically add itself to the last TocTREE in your top-level ``index.rst``.
+AutoAPI will automatically add itself to the last TOCTree in your top-level ``index.rst``.
 
 This is needed because we will be outputting rst files into the ``autoapi`` directory.
 This adds it into the global TOCTree for your project,
