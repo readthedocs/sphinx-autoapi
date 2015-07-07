@@ -72,7 +72,7 @@ def doctree_read(app, doctree):
             for entry in node['entries']:
                 all_docs.add(entry[1])
         for doc in all_docs:
-            if app.config.autoapi_root in doc:
+            if doc.find(app.config.autoapi_root) != -1:
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
             nodes[-1]['entries'].append(
