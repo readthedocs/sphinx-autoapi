@@ -19,6 +19,3 @@ extensions = ['autoapi.extension']
 autoapi_type = 'python'
 autoapi_dir = 'example'
 autoapi_file_pattern = '*.py'
-autoapi_template_dir = 'template_overrides'
-
-exclude_patterns = [autoapi_template_dir]
