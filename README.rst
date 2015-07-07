@@ -31,14 +31,13 @@ Contents
 
    config
    templates
-   design
 
 .. toctree::
    :caption: API
    :glob:
    :maxdepth: 2
 
-   autoapi/index
+   design
 
 Basic Workflow
 --------------

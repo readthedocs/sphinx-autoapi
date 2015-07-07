@@ -4,23 +4,15 @@ Sphinx Auto-API Top-level Extension.
 
 This extension allows you to automagically generate API documentation from your project.
 """
-
 import os
-import fnmatch
 import shutil
 
 from sphinx.util.console import darkgreen, bold
+from sphinx.addnodes import toctree
 
 from .mappers import DotNetSphinxMapper, PythonSphinxMapper, GoSphinxMapper, JavaScriptSphinxMapper
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
-
-
-def ignore_file(app, filename):
-    for pat in app.config.autoapi_ignore:
-        if fnmatch.fnmatch(filename, pat):
-            return True
-    return False
 
 
 def run_autoapi(app):
@@ -69,15 +61,37 @@ def build_finished(app, exception):
         shutil.rmtree(app.config.autoapi_root)
 
 
+def doctree_read(app, doctree):
+    all_docs = set()
+    insert = True
+    if app.env.docname == 'index':
+        nodes = doctree.traverse(toctree)
+        if not nodes:
+            return
+        for node in nodes:
+            for entry in node['entries']:
+                all_docs.add(entry[1])
+        for doc in all_docs:
+            if app.config.autoapi_root in doc:
+                insert = False
+        if insert and app.config.autoapi_add_toctree_entry:
+            nodes[-1]['entries'].append(
+                (None, u'%s/index' % app.config.autoapi_root)
+            )
+            nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
+
+
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
+    app.connect('doctree-read', doctree_read)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
     app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
     app.add_config_value('autoapi_file_pattern', '*', 'html')
-    app.add_config_value('autoapi_dir', '', 'html')
+    app.add_config_value('autoapi_dir', 'autoapi', 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
+    app.add_config_value('autoapi_add_toctree_entry', True, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
