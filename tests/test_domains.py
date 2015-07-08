@@ -71,7 +71,7 @@ class DomainTests(unittest.TestCase):
         '''Test basic get objects'''
         objs = []
 
-        def _mock_find(self, pattern, **kwargs):
+        def _mock_find(self, patterns, **kwargs):
             return {'items': ['foo', 'bar']}
 
         def _mock_read(self, path):

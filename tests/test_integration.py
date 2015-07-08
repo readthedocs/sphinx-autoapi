@@ -73,7 +73,7 @@ class DotNetTests(LanguageIntegrationTests):
         return json.load(open('../fixtures/dotnet.json'))
 
     # Mock this because it's slow otherwise
-    def _dotnet_load(self, pattern, dir, ignore=[]):
+    def _dotnet_load(self, patterns, dir, ignore=[]):
         data = self.read_file(path='inmem')
         self.paths['inmem'] = data
 
@@ -94,4 +94,14 @@ class IntegrationTests(LanguageIntegrationTests):
             'templateexample',
             '_build/text/autoapi/example/index.txt',
             'This is a fuction template override'
+        )
+
+
+class TOCTreeTests(LanguageIntegrationTests):
+
+    def test_toctree_overrides(self):
+        self._run_test(
+            'toctreeexample',
+            '_build/text/index.txt',
+            'AutoAPI Index'
         )

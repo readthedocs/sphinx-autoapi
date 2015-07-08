@@ -13,7 +13,7 @@ class GoSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    def load(self, pattern, dir, ignore=[]):
+    def load(self, patterns, dir, ignore=[]):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 

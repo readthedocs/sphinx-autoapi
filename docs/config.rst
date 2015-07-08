@@ -24,6 +24,12 @@ Configuration Options
 
         You can see the existing files in the `autoapi/templates`_ directory.
 
+.. confval:: autoapi_file_patterns
+
+	Default: ``Varies by Language``
+
+        A list containing the file patterns to look for when generating documentation. Python for example is ``['*.py']``.
+
 Customization Options
 ---------------------
 

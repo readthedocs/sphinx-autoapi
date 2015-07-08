@@ -60,7 +60,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         )
         try:
             cls = obj_map[data['kind']]
-        except KeyError:
+        except (KeyError, TypeError):
             self.app.warn('Unknown Type: %s' % data)
         else:
             # Recurse for children
