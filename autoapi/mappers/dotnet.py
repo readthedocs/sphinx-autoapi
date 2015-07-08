@@ -25,7 +25,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
-        for path in self.find_files(patterns=['project.json'], dir=dir, ignore=ignore):
+        for path in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
             subprocess.check_output(['BuildMeta', '/target:Build', path])
         # We now have yaml files
         for xdoc_path in self.find_files(patterns=['*.yml'], dir='xdoc', ignore=ignore):
