@@ -43,7 +43,7 @@ def run_autoapi(app):
 
     default_file_mapping = {
         'python': ['*.py'],
-        'dotnet': ['project.json', '*.csproj'],
+        'dotnet': ['project.json', '*.csproj', '*.vbproj'],
         'go': ['*.go'],
         'javascript': ['*.js'],
     }
