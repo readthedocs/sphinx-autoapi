@@ -1,6 +1,6 @@
 import os
-from collections import defaultdict
 import subprocess
+from collections import defaultdict
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -26,9 +26,20 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         '''
         for path in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
-            subprocess.check_output(['BuildMeta', '/target:Build', path])
+            try:
+                proc = subprocess.Popen(
+                    ['docfx', 'metadata', '--raw', path],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    env=dict((key, os.environ[key])
+                              for key in ['PATH', 'DNX_PATH', 'HOME']))
+                _, error_output = proc.communicate()
+                if error_output:
+                    self.app.warn(error_output)
+            except (OSError, subprocess.CalledProcessError) as e:
+                self.app.warn('Error generating metadata: {0}'.format(e))
         # We now have yaml files
-        for xdoc_path in self.find_files(patterns=['*.yml'], dir='xdoc', ignore=ignore):
+        for xdoc_path in self.find_files(patterns=['*.yml'], dir='_api_', ignore=ignore):
             data = self.read_file(path=xdoc_path)
             if data:
                 self.paths[xdoc_path] = data
