@@ -11,6 +11,7 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 
 from .mappers import DotNetSphinxMapper, PythonSphinxMapper, GoSphinxMapper, JavaScriptSphinxMapper
+from .settings import default_file_mapping, default_ignore_patterns
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -41,13 +42,6 @@ def run_autoapi(app):
         'javascript': JavaScriptSphinxMapper,
     }
 
-    default_file_mapping = {
-        'python': ['*.py'],
-        'dotnet': ['project.json', '*.csproj', '*.vbproj'],
-        'go': ['*.go'],
-        'javascript': ['*.js'],
-    }
-
     domain = mapping[app.config.autoapi_type]
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
@@ -56,11 +50,16 @@ def run_autoapi(app):
     else:
         file_patterns = default_file_mapping[app.config.autoapi_type]
 
+    if app.config.autoapi_ignore:
+        ignore_patterns = app.config.autoapi_ignore
+    else:
+        ignore_patterns = default_ignore_patterns[app.config.autoapi_type]
+
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
         patterns=file_patterns,
         dir=normalized_dir,
-        ignore=app.config.autoapi_ignore,
+        ignore=ignore_patterns,
     )
 
     app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
@@ -109,7 +108,7 @@ def setup(app):
     app.connect('doctree-read', doctree_read)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', 'autoapi', 'html')
-    app.add_config_value('autoapi_ignore', ['*migrations*'], 'html')
+    app.add_config_value('autoapi_ignore', [], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
     app.add_config_value('autoapi_file_patterns', None, 'html')
     app.add_config_value('autoapi_dir', 'autoapi', 'html')
