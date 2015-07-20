@@ -164,7 +164,7 @@ class SphinxMapperBase(object):
 
                     # Skip ignored files
                     for ignore_pattern in ignore:
-                        if fnmatch.fnmatch(filename, ignore_pattern):
+                        if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
                             self.app.info("Ignoring %s/%s" % (root, filename))
                             skip = True
 
