@@ -18,5 +18,5 @@ htmlhelp_basename = 'dotnetexampledoc'
 extensions = ['autoapi.extension', 'sphinxcontrib.dotnetdomain']
 
 autoapi_type = 'dotnet'
-autoapi_dir = 'example/corefx/src'
+autoapi_dir = 'example/mvc/src'
 autoapi_ignore = ['*toc.yml', '*index.yml', '*tests*tests*']
