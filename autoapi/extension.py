@@ -48,12 +48,12 @@ def run_autoapi(app):
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_pattern
     else:
-        file_patterns = default_file_mapping[app.config.autoapi_type]
+        file_patterns = default_file_mapping.get(app.config.autoapi_type, [])
 
     if app.config.autoapi_ignore:
         ignore_patterns = app.config.autoapi_ignore
     else:
-        ignore_patterns = default_ignore_patterns[app.config.autoapi_type]
+        ignore_patterns = default_ignore_patterns.get(app.config.autoapi_type, [])
 
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
