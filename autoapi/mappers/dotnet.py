@@ -1,6 +1,7 @@
+from collections import defaultdict
 import os
 import subprocess
-from collections import defaultdict
+import traceback
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -33,7 +34,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
                     stderr=subprocess.PIPE,
                     env=dict((key, os.environ[key])
                              for key in ['PATH', 'DNX_PATH', 'HOME']
-                             if key in os.environ))
+                             if key in os.environ),
+                )
                 _, error_output = proc.communicate()
                 if error_output:
                     self.app.warn(error_output)
@@ -210,9 +212,9 @@ class DotNetPythonMapper(PythonMapperBase):
         if syntax is not None:
             # Code example
             try:
-                self.example = syntax['content']['CSharp']
-            except KeyError:
-                pass
+                self.example = syntax['content']
+            except (KeyError, TypeError):
+                traceback.print_exc()
 
             self.parameters = []
             for param in syntax.get('parameters', []):
