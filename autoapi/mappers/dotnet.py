@@ -29,7 +29,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         for path in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
             try:
                 proc = subprocess.Popen(
-                    ['docfx', 'metadata', '--raw', path],
+                    ['docfx', 'metadata', '--raw', '--force', path],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     env=dict((key, os.environ[key])
@@ -135,7 +135,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
             if namespace is not None:
                 ns_obj = self.top_namespaces.get(namespace)
                 if ns_obj is None or type(ns_obj) != DotNetNamespace:
-                    print "Adding Namespace %s" % namespace
                     for ns_obj in self.create_class({'uid': namespace,
                                                      'type': 'namespace'}):
                         self.top_namespaces[ns_obj.id] = ns_obj

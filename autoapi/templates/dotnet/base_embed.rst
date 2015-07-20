@@ -7,16 +7,20 @@
     {% endif %}
 
     {%- for param in obj.parameters %}
-    :param {{ param.name }}: {{ param.desc }}
+    
+    {% if param.desc %}
+    :param {{ param.name }}: {{ param.desc|indent(8) }}
+    {% endif %}
     {%- if param.type %}
-    :type {{ param.name }}: {{ param.type }}
+    :type {{ param.name }}: {{ param.type|indent(8) }}
     {%- endif %}
     {%- endfor %}
+
     {%- if obj.returns.type %}
-    :rtype: {{ obj.returns.type }}
+    :rtype: {{ obj.returns.type|indent(8) }}
     {%- endif %}
     {%- if obj.returns.description %}
-    :return: {{ obj.returns.description }}
+    :return: {{ obj.returns.description|indent(8) }}
     {%- endif %}
 
     {% if obj.example %}

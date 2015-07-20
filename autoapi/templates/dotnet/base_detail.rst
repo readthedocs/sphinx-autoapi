@@ -28,17 +28,17 @@ Summary
 Inheritance Hierarchy
 ---------------------
 
-    {%- for item in obj.inheritance %}
+{% for item in obj.inheritance %}
 * :dn:{{ item.ref_directive }}:`{{ item.ref_name }}`
     {%- endfor %}
 * :dn:{{ obj.ref_directive }}:`{{ obj.ref_name }}`
-  {%- endif %}
+{% endif %}
 
 {% endblock %}
 
 {% block syntax %}
 
-{%- if obj.example %}
+{% if obj.example %}
 
 Syntax
 ------
@@ -47,7 +47,7 @@ Syntax
 
    {{ obj.example }}
 
-{%- endif %}
+{% endif %}
 
 {% endblock %}
 
@@ -62,8 +62,8 @@ GitHub
 
 .. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
-  {%- macro display_type(item_type) %}
-    {%- if item_type in obj.item_map %}
+{%- for item_type in obj.item_map.keys() %}
+{%- if item_type in obj.item_map %}
 
 {{ item_type.title() }}
 {{ "-" * item_type|length }}
@@ -72,15 +72,11 @@ GitHub
     :noindex:
     :hidden:
 
-      {%- for obj_item in obj.item_map.get(item_type, []) %}
-{% macro render() %}{{ obj_item.render() }}{% endmacro %}
-    {{ render()|indent(4) }}
-      {%- endfor %}
-    {%- endif %}
-  {%- endmacro %}
+    {% for obj_item in obj.item_map.get(item_type, []) %}
+    {{ obj_item.render()|indent(4) }}
+    {% endfor %}
 
-  {%- for item_type in obj.item_map.keys() %}
-{{ display_type(item_type) }}
-  {%- endfor %}
+{%- endif %}
+{%- endfor %}
 
 {% endblock %}

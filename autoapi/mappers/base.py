@@ -3,7 +3,7 @@ import fnmatch
 from collections import OrderedDict
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
-from sphinx.util.console import darkgreen
+from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
 
@@ -165,7 +165,7 @@ class SphinxMapperBase(object):
                     # Skip ignored files
                     for ignore_pattern in ignore:
                         if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
-                            self.app.info("Ignoring %s/%s" % (root, filename))
+                            self.app.info(bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename)))
                             skip = True
 
                     if skip:

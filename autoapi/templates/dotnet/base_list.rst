@@ -22,6 +22,20 @@
 
 {% endif %}
 
+{% if obj.references %}
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   {% for item in obj.references|sort %}
+   {% if item.type != 'namespace' %}
+   /autoapi/{{ item.name.split('.')|join('/') }}/index
+   {% endif %}
+   {% endfor %}
+
+{% endif %}
+
 {% endblock %}
 
 
@@ -34,7 +48,7 @@
 {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.summary }}{% endmacro %}
 
-    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_short_name }}`
+    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_name }}`
         {{ render()|indent(8) }}
 
 {%- endfor %}

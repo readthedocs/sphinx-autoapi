@@ -5,9 +5,3 @@ Welcome to .Net example's documentation!
 
    autoapi/index
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
