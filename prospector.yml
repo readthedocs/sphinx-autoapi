@@ -1,0 +1,20 @@
+strictness: low
+
+test-warnings: false
+doc-warnings: true
+
+pep8:
+    full: true
+    options:
+        max-line-length: 100
+
+pylint:
+  max-line-length: 100
+  disable:
+      - logging-format-interpolation
+
+mccabe:
+  run: false
+
+pep257:
+  run: false

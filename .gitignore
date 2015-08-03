@@ -3,9 +3,10 @@
 *.swp
 .doctrees
 _build_rtd
-docs/_build
+_build
 docs/autoapi
 readthedocs_build
-tests/*/_build
 tests/*/autoapi
 _api_
+.tox
+.eggs
