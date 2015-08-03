@@ -9,9 +9,9 @@ import shutil
 
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
+from sphinx.errors import SphinxError
 
-from .mappers import DotNetSphinxMapper, PythonSphinxMapper, GoSphinxMapper, JavaScriptSphinxMapper
-from .settings import default_file_mapping, default_ignore_patterns
+from .settings import default_file_mapping, default_ignore_patterns, default_backend_mapping
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -22,8 +22,7 @@ def run_autoapi(app):
     """
 
     if not app.config.autoapi_dir:
-        print "You must configure an autodapi_dir setting."
-        return
+        raise SphinxError('You must configure an autodapi_dir setting')
 
     # Make sure the paths are full
     if os.path.isabs(app.config.autoapi_dir):
@@ -31,18 +30,14 @@ def run_autoapi(app):
     else:
         normalized_dir = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_dir))
 
+    if not os.path.exists(normalized_dir):
+        raise SphinxError('AutoAPI Directory not found. Please check your `autoapi_dir` setting.')
+
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
 
     app.env.autoapi_data = []
 
-    mapping = {
-        'python': PythonSphinxMapper,
-        'dotnet': DotNetSphinxMapper,
-        'go': GoSphinxMapper,
-        'javascript': JavaScriptSphinxMapper,
-    }
-
-    domain = mapping[app.config.autoapi_type]
+    domain = default_backend_mapping[app.config.autoapi_type]
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
     if app.config.autoapi_file_patterns:
@@ -79,6 +74,10 @@ def build_finished(app, exception):
         if app.verbosity > 1:
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
         shutil.rmtree(normalized_root)
+
+        mapper = default_backend_mapping[app.config.autoapi_type]
+        if hasattr(mapper, 'build_finished'):
+            mapper.build_finished(app, exception)
 
 
 def doctree_read(app, doctree):

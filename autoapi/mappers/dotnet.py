@@ -2,9 +2,11 @@ from collections import defaultdict
 import os
 import subprocess
 import traceback
+import shutil
 
 import yaml
 from sphinx.util.osutil import ensuredir
+from sphinx.util.console import darkgreen, bold
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -26,21 +28,23 @@ class DotNetSphinxMapper(SphinxMapperBase):
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
-        for path in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
-            try:
-                proc = subprocess.Popen(
-                    ['docfx', 'metadata', '--raw', '--force', path],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    env=dict((key, os.environ[key])
-                             for key in ['PATH', 'DNX_PATH', 'HOME']
-                             if key in os.environ),
-                )
-                _, error_output = proc.communicate()
-                if error_output:
-                    self.app.warn(error_output)
-            except (OSError, subprocess.CalledProcessError) as e:
-                self.app.warn('Error generating metadata: {0}'.format(e))
+        all_files = list(self.find_files(patterns=patterns, dir=dir, ignore=ignore))
+        try:
+            command = ['docfx', 'metadata', '--raw', '--force']
+            command.extend(all_files)
+            proc = subprocess.Popen(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                env=dict((key, os.environ[key])
+                         for key in ['PATH', 'DNX_PATH', 'HOME']
+                         if key in os.environ),
+            )
+            _, error_output = proc.communicate()
+            if error_output:
+                self.app.warn(error_output)
+        except (OSError, subprocess.CalledProcessError) as e:
+            self.app.warn('Error generating metadata: {0}'.format(e))
         # We now have yaml files
         for xdoc_path in self.find_files(patterns=['*.yml'], dir='_api_', ignore=ignore):
             data = self.read_file(path=xdoc_path)
@@ -180,6 +184,12 @@ class DotNetSphinxMapper(SphinxMapperBase):
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
             top_level_file.write(content.render(pages=self.namespaces.values()))
+
+    @staticmethod
+    def build_finished(app, exception):
+        if app.verbosity > 1:
+            app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .yml files'))
+        shutil.rmtree('_api_')
 
 
 class DotNetPythonMapper(PythonMapperBase):
