@@ -23,7 +23,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     top_namespaces = {}
 
-    def load(self, patterns, dir, ignore=[]):
+    def load(self, patterns, dir, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -115,7 +115,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         :param obj: Instance of a .NET object
         '''
         if obj.top_level_object:
-            if type(obj) == DotNetNamespace:
+            if isinstance(obj, DotNetNamespace):
                 self.namespaces[obj.name] = obj
         self.objects[obj.id] = obj
 
@@ -138,7 +138,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             namespace = obj.top_namespace
             if namespace is not None:
                 ns_obj = self.top_namespaces.get(namespace)
-                if ns_obj is None or type(ns_obj) != DotNetNamespace:
+                if ns_obj is None or not isinstance(ns_obj, DotNetNamespace):
                     for ns_obj in self.create_class({'uid': namespace,
                                                      'type': 'namespace'}):
                         self.top_namespaces[ns_obj.id] = ns_obj

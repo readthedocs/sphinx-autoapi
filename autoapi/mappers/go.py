@@ -13,7 +13,7 @@ class GoSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    def load(self, patterns, dir, ignore=[]):
+    def load(self, patterns, dir, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -84,7 +84,11 @@ class GoSphinxMapper(SphinxMapperBase):
                     for child_data in data.get(child_type, []):
                         obj.children += list(self.create_class(
                             child_data,
-                            _type=child_type.replace('consts', 'const').replace('types', 'type').replace('vars', 'variable').replace('funcs', 'func')
+                            _type=child_type.replace(
+                                'consts', 'const').replace(
+                                'types', 'type').replace(
+                                'vars', 'variable').replace(
+                                'funcs', 'func')
                         ))
                 yield obj
 

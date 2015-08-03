@@ -23,7 +23,8 @@ class PythonMapperBase(object):
 
     Required attributes:
 
-    :var str id: A globally unique indentifier for this object. Generally a fully qualified name, including namespace.
+    :var str id: A globally unique indentifier for this object.
+                 Generally a fully qualified name, including namespace.
     :var str name: A short "display friendly" name for this object.
 
     Optional attributes:
@@ -56,7 +57,7 @@ class PythonMapperBase(object):
         except TemplateNotFound:
             # Use a try/except here so we fallback to language specific defaults, over base defaults
             template = self.jinja_env.get_template(
-                'base/{type}.rst'.format(language=self.language, type=self.type)
+                'base/{type}.rst'.format(type=self.type)
             )
 
         ctx.update(**self.get_context_data())
@@ -121,14 +122,14 @@ class SphinxMapperBase(object):
         from ..settings import TEMPLATE_DIR
         self.app = app
 
-        TEMPLATE_PATHS = [TEMPLATE_DIR]
+        template_paths = [TEMPLATE_DIR]
 
         if template_dir:
             # Put at the front so it's loaded first
-            TEMPLATE_PATHS.insert(0, template_dir)
+            template_paths.insert(0, template_dir)
 
         self.jinja_env = Environment(
-            loader=FileSystemLoader(TEMPLATE_PATHS),
+            loader=FileSystemLoader(template_paths),
             # Kill this to fix rendering for now
             # trim_blocks=True,
             # lstrip_blocks=True,
@@ -143,7 +144,7 @@ class SphinxMapperBase(object):
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dir, ignore=[]):
+    def load(self, patterns, dir, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -154,6 +155,8 @@ class SphinxMapperBase(object):
                 self.paths[path] = data
 
     def find_files(self, patterns, dir, ignore):
+        if not ignore:
+            ignore = []
         files_to_read = []
         for root, dirnames, filenames in os.walk(dir):
             for pattern in patterns:
@@ -163,7 +166,9 @@ class SphinxMapperBase(object):
                     # Skip ignored files
                     for ignore_pattern in ignore:
                         if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
-                            self.app.info(bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename)))
+                            self.app.info(
+                                bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename))
+                            )
                             skip = True
 
                     if skip:
@@ -204,7 +209,7 @@ class SphinxMapperBase(object):
             for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None):
+    def create_class(self, obj, options=None, **kwargs):
         '''
         Create class object.
 
