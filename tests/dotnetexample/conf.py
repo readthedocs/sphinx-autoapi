@@ -21,7 +21,6 @@ autoapi_type = 'dotnet'
 # autoapi_keep_files = True
 
 autoapi_dir = 'example/Identity/src/'
-autoapi_keep_files = True
 
 import os
 
