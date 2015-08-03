@@ -31,7 +31,9 @@ def run_autoapi(app):
         normalized_dir = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_dir))
 
     if not os.path.exists(normalized_dir):
-        raise ExtensionError('AutoAPI Directory not found. Please check your `autoapi_dir` setting.')
+        raise ExtensionError(
+            'AutoAPI Directory not found. Please check your `autoapi_dir` setting.'
+        )
 
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
 
