@@ -24,29 +24,32 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     top_namespaces = {}
 
-    def load(self, patterns, dir, ignore=None):
+    def load(self, patterns, dir, ignore=None, **kwargs):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
+        raise_error = kwargs.get('raise_error', True)
         all_files = list(self.find_files(patterns=patterns, dir=dir, ignore=ignore))
-        try:
-            command = ['docfx', 'metadata', '--raw', '--force']
-            command.extend(all_files)
-            proc = subprocess.Popen(
-                command,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                env=dict((key, os.environ[key])
-                         for key in ['PATH', 'DNX_PATH', 'HOME']
-                         if key in os.environ),
-            )
-            _, error_output = proc.communicate()
-            if error_output:
-                self.app.warn(error_output)
-        except (OSError, subprocess.CalledProcessError) as e:
-            self.app.warn('Error generating metadata: {0}'.format(e))
-            raise ExtensionError('Failure in docfx while generating AutoAPI output.')
+        if all_files:
+            try:
+                command = ['docfx', 'metadata', '--raw', '--force']
+                command.extend(all_files)
+                proc = subprocess.Popen(
+                    command,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    env=dict((key, os.environ[key])
+                             for key in ['PATH', 'DNX_PATH', 'HOME']
+                             if key in os.environ),
+                )
+                _, error_output = proc.communicate()
+                if error_output:
+                    self.app.warn(error_output)
+            except (OSError, subprocess.CalledProcessError) as e:
+                self.app.warn('Error generating metadata: {0}'.format(e))
+                if raise_error:
+                    raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
         for xdoc_path in self.find_files(patterns=['*.yml'], dir='_api_', ignore=ignore):
             data = self.read_file(path=xdoc_path)

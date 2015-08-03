@@ -144,7 +144,7 @@ class SphinxMapperBase(object):
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dir, ignore=None):
+    def load(self, patterns, dir, ignore=None, **kwargs):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
