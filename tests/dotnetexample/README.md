@@ -1,4 +1,4 @@
-## .Net example
+## .NET example
 
 This assumes that you have a ``docfx`` executable on your `PATH`.
 It also depends on the sphinxcontrib-dotnet domain: https://github.com/rtfd/sphinxcontrib-dotnetdomain
