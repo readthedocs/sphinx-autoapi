@@ -7,6 +7,7 @@ import shutil
 import yaml
 from sphinx.util.osutil import ensuredir
 from sphinx.util.console import darkgreen, bold
+from sphinx.errors import ExtensionError
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -45,6 +46,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 self.app.warn(error_output)
         except (OSError, subprocess.CalledProcessError) as e:
             self.app.warn('Error generating metadata: {0}'.format(e))
+            raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
         for xdoc_path in self.find_files(patterns=['*.yml'], dir='_api_', ignore=ignore):
             data = self.read_file(path=xdoc_path)

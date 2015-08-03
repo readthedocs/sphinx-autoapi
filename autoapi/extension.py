@@ -9,7 +9,7 @@ import shutil
 
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
-from sphinx.errors import SphinxError
+from sphinx.errors import ExtensionError
 
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 
@@ -22,7 +22,7 @@ def run_autoapi(app):
     """
 
     if not app.config.autoapi_dir:
-        raise SphinxError('You must configure an autodapi_dir setting')
+        raise ExtensionError('You must configure an autodapi_dir setting')
 
     # Make sure the paths are full
     if os.path.isabs(app.config.autoapi_dir):
@@ -31,7 +31,7 @@ def run_autoapi(app):
         normalized_dir = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_dir))
 
     if not os.path.exists(normalized_dir):
-        raise SphinxError('AutoAPI Directory not found. Please check your `autoapi_dir` setting.')
+        raise ExtensionError('AutoAPI Directory not found. Please check your `autoapi_dir` setting.')
 
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
 
