@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-from epyparse import parsed
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -19,8 +18,7 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         :param path: Path of file to read
         '''
-        # TODO support JSON here
-        # TODO sphinx way of reporting errors in logs?
+        from epyparse import parsed
 
         try:
             parsed_data = parsed(path)

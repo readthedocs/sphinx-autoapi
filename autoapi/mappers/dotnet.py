@@ -30,7 +30,10 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         '''
         raise_error = kwargs.get('raise_error', True)
-        all_files = list(self.find_files(patterns=patterns, dir=dir, ignore=ignore))
+        all_files = set()
+        for _file in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
+            # Iterating for Sphinx output clarify
+            all_files.add(_file)
         if all_files:
             try:
                 command = ['docfx', 'metadata', '--raw', '--force']
@@ -155,7 +158,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             _recurse_ns(obj)
 
         # Clean out dead namespaces
-        for key, ns in self.top_namespaces.items():
+        for key, ns in self.top_namespaces.copy().items():
             if len(ns.children) == 0:
                 del self.top_namespaces[key]
 
@@ -181,14 +184,14 @@ class DotNetSphinxMapper(SphinxMapperBase):
             detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
-            with open(path, 'w+') as detail_file:
+            with open(path, 'wb+') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
-        with open(top_level_index, 'w+') as top_level_file:
+        with open(top_level_index, 'wb+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=self.namespaces.values()))
+            top_level_file.write(content.render(pages=self.namespaces.values()).encode('utf-8'))
 
     @staticmethod
     def build_finished(app, exception):
