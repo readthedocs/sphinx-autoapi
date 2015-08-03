@@ -8,3 +8,4 @@ docs/autoapi
 readthedocs_build
 tests/*/_build
 tests/*/autoapi
+_api_

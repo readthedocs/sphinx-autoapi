@@ -7,9 +7,6 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
 
-from ..settings import TEMPLATE_DIR
-
-
 class PythonMapperBase(object):
 
     '''
@@ -121,6 +118,7 @@ class SphinxMapperBase(object):
     '''
 
     def __init__(self, app, template_dir=None):
+        from ..settings import TEMPLATE_DIR
         self.app = app
 
         TEMPLATE_PATHS = [TEMPLATE_DIR]

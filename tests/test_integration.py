@@ -77,8 +77,13 @@ class DotNetTests(LanguageIntegrationTests):
         data = self.read_file(path='inmem')
         self.paths['inmem'] = data
 
+    @staticmethod
+    def _dotnet_finished(app, exception):
+        pass
+
     @patch('autoapi.mappers.dotnet.DotNetSphinxMapper.load', _dotnet_load)
     @patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _dotnet_read)
+    @patch('autoapi.mappers.dotnet.DotNetSphinxMapper.build_finished', _dotnet_finished)
     def test_integration(self):
         self._run_test(
             'dotnetexample',
