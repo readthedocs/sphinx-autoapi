@@ -39,7 +39,7 @@ class GoSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options=None, _type=None):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Go data
 
         Data keys handled here:
@@ -53,6 +53,7 @@ class GoSphinxMapper(SphinxMapperBase):
 
         :param data: dictionary data from godocjson output
         '''
+        _type = kwargs.get('_type')
         obj_map = dict(
             (cls.type, cls) for cls
             in ALL_CLASSES

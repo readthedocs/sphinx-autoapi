@@ -11,7 +11,7 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import SphinxError
 
-from .settings import default_file_mapping, default_ignore_patterns, default_backend_mapping
+from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 

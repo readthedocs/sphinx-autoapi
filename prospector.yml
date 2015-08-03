@@ -12,6 +12,7 @@ pylint:
   max-line-length: 100
   disable:
       - logging-format-interpolation
+      - interface-not-implemented
 
 mccabe:
   run: false
