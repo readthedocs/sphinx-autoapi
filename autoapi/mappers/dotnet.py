@@ -189,7 +189,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
     def build_finished(app, exception):
         if app.verbosity > 1:
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .yml files'))
-        shutil.rmtree('_api_')
+        if os.path.exists('_api_'):
+            shutil.rmtree('_api_')
 
 
 class DotNetPythonMapper(PythonMapperBase):
