@@ -13,7 +13,7 @@ class GoSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    def load(self, patterns, dir, ignore=[]):
+    def load(self, patterns, dir, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -39,7 +39,7 @@ class GoSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options=None, _type=None):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Go data
 
         Data keys handled here:
@@ -53,6 +53,7 @@ class GoSphinxMapper(SphinxMapperBase):
 
         :param data: dictionary data from godocjson output
         '''
+        _type = kwargs.get('_type')
         obj_map = dict(
             (cls.type, cls) for cls
             in ALL_CLASSES
@@ -84,7 +85,11 @@ class GoSphinxMapper(SphinxMapperBase):
                     for child_data in data.get(child_type, []):
                         obj.children += list(self.create_class(
                             child_data,
-                            _type=child_type.replace('consts', 'const').replace('types', 'type').replace('vars', 'variable').replace('funcs', 'func')
+                            _type=child_type.replace(
+                                'consts', 'const').replace(
+                                'types', 'type').replace(
+                                'vars', 'variable').replace(
+                                'funcs', 'func')
                         ))
                 yield obj
 

@@ -1,7 +1,18 @@
 language: python
 python:
-  - "2.7"
+ - 2.7
+sudo: false
+env:
+ - TOX_ENV=py27
+ - TOX_ENV=docs
+ - TOX_ENV=lint
 install:
-  - "pip install ."
-  - "npm install -g jsdoc"
-script: python setup.py test
+ - pip install tox
+script:
+ - tox -e $TOX_ENV
+notifications:
+  slack:
+    rooms:
+      - readthedocs:y3hjODOi7EIz1JAbD1Zb41sz#general
+    on_success: change
+    on_failure: always

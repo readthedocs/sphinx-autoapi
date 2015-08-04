@@ -85,7 +85,7 @@ class DomainTests(unittest.TestCase):
                 patch('subprocess.check_output', lambda foo: foo),
         ):
             dom = dotnet.DotNetSphinxMapper(self.application)
-            dom.load('', '', '')
+            dom.load('', '', '', raise_error=False)
             dom.map()
             objs = dom.objects
             self.assertEqual(len(objs), 2)

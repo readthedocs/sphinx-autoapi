@@ -17,8 +17,10 @@ htmlhelp_basename = 'dotnetexampledoc'
 extensions = ['autoapi.extension', 'sphinxcontrib.dotnetdomain']
 
 autoapi_type = 'dotnet'
+# Turn this on for debugging
+# autoapi_keep_files = True
+
 autoapi_dir = 'example/Identity/src/'
-autoapi_keep_files = True
 
 import os
 
