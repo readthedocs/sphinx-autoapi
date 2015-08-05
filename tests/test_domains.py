@@ -66,27 +66,27 @@ class DomainTests(unittest.TestCase):
         self.assertIsInstance(cls, dotnet.DotNetClass)
         self.assertDictEqual(cls.item_map, {})
 
-    def _mock_find(self, patterns, **kwargs):
-        return {'items': ['foo', 'bar']}
-
-    def _mock_read(self, path):
-        return {'items': [{'id': 'Foo.Bar', 'name': 'Foo', 'type': 'property'},
-                          {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
-                'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
-
-    @patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find)
-    @patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read)
     @patch('subprocess.check_output', lambda foo: foo)
     def test_get_objects(self):
         '''Test basic get objects'''
         objs = []
 
-        dom = dotnet.DotNetSphinxMapper(self.application)
-        dom.load('', '', '', raise_error=False)
-        dom.map()
-        objs = dom.objects
-        self.assertEqual(len(objs), 2)
-        self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')
-        self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
-        self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
-        self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
+        def _mock_find(self, patterns, **kwargs):
+            return {'items': ['foo', 'bar']}
+
+        def _mock_read(self, path):
+            return {'items': [{'id': 'Foo.Bar', 'name': 'Foo', 'type': 'property'},
+                              {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
+                    'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
+
+        with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find):
+            with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read):
+                dom = dotnet.DotNetSphinxMapper(self.application)
+                dom.load('', '', '', raise_error=False)
+                dom.map()
+                objs = dom.objects
+                self.assertEqual(len(objs), 2)
+                self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')
+                self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
+                self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
+                self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
