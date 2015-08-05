@@ -6,6 +6,8 @@ from .base import PythonMapperBase, SphinxMapperBase
 if sys.version_info < (3,):
     from epyparse import parsed
 else:
+    # Don't raise exception on module level because it would
+    # break all backends on Python 3
     def parsed(path):
         raise Exception('Python 3 not supported')
 
