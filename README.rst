@@ -102,7 +102,7 @@ Read more about the deisgn in our :doc:`design`.
 Currently Implemented
 ---------------------
 
-* Python
+* Python (2 only -- Epydoc doesn't support Python 3)
 * .Net
 * Go
 * Javascript

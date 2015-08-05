@@ -235,7 +235,7 @@ class SphinxMapperBase(object):
             detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
-            with open(path, 'w+') as detail_file:
+            with open(path, 'wb+') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
         # Render Top Index

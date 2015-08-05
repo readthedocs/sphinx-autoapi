@@ -1,8 +1,15 @@
 from collections import defaultdict
-
-from epyparse import parsed
+import sys
 
 from .base import PythonMapperBase, SphinxMapperBase
+
+if sys.version_info < (3,):
+    from epyparse import parsed
+else:
+    # Don't raise exception on module level because it would
+    # break all backends on Python 3
+    def parsed(path):
+        raise Exception('Python 3 not supported')
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -19,8 +26,6 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         :param path: Path of file to read
         '''
-        # TODO support JSON here
-        # TODO sphinx way of reporting errors in logs?
 
         try:
             parsed_data = parsed(path)

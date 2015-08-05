@@ -1,7 +1,6 @@
 '''Test .NET autoapi domain'''
 
 import unittest
-from contextlib import nested
 
 from mock import patch
 
@@ -67,6 +66,7 @@ class DomainTests(unittest.TestCase):
         self.assertIsInstance(cls, dotnet.DotNetClass)
         self.assertDictEqual(cls.item_map, {})
 
+    @patch('subprocess.check_output', lambda foo: foo)
     def test_get_objects(self):
         '''Test basic get objects'''
         objs = []
@@ -79,17 +79,14 @@ class DomainTests(unittest.TestCase):
                               {'id': 'Foo.Bar2', 'name': 'Bar', 'type': 'property'}],
                     'id': 'Foo.Bar', 'type': 'Class', 'summary': path}
 
-        with nested(
-                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find),
-                patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read),
-                patch('subprocess.check_output', lambda foo: foo),
-        ):
-            dom = dotnet.DotNetSphinxMapper(self.application)
-            dom.load('', '', '', raise_error=False)
-            dom.map()
-            objs = dom.objects
-            self.assertEqual(len(objs), 2)
-            self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')
-            self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
-            self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
-            self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
+        with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find):
+            with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read):
+                dom = dotnet.DotNetSphinxMapper(self.application)
+                dom.load('', '', '', raise_error=False)
+                dom.map()
+                objs = dom.objects
+                self.assertEqual(len(objs), 2)
+                self.assertEqual(objs['Foo.Bar'].id, 'Foo.Bar')
+                self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
+                self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
+                self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')

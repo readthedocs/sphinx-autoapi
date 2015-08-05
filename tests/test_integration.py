@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import shutil
 import unittest
 
@@ -59,6 +60,7 @@ class GoTests(LanguageIntegrationTests):
 
 class PythonTests(LanguageIntegrationTests):
 
+    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_integration(self):
         self._run_test(
             'pyexample',
@@ -94,6 +96,7 @@ class DotNetTests(LanguageIntegrationTests):
 
 class IntegrationTests(LanguageIntegrationTests):
 
+    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_template_overrides(self):
         self._run_test(
             'templateexample',
@@ -104,6 +107,7 @@ class IntegrationTests(LanguageIntegrationTests):
 
 class TOCTreeTests(LanguageIntegrationTests):
 
+    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_toctree_overrides(self):
         self._run_test(
             'toctreeexample',
