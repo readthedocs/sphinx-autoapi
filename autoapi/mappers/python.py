@@ -1,7 +1,13 @@
 from collections import defaultdict
-
+import sys
 
 from .base import PythonMapperBase, SphinxMapperBase
+
+if sys.version_info < (3,):
+    from epyparse import parsed
+else:
+    def parsed(path):
+        raise Exception('Python 3 not supported')
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -18,7 +24,6 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         :param path: Path of file to read
         '''
-        from epyparse import parsed
 
         try:
             parsed_data = parsed(path)
