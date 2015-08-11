@@ -12,5 +12,5 @@ install:
   - "%PYTHON%/Scripts/pip.exe install -e ."
 test_script:
   - "%PYTHON%/Scripts/pip.exe --version"
-  - "%PYTHON%/Scripts/http.exe --debug"
-  - "%PYTHON%/python.exe setup.py test"
+  - "%PYTHON%/Scripts/pip.exe install tox"
+  - "%PYTHON%/Scripts/tox.exe"
