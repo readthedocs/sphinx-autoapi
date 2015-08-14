@@ -8,4 +8,4 @@ install:
 test_script:
   - "%PYTHON%/Scripts/pip.exe --version"
   - "%PYTHON%/Scripts/pip.exe install tox"
-  - "%PYTHON%/Scripts/tox.exe"
+  - "%PYTHON%/Scripts/tox.exe -e py27"
