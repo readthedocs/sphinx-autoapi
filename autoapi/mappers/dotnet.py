@@ -39,7 +39,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 command = ['docfx', 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
-                    command.join(' '),
+                    ' '.join(command),
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     shell=True,
