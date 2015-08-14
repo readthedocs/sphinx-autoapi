@@ -168,6 +168,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 del self.namespaces[key]
 
     def output_rst(self, root, source_suffix):
+        if not len(self.objects):
+            raise ExtensionError("No API objects exist. Can't continue")
         for id, obj in self.objects.items():
 
             if not obj or not obj.top_level_object:
