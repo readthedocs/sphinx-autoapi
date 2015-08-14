@@ -36,7 +36,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             all_files.add(_file)
         if all_files:
             try:
-                command = ['docfx', 'metadata', '--raw', '--force']
+                command = ['bash', 'docfx', 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
                     command,
