@@ -219,7 +219,7 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Optional
         self.fullname = obj.get('fullName')
-        self.summary = obj.get('summary', '')
+        self.summary = self.parse_xml(obj.get('summary', ''))
         self.parameters = []
         self.items = obj.get('items', [])
         self.children_strings = obj.get('children', [])
@@ -243,7 +243,7 @@ class DotNetPythonMapper(PythonMapperBase):
                     self.parameters.append({
                         'name': param.get('id'),
                         'type': param.get('type'),
-                        'desc': param.get('description', '')
+                        'desc': self.parse_xml(param.get('description', ''))
                     })
 
             self.returns = syntax.get('return', None)
@@ -252,6 +252,7 @@ class DotNetPythonMapper(PythonMapperBase):
         # TODO Support more than just a class type here, should support enum/etc
         self.inheritance = [DotNetClass({'uid': name, 'name': name})
                             for name in obj.get('inheritance', [])]
+
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
@@ -324,6 +325,14 @@ class DotNetPythonMapper(PythonMapperBase):
     def ref_short_name(self):
         '''Same as above, return the truncated name instead'''
         return self.ref_name.split('.')[-1]
+
+    def parse_xml(self, text):
+        """
+        Parse XML content for references and other syntax.
+        Ref: https://msdn.microsoft.com/en-us/library/5ast78ax.aspx
+        """
+        # Don't do this for now
+        return text
 
 
 class DotNetNamespace(DotNetPythonMapper):
