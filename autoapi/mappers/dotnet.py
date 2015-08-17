@@ -1,8 +1,9 @@
-from collections import defaultdict
+import re
 import os
 import subprocess
 import traceback
 import shutil
+from collections import defaultdict
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -210,6 +211,25 @@ class DotNetPythonMapper(PythonMapperBase):
 
     language = 'dotnet'
 
+    # Doc comment patterns
+    doc_comment_pattern = r'''
+        \<%(tag)s
+        \s+%(attr)s="(?P<attr_value>[^"]*?)"
+        \s*?
+        (?:
+            \/\>|
+            \>(?P<inner>[^\<]*?)\<\/%(tag)s\>
+        )
+    '''
+    doc_comment_see_pattern = re.compile(
+        doc_comment_pattern % {'tag': '(?:see|seealso)',
+                               'attr': 'cref'},
+        re.X)
+    doc_comment_param_pattern = re.compile(
+        doc_comment_pattern % {'tag': '(?:paramref|typeparamref)',
+                               'attr': 'name'},
+        re.X)
+
     def __init__(self, obj, **kwargs):
         super(DotNetPythonMapper, self).__init__(obj, **kwargs)
 
@@ -219,7 +239,7 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Optional
         self.fullname = obj.get('fullName')
-        self.summary = self.parse_xml(obj.get('summary', ''))
+        self.summary = self.transform_doc_comments(obj.get('summary', ''))
         self.parameters = []
         self.items = obj.get('items', [])
         self.children_strings = obj.get('children', [])
@@ -243,16 +263,17 @@ class DotNetPythonMapper(PythonMapperBase):
                     self.parameters.append({
                         'name': param.get('id'),
                         'type': param.get('type'),
-                        'desc': self.parse_xml(param.get('description', ''))
+                        'desc': self.transform_doc_comments(
+                            param.get('description', ''))
                     })
 
-            self.returns = syntax.get('return', None)
+            self.returns = self.transform_doc_comments(
+                syntax.get('return', None))
 
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
         self.inheritance = [DotNetClass({'uid': name, 'name': name})
                             for name in obj.get('inheritance', [])]
-
 
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
@@ -326,12 +347,27 @@ class DotNetPythonMapper(PythonMapperBase):
         '''Same as above, return the truncated name instead'''
         return self.ref_name.split('.')[-1]
 
-    def parse_xml(self, text):
+    @staticmethod
+    def transform_doc_comments(text):
         """
         Parse XML content for references and other syntax.
-        Ref: https://msdn.microsoft.com/en-us/library/5ast78ax.aspx
+
+        This avoids an LXML dependency, we only need to parse out a small subset
+        of elements here. Iterate over string to reduce regex pattern complexity
+        and make substitutions easier
+
+        .. seealso::
+
+            `Doc comment reference <https://msdn.microsoft.com/en-us/library/5ast78ax.aspx>`
+                Reference on XML documentation comment syntax
         """
-        # Don't do this for now
+        try:
+            text = DotNetPythonMapper.doc_comment_see_pattern.sub(
+                ':dn:ref:`\g<attr_value>`', text)
+            text = DotNetPythonMapper.doc_comment_param_pattern.sub(
+                '``\g<attr_value>``', text)
+        except TypeError:
+            pass
         return text
 
 
@@ -405,6 +441,7 @@ class DotNetField(DotNetPythonMapper):
 class DotNetEvent(DotNetPythonMapper):
     type = 'event'
     plural = 'events'
+
 
 ALL_CLASSES = [
     DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
