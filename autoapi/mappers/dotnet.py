@@ -36,7 +36,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             all_files.add(_file)
         if all_files:
             try:
-                command = ['bash', 'docfx', 'metadata', '--raw', '--force']
+                command = ['docfx', 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
                     ' '.join(command),
@@ -44,7 +44,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                     stderr=subprocess.PIPE,
                     shell=True,
                     env=dict((key, os.environ[key])
-                             for key in ['PATH', 'DNX_PATH', 'HOME']
+                             for key in ['PATH','HOME']
                              if key in os.environ),
                 )
                 _, error_output = proc.communicate()
