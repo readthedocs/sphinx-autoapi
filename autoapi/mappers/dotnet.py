@@ -36,7 +36,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             all_files.add(_file)
         if all_files:
             try:
-                command = ['docfx', 'metadata', '--raw', '--force']
+                command = ['bash', 'docfx', 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
                     ' '.join(command),
@@ -183,16 +183,16 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 filename = obj.name.split('(')[0]
             except IndexError:
                 filename = id
-            filename = filename.replace('#', '-')
+            filename = filename.replace('#', '-').replace('<', '-').replace('>', '')
             detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
-            with open(path, 'wb+') as detail_file:
+            with open(path, 'wb') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
-        with open(top_level_index, 'wb+') as top_level_file:
+        with open(top_level_index, 'wb') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
             top_level_file.write(content.render(pages=self.namespaces.values()).encode('utf-8'))
 
