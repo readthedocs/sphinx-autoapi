@@ -299,10 +299,6 @@ class DotNetPythonMapper(PythonMapperBase):
         return self.type
 
     @property
-    def ref_name(self):
-        return self.name.replace('#', '-').replace('<', '-').replace('>', '')
-
-    @property
     def ref_directive(self):
         return self.type
 
