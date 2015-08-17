@@ -44,7 +44,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                     stderr=subprocess.PIPE,
                     shell=True,
                     env=dict((key, os.environ[key])
-                             for key in ['PATH','HOME']
+                             for key in ['PATH', 'HOME']
                              if key in os.environ),
                 )
                 _, error_output = proc.communicate()
