@@ -183,7 +183,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 filename = obj.name.split('(')[0]
             except IndexError:
                 filename = id
-            filename = filename.replace('#', '-').replace('<', '-').replace('>', '')
+            filename = filename.replace('#', '-')
             detail_dir = os.path.join(root, *filename.split('.'))
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
@@ -297,6 +297,10 @@ class DotNetPythonMapper(PythonMapperBase):
     @property
     def ref_type(self):
         return self.type
+
+    @property
+    def ref_name(self):
+        return self.name.replace('#', '-').replace('<', '-').replace('>', '')
 
     @property
     def ref_directive(self):
