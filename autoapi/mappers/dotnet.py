@@ -13,6 +13,37 @@ from sphinx.errors import ExtensionError
 from .base import PythonMapperBase, SphinxMapperBase
 
 
+# Doc comment patterns
+DOC_COMMENT_PATTERN = r'''
+    \<%(tag)s
+    \s+%(attr)s="(?P<attr_value>[^"]*?)"
+    \s*?
+    (?:
+        \/\>|
+        \>(?P<inner>[^\<]*?)\<\/%(tag)s\>
+    )
+'''
+DOC_COMMENT_SEE_PATTERN = re.compile(
+    DOC_COMMENT_PATTERN % {'tag': '(?:see|seealso)',
+                           'attr': 'cref'},
+    re.X)
+DOC_COMMENT_PARAM_PATTERN = re.compile(
+    DOC_COMMENT_PATTERN % {'tag': '(?:paramref|typeparamref)',
+                           'attr': 'name'},
+    re.X)
+
+# Comment member identities
+# From: https://msdn.microsoft.com/en-us/library/vstudio/fsbx0t7x(v=VS.100).aspx
+DOC_COMMENT_IDENTITIES = {
+    'N': 'ns',
+    'T': 'ref',  # can be any type (class, delegate, enum, etc), so use ref
+    'F': 'field',
+    'P': 'prop',
+    'M': 'meth',
+    'E': 'event',
+}
+
+
 class DotNetSphinxMapper(SphinxMapperBase):
 
     '''Auto API domain handler for .NET
@@ -211,25 +242,6 @@ class DotNetPythonMapper(PythonMapperBase):
 
     language = 'dotnet'
 
-    # Doc comment patterns
-    doc_comment_pattern = r'''
-        \<%(tag)s
-        \s+%(attr)s="(?P<attr_value>[^"]*?)"
-        \s*?
-        (?:
-            \/\>|
-            \>(?P<inner>[^\<]*?)\<\/%(tag)s\>
-        )
-    '''
-    doc_comment_see_pattern = re.compile(
-        doc_comment_pattern % {'tag': '(?:see|seealso)',
-                               'attr': 'cref'},
-        re.X)
-    doc_comment_param_pattern = re.compile(
-        doc_comment_pattern % {'tag': '(?:paramref|typeparamref)',
-                               'attr': 'name'},
-        re.X)
-
     def __init__(self, obj, **kwargs):
         super(DotNetPythonMapper, self).__init__(obj, **kwargs)
 
@@ -362,9 +374,29 @@ class DotNetPythonMapper(PythonMapperBase):
                 Reference on XML documentation comment syntax
         """
         try:
-            text = DotNetPythonMapper.doc_comment_see_pattern.sub(
-                ':dn:ref:`\g<attr_value>`', text)
-            text = DotNetPythonMapper.doc_comment_param_pattern.sub(
+            while True:
+                found = DOC_COMMENT_SEE_PATTERN.search(text)
+                if found is None:
+                    break
+                ref = found.group('attr_value')
+                reftype = 'ref'
+                replacement = ''
+                # Given the pattern of `\w:\w+`, inspect first letter of
+                # reference for identity type
+                if ref[1] == ':' and ref[0] in DOC_COMMENT_IDENTITIES:
+                    reftype = DOC_COMMENT_IDENTITIES[ref[:1]]
+                    ref = ref[2:]
+                    replacement = ':dn:{reftype}:`{ref}`'.format(
+                        reftype=reftype, ref=ref)
+                elif ref[:2] == '!:':
+                    replacement = ref[2:]
+                else:
+                    replacement = ':dn:ref:`{ref}`'.format(ref=ref)
+
+                text = ''.join([text[:found.start()],
+                                replacement,
+                                text[found.end():]])
+            text = DOC_COMMENT_PARAM_PATTERN.sub(
                 '``\g<attr_value>``', text)
         except TypeError:
             pass

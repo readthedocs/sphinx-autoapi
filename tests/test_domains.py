@@ -98,12 +98,16 @@ class DomainTests(unittest.TestCase):
         self.assertEqual(ret, 'This is an example comment :dn:ref:`FOO`')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
-            'This is an example comment <see cref="FOO">inner foo</see>')
-        self.assertEqual(ret, 'This is an example comment :dn:ref:`FOO`')
+            'This is an example comment <see cref="!:FOO" />')
+        self.assertEqual(ret, 'This is an example comment FOO')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
-            'Test <see cref="FOO" /> and <see cref="BAR">Blah</see>')
-        self.assertEqual(ret, 'Test :dn:ref:`FOO` and :dn:ref:`BAR`')
+            'This is an example comment <see cref="N:FOO">inner foo</see>')
+        self.assertEqual(ret, 'This is an example comment :dn:ns:`FOO`')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'Test <see cref="P:FOO" /> and <see cref="E:BAR">Blah</see>')
+        self.assertEqual(ret, 'Test :dn:prop:`FOO` and :dn:event:`BAR`')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'This is an example comment <paramref name="FOO" />')
