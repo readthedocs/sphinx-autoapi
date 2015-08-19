@@ -9,7 +9,7 @@
    :maxdepth: 4
 
    {% for item in obj.children|sort %}
-   /autoapi/{{ item.id.split('.')|join('/') }}/index
+   /autoapi/{{ item.pathname }}/index
    {%- endfor %}
 
 {% endif %}

@@ -1,7 +1,9 @@
+import re
 import os
 import fnmatch
 from collections import OrderedDict
 
+import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
@@ -94,6 +96,27 @@ class PythonMapperBase(object):
     def short_name(self):
         '''Shorten name property'''
         return self.name.split('.')[-1]
+
+    @property
+    def pathname(self):
+        '''Sluggified path for filenames
+
+        Slugs to a filename using the follow steps
+
+        * Decode unicode to approximate ascii
+        * Remove existing hypens
+        * Substitute hyphens for non-word characters
+        * Break up the string as paths
+        '''
+        slug = self.name
+        try:
+            slug = self.name.split('(')[0]
+        except IndexError:
+            pass
+        slug = unidecode.unidecode(slug)
+        slug = slug.replace('-', '')
+        slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
+        return os.path.join(*slug.split('.'))
 
     @property
     def ref_type(self):

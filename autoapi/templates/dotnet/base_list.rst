@@ -15,7 +15,7 @@
 
    {% for item in obj.children|sort %}
    {% if item.type != 'namespace' %}
-   /autoapi/{{ item.name.split('.')|join('/') }}/index
+   /autoapi/{{ item.pathname }}/index
    {% endif %}
    {% endfor %}
 
@@ -30,7 +30,7 @@
 
    {% for item in obj.references|sort %}
    {% if item.type != 'namespace' %}
-   /autoapi/{{ item.name.split('.')|join('/') }}/index
+   /autoapi/{{ item.pathname }}/index
    {% endif %}
    {% endfor %}
 

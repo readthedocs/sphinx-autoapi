@@ -1,3 +1,5 @@
+# coding=utf8
+
 '''Test .NET autoapi objects'''
 
 import unittest
@@ -94,3 +96,18 @@ class NamespaceTests(unittest.TestCase):
         cls = dotnet.DotNetClass(dict(id='Foo',
                                       type='class'))
         self.assertIsNone(cls.namespace)
+
+    def test_filename(self):
+        '''Object file name'''
+        cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'})
+        self.assertEqual(cls.pathname, 'Foo/Bar/Widget')
+        cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>'})
+        self.assertEqual(cls.pathname, 'Foo/Bar/Widget-T')
+        cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>(TFoo)'})
+        self.assertEqual(cls.pathname, 'Foo/Bar/Widget-T')
+        cls = dotnet.DotNetClass({'id': 'Foo.Foo-Bar.Widget<T>(TFoo)'})
+        self.assertEqual(cls.pathname, 'Foo/FooBar/Widget-T')
+        cls = dotnet.DotNetClass({'id': u'Foo.Bär'})
+        self.assertEqual(cls.pathname, u'Foo/Bar')
+        cls = dotnet.DotNetClass({'id': u'Ащщ.юИфк'})
+        self.assertEqual(cls.pathname, u'Ashchshch/iuIfk')
