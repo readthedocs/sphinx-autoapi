@@ -90,3 +90,29 @@ class DomainTests(unittest.TestCase):
                 self.assertEqual(objs['Foo.Bar'].name, 'Foo.Bar')
                 self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
                 self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
+
+    def test_xml_parse(self):
+        '''XML doc comment parsing'''
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'This is an example comment <see cref="FOO" />')
+        self.assertEqual(ret, 'This is an example comment :dn:ref:`FOO`')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'This is an example comment <see cref="!:FOO" />')
+        self.assertEqual(ret, 'This is an example comment FOO')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'This is an example comment <see cref="N:FOO">inner foo</see>')
+        self.assertEqual(ret, 'This is an example comment :dn:ns:`FOO`')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'Test <see cref="P:FOO" /> and <see cref="E:BAR">Blah</see>')
+        self.assertEqual(ret, 'Test :dn:prop:`FOO` and :dn:event:`BAR`')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'This is an example comment <paramref name="FOO" />')
+        self.assertEqual(ret, 'This is an example comment ``FOO``')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'This is an example comment <typeparamref name="FOO" />')
+        self.assertEqual(ret, 'This is an example comment ``FOO``')

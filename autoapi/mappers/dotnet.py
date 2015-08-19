@@ -1,8 +1,9 @@
-from collections import defaultdict
+import re
 import os
 import subprocess
 import traceback
 import shutil
+from collections import defaultdict
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -10,6 +11,37 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.errors import ExtensionError
 
 from .base import PythonMapperBase, SphinxMapperBase
+
+
+# Doc comment patterns
+DOC_COMMENT_PATTERN = r'''
+    \<%(tag)s
+    \s+%(attr)s="(?P<attr_value>[^"]*?)"
+    \s*?
+    (?:
+        \/\>|
+        \>(?P<inner>[^\<]*?)\<\/%(tag)s\>
+    )
+'''
+DOC_COMMENT_SEE_PATTERN = re.compile(
+    DOC_COMMENT_PATTERN % {'tag': '(?:see|seealso)',
+                           'attr': 'cref'},
+    re.X)
+DOC_COMMENT_PARAM_PATTERN = re.compile(
+    DOC_COMMENT_PATTERN % {'tag': '(?:paramref|typeparamref)',
+                           'attr': 'name'},
+    re.X)
+
+# Comment member identities
+# From: https://msdn.microsoft.com/en-us/library/vstudio/fsbx0t7x(v=VS.100).aspx
+DOC_COMMENT_IDENTITIES = {
+    'N': 'ns',
+    'T': 'ref',  # can be any type (class, delegate, enum, etc), so use ref
+    'F': 'field',
+    'P': 'prop',
+    'M': 'meth',
+    'E': 'event',
+}
 
 
 class DotNetSphinxMapper(SphinxMapperBase):
@@ -219,7 +251,7 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Optional
         self.fullname = obj.get('fullName')
-        self.summary = obj.get('summary', '')
+        self.summary = self.transform_doc_comments(obj.get('summary', ''))
         self.parameters = []
         self.items = obj.get('items', [])
         self.children_strings = obj.get('children', [])
@@ -243,10 +275,12 @@ class DotNetPythonMapper(PythonMapperBase):
                     self.parameters.append({
                         'name': param.get('id'),
                         'type': param.get('type'),
-                        'desc': param.get('description', '')
+                        'desc': self.transform_doc_comments(
+                            param.get('description', ''))
                     })
 
-            self.returns = syntax.get('return', None)
+            self.returns = self.transform_doc_comments(
+                syntax.get('return', None))
 
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
@@ -325,6 +359,49 @@ class DotNetPythonMapper(PythonMapperBase):
         '''Same as above, return the truncated name instead'''
         return self.ref_name.split('.')[-1]
 
+    @staticmethod
+    def transform_doc_comments(text):
+        """
+        Parse XML content for references and other syntax.
+
+        This avoids an LXML dependency, we only need to parse out a small subset
+        of elements here. Iterate over string to reduce regex pattern complexity
+        and make substitutions easier
+
+        .. seealso::
+
+            `Doc comment reference <https://msdn.microsoft.com/en-us/library/5ast78ax.aspx>`
+                Reference on XML documentation comment syntax
+        """
+        try:
+            while True:
+                found = DOC_COMMENT_SEE_PATTERN.search(text)
+                if found is None:
+                    break
+                ref = found.group('attr_value')
+                reftype = 'ref'
+                replacement = ''
+                # Given the pattern of `\w:\w+`, inspect first letter of
+                # reference for identity type
+                if ref[1] == ':' and ref[0] in DOC_COMMENT_IDENTITIES:
+                    reftype = DOC_COMMENT_IDENTITIES[ref[:1]]
+                    ref = ref[2:]
+                    replacement = ':dn:{reftype}:`{ref}`'.format(
+                        reftype=reftype, ref=ref)
+                elif ref[:2] == '!:':
+                    replacement = ref[2:]
+                else:
+                    replacement = ':dn:ref:`{ref}`'.format(ref=ref)
+
+                text = ''.join([text[:found.start()],
+                                replacement,
+                                text[found.end():]])
+            text = DOC_COMMENT_PARAM_PATTERN.sub(
+                '``\g<attr_value>``', text)
+        except TypeError:
+            pass
+        return text
+
 
 class DotNetNamespace(DotNetPythonMapper):
     type = 'namespace'
@@ -396,6 +473,7 @@ class DotNetField(DotNetPythonMapper):
 class DotNetEvent(DotNetPythonMapper):
     type = 'event'
     plural = 'events'
+
 
 ALL_CLASSES = [
     DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
