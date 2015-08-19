@@ -9,6 +9,7 @@ try:
             'sphinx',
             'sphinxcontrib-golangdomain',
             'sphinxcontrib-dotnetdomain',
+            'unidecode',
         ],
         test_suite='nose.collector',
         tests_require=['nose', 'mock'],
@@ -23,6 +24,7 @@ except ImportError:
             'sphinx'
             'sphinxcontrib-golangdomain',
             'sphinxcontrib-dotnetdomain',
+            'unidecode',
         ],
     )
 

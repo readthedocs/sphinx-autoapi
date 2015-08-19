@@ -211,12 +211,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             if not rst:
                 continue
 
-            try:
-                filename = obj.name.split('(')[0]
-            except IndexError:
-                filename = id
-            filename = filename.replace('#', '-')
-            detail_dir = os.path.join(root, *filename.split('.'))
+            detail_dir = os.path.join(root, obj.pathname)
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
             with open(path, 'wb') as detail_file:
