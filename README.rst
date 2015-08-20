@@ -8,6 +8,9 @@ Sphinx AutoAPI
 .. image:: https://travis-ci.org/rtfd/sphinx-autoapi.svg?branch=master
    :target: https://travis-ci.org/rtfd/sphinx-autoapi
 
+.. image:: https://ci.appveyor.com/api/projects/status/5nd33gp2eq7411t1?svg=true
+   :target: https://ci.appveyor.com/project/ericholscher/sphinx-autoapi
+
 .. warning:: This is a pre-release version. Some or all features might not work yet.
 
 Sphinx AutoAPI aims to provide "autodoc" or "javadoc" style documentation for Sphinx.
