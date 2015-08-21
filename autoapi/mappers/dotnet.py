@@ -71,13 +71,10 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 command = ['docfx', 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
-                    ' '.join(command),
+                    command,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     shell=True,
-                    env=dict((key, os.environ[key])
-                             for key in ['PATH', 'HOME']
-                             if key in os.environ),
                 )
                 _, error_output = proc.communicate()
                 if error_output:
