@@ -1,5 +1,6 @@
 import re
 import os
+import platform
 import subprocess
 import traceback
 import shutil
@@ -12,6 +13,10 @@ from sphinx.errors import ExtensionError
 
 from .base import PythonMapperBase, SphinxMapperBase
 
+
+DOCFX_COMMAND = 'docfx'
+if platform.system() == 'Windows':
+    DOCFX_COMMAND = 'docfx.cmd'
 
 # Doc comment patterns
 DOC_COMMENT_PATTERN = r'''
@@ -68,7 +73,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             all_files.add(_file)
         if all_files:
             try:
-                command = ['docfx', 'metadata', '--raw', '--force']
+                command = [DOCFX_COMMAND, 'metadata', '--raw', '--force']
                 command.extend(all_files)
                 proc = subprocess.Popen(
                     ' '.join(command),
