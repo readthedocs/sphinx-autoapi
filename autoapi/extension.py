@@ -43,7 +43,7 @@ def run_autoapi(app):
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
 
     if app.config.autoapi_file_patterns:
-        file_patterns = app.config.autoapi_file_pattern
+        file_patterns = app.config.autoapi_file_patterns
     else:
         file_patterns = default_file_mapping.get(app.config.autoapi_type, [])
 
