@@ -191,7 +191,8 @@ class SphinxMapperBase(object):
                         for ignore_pattern in ignore:
                             if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
                                 self.app.info(
-                                    bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename))
+                                    bold('[AutoAPI] ') +
+                                    darkgreen("Ignoring %s/%s" % (root, filename))
                                 )
                                 skip = True
 
