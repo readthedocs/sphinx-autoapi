@@ -13,14 +13,15 @@ class GoSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     '''
 
-    def load(self, patterns, dir, ignore=None):
+    def load(self, patterns, dirs, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
-        data = self.read_file(dir)
-        if data:
-            self.paths[dir] = data
+        for _dir in dirs:
+            data = self.read_file(_dir)
+            if data:
+                self.paths[_dir] = data
 
     def read_file(self, path, **kwargs):
         '''Read file input into memory, returning deserialized objects

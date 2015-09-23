@@ -167,40 +167,41 @@ class SphinxMapperBase(object):
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dir, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None, **kwargs):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
-        for path in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
+        for path in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
             data = self.read_file(path=path)
             if data:
                 self.paths[path] = data
 
-    def find_files(self, patterns, dir, ignore):
+    def find_files(self, patterns, dirs, ignore):
         if not ignore:
             ignore = []
         files_to_read = []
-        for root, dirnames, filenames in os.walk(dir):
-            for pattern in patterns:
-                for filename in fnmatch.filter(filenames, pattern):
-                    skip = False
+        for _dir in dirs:
+            for root, dirnames, filenames in os.walk(_dir):
+                for pattern in patterns:
+                    for filename in fnmatch.filter(filenames, pattern):
+                        skip = False
 
-                    # Skip ignored files
-                    for ignore_pattern in ignore:
-                        if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
-                            self.app.info(
-                                bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename))
-                            )
-                            skip = True
+                        # Skip ignored files
+                        for ignore_pattern in ignore:
+                            if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
+                                self.app.info(
+                                    bold('[AutoAPI] ') + darkgreen("Ignoring %s/%s" % (root, filename))
+                                )
+                                skip = True
 
-                    if skip:
-                        continue
-                    # Make sure the path is full
-                    if os.path.isabs(filename):
-                        files_to_read.append(filename)
-                    else:
-                        files_to_read.append(os.path.join(root, filename))
+                        if skip:
+                            continue
+                        # Make sure the path is full
+                        if os.path.isabs(filename):
+                            files_to_read.append(filename)
+                        else:
+                            files_to_read.append(os.path.join(root, filename))
 
         for _path in self.app.status_iterator(
                 files_to_read,

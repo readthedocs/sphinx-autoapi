@@ -17,5 +17,5 @@ html_static_path = ['_static']
 htmlhelp_basename = 'jsexampledoc'
 extensions = ['autoapi.extension']
 autoapi_type = 'javascript'
-autoapi_dir = 'example'
+autoapi_dirs = ['example']
 autoapi_file_pattern = '*.js'

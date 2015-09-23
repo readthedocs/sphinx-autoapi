@@ -18,5 +18,5 @@ htmlhelp_basename = 'goexampledoc'
 extensions = ['autoapi.extension', 'sphinxcontrib.golangdomain']
 
 autoapi_type = 'go'
-autoapi_dir = 'example'
+autoapi_dirs = ['example']
 autoapi_file_pattern = '*.go'
