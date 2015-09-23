@@ -4,11 +4,11 @@ AutoAPI Configuration
 Configuration Options
 ---------------------
 
-.. confval:: autoapi_dir
+.. confval:: autoapi_dirs
 
 	**Required**
 
-        The path (relative or absolute) to the source code that you wish to generate your API documentation from.
+        Paths (relative or absolute) to the source code that you wish to generate your API documentation from.
 
 .. confval:: autoapi_type
 
