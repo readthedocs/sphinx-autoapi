@@ -21,19 +21,27 @@ def run_autoapi(app):
     Load AutoAPI data from the filesystem.
     """
 
-    if not app.config.autoapi_dir:
+    if not app.config.autoapi_dirs:
         raise ExtensionError('You must configure an autodapi_dir setting')
 
     # Make sure the paths are full
-    if os.path.isabs(app.config.autoapi_dir):
-        normalized_dir = app.config.autoapi_dir
-    else:
-        normalized_dir = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_dir))
+    normalized_dirs = []
+    for path in app.config.autoapi_dirs:
+        if os.path.isabs(path):
+            normalized_dirs.append(app.config.autoapi_dir)
+        else:
+            normalized_dirs.append(
+                os.path.normpath(os.path.join(app.confdir, path))
+            )
 
-    if not os.path.exists(normalized_dir):
-        raise ExtensionError(
-            'AutoAPI Directory not found. Please check your `autoapi_dir` setting.'
-        )
+    for _dir in normalized_dirs:
+        if not os.path.exists(_dir):
+            raise ExtensionError(
+                'AutoAPI Directory `{dir}` not found. '
+                'Please check your `autoapi_dirs` setting.'.format(
+                    dir=_dir
+                )
+            )
 
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
 
@@ -55,7 +63,7 @@ def run_autoapi(app):
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
         patterns=file_patterns,
-        dir=normalized_dir,
+        dirs=normalized_dirs,
         ignore=ignore_patterns,
     )
 
@@ -112,7 +120,7 @@ def setup(app):
     app.add_config_value('autoapi_ignore', [], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
     app.add_config_value('autoapi_file_patterns', None, 'html')
-    app.add_config_value('autoapi_dir', 'autoapi', 'html')
+    app.add_config_value('autoapi_dirs', [], 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')

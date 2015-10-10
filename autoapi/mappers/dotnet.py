@@ -56,14 +56,14 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     top_namespaces = {}
 
-    def load(self, patterns, dir, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None, **kwargs):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
         '''
         raise_error = kwargs.get('raise_error', True)
         all_files = set()
-        for _file in self.find_files(patterns=patterns, dir=dir, ignore=ignore):
+        for _file in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
             # Iterating for Sphinx output clarify
             all_files.add(_file)
         if all_files:
@@ -88,7 +88,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 if raise_error:
                     raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
-        for xdoc_path in self.find_files(patterns=['*.yml'], dir='_api_', ignore=ignore):
+        for xdoc_path in self.find_files(patterns=['*.yml'], dirs=['_api_'], ignore=ignore):
             data = self.read_file(path=xdoc_path)
             if data:
                 self.paths[xdoc_path] = data

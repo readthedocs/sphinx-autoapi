@@ -12,7 +12,7 @@ class DomainTests(unittest.TestCase):
     def setUp(self):
         '''Test setup'''
         class _config(object):
-            autoapi_dir = '/tmp/autoapi/tmp'
+            autoapi_dirs = ['/tmp/autoapi/tmp']
             autoapi_root = '/tmp/autoapi/root'
 
         class _application(object):

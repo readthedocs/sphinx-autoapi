@@ -23,7 +23,7 @@
 extensions = ['autoapi.extension']
 
 autoapi_type = 'python'
-autoapi_dir = '../autoapi'
+autoapi_dirs = ['../autoapi']
 autoapi_file_pattern = '*.py'
 autoapi_options = ['members', 'undoc-members', 'private-members']
 

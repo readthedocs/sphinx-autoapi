@@ -124,7 +124,7 @@ There will be Sphinx configuration for how things get built:
 .. code-block:: rst
 
     autoapi_root = 'api' # Where HTML is generated
-    autoapi_dir = 'yaml' # Directory of YAML sources
+    autoapi_dirs = ['yaml'] # Directory of YAML sources
 
 We will then loop over all YAML files in the ``autoapi_dir`` and parse them.
 They will then be output into ``autoapi_root`` inside the documentation.
