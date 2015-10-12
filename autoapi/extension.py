@@ -22,7 +22,7 @@ def run_autoapi(app):
     """
 
     if not app.config.autoapi_dirs:
-        raise ExtensionError('You must configure an autodapi_dir setting')
+        raise ExtensionError('You must configure an autoapi_dirs setting')
 
     # Make sure the paths are full
     normalized_dirs = []
