@@ -374,7 +374,10 @@ class DotNetPythonMapper(PythonMapperBase):
                 found = DOC_COMMENT_SEE_PATTERN.search(text)
                 if found is None:
                     break
-                ref = found.group('attr_value')
+                ref = (found.group('attr_value')
+                       .replace('<', '\<')
+                       .replace('`', '\`'))
+
                 reftype = 'ref'
                 replacement = ''
                 # Given the pattern of `\w:\w+`, inspect first letter of
@@ -389,9 +392,13 @@ class DotNetPythonMapper(PythonMapperBase):
                 else:
                     replacement = ':dn:ref:`{ref}`'.format(ref=ref)
 
-                text = ''.join([text[:found.start()],
-                                replacement,
-                                text[found.end():]])
+                # Escape following text
+                text_end = text[found.end():]
+                text_start = text[:found.start()]
+                text_end = re.sub(r'^(\S)', r'\\\1', text_end)
+                text_start = re.sub(r'(\S)$', r'\1 ', text_start)
+
+                text = ''.join([text_start, replacement, text_end])
             text = DOC_COMMENT_PARAM_PATTERN.sub(
                 '``\g<attr_value>``', text)
         except TypeError:

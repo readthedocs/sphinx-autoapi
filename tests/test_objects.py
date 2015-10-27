@@ -5,10 +5,13 @@
 import os
 import unittest
 
+from jinja2 import Environment, FileSystemLoader
+
 from autoapi.mappers import dotnet
+from autoapi.settings import TEMPLATE_DIR
 
 
-class NamespaceTests(unittest.TestCase):
+class DotNetTests(unittest.TestCase):
 
     def test_type(self):
         '''Test types of some of the objects'''
@@ -112,3 +115,16 @@ class NamespaceTests(unittest.TestCase):
         self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar'))
         cls = dotnet.DotNetClass({'id': u'Ащщ.юИфк'})
         self.assertEqual(cls.pathname, os.path.join('Ashchshch', 'iuIfk'))
+
+    def test_rendered_class_escaping(self):
+        """Rendered class escaping"""
+        jinja_env = Environment(
+            loader=FileSystemLoader([TEMPLATE_DIR]),
+        )
+        cls = dotnet.DotNetClass(
+            {
+                'id': 'Foo.Bar`1',
+                'inheritance': ['Foo.Baz`1'],
+            },
+            jinja_env=jinja_env)
+        self.assertIn('* :dn:cls:`Foo.Baz\\`1`\n', cls.render())
