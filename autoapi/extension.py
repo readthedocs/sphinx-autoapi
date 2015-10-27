@@ -12,6 +12,7 @@ from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
 
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
+from .settings import URL_ROOT
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -48,7 +49,8 @@ def run_autoapi(app):
     app.env.autoapi_data = []
 
     domain = default_backend_mapping[app.config.autoapi_type]
-    domain_obj = domain(app, template_dir=app.config.autoapi_template_dir)
+    domain_obj = domain(app, template_dir=app.config.autoapi_template_dir,
+                        url_root=app.config.autoapi_url_root)
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -124,4 +126,5 @@ def setup(app):
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
+    app.add_config_value('autoapi_url_root', URL_ROOT, 'html')
     app.add_stylesheet('autoapi.css')

@@ -8,6 +8,8 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
+from ..settings import URL_ROOT
+
 
 class PythonMapperBase(object):
 
@@ -22,6 +24,7 @@ class PythonMapperBase(object):
 
     :param obj: JSON object representing this object
     :param jinja_env: A template environment for rendering this object
+    :param url_root: API URL root prefix
 
     Required attributes:
 
@@ -44,11 +47,14 @@ class PythonMapperBase(object):
     # Create a page in the output for this object.
     top_level_object = False
 
-    def __init__(self, obj, options=None, jinja_env=None):
+    def __init__(self, obj, options=None, jinja_env=None, url_root=None):
         self.obj = obj
         self.options = options
         if jinja_env:
             self.jinja_env = jinja_env
+        if url_root is None:
+            url_root = URL_ROOT
+        self.url_root = url_root
 
     def render(self, **kwargs):
         ctx = {}
@@ -141,7 +147,7 @@ class SphinxMapperBase(object):
 
     '''
 
-    def __init__(self, app, template_dir=None):
+    def __init__(self, app, template_dir=None, url_root=None):
         from ..settings import TEMPLATE_DIR
         self.app = app
 
@@ -157,6 +163,8 @@ class SphinxMapperBase(object):
             # trim_blocks=True,
             # lstrip_blocks=True,
         )
+
+        self.url_root = url_root
 
         # Mapping of {filepath -> raw data}
         self.paths = OrderedDict()

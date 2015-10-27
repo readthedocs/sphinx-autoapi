@@ -143,7 +143,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
         except KeyError:
             self.app.warn('Unknown type: %s' % data)
         else:
-            obj = cls(data, jinja_env=self.jinja_env, options=options)
+            obj = cls(data, jinja_env=self.jinja_env, options=options,
+                      url_root=self.url_root)
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more
@@ -357,8 +358,12 @@ class DotNetPythonMapper(PythonMapperBase):
 
     @property
     def include_path(self):
-        """Return 'absolute' path without regarding OS path separator"""
-        parts = ['/autoapi']
+        """Return 'absolute' path without regarding OS path separator
+
+        This is used in ``toctree`` directives, as Sphinx always expects Unix
+        path separators
+        """
+        parts = [self.url_root]
         parts.extend(self.pathname.split(os.path.sep))
         parts.append('index')
         return '/'.join(parts)
