@@ -355,6 +355,10 @@ class DotNetPythonMapper(PythonMapperBase):
         '''Same as above, return the truncated name instead'''
         return self.ref_name.split('.')[-1]
 
+    @property
+    def abs_path(self):
+        return os.path.join(os.path.sep, 'autoapi', self.pathname, 'index')
+
     @staticmethod
     def transform_doc_comments(text):
         """
