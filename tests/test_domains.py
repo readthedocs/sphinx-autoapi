@@ -121,7 +121,7 @@ class DomainTests(unittest.TestCase):
         """XML transform escaping"""
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'Foo <see cref="Foo`1" /> Bar')
-        self.assertEqual(ret, 'Foo :dn:ref:`Foo\\`1`')
+        self.assertEqual(ret, 'Foo :dn:ref:`Foo\\`1` Bar')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'No space before<see cref="M:Foo`1" />or after')
