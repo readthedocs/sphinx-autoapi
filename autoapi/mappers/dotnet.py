@@ -356,8 +356,9 @@ class DotNetPythonMapper(PythonMapperBase):
         return self.ref_name.split('.')[-1]
 
     @property
-    def abs_path(self):
-        return os.path.join(os.path.sep, 'autoapi', self.pathname, 'index')
+    def include_path(self):
+        """Return 'absolute' path without regarding OS path separator"""
+        return '/'.join(['/autoapi', self.pathname, 'index'])
 
     @staticmethod
     def transform_doc_comments(text):
