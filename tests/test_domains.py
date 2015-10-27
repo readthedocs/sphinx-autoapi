@@ -95,7 +95,7 @@ class DomainTests(unittest.TestCase):
         '''XML doc comment parsing'''
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'This is an example comment <see cref="FOO" />')
-        self.assertEqual(ret, 'This is an example comment :dn:ref:`FOO`')
+        self.assertEqual(ret, 'This is an example comment :any:`FOO`')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'This is an example comment <see cref="!:FOO" />')
@@ -121,7 +121,7 @@ class DomainTests(unittest.TestCase):
         """XML transform escaping"""
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'Foo <see cref="Foo`1" /> Bar')
-        self.assertEqual(ret, 'Foo :dn:ref:`Foo\\`1` Bar')
+        self.assertEqual(ret, 'Foo :any:`Foo\\`1` Bar')
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'No space before<see cref="M:Foo`1" />or after')
