@@ -125,6 +125,18 @@ class PythonMapperBase(object):
         return os.path.join(*slug.split('.'))
 
     @property
+    def include_path(self):
+        """Return 'absolute' path without regarding OS path separator
+
+        This is used in ``toctree`` directives, as Sphinx always expects Unix
+        path separators
+        """
+        parts = [self.url_root]
+        parts.extend(self.pathname.split(os.path.sep))
+        parts.append('index')
+        return '/'.join(parts)
+
+    @property
     def ref_type(self):
         return self.type
 

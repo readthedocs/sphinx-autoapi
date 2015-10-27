@@ -356,18 +356,6 @@ class DotNetPythonMapper(PythonMapperBase):
         '''Same as above, return the truncated name instead'''
         return self.ref_name.split('.')[-1]
 
-    @property
-    def include_path(self):
-        """Return 'absolute' path without regarding OS path separator
-
-        This is used in ``toctree`` directives, as Sphinx always expects Unix
-        path separators
-        """
-        parts = [self.url_root]
-        parts.extend(self.pathname.split(os.path.sep))
-        parts.append('index')
-        return '/'.join(parts)
-
     @staticmethod
     def transform_doc_comments(text):
         """
