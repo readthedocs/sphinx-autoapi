@@ -35,12 +35,12 @@ DOC_COMMENT_PARAM_PATTERN = re.compile(
 # Comment member identities
 # From: https://msdn.microsoft.com/en-us/library/vstudio/fsbx0t7x(v=VS.100).aspx
 DOC_COMMENT_IDENTITIES = {
-    'N': 'ns',
-    'T': 'ref',  # can be any type (class, delegate, enum, etc), so use ref
-    'F': 'field',
-    'P': 'prop',
-    'M': 'meth',
-    'E': 'event',
+    'N': 'dn:ns',
+    'T': 'any',  # can be any type (class, delegate, enum, etc), so use any
+    'F': 'dn:field',
+    'P': 'dn:prop',
+    'M': 'dn:meth',
+    'E': 'dn:event',
 }
 
 
@@ -378,24 +378,31 @@ class DotNetPythonMapper(PythonMapperBase):
                 found = DOC_COMMENT_SEE_PATTERN.search(text)
                 if found is None:
                     break
-                ref = found.group('attr_value')
-                reftype = 'ref'
+                ref = (found.group('attr_value')
+                       .replace('<', '\<')
+                       .replace('`', '\`'))
+
+                reftype = 'any'
                 replacement = ''
                 # Given the pattern of `\w:\w+`, inspect first letter of
                 # reference for identity type
                 if ref[1] == ':' and ref[0] in DOC_COMMENT_IDENTITIES:
                     reftype = DOC_COMMENT_IDENTITIES[ref[:1]]
                     ref = ref[2:]
-                    replacement = ':dn:{reftype}:`{ref}`'.format(
+                    replacement = ':{reftype}:`{ref}`'.format(
                         reftype=reftype, ref=ref)
                 elif ref[:2] == '!:':
                     replacement = ref[2:]
                 else:
-                    replacement = ':dn:ref:`{ref}`'.format(ref=ref)
+                    replacement = ':any:`{ref}`'.format(ref=ref)
 
-                text = ''.join([text[:found.start()],
-                                replacement,
-                                text[found.end():]])
+                # Escape following text
+                text_end = text[found.end():]
+                text_start = text[:found.start()]
+                text_end = re.sub(r'^(\S)', r'\\\1', text_end)
+                text_start = re.sub(r'(\S)$', r'\1 ', text_start)
+
+                text = ''.join([text_start, replacement, text_end])
             text = DOC_COMMENT_PARAM_PATTERN.sub(
                 '``\g<attr_value>``', text)
         except TypeError:
