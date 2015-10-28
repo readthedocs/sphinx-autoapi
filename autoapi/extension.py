@@ -12,7 +12,7 @@ from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
 
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
-from .settings import URL_ROOT
+from .settings import API_ROOT
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -45,12 +45,13 @@ def run_autoapi(app):
             )
 
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
+    url_root = os.path.join('/', app.config.autoapi_root)
 
     app.env.autoapi_data = []
 
     domain = default_backend_mapping[app.config.autoapi_type]
     domain_obj = domain(app, template_dir=app.config.autoapi_template_dir,
-                        url_root=app.config.autoapi_url_root)
+                        url_root=url_root)
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -118,7 +119,7 @@ def setup(app):
     app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
     app.add_config_value('autoapi_type', 'python', 'html')
-    app.add_config_value('autoapi_root', 'autoapi', 'html')
+    app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
     app.add_config_value('autoapi_options', default_options, 'html')
     app.add_config_value('autoapi_file_patterns', None, 'html')
@@ -126,5 +127,4 @@ def setup(app):
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
-    app.add_config_value('autoapi_url_root', URL_ROOT, 'html')
     app.add_stylesheet('autoapi.css')

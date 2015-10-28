@@ -55,7 +55,7 @@ Customization Options
 
 	Default: ``autoapi``
 
-	Directory to output the AutoAPI files into
+	Relative path to output the AutoAPI files into
 
 Debugging Options
 -----------------

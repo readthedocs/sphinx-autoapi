@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
-from ..settings import URL_ROOT
+from ..settings import API_ROOT
 
 
 class PythonMapperBase(object):
@@ -53,7 +53,7 @@ class PythonMapperBase(object):
         if jinja_env:
             self.jinja_env = jinja_env
         if url_root is None:
-            url_root = URL_ROOT
+            url_root = os.path.join('/', API_ROOT)
         self.url_root = url_root
 
     def render(self, **kwargs):

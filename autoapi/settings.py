@@ -10,4 +10,4 @@ import os
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 TEMPLATE_DIR = os.path.join(SITE_ROOT, 'templates')
 
-URL_ROOT = '/autoapi'
+API_ROOT = 'autoapi'
