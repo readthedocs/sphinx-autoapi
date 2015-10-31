@@ -11,7 +11,7 @@ from autoapi.mappers import dotnet
 from autoapi.settings import TEMPLATE_DIR
 
 
-class DotNetTests(unittest.TestCase):
+class DotNetObjectTests(unittest.TestCase):
 
     def test_type(self):
         '''Test types of some of the objects'''
@@ -128,3 +128,10 @@ class DotNetTests(unittest.TestCase):
             },
             jinja_env=jinja_env)
         self.assertIn('* :dn:cls:`Foo.Baz\\`1`\n', cls.render())
+
+    def test_include_path(self):
+        """Include path"""
+        cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'})
+        self.assertEqual(cls.include_path, '/autoapi/Foo/Bar/Widget/index')
+        cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'}, url_root='/autofoo')
+        self.assertEqual(cls.include_path, '/autofoo/Foo/Bar/Widget/index')

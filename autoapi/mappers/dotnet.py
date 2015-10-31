@@ -143,7 +143,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
         except KeyError:
             self.app.warn('Unknown type: %s' % data)
         else:
-            obj = cls(data, jinja_env=self.jinja_env, options=options)
+            obj = cls(data, jinja_env=self.jinja_env, options=options,
+                      url_root=self.url_root)
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more
