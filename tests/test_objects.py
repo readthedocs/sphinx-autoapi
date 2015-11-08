@@ -104,7 +104,7 @@ class DotNetObjectTests(unittest.TestCase):
     def test_filename(self):
         '''Object file name'''
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget')..replace('\\', '/'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>'})
         self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget-T').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>(TFoo)'})
