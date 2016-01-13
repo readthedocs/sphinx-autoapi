@@ -198,6 +198,7 @@ class SphinxMapperBase(object):
                 self.paths[path] = data
 
     def find_files(self, patterns, dirs, ignore):
+        # pylint: disable=too-many-nested-blocks
         if not ignore:
             ignore = []
         files_to_read = []
