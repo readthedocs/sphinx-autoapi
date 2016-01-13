@@ -49,6 +49,8 @@
 {% macro render() %}{{ obj_item.summary }}{% endmacro %}
 
     {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_name }}`
+        .. object: type={{ obj_item.type }} name={{ obj_item.ref_name }}
+
         {{ render()|indent(8) }}
 
 {%- endfor %}
