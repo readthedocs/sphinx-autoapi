@@ -5,6 +5,7 @@ environment:
 install:
   - ps: (new-object net.webclient).DownloadFile('https://bootstrap.pypa.io/get-pip.py', 'C:/get-pip.py')
   - "%PYTHON%/python.exe C:/get-pip.py"
+  - "pacman -S mingw-w64-x86_64-ca-certificates ca-certificates"
 test_script:
   - "%PYTHON%/Scripts/pip.exe --version"
   - "%PYTHON%/Scripts/pip.exe install tox"
