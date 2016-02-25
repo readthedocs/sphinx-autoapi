@@ -8,5 +8,5 @@ install:
   - "%PYTHON%/Scripts/pip.exe --version"
   - "%PYTHON%/Scripts/pip.exe install tox"
 test_script:
-  - "git clone https://github.com/aspnet/Identity %APPVEYOR_BUILD_FOLDER%/example/Identity"
+  - "git clone https://github.com/aspnet/Identity %APPVEYOR_BUILD_FOLDER%/tests/dotnetexample/example/Identity"
   - "%PYTHON%/Scripts/tox.exe -e py27"
