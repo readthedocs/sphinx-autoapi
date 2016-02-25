@@ -3,10 +3,9 @@ environment:
   matrix:
     - PYTHON: "C:/Python27"
 install:
-  - git config --system http.sslcainfo /bin/curl-ca-bundle.crt
   - ps: (new-object net.webclient).DownloadFile('https://bootstrap.pypa.io/get-pip.py', 'C:/get-pip.py')
   - "%PYTHON%/python.exe C:/get-pip.py"
-  - C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Sy mingw-w64-x86_64-ca-certificates ca-certificates"
+  - git clone https://github.com/aspnet/Identity example/Identity
 test_script:
   - "%PYTHON%/Scripts/pip.exe --version"
   - "%PYTHON%/Scripts/pip.exe install tox"
