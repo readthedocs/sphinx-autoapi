@@ -276,8 +276,10 @@ class DotNetPythonMapper(PythonMapperBase):
                             param.get('description', ''))
                     })
 
-            self.returns = self.transform_doc_comments(
-                syntax.get('return', None))
+            self.returns = {}
+            self.returns['type'] = syntax.get('return', {}).get('type')
+            self.returns['description'] = self.transform_doc_comments(
+                syntax.get('return', {}).get('description'))
 
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
@@ -400,8 +402,19 @@ class DotNetPythonMapper(PythonMapperBase):
                 text_start = re.sub(r'(\S)$', r'\1 ', text_start)
 
                 text = ''.join([text_start, replacement, text_end])
-            text = DOC_COMMENT_PARAM_PATTERN.sub(
-                '``\g<attr_value>``', text)
+            while True:
+                found = DOC_COMMENT_PARAM_PATTERN.search(text)
+                if found is None:
+                    break
+
+                # Escape following text
+                text_end = text[found.end():]
+                text_start = text[:found.start()]
+                text_end = re.sub(r'^(\S)', r'\\\1', text_end)
+                text_start = re.sub(r'(\S)$', r'\1 ', text_start)
+
+                text = ''.join([text_start, '``', found.group('attr_value'),
+                                '``', text_end])
         except TypeError:
             pass
         return text

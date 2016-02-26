@@ -7,7 +7,7 @@ from mock import patch
 from autoapi.mappers import dotnet
 
 
-class DomainTests(unittest.TestCase):
+class DotNetSphinxMapperTests(unittest.TestCase):
 
     def setUp(self):
         '''Test setup'''
@@ -91,8 +91,11 @@ class DomainTests(unittest.TestCase):
                 self.assertEqual(objs['Foo.Bar2'].id, 'Foo.Bar2')
                 self.assertEqual(objs['Foo.Bar2'].name, 'Foo.Bar2')
 
+
+class DotNetPythonMapperTests(unittest.TestCase):
+
     def test_xml_parse(self):
-        '''XML doc comment parsing'''
+        """XML doc comment parsing"""
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'This is an example comment <see cref="FOO" />')
         self.assertEqual(ret, 'This is an example comment :any:`FOO`')
@@ -117,6 +120,14 @@ class DomainTests(unittest.TestCase):
             'This is an example comment <typeparamref name="FOO" />')
         self.assertEqual(ret, 'This is an example comment ``FOO``')
 
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'With surrounding characters s<see cref="FOO" />s')
+        self.assertEqual(ret, 'With surrounding characters s :any:`FOO`\s')
+
+        ret = dotnet.DotNetPythonMapper.transform_doc_comments(
+            'With surrounding characters s<paramref name="FOO" />s')
+        self.assertEqual(ret, 'With surrounding characters s ``FOO``\s')
+
     def test_xml_transform_escape(self):
         """XML transform escaping"""
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
@@ -126,3 +137,31 @@ class DomainTests(unittest.TestCase):
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'No space before<see cref="M:Foo`1" />or after')
         self.assertEqual(ret, 'No space before :dn:meth:`Foo\\`1`\\or after')
+
+    def test_parsing_obj(self):
+        """Parse out object, test for transforms, etc"""
+        obj = {
+            'uid': 'Foo`1',
+            'name': 'Foo<TUser>',
+            'summary': 'Test parsing <see cref="Bar" />',
+            'syntax': {
+                'parameters': [
+                    {'id': 'a', 'type': '{TUser}',
+                     'description': 'Test <see cref="TUser" />'}
+                ],
+                'return': {
+                    'type': 'Bar',
+                    'description': ('Test references <see cref="Bar" /> '
+                                    'and paramrefs <paramref name="a" />'),
+                }
+            }
+        }
+        mapped = dotnet.DotNetPythonMapper(obj)
+        self.assertEqual(
+            mapped.parameters[0],
+            {'name': 'a', 'type': '{TUser}', 'desc': 'Test :any:`TUser`'}
+        )
+        self.assertEqual(
+            mapped.returns['description'],
+            'Test references :any:`Bar` and paramrefs ``a``'
+        )
