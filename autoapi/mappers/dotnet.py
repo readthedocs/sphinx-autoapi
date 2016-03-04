@@ -466,7 +466,7 @@ class DotNetPythonMapper(PythonMapperBase):
                 parts.append('{fullName}<{uid}>'.format(**part))
             elif 'uid' in part:
                 parts.append(part['uid'])
-            elif 'fullName':
+            elif 'fullName' in part:
                 parts.append(part['fullName'])
         if parts:
             resolved = ''.join(parts)
