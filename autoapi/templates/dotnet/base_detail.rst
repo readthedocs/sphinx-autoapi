@@ -60,6 +60,9 @@ GitHub
 
 {% block content %}
 
+.. dn:{{ obj.ref_type }}:: {{ obj.definition }}
+    :hidden:
+
 .. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
 {%- for item_type in obj.item_map.keys() %}

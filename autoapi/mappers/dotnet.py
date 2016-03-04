@@ -253,7 +253,8 @@ class DotNetPythonMapper(PythonMapperBase):
 
         # Always exist
         self.id = obj.get('uid', obj.get('id'))
-        self.name = obj.get('fullName', self.id)
+        self.definition = obj.get('definition', self.id)
+        self.name = obj.get('fullName', self.definition)
 
         # Optional
         self.fullname = obj.get('fullName')
@@ -436,8 +437,40 @@ class DotNetPythonMapper(PythonMapperBase):
         Spec identifiers are used in parameter and return type definitions, but
         should be a user-friendly version instead. Use docfx ``references``
         lookup mapping for resolution.
+
+        If the spec identifier reference has a ``spec.csharp`` key, this implies
+        a compound reference that should be linked in a special way. Resolve to
+        a nested reference, with the corrected nodes.
+
+        .. note::
+            This uses a special format that is interpreted by the domain for
+            parameter type and return type fields.
+
+        :param obj_name: spec identifier to resolve to a correct reference
+        :returns: resolved string with one or more references
+        :rtype: str
         """
-        return self.references.get(obj_name, {}).get('fullName', obj_name)
+        ref = self.references.get(obj_name)
+        if ref is None:
+            return obj_name
+
+        resolved = ref.get('fullName', obj_name)
+        spec = ref.get('spec.csharp', [])
+        parts = []
+        for part in spec:
+            if part.get('name') == '<':
+                parts.append('{')
+            elif part.get('name') == '>':
+                parts.append('}')
+            elif 'fullName' in part and 'uid' in part:
+                parts.append('{fullName}<{uid}>'.format(**part))
+            elif 'uid' in part:
+                parts.append(part['uid'])
+            elif 'fullName':
+                parts.append(part['fullName'])
+        if parts:
+            resolved = ''.join(parts)
+        return resolved
 
 
 class DotNetNamespace(DotNetPythonMapper):

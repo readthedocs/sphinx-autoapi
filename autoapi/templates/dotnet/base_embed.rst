@@ -7,7 +7,7 @@
     {% endif %}
 
     {%- for param in obj.parameters %}
-    
+
     {% if param.desc %}
     :param {{ param.name }}: {{ param.desc|indent(8) }}
     {% endif %}
