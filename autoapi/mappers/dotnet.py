@@ -112,8 +112,10 @@ class DotNetSphinxMapper(SphinxMapperBase):
     def map(self, options=None, **kwargs):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
+            references = data.get('references', [])
             for item in data['items']:
-                for obj in self.create_class(item, options):
+                for obj in self.create_class(item, options,
+                                             references=references):
                     self.add_object(obj)
 
         self.organize_objects()
@@ -144,7 +146,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             self.app.warn('Unknown type: %s' % data)
         else:
             obj = cls(data, jinja_env=self.jinja_env, options=options,
-                      url_root=self.url_root)
+                      url_root=self.url_root, **kwargs)
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more
@@ -235,16 +237,24 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
 class DotNetPythonMapper(PythonMapperBase):
 
-    '''Base .NET object representation'''
+    """Base .NET object representation
+
+    :param references: object reference list from docfx
+    :type references: list of dict objects
+    """
 
     language = 'dotnet'
 
     def __init__(self, obj, **kwargs):
+        self.references = dict((obj.get('uid'), obj)
+                               for obj in kwargs.pop('references', [])
+                               if 'uid' in obj)
         super(DotNetPythonMapper, self).__init__(obj, **kwargs)
 
         # Always exist
         self.id = obj.get('uid', obj.get('id'))
-        self.name = obj.get('fullName', self.id)
+        self.definition = obj.get('definition', self.id)
+        self.name = obj.get('fullName', self.definition)
 
         # Optional
         self.fullname = obj.get('fullName')
@@ -271,13 +281,15 @@ class DotNetPythonMapper(PythonMapperBase):
                 if 'id' in param:
                     self.parameters.append({
                         'name': param.get('id'),
-                        'type': param.get('type'),
+                        'type': self.resolve_spec_identifier(param.get('type')),
                         'desc': self.transform_doc_comments(
                             param.get('description', ''))
                     })
 
             self.returns = {}
-            self.returns['type'] = syntax.get('return', {}).get('type')
+            self.returns['type'] = self.resolve_spec_identifier(
+                syntax.get('return', {}).get('type')
+            )
             self.returns['description'] = self.transform_doc_comments(
                 syntax.get('return', {}).get('description'))
 
@@ -418,6 +430,47 @@ class DotNetPythonMapper(PythonMapperBase):
         except TypeError:
             pass
         return text
+
+    def resolve_spec_identifier(self, obj_name):
+        """Find reference name based on spec identifier
+
+        Spec identifiers are used in parameter and return type definitions, but
+        should be a user-friendly version instead. Use docfx ``references``
+        lookup mapping for resolution.
+
+        If the spec identifier reference has a ``spec.csharp`` key, this implies
+        a compound reference that should be linked in a special way. Resolve to
+        a nested reference, with the corrected nodes.
+
+        .. note::
+            This uses a special format that is interpreted by the domain for
+            parameter type and return type fields.
+
+        :param obj_name: spec identifier to resolve to a correct reference
+        :returns: resolved string with one or more references
+        :rtype: str
+        """
+        ref = self.references.get(obj_name)
+        if ref is None:
+            return obj_name
+
+        resolved = ref.get('fullName', obj_name)
+        spec = ref.get('spec.csharp', [])
+        parts = []
+        for part in spec:
+            if part.get('name') == '<':
+                parts.append('{')
+            elif part.get('name') == '>':
+                parts.append('}')
+            elif 'fullName' in part and 'uid' in part:
+                parts.append('{fullName}<{uid}>'.format(**part))
+            elif 'uid' in part:
+                parts.append(part['uid'])
+            elif 'fullName' in part:
+                parts.append(part['fullName'])
+        if parts:
+            resolved = ''.join(parts)
+        return resolved
 
 
 class DotNetNamespace(DotNetPythonMapper):
