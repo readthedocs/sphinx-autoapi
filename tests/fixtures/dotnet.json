@@ -1,322 +1,808 @@
 {
-    "items": [
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "summary": "Defines the operations that can be performed on a JSON patch document.",
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 11,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "IObjectAdapter(Of TModel)",
-            "id": "IObjectAdapter`1",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>",
-            "syntax": {
-                "content": {
-                    "VB": "Public Interface IObjectAdapter(Of TModel As Class)",
-                    "CSharp": "public interface IObjectAdapter<TModel> where TModel : class"
-                },
-                "typeParameters": [
-                    {
-                        "id": "TModel",
-                        "description": "The type of the model."
-                    }
-                ]
-            },
-            "type": "Interface",
-            "children": [
-                "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Add(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-                "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Copy(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-                "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Move(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-                "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Remove(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-                "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Replace(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)"
-            ],
-            "name": "IObjectAdapter<TModel>"
-        },
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Add(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel).Add(Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel), TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "syntax": {
-                "content": {
-                    "VB": "Sub Add(operation As Operation(Of TModel), objectToApplyTo As TModel)",
-                    "CSharp": "void Add(Operation<TModel> operation, TModel objectToApplyTo)"
-                },
-                "parameters": [
-                    {
-                        "type": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-                        "id": "operation"
-                    },
-                    {
-                        "type": "TModel",
-                        "id": "objectToApplyTo"
-                    }
-                ]
-            },
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 13,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "Add(Operation(Of TModel), TModel)",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Add(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)",
-            "type": "Method",
-            "id": "Add(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "name": "Add(Operation<TModel>, TModel)"
-        },
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Copy(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel).Copy(Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel), TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "syntax": {
-                "content": {
-                    "VB": "Sub Copy(operation As Operation(Of TModel), objectToApplyTo As TModel)",
-                    "CSharp": "void Copy(Operation<TModel> operation, TModel objectToApplyTo)"
-                },
-                "parameters": [
-                    {
-                        "type": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-                        "id": "operation"
-                    },
-                    {
-                        "type": "TModel",
-                        "id": "objectToApplyTo"
-                    }
-                ]
-            },
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 14,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "Copy(Operation(Of TModel), TModel)",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Copy(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)",
-            "type": "Method",
-            "id": "Copy(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "name": "Copy(Operation<TModel>, TModel)"
-        },
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Move(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel).Move(Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel), TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "syntax": {
-                "content": {
-                    "VB": "Sub Move(operation As Operation(Of TModel), objectToApplyTo As TModel)",
-                    "CSharp": "void Move(Operation<TModel> operation, TModel objectToApplyTo)"
-                },
-                "parameters": [
-                    {
-                        "type": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-                        "id": "operation"
-                    },
-                    {
-                        "type": "TModel",
-                        "id": "objectToApplyTo"
-                    }
-                ]
-            },
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 15,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "Move(Operation(Of TModel), TModel)",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Move(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)",
-            "type": "Method",
-            "id": "Move(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "name": "Move(Operation<TModel>, TModel)"
-        },
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Remove(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel).Remove(Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel), TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "syntax": {
-                "content": {
-                    "VB": "Sub Remove(operation As Operation(Of TModel), objectToApplyTo As TModel)",
-                    "CSharp": "void Remove(Operation<TModel> operation, TModel objectToApplyTo)"
-                },
-                "parameters": [
-                    {
-                        "type": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-                        "id": "operation"
-                    },
-                    {
-                        "type": "TModel",
-                        "id": "objectToApplyTo"
-                    }
-                ]
-            },
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 16,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "Remove(Operation(Of TModel), TModel)",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Remove(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)",
-            "type": "Method",
-            "id": "Remove(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "name": "Remove(Operation<TModel>, TModel)"
-        },
-        {
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.Replace(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "parent": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter(Of TModel).Replace(Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel), TModel)",
-            "assemblies": [
-                "Microsoft.AspNet.JsonPatch"
-            ],
-            "namespace": "Microsoft.AspNet.JsonPatch.Adapters",
-            "syntax": {
-                "content": {
-                    "VB": "Sub Replace(operation As Operation(Of TModel), objectToApplyTo As TModel)",
-                    "CSharp": "void Replace(Operation<TModel> operation, TModel objectToApplyTo)"
-                },
-                "parameters": [
-                    {
-                        "type": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-                        "id": "operation"
-                    },
-                    {
-                        "type": "TModel",
-                        "id": "objectToApplyTo"
-                    }
-                ]
-            },
-            "source": {
-                "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                "startLine": 17,
-                "remote": {
-                    "repo": "https://github.com/aspnet/mvc",
-                    "path": "src/Microsoft.AspNet.JsonPatch/Adapters/IObjectAdapter.cs",
-                    "branch": "dev",
-                    "key": "faaba481"
-                }
-            },
-            "href": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter`1.yml",
-            "name.vb": "Replace(Operation(Of TModel), TModel)",
-            "fullName": "Microsoft.AspNet.JsonPatch.Adapters.IObjectAdapter<TModel>.Replace(Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>, TModel)",
-            "type": "Method",
-            "id": "Replace(Microsoft.AspNet.JsonPatch.Operations.Operation{`0},`0)",
-            "name": "Replace(Operation<TModel>, TModel)"
+  "items": [
+    {
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "parent": "Microsoft.AspNet.Identity", 
+      "syntax": {
+        "content": "public interface IUserStore<TUser> : IDisposable where TUser : class", 
+        "typeParameters": [
+          {
+            "id": "TUser", 
+            "description": "The type encapsulating a user."
+          }
+        ], 
+        "content.vb": "Public Interface IUserStore(Of TUser As Class) Inherits IDisposable"
+      }, 
+      "children": [
+        "Microsoft.AspNet.Identity.IUserStore`1.CreateAsync(`0,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.DeleteAsync(`0,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.FindByIdAsync(System.String,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.FindByNameAsync(System.String,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.GetNormalizedUserNameAsync(`0,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.GetUserIdAsync(`0,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.GetUserNameAsync(`0,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.SetNormalizedUserNameAsync(`0,System.String,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.SetUserNameAsync(`0,System.String,CancellationToken)", 
+        "Microsoft.AspNet.Identity.IUserStore`1.UpdateAsync(`0,CancellationToken)"
+      ], 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser)", 
+      "name.vb": "IUserStore(Of TUser)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>", 
+      "id": "IUserStore`1", 
+      "name": "IUserStore<TUser>", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Provides an abstraction for a store which manages user accounts.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 13, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
         }
-    ],
-    "references": [
-        {
-            "name.csharp": "Microsoft.AspNet.JsonPatch.Adapters",
-            "uid": "Microsoft.AspNet.JsonPatch.Adapters",
-            "fullName.csharp": "Microsoft.AspNet.JsonPatch.Adapters",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Adapters",
-            "type": "Default",
-            "name.vb": "Microsoft.AspNet.JsonPatch.Adapters",
-            "isExternal": false
-        },
-        {
-            "name.csharp": "Operation<TModel>",
-            "uid": "Microsoft.AspNet.JsonPatch.Operations.Operation{{TModel}}",
-            "fullName.csharp": "Microsoft.AspNet.JsonPatch.Operations.Operation<TModel>",
-            "fullName.vb": "Microsoft.AspNet.JsonPatch.Operations.Operation(Of TModel)",
-            "spec.csharp": [
-                {
-                    "fullName": "Microsoft.AspNet.JsonPatch.Operations.Operation",
-                    "href": "Microsoft.AspNet.JsonPatch.Operations.Operation`1.yml",
-                    "uid": "Microsoft.AspNet.JsonPatch.Operations.Operation`1",
-                    "name": "Operation",
-                    "isExternal": false
-                },
-                {
-                    "fullName": "<",
-                    "name": "<"
-                },
-                {
-                    "fullName": "TModel",
-                    "name": "TModel"
-                },
-                {
-                    "fullName": ">",
-                    "name": ">"
-                }
-            ],
-            "name.vb": "Operation(Of TModel)",
-            "spec.vb": [
-                {
-                    "fullName": "Microsoft.AspNet.JsonPatch.Operations.Operation",
-                    "href": "Microsoft.AspNet.JsonPatch.Operations.Operation`1.yml",
-                    "uid": "Microsoft.AspNet.JsonPatch.Operations.Operation`1",
-                    "name": "Operation",
-                    "isExternal": false
-                },
-                {
-                    "fullName": "(Of ",
-                    "name": "(Of "
-                },
-                {
-                    "fullName": "TModel",
-                    "name": "TModel"
-                },
-                {
-                    "fullName": ")",
-                    "name": ")"
-                }
-            ]
-        },
-        {
-            "name.csharp": "TModel",
-            "uid": "TModel",
-            "fullName.csharp": "TModel",
-            "fullName.vb": "TModel",
-            "name.vb": "TModel",
-            "isExternal": false
+      }, 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "type": "Interface", 
+      "example": []
+    }, 
+    {
+      "name": "GetUserIdAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Gets the user identifier for the specified <paramref name=\"user\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 21, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
         }
-    ]
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).GetUserIdAsync(TUser, CancellationToken)", 
+      "id": "GetUserIdAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.GetUserIdAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<string> GetUserIdAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{System.String}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the identifier for the specified <paramref name=\"user\" />."
+        }, 
+        "content.vb": "Function GetUserIdAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of String)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user whose identifier should be retrieved."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.GetUserIdAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "GetUserNameAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Gets the user name for the specified <paramref name=\"user\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 29, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).GetUserNameAsync(TUser, CancellationToken)", 
+      "id": "GetUserNameAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.GetUserNameAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<string> GetUserNameAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{System.String}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the name for the specified <paramref name=\"user\" />."
+        }, 
+        "content.vb": "Function GetUserNameAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of String)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user whose name should be retrieved."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.GetUserNameAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "SetUserNameAsync(TUser, String, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Sets the given <paramref name=\"userName\" /> for the specified <paramref name=\"user\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 38, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).SetUserNameAsync(TUser, System.String, CancellationToken)", 
+      "id": "SetUserNameAsync(`0,System.String,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.SetUserNameAsync(TUser, System.String, CancellationToken)", 
+      "syntax": {
+        "content": "Task SetUserNameAsync(TUser user, string userName, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation."
+        }, 
+        "content.vb": "Function SetUserNameAsync(user As TUser, userName As String, cancellationToken As CancellationToken) As Task", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user whose name should be set."
+          }, 
+          {
+            "type": "System.String", 
+            "id": "userName", 
+            "description": "The user name to set."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.SetUserNameAsync(`0,System.String,CancellationToken)"
+    }, 
+    {
+      "name": "GetNormalizedUserNameAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Gets the normalized user name for the specified <paramref name=\"user\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 46, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).GetNormalizedUserNameAsync(TUser, CancellationToken)", 
+      "id": "GetNormalizedUserNameAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.GetNormalizedUserNameAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<string> GetNormalizedUserNameAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{System.String}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the normalized user name for the specified <paramref name=\"user\" />."
+        }, 
+        "content.vb": "Function GetNormalizedUserNameAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of String)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user whose normalized name should be retrieved."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.GetNormalizedUserNameAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "SetNormalizedUserNameAsync(TUser, String, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Sets the given normalized name for the specified <paramref name=\"user\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 55, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).SetNormalizedUserNameAsync(TUser, System.String, CancellationToken)", 
+      "id": "SetNormalizedUserNameAsync(`0,System.String,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.SetNormalizedUserNameAsync(TUser, System.String, CancellationToken)", 
+      "syntax": {
+        "content": "Task SetNormalizedUserNameAsync(TUser user, string normalizedName, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation."
+        }, 
+        "content.vb": "Function SetNormalizedUserNameAsync(user As TUser, normalizedName As String, cancellationToken As CancellationToken) As Task", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user whose name should be set."
+          }, 
+          {
+            "type": "System.String", 
+            "id": "normalizedName", 
+            "description": "The normalized name to set."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.SetNormalizedUserNameAsync(`0,System.String,CancellationToken)"
+    }, 
+    {
+      "name": "CreateAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Creates the specified <paramref name=\"user\" /> in the user store.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 63, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).CreateAsync(TUser, CancellationToken)", 
+      "id": "CreateAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.CreateAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<IdentityResult> CreateAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{Microsoft.AspNet.Identity.IdentityResult}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the <see cref=\"T:Microsoft.AspNet.Identity.IdentityResult\" /> of the creation operation."
+        }, 
+        "content.vb": "Function CreateAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of IdentityResult)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user to create."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.CreateAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "UpdateAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Updates the specified <paramref name=\"user\" /> in the user store.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 71, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).UpdateAsync(TUser, CancellationToken)", 
+      "id": "UpdateAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.UpdateAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<IdentityResult> UpdateAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{Microsoft.AspNet.Identity.IdentityResult}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the <see cref=\"T:Microsoft.AspNet.Identity.IdentityResult\" /> of the update operation."
+        }, 
+        "content.vb": "Function UpdateAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of IdentityResult)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user to update."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.UpdateAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "DeleteAsync(TUser, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Deletes the specified <paramref name=\"user\" /> from the user store.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 79, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).DeleteAsync(TUser, CancellationToken)", 
+      "id": "DeleteAsync(`0,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.DeleteAsync(TUser, CancellationToken)", 
+      "syntax": {
+        "content": "Task<IdentityResult> DeleteAsync(TUser user, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{Microsoft.AspNet.Identity.IdentityResult}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the <see cref=\"T:Microsoft.AspNet.Identity.IdentityResult\" /> of the update operation."
+        }, 
+        "content.vb": "Function DeleteAsync(user As TUser, cancellationToken As CancellationToken) As Task(Of IdentityResult)", 
+        "parameters": [
+          {
+            "type": "{TUser}", 
+            "id": "user", 
+            "description": "The user to delete."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.DeleteAsync(`0,CancellationToken)"
+    }, 
+    {
+      "name": "FindByIdAsync(String, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Finds and returns a user, if any, who has the specified <paramref name=\"userId\" />.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 89, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).FindByIdAsync(System.String, CancellationToken)", 
+      "id": "FindByIdAsync(System.String,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.FindByIdAsync(System.String, CancellationToken)", 
+      "syntax": {
+        "content": "Task<TUser> FindByIdAsync(string userId, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{{TUser}}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the user matching the specified <paramref name=\"userID\" /> if it exists."
+        }, 
+        "content.vb": "Function FindByIdAsync(userId As String, cancellationToken As CancellationToken) As Task(Of TUser)", 
+        "parameters": [
+          {
+            "type": "System.String", 
+            "id": "userId", 
+            "description": "The user ID to search for."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.FindByIdAsync(System.String,CancellationToken)"
+    }, 
+    {
+      "name": "FindByNameAsync(String, CancellationToken)", 
+      "parent": "Microsoft.AspNet.Identity.IUserStore`1", 
+      "href": "Microsoft.AspNet.Identity.IUserStore`1.yml", 
+      "assemblies": [
+        "Microsoft.AspNet.Identity"
+      ], 
+      "namespace": "Microsoft.AspNet.Identity", 
+      "summary": "Finds and returns a user, if any, who has the specified normalized user name.", 
+      "source": {
+        "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+        "startLine": 99, 
+        "remote": {
+          "repo": "https://github.com/aspnet/apidocs", 
+          "path": "aspnet/identity/src/Microsoft.AspNet.Identity/IUserStore.cs", 
+          "branch": "master"
+        }
+      }, 
+      "fullName.vb": "Microsoft.AspNet.Identity.IUserStore(Of TUser).FindByNameAsync(System.String, CancellationToken)", 
+      "id": "FindByNameAsync(System.String,CancellationToken)", 
+      "langs": [
+        "csharp", 
+        "vb"
+      ], 
+      "fullName": "Microsoft.AspNet.Identity.IUserStore<TUser>.FindByNameAsync(System.String, CancellationToken)", 
+      "syntax": {
+        "content": "Task<TUser> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)", 
+        "return": {
+          "type": "Task{{TUser}}", 
+          "description": "The <see cref=\"!:Task\" /> that represents the asynchronous operation, containing the user matching the specified <paramref name=\"userID\" /> if it exists."
+        }, 
+        "content.vb": "Function FindByNameAsync(normalizedUserName As String, cancellationToken As CancellationToken) As Task(Of TUser)", 
+        "parameters": [
+          {
+            "type": "System.String", 
+            "id": "normalizedUserName", 
+            "description": "The normalized user name to search for."
+          }, 
+          {
+            "type": "CancellationToken", 
+            "id": "cancellationToken", 
+            "description": "The  used to propagate notifications that the operation should be canceled."
+          }
+        ]
+      }, 
+      "type": "Method", 
+      "example": [], 
+      "uid": "Microsoft.AspNet.Identity.IUserStore`1.FindByNameAsync(System.String,CancellationToken)"
+    }
+  ], 
+  "references": [
+    {
+      "fullName": "Microsoft.AspNet.Identity", 
+      "isExternal": false, 
+      "uid": "Microsoft.AspNet.Identity", 
+      "name": "Microsoft.AspNet.Identity"
+    }, 
+    {
+      "fullName": "TUser", 
+      "isExternal": false, 
+      "uid": "{TUser}", 
+      "name": "TUser"
+    }, 
+    {
+      "fullName": "CancellationToken", 
+      "isExternal": true, 
+      "name": "CancellationToken", 
+      "parent": null, 
+      "uid": "CancellationToken"
+    }, 
+    {
+      "definition": "Task`1", 
+      "uid": "Task{System.String}", 
+      "parent": null, 
+      "spec.vb": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "(Of ", 
+          "name": "(Of "
+        }, 
+        {
+          "fullName": "System.String", 
+          "uid": "System.String", 
+          "name": "String", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": ")", 
+          "name": ")"
+        }
+      ], 
+      "fullName.vb": "Task(Of System.String)", 
+      "name.vb": "Task(Of String)", 
+      "fullName": "Task<System.String>", 
+      "spec.csharp": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "<", 
+          "name": "<"
+        }, 
+        {
+          "fullName": "System.String", 
+          "uid": "System.String", 
+          "name": "String", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": ">", 
+          "name": ">"
+        }
+      ], 
+      "name": "Task<String>"
+    }, 
+    {
+      "fullName": null, 
+      "isExternal": false, 
+      "uid": null, 
+      "name": null
+    }, 
+    {
+      "name": "Task<>", 
+      "parent": null, 
+      "spec.vb": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "(Of ", 
+          "name": "(Of "
+        }, 
+        {
+          "fullName": null, 
+          "name": null
+        }, 
+        {
+          "fullName": ")", 
+          "name": ")"
+        }
+      ], 
+      "fullName.vb": "Task(Of )", 
+      "name.vb": "Task(Of )", 
+      "uid": "Task`1", 
+      "fullName": "Task<>", 
+      "spec.csharp": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "<", 
+          "name": "<"
+        }, 
+        {
+          "fullName": null, 
+          "name": null
+        }, 
+        {
+          "fullName": ">", 
+          "name": ">"
+        }
+      ], 
+      "isExternal": true
+    }, 
+    {
+      "fullName": "System.String", 
+      "isExternal": true, 
+      "name": "String", 
+      "parent": "System", 
+      "uid": "System.String"
+    }, 
+    {
+      "fullName": "Task", 
+      "isExternal": true, 
+      "name": "Task", 
+      "parent": null, 
+      "uid": "Task"
+    }, 
+    {
+      "fullName": "System", 
+      "isExternal": false, 
+      "uid": "System", 
+      "name": "System"
+    }, 
+    {
+      "definition": "Task`1", 
+      "uid": "Task{Microsoft.AspNet.Identity.IdentityResult}", 
+      "parent": null, 
+      "href": "Microsoft.AspNet.Identity.IdentityResult.yml", 
+      "spec.vb": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "(Of ", 
+          "name": "(Of "
+        }, 
+        {
+          "fullName": "Microsoft.AspNet.Identity.IdentityResult", 
+          "href": "Microsoft.AspNet.Identity.IdentityResult.yml", 
+          "uid": "Microsoft.AspNet.Identity.IdentityResult", 
+          "name": "IdentityResult"
+        }, 
+        {
+          "fullName": ")", 
+          "name": ")"
+        }
+      ], 
+      "fullName.vb": "Task(Of Microsoft.AspNet.Identity.IdentityResult)", 
+      "name.vb": "Task(Of IdentityResult)", 
+      "fullName": "Task<Microsoft.AspNet.Identity.IdentityResult>", 
+      "spec.csharp": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "<", 
+          "name": "<"
+        }, 
+        {
+          "fullName": "Microsoft.AspNet.Identity.IdentityResult", 
+          "href": "Microsoft.AspNet.Identity.IdentityResult.yml", 
+          "uid": "Microsoft.AspNet.Identity.IdentityResult", 
+          "name": "IdentityResult"
+        }, 
+        {
+          "fullName": ">", 
+          "name": ">"
+        }
+      ], 
+      "name": "Task<IdentityResult>"
+    }, 
+    {
+      "definition": "Task`1", 
+      "uid": "Task{{TUser}}", 
+      "parent": null, 
+      "spec.vb": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "(Of ", 
+          "name": "(Of "
+        }, 
+        {
+          "fullName": "TUser", 
+          "name": "TUser"
+        }, 
+        {
+          "fullName": ")", 
+          "name": ")"
+        }
+      ], 
+      "fullName.vb": "Task(Of TUser)", 
+      "name.vb": "Task(Of TUser)", 
+      "fullName": "Task<TUser>", 
+      "spec.csharp": [
+        {
+          "fullName": "Task", 
+          "uid": "Task`1", 
+          "name": "Task", 
+          "isExternal": true
+        }, 
+        {
+          "fullName": "<", 
+          "name": "<"
+        }, 
+        {
+          "fullName": "TUser", 
+          "name": "TUser"
+        }, 
+        {
+          "fullName": ">", 
+          "name": ">"
+        }
+      ], 
+      "name": "Task<TUser>"
+    }
+  ]
 }
