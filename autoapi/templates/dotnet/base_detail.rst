@@ -45,7 +45,7 @@ Syntax
 
 .. code-block:: csharp
 
-   {{ obj.example }}
+    {{ obj.example|indent(4) }}
 
 {% endif %}
 
