@@ -89,8 +89,8 @@ class DotNetTests(LanguageIntegrationTests):
     def test_integration(self):
         self._run_test(
             'dotnetexample',
-            '_build/text/autoapi/Microsoft/AspNet/JsonPatch/Adapters/IObjectAdapter-TModel/index.txt',
-            'Defines the operations that can be performed on a JSON patch document.'
+            '_build/text/autoapi/Microsoft/AspNet/Identity/IUserStore-TUser/index.txt',
+            'Provides an abstraction for a store which manages user accounts.'
         )
 
 
