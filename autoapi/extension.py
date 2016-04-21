@@ -29,7 +29,7 @@ def run_autoapi(app):
     normalized_dirs = []
     for path in app.config.autoapi_dirs:
         if os.path.isabs(path):
-            normalized_dirs.append(app.config.autoapi_dir)
+            normalized_dirs.append(path)
         else:
             normalized_dirs.append(
                 os.path.normpath(os.path.join(app.confdir, path))
