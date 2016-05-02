@@ -27,7 +27,10 @@ def run_autoapi(app):
 
     # Make sure the paths are full
     normalized_dirs = []
-    for path in app.config.autoapi_dirs:
+    autoapi_dirs = app.config.autoapi_dirs
+    if isinstance(autoapi_dirs, basestring):
+        autoapi_dirs = [autoapi_dirs]
+    for path in autoapi_dirs:
         if os.path.isabs(path):
             normalized_dirs.append(path)
         else:
