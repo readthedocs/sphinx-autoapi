@@ -49,23 +49,35 @@ class DotNetSphinxMapper(SphinxMapperBase):
     '''Auto API domain handler for .NET
 
     Searches for YAML files, and soon to be JSON files as well, for auto API
-    sources
+    sources. If not pattern configuration was explicitly specified, then default
+    to looking up a ``docfx.json`` file.
 
     :param app: Sphinx application passed in as part of the extension
     '''
 
     top_namespaces = {}
 
-    def load(self, patterns, dirs, ignore=None, **kwargs):
-        '''
-        Load objects from the filesystem into the ``paths`` dictionary.
+    DOCFX_OUTPUT_PATH = '_api'
 
+    def load(self, patterns, dirs, ignore=None, **kwargs):
+        '''Load objects from the filesystem into the ``paths`` dictionary.
+
+        If a patterns setting was not specified, look for a ``docfx.json`` file
+        by default.  A ``docfx.json`` should be treated as the canonical source
+        before the default patterns.  Fallback to default pattern matches if no
+        ``docfx.json`` files are found.
         '''
         raise_error = kwargs.get('raise_error', True)
         all_files = set()
-        for _file in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
-            # Iterating for Sphinx output clarify
-            all_files.add(_file)
+        if not self.app.config.autoapi_file_patterns:
+            all_files = set()
+            for _file in self.find_files(patterns=['docfx.json'], dirs=dirs,
+                                         ignore=ignore):
+                all_files.add(_file)
+        if not all_files:
+            for _file in self.find_files(patterns=patterns, dirs=dirs,
+                                         ignore=ignore):
+                all_files.add(_file)
         if all_files:
             try:
                 command = ['docfx', 'metadata', '--raw', '--force']
@@ -88,7 +100,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 if raise_error:
                     raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
-        for xdoc_path in self.find_files(patterns=['*.yml'], dirs=['_api_'], ignore=ignore):
+        for xdoc_path in self.find_files(patterns=['*.yml'],
+                                         dirs=[self.DOCFX_OUTPUT_PATH],
+                                         ignore=ignore):
             data = self.read_file(path=xdoc_path)
             if data:
                 self.paths[xdoc_path] = data
@@ -231,8 +245,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
     def build_finished(app, exception):
         if app.verbosity > 1:
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .yml files'))
-        if os.path.exists('_api_'):
-            shutil.rmtree('_api_')
+        if os.path.exists(DotNetSphinxMapper.DOCFX_OUTPUT_PATH):
+            shutil.rmtree(DotNetSphinxMapper.DOCFX_OUTPUT_PATH)
 
 
 class DotNetPythonMapper(PythonMapperBase):
@@ -487,6 +501,12 @@ class DotNetMethod(DotNetPythonMapper):
     plural = 'methods'
 
 
+class DotNetOperator(DotNetPythonMapper):
+    type = 'operator'
+    ref_directive = 'op'
+    plural = 'operators'
+
+
 class DotNetProperty(DotNetPythonMapper):
     type = 'property'
     ref_directive = 'prop'
@@ -548,6 +568,6 @@ class DotNetEvent(DotNetPythonMapper):
 
 ALL_CLASSES = [
     DotNetNamespace, DotNetClass, DotNetEnum, DotNetStruct,
-    DotNetInterface, DotNetDelegate, DotNetProperty, DotNetMethod,
-    DotNetConstructor, DotNetField, DotNetEvent
+    DotNetInterface, DotNetDelegate, DotNetOperator, DotNetProperty,
+    DotNetMethod, DotNetConstructor, DotNetField, DotNetEvent
 ]

@@ -48,8 +48,8 @@ Basic Workflow
 Sphinx AutoAPI has the following structure:
 
 * Configure directory to look for source files
-* Generate JSON from those source files, using language-specific tooling
-* Map the JSON into standard AutoAPI Python objects
+* Serialize those source files, using language-specific tooling
+* Map the serialized data into standard AutoAPI Python objects
 * Generate RST through Jinja2 templates from those Python objects
 
 This basic framework should be easy to implement in your language of choice.
@@ -58,37 +58,93 @@ All you need to do is be able to generate a JSON structure that includes your AP
 Install
 -------
 
-
 First you need to install autoapi:
 
 .. code:: bash
-	
-	pip install sphinx-autoapi
+
+    pip install sphinx-autoapi
 
 Then add it to your Sphinx project's ``conf.py``:
 
 .. code:: python
 
-	extensions = ['autoapi.extension']
+    extensions = ['autoapi.extension']
 
-        # Document Python Code
-	autoapi_type = 'python'
-	autoapi_dir = 'path/to/python/files'
+    # Document Python Code
+    autoapi_type = 'python'
+    autoapi_dirs = ['path/to/python/files', 'path/to/more/python/files']
 
-        # Or, Document Go Code
-	autoapi_type = 'go'
-	autoapi_dir = 'path/to/go/files'
+    # Or, Document Go Code
+    autoapi_type = 'go'
+    autoapi_dirs = 'path/to/go/files'
 
-AutoAPI will automatically add itself to the last TOCTree in your top-level ``index.rst``.
+AutoAPI will automatically add itself to the last TOCTree in your top-level
+``index.rst``.
 
-This is needed because we will be outputting rst files into the ``autoapi`` directory.
-This adds it into the global TOCTree for your project,
-so that it appears in the menus.
+This is needed because we will be outputting rst files into the ``autoapi``
+directory.  This adds it into the global TOCTree for your project, so that it
+appears in the menus.
 
-We hope to be able to dynamically add items into the TOCTree, and remove this step.
-However, it is currently required.
+We hope to be able to dynamically add items into the TOCTree, and remove this
+step.  However, it is currently required.
 
 See all available configuration options in :doc:`config`.
+
+Setup
+-----
+
+.NET
+~~~~
+
+The .NET mapping utilizes the tool `docfx`_. To install ``docfx``, first
+you'll need to `install a .NET runtime on your system <ASP.NET Installation>`_.
+
+The docfx tool can be installed with::
+
+    dnu commands install docfx
+
+By default, ``docfx`` will output metadata files into the ``_api`` path. You
+can configure which path to output files into using a ``docfx.json`` file in
+your project's repository. Here's an example from the ASP.NET docs:
+
+.. code:: json
+
+    {
+      "metadata": [{
+        "src": [{
+          "files": [
+            "aspnet/identity/src/\*\*/project.json"
+          ],
+          "exclude": [
+            "aspnet/testing/src/Microsoft.AspNet.Testing/\*"
+          ]
+        }],
+        "dest": "docs/_api",
+        "force": "true",
+        "raw": "true"
+      }]
+    }
+
+.. note::
+    The ``dest`` configuration option is required to output to the ``docs/``
+    path, where autoapi knows to search for these files.
+
+With a working ``docfx`` toolchain, you can now add the configuration options
+to enable the .NET autoapi mapper. In your ``conf.py``:
+
+.. code:: python
+
+    extensions = ['autoapi.extension']
+    autoapi_type = 'dotnet'
+    autoapi_dirs = ['..']
+
+This configuration, which assumes your ``conf.py`` is in a ``docs/`` path,
+will use your parent path to search for files to pass to ``docfx``. If you
+have a ``docfx.json`` file present, and did not specify a custom pattern for
+finding files, ``docfx.json`` will be used first.
+
+.. _`docfx`: https://github.com/dotnet/docfx
+.. _`ASP.NET Installation`: http://docs.asp.net/en/latest/getting-started/index.html
 
 Customize
 ---------
@@ -106,7 +162,7 @@ Currently Implemented
 ---------------------
 
 * Python (2 only -- Epydoc doesn't support Python 3)
-* .Net
+* .NET
 * Go
 * Javascript
 
