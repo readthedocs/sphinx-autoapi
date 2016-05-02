@@ -48,7 +48,7 @@
 {%- for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.summary }}{% endmacro %}
 
-    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_name }}`
+    {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_short_name }}`
         .. object: type={{ obj_item.type }} name={{ obj_item.ref_name }}
 
         {{ render()|indent(8) }}
