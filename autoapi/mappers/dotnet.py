@@ -265,6 +265,7 @@ class DotNetPythonMapper(PythonMapperBase):
         self.children = []
         self.item_map = defaultdict(list)
         self.inheritance = []
+        self.assemblies = obj.get('assemblies', [])
 
         # Syntax example and parameter list
         syntax = obj.get('syntax', None)
