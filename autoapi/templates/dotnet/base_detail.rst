@@ -5,21 +5,29 @@
 
 {% endblock %}
 
-.. contents:: 
-   :local:
-
 {% block summary %}
-
-{%- if obj.summary %}
-
-Summary
--------
+  {%- if obj.summary %}
 
 {{ obj.summary }}
 
+  {%- endif %}
+{% endblock %}
+
+{%- if obj.namespace %}
+Namespace
+    :dn:ns:`{{ obj.namespace }}`
+{%- endif %}
+{%- if obj.assemblies %}
+Assemblies
+  {%- for assembly in obj.assemblies %}
+    * {{ assembly }}
+  {%- endfor %}
 {%- endif %}
 
-{% endblock %}
+----
+
+.. contents::
+   :local:
 
 {% block inheritance %}
 
@@ -50,12 +58,6 @@ Syntax
 {% endif %}
 
 {% endblock %}
-
-GitHub
-------
-
-`View on GitHub <{{ obj.edit_link }}>`_
-
 
 
 {% block content %}
