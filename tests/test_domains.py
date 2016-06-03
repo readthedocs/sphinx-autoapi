@@ -12,8 +12,12 @@ class DotNetSphinxMapperTests(unittest.TestCase):
     def setUp(self):
         '''Test setup'''
         class _config(object):
-            autoapi_dirs = ['/tmp/autoapi/tmp']
-            autoapi_root = '/tmp/autoapi/root'
+            def __getattr__(self, key):
+                attrs = {
+                    'autoapi_dirs': ['/tmp/autoapi/tmp'],
+                    'autoapi_root': '/tmp/autoapi/root',
+                }
+                return attrs.get(key, None)
 
         class _application(object):
             config = _config()
