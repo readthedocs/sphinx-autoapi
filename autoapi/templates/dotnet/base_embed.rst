@@ -26,5 +26,5 @@
     {% if obj.example %}
     .. code-block:: csharp
 
-       {{ obj.example }}
+        {{ obj.example|indent(8) }}
     {%- endif %}
