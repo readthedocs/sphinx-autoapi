@@ -104,24 +104,17 @@ The docfx tool can be installed with::
     dnu commands install docfx
 
 By default, ``docfx`` will output metadata files into the ``_api`` path. You
-can configure which path to output files into using a ``docfx.json`` file in
-your project's repository. Here's an example from the ASP.NET docs:
+can configure which path to output files into by setting the path in your
+`docfx configuration file`_ in your project's repository. For example:
 
 .. code:: json
 
     {
+      ...
       "metadata": [{
-        "src": [{
-          "files": [
-            "aspnet/identity/src/\*\*/project.json"
-          ],
-          "exclude": [
-            "aspnet/testing/src/Microsoft.AspNet.Testing/\*"
-          ]
-        }],
+        ...
         "dest": "docs/_api",
-        "force": "true",
-        "raw": "true"
+        ...
       }]
     }
 
@@ -138,13 +131,18 @@ to enable the .NET autoapi mapper. In your ``conf.py``:
     autoapi_type = 'dotnet'
     autoapi_dirs = ['..']
 
-This configuration, which assumes your ``conf.py`` is in a ``docs/`` path,
-will use your parent path to search for files to pass to ``docfx``. If you
-have a ``docfx.json`` file present, and did not specify a custom pattern for
-finding files, ``docfx.json`` will be used first.
+This configuration assumes your ``conf.py`` is in a ``docs/`` path, and will use
+your parent path ('..') to search for files to pass to ``docfx``. Unless you
+specify a custom pattern, using the ``autoapi_patterns`` option,
+``sphinx-autoapi`` will assume a list of file names to search.
+
+First, a ``docfx.json`` file will be searched for. If this file exists, it will
+be used, regardless of whether you have other file patterns listed. Otherwise,
+any file matching ``['project.json', 'csproj', 'vsproj']`` will be searched for.
 
 .. _`docfx`: https://github.com/dotnet/docfx
 .. _`ASP.NET Installation`: http://docs.asp.net/en/latest/getting-started/index.html
+.. _`docfx configuration file`: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#3-docfx-json-format
 
 Customize
 ---------

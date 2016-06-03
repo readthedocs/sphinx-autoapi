@@ -49,7 +49,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
     '''Auto API domain handler for .NET
 
     Searches for YAML files, and soon to be JSON files as well, for auto API
-    sources. If not pattern configuration was explicitly specified, then default
+    sources. If no pattern configuration was explicitly specified, then default
     to looking up a ``docfx.json`` file.
 
     :param app: Sphinx application passed in as part of the extension
@@ -62,10 +62,10 @@ class DotNetSphinxMapper(SphinxMapperBase):
     def load(self, patterns, dirs, ignore=None, **kwargs):
         '''Load objects from the filesystem into the ``paths`` dictionary.
 
-        If a patterns setting was not specified, look for a ``docfx.json`` file
-        by default.  A ``docfx.json`` should be treated as the canonical source
-        before the default patterns.  Fallback to default pattern matches if no
-        ``docfx.json`` files are found.
+        If the setting ``autoapi_patterns`` was not specified, look for a
+        ``docfx.json`` file by default.  A ``docfx.json`` should be treated as
+        the canonical source before the default patterns.  Fallback to default
+        pattern matches if no ``docfx.json`` files are found.
         '''
         raise_error = kwargs.get('raise_error', True)
         all_files = set()
