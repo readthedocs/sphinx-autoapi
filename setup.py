@@ -4,10 +4,8 @@ try:
     extra_setup = dict(
         install_requires=[
             'PyYAML',
-            'epyparse',
-            'epydoc',
             'sphinx',
-            'sphinxcontrib-golangdomain',
+            #'sphinxcontrib-golangdomain',
             'sphinxcontrib-dotnetdomain',
             'unidecode',
         ],

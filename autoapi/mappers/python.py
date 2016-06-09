@@ -1,15 +1,9 @@
 from collections import defaultdict
-import sys
 
 from .base import PythonMapperBase, SphinxMapperBase
+from ..utils import slugify
 
-if sys.version_info < (3,):
-    from epyparse import parsed
-else:
-    # Don't raise exception on module level because it would
-    # break all backends on Python 3
-    def parsed(path):
-        raise Exception('Python 3 not supported')
+from pydocstyle import parse
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -28,7 +22,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         '''
 
         try:
-            parsed_data = parsed(path)
+            parsed_data = parse(open(path), path)
             return parsed_data
         except IOError:
             self.app.warn('Error reading file: {0}'.format(path))
@@ -39,32 +33,23 @@ class PythonSphinxMapper(SphinxMapperBase):
         return None
 
     def create_class(self, data, options=None, **kwargs):
-        '''Return instance of class based on Roslyn type property
+        '''
+        Create a class from the passed in data
 
-        Data keys handled here:
-
-            type
-                Set the object class
-
-            items
-                Recurse into :py:meth:`create_class` to create child object
-                instances
-
-        :param data: dictionary data of epydoc output
+        :param data: dictionary data of pydocstyle output
         '''
         obj_map = dict((cls.type, cls) for cls
-                       in [PythonClass, PythonFunction, PythonModule])
+                       in [PythonClass, PythonFunction, PythonModule, PythonMethod])
         try:
-            cls = obj_map[data['type']]
+            cls = obj_map[data.kind]
         except KeyError:
-            self.app.warn("Unknown Type: %s" % data['type'])
+            self.app.warn("Unknown Type: %s" % data.kind)
         else:
             obj = cls(data, jinja_env=self.jinja_env, options=self.app.config.autoapi_options)
-            if 'children' in data:
-                for child_data in data['children']:
-                    for child_obj in self.create_class(child_data, options=options):
-                        obj.children.append(child_obj)
-                        self.add_object(child_obj)
+            for child_data in data.children:
+                for child_obj in self.create_class(child_data, options=options):
+                    obj.children.append(child_obj)
+                    self.add_object(child_obj)
             yield obj
 
 
@@ -76,17 +61,25 @@ class PythonPythonMapper(PythonMapperBase):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
         # Always exist
-        self.id = obj['fullname']
-        self.name = self.obj.get('fullname', self.id)
+        name = obj.name.split('/')[-1]
+        self.id = slugify(name)
+        self.name = name
 
         # Optional
-        self.imports = obj.get('imports', [])
         self.children = []
-        self.args = obj.get('args', [])
-        self.params = obj.get('params', [])
-        self.docstring = obj.get('docstring', '')
-        self.methods = obj.get('methods', [])
-        self.inheritance = obj.get('bases', [])
+        try:
+            args = obj.source.split('\n')[0]
+            args = args.split('(')[1]
+            args = args.split(')')[0]
+            self.args = args.split(',')
+        except:
+            args = ''
+        self.docstring = obj.docstring or ''
+        self.docstring = self.docstring.replace("'''", '').replace('"""', '')
+        if getattr(obj, 'parent'):
+            self.inheritance = [obj.parent.name]
+        else:
+            self.inheritance = ''
 
         # For later
         self.item_map = defaultdict(list)
@@ -116,6 +109,10 @@ class PythonPythonMapper(PythonMapperBase):
 
 class PythonFunction(PythonPythonMapper):
     type = 'function'
+
+
+class PythonMethod(PythonPythonMapper):
+    type = 'method'
 
 
 class PythonModule(PythonPythonMapper):
