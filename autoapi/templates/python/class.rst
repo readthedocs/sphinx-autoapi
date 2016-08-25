@@ -1,13 +1,11 @@
 {% if not 'nested' in obj._human %}
-{{ obj.short_name }}
-{{ "-" * obj.short_name|length }}
+Class {{ obj.short_name }}
+~~~~~~{{ "~" * obj.short_name|length }}
 {% endif %}
 
 .. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {%- if obj.docstring %}
-
-   .. rubric:: Summary
 
    {{ obj.docstring|indent(3) }}
 

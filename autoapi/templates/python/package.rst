@@ -1,5 +1,5 @@
-Module {{ obj.name }}
--------{{ "-" * obj.name|length }}
+Package {{ obj.name }}
+========{{ "=" * obj.name|length }}
 
 {%- if obj.docstring %}
 

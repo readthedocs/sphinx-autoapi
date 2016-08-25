@@ -1,6 +1,6 @@
 {%- if obj.display %}
 
-.. function:: {{ obj.name.split('.')[-1] }}({{ obj.args|join(',') }})
+.. function:: {{ obj.name }}({{ obj.args|join(',') }})
 
    {% if obj.docstring %}
    {{ obj.docstring.strip()|indent(3) }}
