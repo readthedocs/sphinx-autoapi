@@ -1,4 +1,6 @@
+import os
 from collections import defaultdict
+import textwrap
 
 from .base import PythonMapperBase, SphinxMapperBase
 from ..utils import slugify
@@ -39,15 +41,18 @@ class PythonSphinxMapper(SphinxMapperBase):
         :param data: dictionary data of pydocstyle output
         '''
         obj_map = dict((cls.type, cls) for cls
-                       in [PythonClass, PythonFunction, PythonModule, PythonMethod])
+                       in [PythonClass, PythonFunction, PythonModule, PythonMethod, PythonPackage])
         try:
             cls = obj_map[data.kind]
         except KeyError:
             self.app.warn("Unknown Type: %s" % data.kind)
         else:
-            obj = cls(data, jinja_env=self.jinja_env, options=self.app.config.autoapi_options)
+            path = kwargs.get('path')
+            obj = cls(data, jinja_env=self.jinja_env,
+                      options=self.app.config.autoapi_options, path=path
+                      )
             for child_data in data.children:
-                for child_obj in self.create_class(child_data, options=options):
+                for child_obj in self.create_class(child_data, options=options, path=path):
                     obj.children.append(child_obj)
                     self.add_object(child_obj)
             yield obj
@@ -60,8 +65,14 @@ class PythonPythonMapper(PythonMapperBase):
     def __init__(self, obj, **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
-        # Always exist
-        name = obj.name.split('/')[-1]
+        # Properly name the object with dot notation
+        if self.top_level_object:
+            name = self.path.relative.split('.')[0].replace('/', '.')
+        else:
+            name = '.'.join([
+                os.path.dirname(self.path.relative).replace('/', '.'),
+                obj.name
+            ])
         self.id = slugify(name)
         self.name = name
 
@@ -75,6 +86,7 @@ class PythonPythonMapper(PythonMapperBase):
         except:
             args = ''
         self.docstring = obj.docstring or ''
+        self.docstring = textwrap.dedent(self.docstring)
         self.docstring = self.docstring.replace("'''", '').replace('"""', '')
         if getattr(obj, 'parent'):
             self.inheritance = [obj.parent.name]
@@ -83,6 +95,9 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self.item_map = defaultdict(list)
+
+    def __repr__(self):
+        return 'Python {type}: {name}'.format(name=self.name, type=self.type)
 
     @property
     def undoc_member(self):
@@ -117,6 +132,11 @@ class PythonMethod(PythonPythonMapper):
 
 class PythonModule(PythonPythonMapper):
     type = 'module'
+    top_level_object = True
+
+
+class PythonPackage(PythonPythonMapper):
+    type = 'package'
     top_level_object = True
 
 

@@ -1,7 +1,7 @@
 import re
 import os
 import fnmatch
-from collections import OrderedDict
+from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
@@ -9,6 +9,8 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
 from ..settings import API_ROOT
+
+Path = namedtuple('Path', ['absolute', 'relative'])
 
 
 class PythonMapperBase(object):
@@ -47,8 +49,9 @@ class PythonMapperBase(object):
     # Create a page in the output for this object.
     top_level_object = False
 
-    def __init__(self, obj, options=None, jinja_env=None, url_root=None):
+    def __init__(self, obj, path, options=None, jinja_env=None, url_root=None):
         self.obj = obj
+        self.path = path
         self.options = options
         if jinja_env:
             self.jinja_env = jinja_env
@@ -115,14 +118,19 @@ class PythonMapperBase(object):
         * Break up the string as paths
         '''
         slug = self.name
-        try:
-            slug = self.name.split('(')[0]
-        except IndexError:
-            pass
         slug = unidecode.unidecode(slug)
         slug = slug.replace('-', '')
         slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
-        return os.path.join(*slug.split('.'))
+        return slug.split('.')[-1]
+
+    def include_dir(self, root):
+        """Return directory of file
+        """
+        return os.path.join(
+            root,
+            os.path.dirname(self.path.relative),
+            self.pathname,
+        )
 
     @property
     def include_path(self):
@@ -131,8 +139,7 @@ class PythonMapperBase(object):
         This is used in ``toctree`` directives, as Sphinx always expects Unix
         path separators
         """
-        parts = [self.url_root]
-        parts.extend(self.pathname.split(os.path.sep))
+        parts = [self.include_dir(root=self.url_root)]
         parts.append('index')
         return '/'.join(parts)
 
@@ -193,7 +200,7 @@ class SphinxMapperBase(object):
 
         '''
         for path in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
-            data = self.read_file(path=path)
+            data = self.read_file(path=path.absolute)
             if data:
                 self.paths[path] = data
 
@@ -219,11 +226,16 @@ class SphinxMapperBase(object):
 
                         if skip:
                             continue
+
                         # Make sure the path is full
                         if os.path.isabs(filename):
-                            files_to_read.append(filename)
+                            ret_path = filename
                         else:
-                            files_to_read.append(os.path.join(root, filename))
+                            ret_path = os.path.join(root, filename)
+
+                        rel_path = ret_path.replace(_dir, '')
+                        path_obj = Path(ret_path, rel_path[1:])
+                        files_to_read.append(path_obj)
 
         for _path in self.app.status_iterator(
                 files_to_read,
@@ -252,7 +264,7 @@ class SphinxMapperBase(object):
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data, options=options):
+            for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
     def create_class(self, obj, options=None, **kwargs):
@@ -267,18 +279,14 @@ class SphinxMapperBase(object):
         for id, obj in self.objects.items():
 
             if not obj or not obj.top_level_object:
+                print "Skipping {obj} as it isn't a top level object".format(obj=obj)
                 continue
 
             rst = obj.render()
             if not rst:
                 continue
 
-            try:
-                filename = id.split('(')[0]
-            except IndexError:
-                filename = id
-            filename = filename.replace('#', '-')
-            detail_dir = os.path.join(root, *filename.split('.'))
+            detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
             with open(path, 'wb+') as detail_file:
