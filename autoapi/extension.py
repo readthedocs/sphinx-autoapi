@@ -66,6 +66,16 @@ def run_autoapi(app):
     else:
         ignore_patterns = default_ignore_patterns.get(app.config.autoapi_type, [])
 
+    if '.rst' in app.config.source_suffix:
+        out_suffix = '.rst'
+    elif '.txt' in app.config.source_suffix:
+        out_suffix = '.txt'
+    else:
+        # Fallback to first suffix listed
+        out_suffix = app.config.source_suffix[0]
+
+    # Actual meat of the run.
+
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
         patterns=file_patterns,
@@ -79,8 +89,7 @@ def run_autoapi(app):
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
         root=normalized_root,
-        # TODO: Better way to determine suffix?
-        source_suffix=app.config.source_suffix[0],
+        source_suffix=out_suffix,
     )
 
 
