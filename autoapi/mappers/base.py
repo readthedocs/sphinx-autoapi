@@ -278,9 +278,9 @@ class SphinxMapperBase(object):
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            if not obj or not obj.top_level_object:
-                print "Skipping {obj} as it isn't a top level object".format(obj=obj)
-                continue
+            # if not obj or not obj.top_level_object:
+            #     print "Skipping {obj} as it isn't a top level object".format(obj=obj)
+            #     continue
 
             rst = obj.render()
             if not rst:

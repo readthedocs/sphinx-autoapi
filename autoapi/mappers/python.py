@@ -5,7 +5,7 @@ import textwrap
 from .base import PythonMapperBase, SphinxMapperBase
 from ..utils import slugify
 
-from pydocstyle import parse
+from pydocstyle.parser import Parser
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -24,7 +24,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         '''
 
         try:
-            parsed_data = parse(open(path), path)
+            parsed_data = Parser()(open(path), path)
             return parsed_data
         except IOError:
             self.app.warn('Error reading file: {0}'.format(path))
