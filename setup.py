@@ -4,8 +4,10 @@ try:
     extra_setup = dict(
         install_requires=[
             'PyYAML',
+            'pydocstyle',
+            'wheel==0.24.0',
             'sphinx',
-            #'sphinxcontrib-golangdomain',
+            'sphinxcontrib-golangdomain',
             'sphinxcontrib-dotnetdomain',
             'unidecode',
         ],
@@ -17,8 +19,8 @@ except ImportError:
     extra_setup = dict(
         requires=[
             'PyYAML',
-            'epyparse',
-            'epydoc',
+            'pydocstyle',
+            'wheel==0.24.0',
             'sphinx'
             'sphinxcontrib-golangdomain',
             'sphinxcontrib-dotnetdomain',
@@ -31,9 +33,9 @@ setup(
     version='0.3.0',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
-    url='http://github.com/ericholscher/sphinx-autoapi',
+    url='http://github.com/rtfd/sphinx-autoapi',
     license='BSD',
-    description='',
+    description='Sphinx auto API documentation generator',
     package_dir={'': '.'},
     packages=find_packages('.'),
     long_description=codecs.open("README.rst", "r", "utf-8").read(),
