@@ -94,9 +94,6 @@ class PythonPythonMapper(PythonMapperBase):
         # For later
         self.item_map = defaultdict(list)
 
-    def __repr__(self):
-        return 'Python {type}: {name}'.format(name=self.name, type=self.type)
-
     @property
     def undoc_member(self):
         return self.docstring == ''
