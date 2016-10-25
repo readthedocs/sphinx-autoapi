@@ -30,7 +30,7 @@ except ImportError:
 
 setup(
     name='sphinx-autoapi',
-    version='0.3.0',
+    version='0.4.0',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
     url='http://github.com/rtfd/sphinx-autoapi',
