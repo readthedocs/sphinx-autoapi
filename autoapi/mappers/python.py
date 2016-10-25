@@ -1,11 +1,10 @@
 import os
-from collections import defaultdict
 import textwrap
+from collections import defaultdict
+from pydocstyle.parser import Parser
 
 from .base import PythonMapperBase, SphinxMapperBase
 from ..utils import slugify
-
-from pydocstyle.parser import Parser
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -35,11 +34,10 @@ class PythonSphinxMapper(SphinxMapperBase):
         return None
 
     def create_class(self, data, options=None, **kwargs):
-        '''
-        Create a class from the passed in data
+        """Create a class from the passed in data
 
         :param data: dictionary data of pydocstyle output
-        '''
+        """
         obj_map = dict((cls.type, cls) for cls
                        in [PythonClass, PythonFunction, PythonModule, PythonMethod, PythonPackage])
         try:

@@ -124,8 +124,7 @@ class PythonMapperBase(object):
         return slug.split('.')[-1]
 
     def include_dir(self, root):
-        """Return directory of file
-        """
+        """Return directory of file"""
         return os.path.join(
             root,
             os.path.dirname(self.path.relative),
@@ -277,10 +276,6 @@ class SphinxMapperBase(object):
 
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
-
-            # if not obj or not obj.top_level_object:
-            #     print "Skipping {obj} as it isn't a top level object".format(obj=obj)
-            #     continue
 
             rst = obj.render()
             if not rst:
