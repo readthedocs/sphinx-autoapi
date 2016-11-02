@@ -6,13 +6,13 @@ import ast
 from collections import defaultdict
 from pydocstyle.parser import Parser
 
+from .base import PythonMapperBase, SphinxMapperBase
+from ..utils import slugify
+
 if sys.version_info < (3,):
     from itertools import izip_longest as zip_longest
 else:
     from itertools import zip_longest
-
-from .base import PythonMapperBase, SphinxMapperBase
-from ..utils import slugify
 
 
 class PythonSphinxMapper(SphinxMapperBase):
@@ -93,7 +93,7 @@ class PythonPythonMapper(PythonMapperBase):
         if getattr(obj, 'parent'):
             self.inheritance = [obj.parent.name]
         else:
-            self.inheritance = ''
+            self.inheritance = []
 
         # For later
         self.item_map = defaultdict(list)
@@ -133,7 +133,9 @@ class PythonPythonMapper(PythonMapperBase):
         :rtype: str
         """
 
-        def _inner(obj, parts=[]):
+        def _inner(obj, parts=None):
+            if parts is None:
+                parts = []
             obj_kind = obj.kind
             obj_name = obj.name
             if obj_kind == 'module':
@@ -223,13 +225,13 @@ class PythonPythonMapper(PythonMapperBase):
         if parsed_args.vararg:
             arguments.append('*{0}'.format(
                 parsed_args.vararg
-                if sys.version_info < (3,3)
+                if sys.version_info < (3, 3)
                 else parsed_args.vararg.arg
             ))
         if parsed_args.kwarg:
             arguments.append('**{0}'.format(
                 parsed_args.kwarg
-                if sys.version_info < (3,3)
+                if sys.version_info < (3, 3)
                 else parsed_args.kwarg.arg
             ))
 
