@@ -1,22 +1,22 @@
-{% if not 'nested' in obj._human %}
-Class {{ obj.short_name }}
-~~~~~~{{ "~" * obj.short_name|length }}
-{% endif %}
+.. autoapi-hidden::
+   {{ obj.short_name }}
+   {{ "=" * obj.short_name|length }}
 
 .. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {%- if obj.docstring %}
 
-   {{ obj.docstring|indent(3) }}
+   .. autoapi-nested-parse::
+      {{ obj.docstring|indent(6) }}
 
    {% endif %}
 
    {%- if obj.methods %}
-   
+
    {%- for method in obj.methods %}
 
    {{ method.rendered|indent(3) }}
-   
+
    {%- endfor %}
 
    {% endif %}

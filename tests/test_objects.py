@@ -4,10 +4,12 @@
 
 import os
 import unittest
+from collections import namedtuple
 
 from jinja2 import Environment, FileSystemLoader
 
 from autoapi.mappers import dotnet
+from autoapi.mappers import python
 from autoapi.settings import TEMPLATE_DIR
 
 
@@ -135,3 +137,93 @@ class DotNetObjectTests(unittest.TestCase):
         self.assertEqual(cls.include_path, '/autoapi/Foo/Bar/Widget/index')
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'}, url_root='/autofoo')
         self.assertEqual(cls.include_path, '/autofoo/Foo/Bar/Widget/index')
+
+
+class PythonObjectTests(unittest.TestCase):
+
+    def test_full_name(self):
+        """Full name resolution on nested objects"""
+        Source = namedtuple('Source', ['kind', 'name', 'parent'])
+
+        obj_module = Source(kind='module', name='example/example.py', parent=None)
+        obj_class = Source(kind='class', name='Foo', parent=obj_module)
+        obj_method = Source(kind='method', name='bar', parent=obj_class)
+
+        self.assertEqual(
+            python.PythonPythonMapper._get_full_name(obj_module),
+            'example.example'
+        )
+        self.assertEqual(
+            python.PythonPythonMapper._get_full_name(obj_class),
+            'example.example.Foo'
+        )
+        self.assertEqual(
+            python.PythonPythonMapper._get_full_name(obj_method),
+            'example.example.Foo.bar'
+        )
+
+    def test_arguments(self):
+        """Argument parsing of source"""
+        Source = namedtuple('Source', ['source', 'docstring'])
+
+        obj = Source(
+            source=('def foobar(self, bar, baz=42, foo=True,\n'
+                    '           *args, **kwargs):\n'
+                    '    "This is a docstring"\n'
+                    '    return True\n'),
+            docstring='"This is a docstring"',
+        )
+
+        self.assertEqual(
+            python.PythonPythonMapper._get_arguments(obj),
+            ['self', 'bar', 'baz=42', 'foo=True', '*args', '**kwargs']
+        )
+
+    def test_advanced_arguments(self):
+        """Advanced argument parsing"""
+        Source = namedtuple('Source', ['source', 'docstring'])
+
+        obj = Source(
+            source=('def foobar(self, a, b, c=42, d="string", e=(1,2),\n'
+                    '           f={"a": True}, g=None, h=[1,2,3,4],\n'
+                    '           i=dict(a=True), j=False, *args, **kwargs):\n'
+                    '    "This is a docstring"\n'
+                    '    return True\n'),
+            docstring='"This is a docstring"',
+        )
+
+        self.assertEqual(
+            python.PythonPythonMapper._get_arguments(obj),
+            [
+                'self',
+                'a',
+                'b',
+                'c=42',
+                'd="string"',
+                'e=tuple',
+                'f=dict',
+                'g=None',
+                'h=list',
+                'i=dict',
+                'j=False',
+                '*args',
+                '**kwargs',
+            ]
+        )
+
+    def test_bunk_whitespace(self):
+        """Whitespace in definition throws off argument parsing"""
+        Source = namedtuple('Source', ['source', 'docstring'])
+
+        obj = Source(
+            source=('    def method_foo(self, a, b,\n'
+                    '                   c):\n'
+                    '        call_something()\n'
+                    '        "This is a docstring"\n'
+                    '        return True\n'),
+            docstring='"This is a docstring"',
+        )
+        self.assertEqual(
+            python.PythonPythonMapper._get_arguments(obj),
+            ['self', 'a', 'b', 'c']
+        )

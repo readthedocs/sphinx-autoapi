@@ -2,4 +2,3 @@
 
    {{ obj.docstring|indent(3) }}
 
-

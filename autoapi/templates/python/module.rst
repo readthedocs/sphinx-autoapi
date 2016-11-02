@@ -1,13 +1,14 @@
-Module {{ obj.name }}
--------{{ "-" * obj.name|length }}
+{{ obj.name }}
+{{ "=" * obj.name|length }}
+
+.. py:module:: {{ obj.name }}
 
 {%- if obj.docstring %}
 
-{{ obj.docstring }}
+.. autoapi-nested-parse::
+   {{ obj.docstring|indent(3) }}
 
 {% endif %}
-
-.. py:module:: {{ obj.name }}
 
 {% block content %}
 {%- for obj_item in obj.children %}
@@ -16,4 +17,3 @@ Module {{ obj.name }}
 
 {%- endfor %}
 {% endblock %}
-
