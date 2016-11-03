@@ -9,8 +9,10 @@ Below is a list of all items that are documented here.
    :glob:
    :maxdepth: 1
 
-   {%- for page in pages|sort %}
-   {% if page.top_level_object %}
-   /autoapi/{{ page.id.split('.')|join('/') }}/index
-   {% endif %}
+   {# Force whitespace #}
+
+   {%- for page in pages %}
+   {%- if page.top_level_object %}
+   {{ page.include_path }}
+   {%- endif %}
    {%- endfor %}

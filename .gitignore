@@ -11,3 +11,4 @@ tests/dotnetexample/example/Identity/
 _api_
 .tox
 .eggs
+.ropeproject/

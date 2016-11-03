@@ -4,6 +4,7 @@ import subprocess
 import traceback
 import shutil
 from collections import defaultdict
+import unidecode
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -316,6 +317,27 @@ class DotNetPythonMapper(PythonMapperBase):
     def __str__(self):
         return '<{cls} {id}>'.format(cls=self.__class__.__name__,
                                      id=self.id)
+
+    @property
+    def pathname(self):
+        '''Sluggified path for filenames
+
+        Slugs to a filename using the follow steps
+
+        * Decode unicode to approximate ascii
+        * Remove existing hypens
+        * Substitute hyphens for non-word characters
+        * Break up the string as paths
+        '''
+        slug = self.name
+        try:
+            slug = self.name.split('(')[0]
+        except IndexError:
+            pass
+        slug = unidecode.unidecode(slug)
+        slug = slug.replace('-', '')
+        slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
+        return os.path.join(*slug.split('.'))
 
     @property
     def short_name(self):

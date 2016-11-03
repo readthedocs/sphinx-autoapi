@@ -1,7 +1,7 @@
 import re
 import os
 import fnmatch
-from collections import OrderedDict
+from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
@@ -9,6 +9,8 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 
 from ..settings import API_ROOT
+
+Path = namedtuple('Path', ['absolute', 'relative'])
 
 
 class PythonMapperBase(object):
@@ -39,7 +41,6 @@ class PythonMapperBase(object):
     :var list children: Children of this object
     :var list parameters: Parameters to this object
     :var list methods: Methods on this object
-
     '''
 
     language = 'base'
@@ -115,14 +116,16 @@ class PythonMapperBase(object):
         * Break up the string as paths
         '''
         slug = self.name
-        try:
-            slug = self.name.split('(')[0]
-        except IndexError:
-            pass
         slug = unidecode.unidecode(slug)
         slug = slug.replace('-', '')
         slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
-        return os.path.join(*slug.split('.'))
+        return slug.split('.')[-1]
+
+    def include_dir(self, root):
+        """Return directory of file"""
+        parts = [root]
+        parts.extend(self.pathname.split(os.path.sep))
+        return '/'.join(parts)
 
     @property
     def include_path(self):
@@ -131,8 +134,7 @@ class PythonMapperBase(object):
         This is used in ``toctree`` directives, as Sphinx always expects Unix
         path separators
         """
-        parts = [self.url_root]
-        parts.extend(self.pathname.split(os.path.sep))
+        parts = [self.include_dir(root=self.url_root)]
         parts.append('index')
         return '/'.join(parts)
 
@@ -219,11 +221,12 @@ class SphinxMapperBase(object):
 
                         if skip:
                             continue
+
                         # Make sure the path is full
-                        if os.path.isabs(filename):
-                            files_to_read.append(filename)
-                        else:
-                            files_to_read.append(os.path.join(root, filename))
+                        if not os.path.isabs(filename):
+                            filename = os.path.join(root, filename)
+
+                        files_to_read.append(filename)
 
         for _path in self.app.status_iterator(
                 files_to_read,
@@ -252,10 +255,10 @@ class SphinxMapperBase(object):
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data, options=options):
+            for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, **kwargs):
+    def create_class(self, obj, options=None, path=None, **kwargs):
         '''
         Create class object.
 
@@ -266,19 +269,11 @@ class SphinxMapperBase(object):
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            if not obj or not obj.top_level_object:
-                continue
-
             rst = obj.render()
             if not rst:
                 continue
 
-            try:
-                filename = id.split('(')[0]
-            except IndexError:
-                filename = id
-            filename = filename.replace('#', '-')
-            detail_dir = os.path.join(root, *filename.split('.'))
+            detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
             with open(path, 'wb+') as detail_file:

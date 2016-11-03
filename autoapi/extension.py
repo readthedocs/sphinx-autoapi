@@ -10,8 +10,10 @@ import shutil
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
+from docutils.parsers.rst import directives
 
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
+from .directives import NestedParse
 from .settings import API_ROOT
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
@@ -66,6 +68,15 @@ def run_autoapi(app):
     else:
         ignore_patterns = default_ignore_patterns.get(app.config.autoapi_type, [])
 
+    if '.rst' in app.config.source_suffix:
+        out_suffix = '.rst'
+    elif '.txt' in app.config.source_suffix:
+        out_suffix = '.txt'
+    else:
+        # Fallback to first suffix listed
+        out_suffix = app.config.source_suffix[0]
+
+    # Actual meat of the run.
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     domain_obj.load(
         patterns=file_patterns,
@@ -79,8 +90,7 @@ def run_autoapi(app):
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
     domain_obj.output_rst(
         root=normalized_root,
-        # TODO: Better way to determine suffix?
-        source_suffix=app.config.source_suffix[0],
+        source_suffix=out_suffix,
     )
 
 
@@ -131,3 +141,4 @@ def setup(app):
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
+    directives.register_directive('autoapi-nested-parse', NestedParse)

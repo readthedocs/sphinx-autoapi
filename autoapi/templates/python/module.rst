@@ -1,15 +1,14 @@
 {{ obj.name }}
-{{ "~" * obj.name|length }}
+{{ "=" * obj.name|length }}
+
+.. py:module:: {{ obj.name }}
 
 {%- if obj.docstring %}
 
-.. rubric:: Summary
-
-{{ obj.docstring }}
+.. autoapi-nested-parse::
+   {{ obj.docstring|indent(3) }}
 
 {% endif %}
-
-.. py:module:: {{ obj.name }}
 
 {% block content %}
 {%- for obj_item in obj.children %}
@@ -18,4 +17,3 @@
 
 {%- endfor %}
 {% endblock %}
-
