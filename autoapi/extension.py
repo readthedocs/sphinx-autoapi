@@ -161,7 +161,21 @@ def _traverse_parent(node, objtypes):
 
 
 def doctree_resolved(app, doctree, docname):
-    "Add domain objects to the toctree"
+    """
+    Add domain objects to the toctree dynamically.
+
+    This works by:
+
+    * Finding each domain node (addnodes.desc)
+    * Figuring out it's parent that will be in the toctree (nodes.section, or a previously added addnodes.desc)
+    * Finding that parent in the TOC Tree based on it's ID
+    * Taking that element in the TOC Tree and finding it's parent that is a TOC Listing (nodes.bullet_list)
+    * Adding the new TOC element for our specific node as a child of that nodes.bullet_list
+        * This checks that bullet_list's last child, 
+        and checks that it is also a nodes.bullet_list,
+        effectively nesting it under that element
+
+    """
 
     toc = app.env.tocs[docname]
     for desc_node in doctree.traverse(addnodes.desc):
