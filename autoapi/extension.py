@@ -129,16 +129,22 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
 
 
-def _build_toc_node(docname, anchor='anchor', text='test text'):
+def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
     reference = nodes.reference('', '', internal=True, refuri=docname,
                                 anchorname='#' + anchor, *[nodes.Text(text, text)])
     para = addnodes.compact_paragraph('', '', reference)
-    return nodes.list_item('', para)
+    ret_list = nodes.list_item('', para)
+    if not bullet:
+        return ret_list
+    else:
+        return nodes.bullet_list('', ret_list)
 
 
 def _find_toc_node(toc, ref_id, objtype):
     for check_node in toc.traverse(nodes.reference):
-        if objtype == nodes.section and check_node.attributes['refuri'] == ref_id:
+        if objtype == nodes.section and \
+                (check_node.attributes['refuri'] == ref_id or
+                 check_node.attributes['anchorname'] == '#' + ref_id):
             return check_node
         if objtype == addnodes.desc and check_node.attributes['anchorname'] == '#' + ref_id:
             return check_node
@@ -162,21 +168,36 @@ def doctree_resolved(app, doctree, docname):
         # objtype = desc_node.attributes.get('objtype')
         # if objtype == 'class':
         ref_id = desc_node.children[0].attributes['ids'][0]
-        ref_text = desc_node.children[0].astext()
-        to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text)
+        try:
+            ref_text = desc_node[0].attributes['fullname'].split('.')[-1].split('(')[0]
+        except:
+            ref_text = desc_node[0].astext().split('.')[-1].split('(')[0]
         parent_node = _traverse_parent(node=desc_node, objtypes=(addnodes.desc, nodes.section))
         if parent_node:
-            if isinstance(parent_node, nodes.section):
+            if isinstance(parent_node, nodes.section) and \
+                    isinstance(parent_node.parent, nodes.document):
+                # Top Level Section header
                 parent_ref_id = docname
                 toc_reference = _find_toc_node(toc, parent_ref_id, nodes.section)
+            elif isinstance(parent_node, nodes.section):
+                # Nested Section header
+                parent_ref_id = parent_node.attributes['ids'][0]
+                toc_reference = _find_toc_node(toc, parent_ref_id, nodes.section)
             else:
-                import ipdb; ipdb.set_trace()
+                # Desc node
                 parent_ref_id = parent_node.children[0].attributes['ids'][0]
                 toc_reference = _find_toc_node(toc, parent_ref_id, addnodes.desc)
+
             if toc_reference:
-                toc_insertion_point = _traverse_parent(toc_reference, nodes.bullet_list)
-                if toc_insertion_point:
-                    toc_insertion_point.children.append(to_add)
+                # The last bit of the parent we're looking at
+                toc_insertion_point = _traverse_parent(toc_reference, nodes.bullet_list)[-1]
+                if toc_insertion_point and isinstance(toc_insertion_point[0], nodes.bullet_list):
+                    new_insert = toc_insertion_point[0]
+                    to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text)
+                    new_insert.append(to_add)
+                else:
+                    to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text, bullet=True)
+                    toc_insertion_point.append(to_add)
 
 
 def setup(app):

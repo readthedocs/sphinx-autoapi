@@ -41,6 +41,7 @@ Contents
    :maxdepth: 2
 
    design
+   autoapi/index
 
 Basic Workflow
 --------------
