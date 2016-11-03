@@ -28,8 +28,7 @@ class NestedParse(Directive):
         try:
             title_node = node[0][0]
             if isinstance(title_node, nodes.title):
-                if isinstance(title_node[0], nodes.Text):
-                    del node[0][0][0]
+                del node[0][0]
         except IndexError:
             pass
         return [node]
