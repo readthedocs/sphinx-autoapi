@@ -174,8 +174,9 @@ class PythonPythonMapper(PythonMapperBase):
         # exceptions, including SyntaxError
         try:
             parsed = ast.parse(source)
-        except:  # noqa
-            return
+        except Exception, e:  # noqa
+            print "Error parsing AST: %s" % str(e)
+            return []
         parsed_args = parsed.body[0].args
         arg_names = [arg.id if sys.version_info < (3,) else arg.arg
                      for arg in parsed_args.args]

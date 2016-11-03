@@ -7,8 +7,6 @@ This extension allows you to automagically generate API documentation from your 
 import os
 import shutil
 
-from docutils import nodes
-from sphinx import addnodes
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
@@ -17,6 +15,7 @@ from docutils.parsers.rst import directives
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 from .directives import NestedParse
 from .settings import API_ROOT
+from .toctree import add_domain_to_toctree
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -109,6 +108,10 @@ def build_finished(app, exception):
 
 
 def doctree_read(app, doctree):
+    """
+    Inject AutoAPI into the TOC Tree dynamically.
+    """
+
     all_docs = set()
     insert = True
     if app.env.docname == 'index':
@@ -129,96 +132,11 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
 
 
-def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
-    reference = nodes.reference('', '', internal=True, refuri=docname,
-                                anchorname='#' + anchor, *[nodes.Text(text, text)])
-    para = addnodes.compact_paragraph('', '', reference)
-    ret_list = nodes.list_item('', para)
-    if not bullet:
-        return ret_list
-    else:
-        return nodes.bullet_list('', ret_list)
-
-
-def _find_toc_node(toc, ref_id, objtype):
-    for check_node in toc.traverse(nodes.reference):
-        if objtype == nodes.section and \
-                (check_node.attributes['refuri'] == ref_id or
-                 check_node.attributes['anchorname'] == '#' + ref_id):
-            return check_node
-        if objtype == addnodes.desc and check_node.attributes['anchorname'] == '#' + ref_id:
-            return check_node
-    return None
-
-
-def _traverse_parent(node, objtypes):
-    curr_node = node.parent
-    while curr_node is not None:
-        if isinstance(curr_node, objtypes):
-            return curr_node
-        curr_node = curr_node.parent
-    return None
-
-
-def doctree_resolved(app, doctree, docname):
-    """
-    Add domain objects to the toctree dynamically.
-
-    This works by:
-
-    * Finding each domain node (addnodes.desc)
-    * Figuring out it's parent that will be in the toctree (nodes.section, or a previously added addnodes.desc)
-    * Finding that parent in the TOC Tree based on it's ID
-    * Taking that element in the TOC Tree and finding it's parent that is a TOC Listing (nodes.bullet_list)
-    * Adding the new TOC element for our specific node as a child of that nodes.bullet_list
-        * This checks that bullet_list's last child, 
-        and checks that it is also a nodes.bullet_list,
-        effectively nesting it under that element
-
-    """
-
-    toc = app.env.tocs[docname]
-    for desc_node in doctree.traverse(addnodes.desc):
-        # objtype = desc_node.attributes.get('objtype')
-        # if objtype == 'class':
-        ref_id = desc_node.children[0].attributes['ids'][0]
-        try:
-            ref_text = desc_node[0].attributes['fullname'].split('.')[-1].split('(')[0]
-        except:
-            ref_text = desc_node[0].astext().split('.')[-1].split('(')[0]
-        parent_node = _traverse_parent(node=desc_node, objtypes=(addnodes.desc, nodes.section))
-        if parent_node:
-            if isinstance(parent_node, nodes.section) and \
-                    isinstance(parent_node.parent, nodes.document):
-                # Top Level Section header
-                parent_ref_id = docname
-                toc_reference = _find_toc_node(toc, parent_ref_id, nodes.section)
-            elif isinstance(parent_node, nodes.section):
-                # Nested Section header
-                parent_ref_id = parent_node.attributes['ids'][0]
-                toc_reference = _find_toc_node(toc, parent_ref_id, nodes.section)
-            else:
-                # Desc node
-                parent_ref_id = parent_node.children[0].attributes['ids'][0]
-                toc_reference = _find_toc_node(toc, parent_ref_id, addnodes.desc)
-
-            if toc_reference:
-                # The last bit of the parent we're looking at
-                toc_insertion_point = _traverse_parent(toc_reference, nodes.bullet_list)[-1]
-                if toc_insertion_point and isinstance(toc_insertion_point[0], nodes.bullet_list):
-                    new_insert = toc_insertion_point[0]
-                    to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text)
-                    new_insert.append(to_add)
-                else:
-                    to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text, bullet=True)
-                    toc_insertion_point.append(to_add)
-
-
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
-    app.connect('doctree-resolved', doctree_resolved)
+    app.connect('doctree-resolved', add_domain_to_toctree)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
