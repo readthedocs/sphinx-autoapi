@@ -1,6 +1,5 @@
 import sys
 import os
-import re
 import textwrap
 import ast
 from collections import defaultdict
@@ -174,8 +173,8 @@ class PythonPythonMapper(PythonMapperBase):
         # exceptions, including SyntaxError
         try:
             parsed = ast.parse(source)
-        except Exception, e:  # noqa
-            print "Error parsing AST: %s" % str(e)
+        except Exception as e:  # noqa
+            print("Error parsing AST: %s" % str(e))
             return []
         parsed_args = parsed.body[0].args
         arg_names = [arg.id if sys.version_info < (3,) else arg.arg

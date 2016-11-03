@@ -78,8 +78,12 @@ def _get_toc_reference(node, toc, docname):
         toc_reference = _find_toc_node(toc, ref_id, nodes.section)
     else:
         # Desc node
-        ref_id = node.children[0].attributes['ids'][0]
-        toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
+        try:
+            ref_id = node.children[0].attributes['ids'][0]
+            toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
+        except IndexError as e:
+            print('Invalid desc node: %s' % e)
+            toc_reference = None
 
     return toc_reference
 
@@ -108,8 +112,8 @@ def add_domain_to_toctree(app, doctree, docname):
     for desc_node in doctree.traverse(addnodes.desc):
         try:
             ref_id = desc_node.children[0].attributes['ids'][0]
-        except IndexError, e:
-            print 'Invalid desc node: %s' % e
+        except IndexError as e:
+            print('Invalid desc node: %s' % e)
             continue
         try:
             # Python domain object
