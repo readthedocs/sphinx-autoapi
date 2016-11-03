@@ -41,7 +41,6 @@ class PythonMapperBase(object):
     :var list children: Children of this object
     :var list parameters: Parameters to this object
     :var list methods: Methods on this object
-
     '''
 
     language = 'base'
@@ -49,9 +48,8 @@ class PythonMapperBase(object):
     # Create a page in the output for this object.
     top_level_object = False
 
-    def __init__(self, obj, path, options=None, jinja_env=None, url_root=None):
+    def __init__(self, obj, options=None, jinja_env=None, url_root=None):
         self.obj = obj
-        self.path = path
         self.options = options
         if jinja_env:
             self.jinja_env = jinja_env
@@ -125,11 +123,9 @@ class PythonMapperBase(object):
 
     def include_dir(self, root):
         """Return directory of file"""
-        return os.path.join(
-            root,
-            os.path.dirname(self.path.relative),
-            self.pathname,
-        )
+        parts = [root]
+        parts.extend(self.pathname.split(os.path.sep))
+        return '/'.join(parts)
 
     @property
     def include_path(self):
@@ -199,7 +195,7 @@ class SphinxMapperBase(object):
 
         '''
         for path in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
-            data = self.read_file(path=path.absolute)
+            data = self.read_file(path=path)
             if data:
                 self.paths[path] = data
 
@@ -227,14 +223,10 @@ class SphinxMapperBase(object):
                             continue
 
                         # Make sure the path is full
-                        if os.path.isabs(filename):
-                            ret_path = filename
-                        else:
-                            ret_path = os.path.join(root, filename)
+                        if not os.path.isabs(filename):
+                            filename = os.path.join(root, filename)
 
-                        rel_path = ret_path.replace(_dir, '')
-                        path_obj = Path(ret_path, rel_path[1:])
-                        files_to_read.append(path_obj)
+                        files_to_read.append(filename)
 
         for _path in self.app.status_iterator(
                 files_to_read,
@@ -266,7 +258,7 @@ class SphinxMapperBase(object):
             for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, **kwargs):
+    def create_class(self, obj, options=None, path=None, **kwargs):
         '''
         Create class object.
 

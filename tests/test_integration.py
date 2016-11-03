@@ -3,31 +3,38 @@ import os
 import sys
 import shutil
 import unittest
+from contextlib import contextmanager
 
 from mock import patch
 
 from sphinx.application import Sphinx
 
 
+@contextmanager
+def sphinx_build(test_dir):
+    os.chdir('tests/{0}'.format(test_dir))
+    try:
+        app = Sphinx(
+            srcdir='.',
+            confdir='.',
+            outdir='_build/text',
+            doctreedir='_build/.doctrees',
+            buildername='text',
+        )
+        app.build(force_all=True)
+        yield
+    finally:
+        shutil.rmtree('_build')
+        os.chdir('../..')
+
+
 class LanguageIntegrationTests(unittest.TestCase):
 
     def _run_test(self, test_dir, test_file, test_string):
-        os.chdir('tests/{0}'.format(test_dir))
-        try:
-            app = Sphinx(
-                srcdir='.',
-                confdir='.',
-                outdir='_build/text',
-                doctreedir='_build/.doctrees',
-                buildername='text',
-            )
-            app.build(force_all=True)
+        with sphinx_build(test_dir):
             with open(test_file) as fin:
                 text = fin.read().strip()
                 self.assertIn(test_string, text)
-        finally:
-            shutil.rmtree('_build')
-            os.chdir('../..')
 
 
 class JavaScriptTests(LanguageIntegrationTests):
@@ -60,13 +67,28 @@ class GoTests(LanguageIntegrationTests):
 
 class PythonTests(LanguageIntegrationTests):
 
-    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_integration(self):
-        self._run_test(
-            'pyexample',
-            '_build/text/autoapi/example/index.txt',
-            'Compute the square root of x and return it'
-        )
+        with sphinx_build('pyexample'):
+            example_file = open('_build/text/autoapi/example/index.txt').read()
+            self.assertIn(
+                'class example.Foo',
+                example_file
+            )
+            self.assertIn(
+                'example.Foo.method_okay(foo=None, bar=None)',
+                example_file
+            )
+            self.assertIn(
+                'example.Foo.method_multiline(foo=None, bar=None, baz=None)',
+                example_file
+            )
+            self.assertIn(
+                'example.Foo.method_tricky(foo=None, bar=dict)',
+                example_file
+            )
+            self.assertFalse(
+                os.path.exists('_build/text/autoapi/method_multiline')
+            )
 
 
 class DotNetTests(LanguageIntegrationTests):
@@ -96,7 +118,6 @@ class DotNetTests(LanguageIntegrationTests):
 
 class IntegrationTests(LanguageIntegrationTests):
 
-    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_template_overrides(self):
         self._run_test(
             'templateexample',
@@ -107,7 +128,6 @@ class IntegrationTests(LanguageIntegrationTests):
 
 class TOCTreeTests(LanguageIntegrationTests):
 
-    @unittest.skipIf(sys.version_info > (3, 0), 'Epydoc does not support Python 3')
     def test_toctree_overrides(self):
         self._run_test(
             'toctreeexample',
