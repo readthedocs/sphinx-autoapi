@@ -7,6 +7,8 @@ This extension allows you to automagically generate API documentation from your 
 import os
 import shutil
 
+from docutils import nodes
+from sphinx import addnodes
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
@@ -127,10 +129,61 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
 
 
+def _build_toc_node(docname, anchor='anchor', text='test text'):
+    reference = nodes.reference('', '', internal=True, refuri=docname,
+                                anchorname='#' + anchor, *[nodes.Text(text, text)])
+    para = addnodes.compact_paragraph('', '', reference)
+    return nodes.list_item('', para)
+
+
+def _find_toc_node(toc, ref_id, objtype):
+    for check_node in toc.traverse(nodes.reference):
+        if objtype == nodes.section and check_node.attributes['refuri'] == ref_id:
+            return check_node
+        if objtype == addnodes.desc and check_node.attributes['anchorname'] == '#' + ref_id:
+            return check_node
+    return None
+
+
+def _traverse_parent(node, objtypes):
+    curr_node = node.parent
+    while curr_node is not None:
+        if isinstance(curr_node, objtypes):
+            return curr_node
+        curr_node = curr_node.parent
+    return None
+
+
+def doctree_resolved(app, doctree, docname):
+    "Add domain objects to the toctree"
+
+    toc = app.env.tocs[docname]
+    for desc_node in doctree.traverse(addnodes.desc):
+        # objtype = desc_node.attributes.get('objtype')
+        # if objtype == 'class':
+        ref_id = desc_node.children[0].attributes['ids'][0]
+        ref_text = desc_node.children[0].astext()
+        to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text)
+        parent_node = _traverse_parent(node=desc_node, objtypes=(addnodes.desc, nodes.section))
+        if parent_node:
+            if isinstance(parent_node, nodes.section):
+                parent_ref_id = docname
+                toc_reference = _find_toc_node(toc, parent_ref_id, nodes.section)
+            else:
+                import ipdb; ipdb.set_trace()
+                parent_ref_id = parent_node.children[0].attributes['ids'][0]
+                toc_reference = _find_toc_node(toc, parent_ref_id, addnodes.desc)
+            if toc_reference:
+                toc_insertion_point = _traverse_parent(toc_reference, nodes.bullet_list)
+                if toc_insertion_point:
+                    toc_insertion_point.children.append(to_add)
+
+
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
+    app.connect('doctree-resolved', doctree_resolved)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
