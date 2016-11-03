@@ -106,7 +106,11 @@ def add_domain_to_toctree(app, doctree, docname):
 
     toc = app.env.tocs[docname]
     for desc_node in doctree.traverse(addnodes.desc):
-        ref_id = desc_node.children[0].attributes['ids'][0]
+        try:
+            ref_id = desc_node.children[0].attributes['ids'][0]
+        except IndexError, e:
+            print 'Invalid desc node: %s' % e
+            continue
         try:
             # Python domain object
             ref_text = desc_node[0].attributes['fullname'].split('.')[-1].split('(')[0]
