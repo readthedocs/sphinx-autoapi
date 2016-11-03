@@ -116,11 +116,13 @@ def doctree_read(app, doctree):
     insert = True
     if app.env.docname == 'index':
         nodes = doctree.traverse(toctree)
+        toc_entry = '%s/index' % app.config.autoapi_root
         if not nodes:
             return
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
+        # Don't insert if it's already present
         for doc in all_docs:
             if doc.find(app.config.autoapi_root) != -1:
                 insert = False
@@ -129,7 +131,10 @@ def doctree_read(app, doctree):
                 (None, u'%s/index' % app.config.autoapi_root)
             )
             nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
-            app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
+            app.info(bold('[AutoAPI] ') +
+                     darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
+                     )
+            app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
