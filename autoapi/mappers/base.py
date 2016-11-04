@@ -154,10 +154,6 @@ class PythonMapperBase(object):
             return '.'.join(pieces)
 
 
-def _wrapped_prepare(value):
-    return '\n'.join(prepare_docstring(value))
-
-
 class SphinxMapperBase(object):
 
     '''Base class for mapping `PythonMapperBase` objects to Sphinx.
@@ -182,6 +178,10 @@ class SphinxMapperBase(object):
             # trim_blocks=True,
             # lstrip_blocks=True,
         )
+
+        def _wrapped_prepare(value):
+            return '\n'.join(prepare_docstring(value))
+
         self.jinja_env.filters['prepare_docstring'] = _wrapped_prepare
 
         self.url_root = url_root
