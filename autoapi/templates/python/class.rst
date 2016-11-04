@@ -2,7 +2,9 @@
 
    {%- if obj.docstring %}
 
-   {{ obj.docstring|prepare_docstring|indent(3) }}
+   .. autoapi-nested-parse::
+   
+      {{ obj.docstring|prepare_docstring|indent(6) }}
 
    {% endif %}
 
