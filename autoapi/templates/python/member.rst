@@ -1,4 +1,4 @@
 .. {{ obj.type }}:: {{ obj.name }}
 
-   {{ obj.docstring|indent(3) }}
+   {{ obj.docstring|prepare_docstring|indent(3) }}
 
