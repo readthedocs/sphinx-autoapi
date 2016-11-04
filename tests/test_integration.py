@@ -134,3 +134,13 @@ class TOCTreeTests(LanguageIntegrationTests):
             '_build/text/index.txt',
             'AutoAPI Index'
         )
+
+    def test_toctree_domain_insertion(self):
+        """
+        Test that the example_function gets added to the TOC Tree
+        """
+        self._run_test(
+            'toctreeexample',
+            '_build/text/index.txt',
+            '* example_function'
+        )
