@@ -75,15 +75,15 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
             self.assertIn(
-                'example.Foo.method_okay(foo=None, bar=None)',
+                'method_okay(foo=None, bar=None)',
                 example_file
             )
             self.assertIn(
-                'example.Foo.method_multiline(foo=None, bar=None, baz=None)',
+                'method_multiline(foo=None, bar=None, baz=None)',
                 example_file
             )
             self.assertIn(
-                'example.Foo.method_tricky(foo=None, bar=dict)',
+                'method_tricky(foo=None, bar=dict)',
                 example_file
             )
             self.assertFalse(

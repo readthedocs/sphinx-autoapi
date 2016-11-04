@@ -7,6 +7,7 @@ import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
+from sphinx.util.docstrings import prepare_docstring
 
 from ..settings import API_ROOT
 
@@ -177,6 +178,11 @@ class SphinxMapperBase(object):
             # trim_blocks=True,
             # lstrip_blocks=True,
         )
+
+        def _wrapped_prepare(value):
+            return '\n'.join(prepare_docstring(value))
+
+        self.jinja_env.filters['prepare_docstring'] = _wrapped_prepare
 
         self.url_root = url_root
 
