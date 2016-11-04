@@ -13,10 +13,10 @@ from sphinx import addnodes
 def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
     """
     Create the node structure that Sphinx expects for TOC Tree entries.
+
     The ``bullet`` argument wraps it in a ``nodes.bullet_list``,
     which is how you nest TOC Tree entries.
     """
-
     reference = nodes.reference('', '', internal=True, refuri=docname,
                                 anchorname='#' + anchor, *[nodes.Text(text, text)])
     para = addnodes.compact_paragraph('', '', reference)
@@ -30,10 +30,10 @@ def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
 def _traverse_parent(node, objtypes):
     """
     Traverse up the node's parents until you hit the ``objtypes`` referenced.
+
     Can either be a single type,
     or a tuple of types.
     """
-
     curr_node = node.parent
     while curr_node is not None:
         if isinstance(curr_node, objtypes):
@@ -45,8 +45,8 @@ def _traverse_parent(node, objtypes):
 def _find_toc_node(toc, ref_id, objtype):
     """
     Find the actual TOC node for a ref_id.
-    Depends on the object type:
 
+    Depends on the object type:
     * Section - First section (refuri) or 2nd+ level section (anchorname)
     * Desc - Just use the anchor name
     """
@@ -60,13 +60,13 @@ def _find_toc_node(toc, ref_id, objtype):
     return None
 
 
-def _get_toc_reference(node, toc, docname):
+def _get_toc_reference(app, node, toc, docname):
     """
     Logic that understands maps a specific node to it's part of the toctree.
+
     It takes a specific incoming ``node``,
     and returns the actual TOC Tree node that is said reference.
     """
-
     if isinstance(node, nodes.section) and \
             isinstance(node.parent, nodes.document):
         # Top Level Section header
@@ -81,8 +81,8 @@ def _get_toc_reference(node, toc, docname):
         try:
             ref_id = node.children[0].attributes['ids'][0]
             toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
-        except IndexError as e:
-            print('Invalid desc node: %s' % e)
+        except (KeyError, IndexError) as e:
+            app.warn('Invalid desc node: %s' % e)
             toc_reference = None
 
     return toc_reference
@@ -91,8 +91,8 @@ def _get_toc_reference(node, toc, docname):
 def add_domain_to_toctree(app, doctree, docname):
     """
     Add domain objects to the toctree dynamically.
-    This should be attached to the ``doctree-resolved`` event.
 
+    This should be attached to the ``doctree-resolved`` event.
     This works by:
 
     * Finding each domain node (addnodes.desc)
@@ -105,20 +105,19 @@ def add_domain_to_toctree(app, doctree, docname):
         * This checks that bullet_list's last child,
         and checks that it is also a nodes.bullet_list,
         effectively nesting it under that element
-
     """
-
     toc = app.env.tocs[docname]
     for desc_node in doctree.traverse(addnodes.desc):
         try:
             ref_id = desc_node.children[0].attributes['ids'][0]
-        except IndexError as e:
-            print('Invalid desc node: %s' % e)
+        except (KeyError, IndexError) as e:
+            app.warn('Invalid desc node: %s' % e)
             continue
         try:
             # Python domain object
             ref_text = desc_node[0].attributes['fullname'].split('.')[-1].split('(')[0]
-        except:
+        except (KeyError, IndexError):
+            # TODO[eric]: Support other Domains and ways of accessing this data
             # Use `astext` for other types of domain objects
             ref_text = desc_node[0].astext().split('.')[-1].split('(')[0]
         # This is the actual object that will exist in the TOC Tree
@@ -126,7 +125,7 @@ def add_domain_to_toctree(app, doctree, docname):
         parent_node = _traverse_parent(node=desc_node, objtypes=(addnodes.desc, nodes.section))
 
         if parent_node:
-            toc_reference = _get_toc_reference(parent_node, toc, docname)
+            toc_reference = _get_toc_reference(app, parent_node, toc, docname)
             if toc_reference:
                 # Get the last child of our parent's bullet list, this is where "we" live.
                 toc_insertion_point = _traverse_parent(toc_reference, nodes.bullet_list)[-1]

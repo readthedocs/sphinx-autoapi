@@ -55,9 +55,9 @@ def run_autoapi(app):
 
     app.env.autoapi_data = []
 
-    domain = default_backend_mapping[app.config.autoapi_type]
-    domain_obj = domain(app, template_dir=app.config.autoapi_template_dir,
-                        url_root=url_root)
+    sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+    sphinx_mapper_obj = sphinx_mapper(app, template_dir=app.config.autoapi_template_dir,
+                                      url_root=url_root)
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -79,17 +79,17 @@ def run_autoapi(app):
 
     # Actual meat of the run.
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
-    domain_obj.load(
+    sphinx_mapper_obj.load(
         patterns=file_patterns,
         dirs=normalized_dirs,
         ignore=ignore_patterns,
     )
 
     app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
-    domain_obj.map(options=app.config.autoapi_options)
+    sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
-    domain_obj.output_rst(
+    sphinx_mapper_obj.output_rst(
         root=normalized_root,
         source_suffix=out_suffix,
     )
@@ -102,9 +102,9 @@ def build_finished(app, exception):
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
         shutil.rmtree(normalized_root)
 
-        mapper = default_backend_mapping[app.config.autoapi_type]
-        if hasattr(mapper, 'build_finished'):
-            mapper.build_finished(app, exception)
+        sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+        if hasattr(sphinx_mapper, 'build_finished'):
+            sphinx_mapper.build_finished(app, exception)
 
 
 def doctree_read(app, doctree):

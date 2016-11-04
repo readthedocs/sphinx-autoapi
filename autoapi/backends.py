@@ -7,10 +7,12 @@ default_file_mapping = {
     'javascript': ['*.js'],
 }
 
+
 default_ignore_patterns = {
     'dotnet': ['*toc.yml', '*index.yml'],
     'python': ['*migrations*'],
 }
+
 
 default_backend_mapping = {
     'python': PythonSphinxMapper,
