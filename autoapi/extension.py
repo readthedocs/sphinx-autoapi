@@ -15,6 +15,7 @@ from docutils.parsers.rst import directives
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 from .directives import NestedParse
 from .settings import API_ROOT
+from .toctree import add_domain_to_toctree
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 
@@ -54,9 +55,9 @@ def run_autoapi(app):
 
     app.env.autoapi_data = []
 
-    domain = default_backend_mapping[app.config.autoapi_type]
-    domain_obj = domain(app, template_dir=app.config.autoapi_template_dir,
-                        url_root=url_root)
+    sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+    sphinx_mapper_obj = sphinx_mapper(app, template_dir=app.config.autoapi_template_dir,
+                                      url_root=url_root)
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -78,17 +79,17 @@ def run_autoapi(app):
 
     # Actual meat of the run.
     app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
-    domain_obj.load(
+    sphinx_mapper_obj.load(
         patterns=file_patterns,
         dirs=normalized_dirs,
         ignore=ignore_patterns,
     )
 
     app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
-    domain_obj.map(options=app.config.autoapi_options)
+    sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
     app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
-    domain_obj.output_rst(
+    sphinx_mapper_obj.output_rst(
         root=normalized_root,
         source_suffix=out_suffix,
     )
@@ -101,21 +102,27 @@ def build_finished(app, exception):
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
         shutil.rmtree(normalized_root)
 
-        mapper = default_backend_mapping[app.config.autoapi_type]
-        if hasattr(mapper, 'build_finished'):
-            mapper.build_finished(app, exception)
+        sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+        if hasattr(sphinx_mapper, 'build_finished'):
+            sphinx_mapper.build_finished(app, exception)
 
 
 def doctree_read(app, doctree):
+    """
+    Inject AutoAPI into the TOC Tree dynamically.
+    """
+
     all_docs = set()
     insert = True
     if app.env.docname == 'index':
         nodes = doctree.traverse(toctree)
+        toc_entry = '%s/index' % app.config.autoapi_root
         if not nodes:
             return
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
+        # Don't insert if it's already present
         for doc in all_docs:
             if doc.find(app.config.autoapi_root) != -1:
                 insert = False
@@ -124,13 +131,17 @@ def doctree_read(app, doctree):
                 (None, u'%s/index' % app.config.autoapi_root)
             )
             nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
-            app.info(bold('[AutoAPI] ') + darkgreen('Adding AutoAPI TOCTree to index.rst'))
+            app.info(bold('[AutoAPI] ') +
+                     darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
+                     )
+            app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
+    app.connect('doctree-resolved', add_domain_to_toctree)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')

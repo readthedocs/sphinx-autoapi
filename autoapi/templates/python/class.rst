@@ -1,7 +1,3 @@
-.. autoapi-hidden::
-   {{ obj.short_name }}
-   {{ "=" * obj.short_name|length }}
-
 .. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args|join(',') }}){% endif %}
 
    {%- if obj.docstring %}
