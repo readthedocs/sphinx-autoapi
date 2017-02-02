@@ -167,6 +167,23 @@ class PythonPythonMapper(PythonMapperBase):
         :returns: list of argument or argument and value pairs
         :rtype: list
         """
+        def get_arg_names(args):
+            """Get the names of each ast-parsed argument in the given list.
+
+            :param list(ast.Name or ast.Tuple) args: The list of ast-parsed
+                arguments to get names for.
+            :returns: The names of the given arguments.
+            :rtype: generator(str)
+            """
+            for arg in args:
+                if isinstance(arg, ast.Tuple):
+                    for name in get_arg_names(arg.elts):
+                        yield name
+                elif sys.version_info < (3,):
+                    yield arg.id
+                else:
+                    yield arg.arg
+
         arguments = []
         source = textwrap.dedent(obj.source)
         # Bare except here because AST parsing can throw any number of
@@ -177,8 +194,7 @@ class PythonPythonMapper(PythonMapperBase):
             print("Error parsing AST: %s" % str(e))
             return []
         parsed_args = parsed.body[0].args
-        arg_names = [arg.id if sys.version_info < (3,) else arg.arg
-                     for arg in parsed_args.args]
+        arg_names = list(get_arg_names(parsed_args.args))
 
         # Get defaults for display based on AST node type
         arg_defaults = []
