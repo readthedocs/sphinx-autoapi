@@ -134,7 +134,7 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') +
                      darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
                      )
-            app.env.toctree.process_doc(app.env.docname, doctree)
+            app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
