@@ -7,6 +7,7 @@ This extension allows you to automagically generate API documentation from your 
 import os
 import shutil
 
+import sphinx
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
@@ -134,7 +135,10 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') +
                      darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
                      )
-            app.env.toctree.process_doc(app.env.docname, doctree)
+            if sphinx.version_info >= (1, 5):
+                app.env.toctree.process_doc(app.env.docname, doctree)
+            else:
+                app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
