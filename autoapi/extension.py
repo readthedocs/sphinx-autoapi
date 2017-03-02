@@ -135,7 +135,7 @@ def doctree_read(app, doctree):
             app.info(bold('[AutoAPI] ') +
                      darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
                      )
-            if sphinx.version_info[0] >= 1 and sphinx.version_info[1] >= 5:
+            if sphinx.version_info >= (1, 5):
                 app.env.toctree.process_doc(app.env.docname, doctree)
             else:
                 app.env.build_toc_from(app.env.docname, doctree)
