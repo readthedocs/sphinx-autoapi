@@ -2,8 +2,10 @@ import sys
 import os
 import textwrap
 import ast
+import tokenize as tk
 from collections import defaultdict
-from pydocstyle.parser import Parser
+
+from pydocstyle import parser
 
 from .base import PythonMapperBase, SphinxMapperBase
 from ..utils import slugify
@@ -42,7 +44,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         :param path: Path of file to read
         """
         try:
-            parsed_data = Parser()(open(path), path)
+            parsed_data = ParserExtra()(open(path), path)
             return parsed_data
         except (IOError, TypeError, ImportError):
             self.app.warn('Error reading file: {0}'.format(path))
@@ -86,9 +88,7 @@ class PythonPythonMapper(PythonMapperBase):
         self.args = []
         if self.is_callable:
             self.args = self._get_arguments(obj)
-        self.docstring = obj.docstring or ''
-        self.docstring = textwrap.dedent(self.docstring)
-        self.docstring = self.docstring.replace("'''", '').replace('"""', '')
+        self.docstring = obj.docstring
         if getattr(obj, 'parent'):
             self.inheritance = [obj.parent.name]
         else:
@@ -99,15 +99,18 @@ class PythonPythonMapper(PythonMapperBase):
 
     @property
     def is_undoc_member(self):
-        return self.docstring == ''
+        return bool(self.docstring)
 
     @property
     def is_private_member(self):
-        return self.short_name[0] == '_'
+        return not self.obj.is_public
 
     @property
     def is_special_member(self):
-        return self.short_name[0:2] == '__'
+        return (
+            (isinstance(self.obj, parser.Method) and self.obj.is_magic) or
+            (self.obj.name.startswith('__') and self.obj.name.endswith('__'))
+        )
 
     @property
     def display(self):
@@ -260,3 +263,131 @@ class PythonPackage(PythonPythonMapper):
 
 class PythonClass(PythonPythonMapper):
     type = 'class'
+
+
+# Parser
+class ParserExtra(parser.Parser):
+
+    """Extend Parser object to provide customized return"""
+
+    def parse_object_identifier(self):
+        """Parse object identifier"""
+        assert self.current.kind == tk.NAME
+        identifier = ''
+        while True:
+            is_identifier = (
+                self.current.kind == tk.NAME or
+                (
+                    self.current.kind == tk.OP and
+                    self.current.value == '.'
+                )
+            )
+            if is_identifier:
+                identifier += self.current.value
+                self.stream.move()
+            else:
+                break
+        return identifier
+
+    def parse_string(self):
+        """Clean up STRING nodes"""
+        val = self.current.value
+        self.consume(tk.STRING)
+        return val.lstrip('\'"').rstrip('\'"')
+
+    def parse_number(self):
+        """Parse a NUMBER node to either a ``float`` or ``int``"""
+        val = self.current.value
+        self.consume(tk.NUMBER)
+        normalized_val = float(val)
+        try:
+            normalized_val = int(val)
+        except ValueError:
+            pass
+        return normalized_val
+
+    def parse_iterable(self):
+        """Recursively parse an iterable object
+
+        This will return a local representation of the parsed data, except for
+        NAME nodes. This does not currently attempt to perform lookup on the
+        object names defined in an iterable.
+
+        This is mostly a naive implementation and won't handle complex
+        structures. This is only currently meant to parse simple iterables, such
+        as ``__all__`` and class parent classes on class definition.
+        """
+        content = None
+        while self.current is not None:
+            if self.current.kind == tk.OP and self.current.value in '[(':
+                self.stream.move()
+                if content is None:
+                    content = []
+                else:
+                    content.append(self.parse_iterable())
+                continue
+            elif self.current.kind == tk.OP and self.current.value in '])':
+                self.stream.move()
+                return content
+            elif self.current.kind == tk.STRING:
+                content.append(self.parse_string())
+            elif self.current.kind == tk.NUMBER:
+                content.append(self.parse_number())
+            elif self.current.kind == tk.NAME:
+                # TODO this is dropped for now, but will can be handled with an
+                # object lookup in the future, if we decide to track assignment.
+                # content.append(self.parse_object_identifier())
+                pass
+            else:
+                self.stream.move()
+
+    def parse_docstring(self):
+        """Clean up object docstring"""
+        docstring = super(ParserExtra, self).parse_docstring()
+        if not docstring:
+            docstring = ''
+        docstring = textwrap.dedent(docstring)
+        docstring = docstring.replace("'''", '').replace('"""', '')
+        return docstring
+
+    def parse_all(self):
+        """Parse __all__ assignment
+
+        This differs from the default __all__ assignment processing by:
+
+         * Accepting multiple __all__ assignments
+         * Doesn't throw exceptions on edge cases
+         * Parses NAME nodes (but throws them out for now
+        """
+        assert self.current.value == '__all__'
+        self.consume(tk.NAME)
+        if self.current.kind != tk.OP or self.current.value not in ['=', '+=']:
+            return
+        assign_op = self.current.value
+        self.consume(tk.OP)
+
+        if self.all is None:
+            self.all = []
+
+        all_content = []
+        # Support [], [] + [], and [] + foo.__all__ by iterating of list
+        # assignments
+        while True:
+            if self.current.kind == tk.OP and self.current.value in '([':
+                content = self.parse_iterable()
+                all_content.extend(content)
+            elif self.current.kind == tk.NAME:
+                name = self.parse_object_identifier()
+                # TODO Skip these for now. In the future, this name should be
+                # converted to an object that will be resolved after we've
+                # parsed at a later stage in the mapping process.
+                #all_content.append(name)
+            if self.current.kind == tk.OP and self.current.value == '+':
+                self.stream.move()
+            else:
+                break
+
+        if assign_op == '=':
+            self.all = all_content
+        elif assign_op == '+=':
+            self.all += all_content
