@@ -381,7 +381,7 @@ class ParserExtra(parser.Parser):
                 # TODO Skip these for now. In the future, this name should be
                 # converted to an object that will be resolved after we've
                 # parsed at a later stage in the mapping process.
-                #all_content.append(name)
+                # all_content.append(name)
             if self.current.kind == tk.OP and self.current.value == '+':
                 self.stream.move()
             else:
