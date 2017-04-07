@@ -1,3 +1,5 @@
 """
-AutoAPI Top-level Comment
+Sphinx AutoAPI
 """
+
+from .extension import setup
