@@ -66,3 +66,18 @@ class PythonParserTests(unittest.TestCase):
         ]
         """
         self.assertEqual(self.parse(source).all, ['foo', 'bar'])
+
+    def test_parses_all_generator(self):
+        source = """
+        __all__ = [x for x in dir(token) if x[0] != '_'] + ['foo', 'bar']
+        """
+        out = self.parse(source)
+        self.assertEqual(self.parse(source).all, ['foo', 'bar'])
+
+    def test_parses_name(self):
+        source = "foo.bar"
+        self.assertEqual(self.parse(source).children, [])
+
+    def test_parses_list(self):
+        source = "__all__ = [[1, 2], [3, 4]]"
+        self.assertEqual(self.parse(source).all, [[1, 2], [3, 4]])

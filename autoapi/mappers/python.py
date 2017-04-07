@@ -318,26 +318,33 @@ class ParserExtra(parser.Parser):
         as ``__all__`` and class parent classes on class definition.
         """
         content = None
+        is_list = True
         while self.current is not None:
-            if self.current.kind == tk.OP and self.current.value in '[(':
+            if self.current.kind == tk.STRING:
+                content.append(self.parse_string())
+            elif self.current.kind == tk.NUMBER:
+                content.append(self.parse_number())
+            elif self.current.kind == tk.NAME:
+                # Handle generators
+                if self.current.value == 'for' and not content:
+                    is_list = False
+                # TODO this is dropped for now, but will can be handled with an
+                # object lookup in the future, if we decide to track assignment.
+                # content.append(self.parse_object_identifier())
                 self.stream.move()
+            elif self.current.kind == tk.OP and self.current.value in '[(':
                 if content is None:
                     content = []
+                    self.stream.move()
                 else:
                     content.append(self.parse_iterable())
                 continue
             elif self.current.kind == tk.OP and self.current.value in '])':
                 self.stream.move()
-                return content
-            elif self.current.kind == tk.STRING:
-                content.append(self.parse_string())
-            elif self.current.kind == tk.NUMBER:
-                content.append(self.parse_number())
-            elif self.current.kind == tk.NAME:
-                # TODO this is dropped for now, but will can be handled with an
-                # object lookup in the future, if we decide to track assignment.
-                # content.append(self.parse_object_identifier())
-                pass
+                if is_list:
+                    return content
+                # Discard generator because we can't do anything with them
+                return []
             else:
                 self.stream.move()
 
