@@ -186,7 +186,10 @@ class PythonPythonMapper(PythonMapperBase):
             ast.Name: 'id',
             ast.Num: 'n',
             ast.Str: lambda obj: '"{0}"'.format(obj.s),
-            ast.Call: lambda obj: obj.func.id,
+            # Call function name can be an `Attribute` or `Name` node, make sure
+            # we're using the correct attribute for the id
+            ast.Call: lambda obj: (obj.func.id if isinstance(obj.func, ast.Name)
+                                   else obj.func.attr),
             # TODO these require traversal into the AST nodes. Add this for more
             # complete argument parsing, or handle with a custom AST traversal.
             ast.List: lambda _: 'list',
