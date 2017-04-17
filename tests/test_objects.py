@@ -106,17 +106,17 @@ class DotNetObjectTests(unittest.TestCase):
     def test_filename(self):
         '''Object file name'''
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget-T'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget-T').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': 'Foo.Bar.Widget<T>(TFoo)'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget-T'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar', 'Widget-T').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': 'Foo.Foo-Bar.Widget<T>(TFoo)'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'FooBar', 'Widget-T'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'FooBar', 'Widget-T').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': u'Foo.Bär'})
-        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar'))
+        self.assertEqual(cls.pathname, os.path.join('Foo', 'Bar').replace('\\', '/'))
         cls = dotnet.DotNetClass({'id': u'Ащщ.юИфк'})
-        self.assertEqual(cls.pathname, os.path.join('Ashchshch', 'iuIfk'))
+        self.assertEqual(cls.pathname, os.path.join('Ashchshch', 'iuIfk').replace('\\', '/'))
 
     def test_rendered_class_escaping(self):
         """Rendered class escaping"""

@@ -120,7 +120,7 @@ class PythonMapperBase(object):
         slug = unidecode.unidecode(slug)
         slug = slug.replace('-', '')
         slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
-        return os.path.join(*slug.split('.'))
+        return os.path.join(*slug.split('.')).replace('\\', '/')
 
     def include_dir(self, root):
         """Return directory of file"""
