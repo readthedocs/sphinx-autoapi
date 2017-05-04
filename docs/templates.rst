@@ -8,7 +8,7 @@ and templates let you highly customize the display of said docs.
 Structure
 ~~~~~~~~~
 
-Every type of data structure gets it's own template.
+Every type of data structure gets its own template.
 It uses the form :samp:`{language}/{type}.rst` to find the template to render.
 The full search path is:
 
