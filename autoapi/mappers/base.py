@@ -8,6 +8,7 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
+from sphinx.ext.napoleon.docstring import GoogleDocstring, NumpyDocstring
 
 from ..settings import API_ROOT
 
@@ -180,7 +181,10 @@ class SphinxMapperBase(object):
         )
 
         def _wrapped_prepare(value):
-            return '\n'.join(prepare_docstring(value))
+            preped_value = '\n'.join(prepare_docstring(value))
+            numpy_value = str(NumpyDocstring(preped_value))
+            final_value = str(GoogleDocstring(numpy_value))
+            return final_value
 
         self.jinja_env.filters['prepare_docstring'] = _wrapped_prepare
 
