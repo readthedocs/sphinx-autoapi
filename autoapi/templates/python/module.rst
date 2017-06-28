@@ -6,6 +6,7 @@
 {%- if obj.docstring %}
 
 .. autoapi-nested-parse::
+
    {{ obj.docstring|prepare_docstring|indent(3) }}
 
 {% endif %}

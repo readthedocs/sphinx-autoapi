@@ -12,7 +12,5 @@ Below is a list of all items that are documented here.
    {# Force whitespace #}
 
    {%- for page in pages %}
-   {%- if page.top_level_object %}
-   {{ page.include_path }}
-   {%- endif %}
+   {{ page }}
    {%- endfor %}
