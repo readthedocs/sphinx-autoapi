@@ -15,6 +15,7 @@ pylint:
   max-line-length: 100
   disable:
       - interface-not-implemented
+      - arguments-differ
 
 mccabe:
   run: false
