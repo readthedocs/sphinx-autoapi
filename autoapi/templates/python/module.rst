@@ -1,7 +1,11 @@
+{% if obj.docstring or obj.children %}
+
 {{ obj.name }}
 {{ "=" * obj.name|length }}
 
 .. py:module:: {{ obj.name }}
+
+{% endif %}
 
 {%- if obj.docstring %}
 
