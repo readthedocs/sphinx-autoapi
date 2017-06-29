@@ -120,6 +120,7 @@ def doctree_read(app, doctree):
         if not nodes:
             return
         # Capture all existing toctree entries
+        root = nodes[0]
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
@@ -145,7 +146,7 @@ def doctree_read(app, doctree):
                          darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
                          )
             if sphinx.version_info > (1, 5):
-                app.env.toctree.process_doc(app.env.docname, doctree)
+                app.env.note_toctree(app.env.docname, root)
             else:
                 app.env.build_toc_from(app.env.docname, doctree)
 
