@@ -25,14 +25,14 @@ class PythonSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     """
 
-    def load(self, patterns, dirs, **kwargs):
+    def load(self, patterns, dirs, ignore=None, **kwargs):
         """Load objects from the filesystem into the ``paths`` dictionary
 
         Also include an attribute on the object, ``relative_path`` which is the
         shortened, relative path the package/module
         """
         for dir_ in dirs:
-            for path in self.find_files(patterns=patterns, dirs=[dir_], **kwargs):
+            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore, **kwargs):
                 data = self.read_file(path=path)
                 data.relative_path = os.path.relpath(path, dir_)
                 if data:
@@ -50,7 +50,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
 
         :param data: dictionary data of pydocstyle output

@@ -32,7 +32,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, options=None, **kwargs):
+    def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:

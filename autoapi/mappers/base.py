@@ -268,7 +268,7 @@ class SphinxMapperBase(object):
             for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''
         Create class object.
 
