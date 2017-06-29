@@ -265,7 +265,7 @@ class SphinxMapperBase(object):
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data, options=options, path=path):
+            for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
     def create_class(self, data, options=None, **kwargs):
