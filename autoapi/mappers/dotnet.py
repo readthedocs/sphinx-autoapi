@@ -211,15 +211,15 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         # Clean out dead namespaces
         for key, ns in self.top_namespaces.copy().items():
-            if len(ns.children) == 0:
+            if not ns.children:
                 del self.top_namespaces[key]
 
         for key, ns in self.namespaces.items():
-            if len(ns.children) == 0:
+            if not ns.children:
                 del self.namespaces[key]
 
     def output_rst(self, root, source_suffix):
-        if not len(self.objects):
+        if not self.objects:
             raise ExtensionError("No API objects exist. Can't continue")
         for id, obj in self.objects.items():
 
