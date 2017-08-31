@@ -50,6 +50,21 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
+    def map(self, options=None):
+        super(PythonSphinxMapper, self).map(options)
+
+        parents = {obj.name: obj for obj in self.objects.values()}
+        for obj in self.objects.values():
+            parent_name = obj.name.rsplit('.', 1)[0]
+            if parent_name in parents and parent_name != obj.name:
+                parent = parents[parent_name]
+                attr = 'sub{}s'.format(obj.type)
+                getattr(parent, attr).append(obj)
+
+        for obj in self.objects.values():
+            obj.submodules.sort()
+            obj.subpackages.sort()
+
     def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
 
@@ -70,6 +85,14 @@ class PythonSphinxMapper(SphinxMapperBase):
                                                    **kwargs):
                     obj.children.append(child_obj)
             yield obj
+
+    def _output_top_rst(self, root):
+        # Render Top Index
+        top_level_index = os.path.join(root, 'index.rst')
+        pages = [obj for obj in self.objects.values() if '.' not in obj.name]
+        with open(top_level_index, 'w+') as top_level_file:
+            content = self.jinja_env.get_template('index.rst')
+            top_level_file.write(content.render(pages=pages))
 
 
 class PythonPythonMapper(PythonMapperBase):
@@ -265,14 +288,38 @@ class PythonMethod(PythonPythonMapper):
     ref_directive = 'meth'
 
 
-class PythonModule(PythonPythonMapper):
+class TopLevelPythonPythonMapper(PythonPythonMapper):
+    top_level_object = True
+    ref_directive = 'mod'
+
+    def __init__(self, obj, **kwargs):
+        super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
+
+        self.subpackages = []
+        self.submodules = []
+
+    def _children_of_type(self, type_):
+        return list(child for child in self.children if child.type == type_)
+
+    @property
+    def functions(self):
+        return self._children_of_type('function')
+
+    @property
+    def methods(self):
+        return self._children_of_type('method')
+
+    @property
+    def classes(self):
+        return self._children_of_type('class')
+
+
+class PythonModule(TopLevelPythonPythonMapper):
     type = 'module'
-    top_level_object = True
 
 
-class PythonPackage(PythonPythonMapper):
+class PythonPackage(TopLevelPythonPythonMapper):
     type = 'package'
-    top_level_object = True
 
 
 class PythonClass(PythonPythonMapper):
