@@ -14,7 +14,7 @@ from sphinx.errors import ExtensionError
 from docutils.parsers.rst import directives
 
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
-from .directives import NestedParse
+from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
 from .toctree import add_domain_to_toctree
 
@@ -54,11 +54,10 @@ def run_autoapi(app):
     normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
     url_root = os.path.join('/', app.config.autoapi_root)
 
-    app.env.autoapi_data = []
-
     sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
     sphinx_mapper_obj = sphinx_mapper(app, template_dir=app.config.autoapi_template_dir,
                                       url_root=url_root)
+    app.env.autoapi_mapper = sphinx_mapper_obj
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -137,11 +136,17 @@ def doctree_read(app, doctree):
                      )
 
 
+def clear_env(app, env):
+    """Clears the environment of the unpicklable objects that we left behind."""
+    env.autoapi_mapper = None
+
+
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
     app.connect('doctree-resolved', add_domain_to_toctree)
+    app.connect('env-updated', clear_env)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
@@ -153,3 +158,4 @@ def setup(app):
     app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
+    directives.register_directive('autoapisummary', AutoapiSummary)

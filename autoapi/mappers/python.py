@@ -243,15 +243,26 @@ class PythonPythonMapper(PythonMapperBase):
 
         return arguments
 
+    @property
+    def summary(self):
+        for line in self.docstring.splitlines():
+            line = line.strip()
+            if line:
+                return line
+
+        return ''
+
 
 class PythonFunction(PythonPythonMapper):
     type = 'function'
     is_callable = True
+    ref_directive = 'func'
 
 
 class PythonMethod(PythonPythonMapper):
     type = 'method'
     is_callable = True
+    ref_directive = 'meth'
 
 
 class PythonModule(PythonPythonMapper):
