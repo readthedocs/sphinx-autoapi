@@ -300,6 +300,9 @@ class SphinxMapperBase(object):
             with open(path, 'wb+') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
+        self._output_top_rst(root)
+
+    def _output_top_rst(self, root):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
