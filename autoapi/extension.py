@@ -155,7 +155,7 @@ def setup(app):
     app.add_config_value('autoapi_dirs', [], 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
-    app.add_config_value('autoapi_template_dir', [], 'html')
+    app.add_config_value('autoapi_template_dir', None, 'html')
     app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
     directives.register_directive('autoapisummary', AutoapiSummary)
