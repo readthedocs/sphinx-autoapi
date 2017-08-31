@@ -152,7 +152,7 @@ class PythonPythonMapper(PythonMapperBase):
                 for ext in exts:
                     if obj_name.endswith(ext):
                         obj_name = obj_name[:-len(ext)]
-                obj_name = obj_name.split('/').pop()
+                obj_name = obj_name.replace('/', '.')
             parts.insert(0, obj_name)
             try:
                 return _inner(obj.parent, parts)
