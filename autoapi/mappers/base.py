@@ -5,6 +5,7 @@ from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
@@ -234,7 +235,12 @@ class SphinxMapperBase(object):
 
                         files_to_read.append(filename)
 
-        for _path in self.app.status_iterator(
+        if sphinx.version_info >= (1, 6):
+            status_iterator = sphinx.util.status_iterator
+        else:
+            status_iterator = self.app.status_iterator
+
+        for _path in status_iterator(
                 files_to_read,
                 '[AutoAPI] Reading files... ',
                 darkgreen,
