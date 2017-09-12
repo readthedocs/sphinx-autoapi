@@ -81,6 +81,14 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
             self.assertIn(
+                'attr2',
+                example_file
+            )
+            self.assertIn(
+                'This is the docstring of an instance attribute.',
+                example_file
+            )
+            self.assertIn(
                 'method_okay(foo=None, bar=None)',
                 example_file
             )
@@ -89,7 +97,17 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
             self.assertIn(
-                'method_tricky(foo=None, bar=dict)',
+                'method_tricky(foo=None, bar=dict(foo=1, bar=2))',
+                example_file
+            )
+            # Are constructor arguments from the class docstring parsed?
+            self.assertIn(
+                'Set an attribute',
+                example_file
+            )
+            # "self" should not be included in constructor arguments
+            self.assertNotIn(
+                'self',
                 example_file
             )
             self.assertFalse(

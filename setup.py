@@ -3,8 +3,8 @@ try:
     from setuptools import setup, find_packages
     extra_setup = dict(
         install_requires=[
+            'astroid',
             'PyYAML',
-            'pydocstyle',
             'wheel==0.24.0',
             'sphinx',
             'sphinxcontrib-golangdomain',
@@ -18,8 +18,8 @@ except ImportError:
     from distutils.core import setup
     extra_setup = dict(
         requires=[
+            'astroid',
             'PyYAML',
-            'pydocstyle',
             'wheel==0.24.0',
             'sphinx'
             'sphinxcontrib-golangdomain',

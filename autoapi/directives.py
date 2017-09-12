@@ -93,7 +93,7 @@ class AutoapiSummary(Directive):
             template = ':{}:`{} <{}>`'
 
         col1 = template.format(
-            'obj', obj.short_name, obj.name, escape(obj.signature),
+            'obj', obj.short_name, obj.name, escape('({})'.format(obj.args)),
         )
         col2 = obj.summary
 
