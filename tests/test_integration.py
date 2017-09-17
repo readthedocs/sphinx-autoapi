@@ -89,6 +89,15 @@ class PythonTests(LanguageIntegrationTests):
             self.assertFalse(
                 os.path.exists('_build/text/autoapi/method_multiline')
             )
+            index_file = open('_build/text/index.txt').read()
+            self.assertIn(
+                'Sphinx AutoAPI Index',
+                index_file
+            )
+            self.assertIn(
+                'Foo',
+                index_file
+            )
 
 
 class DotNetTests(LanguageIntegrationTests):
