@@ -196,7 +196,7 @@ class SphinxMapperBase(object):
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dirs, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -270,11 +270,11 @@ class SphinxMapperBase(object):
             for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''
         Create class object.
 
-        :param obj: Instance of a AutoAPI object
+        :param data: Instance of a AutoAPI object
         '''
         raise NotImplementedError
 
