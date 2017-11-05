@@ -25,14 +25,14 @@ class PythonSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     """
 
-    def load(self, patterns, dirs, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary
 
         Also include an attribute on the object, ``relative_path`` which is the
         shortened, relative path the package/module
         """
         for dir_ in dirs:
-            for path in self.find_files(patterns=patterns, dirs=[dir_], **kwargs):
+            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
                 data.relative_path = os.path.relpath(path, dir_)
                 if data:
