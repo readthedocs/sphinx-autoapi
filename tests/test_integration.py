@@ -1,3 +1,4 @@
+import io
 import json
 import os
 import sys
@@ -32,7 +33,7 @@ class LanguageIntegrationTests(unittest.TestCase):
 
     def _run_test(self, test_dir, test_file, test_string):
         with sphinx_build(test_dir):
-            with open(test_file) as fin:
+            with io.open(test_file, encoding='utf8') as fin:
                 text = fin.read().strip()
                 self.assertIn(test_string, text)
 
@@ -69,7 +70,9 @@ class PythonTests(LanguageIntegrationTests):
 
     def test_integration(self):
         with sphinx_build('pyexample'):
-            example_file = open('_build/text/autoapi/example/index.txt').read()
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
             self.assertIn(
                 'class example.Foo',
                 example_file
@@ -89,7 +92,9 @@ class PythonTests(LanguageIntegrationTests):
             self.assertFalse(
                 os.path.exists('_build/text/autoapi/method_multiline')
             )
-            index_file = open('_build/text/index.txt').read()
+            index_path = '_build/text/index.txt'
+            with io.open(index_path, encoding='utf8') as index_handle:
+                index_file = index_handle.read()
             self.assertIn(
                 'Sphinx AutoAPI Index',
                 index_file
