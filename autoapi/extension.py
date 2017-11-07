@@ -174,3 +174,4 @@ def setup(app):
     app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
     directives.register_directive('autoapisummary', AutoapiSummary)
+    app.setup_extension('sphinx.ext.autosummary')
