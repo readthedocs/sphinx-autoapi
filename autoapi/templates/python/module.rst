@@ -3,8 +3,6 @@
 
 .. py:module:: {{ obj.name }}
 
-{% endif %}
-
 {%- if obj.docstring %}
 
 .. autoapi-nested-parse::

@@ -89,10 +89,14 @@ class PythonSphinxMapper(SphinxMapperBase):
     def _output_top_rst(self, root):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
-        pages = [obj for obj in self.objects.values() if '.' not in obj.name]
+        pages = self.objects.values()
+        self.app.env.autoapi_toc_entries = []
+        for page in pages:
+            if page.top_level_object:
+                self.app.env.autoapi_toc_entries.append(page.include_path)
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=pages))
+            top_level_file.write(content.render(pages=self.app.env.autoapi_toc_entries))
 
 
 class PythonPythonMapper(PythonMapperBase):
