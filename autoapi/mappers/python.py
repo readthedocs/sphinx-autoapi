@@ -5,6 +5,8 @@ import ast
 import tokenize as tk
 from collections import defaultdict
 
+import sphinx
+import sphinx.util.docstrings
 from pydocstyle import parser
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -80,6 +82,25 @@ class PythonSphinxMapper(SphinxMapperBase):
         else:
             obj = cls(data, jinja_env=self.jinja_env,
                       options=self.app.config.autoapi_options, **kwargs)
+
+            type_ = cls.type if cls.type != 'package' else 'module'
+            lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
+            try:
+                self.app.emit(
+                    'autodoc-process-docstring',
+                    type_,
+                    obj.name,
+                    None,  # object
+                    None,  # options
+                    lines,
+                )
+            except KeyError:
+                if (sphinx.version_info >= (1, 6)
+                        and 'autodoc-process-docstring' in self.app.events.events):
+                    raise
+            else:
+                obj.docstring = '\n'.join(lines)
+
             for child_data in data.children:
                 for child_obj in self.create_class(child_data, options=options,
                                                    **kwargs):
