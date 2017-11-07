@@ -121,7 +121,7 @@ class PythonPythonMapper(PythonMapperBase):
 
         # Optional
         self.children = []
-        self.args = []
+        self._args = []
         if self.is_callable:
             self.args = self._get_arguments(obj)
         self.docstring = obj.docstring
@@ -132,6 +132,14 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self.item_map = defaultdict(list)
+
+    @property
+    def args(self):
+        return self._args
+
+    @args.setter
+    def args(self, value):
+        self._args = value
 
     @property
     def is_undoc_member(self):
@@ -337,6 +345,17 @@ class PythonPackage(TopLevelPythonPythonMapper):
 
 class PythonClass(PythonPythonMapper):
     type = 'class'
+
+    @PythonPythonMapper.args.getter
+    def args(self):
+        if self._args:
+            return self._args
+
+        for child in self.children:
+            if child.short_name == '__init__':
+                return child.args
+
+        return self._args
 
 
 # Parser
