@@ -112,36 +112,50 @@ def doctree_read(app, doctree):
     """
     Inject AutoAPI into the TOC Tree dynamically.
     """
-
-    all_docs = set()
-    insert = True
     if app.env.docname == 'index':
+        all_docs = set()
+        insert = True
         nodes = doctree.traverse(toctree)
         toc_entry = '%s/index' % app.config.autoapi_root
         if not nodes:
             return
+        # Capture all existing toctree entries
+        root = nodes[0]
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
-        # Don't insert if it's already present
+        # Don't insert autoapi it's already present
         for doc in all_docs:
             if doc.find(app.config.autoapi_root) != -1:
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
-            nodes[-1]['entries'].append(
-                (None, u'%s/index' % app.config.autoapi_root)
-            )
-            nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
-            app.info(bold('[AutoAPI] ') +
-                     darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
-                     )
+            if app.config.autoapi_add_api_root_toctree:
+                # Insert full API TOC in root TOC
+                for path in app.env.autoapi_toc_entries:
+                    nodes[-1]['entries'].append(
+                        (None, path[1:])
+                    )
+                    nodes[-1]['includefiles'].append(path)
+            else:
+                # Insert AutoAPI index
+                nodes[-1]['entries'].append(
+                    (None, u'%s/index' % app.config.autoapi_root)
+                )
+                nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
+                app.info(bold('[AutoAPI] ') +
+                         darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
+                         )
+            if sphinx.version_info > (1, 5):
+                app.env.note_toctree(app.env.docname, root)
+            else:
+                app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
     app.connect('builder-inited', run_autoapi)
-    app.connect('build-finished', build_finished)
     app.connect('doctree-read', doctree_read)
     app.connect('doctree-resolved', add_domain_to_toctree)
+    app.connect('build-finished', build_finished)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
@@ -150,6 +164,7 @@ def setup(app):
     app.add_config_value('autoapi_dirs', [], 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
+    app.add_config_value('autoapi_add_api_root_toctree', False, 'html')
     app.add_config_value('autoapi_template_dir', [], 'html')
     app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
