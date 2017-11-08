@@ -41,6 +41,7 @@ Submodules
 {{ obj.type|title }} Contents
 {{ "-" * obj.type|length }}---------
 
+{% if include_summaries %}
 {% block classes %}{% if obj.classes %}
 Classes
 ~~~~~~~
@@ -71,6 +72,7 @@ Functions
    {{ function.id }}
 {%- endfor %}
 {% endif %}{% endblock %}
+{% endif %}
 
 {%- for obj_item in obj.children %}
 

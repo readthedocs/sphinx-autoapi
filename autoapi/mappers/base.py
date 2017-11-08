@@ -290,7 +290,9 @@ class SphinxMapperBase(object):
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            rst = obj.render()
+            rst = obj.render(
+                include_summaries=self.app.config.autoapi_include_summaries,
+            )
             if not rst:
                 continue
 
