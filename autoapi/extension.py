@@ -123,7 +123,7 @@ def doctree_read(app, doctree):
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
-        # Don't insert autoapi it's already present
+        # Don't insert autoapi if it's already present
         for doc in all_docs:
             if doc.find(app.config.autoapi_root) != -1:
                 insert = False
