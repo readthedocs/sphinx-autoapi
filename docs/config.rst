@@ -57,6 +57,12 @@ Customization Options
 
 	Relative path to output the AutoAPI files into
 
+.. confval:: autoapi_include_summaries
+
+	Default: ``False``
+
+	Whether include autosummary directives in generated module documentation.
+
 Debugging Options
 -----------------
 
