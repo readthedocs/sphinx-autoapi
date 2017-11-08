@@ -5,6 +5,7 @@ from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
@@ -153,6 +154,10 @@ class PythonMapperBase(object):
         if pieces:
             return '.'.join(pieces)
 
+    @property
+    def signature(self):
+        return '({})'.format(','.join(self.args))
+
 
 class SphinxMapperBase(object):
 
@@ -190,12 +195,14 @@ class SphinxMapperBase(object):
         self.paths = OrderedDict()
         # Mapping of {object id -> Python Object}
         self.objects = OrderedDict()
+        # Mapping of {object id -> Python Object}
+        self.all_objects = OrderedDict()
         # Mapping of {namespace id -> Python Object}
         self.namespaces = OrderedDict()
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dirs, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -234,7 +241,12 @@ class SphinxMapperBase(object):
 
                         files_to_read.append(filename)
 
-        for _path in self.app.status_iterator(
+        if sphinx.version_info >= (1, 6):
+            status_iterator = sphinx.util.status_iterator
+        else:
+            status_iterator = self.app.status_iterator
+
+        for _path in status_iterator(
                 files_to_read,
                 '[AutoAPI] Reading files... ',
                 darkgreen,
@@ -257,25 +269,30 @@ class SphinxMapperBase(object):
         :param obj: Instance of a AutoAPI object
         '''
         self.objects[obj.id] = obj
+        self.all_objects[obj.id] = obj
+        for child in obj.children:
+            self.all_objects[child.id] = child
 
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data, options=options, path=path):
+            for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''
         Create class object.
 
-        :param obj: Instance of a AutoAPI object
+        :param data: Instance of a AutoAPI object
         '''
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            rst = obj.render()
+            rst = obj.render(
+                include_summaries=self.app.config.autoapi_include_summaries,
+            )
             if not rst:
                 continue
 
@@ -285,9 +302,16 @@ class SphinxMapperBase(object):
             with open(path, 'wb+') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
+        self._output_top_rst(root)
+
+    def _output_top_rst(self, root):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
+        self.app.env.autoapi_toc_entries = []
+        for page in pages:
+            if page.top_level_object:
+                self.app.env.autoapi_toc_entries.append(page.include_path)
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=pages))
+            top_level_file.write(content.render(pages=self.app.env.autoapi_toc_entries))

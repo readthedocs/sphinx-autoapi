@@ -86,7 +86,7 @@ class DotNetSphinxMapperTests(unittest.TestCase):
         with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.find_files', _mock_find):
             with patch('autoapi.mappers.dotnet.DotNetSphinxMapper.read_file', _mock_read):
                 dom = dotnet.DotNetSphinxMapper(self.application)
-                dom.load('', '', '', raise_error=False)
+                dom.load('', '', '')
                 dom.map()
                 objs = dom.objects
                 self.assertEqual(len(objs), 2)

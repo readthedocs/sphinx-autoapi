@@ -32,7 +32,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, options=None, **kwargs):
+    def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             for item in data:
@@ -40,7 +40,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''Return instance of class based on Javascript data
 
         Data keys handled here:

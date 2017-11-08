@@ -5,6 +5,8 @@ import ast
 import tokenize as tk
 from collections import defaultdict
 
+import sphinx
+import sphinx.util.docstrings
 from pydocstyle import parser
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -25,14 +27,14 @@ class PythonSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     """
 
-    def load(self, patterns, dirs, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary
 
         Also include an attribute on the object, ``relative_path`` which is the
         shortened, relative path the package/module
         """
         for dir_ in dirs:
-            for path in self.find_files(patterns=patterns, dirs=[dir_], **kwargs):
+            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
                 data.relative_path = os.path.relpath(path, dir_)
                 if data:
@@ -50,6 +52,21 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
+    def map(self, options=None):
+        super(PythonSphinxMapper, self).map(options)
+
+        parents = {obj.name: obj for obj in self.objects.values()}
+        for obj in self.objects.values():
+            parent_name = obj.name.rsplit('.', 1)[0]
+            if parent_name in parents and parent_name != obj.name:
+                parent = parents[parent_name]
+                attr = 'sub{}s'.format(obj.type)
+                getattr(parent, attr).append(obj)
+
+        for obj in self.objects.values():
+            obj.submodules.sort()
+            obj.subpackages.sort()
+
     def create_class(self, data, options=None, path=None, **kwargs):
         """Create a class from the passed in data
 
@@ -65,6 +82,25 @@ class PythonSphinxMapper(SphinxMapperBase):
         else:
             obj = cls(data, jinja_env=self.jinja_env,
                       options=self.app.config.autoapi_options, **kwargs)
+
+            type_ = cls.type if cls.type != 'package' else 'module'
+            lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
+            try:
+                self.app.emit(
+                    'autodoc-process-docstring',
+                    type_,
+                    obj.name,
+                    None,  # object
+                    None,  # options
+                    lines,
+                )
+            except KeyError:
+                if (sphinx.version_info >= (1, 6)
+                        and 'autodoc-process-docstring' in self.app.events.events):
+                    raise
+            else:
+                obj.docstring = '\n'.join(lines)
+
             for child_data in data.children:
                 for child_obj in self.create_class(child_data, options=options,
                                                    **kwargs):
@@ -85,7 +121,7 @@ class PythonPythonMapper(PythonMapperBase):
 
         # Optional
         self.children = []
-        self.args = []
+        self._args = []
         if self.is_callable:
             self.args = self._get_arguments(obj)
         self.docstring = obj.docstring
@@ -96,6 +132,14 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self.item_map = defaultdict(list)
+
+    @property
+    def args(self):
+        return self._args
+
+    @args.setter
+    def args(self, value):
+        self._args = value
 
     @property
     def is_undoc_member(self):
@@ -152,7 +196,7 @@ class PythonPythonMapper(PythonMapperBase):
                 for ext in exts:
                     if obj_name.endswith(ext):
                         obj_name = obj_name[:-len(ext)]
-                obj_name = obj_name.split('/').pop()
+                obj_name = obj_name.replace('/', '.')
             parts.insert(0, obj_name)
             try:
                 return _inner(obj.parent, parts)
@@ -243,29 +287,75 @@ class PythonPythonMapper(PythonMapperBase):
 
         return arguments
 
+    @property
+    def summary(self):
+        for line in self.docstring.splitlines():
+            line = line.strip()
+            if line:
+                return line
+
+        return ''
+
 
 class PythonFunction(PythonPythonMapper):
     type = 'function'
     is_callable = True
+    ref_directive = 'func'
 
 
 class PythonMethod(PythonPythonMapper):
     type = 'method'
     is_callable = True
+    ref_directive = 'meth'
 
 
-class PythonModule(PythonPythonMapper):
+class TopLevelPythonPythonMapper(PythonPythonMapper):
+    top_level_object = True
+    ref_directive = 'mod'
+
+    def __init__(self, obj, **kwargs):
+        super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
+
+        self.subpackages = []
+        self.submodules = []
+
+    def _children_of_type(self, type_):
+        return list(child for child in self.children if child.type == type_)
+
+    @property
+    def functions(self):
+        return self._children_of_type('function')
+
+    @property
+    def methods(self):
+        return self._children_of_type('method')
+
+    @property
+    def classes(self):
+        return self._children_of_type('class')
+
+
+class PythonModule(TopLevelPythonPythonMapper):
     type = 'module'
-    top_level_object = True
 
 
-class PythonPackage(PythonPythonMapper):
+class PythonPackage(TopLevelPythonPythonMapper):
     type = 'package'
-    top_level_object = True
 
 
 class PythonClass(PythonPythonMapper):
     type = 'class'
+
+    @PythonPythonMapper.args.getter
+    def args(self):
+        if self._args:
+            return self._args
+
+        for child in self.children:
+            if child.short_name == '__init__':
+                return child.args
+
+        return self._args
 
 
 # Parser

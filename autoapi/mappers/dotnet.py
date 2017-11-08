@@ -60,7 +60,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     DOCFX_OUTPUT_PATH = '_api'
 
-    def load(self, patterns, dirs, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         '''Load objects from the filesystem into the ``paths`` dictionary.
 
         If the setting ``autoapi_patterns`` was not specified, look for a
@@ -68,7 +68,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
         the canonical source before the default patterns.  Fallback to default
         pattern matches if no ``docfx.json`` files are found.
         '''
-        raise_error = kwargs.get('raise_error', True)
         all_files = set()
         if not self.app.config.autoapi_file_patterns:
             all_files = set()
@@ -98,8 +97,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
                     self.app.warn(error_output)
             except (OSError, subprocess.CalledProcessError) as e:
                 self.app.warn('Error generating metadata: {0}'.format(e))
-                if raise_error:
-                    raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
         for xdoc_path in self.find_files(patterns=['*.yml'],
                                          dirs=[self.DOCFX_OUTPUT_PATH],
@@ -124,7 +121,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         return None
 
     # Subclassed to iterate over items
-    def map(self, options=None, **kwargs):
+    def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
             references = data.get('references', [])
@@ -135,7 +132,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         self.organize_objects()
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''
         Return instance of class based on Roslyn type property
 
@@ -211,15 +208,15 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         # Clean out dead namespaces
         for key, ns in self.top_namespaces.copy().items():
-            if len(ns.children) == 0:
+            if not ns.children:
                 del self.top_namespaces[key]
 
         for key, ns in self.namespaces.items():
-            if len(ns.children) == 0:
+            if not ns.children:
                 del self.namespaces[key]
 
     def output_rst(self, root, source_suffix):
-        if not len(self.objects):
+        if not self.objects:
             raise ExtensionError("No API objects exist. Can't continue")
         for id, obj in self.objects.items():
 

@@ -12,3 +12,4 @@ _api_
 .tox
 .eggs
 .ropeproject/
+.cache
