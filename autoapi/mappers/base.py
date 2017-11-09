@@ -267,10 +267,10 @@ class SphinxMapperBase(object):
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for obj in self.create_class(data, options=options, path=path):
+            for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
-    def create_class(self, data, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''
         Create class object.
 
@@ -294,6 +294,10 @@ class SphinxMapperBase(object):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
+        self.app.env.autoapi_toc_entries = []
+        for page in pages:
+            if page.top_level_object:
+                self.app.env.autoapi_toc_entries.append(page.include_path)
         with open(top_level_index, 'w+') as top_level_file:
             content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=pages))
+            top_level_file.write(content.render(pages=self.app.env.autoapi_toc_entries))

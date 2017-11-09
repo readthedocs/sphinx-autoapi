@@ -40,7 +40,7 @@ class GoSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         '''Return instance of class based on Go data
 
         Data keys handled here:

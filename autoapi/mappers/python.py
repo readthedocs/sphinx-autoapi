@@ -50,7 +50,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
-    def create_class(self, data, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
 
         :param data: dictionary data of pydocstyle output
