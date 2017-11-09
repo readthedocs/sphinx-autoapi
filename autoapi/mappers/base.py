@@ -5,6 +5,7 @@ from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
@@ -195,7 +196,7 @@ class SphinxMapperBase(object):
         # Mapping of {namespace id -> Python Object}
         self.top_level_objects = OrderedDict()
 
-    def load(self, patterns, dirs, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         '''
         Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -234,7 +235,12 @@ class SphinxMapperBase(object):
 
                         files_to_read.append(filename)
 
-        for _path in self.app.status_iterator(
+        if sphinx.version_info >= (1, 6):
+            status_iterator = sphinx.util.status_iterator
+        else:
+            status_iterator = self.app.status_iterator
+
+        for _path in status_iterator(
                 files_to_read,
                 '[AutoAPI] Reading files... ',
                 darkgreen,
@@ -264,11 +270,11 @@ class SphinxMapperBase(object):
             for obj in self.create_class(data, options=options, path=path):
                 self.add_object(obj)
 
-    def create_class(self, obj, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''
         Create class object.
 
-        :param obj: Instance of a AutoAPI object
+        :param data: Instance of a AutoAPI object
         '''
         raise NotImplementedError
 
