@@ -60,6 +60,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
     DOCFX_OUTPUT_PATH = '_api'
 
+    # pylint: disable=arguments-differ
     def load(self, patterns, dirs, ignore=None, **kwargs):
         '''Load objects from the filesystem into the ``paths`` dictionary.
 
@@ -135,7 +136,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         self.organize_objects()
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''
         Return instance of class based on Roslyn type property
 

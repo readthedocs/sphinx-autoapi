@@ -21,9 +21,7 @@ def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
                                 anchorname='#' + anchor, *[nodes.Text(text, text)])
     para = addnodes.compact_paragraph('', '', reference)
     ret_list = nodes.list_item('', para)
-    if not bullet:
-        return ret_list
-    return nodes.bullet_list('', ret_list)
+    return nodes.bullet_list('', ret_list) if bullet else ret_list
 
 
 def _traverse_parent(node, objtypes):

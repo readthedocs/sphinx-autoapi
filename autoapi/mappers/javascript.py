@@ -40,7 +40,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None, path=None, **kwargs):
         '''Return instance of class based on Javascript data
 
         Data keys handled here:

@@ -145,10 +145,6 @@ def doctree_read(app, doctree):
                 app.info(bold('[AutoAPI] ') +
                          darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
                          )
-            if sphinx.version_info > (1, 5):
-                app.env.note_toctree(app.env.docname, root)
-            else:
-                app.env.build_toc_from(app.env.docname, doctree)
 
 
 def setup(app):
