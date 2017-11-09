@@ -154,6 +154,10 @@ class PythonMapperBase(object):
         if pieces:
             return '.'.join(pieces)
 
+    @property
+    def signature(self):
+        return '({})'.format(','.join(self.args))
+
 
 class SphinxMapperBase(object):
 
@@ -191,6 +195,8 @@ class SphinxMapperBase(object):
         self.paths = OrderedDict()
         # Mapping of {object id -> Python Object}
         self.objects = OrderedDict()
+        # Mapping of {object id -> Python Object}
+        self.all_objects = OrderedDict()
         # Mapping of {namespace id -> Python Object}
         self.namespaces = OrderedDict()
         # Mapping of {namespace id -> Python Object}
@@ -263,6 +269,9 @@ class SphinxMapperBase(object):
         :param obj: Instance of a AutoAPI object
         '''
         self.objects[obj.id] = obj
+        self.all_objects[obj.id] = obj
+        for child in obj.children:
+            self.all_objects[child.id] = child
 
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
@@ -281,7 +290,9 @@ class SphinxMapperBase(object):
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
-            rst = obj.render()
+            rst = obj.render(
+                include_summaries=self.app.config.autoapi_include_summaries,
+            )
             if not rst:
                 continue
 
@@ -291,6 +302,9 @@ class SphinxMapperBase(object):
             with open(path, 'wb+') as detail_file:
                 detail_file.write(rst.encode('utf-8'))
 
+        self._output_top_rst(root)
+
+    def _output_top_rst(self, root):
         # Render Top Index
         top_level_index = os.path.join(root, 'index.rst')
         pages = self.objects.values()
