@@ -7,12 +7,14 @@ import unittest
 from contextlib import contextmanager
 
 from mock import patch
+import pytest
 
+import sphinx
 from sphinx.application import Sphinx
 
 
 @contextmanager
-def sphinx_build(test_dir):
+def sphinx_build(test_dir, confoverrides=None):
     os.chdir('tests/{0}'.format(test_dir))
     try:
         app = Sphinx(
@@ -21,6 +23,7 @@ def sphinx_build(test_dir):
             outdir='_build/text',
             doctreedir='_build/.doctrees',
             buildername='text',
+            confoverrides=confoverrides,
         )
         app.build(force_all=True)
         yield
@@ -102,6 +105,53 @@ class PythonTests(LanguageIntegrationTests):
             self.assertIn(
                 'Foo',
                 index_file
+            )
+
+    @pytest.mark.skipif(sphinx.version_info < (1, 4),
+                      reason="Cannot override extensions in Sphinx 1.3")
+    def test_napoleon_integration(self):
+        with sphinx_build('pyexample'):
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
+
+            # Check that docstrings are not transformed without napoleon loaded
+            self.assertIn(
+                'Args',
+                example_file
+            )
+
+            self.assertIn(
+                'Returns',
+                example_file
+            )
+
+        confoverrides={
+            'extensions': [
+                'autoapi.extension',
+                'sphinx.ext.autodoc',
+                'sphinx.ext.napoleon',
+            ],
+        }
+
+        with sphinx_build('pyexample', confoverrides=confoverrides):
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
+
+            self.assertIn(
+                'Parameters',
+                example_file
+            )
+
+            self.assertIn(
+                'Return type',
+                example_file
+            )
+
+            self.assertNotIn(
+                'Args',
+                example_file
             )
 
 
