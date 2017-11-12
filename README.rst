@@ -144,6 +144,47 @@ any file matching ``['project.json', 'csproj', 'vsproj']`` will be searched for.
 .. _`ASP.NET Installation`: http://docs.asp.net/en/latest/getting-started/index.html
 .. _`docfx configuration file`: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#3-docfx-json-format
 
+
+GO
+~~~~
+
+Install go domain extension for sphinx.
+
+.. code:: bash
+  pip install go sphinxcontrib_golangdomain
+
+
+Install the go environment (from https://golang.org/dl/).
+
+Install a git client for your environment (e.g. from https://desktop.github.com/).
+
+Install our godocjson tool (preprocess godoc output to JSON, in a way similar to jsdoc -X).
+
+.. code:: bash
+  go get github.com/rtfd/godocjson
+
+Add go domain in your conf.py.
+
+.. code:: python
+  extensions = [ 'sphinxcontrib.golangdomain',...
+
+Before running building your doc, make sure the godocjson executable is in your path.
+
+Javascript
+~~~~~~~~~~~~~~~~
+
+Requires jsdoc, which in turn requires nodejs to be installed.
+
+Install nodejs on your platform.
+
+Install jsdoc using npm.
+
+.. code:: bash
+  npm install jsdoc -g
+
+Before building your doc, make sure the jsdoc executable is in your path.
+
+
 Customize
 ---------
 
