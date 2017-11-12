@@ -21,9 +21,11 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         '''
         # TODO support JSON here
         # TODO sphinx way of reporting errors in logs?
-
+        subcmd = 'jsdoc'
+        if os.name == 'nt':
+            subcmd='.'.join([subcmd,'cmd'])
         try:
-            parsed_data = json.loads(subprocess.check_output(['jsdoc', '-X', path]))
+            parsed_data = json.loads(subprocess.check_output([subcmd, '-X', path]))
             return parsed_data
         except IOError:
             self.app.warn('Error reading file: {0}'.format(path))
