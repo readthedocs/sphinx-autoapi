@@ -1,6 +1,6 @@
 import json
 import subprocess
-
+import os
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -23,7 +23,8 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         # TODO sphinx way of reporting errors in logs?
         subcmd = 'jsdoc'
         if os.name == 'nt':
-            subcmd='.'.join([subcmd,'cmd'])
+            subcmd = '.'.join([subcmd, 'cmd'])
+
         try:
             parsed_data = json.loads(subprocess.check_output([subcmd, '-X', path]))
             return parsed_data
