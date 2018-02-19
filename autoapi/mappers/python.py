@@ -4,7 +4,7 @@ import os
 import textwrap
 import ast
 import tokenize as tk
-from collections import defaultdict
+import collections
 
 import astroid
 import sphinx
@@ -38,8 +38,8 @@ class PythonSphinxMapper(SphinxMapperBase):
         for dir_ in dirs:
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
-                data['relative_path'] = os.path.relpath(path, dir_)
                 if data:
+                    data['relative_path'] = os.path.relpath(path, dir_)
                     self.paths[path] = data
 
     def read_file(self, path, **kwargs):
@@ -136,7 +136,7 @@ class PythonPythonMapper(PythonMapperBase):
         self.docstring = obj['doc']
 
         # For later
-        self.item_map = defaultdict(list)
+        self.item_map = collections.defaultdict(list)
 
     @property
     def args(self):
@@ -296,7 +296,16 @@ class PythonClass(PythonPythonMapper):
 
 class Parser(object):
     def parse_file(self, file_path):
-        node = astroid.MANAGER.ast_from_file(file_path)
+        directory, filename = os.path.split(file_path)
+        module_part = os.path.splitext(filename)[0]
+        module_parts = collections.deque([module_part])
+        while os.path.isfile(os.path.join(directory, '__init__.py')):
+            directory, module_part = os.path.split(directory)
+            if module_part:
+                module_parts.appendleft(module_part)
+
+        module_name = '.'.join(module_parts)
+        node = astroid.MANAGER.ast_from_file(file_path, module_name)
         return self.parse(node)
 
     def parse_assign(self, node):
