@@ -36,10 +36,14 @@ class PythonSphinxMapper(SphinxMapperBase):
         shortened, relative path the package/module
         """
         for dir_ in dirs:
+            dir_root = dir_
+            if os.path.exists(os.path.join(dir_, '__init__.py')):
+                dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
+
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
                 if data:
-                    data['relative_path'] = os.path.relpath(path, dir_)
+                    data['relative_path'] = os.path.relpath(path, dir_root)
                     self.paths[path] = data
 
     def read_file(self, path, **kwargs):
