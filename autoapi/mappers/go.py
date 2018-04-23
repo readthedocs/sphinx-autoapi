@@ -134,6 +134,7 @@ class GoPythonMapper(PythonMapperBase):
         pieces = self.id.split('.')[:-1]
         if pieces:
             return '.'.join(pieces)
+        return None
 
     @property
     def ref_type(self):

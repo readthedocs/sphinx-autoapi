@@ -370,12 +370,14 @@ class DotNetPythonMapper(PythonMapperBase):
         pieces = self.id.split('.')[:-1]
         if pieces:
             return '.'.join(pieces)
+        return None
 
     @property
     def top_namespace(self):
         pieces = self.id.split('.')[:2]
         if pieces:
             return '.'.join(pieces)
+        return None
 
     @property
     def ref_type(self):
