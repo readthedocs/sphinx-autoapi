@@ -1,15 +1,17 @@
+import re
 import sys
 import os
 import textwrap
 import ast
 import tokenize as tk
-from collections import defaultdict
+import collections
 
+import astroid
 import sphinx
 import sphinx.util.docstrings
-from pydocstyle import parser
 
 from .base import PythonMapperBase, SphinxMapperBase
+from . import astroid_utils
 from ..utils import slugify
 
 if sys.version_info < (3,):
@@ -36,8 +38,8 @@ class PythonSphinxMapper(SphinxMapperBase):
         for dir_ in dirs:
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
-                data.relative_path = os.path.relpath(path, dir_)
                 if data:
+                    data['relative_path'] = os.path.relpath(path, dir_)
                     self.paths[path] = data
 
     def read_file(self, path, **kwargs):
@@ -46,7 +48,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         :param path: Path of file to read
         """
         try:
-            parsed_data = ParserExtra()(open(path), path)
+            parsed_data = Parser().parse_file(path)
             return parsed_data
         except (IOError, TypeError, ImportError):
             self.app.warn('Error reading file: {0}'.format(path))
@@ -70,30 +72,31 @@ class PythonSphinxMapper(SphinxMapperBase):
     def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
 
-        :param data: dictionary data of pydocstyle output
+        :param data: dictionary data of parser output
         """
         obj_map = dict((cls.type, cls) for cls
                        in [PythonClass, PythonFunction, PythonModule,
-                           PythonMethod, PythonPackage])
+                           PythonMethod, PythonPackage, PythonAttribute,
+                           PythonData])
         try:
-            cls = obj_map[data.kind]
+            cls = obj_map[data['type']]
         except KeyError:
-            self.app.warn("Unknown type: %s" % data.kind)
+            self.app.warn("Unknown type: %s" % data['type'])
         else:
             obj = cls(data, jinja_env=self.jinja_env,
                       options=self.app.config.autoapi_options, **kwargs)
 
-            type_ = cls.type if cls.type != 'package' else 'module'
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
             try:
-                self.app.emit(
-                    'autodoc-process-docstring',
-                    type_,
-                    obj.name,
-                    None,  # object
-                    None,  # options
-                    lines,
-                )
+                if lines:
+                    self.app.emit(
+                        'autodoc-process-docstring',
+                        cls.type,
+                        obj.name,
+                        None,  # object
+                        None,  # options
+                        lines,
+                    )
             except KeyError:
                 if (sphinx.version_info >= (1, 6)
                         and 'autodoc-process-docstring' in self.app.events.events):
@@ -101,7 +104,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             else:
                 obj.docstring = '\n'.join(lines)
 
-            for child_data in data.children:
+            for child_data in data.get('children', []):
                 for child_obj in self.create_class(child_data, options=options,
                                                    **kwargs):
                     obj.children.append(child_obj)
@@ -124,22 +127,16 @@ class PythonPythonMapper(PythonMapperBase):
     def __init__(self, obj, **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self.name = self._get_full_name(obj)
+        self.name = obj['name']
         self.id = slugify(self.name)
 
         # Optional
         self.children = []
-        self._args = []
-        if self.is_callable:
-            self.args = self._get_arguments(obj)
-        self.docstring = obj.docstring
-        if getattr(obj, 'parent'):
-            self.inheritance = [obj.parent.name]
-        else:
-            self.inheritance = []
+        self.args = obj.get('args')
+        self.docstring = obj['doc']
 
         # For later
-        self.item_map = defaultdict(list)
+        self.item_map = collections.defaultdict(list)
 
     @property
     def args(self):
@@ -155,13 +152,16 @@ class PythonPythonMapper(PythonMapperBase):
 
     @property
     def is_private_member(self):
-        return not self.obj.is_public
+        return (
+            self.short_name.startswith('_')
+            and not self.short_name.endswith('__')
+        )
 
     @property
     def is_special_member(self):
         return (
-            (isinstance(self.obj, parser.Method) and self.obj.is_magic) or
-            (self.obj.name.startswith('__') and self.obj.name.endswith('__'))
+            self.short_name.startswith('__')
+            and self.short_name.endswith('__')
         )
 
     @property
@@ -174,127 +174,6 @@ class PythonPythonMapper(PythonMapperBase):
             return False
         return True
 
-    @staticmethod
-    def _get_full_name(obj):
-        """Recursively build the full name of the object from pydocstyle
-
-        Uses an additional attribute added to the object, ``relative_path``.
-        This is the shortened path of the object name, if the object is a
-        package or module.
-
-        :param obj: pydocstyle object, as returned from Parser()
-        :returns: Dotted name of object
-        :rtype: str
-        """
-
-        def _inner(obj, parts=None):
-            if parts is None:
-                parts = []
-            obj_kind = obj.kind
-            obj_name = obj.name
-            if obj_kind == 'module':
-                obj_name = getattr(obj, 'relative_path', None) or obj.name
-                obj_name = obj_name.replace('/', '.')
-                ext = '.py'
-                if obj_name.endswith(ext):
-                    obj_name = obj_name[:-len(ext)]
-            elif obj_kind == 'package':
-                obj_name = getattr(obj, 'relative_path', None) or obj.name
-                exts = ['/__init__.py', '.py']
-                for ext in exts:
-                    if obj_name.endswith(ext):
-                        obj_name = obj_name[:-len(ext)]
-                obj_name = obj_name.replace('/', '.')
-            parts.insert(0, obj_name)
-            try:
-                return _inner(obj.parent, parts)
-            except AttributeError:
-                pass
-            return parts
-
-        return '.'.join(_inner(obj))
-
-    @staticmethod
-    def _get_arguments(obj):
-        """Get arguments from a pydocstyle object
-
-        :param obj: pydocstyle object, as returned from Parser()
-        :returns: list of argument or argument and value pairs
-        :rtype: list
-        """
-        arguments = []
-        source = textwrap.dedent(obj.source)
-        # Bare except here because AST parsing can throw any number of
-        # exceptions, including SyntaxError
-        try:
-            parsed = ast.parse(source)
-        except Exception as e:  # noqa
-            print("Error parsing AST: %s" % str(e))
-            return []
-        parsed_args = parsed.body[0].args
-        arg_names = [arg.id if sys.version_info < (3,) else arg.arg
-                     for arg in parsed_args.args]
-
-        # Get defaults for display based on AST node type
-        arg_defaults = []
-        pydocstyle_map = {
-            ast.Name: 'id',
-            ast.Num: 'n',
-            ast.Str: lambda obj: '"{0}"'.format(obj.s),
-            # Call function name can be an `Attribute` or `Name` node, make sure
-            # we're using the correct attribute for the id
-            ast.Call: lambda obj: (obj.func.id if isinstance(obj.func, ast.Name)
-                                   else obj.func.attr),
-            # TODO these require traversal into the AST nodes. Add this for more
-            # complete argument parsing, or handle with a custom AST traversal.
-            ast.List: lambda _: 'list',
-            ast.Tuple: lambda _: 'tuple',
-            ast.Set: lambda _: 'set',
-            ast.Dict: lambda _: 'dict',
-        }
-        if sys.version_info >= (3,):
-            pydocstyle_map.update({
-                ast.NameConstant: 'value',
-            })
-
-        for value in parsed_args.defaults:
-            default = None
-            try:
-                default = pydocstyle_map[type(value)](value)
-            except TypeError:
-                default = getattr(value, pydocstyle_map[type(value)])
-            except KeyError:
-                pass
-            if default is None:
-                default = 'None'
-            arg_defaults.append(default)
-
-        # Apply defaults padded to the end of the longest list. AST returns
-        # argument defaults as a short array that applies to the end of the list
-        # of arguments
-        for (name, default) in zip_longest(reversed(arg_names),
-                                           reversed(arg_defaults)):
-            arg = name
-            if default is not None:
-                arg = '{0}={1}'.format(name, default)
-            arguments.insert(0, arg)
-
-        # Add *args and **kwargs
-        if parsed_args.vararg:
-            arguments.append('*{0}'.format(
-                parsed_args.vararg
-                if sys.version_info < (3, 3)
-                else parsed_args.vararg.arg
-            ))
-        if parsed_args.kwarg:
-            arguments.append('**{0}'.format(
-                parsed_args.kwarg
-                if sys.version_info < (3, 3)
-                else parsed_args.kwarg.arg
-            ))
-
-        return arguments
-
     @property
     def summary(self):
         for line in self.docstring.splitlines():
@@ -303,6 +182,9 @@ class PythonPythonMapper(PythonMapperBase):
                 return line
 
         return ''
+
+    def _children_of_type(self, type_):
+        return list(child for child in self.children if child.type == type_)
 
 
 class PythonFunction(PythonPythonMapper):
@@ -317,6 +199,21 @@ class PythonMethod(PythonPythonMapper):
     ref_directive = 'meth'
 
 
+class PythonData(PythonPythonMapper):
+    """Global, module level data."""
+    type = 'data'
+
+    def __init__(self, obj, **kwargs):
+        super(PythonData, self).__init__(obj, **kwargs)
+
+        self.value = obj.get('value')
+
+
+class PythonAttribute(PythonData):
+    """An object/class level attribute."""
+    type = 'attribute'
+
+
 class TopLevelPythonPythonMapper(PythonPythonMapper):
     top_level_object = True
     ref_directive = 'mod'
@@ -324,19 +221,14 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
 
+        self._resolve_name()
+
         self.subpackages = []
         self.submodules = []
-
-    def _children_of_type(self, type_):
-        return list(child for child in self.children if child.type == type_)
 
     @property
     def functions(self):
         return self._children_of_type('function')
-
-    @property
-    def methods(self):
-        return self._children_of_type('method')
 
     @property
     def classes(self):
@@ -346,156 +238,196 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
 class PythonModule(TopLevelPythonPythonMapper):
     type = 'module'
 
+    def _resolve_name(self):
+        name = self.obj['relative_path']
+        name = name.replace('/', '.')
+        ext = '.py'
+        if name.endswith(ext):
+            name = name[:-len(ext)]
+
+        self.name = name
+
 
 class PythonPackage(TopLevelPythonPythonMapper):
     type = 'package'
+
+    def _resolve_name(self):
+        name = self.obj['relative_path']
+
+        exts = ['/__init__.py', '.py']
+        for ext in exts:
+            if name.endswith(ext):
+                name = name[:-len(ext)]
+                name = name.replace('/', '.')
+
+        self.name = name
 
 
 class PythonClass(PythonPythonMapper):
     type = 'class'
 
+    def __init__(self, obj, **kwargs):
+        super(PythonClass, self).__init__(obj, **kwargs)
+
+        self.bases = obj['bases']
+
     @PythonPythonMapper.args.getter
     def args(self):
-        if self._args:
-            return self._args
+        args = self._args
 
         for child in self.children:
             if child.short_name == '__init__':
-                return child.args
-
-        return self._args
-
-
-# Parser
-class ParserExtra(parser.Parser):
-
-    """Extend Parser object to provide customized return"""
-
-    def parse_object_identifier(self):
-        """Parse object identifier"""
-        assert self.current.kind == tk.NAME
-        identifier = ''
-        while True:
-            is_identifier = (
-                self.current.kind == tk.NAME or
-                (
-                    self.current.kind == tk.OP and
-                    self.current.value == '.'
-                )
-            )
-            if is_identifier:
-                identifier += self.current.value
-                self.stream.move()
-            else:
+                args = child.args
                 break
-        return identifier
 
-    def parse_string(self):
-        """Clean up STRING nodes"""
-        val = self.current.value
-        self.consume(tk.STRING)
-        return val.lstrip('\'"').rstrip('\'"')
+        if args.startswith('self'):
+            args = args[4:].lstrip(',').lstrip()
 
-    def parse_number(self):
-        """Parse a NUMBER node to either a ``float`` or ``int``"""
-        val = self.current.value
-        self.consume(tk.NUMBER)
-        normalized_val = float(val)
+        return args
+
+    @property
+    def methods(self):
+        return self._children_of_type('method')
+
+    @property
+    def attributes(self):
+        return self._children_of_type('attribute')
+
+
+class Parser(object):
+    def parse_file(self, file_path):
+        directory, filename = os.path.split(file_path)
+        module_part = os.path.splitext(filename)[0]
+        module_parts = collections.deque([module_part])
+        while os.path.isfile(os.path.join(directory, '__init__.py')):
+            directory, module_part = os.path.split(directory)
+            if module_part:
+                module_parts.appendleft(module_part)
+
+        module_name = '.'.join(module_parts)
+        node = astroid.MANAGER.ast_from_file(file_path, module_name)
+        return self.parse(node)
+
+    def parse_assign(self, node):
+        doc = ''
+        doc_node = node.next_sibling()
+        if (isinstance(doc_node, astroid.nodes.Expr)
+                and isinstance(doc_node.value, astroid.nodes.Const)):
+            doc = doc_node.value.value
+
+        type_ = 'data'
+        if (isinstance(node.scope(), astroid.nodes.ClassDef)
+                or astroid_utils.is_constructor(node.scope())):
+            type_ = 'attribute'
+
+        assign_value = astroid_utils.get_assign_value(node)
+        if not assign_value:
+            return []
+
+        target, value = assign_value
+        data = {
+            'type': type_,
+            'name': target,
+            'doc': doc,
+            'value': value,
+        }
+
+        return [data]
+
+    def parse_classdef(self, node, data=None):
+        args = ''
         try:
-            normalized_val = int(val)
-        except ValueError:
+            constructor = node.lookup('__init__')[1]
+        except IndexError:
             pass
-        return normalized_val
+        else:
+            if isinstance(constructor, astroid.nodes.FunctionDef):
+                args = constructor.args.as_string()
 
-    def parse_iterable(self):
-        """Recursively parse an iterable object
+        basenames = list(astroid_utils.get_full_basenames(node.bases, node.basenames))
 
-        This will return a local representation of the parsed data, except for
-        NAME nodes. This does not currently attempt to perform lookup on the
-        object names defined in an iterable.
+        data = {
+            'type': 'class',
+            'name': node.name,
+            'args': args,
+            'bases': basenames,
+            'doc': node.doc or '',
+            'children': [],
+        }
 
-        This is mostly a naive implementation and won't handle complex
-        structures. This is only currently meant to parse simple iterables, such
-        as ``__all__`` and class parent classes on class definition.
-        """
-        content = None
-        is_list = True
-        while self.current is not None:
-            if self.current.kind == tk.STRING:
-                content.append(self.parse_string())
-            elif self.current.kind == tk.NUMBER:
-                content.append(self.parse_number())
-            elif self.current.kind == tk.NAME:
-                # Handle generators
-                if self.current.value == 'for' and not content:
-                    is_list = False
-                # TODO this is dropped for now, but will can be handled with an
-                # object lookup in the future, if we decide to track assignment.
-                # content.append(self.parse_object_identifier())
-                self.stream.move()
-            elif self.current.kind == tk.OP and self.current.value in '[(':
-                if content is None:
-                    content = []
-                    self.stream.move()
-                else:
-                    content.append(self.parse_iterable())
-                continue
-            elif self.current.kind == tk.OP and self.current.value in '])':
-                self.stream.move()
-                if is_list:
-                    return content
-                # Discard generator because we can't do anything with them
-                return []
-            else:
-                self.stream.move()
+        for child in node.get_children():
+            child_data = self.parse(child)
+            if child_data:
+                data['children'].extend(child_data)
 
-    def parse_docstring(self):
-        """Clean up object docstring"""
-        docstring = super(ParserExtra, self).parse_docstring()
-        if not docstring:
-            docstring = ''
-        docstring = textwrap.dedent(docstring)
-        docstring = docstring.replace("'''", '').replace('"""', '')
-        return docstring
+        return [data]
 
-    def parse_all(self):
-        """Parse __all__ assignment
+    def _parse_property(self, node):
+        data = {
+            'type': 'attribute',
+            'name': node.name,
+            'doc': node.doc or '',
+        }
 
-        This differs from the default __all__ assignment processing by:
+        return [data]
 
-         * Accepting multiple __all__ assignments
-         * Doesn't throw exceptions on edge cases
-         * Parses NAME nodes (but throws them out for now
-        """
-        assert self.current.value == '__all__'
-        self.consume(tk.NAME)
-        if self.current.kind != tk.OP or self.current.value not in ['=', '+=']:
-            return
-        assign_op = self.current.value
-        self.consume(tk.OP)
+    def parse_functiondef(self, node):
+        if astroid_utils.is_decorated_with_property(node):
+            return self._parse_property(node)
+        elif astroid_utils.is_decorated_with_property_setter(node):
+            return []
 
-        if self.all is None:
-            self.all = []
+        type_ = 'function'
+        if isinstance(node.parent.scope(), astroid.nodes.ClassDef):
+            type_ = 'method'
 
-        all_content = []
-        # Support [], [] + [], and [] + foo.__all__ by iterating of list
-        # assignments
-        while True:
-            if self.current.kind == tk.OP and self.current.value in '([':
-                content = self.parse_iterable()
-                all_content.extend(content)
-            elif self.current.kind == tk.NAME:
-                name = self.parse_object_identifier()
-                # TODO Skip these for now. In the future, this name should be
-                # converted to an object that will be resolved after we've
-                # parsed at a later stage in the mapping process.
-                # all_content.append(name)
-            if self.current.kind == tk.OP and self.current.value == '+':
-                self.stream.move()
-            else:
-                break
+        data = {
+            'type': type_,
+            'name': node.name,
+            'args': node.args.as_string(),
+            'doc': node.doc or '',
+        }
 
-        if assign_op == '=':
-            self.all = all_content
-        elif assign_op == '+=':
-            self.all += all_content
+        result = [data]
+
+        if node.name == '__init__':
+            for child in node.get_children():
+                if isinstance(child, astroid.Assign):
+                    child_data = self.parse_assign(child)
+                    result.extend(child_data)
+
+        return result
+
+    def parse_module(self, node):
+        type_ = 'module'
+        if node.path.endswith('__init__.py'):
+            type_ = 'package'
+
+        data = {
+            'type': type_,
+            'name': node.name,
+            'doc': node.doc or '',
+            'children': [],
+        }
+
+        for child in node.get_children():
+            child_data = self.parse(child)
+            if child_data:
+                data['children'].extend(child_data)
+
+        return data
+
+    def parse(self, node):
+        data = {}
+
+        node_type = node.__class__.__name__.lower()
+        parse_func = getattr(self, 'parse_' + node_type, None)
+        if parse_func:
+            data = parse_func(node)
+        else:
+            for child in node.get_children():
+                data = self.parse(child)
+                if data:
+                    break
+
+        return data

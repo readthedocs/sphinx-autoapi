@@ -155,10 +155,6 @@ class PythonMapperBase(object):
             return '.'.join(pieces)
         return None
 
-    @property
-    def signature(self):
-        return '({})'.format(','.join(self.args))
-
 
 class SphinxMapperBase(object):
 

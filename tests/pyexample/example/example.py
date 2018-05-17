@@ -5,6 +5,11 @@ This is a description
 
 
 class Foo(object):
+    """Can we parse arguments from the class docstring?
+
+    :param attr: Set an attribute.
+    :type attr: str
+    """
 
     class_var = 42  #: Class var docstring
 
@@ -18,6 +23,14 @@ class Foo(object):
         def foo():
             """The foo class method"""
             return True
+
+    def __init__(self, attr):
+        self.attr = attr
+        self.attr2 = attr
+        """This is the docstring of an instance attribute.
+
+        :type: str
+        """
 
     def method_okay(self, foo=None, bar=None):
         """This method should parse okay"""

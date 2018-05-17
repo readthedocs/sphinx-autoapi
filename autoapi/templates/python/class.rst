@@ -1,4 +1,10 @@
-.. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args[1:]|join(',') }}){% endif %}
+.. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
+
+   {%- if obj.bases %}
+
+   Bases: {%- for base in obj.bases %}:class:`{{ base }}`{%- if not loop.last %}, {% endif %}{% endfor %}
+
+   {% endif %}
 
    {%- if obj.docstring %}
 
@@ -6,20 +12,14 @@
 
    {% endif %}
 
-   {%- if obj.methods %}
+   {%- for attribute in obj.attributes %}
+
+   {{ attribute.rendered|indent(3) }}
+
+   {% endfor %}
 
    {%- for method in obj.methods %}
 
    {{ method.rendered|indent(3) }}
 
    {%- endfor %}
-
-   {% endif %}
-
-   {% block content %}
-   {%- for obj_item in obj.children %}
-
-   {{ obj_item.rendered|indent(3) }}
-
-   {%- endfor %}
-   {% endblock %}
