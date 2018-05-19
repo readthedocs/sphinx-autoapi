@@ -265,7 +265,7 @@ class PythonModule(TopLevelPythonPythonMapper):
 
     def _resolve_name(self):
         name = self.obj['relative_path']
-        name = name.replace('/', '.')
+        name = name.replace(os.sep, '.')
         ext = '.py'
         if name.endswith(ext):
             name = name[:-len(ext)]
@@ -279,11 +279,11 @@ class PythonPackage(TopLevelPythonPythonMapper):
     def _resolve_name(self):
         name = self.obj['relative_path']
 
-        exts = ['/__init__.py', '.py']
+        exts = [os.sep + '__init__.py', '.py']
         for ext in exts:
             if name.endswith(ext):
                 name = name[:-len(ext)]
-                name = name.replace('/', '.')
+                name = name.replace(os.sep, '.')
 
         self.name = name
 
