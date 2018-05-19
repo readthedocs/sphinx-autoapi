@@ -3,7 +3,7 @@
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'pyexample'
+project = u'pypackageexample'
 copyright = u'2015, rtfd'
 author = u'rtfd'
 version = '0.1'
@@ -14,7 +14,7 @@ pygments_style = 'sphinx'
 todo_include_todos = False
 html_theme = 'alabaster'
 html_static_path = ['_static']
-htmlhelp_basename = 'pyexampledoc'
+htmlhelp_basename = 'pypackageexampledoc'
 extensions = ['autoapi.extension']
 autoapi_type = 'python'
 autoapi_dirs = ['example']

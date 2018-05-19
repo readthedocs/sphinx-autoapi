@@ -1,9 +1,9 @@
-.. pyexample documentation master file, created by
+.. pypackageexample documentation master file, created by
    sphinx-quickstart on Fri May 29 13:34:37 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pyexample's documentation!
+Welcome to pypackageexample's documentation!
 =====================================
 
 .. toctree::
@@ -23,4 +23,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
