@@ -13,12 +13,18 @@ from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
 from docutils.parsers.rst import directives
 
+from . import utils
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
 from .toctree import add_domain_to_toctree
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
+_viewcode_cache = {}
+"""Caches a module's parse results for use in viewcode.
+
+:type: dict(str, tuple)
+"""
 
 
 def run_autoapi(app):
@@ -151,12 +157,46 @@ def clear_env(app, env):
     env.autoapi_mapper = None
 
 
+def viewcode_find(app, modname):
+    mapper = app.env.autoapi_mapper
+    if utils.slugify(modname) not in mapper.objects:
+        return None
+
+    if modname in _viewcode_cache:
+        return _viewcode_cache[modname]
+
+    locations = {}
+    module = mapper.objects[utils.slugify(modname)]
+    for child in module.children:
+        stack = [('', child)]
+        while stack:
+            prefix, obj = stack.pop()
+            type_ = 'other'
+            if obj.type == 'class':
+                type_ = 'class'
+            elif obj.type in ('function', 'method'):
+                type_ = 'def'
+            full_name = prefix + obj.name
+            locations[full_name] = (
+                type_, obj.obj['from_line_no'], obj.obj['to_line_no'],
+            )
+            children = getattr(obj, 'children', ())
+            stack.extend((full_name + '.', gchild) for gchild in children)
+
+    result = (open(module.obj['file_path']).read(), locations)
+    _viewcode_cache[modname] = result
+    return result
+
+
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('doctree-read', doctree_read)
     app.connect('doctree-resolved', add_domain_to_toctree)
     app.connect('build-finished', build_finished)
     app.connect('env-updated', clear_env)
+    if (sphinx.version_info >= (1, 8)
+            and 'viewcode-find-source' in app.events.events):
+        app.connect('viewcode-find-source', viewcode_find)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')

@@ -330,6 +330,8 @@ class Parser(object):
             'name': target,
             'doc': doc,
             'value': value,
+            'from_line_no': node.fromlineno,
+            'to_line_no': node.tolineno,
         }
 
         return [data]
@@ -352,6 +354,8 @@ class Parser(object):
             'args': args,
             'bases': basenames,
             'doc': node.doc or '',
+            'from_line_no': node.fromlineno,
+            'to_line_no': node.tolineno,
             'children': [],
         }
 
@@ -367,6 +371,8 @@ class Parser(object):
             'type': 'attribute',
             'name': node.name,
             'doc': node.doc or '',
+            'from_line_no': node.fromlineno,
+            'to_line_no': node.tolineno,
         }
 
         return [data]
@@ -386,6 +392,8 @@ class Parser(object):
             'name': node.name,
             'args': node.args.as_string(),
             'doc': node.doc or '',
+            'from_line_no': node.fromlineno,
+            'to_line_no': node.tolineno,
         }
 
         result = [data]
@@ -408,6 +416,7 @@ class Parser(object):
             'name': node.name,
             'doc': node.doc or '',
             'children': [],
+            'file_path': node.path,
         }
 
         for child in node.get_children():
