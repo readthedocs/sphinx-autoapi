@@ -148,7 +148,7 @@ class PythonPythonMapper(PythonMapperBase):
 
     @property
     def is_undoc_member(self):
-        return bool(self.docstring)
+        return not bool(self.docstring)
 
     @property
     def is_private_member(self):
