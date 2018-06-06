@@ -83,8 +83,13 @@ class PythonSphinxMapper(SphinxMapperBase):
         except KeyError:
             self.app.warn("Unknown type: %s" % data['type'])
         else:
-            obj = cls(data, jinja_env=self.jinja_env,
-                      options=self.app.config.autoapi_options, **kwargs)
+            obj = cls(
+                data,
+                jinja_env=self.jinja_env,
+                options=self.app.config.autoapi_options,
+                class_content=self.app.config.autoapi_python_class_content,
+                **kwargs
+            )
 
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
             try:
@@ -124,7 +129,7 @@ class PythonPythonMapper(PythonMapperBase):
     language = 'python'
     is_callable = False
 
-    def __init__(self, obj, **kwargs):
+    def __init__(self, obj, class_content='class', **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
         self.name = obj['name']
@@ -137,6 +142,7 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self.item_map = collections.defaultdict(list)
+        self._class_content = class_content
 
     @property
     def args(self):
@@ -145,6 +151,14 @@ class PythonPythonMapper(PythonMapperBase):
     @args.setter
     def args(self, value):
         self._args = value
+
+    @property
+    def docstring(self):
+        return self._docstring
+
+    @docstring.setter
+    def docstring(self, value):
+        self._docstring = value
 
     @property
     def is_undoc_member(self):
@@ -197,6 +211,13 @@ class PythonMethod(PythonPythonMapper):
     type = 'method'
     is_callable = True
     ref_directive = 'meth'
+
+    @property
+    def display(self):
+        if self.short_name == '__init__':
+            return False
+
+        return super(PythonMethod, self).display
 
 
 class PythonData(PythonPythonMapper):
@@ -275,15 +296,30 @@ class PythonClass(PythonPythonMapper):
     def args(self):
         args = self._args
 
-        for child in self.children:
-            if child.short_name == '__init__':
-                args = child.args
-                break
+        constructor = self.constructor
+        if constructor:
+            args = constructor.args
 
         if args.startswith('self'):
             args = args[4:].lstrip(',').lstrip()
 
         return args
+
+    @PythonPythonMapper.docstring.getter
+    def docstring(self):
+        docstring = super(PythonClass, self).docstring
+
+        if self._class_content in ('both', 'init'):
+            constructor_docstring = self.constructor_docstring
+            if constructor_docstring:
+                if self._class_content == 'both':
+                    docstring = '{0}\n{1}'.format(
+                        docstring, constructor_docstring,
+                    )
+                else:
+                    docstring = constructor_docstring
+
+        return docstring
 
     @property
     def methods(self):
@@ -292,6 +328,29 @@ class PythonClass(PythonPythonMapper):
     @property
     def attributes(self):
         return self._children_of_type('attribute')
+
+    @property
+    def constructor(self):
+        for child in self.children:
+            if child.short_name == '__init__':
+                return child
+
+        return None
+
+    @property
+    def constructor_docstring(self):
+        docstring = ''
+
+        constructor = self.constructor
+        if constructor and constructor.docstring:
+            docstring = constructor.docstring
+        else:
+            for child in self.children:
+                if child.short_name == '__new__':
+                    docstring = child.docstring
+                    break
+
+        return docstring
 
 
 class Parser(object):

@@ -25,6 +25,7 @@ class Foo(object):
             return True
 
     def __init__(self, attr):
+        """Constructor docstring"""
         self.attr = attr
         self.attr2 = attr
         """This is the docstring of an instance attribute.
