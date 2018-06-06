@@ -354,7 +354,7 @@ class DotNetPythonMapper(PythonMapperBase):
                 repo=repo,
                 path=path,
             )
-        except:
+        except Exception:
             return ''
 
     @property
