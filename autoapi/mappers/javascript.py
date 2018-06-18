@@ -129,6 +129,7 @@ class JavaScriptAttribute(JavaScriptPythonMapper):
     type = 'attribute'
     ref_directive = 'attr'
 
+
 ALL_CLASSES = [
     JavaScriptFunction,
     JavaScriptClass,

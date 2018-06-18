@@ -172,6 +172,43 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
 
+    def _test_class_content(self, class_content):
+        confoverrides={
+            'autoapi_python_class_content': class_content,
+        }
+
+        with sphinx_build('pyexample', confoverrides=confoverrides):
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
+
+                assert_class = self.assertIn
+                if class_content == 'init':
+                    assert_class = self.assertNotIn
+
+                assert_class(
+                    'Can we parse arguments',
+                    example_file
+                )
+
+                assert_init = self.assertIn
+                if class_content not in ('both', 'init'):
+                    assert_init = self.assertNotIn
+
+                assert_init(
+                    'Constructor docstring',
+                    example_file
+                )
+
+    def test_class_class_content(self):
+        self._test_class_content('class')
+
+    def test_both_class_content(self):
+        self._test_class_content('both')
+
+    def test_init_class_content(self):
+        self._test_class_content('init')
+
 
 class DotNetTests(LanguageIntegrationTests):
 

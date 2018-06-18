@@ -13,3 +13,4 @@ _api_
 .eggs
 .ropeproject/
 .cache
+.pytest_cache/

@@ -63,6 +63,21 @@ Customization Options
 
 	Whether include autosummary directives in generated module documentation.
 
+.. confval:: autoapi_python_class_content
+
+	Default: ``class``
+
+	Which docstring to insert into the content of the class.
+
+	:param class: Use only the class docstring.
+	:param both: Use the concatentation of the class docstring and the
+	``__init__``/``__new__`` docstring.
+	:param init: Use only the ``__init__``/``__new__`` docstring.
+
+	If the class does not have an ``__init__`` or the ``__init__``
+	docstring is empty and the class defines a ``__new__`` with a docstring,
+	the ``__new__`` docstring is used instead of the ``__init__`` docstring.
+
 Debugging Options
 -----------------
 
