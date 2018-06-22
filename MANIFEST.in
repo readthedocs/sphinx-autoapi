@@ -3,3 +3,4 @@ recursive-include autoapi *.js_t
 recursive-include autoapi *.js
 recursive-include autoapi *.rst
 include *.rst
+include LICENSE.mit
