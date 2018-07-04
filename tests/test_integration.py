@@ -125,6 +125,52 @@ class PythonTests(LanguageIntegrationTests):
                 index_file
             )
 
+    def test_integration_with_package(self):
+        with sphinx_build('pypackageexample'):
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
+            self.assertIn(
+                'example.foo',
+                example_file
+            )
+            self.assertIn(
+                'example.module_level_method(foo, bar)',
+                example_file
+            )
+
+            example_foo_path = '_build/text/autoapi/example/foo/index.txt'
+            with io.open(example_foo_path, encoding='utf8') as example_foo_handle:
+                example_foo_file = example_foo_handle.read()
+            self.assertIn(
+                'class example.foo.Foo',
+                example_foo_file
+            )
+            self.assertIn(
+                'method_okay(foo=None, bar=None)',
+                example_foo_file
+            )
+
+            index_path = '_build/text/index.txt'
+            with io.open(index_path, encoding='utf8') as index_handle:
+                index_file = index_handle.read()
+            self.assertIn(
+                'Sphinx AutoAPI Index',
+                index_file
+            )
+            self.assertIn(
+                'example.foo',
+                index_file
+            )
+            self.assertIn(
+                'Foo',
+                index_file
+            )
+            self.assertIn(
+                'module_level_method',
+                index_file
+            )
+
     @pytest.mark.skipif(sphinx.version_info < (1, 4),
                       reason="Cannot override extensions in Sphinx 1.3")
     def test_napoleon_integration(self):

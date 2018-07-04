@@ -36,10 +36,14 @@ class PythonSphinxMapper(SphinxMapperBase):
         shortened, relative path the package/module
         """
         for dir_ in dirs:
+            dir_root = dir_
+            if os.path.exists(os.path.join(dir_, '__init__.py')):
+                dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
+
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
                 if data:
-                    data['relative_path'] = os.path.relpath(path, dir_)
+                    data['relative_path'] = os.path.relpath(path, dir_root)
                     self.paths[path] = data
 
     def read_file(self, path, **kwargs):
@@ -261,7 +265,7 @@ class PythonModule(TopLevelPythonPythonMapper):
 
     def _resolve_name(self):
         name = self.obj['relative_path']
-        name = name.replace('/', '.')
+        name = name.replace(os.sep, '.')
         ext = '.py'
         if name.endswith(ext):
             name = name[:-len(ext)]
@@ -275,11 +279,11 @@ class PythonPackage(TopLevelPythonPythonMapper):
     def _resolve_name(self):
         name = self.obj['relative_path']
 
-        exts = ['/__init__.py', '.py']
+        exts = [os.sep + '__init__.py', '.py']
         for ext in exts:
             if name.endswith(ext):
                 name = name[:-len(ext)]
-                name = name.replace('/', '.')
+                name = name.replace(os.sep, '.')
 
         self.name = name
 
