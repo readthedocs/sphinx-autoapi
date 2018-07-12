@@ -38,7 +38,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
         for path, data in self.paths.items():
-            for item in data:
+            for item in (i for i in data if u'files' not in i):
                 for obj in self.create_class(item, options):
                     obj.jinja_env = self.jinja_env
                     self.add_object(obj)
