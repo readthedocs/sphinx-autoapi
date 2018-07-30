@@ -1,6 +1,6 @@
 {%- if obj.display %}
 
-.. py:class:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
+.. py:{{ obj.type }}:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
 
    {%- if obj.bases %}
 

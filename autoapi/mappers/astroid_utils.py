@@ -3,9 +3,16 @@ try:
 except ImportError:
     import __builtin__ as builtins
 import re
+import sys
 
 import astroid
 import astroid.nodes
+
+
+if sys.version_info < (3,):
+    _EXCEPTIONS_MODULE = "exceptions"
+else:
+    _EXCEPTIONS_MODULE = "builtins"
 
 
 def resolve_import_alias(name, import_names):
@@ -229,4 +236,25 @@ def is_constructor(node):
         node.parent
         and isinstance(node.parent.scope(), astroid.nodes.ClassDef)
         and node.name == '__init__'
+    )
+
+
+def is_exception(node):
+    """Check if a class is an exception.
+
+    :param node: The node to check.
+    :type node: astroid.nodes.ClassDef
+
+    :returns: True if the class is an exception, False otherwise.
+    :rtype: bool
+    """
+    if (node.name in ('Exception', 'BaseException')
+            and node.root().name == _EXCEPTIONS_MODULE):
+        return True
+
+    if not hasattr(node, 'ancestors'):
+        return False
+
+    return any(
+        is_exception(parent) for parent in node.ancestors(recurs=True)
     )
