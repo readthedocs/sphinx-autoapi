@@ -81,7 +81,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         obj_map = dict((cls.type, cls) for cls
                        in [PythonClass, PythonFunction, PythonModule,
                            PythonMethod, PythonPackage, PythonAttribute,
-                           PythonData])
+                           PythonData, PythonException])
         try:
             cls = obj_map[data['type']]
         except KeyError:
@@ -357,6 +357,10 @@ class PythonClass(PythonPythonMapper):
         return docstring
 
 
+class PythonException(PythonClass):
+    type = 'exception'
+
+
 class Parser(object):
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
@@ -400,6 +404,10 @@ class Parser(object):
         return [data]
 
     def parse_classdef(self, node, data=None):
+        type_ = 'class'
+        if astroid_utils.is_exception(node):
+            type_ = 'exception'
+
         args = ''
         try:
             constructor = node.lookup('__init__')[1]
@@ -412,7 +420,7 @@ class Parser(object):
         basenames = list(astroid_utils.get_full_basenames(node.bases, node.basenames))
 
         data = {
-            'type': 'class',
+            'type': type_,
             'name': node.name,
             'args': args,
             'bases': basenames,
