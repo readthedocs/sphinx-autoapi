@@ -89,15 +89,15 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
             self.assertIn(
-                'method_okay(foo=None, bar=None)',
+                'method_okay(self, foo=None, bar=None)',
                 example_file
             )
             self.assertIn(
-                'method_multiline(foo=None, bar=None, baz=None)',
+                'method_multiline(self, foo=None, bar=None, baz=None)',
                 example_file
             )
             self.assertIn(
-                'method_tricky(foo=None, bar=dict(foo=1, bar=2))',
+                'method_tricky(self, foo=None, bar=dict(foo=1, bar=2))',
                 example_file
             )
             # Are constructor arguments from the class docstring parsed?
@@ -107,7 +107,7 @@ class PythonTests(LanguageIntegrationTests):
             )
             # "self" should not be included in constructor arguments
             self.assertNotIn(
-                'self',
+                'Foo(self',
                 example_file
             )
             self.assertFalse(
@@ -147,7 +147,7 @@ class PythonTests(LanguageIntegrationTests):
                 example_foo_file
             )
             self.assertIn(
-                'method_okay(foo=None, bar=None)',
+                'method_okay(self, foo=None, bar=None)',
                 example_foo_file
             )
 
