@@ -72,8 +72,18 @@ class GoTests(LanguageIntegrationTests):
 class PythonTests(LanguageIntegrationTests):
 
     def test_integration(self):
+        self.check_integration(
+            '_build/text/autoapi/example/index.txt'
+        )
+
+    def test_manual_directives(self):
+        # The manual directives should contain the same information
+        self.check_integration(
+            '_build/text/manualapi.txt'
+        )
+
+    def check_integration(self, example_path):
         with sphinx_build('pyexample'):
-            example_path = '_build/text/autoapi/example/index.txt'
             with io.open(example_path, encoding='utf8') as example_handle:
                 example_file = example_handle.read()
             self.assertIn(

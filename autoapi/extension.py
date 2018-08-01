@@ -13,6 +13,7 @@ from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
 from docutils.parsers.rst import directives
 
+from . import documenters
 from . import utils
 from .backends import default_file_mapping, default_ignore_patterns, default_backend_mapping
 from .directives import AutoapiSummary, NestedParse
@@ -209,6 +210,13 @@ def setup(app):
     app.add_config_value('autoapi_template_dir', None, 'html')
     app.add_config_value('autoapi_include_summaries', False, 'html')
     app.add_config_value('autoapi_python_class_content', 'class', 'html')
+    app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
+    app.add_autodocumenter(documenters.AutoapiClassDocumenter)
+    app.add_autodocumenter(documenters.AutoapiMethodDocumenter)
+    app.add_autodocumenter(documenters.AutoapiDataDocumenter)
+    app.add_autodocumenter(documenters.AutoapiAttributeDocumenter)
+    app.add_autodocumenter(documenters.AutoapiModuleDocumenter)
+    app.add_autodocumenter(documenters.AutoapiExceptionDocumenter)
     app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
     directives.register_directive('autoapisummary', AutoapiSummary)
