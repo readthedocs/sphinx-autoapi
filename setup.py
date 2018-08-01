@@ -3,7 +3,8 @@ try:
     from setuptools import setup, find_packages
     extra_setup = dict(
         install_requires=[
-            'astroid',
+            'astroid;python_version>="3"',
+            'astroid<2;python_version<"3"',
             'PyYAML',
             'wheel==0.24.0',
             'sphinx',
@@ -18,7 +19,8 @@ except ImportError:
     from distutils.core import setup
     extra_setup = dict(
         requires=[
-            'astroid',
+            'astroid;python_version>="3"',
+            'astroid<2;python_version<"3"',
             'PyYAML',
             'wheel==0.24.0',
             'sphinx'
