@@ -90,6 +90,12 @@ def get_full_basename(node, basename):
             import_name = resolve_import_alias(top_level_name, assignment.names)
             full_basename = basename.replace(top_level_name, import_name, 1)
             break
+        elif isinstance(assignment, astroid.nodes.ClassDef):
+            full_basename = '{}.{}'.format(
+                assignment.root().name,
+                assignment.name,
+            )
+            break
 
     if isinstance(node, astroid.nodes.Call):
         full_basename = re.sub(r'\(.*\)', '()', full_basename)
