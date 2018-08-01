@@ -1,0 +1,3 @@
+.. autoapimodule:: example
+    :members:
+    :noindex:

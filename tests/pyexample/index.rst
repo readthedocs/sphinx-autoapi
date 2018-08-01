@@ -9,6 +9,7 @@ Welcome to pyexample's documentation!
 .. toctree::
 
    autoapi/index
+   manualapi
 
 Contents:
 
