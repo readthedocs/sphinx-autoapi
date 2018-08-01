@@ -478,8 +478,12 @@ class Parser(object):
         return result
 
     def parse_module(self, node):
+        path = node.path
+        if isinstance(node.path, list):
+            path = node.path[0] if node.path else None
+
         type_ = 'module'
-        if node.path.endswith('__init__.py'):
+        if path.endswith('__init__.py'):
             type_ = 'package'
 
         data = {
@@ -487,7 +491,7 @@ class Parser(object):
             'name': node.name,
             'doc': node.doc or '',
             'children': [],
-            'file_path': node.path,
+            'file_path': path,
         }
 
         for child in node.get_children():
