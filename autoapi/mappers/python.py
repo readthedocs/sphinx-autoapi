@@ -456,7 +456,7 @@ class Parser(object):
     def parse_functiondef(self, node):
         if astroid_utils.is_decorated_with_property(node):
             return self._parse_property(node)
-        elif astroid_utils.is_decorated_with_property_setter(node):
+        if astroid_utils.is_decorated_with_property_setter(node):
             return []
 
         type_ = 'function' if node.type == 'function' else 'method'
