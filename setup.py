@@ -1,34 +1,7 @@
 import codecs
-try:
-    from setuptools import setup, find_packages
-    extra_setup = dict(
-        install_requires=[
-            'astroid;python_version>="3"',
-            'astroid<2;python_version<"3"',
-            'PyYAML',
-            'wheel==0.24.0',
-            'sphinx',
-            'sphinxcontrib-golangdomain',
-            'sphinxcontrib-dotnetdomain',
-            'unidecode',
-        ],
-        test_suite='nose.collector',
-        tests_require=['nose', 'mock'],
-    )
-except ImportError:
-    from distutils.core import setup
-    extra_setup = dict(
-        requires=[
-            'astroid;python_version>="3"',
-            'astroid<2;python_version<"3"',
-            'PyYAML',
-            'wheel==0.24.0',
-            'sphinx'
-            'sphinxcontrib-golangdomain',
-            'sphinxcontrib-dotnetdomain',
-            'unidecode',
-        ],
-    )
+
+from setuptools import setup, find_packages
+
 
 setup(
     name='sphinx-autoapi',
@@ -38,16 +11,16 @@ setup(
     url='http://github.com/rtfd/sphinx-autoapi',
     license='BSD',
     description='Sphinx auto API documentation generator',
-    package_dir={'': '.'},
     packages=find_packages('.'),
     long_description=codecs.open("README.rst", "r", "utf-8").read(),
-    # trying to add files...
     include_package_data=True,
-    package_data={
-        'autoapi': [
-            'templates/*.rst',
-            'templates/*/*.rst',
-        ],
-    },
-    **extra_setup
+    install_requires=[
+        'astroid;python_version>="3"',
+        'astroid<2;python_version<"3"',
+        'PyYAML',
+        'sphinx',
+        'sphinxcontrib-golangdomain',
+        'sphinxcontrib-dotnetdomain',
+        'unidecode',
+    ],
 )
