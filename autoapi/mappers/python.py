@@ -216,6 +216,11 @@ class PythonMethod(PythonPythonMapper):
     is_callable = True
     ref_directive = 'meth'
 
+    def __init__(self, obj, **kwargs):
+        super(PythonMethod, self).__init__(obj, **kwargs)
+
+        self.method_type = obj['method_type']
+
     @property
     def display(self):
         if self.short_name == '__init__':
@@ -454,9 +459,7 @@ class Parser(object):
         elif astroid_utils.is_decorated_with_property_setter(node):
             return []
 
-        type_ = 'function'
-        if isinstance(node.parent.scope(), astroid.nodes.ClassDef):
-            type_ = 'method'
+        type_ = 'function' if node.type == 'function' else 'method'
 
         data = {
             'type': type_,
@@ -466,6 +469,9 @@ class Parser(object):
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
         }
+
+        if type_ == 'method':
+            data['method_type'] = node.type
 
         result = [data]
 
