@@ -156,3 +156,25 @@ class PythonParserTests(unittest.TestCase):
                 '**kwargs',
             ])
         )
+
+    def test_dict_key_assignment(self):
+        """Ignore assignment to dictionary entries."""
+        source = """
+        MY_DICT = {}  #@
+        if condition:
+            MY_DICT['key'] = 'value'
+        MY_DICT['key2'] = 'value2'
+        """
+        data = self.parse(source)[0]
+        self.assertEqual(data['name'], 'MY_DICT')
+
+    def test_list_index_assignment(self):
+        """Ignore assignment to indexes."""
+        source = """
+        COLOUR = [255, 128, 0]  #@
+        if condition:
+            COLOUR[1] = 255
+        COLOUR[2] = 255
+        """
+        data = self.parse(source)[0]
+        self.assertEqual(data['name'], 'COLOUR')
