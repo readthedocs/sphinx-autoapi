@@ -280,7 +280,7 @@ class PythonTests(LanguageIntegrationTests):
             with io.open(private_path, encoding='utf8') as private_handle:
                 private_file = private_handle.read()
 
-            self.assertNotIn('private', private_file)
+            self.assertIn('public_method', private_file)
 
 
 class DotNetTests(LanguageIntegrationTests):

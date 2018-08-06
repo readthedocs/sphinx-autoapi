@@ -1,5 +1,4 @@
-{% if not obj.display %}:orphan:
-{% else %}
+{% if not obj.display %}:orphan:{% endif %}
 {% if obj.docstring or obj.subpackages or obj.submodules or obj.children %}
 :mod:`{{ obj.name }}`
 ======={{ "=" * obj.name|length }}
@@ -85,5 +84,4 @@ Functions
 {% endfor %}
 {% endif %}{% endblock %}
 
-{% endif %}
 {% endif %}

@@ -1,3 +1,6 @@
-def _private_function():
-    """This is private."""
-    return 5
+class PrivateClass(object):
+    """A private class with public facing methods."""
+
+    def public_method():
+        """This is public."""
+        return 5
