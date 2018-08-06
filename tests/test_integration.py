@@ -265,6 +265,23 @@ class PythonTests(LanguageIntegrationTests):
     def test_init_class_content(self):
         self._test_class_content('init')
 
+    def test_hiding_private_members(self):
+        confoverrides = {
+            'autoapi_options': ['members', 'undoc-members', 'special-members'],
+        }
+        with sphinx_build('pypackageexample', confoverrides=confoverrides):
+            example_path = '_build/text/autoapi/example/index.txt'
+            with io.open(example_path, encoding='utf8') as example_handle:
+                example_file = example_handle.read()
+
+            self.assertNotIn('private', example_file)
+
+            private_path = '_build/text/autoapi/example/_private_module/index.txt'
+            with io.open(private_path, encoding='utf8') as private_handle:
+                private_file = private_handle.read()
+
+            self.assertNotIn('private', private_file)
+
 
 class DotNetTests(LanguageIntegrationTests):
 

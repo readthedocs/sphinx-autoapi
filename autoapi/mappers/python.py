@@ -1,9 +1,5 @@
-import re
 import sys
 import os
-import textwrap
-import ast
-import tokenize as tk
 import collections
 
 import astroid
@@ -13,11 +9,6 @@ import sphinx.util.docstrings
 from .base import PythonMapperBase, SphinxMapperBase
 from . import astroid_utils
 from ..utils import slugify
-
-if sys.version_info < (3,):
-    from itertools import izip_longest as zip_longest
-else:
-    from itertools import zip_longest
 
 
 class PythonSphinxMapper(SphinxMapperBase):

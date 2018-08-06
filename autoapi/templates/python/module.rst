@@ -1,10 +1,10 @@
+{% if not obj.display %}:orphan:
+{% else %}
 {% if obj.docstring or obj.subpackages or obj.submodules or obj.children %}
 :mod:`{{ obj.name }}`
 ======={{ "=" * obj.name|length }}
 
 .. py:module:: {{ obj.name }}
-
-{% endif %}
 
 {%- if obj.docstring %}
 
@@ -21,7 +21,9 @@ Subpackages
    :titlesonly:
    :maxdepth: 3
 {% for subpackage in obj.subpackages %}
+   {%- if subpackage.display %}
    {{ subpackage.short_name }}/index.rst
+   {% endif %}
 {%- endfor %}
 {% endif %}{% endblock %}
 
@@ -32,7 +34,9 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 {% for submodule in obj.submodules %}
+   {%- if submodule.display %}
    {{ submodule.short_name }}/index.rst
+   {% endif %}
 {%- endfor %}
 {% endif %}{% endblock %}
 
@@ -80,3 +84,6 @@ Functions
 
 {% endfor %}
 {% endif %}{% endblock %}
+
+{% endif %}
+{% endif %}
