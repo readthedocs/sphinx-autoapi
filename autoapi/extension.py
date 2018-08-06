@@ -126,7 +126,6 @@ def doctree_read(app, doctree):
         if not nodes:
             return
         # Capture all existing toctree entries
-        root = nodes[0]
         for node in nodes:
             for entry in node['entries']:
                 all_docs.add(entry[1])
@@ -135,22 +134,14 @@ def doctree_read(app, doctree):
             if doc.find(app.config.autoapi_root) != -1:
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
-            if app.config.autoapi_add_api_root_toctree:
-                # Insert full API TOC in root TOC
-                for path in app.env.autoapi_toc_entries:
-                    nodes[-1]['entries'].append(
-                        (None, path[1:])
-                    )
-                    nodes[-1]['includefiles'].append(path)
-            else:
-                # Insert AutoAPI index
-                nodes[-1]['entries'].append(
-                    (None, u'%s/index' % app.config.autoapi_root)
-                )
-                nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
-                app.info(bold('[AutoAPI] ') +
-                         darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
-                         )
+            # Insert AutoAPI index
+            nodes[-1]['entries'].append(
+                (None, u'%s/index' % app.config.autoapi_root)
+            )
+            nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
+            app.info(bold('[AutoAPI] ') +
+                        darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
+                        )
 
 
 def clear_env(app, env):
@@ -206,7 +197,6 @@ def setup(app):
     app.add_config_value('autoapi_dirs', [], 'html')
     app.add_config_value('autoapi_keep_files', False, 'html')
     app.add_config_value('autoapi_add_toctree_entry', True, 'html')
-    app.add_config_value('autoapi_add_api_root_toctree', False, 'html')
     app.add_config_value('autoapi_template_dir', None, 'html')
     app.add_config_value('autoapi_include_summaries', False, 'html')
     app.add_config_value('autoapi_python_class_content', 'class', 'html')

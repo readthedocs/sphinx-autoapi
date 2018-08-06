@@ -58,7 +58,21 @@ Customization Options
 
 	Default: ``autoapi``
 
-	Relative path to output the AutoAPI files into
+	Relative path to output the AutoAPI files into.
+	This can also be used to place the generated documentation
+	anywhere in your documentation hierarchy.
+
+.. confval:: autoapi_add_toctree_entry
+
+	Default: ``True``
+
+	Whether to insert the generated documentation into the toctree.
+	If this is False, the default AutoAPI index page is not generated.
+	You will also need to include the generated documentation
+	in a toctree entry yourself.
+
+	This can be used with :confval:`autoapi_root` to place
+	the generated documentation somewhere other than the root.
 
 .. confval:: autoapi_include_summaries
 

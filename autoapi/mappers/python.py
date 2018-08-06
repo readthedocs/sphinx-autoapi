@@ -80,9 +80,10 @@ class PythonSphinxMapper(SphinxMapperBase):
         else:
             obj = cls(
                 data,
-                jinja_env=self.jinja_env,
-                options=self.app.config.autoapi_options,
                 class_content=self.app.config.autoapi_python_class_content,
+                options=self.app.config.autoapi_options,
+                jinja_env=self.jinja_env,
+                url_root=self.url_root,
                 **kwargs
             )
 
@@ -109,14 +110,6 @@ class PythonSphinxMapper(SphinxMapperBase):
                                                    **kwargs):
                     obj.children.append(child_obj)
             yield obj
-
-    def _output_top_rst(self, root):
-        # Render Top Index
-        top_level_index = os.path.join(root, 'index.rst')
-        pages = [obj for obj in self.objects.values() if '.' not in obj.name]
-        with open(top_level_index, 'w+') as top_level_file:
-            content = self.jinja_env.get_template('index.rst')
-            top_level_file.write(content.render(pages=pages))
 
 
 class PythonPythonMapper(PythonMapperBase):
@@ -236,13 +229,13 @@ class PythonAttribute(PythonData):
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
-    top_level_object = True
     ref_directive = 'mod'
 
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
 
         self._resolve_name()
+        self.top_level_object = '.' not in self.name
 
         self.subpackages = []
         self.submodules = []
