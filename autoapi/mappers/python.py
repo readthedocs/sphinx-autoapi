@@ -323,6 +323,10 @@ class PythonClass(PythonPythonMapper):
         return self._children_of_type('attribute')
 
     @property
+    def classes(self):
+        return self._children_of_type('class')
+
+    @property
     def constructor(self):
         for child in self.children:
             if child.short_name == '__init__':

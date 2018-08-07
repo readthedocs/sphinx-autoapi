@@ -91,6 +91,10 @@ class PythonTests(LanguageIntegrationTests):
                 example_file
             )
             self.assertIn(
+                'class Meta',
+                example_file
+            )
+            self.assertIn(
                 'attr2',
                 example_file
             )
@@ -132,6 +136,10 @@ class PythonTests(LanguageIntegrationTests):
             )
             self.assertIn(
                 'Foo',
+                index_file
+            )
+            self.assertIn(
+                'Meta',
                 index_file
             )
 

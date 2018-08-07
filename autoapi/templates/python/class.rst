@@ -14,6 +14,12 @@
 
    {% endif %}
 
+   {%- for klass in obj.classes %}
+
+   {{ klass.rendered|indent(3) }}
+
+   {% endfor %}
+
    {%- for attribute in obj.attributes %}
 
    {{ attribute.rendered|indent(3) }}
