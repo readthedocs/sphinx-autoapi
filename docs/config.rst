@@ -10,8 +10,7 @@ Configuration Options
 
         Paths (relative or absolute) to the source code that you wish to generate your API documentation from.
 
-		If a package directory is specified, the package directory itself will be included in the relative path of the
-		children. If an ordinary directory is specified, that directory will not be included in the relative path.
+		For documenting Python, the package directory must be specified.
 
 .. confval:: autoapi_type
 

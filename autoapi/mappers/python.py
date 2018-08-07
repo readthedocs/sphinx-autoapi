@@ -1,6 +1,6 @@
-import sys
-import os
 import collections
+import functools
+import os
 
 import astroid
 import sphinx
@@ -11,8 +11,35 @@ from . import astroid_utils
 from ..utils import slugify
 
 
-class PythonSphinxMapper(SphinxMapperBase):
+def resolve_module_name(root_dir, path):
+    """Get the module name for a given path, relative to a root directory.
 
+    :param root_dir: The directory that the module or package is relative to.
+    :type root_dir: str
+
+    :param path: The path the find the module name for.
+    :type path: str
+
+    :returns: The name of the module, namespace, or package.
+    :rtype: str
+    """
+    if os.path.isfile(root_dir):
+        name = os.path.basename(path)
+    else:
+        real_root = os.path.abspath(os.path.join(root_dir, os.pardir))
+        name = os.path.relpath(path, real_root)
+
+    name = name.replace(os.sep, '.')
+    exts = (os.sep + '__init__.py', '.py')
+    for ext in exts:
+        if name.endswith(ext):
+            name = name[:-len(ext)]
+            break
+
+    return name
+
+
+class PythonSphinxMapper(SphinxMapperBase):
     """Auto API domain handler for Python
 
     Parses directly from Python files.
@@ -21,29 +48,28 @@ class PythonSphinxMapper(SphinxMapperBase):
     """
 
     def load(self, patterns, dirs, ignore=None):
-        """Load objects from the filesystem into the ``paths`` dictionary
-
-        Also include an attribute on the object, ``relative_path`` which is the
-        shortened, relative path the package/module
-        """
+        """Load objects from the filesystem into the ``paths`` dictionary."""
         for dir_ in dirs:
-            dir_root = dir_
-            if os.path.exists(os.path.join(dir_, '__init__.py')):
-                dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
-
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
-                data = self.read_file(path=path)
+                module_name = resolve_module_name(dir_, path)
+                data = self.read_file(path=path, module_name=module_name)
                 if data:
-                    data['relative_path'] = os.path.relpath(path, dir_root)
                     self.paths[path] = data
 
-    def read_file(self, path, **kwargs):
+            if not os.path.isfile(os.path.join(dir_, '__init__.py')):
+                self.paths[dir_] = {
+                    'type': 'namespace',
+                    'name': os.path.basename(dir_),
+                    'doc': '',
+                }
+
+    def read_file(self, path, module_name, **kwargs):
         """Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
         """
         try:
-            parsed_data = Parser().parse_file(path)
+            parsed_data = Parser().parse_file(path, module_name)
             return parsed_data
         except (IOError, TypeError, ImportError):
             self.app.warn('Error reading file: {0}'.format(path))
@@ -55,10 +81,11 @@ class PythonSphinxMapper(SphinxMapperBase):
         parents = {obj.name: obj for obj in self.objects.values()}
         for obj in self.objects.values():
             parent_name = obj.name.rsplit('.', 1)[0]
-            if parent_name in parents and parent_name != obj.name:
-                parent = parents[parent_name]
-                attr = 'sub{}s'.format(obj.type)
-                getattr(parent, attr).append(obj)
+            if parent_name in parents:
+                if parent_name != obj.name:
+                    parent = parents[parent_name]
+                    attr = 'sub{}s'.format(obj.type)
+                    getattr(parent, attr).append(obj)
 
         for obj in self.objects.values():
             obj.submodules.sort()
@@ -72,7 +99,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         obj_map = dict((cls.type, cls) for cls
                        in [PythonClass, PythonFunction, PythonModule,
                            PythonMethod, PythonPackage, PythonAttribute,
-                           PythonData, PythonException])
+                           PythonData, PythonException, PythonNamespace])
         try:
             cls = obj_map[data['type']]
         except KeyError:
@@ -234,7 +261,6 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self._resolve_name()
         self.top_level_object = '.' not in self.name
 
         self.subpackages = []
@@ -252,29 +278,13 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
 class PythonModule(TopLevelPythonPythonMapper):
     type = 'module'
 
-    def _resolve_name(self):
-        name = self.obj['relative_path']
-        name = name.replace(os.sep, '.')
-        ext = '.py'
-        if name.endswith(ext):
-            name = name[:-len(ext)]
-
-        self.name = name
-
 
 class PythonPackage(TopLevelPythonPythonMapper):
     type = 'package'
 
-    def _resolve_name(self):
-        name = self.obj['relative_path']
 
-        exts = [os.sep + '__init__.py', '.py']
-        for ext in exts:
-            if name.endswith(ext):
-                name = name[:-len(ext)]
-                name = name.replace(os.sep, '.')
-
-        self.name = name
+class PythonNamespace(TopLevelPythonPythonMapper):
+    type = 'namespace'
 
 
 class PythonClass(PythonPythonMapper):
@@ -355,16 +365,7 @@ class PythonException(PythonClass):
 
 
 class Parser(object):
-    def parse_file(self, file_path):
-        directory, filename = os.path.split(file_path)
-        module_part = os.path.splitext(filename)[0]
-        module_parts = collections.deque([module_part])
-        while os.path.isfile(os.path.join(directory, '__init__.py')):
-            directory, module_part = os.path.split(directory)
-            if module_part:
-                module_parts.appendleft(module_part)
-
-        module_name = '.'.join(module_parts)
+    def parse_file(self, file_path, module_name):
         node = astroid.MANAGER.ast_from_file(file_path, module_name)
         return self.parse(node)
 
@@ -477,7 +478,7 @@ class Parser(object):
             path = node.path[0] if node.path else None
 
         type_ = 'module'
-        if path.endswith('__init__.py'):
+        if node.package:
             type_ = 'package'
 
         data = {

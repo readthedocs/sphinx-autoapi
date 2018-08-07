@@ -17,5 +17,5 @@ html_static_path = ['_static']
 htmlhelp_basename = 'pyexampledoc'
 extensions = ['sphinx.ext.autodoc', 'autoapi.extension']
 autoapi_type = 'python'
-autoapi_dirs = ['example']
+autoapi_dirs = ['example/example.py']
 autoapi_file_pattern = '*.py'

@@ -215,6 +215,10 @@ class SphinxMapperBase(object):
             ignore = []
         files_to_read = []
         for _dir in dirs:
+            if os.path.isfile(_dir):
+                files_to_read.append(_dir)
+                continue
+
             for root, dirnames, filenames in os.walk(_dir):
                 for pattern in patterns:
                     for filename in fnmatch.filter(filenames, pattern):
