@@ -81,7 +81,7 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
     objtype = 'apifunction'
     directivetype = 'function'
     # Always prefer AutoapiDocumenters
-    priority = autodoc.FunctionDocumenter.priority * 100
+    priority = autodoc.FunctionDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
@@ -95,7 +95,7 @@ class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
     objtype = 'apiclass'
     directivetype = 'class'
     doc_as_attr = False
-    priority = autodoc.ClassDocumenter.priority * 100
+    priority = autodoc.ClassDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
@@ -125,7 +125,7 @@ class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
 class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
     objtype = 'apimethod'
     directivetype = 'method'
-    priority = autodoc.MethodDocumenter.priority * 100
+    priority = autodoc.MethodDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
@@ -149,7 +149,7 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
     objtype = 'apidata'
     directivetype = 'data'
-    priority = autodoc.DataDocumenter.priority * 100
+    priority = autodoc.DataDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
@@ -178,7 +178,7 @@ class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter)
     objtype = 'apiattribute'
     directivetype = 'attribute'
     _datadescriptor = True
-    priority = autodoc.AttributeDocumenter.priority * 100
+    priority = autodoc.AttributeDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
@@ -206,14 +206,14 @@ class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter)
 class AutoapiModuleDocumenter(AutoapiDocumenter, autodoc.ModuleDocumenter):
     objtype = 'apimodule'
     directivetype = 'module'
-    priority = autodoc.ModuleDocumenter.priority * 100
+    priority = autodoc.ModuleDocumenter.priority * 100 + 100
 
 
 class AutoapiExceptionDocumenter(
         AutoapiClassDocumenter, AutoapiDocumenter, autodoc.ExceptionDocumenter):
     objtype = 'apiexception'
     directivetype = 'exception'
-    priority = autodoc.ExceptionDocumenter.priority * 100
+    priority = autodoc.ExceptionDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
