@@ -139,9 +139,11 @@ def doctree_read(app, doctree):
                 (None, u'%s/index' % app.config.autoapi_root)
             )
             nodes[-1]['includefiles'].append(u'%s/index' % app.config.autoapi_root)
-            app.info(bold('[AutoAPI] ') +
-                        darkgreen('Adding AutoAPI TOCTree [%s] to index.rst' % toc_entry)
-                        )
+            message_prefix = bold('[AutoAPI] ')
+            message = darkgreen(
+                'Adding AutoAPI TOCTree [{0}] to index.rst'.format(toc_entry)
+            )
+            app.info(message_prefix + message)
 
 
 def clear_env(app, env):
