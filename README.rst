@@ -41,6 +41,8 @@ Contents
    :maxdepth: 2
 
    design
+   directives
+
 
 Basic Workflow
 --------------
@@ -196,6 +198,12 @@ All of the pages that AutoAPI generates are templated with Jinja2 templates.
 You can fully customize how pages are displayed on a per-object basis.
 Read more about it in :doc:`templates`.
 
+Directives
+----------
+
+Instead of generating API documentation,
+you can write the documentation yourself with :doc:`directives`.
+
 Design
 ------
 
@@ -204,7 +212,7 @@ Read more about the deisgn in our :doc:`design`.
 Currently Implemented
 ---------------------
 
-* Python (2 only -- Epydoc doesn't support Python 3)
+* Python (2.7+ and 3.4+)
 * .NET
 * Go
 * Javascript
