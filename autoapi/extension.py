@@ -95,15 +95,16 @@ def run_autoapi(app):
     app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
     sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
-    app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
-    sphinx_mapper_obj.output_rst(
-        root=normalized_root,
-        source_suffix=out_suffix,
-    )
+    if app.config.autoapi_generate_api_docs:
+        app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
+        sphinx_mapper_obj.output_rst(
+            root=normalized_root,
+            source_suffix=out_suffix,
+        )
 
 
 def build_finished(app, exception):
-    if not app.config.autoapi_keep_files:
+    if not app.config.autoapi_keep_files and app.config.autoapi_generate_api_docs:
         normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
         if app.verbosity > 1:
             app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
@@ -202,6 +203,7 @@ def setup(app):
     app.add_config_value('autoapi_template_dir', None, 'html')
     app.add_config_value('autoapi_include_summaries', False, 'html')
     app.add_config_value('autoapi_python_class_content', 'class', 'html')
+    app.add_config_value('autoapi_generate_api_docs', True, 'html')
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
     app.add_autodocumenter(documenters.AutoapiClassDocumenter)
     app.add_autodocumenter(documenters.AutoapiMethodDocumenter)
