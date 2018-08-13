@@ -107,10 +107,19 @@ class PythonSphinxMapper(SphinxMapperBase):
                 for to_resolve in visited.values():
                     new = copy.deepcopy(original)
                     new['name'] = to_resolve['name']
-                    new['imported'] = True
-                    stack = [new]
+                    new['full_name'] = to_resolve['full_name']
+                    new['original_path'] = to_resolve['original_path']
+                    del new['from_line_no']
+                    del new['to_line_no']
+                    stack = list(new.get('children', ()))
                     while stack:
                         data = stack.pop()
+                        assert data['full_name'].startswith(
+                            original['full_name']
+                        )
+                        suffix = data['full_name'][len(original['full_name']):]
+                        data['original_path'] = new['original_path'] + suffix
+                        data['full_name'] = new['full_name'] + suffix
                         del data['from_line_no']
                         del data['to_line_no']
                         stack.extend(data.get('children', ()))
@@ -191,7 +200,7 @@ class PythonPythonMapper(PythonMapperBase):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
         self.name = obj['name']
-        self.id = slugify(self.name)
+        self.id = obj.get('full_name', self.name)
 
         # Optional
         self.children = []
@@ -405,6 +414,12 @@ class PythonException(PythonClass):
 
 
 class Parser(object):
+    def __init__(self):
+        self._name_stack = []
+
+    def _get_full_name(self, name):
+        return '.'.join(self._name_stack + [name])
+
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
         module_parts = []
@@ -441,6 +456,7 @@ class Parser(object):
         data = {
             'type': type_,
             'name': target,
+            'full_name': self._get_full_name(target),
             'doc': doc,
             'value': value,
             'from_line_no': node.fromlineno,
@@ -468,6 +484,7 @@ class Parser(object):
         data = {
             'type': type_,
             'name': node.name,
+            'full_name': self._get_full_name(node.name),
             'args': args,
             'bases': basenames,
             'doc': node.doc or '',
@@ -476,10 +493,12 @@ class Parser(object):
             'children': [],
         }
 
+        self._name_stack.append(node.name)
         for child in node.get_children():
             child_data = self.parse(child)
             if child_data:
                 data['children'].extend(child_data)
+        self._name_stack.pop()
 
         return [data]
 
@@ -487,6 +506,7 @@ class Parser(object):
         data = {
             'type': 'attribute',
             'name': node.name,
+            'full_name': self._get_full_name(node.name),
             'doc': node.doc or '',
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
@@ -505,6 +525,7 @@ class Parser(object):
         data = {
             'type': type_,
             'name': node.name,
+            'full_name': self._get_full_name(node.name),
             'args': node.args.as_string(),
             'doc': node.doc or '',
             'from_line_no': node.fromlineno,
@@ -533,6 +554,7 @@ class Parser(object):
             data = {
                 'type': 'placeholder',
                 'name': alias or name,
+                'full_name': self._get_full_name(alias or name),
                 'original_path': full_name,
             }
             result.append(data)
@@ -551,12 +573,14 @@ class Parser(object):
         data = {
             'type': type_,
             'name': node.name,
+            'full_name': node.name,
             'doc': node.doc or '',
             'children': [],
             'file_path': path,
             'all': astroid_utils.get_module_all(node),
         }
 
+        self._name_stack = [node.name]
         top_name = node.name.split('.', 1)[0]
         for child in node.get_children():
             if node.package and astroid_utils.is_local_import_from(child, top_name):

@@ -154,14 +154,14 @@ def clear_env(app, env):
 
 def viewcode_find(app, modname):
     mapper = app.env.autoapi_mapper
-    if utils.slugify(modname) not in mapper.objects:
+    if modname not in mapper.objects:
         return None
 
     if modname in _viewcode_cache:
         return _viewcode_cache[modname]
 
     locations = {}
-    module = mapper.objects[utils.slugify(modname)]
+    module = mapper.objects[modname]
     for child in module.children:
         stack = [('', child)]
         while stack:
@@ -184,15 +184,30 @@ def viewcode_find(app, modname):
     return result
 
 
+def viewcode_follow_imported(app, modname, attribute):
+    fullname = '{}.{}'.format(modname, attribute)
+    mapper = app.env.autoapi_mapper
+    if fullname not in mapper.all_objects:
+        return None
+
+    orig_path = mapper.all_objects[fullname].obj.get('original_path', '')
+    if orig_path.endswith(attribute):
+        return orig_path[:-len(attribute) - 1]
+
+    return modname
+
+
 def setup(app):
     app.connect('builder-inited', run_autoapi)
     app.connect('doctree-read', doctree_read)
     app.connect('doctree-resolved', add_domain_to_toctree)
     app.connect('build-finished', build_finished)
     app.connect('env-updated', clear_env)
-    if (sphinx.version_info >= (1, 8)
-            and 'viewcode-find-source' in app.events.events):
-        app.connect('viewcode-find-source', viewcode_find)
+    if sphinx.version_info >= (1, 8):
+        if 'viewcode-find-source' in app.events.events:
+            app.connect('viewcode-find-source', viewcode_find)
+        if 'viewcode-follow-imported' in app.events.events:
+            app.connect('viewcode-follow-imported', viewcode_follow_imported)
     app.add_config_value('autoapi_type', 'python', 'html')
     app.add_config_value('autoapi_root', API_ROOT, 'html')
     app.add_config_value('autoapi_ignore', [], 'html')
