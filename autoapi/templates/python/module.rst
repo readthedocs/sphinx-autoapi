@@ -79,7 +79,9 @@ Functions
 
 {%- for obj_item in obj.children %}
 
+{% if obj.all is none or obj_item.short_name in obj.all %}
 {{ obj_item.rendered|indent(0) }}
+{% endif %}
 
 {% endfor %}
 {% endif %}{% endblock %}

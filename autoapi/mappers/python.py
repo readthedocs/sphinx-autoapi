@@ -1,6 +1,6 @@
-import sys
-import os
 import collections
+import copy
+import os
 
 import astroid
 import sphinx
@@ -49,7 +49,77 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.warn('Error reading file: {0}'.format(path))
         return None
 
+    def _resolve_placeholders(self):
+        """Resolve objects that have been imported from elsewhere."""
+        placeholders = []
+        all_data = {}
+        child_stack = []
+        # Initialise the stack with module level objects
+        for data in self.paths.values():
+            all_data[data['name']] = data
+
+            for child in data['children']:
+                child_stack.append((data, data['name'], child))
+
+        # Find all placeholders and everything that can be resolved to
+        while child_stack:
+            parent, parent_name, data = child_stack.pop()
+            if data['type'] == 'placeholder':
+                placeholders.append((parent, data))
+
+            full_name = parent_name + '.' + data['name']
+            all_data[full_name] = data
+
+            for child in data.get('children', ()):
+                child_stack.append((data, full_name, child))
+
+        # Resolve all placeholders
+        for parent, placeholder in placeholders:
+            # Check if this was resolved by a previous iteration
+            if placeholder['type'] != 'placeholder':
+                continue
+
+            if placeholder['original_path'] not in all_data:
+                parent['children'].remove(placeholder)
+                self.app.debug(
+                    'Could not resolve {0} for {1}.{2}'.format(
+                        placeholder['original_path'],
+                        parent['name'],
+                        placeholder['name'],
+                    )
+                )
+                continue
+
+            # Find import chains and resolve the placeholders together
+            visited = {id(placeholder): placeholder}
+            original = all_data[placeholder['original_path']]
+            while original['type'] == 'placeholder':
+                if id(original) in visited:
+                    parent['children'].remove(placeholder)
+                    break
+                original = all_data[placeholder['original_path']]
+                visited[id(original)] = original
+            else:
+                if original['type'] in ('package', 'module'):
+                    parent['children'].remove(placeholder)
+                    continue
+
+                for to_resolve in visited.values():
+                    new = copy.deepcopy(original)
+                    new['name'] = to_resolve['name']
+                    new['imported'] = True
+                    stack = [new]
+                    while stack:
+                        data = stack.pop()
+                        del data['from_line_no']
+                        del data['to_line_no']
+                        stack.extend(data.get('children', ()))
+                    to_resolve.clear()
+                    to_resolve.update(new)
+
     def map(self, options=None):
+        self._resolve_placeholders()
+
         super(PythonSphinxMapper, self).map(options)
 
         parents = {obj.name: obj for obj in self.objects.values()}
@@ -234,11 +304,11 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self._resolve_name()
         self.top_level_object = '.' not in self.name
 
         self.subpackages = []
         self.submodules = []
+        self.all = obj['all']
 
     @property
     def functions(self):
@@ -252,29 +322,9 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
 class PythonModule(TopLevelPythonPythonMapper):
     type = 'module'
 
-    def _resolve_name(self):
-        name = self.obj['relative_path']
-        name = name.replace(os.sep, '.')
-        ext = '.py'
-        if name.endswith(ext):
-            name = name[:-len(ext)]
-
-        self.name = name
-
 
 class PythonPackage(TopLevelPythonPythonMapper):
     type = 'package'
-
-    def _resolve_name(self):
-        name = self.obj['relative_path']
-
-        exts = [os.sep + '__init__.py', '.py']
-        for ext in exts:
-            if name.endswith(ext):
-                name = name[:-len(ext)]
-                name = name.replace(os.sep, '.')
-
-        self.name = name
 
 
 class PythonClass(PythonPythonMapper):
@@ -357,8 +407,11 @@ class PythonException(PythonClass):
 class Parser(object):
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
-        module_part = os.path.splitext(filename)[0]
-        module_parts = collections.deque([module_part])
+        module_parts = []
+        if filename != '__init__.py':
+            module_part = os.path.splitext(filename)[0]
+            module_parts = [module_part]
+        module_parts = collections.deque(module_parts)
         while os.path.isfile(os.path.join(directory, '__init__.py')):
             directory, module_part = os.path.split(directory)
             if module_part:
@@ -471,13 +524,28 @@ class Parser(object):
 
         return result
 
+    def _parse_local_import_from(self, node):
+        result = []
+
+        for name, alias in node.names:
+            full_name = astroid_utils.get_full_import_name(node, alias or name)
+
+            data = {
+                'type': 'placeholder',
+                'name': alias or name,
+                'original_path': full_name,
+            }
+            result.append(data)
+
+        return result
+
     def parse_module(self, node):
         path = node.path
         if isinstance(node.path, list):
             path = node.path[0] if node.path else None
 
         type_ = 'module'
-        if path.endswith('__init__.py'):
+        if node.package:
             type_ = 'package'
 
         data = {
@@ -486,10 +554,16 @@ class Parser(object):
             'doc': node.doc or '',
             'children': [],
             'file_path': path,
+            'all': astroid_utils.get_module_all(node),
         }
 
+        top_name = node.name.split('.', 1)[0]
         for child in node.get_children():
-            child_data = self.parse(child)
+            if node.package and astroid_utils.is_local_import_from(child, top_name):
+                child_data = self._parse_local_import_from(child)
+            else:
+                child_data = self.parse(child)
+
             if child_data:
                 data['children'].extend(child_data)
 

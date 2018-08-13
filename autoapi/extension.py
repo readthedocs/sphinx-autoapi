@@ -172,9 +172,10 @@ def viewcode_find(app, modname):
             elif obj.type in ('function', 'method'):
                 type_ = 'def'
             full_name = prefix + obj.name
-            locations[full_name] = (
-                type_, obj.obj['from_line_no'], obj.obj['to_line_no'],
-            )
+            if 'from_line_no' in obj.obj:
+                locations[full_name] = (
+                    type_, obj.obj['from_line_no'], obj.obj['to_line_no'],
+                )
             children = getattr(obj, 'children', ())
             stack.extend((full_name + '.', gchild) for gchild in children)
 

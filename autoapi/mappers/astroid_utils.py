@@ -11,8 +11,10 @@ import astroid.nodes
 
 if sys.version_info < (3,):
     _EXCEPTIONS_MODULE = "exceptions"
+    _STRING_TYPES = basestring  # pylint: disable=undefined-variable
 else:
     _EXCEPTIONS_MODULE = "builtins"
+    _STRING_TYPES = str
 
 
 def resolve_import_alias(name, import_names):
@@ -40,7 +42,7 @@ def resolve_import_alias(name, import_names):
 
 
 def get_full_import_name(import_from, name):
-    """Get the full path of a name from an ``import x from y`` statement.
+    """Get the full path of a name from a ``from x import y`` statement.
 
     :param import_from: The astroid node to resolve the name of.
     :type import_from: astroid.nodes.ImportFrom
@@ -264,3 +266,57 @@ def is_exception(node):
     return any(
         is_exception(parent) for parent in node.ancestors(recurs=True)
     )
+
+
+def is_local_import_from(node, package_name):
+    """Check if a node is an import from the local package.
+
+    :param node: The node to check.
+    :type node: astroid.node.NodeNG
+
+    :param package_name: The name of the local package.
+    :type package_name: str
+
+    :returns: True if the node is an import from the local package,
+        False otherwise.
+    :rtype: bool
+    """
+    if not isinstance(node, astroid.ImportFrom):
+        return False
+
+    return (
+        node.level
+        or node.modname == package_name
+        or node.modname.startswith(package_name + '.')
+    )
+
+
+def get_module_all(node):
+    """Get the contents of the ``__all__`` variable from a module.
+
+    :param node: The module to get ``__all__`` from.
+    :type node: astroid.nodes.Module
+
+    :returns: The contents of ``__all__`` if defined. Otherwise None.
+    :rtype: list(str) or None
+    """
+    all_ = None
+
+    if '__all__' in node.locals:
+        assigned = next(node.igetattr('__all__'))
+        if assigned is not astroid.Uninferable:
+            all_ = []
+            for elt in getattr(assigned, 'elts', ()):
+                try:
+                    elt_name = next(elt.infer())
+                except astroid.InferenceError:
+                    continue
+
+                if elt_name is astroid.Uninferable:
+                    continue
+
+                if (isinstance(elt_name, astroid.Const)
+                        and isinstance(elt_name.value, _STRING_TYPES)):
+                    all_.append(elt_name.value)
+
+    return all_

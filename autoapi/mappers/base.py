@@ -267,8 +267,11 @@ class SphinxMapperBase(object):
         '''
         self.objects[obj.id] = obj
         self.all_objects[obj.id] = obj
-        for child in obj.children:
+        child_stack = list(obj.children)
+        while child_stack:
+            child = child_stack.pop()
             self.all_objects[child.id] = child
+            child_stack.extend(getattr(child, 'children', ()))
 
     def map(self, options=None):
         '''Trigger find of serialized sources and build objects'''
