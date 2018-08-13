@@ -520,7 +520,7 @@ class Parser(object):
             for child in node.get_children():
                 if isinstance(child, astroid.Assign):
                     child_data = self.parse_assign(child)
-                    result.extend(child_data)
+                    result.extend(data for data in child_data if data['doc'])
 
         return result
 
