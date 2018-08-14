@@ -102,6 +102,12 @@ def get_full_basename(node, basename):
     if isinstance(node, astroid.nodes.Call):
         full_basename = re.sub(r'\(.*\)', '()', full_basename)
 
+    if full_basename.startswith('builtins.'):
+        return full_basename[len('builtins.'):]
+
+    if full_basename.startswith('__builtin__.'):
+        return full_basename[len('__builtin__.'):]
+
     return full_basename
 
 
