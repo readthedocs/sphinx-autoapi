@@ -11,7 +11,8 @@ import astroid.nodes
 
 if sys.version_info < (3,):
     _EXCEPTIONS_MODULE = "exceptions"
-    _STRING_TYPES = (str, unicode)
+    # getattr to keep linter happy
+    _STRING_TYPES = getattr(builtins, 'basestring')
 else:
     _EXCEPTIONS_MODULE = "builtins"
     _STRING_TYPES = str
