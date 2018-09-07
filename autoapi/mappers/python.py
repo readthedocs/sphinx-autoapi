@@ -109,8 +109,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                     new['name'] = to_resolve['name']
                     new['full_name'] = to_resolve['full_name']
                     new['original_path'] = to_resolve['original_path']
-                    del new['from_line_no']
-                    del new['to_line_no']
+                    new.pop('from_line_no', None)
+                    new.pop('to_line_no', None)
                     stack = list(new.get('children', ()))
                     while stack:
                         data = stack.pop()
@@ -120,8 +120,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                         suffix = data['full_name'][len(original['full_name']):]
                         data['original_path'] = new['original_path'] + suffix
                         data['full_name'] = new['full_name'] + suffix
-                        del data['from_line_no']
-                        del data['to_line_no']
+                        data.pop('from_line_no', None)
+                        data.pop('to_line_no', None)
                         stack.extend(data.get('children', ()))
                     to_resolve.clear()
                     to_resolve.update(new)
