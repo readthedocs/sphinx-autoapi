@@ -93,7 +93,9 @@ class PythonSphinxMapper(SphinxMapperBase):
             # Find import chains and resolve the placeholders together
             visited = {id(placeholder): placeholder}
             original = all_data[placeholder['original_path']]
-            while original['type'] == 'placeholder':
+            while (original['type'] == 'placeholder'
+                   # Or it's an already resolved placeholder
+                   or 'from_line_no' not in original):
                 if id(original) in visited:
                     parent['children'].remove(placeholder)
                     break
@@ -109,8 +111,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                     new['name'] = to_resolve['name']
                     new['full_name'] = to_resolve['full_name']
                     new['original_path'] = to_resolve['original_path']
-                    new.pop('from_line_no', None)
-                    new.pop('to_line_no', None)
+                    del new['from_line_no']
+                    del new['to_line_no']
                     stack = list(new.get('children', ()))
                     while stack:
                         data = stack.pop()
@@ -120,8 +122,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                         suffix = data['full_name'][len(original['full_name']):]
                         data['original_path'] = new['original_path'] + suffix
                         data['full_name'] = new['full_name'] + suffix
-                        data.pop('from_line_no', None)
-                        data.pop('to_line_no', None)
+                        del data['from_line_no']
+                        del data['to_line_no']
                         stack.extend(data.get('children', ()))
                     to_resolve.clear()
                     to_resolve.update(new)
