@@ -36,18 +36,20 @@ class AutoapiDocumenter(autodoc.Documenter):
         raise AttributeError(name)
 
     def import_object(self):
-        path_stack = list(reversed(self.fullname.split('.')))
-        objects = self.env.autoapi_mapper.objects
-        parent = objects[utils.slugify(path_stack.pop())]
-        while parent and path_stack:
-            parent = self.get_attr(parent, path_stack.pop(), None)
+        max_splits = self.fullname.count('.')
+        for num_splits in range(max_splits, 0, -1):
+            path_stack = list(reversed(self.fullname.rsplit('.', num_splits)))
+            objects = self.env.autoapi_mapper.objects
+            parent = objects[path_stack.pop()]
+            while parent and path_stack:
+                parent = self.get_attr(parent, path_stack.pop(), None)
 
-        if not parent:
-            return False
+            if parent:
+                self.object = parent
+                self.object_name = parent.name
+                return True
 
-        self.object = parent
-        self.object_name = parent.name
-        return True
+        return False
 
     def get_real_modname(self):
         # Return a fake modname so that nothing can be imported
