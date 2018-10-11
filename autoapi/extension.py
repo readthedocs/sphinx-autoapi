@@ -4,6 +4,7 @@ Sphinx Auto-API Top-level Extension.
 
 This extension allows you to automagically generate API documentation from your project.
 """
+import codecs
 import os
 import shutil
 
@@ -179,7 +180,14 @@ def viewcode_find(app, modname):
             children = getattr(obj, 'children', ())
             stack.extend((full_name + '.', gchild) for gchild in children)
 
-    result = (open(module.obj['file_path']).read(), locations)
+    if module.obj['encoding']:
+        source = codecs.open(
+            module.obj['file_path'], encoding=module.obj['encoding']
+        ).read()
+    else:
+        source = open(module.obj['file_path']).read()
+
+    result = (source, locations)
     _viewcode_cache[modname] = result
     return result
 

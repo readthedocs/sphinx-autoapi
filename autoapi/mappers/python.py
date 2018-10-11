@@ -10,6 +10,11 @@ from .base import PythonMapperBase, SphinxMapperBase
 from . import astroid_utils
 from ..utils import slugify
 
+try:
+    _TEXT_TYPE = unicode
+except NameError:
+    _TEXT_TYPE = str
+
 
 class PythonSphinxMapper(SphinxMapperBase):
 
@@ -418,9 +423,16 @@ class PythonException(PythonClass):
 class Parser(object):
     def __init__(self):
         self._name_stack = []
+        self._encoding = None
 
     def _get_full_name(self, name):
         return '.'.join(self._name_stack + [name])
+
+    def _encode(self, to_encode):
+        if self._encoding:
+            return _TEXT_TYPE(to_encode, self._encoding)
+
+        return to_encode
 
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
@@ -459,7 +471,7 @@ class Parser(object):
             'type': type_,
             'name': target,
             'full_name': self._get_full_name(target),
-            'doc': doc,
+            'doc': self._encode(doc),
             'value': value,
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
@@ -489,7 +501,7 @@ class Parser(object):
             'full_name': self._get_full_name(node.name),
             'args': args,
             'bases': basenames,
-            'doc': node.doc or '',
+            'doc': self._encode(node.doc or ''),
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
             'children': [],
@@ -509,7 +521,7 @@ class Parser(object):
             'type': 'attribute',
             'name': node.name,
             'full_name': self._get_full_name(node.name),
-            'doc': node.doc or '',
+            'doc': self._encode(node.doc or ''),
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
         }
@@ -529,7 +541,7 @@ class Parser(object):
             'name': node.name,
             'full_name': self._get_full_name(node.name),
             'args': node.args.as_string(),
-            'doc': node.doc or '',
+            'doc': self._encode(node.doc or ''),
             'from_line_no': node.fromlineno,
             'to_line_no': node.tolineno,
         }
@@ -572,17 +584,20 @@ class Parser(object):
         if node.package:
             type_ = 'package'
 
+        self._name_stack = [node.name]
+        self._encoding = node.file_encoding
+
         data = {
             'type': type_,
             'name': node.name,
             'full_name': node.name,
-            'doc': node.doc or '',
+            'doc': self._encode(node.doc or ''),
             'children': [],
             'file_path': path,
+            'encoding': node.file_encoding,
             'all': astroid_utils.get_module_all(node),
         }
 
-        self._name_stack = [node.name]
         top_name = node.name.split('.', 1)[0]
         for child in node.get_children():
             if node.package and astroid_utils.is_local_import_from(child, top_name):

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Example module
 
 This is a description
@@ -77,3 +78,19 @@ class Foo(object):
             int: The sum of foo and bar.
         """
         return foo + bar
+
+    def method_sphinx_unicode(self):
+        """This docstring uses unicodé.
+
+        :returns: A string.
+        :rtype: str
+        """
+        return "sphinx"
+
+    def method_google_unicode(self):
+        """This docstring uses unicodé.
+
+        Returns:
+            str: A string.
+        """
+        return "google"
