@@ -37,7 +37,7 @@ class AutoapiDocumenter(autodoc.Documenter):
 
     def import_object(self):
         max_splits = self.fullname.count('.')
-        for num_splits in range(max_splits, 0, -1):
+        for num_splits in range(max_splits, -1, -1):
             path_stack = list(reversed(self.fullname.rsplit('.', num_splits)))
             objects = self.env.autoapi_mapper.objects
             parent = objects[path_stack.pop()]
