@@ -430,7 +430,11 @@ class Parser(object):
 
     def _encode(self, to_encode):
         if self._encoding:
-            return _TEXT_TYPE(to_encode, self._encoding)
+            try:
+                return _TEXT_TYPE(to_encode, self._encoding)
+            except TypeError:
+                # The string was already in the correct format
+                pass
 
         return to_encode
 
