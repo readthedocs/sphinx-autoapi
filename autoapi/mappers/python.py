@@ -101,11 +101,13 @@ class PythonSphinxMapper(SphinxMapperBase):
             while (original['type'] == 'placeholder'
                    # Or it's an already resolved placeholder
                    or 'from_line_no' not in original):
+                # This is a cycle that we cannot resolve
                 if id(original) in visited:
+                    assert original['type'] == 'placeholder'
                     parent['children'].remove(placeholder)
                     break
-                original = all_data[placeholder['original_path']]
                 visited[id(original)] = original
+                original = all_data[original['original_path']]
             else:
                 if original['type'] in ('package', 'module'):
                     parent['children'].remove(placeholder)
@@ -115,7 +117,7 @@ class PythonSphinxMapper(SphinxMapperBase):
                     new = copy.deepcopy(original)
                     new['name'] = to_resolve['name']
                     new['full_name'] = to_resolve['full_name']
-                    new['original_path'] = to_resolve['original_path']
+                    new['original_path'] = original['full_name']
                     del new['from_line_no']
                     del new['to_line_no']
                     stack = list(new.get('children', ()))
@@ -125,7 +127,6 @@ class PythonSphinxMapper(SphinxMapperBase):
                             original['full_name']
                         )
                         suffix = data['full_name'][len(original['full_name']):]
-                        data['original_path'] = new['original_path'] + suffix
                         data['full_name'] = new['full_name'] + suffix
                         del data['from_line_no']
                         del data['to_line_no']
