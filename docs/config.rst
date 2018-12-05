@@ -33,7 +33,7 @@ Configuration Options
 
         A list containing the file patterns to look for when generating documentation. Python for example is ``['*.py']``.
 
-... confval:: autoapi_generate_api_docs
+.. confval:: autoapi_generate_api_docs
 
 	Default: ``True``
 
