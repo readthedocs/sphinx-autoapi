@@ -10,5 +10,5 @@ def slugify(value):
     underscores) and converts spaces to hyphens. Also strips leading and
     trailing whitespace.
     """
-    value = re.sub('[^\w\s-]', '', value).strip()
-    return re.sub('[-\s]+', '-', value)
+    value = re.sub(r'[^\w\s-]', '', value).strip()
+    return re.sub(r'[-\s]+', '-', value)
