@@ -121,7 +121,7 @@ class TestSimplePackage(object):
     def built(self, builder):
         builder('pypackageexample')
 
-    def test_integration_with_package(self, builder):
+    def test_integration_with_package(self):
 
         example_path = '_build/text/autoapi/example/index.txt'
         with io.open(example_path, encoding='utf8') as example_handle:
@@ -198,3 +198,75 @@ def test_hiding_private_members(builder):
         private_file = private_handle.read()
 
     assert 'public_method' in private_file
+
+
+class TestComplexPackage(object):
+
+    @pytest.fixture(autouse=True, scope='class')
+    def built(self, builder):
+        builder('pypackagecomplex')
+
+    def test_public_chain_resolves(self):
+        submodule_path = '_build/text/autoapi/complex/subpackage/submodule/index.txt'
+        with io.open(submodule_path, encoding='utf8') as submodule_handle:
+            submodule_file = submodule_handle.read()
+
+        assert "Part of a public resolution chain." in submodule_file
+
+        subpackage_path = '_build/text/autoapi/complex/subpackage/index.txt'
+        with io.open(subpackage_path, encoding='utf8') as subpackage_handle:
+            subpackage_file = subpackage_handle.read()
+
+        assert "Part of a public resolution chain." in subpackage_file
+
+        package_path = '_build/text/autoapi/complex/index.txt'
+        with io.open(package_path, encoding='utf8') as package_handle:
+            package_file = package_handle.read()
+
+        assert "Part of a public resolution chain." in package_file
+
+    def test_private_made_public(self):
+        submodule_path = '_build/text/autoapi/complex/subpackage/submodule/index.txt'
+        with io.open(submodule_path, encoding='utf8') as submodule_handle:
+            submodule_file = submodule_handle.read()
+
+        assert "A private function made public by import." in submodule_file
+
+    def test_multiple_import_locations(self):
+        submodule_path = '_build/text/autoapi/complex/subpackage/submodule/index.txt'
+        with io.open(submodule_path, encoding='utf8') as submodule_handle:
+            submodule_file = submodule_handle.read()
+
+        assert "A public function imported in multiple places." in submodule_file
+
+        subpackage_path = '_build/text/autoapi/complex/subpackage/index.txt'
+        with io.open(subpackage_path, encoding='utf8') as subpackage_handle:
+            subpackage_file = subpackage_handle.read()
+
+        assert "A public function imported in multiple places." in subpackage_file
+
+        package_path = '_build/text/autoapi/complex/index.txt'
+        with io.open(package_path, encoding='utf8') as package_handle:
+            package_file = package_handle.read()
+
+        assert "A public function imported in multiple places." in package_file
+
+    @pytest.mark.xfail(reason="Not yet implemented")
+    def test_simple_wildcard_imports(self):
+        wildcard_path = '_build/text/autoapi/complex/wildcard/simple/index.txt'
+        with io.open(wildcard_path, encoding='utf8') as wildcard_handle:
+            wildcard_file = wildcard_handle.read()
+
+        assert "public_chain" in wildcard_file
+        assert "now_public_function" in wildcard_file
+        assert "public_multiple_imports" in wildcard_file
+        assert "module_level_method" in wildcard_file
+
+    @pytest.mark.xfail(reason="Not yet implemented")
+    def test_wildcard_chain(self):
+        wildcard_path = '_build/text/autoapi/complex/wildcard/chain/index.txt'
+        with io.open(wildcard_path, encoding='utf8') as wildcard_handle:
+            wildcard_file = wildcard_handle.read()
+
+        assert "public_chain" in wildcard_file
+        assert "module_level_method" in wildcard_file

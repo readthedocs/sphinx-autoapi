@@ -1,5 +1,5 @@
 def public_chain():
-    """Part of a resolution chain."""
+    """Part of a public resolution chain."""
     return 5
 
 def _private_made_public():
