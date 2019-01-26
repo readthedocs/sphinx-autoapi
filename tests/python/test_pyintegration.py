@@ -251,9 +251,8 @@ class TestComplexPackage(object):
 
         assert "A public function imported in multiple places." in package_file
 
-    @pytest.mark.xfail(reason="Not yet implemented")
     def test_simple_wildcard_imports(self):
-        wildcard_path = '_build/text/autoapi/complex/wildcard/simple/index.txt'
+        wildcard_path = '_build/text/autoapi/complex/wildcard/index.txt'
         with io.open(wildcard_path, encoding='utf8') as wildcard_handle:
             wildcard_file = wildcard_handle.read()
 
@@ -262,11 +261,23 @@ class TestComplexPackage(object):
         assert "public_multiple_imports" in wildcard_file
         assert "module_level_method" in wildcard_file
 
-    @pytest.mark.xfail(reason="Not yet implemented")
     def test_wildcard_chain(self):
-        wildcard_path = '_build/text/autoapi/complex/wildcard/chain/index.txt'
+        wildcard_path = '_build/text/autoapi/complex/wildchain/index.txt'
         with io.open(wildcard_path, encoding='utf8') as wildcard_handle:
             wildcard_file = wildcard_handle.read()
 
+        assert "public_chain" in wildcard_file
+        assert "module_level_method" in wildcard_file
+
+    def test_wildcard_all_imports(self):
+        wildcard_path = '_build/text/autoapi/complex/wildall/index.txt'
+        with io.open(wildcard_path, encoding='utf8') as wildcard_handle:
+            wildcard_file = wildcard_handle.read()
+
+        assert "not_all" not in wildcard_file
+        assert "NotAllClass" not in wildcard_file
+        assert "does_not_exist" not in wildcard_file
+        assert "SimpleClass" in wildcard_file
+        assert "simple_function" in wildcard_file
         assert "public_chain" in wildcard_file
         assert "module_level_method" in wildcard_file

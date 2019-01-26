@@ -16,6 +16,177 @@ except NameError:
     _TEXT_TYPE = str
 
 
+def _expand_wildcard_placeholder(original_module, originals_map, placeholder, app):
+    """Expand a wildcard placeholder to a sequence of named placeholders.
+
+    :param original_module: The data dictionary of the module
+        that the placeholder is imported from.
+    :type original_module: dict
+    :param originals_map: A map of the names of children under the module
+        to their data dictionaries.
+    :type originals_map: dict(str, dict)
+    :param placeholder: The wildcard placeholder to expand.
+    :type placeholder: dict
+    :param app: The Sphinx application to report errors with.
+    :type app: sphinx.Application
+
+    :returns: The placeholders that the wildcard placeholder represents.
+    :rtype: list(dict)
+    """
+    originals = originals_map.values()
+    if original_module['all'] is not None:
+        originals = []
+        for name in original_module['all']:
+            if name == '__all__':
+                continue
+
+            if name not in originals_map:
+                msg = 'Invalid __all__ entry {0} in {1}'.format(
+                    name, original_module['name'],
+                )
+                app.warn(msg)
+                continue
+
+            originals.append(originals_map[name])
+
+    placeholders = []
+    for original in originals:
+        new_full_name = placeholder['full_name'].replace(
+            '*', original['name'],
+        )
+        new_original_path = placeholder['original_path'].replace(
+            '*', original['name'],
+        )
+        if 'original_path' in original:
+            new_original_path = original['original_path']
+        new_placeholder = dict(
+            placeholder,
+            name=original['name'],
+            full_name=new_full_name,
+            original_path=new_original_path,
+        )
+        placeholders.append(new_placeholder)
+
+    return placeholders
+
+
+def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app):
+    """Resolve all placeholder children under a module.
+
+    :param modules: A mapping of module names to their data dictionary.
+        Placeholders are resolved in place.
+    :type modules: dict(str, dict)
+    :param module_name: The name of the module to resolve.
+    :type module_name: str
+    :param visit_path: An ordered set of visited module names.
+    :type visited: collections.OrderedDict
+    :param resolved: A set of already resolved module names.
+    :type resolved: set(str)
+    :param app: The Sphinx application to report with.
+    :type app: sphinx.Application
+    """
+    if module_name in resolved:
+        return
+
+    visit_path[module_name] = True
+
+    module, children = modules[module_name]
+    for child in list(children.values()):
+        if child['type'] != 'placeholder':
+            continue
+
+        imported_from, original_name = child['original_path'].rsplit('.', 1)
+        if imported_from in visit_path:
+            msg = "Cannot resolve cyclic import: {0}, {1}".format(
+                ', '.join(visit_path), imported_from,
+            )
+            app.warn(msg)
+            module['children'].remove(child)
+            children.pop(child['name'])
+            continue
+
+        if imported_from not in modules:
+            msg = "Cannot resolve import of unknown module {0} in {1}".format(
+                imported_from, module_name,
+            )
+            app.warn(msg)
+            module['children'].remove(child)
+            children.pop(child['name'])
+            continue
+
+        _resolve_module_placeholders(modules, imported_from, visit_path, resolved, app)
+
+        if original_name == '*':
+            original_module, originals_map = modules[imported_from]
+
+            # Replace the wildcard placeholder
+            # with a list of named placeholders.
+            new_placeholders = _expand_wildcard_placeholder(
+                original_module, originals_map, child, app,
+            )
+            child_index = module['children'].index(child)
+            module['children'][child_index:child_index+1] = new_placeholders
+            children.pop(child['name'])
+
+            for new_placeholder in new_placeholders:
+                if new_placeholder['name'] not in children:
+                    children[new_placeholder['name']] = new_placeholder
+                original = originals_map[new_placeholder['name']]
+                _resolve_placeholder(new_placeholder, original)
+        elif original_name not in modules[imported_from][1]:
+            msg = "Cannot resolve import of {0} in {1}".format(
+                child['original_path'], module_name,
+            )
+            app.warn(msg)
+            module['children'].remove(child)
+            children.pop(child['name'])
+            continue
+        else:
+            original = modules[imported_from][1][original_name]
+            _resolve_placeholder(child, original)
+
+    del visit_path[module_name]
+    resolved.add(module_name)
+
+
+def _resolve_placeholder(placeholder, original):
+    """Resolve a placeholder to the given original object.
+
+    :param placeholder: The placeholder to resolve, in place.
+    :type placeholder: dict
+    :param original: The object that the placeholder represents.
+    :type original: dict
+    """
+    new = copy.deepcopy(original)
+    # The name remains the same.
+    new['name'] = placeholder['name']
+    new['full_name'] = placeholder['full_name']
+    # Record where the placeholder originally came from.
+    new['original_path'] = original['full_name']
+    # The source lines for this placeholder do not exist in this file.
+    # The keys might not exist if original is a resolved placeholder.
+    new.pop('from_line_no', None)
+    new.pop('to_line_no', None)
+
+    # Resolve the children
+    stack = list(new.get('children', ()))
+    while stack:
+        child = stack.pop()
+        # Relocate the child to the new location
+        assert child['full_name'].startswith(original['full_name'])
+        suffix = child['full_name'][len(original['full_name']):]
+        child['full_name'] = new['full_name'] + suffix
+        # The source lines for this placeholder do not exist in this file.
+        # The keys might not exist if original is a resolved placeholder.
+        child.pop('from_line_no', None)
+        child.pop('to_line_no', None)
+        # Resolve the remaining children
+        stack.extend(child.get('children', ()))
+
+    placeholder.clear()
+    placeholder.update(new)
+
+
 class PythonSphinxMapper(SphinxMapperBase):
 
     """Auto API domain handler for Python
@@ -56,83 +227,17 @@ class PythonSphinxMapper(SphinxMapperBase):
 
     def _resolve_placeholders(self):
         """Resolve objects that have been imported from elsewhere."""
-        placeholders = []
-        all_data = {}
-        child_stack = []
-        # Initialise the stack with module level objects
-        for data in self.paths.values():
-            all_data[data['name']] = data
+        modules = {}
+        for module in self.paths.values():
+            children = {
+                child['name']: child for child in module['children']
+            }
+            modules[module['name']] = (module, children)
 
-            for child in data['children']:
-                child_stack.append((data, data['name'], child))
-
-        # Find all placeholders and everything that can be resolved to
-        while child_stack:
-            parent, parent_name, data = child_stack.pop()
-            if data['type'] == 'placeholder':
-                placeholders.append((parent, data))
-
-            full_name = parent_name + '.' + data['name']
-            all_data[full_name] = data
-
-            for child in data.get('children', ()):
-                child_stack.append((data, full_name, child))
-
-        # Resolve all placeholders
-        for parent, placeholder in placeholders:
-            # Check if this was resolved by a previous iteration
-            if placeholder['type'] != 'placeholder':
-                continue
-
-            if placeholder['original_path'] not in all_data:
-                parent['children'].remove(placeholder)
-                self.app.debug(
-                    'Could not resolve {0} for {1}.{2}'.format(
-                        placeholder['original_path'],
-                        parent['name'],
-                        placeholder['name'],
-                    )
-                )
-                continue
-
-            # Find import chains and resolve the placeholders together
-            visited = {id(placeholder): placeholder}
-            original = all_data[placeholder['original_path']]
-            while (original['type'] == 'placeholder'
-                   # Or it's an already resolved placeholder
-                   or 'from_line_no' not in original):
-                # This is a cycle that we cannot resolve
-                if id(original) in visited:
-                    assert original['type'] == 'placeholder'
-                    parent['children'].remove(placeholder)
-                    break
-                visited[id(original)] = original
-                original = all_data[original['original_path']]
-            else:
-                if original['type'] in ('package', 'module'):
-                    parent['children'].remove(placeholder)
-                    continue
-
-                for to_resolve in visited.values():
-                    new = copy.deepcopy(original)
-                    new['name'] = to_resolve['name']
-                    new['full_name'] = to_resolve['full_name']
-                    new['original_path'] = original['full_name']
-                    del new['from_line_no']
-                    del new['to_line_no']
-                    stack = list(new.get('children', ()))
-                    while stack:
-                        data = stack.pop()
-                        assert data['full_name'].startswith(
-                            original['full_name']
-                        )
-                        suffix = data['full_name'][len(original['full_name']):]
-                        data['full_name'] = new['full_name'] + suffix
-                        del data['from_line_no']
-                        del data['to_line_no']
-                        stack.extend(data.get('children', ()))
-                    to_resolve.clear()
-                    to_resolve.update(new)
+        resolved = set()
+        for module_name in modules:
+            visit_path = collections.OrderedDict()
+            _resolve_module_placeholders(modules, module_name, visit_path, resolved, self.app)
 
     def map(self, options=None):
         self._resolve_placeholders()
@@ -568,13 +673,15 @@ class Parser(object):
         result = []
 
         for name, alias in node.names:
-            full_name = astroid_utils.get_full_import_name(node, alias or name)
+            is_wildcard = (alias or name) == '*'
+            full_name = self._get_full_name(alias or name)
+            original_path = astroid_utils.get_full_import_name(node, alias or name)
 
             data = {
                 'type': 'placeholder',
-                'name': alias or name,
-                'full_name': self._get_full_name(alias or name),
-                'original_path': full_name,
+                'name': original_path if is_wildcard else (alias or name),
+                'full_name': full_name,
+                'original_path': original_path,
             }
             result.append(data)
 
