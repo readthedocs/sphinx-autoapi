@@ -9,8 +9,11 @@ import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
+import sphinx.util.logging
 
 from ..settings import API_ROOT
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 Path = namedtuple('Path', ['absolute', 'relative'])
 
@@ -223,7 +226,7 @@ class SphinxMapperBase(object):
                         # Skip ignored files
                         for ignore_pattern in ignore:
                             if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
-                                self.app.info(
+                                LOGGER.info(
                                     bold('[AutoAPI] ') +
                                     darkgreen("Ignoring %s/%s" % (root, filename))
                                 )

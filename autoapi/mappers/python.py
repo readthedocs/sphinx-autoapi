@@ -5,6 +5,7 @@ import os
 import astroid
 import sphinx
 import sphinx.util.docstrings
+import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
 from . import astroid_utils
@@ -15,8 +16,10 @@ try:
 except NameError:
     _TEXT_TYPE = str
 
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
-def _expand_wildcard_placeholder(original_module, originals_map, placeholder, app):
+
+def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
     """Expand a wildcard placeholder to a sequence of named placeholders.
 
     :param original_module: The data dictionary of the module
@@ -27,8 +30,6 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder, ap
     :type originals_map: dict(str, dict)
     :param placeholder: The wildcard placeholder to expand.
     :type placeholder: dict
-    :param app: The Sphinx application to report errors with.
-    :type app: sphinx.Application
 
     :returns: The placeholders that the wildcard placeholder represents.
     :rtype: list(dict)
@@ -44,7 +45,7 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder, ap
                 msg = 'Invalid __all__ entry {0} in {1}'.format(
                     name, original_module['name'],
                 )
-                app.warn(msg)
+                LOGGER.warning(msg)
                 continue
 
             originals.append(originals_map[name])
@@ -70,7 +71,7 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder, ap
     return placeholders
 
 
-def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app):
+def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
     """Resolve all placeholder children under a module.
 
     :param modules: A mapping of module names to their data dictionary.
@@ -82,8 +83,6 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app
     :type visited: collections.OrderedDict
     :param resolved: A set of already resolved module names.
     :type resolved: set(str)
-    :param app: The Sphinx application to report with.
-    :type app: sphinx.Application
     """
     if module_name in resolved:
         return
@@ -100,7 +99,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app
             msg = "Cannot resolve cyclic import: {0}, {1}".format(
                 ', '.join(visit_path), imported_from,
             )
-            app.warn(msg)
+            LOGGER.warning(msg)
             module['children'].remove(child)
             children.pop(child['name'])
             continue
@@ -109,12 +108,12 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app
             msg = "Cannot resolve import of unknown module {0} in {1}".format(
                 imported_from, module_name,
             )
-            app.warn(msg)
+            LOGGER.warning(msg)
             module['children'].remove(child)
             children.pop(child['name'])
             continue
 
-        _resolve_module_placeholders(modules, imported_from, visit_path, resolved, app)
+        _resolve_module_placeholders(modules, imported_from, visit_path, resolved)
 
         if original_name == '*':
             original_module, originals_map = modules[imported_from]
@@ -122,7 +121,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app
             # Replace the wildcard placeholder
             # with a list of named placeholders.
             new_placeholders = _expand_wildcard_placeholder(
-                original_module, originals_map, child, app,
+                original_module, originals_map, child,
             )
             child_index = module['children'].index(child)
             module['children'][child_index:child_index+1] = new_placeholders
@@ -137,7 +136,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved, app
             msg = "Cannot resolve import of {0} in {1}".format(
                 child['original_path'], module_name,
             )
-            app.warn(msg)
+            LOGGER.warning(msg)
             module['children'].remove(child)
             children.pop(child['name'])
             continue
@@ -222,7 +221,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             parsed_data = Parser().parse_file(path)
             return parsed_data
         except (IOError, TypeError, ImportError):
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         return None
 
     def _resolve_placeholders(self):
@@ -237,7 +236,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         resolved = set()
         for module_name in modules:
             visit_path = collections.OrderedDict()
-            _resolve_module_placeholders(modules, module_name, visit_path, resolved, self.app)
+            _resolve_module_placeholders(modules, module_name, visit_path, resolved)
 
     def map(self, options=None):
         self._resolve_placeholders()
@@ -268,7 +267,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data['type']]
         except KeyError:
-            self.app.warn("Unknown type: %s" % data['type'])
+            LOGGER.warning("Unknown type: %s" % data['type'])
         else:
             obj = cls(
                 data,

@@ -12,6 +12,7 @@ import sphinx
 from sphinx.util.console import darkgreen, bold
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
+import sphinx.util.logging
 from docutils.parsers.rst import directives
 
 from . import documenters
@@ -20,6 +21,8 @@ from .backends import default_file_mapping, default_ignore_patterns, default_bac
 from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
 from .toctree import add_domain_to_toctree
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 default_options = ['members', 'undoc-members', 'private-members', 'special-members']
 _viewcode_cache = {}
@@ -86,18 +89,18 @@ def run_autoapi(app):
         out_suffix = app.config.source_suffix[0]
 
     # Actual meat of the run.
-    app.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
+    LOGGER.info(bold('[AutoAPI] ') + darkgreen('Loading Data'))
     sphinx_mapper_obj.load(
         patterns=file_patterns,
         dirs=normalized_dirs,
         ignore=ignore_patterns,
     )
 
-    app.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
+    LOGGER.info(bold('[AutoAPI] ') + darkgreen('Mapping Data'))
     sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
     if app.config.autoapi_generate_api_docs:
-        app.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
+        LOGGER.info(bold('[AutoAPI] ') + darkgreen('Rendering Data'))
         sphinx_mapper_obj.output_rst(
             root=normalized_root,
             source_suffix=out_suffix,
@@ -108,7 +111,7 @@ def build_finished(app, exception):
     if not app.config.autoapi_keep_files and app.config.autoapi_generate_api_docs:
         normalized_root = os.path.normpath(os.path.join(app.confdir, app.config.autoapi_root))
         if app.verbosity > 1:
-            app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
+            LOGGER.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .rst files'))
         shutil.rmtree(normalized_root)
 
         sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
@@ -145,7 +148,7 @@ def doctree_read(app, doctree):
             message = darkgreen(
                 'Adding AutoAPI TOCTree [{0}] to index.rst'.format(toc_entry)
             )
-            app.info(message_prefix + message)
+            LOGGER.info(message_prefix + message)
 
 
 def clear_env(app, env):

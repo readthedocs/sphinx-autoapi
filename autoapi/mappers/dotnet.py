@@ -9,10 +9,12 @@ import unidecode
 import yaml
 from sphinx.util.osutil import ensuredir
 from sphinx.util.console import darkgreen, bold
+import sphinx.util.logging
 from sphinx.errors import ExtensionError
 
 from .base import PythonMapperBase, SphinxMapperBase
 
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 # Doc comment patterns
 DOC_COMMENT_PATTERN = r'''
@@ -96,9 +98,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 )
                 _, error_output = proc.communicate()
                 if error_output:
-                    self.app.warn(error_output)
+                    LOGGER.warning(error_output)
             except (OSError, subprocess.CalledProcessError) as e:
-                self.app.warn('Error generating metadata: {0}'.format(e))
+                LOGGER.warning('Error generating metadata: {0}'.format(e))
                 if raise_error:
                     raise ExtensionError('Failure in docfx while generating AutoAPI output.')
         # We now have yaml files
@@ -119,9 +121,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 parsed_data = yaml.safe_load(handle)
                 return parsed_data
         except IOError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         except TypeError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         return None
 
     # Subclassed to iterate over items
@@ -159,7 +161,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data['type'].lower()]
         except KeyError:
-            self.app.warn('Unknown type: %s' % data)
+            LOGGER.warning('Unknown type: %s' % data)
         else:
             obj = cls(data, jinja_env=self.jinja_env, options=options,
                       url_root=self.url_root, **kwargs)
@@ -246,7 +248,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
     @staticmethod
     def build_finished(app, exception):
         if app.verbosity > 1:
-            app.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .yml files'))
+            LOGGER.info(bold('[AutoAPI] ') + darkgreen('Cleaning generated .yml files'))
         if os.path.exists(DotNetSphinxMapper.DOCFX_OUTPUT_PATH):
             shutil.rmtree(DotNetSphinxMapper.DOCFX_OUTPUT_PATH)
 

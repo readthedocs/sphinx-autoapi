@@ -8,6 +8,9 @@ we then nest our Domain references inside the already existing Sections.
 
 from docutils import nodes
 from sphinx import addnodes
+import sphinx.util.logging
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 def _build_toc_node(docname, anchor='anchor', text='test text', bullet=False):
@@ -79,7 +82,7 @@ def _get_toc_reference(app, node, toc, docname):
             ref_id = node.children[0].attributes['ids'][0]
             toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
         except (KeyError, IndexError) as e:
-            app.warn('Invalid desc node: %s' % e)
+            LOGGER.warning('Invalid desc node: %s' % e)
             toc_reference = None
 
     return toc_reference
@@ -108,7 +111,7 @@ def add_domain_to_toctree(app, doctree, docname):
         try:
             ref_id = desc_node.children[0].attributes['ids'][0]
         except (KeyError, IndexError) as e:
-            app.warn('Invalid desc node: %s' % e)
+            LOGGER.warning('Invalid desc node: %s' % e)
             continue
         try:
             # Python domain object

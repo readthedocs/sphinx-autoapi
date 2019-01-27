@@ -1,7 +1,11 @@
 import json
 import subprocess
 
+import sphinx.util.logging
+
 from .base import PythonMapperBase, SphinxMapperBase
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 class GoSphinxMapper(SphinxMapperBase):
@@ -35,9 +39,9 @@ class GoSphinxMapper(SphinxMapperBase):
             parsed_data = json.loads(subprocess.check_output(['godocjson', path]))
             return parsed_data
         except IOError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         except TypeError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         return None
 
     def create_class(self, data, options=None, **kwargs):
@@ -62,12 +66,12 @@ class GoSphinxMapper(SphinxMapperBase):
         try:
             # Contextual type data from children recursion
             if _type:
-                self.app.debug('Forcing Go Type %s' % _type)
+                LOGGER.debug('Forcing Go Type %s' % _type)
                 cls = obj_map[_type]
             else:
                 cls = obj_map[data['type']]
         except KeyError:
-            self.app.warn('Unknown Type: %s' % data)
+            LOGGER.warning('Unknown Type: %s' % data)
         else:
             if cls.inverted_names and 'names' in data:
                 # Handle types that have reversed names parameter

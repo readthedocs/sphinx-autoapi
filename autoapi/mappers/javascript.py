@@ -2,7 +2,11 @@ import json
 import subprocess
 import os
 
+import sphinx.util.logging
+
 from .base import PythonMapperBase, SphinxMapperBase
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 class JavaScriptSphinxMapper(SphinxMapperBase):
@@ -29,9 +33,9 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
             parsed_data = json.loads(subprocess.check_output([subcmd, '-X', path]))
             return parsed_data
         except IOError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         except TypeError:
-            self.app.warn('Error reading file: {0}'.format(path))
+            LOGGER.warning('Error reading file: {0}'.format(path))
         return None
 
     # Subclassed to iterate over items
@@ -64,7 +68,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data['kind']]
         except (KeyError, TypeError):
-            self.app.warn('Unknown Type: %s' % data)
+            LOGGER.warning('Unknown Type: %s' % data)
         else:
             # Recurse for children
             obj = cls(data, jinja_env=self.jinja_env)
