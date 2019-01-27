@@ -15,12 +15,12 @@ from ..settings import API_ROOT
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
-Path = namedtuple('Path', ['absolute', 'relative'])
+Path = namedtuple("Path", ["absolute", "relative"])
 
 
 class PythonMapperBase(object):
 
-    '''
+    """
     Base object for JSON -> Python object mapping.
 
     Subclasses of this object will handle their language specific JSON input,
@@ -46,10 +46,10 @@ class PythonMapperBase(object):
     :var list children: Children of this object
     :var list parameters: Parameters to this object
     :var list methods: Methods on this object
-    '''
+    """
 
-    language = 'base'
-    type = 'base'
+    language = "base"
+    type = "base"
     # Create a page in the output for this object.
     top_level_object = False
 
@@ -59,19 +59,19 @@ class PythonMapperBase(object):
         if jinja_env:
             self.jinja_env = jinja_env
         if url_root is None:
-            url_root = os.path.join('/', API_ROOT)
+            url_root = os.path.join("/", API_ROOT)
         self.url_root = url_root
 
     def render(self, **kwargs):
         ctx = {}
         try:
             template = self.jinja_env.get_template(
-                '{language}/{type}.rst'.format(language=self.language, type=self.type)
+                "{language}/{type}.rst".format(language=self.language, type=self.type)
             )
         except TemplateNotFound:
             # Use a try/except here so we fallback to language specific defaults, over base defaults
             template = self.jinja_env.get_template(
-                'base/{type}.rst'.format(type=self.type)
+                "base/{type}.rst".format(type=self.type)
             )
 
         ctx.update(**self.get_context_data())
@@ -80,38 +80,32 @@ class PythonMapperBase(object):
 
     @property
     def rendered(self):
-        'Shortcut to render an object in templates.'
+        "Shortcut to render an object in templates."
         return self.render()
 
     def get_absolute_path(self):
-        return "/autoapi/{type}/{name}".format(
-            type=self.type,
-            name=self.name,
-        )
+        return "/autoapi/{type}/{name}".format(type=self.type, name=self.name)
 
     def get_context_data(self):
-        return {
-            'obj': self
-        }
+        return {"obj": self}
 
     def __lt__(self, other):
-        '''Object sorting comparison'''
+        """Object sorting comparison"""
         if isinstance(other, PythonMapperBase):
             return self.id < other.id
         return super(PythonMapperBase, self).__lt__(other)
 
     def __str__(self):
-        return '<{cls} {id}>'.format(cls=self.__class__.__name__,
-                                     id=self.id)
+        return "<{cls} {id}>".format(cls=self.__class__.__name__, id=self.id)
 
     @property
     def short_name(self):
-        '''Shorten name property'''
-        return self.name.split('.')[-1]
+        """Shorten name property"""
+        return self.name.split(".")[-1]
 
     @property
     def pathname(self):
-        '''Sluggified path for filenames
+        """Sluggified path for filenames
 
         Slugs to a filename using the follow steps
 
@@ -119,18 +113,18 @@ class PythonMapperBase(object):
         * Remove existing hypens
         * Substitute hyphens for non-word characters
         * Break up the string as paths
-        '''
+        """
         slug = self.name
         slug = unidecode.unidecode(slug)
-        slug = slug.replace('-', '')
-        slug = re.sub(r'[^\w\.]+', '-', slug).strip('-')
-        return os.path.join(*slug.split('.'))
+        slug = slug.replace("-", "")
+        slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
+        return os.path.join(*slug.split("."))
 
     def include_dir(self, root):
         """Return directory of file"""
         parts = [root]
         parts.extend(self.pathname.split(os.path.sep))
-        return '/'.join(parts)
+        return "/".join(parts)
 
     @property
     def include_path(self):
@@ -140,8 +134,8 @@ class PythonMapperBase(object):
         path separators
         """
         parts = [self.include_dir(root=self.url_root)]
-        parts.append('index')
-        return '/'.join(parts)
+        parts.append("index")
+        return "/".join(parts)
 
     @property
     def ref_type(self):
@@ -153,22 +147,23 @@ class PythonMapperBase(object):
 
     @property
     def namespace(self):
-        pieces = self.id.split('.')[:-1]
+        pieces = self.id.split(".")[:-1]
         if pieces:
-            return '.'.join(pieces)
+            return ".".join(pieces)
         return None
 
 
 class SphinxMapperBase(object):
 
-    '''Base class for mapping `PythonMapperBase` objects to Sphinx.
+    """Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     :param app: Sphinx application instance
 
-    '''
+    """
 
     def __init__(self, app, template_dir=None, url_root=None):
         from ..settings import TEMPLATE_DIR
+
         self.app = app
 
         template_paths = [TEMPLATE_DIR]
@@ -185,9 +180,9 @@ class SphinxMapperBase(object):
         )
 
         def _wrapped_prepare(value):
-            return '\n'.join(prepare_docstring(value))
+            return "\n".join(prepare_docstring(value))
 
-        self.jinja_env.filters['prepare_docstring'] = _wrapped_prepare
+        self.jinja_env.filters["prepare_docstring"] = _wrapped_prepare
 
         self.url_root = url_root
 
@@ -203,10 +198,10 @@ class SphinxMapperBase(object):
         self.top_level_objects = OrderedDict()
 
     def load(self, patterns, dirs, ignore=None):
-        '''
+        """
         Load objects from the filesystem into the ``paths`` dictionary.
 
-        '''
+        """
         for path in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
             data = self.read_file(path=path)
             if data:
@@ -225,10 +220,12 @@ class SphinxMapperBase(object):
 
                         # Skip ignored files
                         for ignore_pattern in ignore:
-                            if fnmatch.fnmatch(os.path.join(root, filename), ignore_pattern):
+                            if fnmatch.fnmatch(
+                                os.path.join(root, filename), ignore_pattern
+                            ):
                                 LOGGER.info(
-                                    bold('[AutoAPI] ') +
-                                    darkgreen("Ignoring %s/%s" % (root, filename))
+                                    bold("[AutoAPI] ")
+                                    + darkgreen("Ignoring %s/%s" % (root, filename))
                                 )
                                 skip = True
 
@@ -244,71 +241,69 @@ class SphinxMapperBase(object):
         status_iterator = sphinx.util.status_iterator
 
         for _path in status_iterator(
-                files_to_read,
-                '[AutoAPI] Reading files... ',
-                darkgreen,
-                len(files_to_read)):
+            files_to_read, "[AutoAPI] Reading files... ", darkgreen, len(files_to_read)
+        ):
             yield _path
 
     def read_file(self, path, **kwargs):
-        '''Read file input into memory
+        """Read file input into memory
 
         :param path: Path of file to read
-        '''
+        """
         # TODO support JSON here
         # TODO sphinx way of reporting errors in logs?
         raise NotImplementedError
 
     def add_object(self, obj):
-        '''
+        """
         Add object to local and app environment storage
 
         :param obj: Instance of a AutoAPI object
-        '''
+        """
         self.objects[obj.id] = obj
         self.all_objects[obj.id] = obj
         child_stack = list(obj.children)
         while child_stack:
             child = child_stack.pop()
             self.all_objects[child.id] = child
-            child_stack.extend(getattr(child, 'children', ()))
+            child_stack.extend(getattr(child, "children", ()))
 
     def map(self, options=None):
-        '''Trigger find of serialized sources and build objects'''
+        """Trigger find of serialized sources and build objects"""
         for path, data in self.paths.items():
             for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
     def create_class(self, data, options=None, **kwargs):
-        '''
+        """
         Create class object.
 
         :param data: Instance of a AutoAPI object
-        '''
+        """
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
         for id, obj in self.objects.items():
 
             rst = obj.render(
-                include_summaries=self.app.config.autoapi_include_summaries,
+                include_summaries=self.app.config.autoapi_include_summaries
             )
             if not rst:
                 continue
 
             detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
-            path = os.path.join(detail_dir, '%s%s' % ('index', source_suffix))
-            with open(path, 'wb+') as detail_file:
-                detail_file.write(rst.encode('utf-8'))
+            path = os.path.join(detail_dir, "%s%s" % ("index", source_suffix))
+            with open(path, "wb+") as detail_file:
+                detail_file.write(rst.encode("utf-8"))
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
 
     def _output_top_rst(self, root):
         # Render Top Index
-        top_level_index = os.path.join(root, 'index.rst')
+        top_level_index = os.path.join(root, "index.rst")
         pages = self.objects.values()
-        with open(top_level_index, 'w+') as top_level_file:
-            content = self.jinja_env.get_template('index.rst')
+        with open(top_level_index, "w+") as top_level_file:
+            content = self.jinja_env.get_template("index.rst")
             top_level_file.write(content.render(pages=pages))

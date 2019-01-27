@@ -12,7 +12,7 @@ import astroid.nodes
 if sys.version_info < (3,):
     _EXCEPTIONS_MODULE = "exceptions"
     # getattr to keep linter happy
-    _STRING_TYPES = getattr(builtins, 'basestring')
+    _STRING_TYPES = getattr(builtins, "basestring")
 else:
     _EXCEPTIONS_MODULE = "builtins"
     _STRING_TYPES = str
@@ -60,10 +60,10 @@ def get_full_import_name(import_from, name):
         module = import_from.root()
         assert isinstance(module, astroid.nodes.Module)
         module_name = module.relative_to_absolute_name(
-            import_from.modname, level=import_from.level,
+            import_from.modname, level=import_from.level
         )
 
-    return '{}.{}'.format(module_name, partial_basename)
+    return "{}.{}".format(module_name, partial_basename)
 
 
 def get_full_basename(node, basename):
@@ -79,9 +79,9 @@ def get_full_basename(node, basename):
     """
     full_basename = basename
 
-    top_level_name = re.sub(r'\(.*\)', '', basename).split('.', 1)[0]
+    top_level_name = re.sub(r"\(.*\)", "", basename).split(".", 1)[0]
     lookup_node = node
-    while not hasattr(lookup_node, 'lookup'):
+    while not hasattr(lookup_node, "lookup"):
         lookup_node = lookup_node.parent
     assigns = lookup_node.lookup(top_level_name)[1]
     for assignment in assigns:
@@ -94,20 +94,17 @@ def get_full_basename(node, basename):
             full_basename = basename.replace(top_level_name, import_name, 1)
             break
         elif isinstance(assignment, astroid.nodes.ClassDef):
-            full_basename = '{}.{}'.format(
-                assignment.root().name,
-                assignment.name,
-            )
+            full_basename = "{}.{}".format(assignment.root().name, assignment.name)
             break
 
     if isinstance(node, astroid.nodes.Call):
-        full_basename = re.sub(r'\(.*\)', '()', full_basename)
+        full_basename = re.sub(r"\(.*\)", "()", full_basename)
 
-    if full_basename.startswith('builtins.'):
-        return full_basename[len('builtins.'):]
+    if full_basename.startswith("builtins."):
+        return full_basename[len("builtins.") :]
 
-    if full_basename.startswith('__builtin__.'):
-        return full_basename[len('__builtin__.'):]
+    if full_basename.startswith("__builtin__."):
+        return full_basename[len("__builtin__.") :]
 
     return full_basename
 
@@ -201,7 +198,7 @@ def is_decorated_with_property(node):
 def _is_property_decorator(decorator):
     def _is_property_class(class_node):
         return (
-            class_node.name == 'property'
+            class_node.name == "property"
             and class_node.root().name == builtins.__name__
         )
 
@@ -231,8 +228,10 @@ def is_decorated_with_property_setter(node):
         return False
 
     for decorator in node.decorators.nodes:
-        if (isinstance(decorator, astroid.nodes.Attribute)
-                and decorator.attrname == "setter"):
+        if (
+            isinstance(decorator, astroid.nodes.Attribute)
+            and decorator.attrname == "setter"
+        ):
             return True
 
     return False
@@ -250,7 +249,7 @@ def is_constructor(node):
     return (
         node.parent
         and isinstance(node.parent.scope(), astroid.nodes.ClassDef)
-        and node.name == '__init__'
+        and node.name == "__init__"
     )
 
 
@@ -263,16 +262,16 @@ def is_exception(node):
     :returns: True if the class is an exception, False otherwise.
     :rtype: bool
     """
-    if (node.name in ('Exception', 'BaseException')
-            and node.root().name == _EXCEPTIONS_MODULE):
+    if (
+        node.name in ("Exception", "BaseException")
+        and node.root().name == _EXCEPTIONS_MODULE
+    ):
         return True
 
-    if not hasattr(node, 'ancestors'):
+    if not hasattr(node, "ancestors"):
         return False
 
-    return any(
-        is_exception(parent) for parent in node.ancestors(recurs=True)
-    )
+    return any(is_exception(parent) for parent in node.ancestors(recurs=True))
 
 
 def is_local_import_from(node, package_name):
@@ -294,7 +293,7 @@ def is_local_import_from(node, package_name):
     return (
         node.level
         or node.modname == package_name
-        or node.modname.startswith(package_name + '.')
+        or node.modname.startswith(package_name + ".")
     )
 
 
@@ -309,11 +308,11 @@ def get_module_all(node):
     """
     all_ = None
 
-    if '__all__' in node.locals:
-        assigned = next(node.igetattr('__all__'))
+    if "__all__" in node.locals:
+        assigned = next(node.igetattr("__all__"))
         if assigned is not astroid.Uninferable:
             all_ = []
-            for elt in getattr(assigned, 'elts', ()):
+            for elt in getattr(assigned, "elts", ()):
                 try:
                     elt_name = next(elt.infer())
                 except astroid.InferenceError:
@@ -322,8 +321,9 @@ def get_module_all(node):
                 if elt_name is astroid.Uninferable:
                     continue
 
-                if (isinstance(elt_name, astroid.Const)
-                        and isinstance(elt_name.value, _STRING_TYPES)):
+                if isinstance(elt_name, astroid.Const) and isinstance(
+                    elt_name.value, _STRING_TYPES
+                ):
                     all_.append(elt_name.value)
 
     return all_

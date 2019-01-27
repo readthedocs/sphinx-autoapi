@@ -35,15 +35,15 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
     :rtype: list(dict)
     """
     originals = originals_map.values()
-    if original_module['all'] is not None:
+    if original_module["all"] is not None:
         originals = []
-        for name in original_module['all']:
-            if name == '__all__':
+        for name in original_module["all"]:
+            if name == "__all__":
                 continue
 
             if name not in originals_map:
-                msg = 'Invalid __all__ entry {0} in {1}'.format(
-                    name, original_module['name'],
+                msg = "Invalid __all__ entry {0} in {1}".format(
+                    name, original_module["name"]
                 )
                 LOGGER.warning(msg)
                 continue
@@ -52,17 +52,13 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
 
     placeholders = []
     for original in originals:
-        new_full_name = placeholder['full_name'].replace(
-            '*', original['name'],
-        )
-        new_original_path = placeholder['original_path'].replace(
-            '*', original['name'],
-        )
-        if 'original_path' in original:
-            new_original_path = original['original_path']
+        new_full_name = placeholder["full_name"].replace("*", original["name"])
+        new_original_path = placeholder["original_path"].replace("*", original["name"])
+        if "original_path" in original:
+            new_original_path = original["original_path"]
         new_placeholder = dict(
             placeholder,
-            name=original['name'],
+            name=original["name"],
             full_name=new_full_name,
             original_path=new_original_path,
         )
@@ -91,54 +87,54 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
 
     module, children = modules[module_name]
     for child in list(children.values()):
-        if child['type'] != 'placeholder':
+        if child["type"] != "placeholder":
             continue
 
-        imported_from, original_name = child['original_path'].rsplit('.', 1)
+        imported_from, original_name = child["original_path"].rsplit(".", 1)
         if imported_from in visit_path:
             msg = "Cannot resolve cyclic import: {0}, {1}".format(
-                ', '.join(visit_path), imported_from,
+                ", ".join(visit_path), imported_from
             )
             LOGGER.warning(msg)
-            module['children'].remove(child)
-            children.pop(child['name'])
+            module["children"].remove(child)
+            children.pop(child["name"])
             continue
 
         if imported_from not in modules:
             msg = "Cannot resolve import of unknown module {0} in {1}".format(
-                imported_from, module_name,
+                imported_from, module_name
             )
             LOGGER.warning(msg)
-            module['children'].remove(child)
-            children.pop(child['name'])
+            module["children"].remove(child)
+            children.pop(child["name"])
             continue
 
         _resolve_module_placeholders(modules, imported_from, visit_path, resolved)
 
-        if original_name == '*':
+        if original_name == "*":
             original_module, originals_map = modules[imported_from]
 
             # Replace the wildcard placeholder
             # with a list of named placeholders.
             new_placeholders = _expand_wildcard_placeholder(
-                original_module, originals_map, child,
+                original_module, originals_map, child
             )
-            child_index = module['children'].index(child)
-            module['children'][child_index:child_index+1] = new_placeholders
-            children.pop(child['name'])
+            child_index = module["children"].index(child)
+            module["children"][child_index : child_index + 1] = new_placeholders
+            children.pop(child["name"])
 
             for new_placeholder in new_placeholders:
-                if new_placeholder['name'] not in children:
-                    children[new_placeholder['name']] = new_placeholder
-                original = originals_map[new_placeholder['name']]
+                if new_placeholder["name"] not in children:
+                    children[new_placeholder["name"]] = new_placeholder
+                original = originals_map[new_placeholder["name"]]
                 _resolve_placeholder(new_placeholder, original)
         elif original_name not in modules[imported_from][1]:
             msg = "Cannot resolve import of {0} in {1}".format(
-                child['original_path'], module_name,
+                child["original_path"], module_name
             )
             LOGGER.warning(msg)
-            module['children'].remove(child)
-            children.pop(child['name'])
+            module["children"].remove(child)
+            children.pop(child["name"])
             continue
         else:
             original = modules[imported_from][1][original_name]
@@ -158,29 +154,29 @@ def _resolve_placeholder(placeholder, original):
     """
     new = copy.deepcopy(original)
     # The name remains the same.
-    new['name'] = placeholder['name']
-    new['full_name'] = placeholder['full_name']
+    new["name"] = placeholder["name"]
+    new["full_name"] = placeholder["full_name"]
     # Record where the placeholder originally came from.
-    new['original_path'] = original['full_name']
+    new["original_path"] = original["full_name"]
     # The source lines for this placeholder do not exist in this file.
     # The keys might not exist if original is a resolved placeholder.
-    new.pop('from_line_no', None)
-    new.pop('to_line_no', None)
+    new.pop("from_line_no", None)
+    new.pop("to_line_no", None)
 
     # Resolve the children
-    stack = list(new.get('children', ()))
+    stack = list(new.get("children", ()))
     while stack:
         child = stack.pop()
         # Relocate the child to the new location
-        assert child['full_name'].startswith(original['full_name'])
-        suffix = child['full_name'][len(original['full_name']):]
-        child['full_name'] = new['full_name'] + suffix
+        assert child["full_name"].startswith(original["full_name"])
+        suffix = child["full_name"][len(original["full_name"]) :]
+        child["full_name"] = new["full_name"] + suffix
         # The source lines for this placeholder do not exist in this file.
         # The keys might not exist if original is a resolved placeholder.
-        child.pop('from_line_no', None)
-        child.pop('to_line_no', None)
+        child.pop("from_line_no", None)
+        child.pop("to_line_no", None)
         # Resolve the remaining children
-        stack.extend(child.get('children', ()))
+        stack.extend(child.get("children", ()))
 
     placeholder.clear()
     placeholder.update(new)
@@ -203,13 +199,13 @@ class PythonSphinxMapper(SphinxMapperBase):
         """
         for dir_ in dirs:
             dir_root = dir_
-            if os.path.exists(os.path.join(dir_, '__init__.py')):
+            if os.path.exists(os.path.join(dir_, "__init__.py")):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
 
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
                 data = self.read_file(path=path)
                 if data:
-                    data['relative_path'] = os.path.relpath(path, dir_root)
+                    data["relative_path"] = os.path.relpath(path, dir_root)
                     self.paths[path] = data
 
     def read_file(self, path, **kwargs):
@@ -221,17 +217,15 @@ class PythonSphinxMapper(SphinxMapperBase):
             parsed_data = Parser().parse_file(path)
             return parsed_data
         except (IOError, TypeError, ImportError):
-            LOGGER.warning('Error reading file: {0}'.format(path))
+            LOGGER.warning("Error reading file: {0}".format(path))
         return None
 
     def _resolve_placeholders(self):
         """Resolve objects that have been imported from elsewhere."""
         modules = {}
         for module in self.paths.values():
-            children = {
-                child['name']: child for child in module['children']
-            }
-            modules[module['name']] = (module, children)
+            children = {child["name"]: child for child in module["children"]}
+            modules[module["name"]] = (module, children)
 
         resolved = set()
         for module_name in modules:
@@ -245,10 +239,10 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         parents = {obj.name: obj for obj in self.objects.values()}
         for obj in self.objects.values():
-            parent_name = obj.name.rsplit('.', 1)[0]
+            parent_name = obj.name.rsplit(".", 1)[0]
             if parent_name in parents and parent_name != obj.name:
                 parent = parents[parent_name]
-                attr = 'sub{}s'.format(obj.type)
+                attr = "sub{}s".format(obj.type)
                 getattr(parent, attr).append(obj)
 
         for obj in self.objects.values():
@@ -260,14 +254,23 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         :param data: dictionary data of parser output
         """
-        obj_map = dict((cls.type, cls) for cls
-                       in [PythonClass, PythonFunction, PythonModule,
-                           PythonMethod, PythonPackage, PythonAttribute,
-                           PythonData, PythonException])
+        obj_map = dict(
+            (cls.type, cls)
+            for cls in [
+                PythonClass,
+                PythonFunction,
+                PythonModule,
+                PythonMethod,
+                PythonPackage,
+                PythonAttribute,
+                PythonData,
+                PythonException,
+            ]
+        )
         try:
-            cls = obj_map[data['type']]
+            cls = obj_map[data["type"]]
         except KeyError:
-            LOGGER.warning("Unknown type: %s" % data['type'])
+            LOGGER.warning("Unknown type: %s" % data["type"])
         else:
             obj = cls(
                 data,
@@ -279,39 +282,40 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
 
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
-            if lines and 'autodoc-process-docstring' in self.app.events.events:
+            if lines and "autodoc-process-docstring" in self.app.events.events:
                 self.app.emit(
-                    'autodoc-process-docstring',
+                    "autodoc-process-docstring",
                     cls.type,
                     obj.name,
                     None,  # object
                     None,  # options
                     lines,
                 )
-            obj.docstring = '\n'.join(lines)
+            obj.docstring = "\n".join(lines)
 
-            for child_data in data.get('children', []):
-                for child_obj in self.create_class(child_data, options=options,
-                                                   **kwargs):
+            for child_data in data.get("children", []):
+                for child_obj in self.create_class(
+                    child_data, options=options, **kwargs
+                ):
                     obj.children.append(child_obj)
             yield obj
 
 
 class PythonPythonMapper(PythonMapperBase):
 
-    language = 'python'
+    language = "python"
     is_callable = False
 
-    def __init__(self, obj, class_content='class', **kwargs):
+    def __init__(self, obj, class_content="class", **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self.name = obj['name']
-        self.id = obj.get('full_name', self.name)
+        self.name = obj["name"]
+        self.id = obj.get("full_name", self.name)
 
         # Optional
         self.children = []
-        self.args = obj.get('args')
-        self.docstring = obj['doc']
+        self.args = obj.get("args")
+        self.docstring = obj["doc"]
 
         # For later
         self.item_map = collections.defaultdict(list)
@@ -339,25 +343,19 @@ class PythonPythonMapper(PythonMapperBase):
 
     @property
     def is_private_member(self):
-        return (
-            self.short_name.startswith('_')
-            and not self.short_name.endswith('__')
-        )
+        return self.short_name.startswith("_") and not self.short_name.endswith("__")
 
     @property
     def is_special_member(self):
-        return (
-            self.short_name.startswith('__')
-            and self.short_name.endswith('__')
-        )
+        return self.short_name.startswith("__") and self.short_name.endswith("__")
 
     @property
     def display(self):
-        if self.is_undoc_member and 'undoc-members' not in self.options:
+        if self.is_undoc_member and "undoc-members" not in self.options:
             return False
-        if self.is_private_member and 'private-members' not in self.options:
+        if self.is_private_member and "private-members" not in self.options:
             return False
-        if self.is_special_member and 'special-members' not in self.options:
+        if self.is_special_member and "special-members" not in self.options:
             return False
         return True
 
@@ -368,31 +366,31 @@ class PythonPythonMapper(PythonMapperBase):
             if line:
                 return line
 
-        return ''
+        return ""
 
     def _children_of_type(self, type_):
         return list(child for child in self.children if child.type == type_)
 
 
 class PythonFunction(PythonPythonMapper):
-    type = 'function'
+    type = "function"
     is_callable = True
-    ref_directive = 'func'
+    ref_directive = "func"
 
 
 class PythonMethod(PythonPythonMapper):
-    type = 'method'
+    type = "method"
     is_callable = True
-    ref_directive = 'meth'
+    ref_directive = "meth"
 
     def __init__(self, obj, **kwargs):
         super(PythonMethod, self).__init__(obj, **kwargs)
 
-        self.method_type = obj['method_type']
+        self.method_type = obj["method_type"]
 
     @property
     def display(self):
-        if self.short_name == '__init__':
+        if self.short_name == "__init__":
             return False
 
         return super(PythonMethod, self).display
@@ -400,55 +398,57 @@ class PythonMethod(PythonPythonMapper):
 
 class PythonData(PythonPythonMapper):
     """Global, module level data."""
-    type = 'data'
+
+    type = "data"
 
     def __init__(self, obj, **kwargs):
         super(PythonData, self).__init__(obj, **kwargs)
 
-        self.value = obj.get('value')
+        self.value = obj.get("value")
 
 
 class PythonAttribute(PythonData):
     """An object/class level attribute."""
-    type = 'attribute'
+
+    type = "attribute"
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
-    ref_directive = 'mod'
+    ref_directive = "mod"
 
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
 
-        self.top_level_object = '.' not in self.name
+        self.top_level_object = "." not in self.name
 
         self.subpackages = []
         self.submodules = []
-        self.all = obj['all']
+        self.all = obj["all"]
 
     @property
     def functions(self):
-        return self._children_of_type('function')
+        return self._children_of_type("function")
 
     @property
     def classes(self):
-        return self._children_of_type('class')
+        return self._children_of_type("class")
 
 
 class PythonModule(TopLevelPythonPythonMapper):
-    type = 'module'
+    type = "module"
 
 
 class PythonPackage(TopLevelPythonPythonMapper):
-    type = 'package'
+    type = "package"
 
 
 class PythonClass(PythonPythonMapper):
-    type = 'class'
+    type = "class"
 
     def __init__(self, obj, **kwargs):
         super(PythonClass, self).__init__(obj, **kwargs)
 
-        self.bases = obj['bases']
+        self.bases = obj["bases"]
 
     @PythonPythonMapper.args.getter
     def args(self):
@@ -458,8 +458,8 @@ class PythonClass(PythonPythonMapper):
         if constructor:
             args = constructor.args
 
-        if args.startswith('self'):
-            args = args[4:].lstrip(',').lstrip()
+        if args.startswith("self"):
+            args = args[4:].lstrip(",").lstrip()
 
         return args
 
@@ -467,13 +467,11 @@ class PythonClass(PythonPythonMapper):
     def docstring(self):
         docstring = super(PythonClass, self).docstring
 
-        if self._class_content in ('both', 'init'):
+        if self._class_content in ("both", "init"):
             constructor_docstring = self.constructor_docstring
             if constructor_docstring:
-                if self._class_content == 'both':
-                    docstring = '{0}\n{1}'.format(
-                        docstring, constructor_docstring,
-                    )
+                if self._class_content == "both":
+                    docstring = "{0}\n{1}".format(docstring, constructor_docstring)
                 else:
                     docstring = constructor_docstring
 
@@ -481,34 +479,34 @@ class PythonClass(PythonPythonMapper):
 
     @property
     def methods(self):
-        return self._children_of_type('method')
+        return self._children_of_type("method")
 
     @property
     def attributes(self):
-        return self._children_of_type('attribute')
+        return self._children_of_type("attribute")
 
     @property
     def classes(self):
-        return self._children_of_type('class')
+        return self._children_of_type("class")
 
     @property
     def constructor(self):
         for child in self.children:
-            if child.short_name == '__init__':
+            if child.short_name == "__init__":
                 return child
 
         return None
 
     @property
     def constructor_docstring(self):
-        docstring = ''
+        docstring = ""
 
         constructor = self.constructor
         if constructor and constructor.docstring:
             docstring = constructor.docstring
         else:
             for child in self.children:
-                if child.short_name == '__new__':
+                if child.short_name == "__new__":
                     docstring = child.docstring
                     break
 
@@ -516,7 +514,7 @@ class PythonClass(PythonPythonMapper):
 
 
 class PythonException(PythonClass):
-    type = 'exception'
+    type = "exception"
 
 
 class Parser(object):
@@ -525,7 +523,7 @@ class Parser(object):
         self._encoding = None
 
     def _get_full_name(self, name):
-        return '.'.join(self._name_stack + [name])
+        return ".".join(self._name_stack + [name])
 
     def _encode(self, to_encode):
         if self._encoding:
@@ -540,30 +538,32 @@ class Parser(object):
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
         module_parts = []
-        if filename != '__init__.py':
+        if filename != "__init__.py":
             module_part = os.path.splitext(filename)[0]
             module_parts = [module_part]
         module_parts = collections.deque(module_parts)
-        while os.path.isfile(os.path.join(directory, '__init__.py')):
+        while os.path.isfile(os.path.join(directory, "__init__.py")):
             directory, module_part = os.path.split(directory)
             if module_part:
                 module_parts.appendleft(module_part)
 
-        module_name = '.'.join(module_parts)
+        module_name = ".".join(module_parts)
         node = astroid.MANAGER.ast_from_file(file_path, module_name)
         return self.parse(node)
 
     def parse_assign(self, node):
-        doc = ''
+        doc = ""
         doc_node = node.next_sibling()
-        if (isinstance(doc_node, astroid.nodes.Expr)
-                and isinstance(doc_node.value, astroid.nodes.Const)):
+        if isinstance(doc_node, astroid.nodes.Expr) and isinstance(
+            doc_node.value, astroid.nodes.Const
+        ):
             doc = doc_node.value.value
 
-        type_ = 'data'
-        if (isinstance(node.scope(), astroid.nodes.ClassDef)
-                or astroid_utils.is_constructor(node.scope())):
-            type_ = 'attribute'
+        type_ = "data"
+        if isinstance(
+            node.scope(), astroid.nodes.ClassDef
+        ) or astroid_utils.is_constructor(node.scope()):
+            type_ = "attribute"
 
         assign_value = astroid_utils.get_assign_value(node)
         if not assign_value:
@@ -571,25 +571,25 @@ class Parser(object):
 
         target, value = assign_value
         data = {
-            'type': type_,
-            'name': target,
-            'full_name': self._get_full_name(target),
-            'doc': self._encode(doc),
-            'value': value,
-            'from_line_no': node.fromlineno,
-            'to_line_no': node.tolineno,
+            "type": type_,
+            "name": target,
+            "full_name": self._get_full_name(target),
+            "doc": self._encode(doc),
+            "value": value,
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
         }
 
         return [data]
 
     def parse_classdef(self, node, data=None):
-        type_ = 'class'
+        type_ = "class"
         if astroid_utils.is_exception(node):
-            type_ = 'exception'
+            type_ = "exception"
 
-        args = ''
+        args = ""
         try:
-            constructor = node.lookup('__init__')[1]
+            constructor = node.lookup("__init__")[1]
         except IndexError:
             pass
         else:
@@ -599,34 +599,34 @@ class Parser(object):
         basenames = list(astroid_utils.get_full_basenames(node.bases, node.basenames))
 
         data = {
-            'type': type_,
-            'name': node.name,
-            'full_name': self._get_full_name(node.name),
-            'args': args,
-            'bases': basenames,
-            'doc': self._encode(node.doc or ''),
-            'from_line_no': node.fromlineno,
-            'to_line_no': node.tolineno,
-            'children': [],
+            "type": type_,
+            "name": node.name,
+            "full_name": self._get_full_name(node.name),
+            "args": args,
+            "bases": basenames,
+            "doc": self._encode(node.doc or ""),
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
+            "children": [],
         }
 
         self._name_stack.append(node.name)
         for child in node.get_children():
             child_data = self.parse(child)
             if child_data:
-                data['children'].extend(child_data)
+                data["children"].extend(child_data)
         self._name_stack.pop()
 
         return [data]
 
     def _parse_property(self, node):
         data = {
-            'type': 'attribute',
-            'name': node.name,
-            'full_name': self._get_full_name(node.name),
-            'doc': self._encode(node.doc or ''),
-            'from_line_no': node.fromlineno,
-            'to_line_no': node.tolineno,
+            "type": "attribute",
+            "name": node.name,
+            "full_name": self._get_full_name(node.name),
+            "doc": self._encode(node.doc or ""),
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
         }
 
         return [data]
@@ -637,28 +637,28 @@ class Parser(object):
         if astroid_utils.is_decorated_with_property_setter(node):
             return []
 
-        type_ = 'function' if node.type == 'function' else 'method'
+        type_ = "function" if node.type == "function" else "method"
 
         data = {
-            'type': type_,
-            'name': node.name,
-            'full_name': self._get_full_name(node.name),
-            'args': node.args.as_string(),
-            'doc': self._encode(node.doc or ''),
-            'from_line_no': node.fromlineno,
-            'to_line_no': node.tolineno,
+            "type": type_,
+            "name": node.name,
+            "full_name": self._get_full_name(node.name),
+            "args": node.args.as_string(),
+            "doc": self._encode(node.doc or ""),
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
         }
 
-        if type_ == 'method':
-            data['method_type'] = node.type
+        if type_ == "method":
+            data["method_type"] = node.type
 
         result = [data]
 
-        if node.name == '__init__':
+        if node.name == "__init__":
             for child in node.get_children():
                 if isinstance(child, astroid.Assign):
                     child_data = self.parse_assign(child)
-                    result.extend(data for data in child_data if data['doc'])
+                    result.extend(data for data in child_data if data["doc"])
 
         return result
 
@@ -666,15 +666,15 @@ class Parser(object):
         result = []
 
         for name, alias in node.names:
-            is_wildcard = (alias or name) == '*'
+            is_wildcard = (alias or name) == "*"
             full_name = self._get_full_name(alias or name)
             original_path = astroid_utils.get_full_import_name(node, alias or name)
 
             data = {
-                'type': 'placeholder',
-                'name': original_path if is_wildcard else (alias or name),
-                'full_name': full_name,
-                'original_path': original_path,
+                "type": "placeholder",
+                "name": original_path if is_wildcard else (alias or name),
+                "full_name": full_name,
+                "original_path": original_path,
             }
             result.append(data)
 
@@ -685,25 +685,25 @@ class Parser(object):
         if isinstance(node.path, list):
             path = node.path[0] if node.path else None
 
-        type_ = 'module'
+        type_ = "module"
         if node.package:
-            type_ = 'package'
+            type_ = "package"
 
         self._name_stack = [node.name]
         self._encoding = node.file_encoding
 
         data = {
-            'type': type_,
-            'name': node.name,
-            'full_name': node.name,
-            'doc': self._encode(node.doc or ''),
-            'children': [],
-            'file_path': path,
-            'encoding': node.file_encoding,
-            'all': astroid_utils.get_module_all(node),
+            "type": type_,
+            "name": node.name,
+            "full_name": node.name,
+            "doc": self._encode(node.doc or ""),
+            "children": [],
+            "file_path": path,
+            "encoding": node.file_encoding,
+            "all": astroid_utils.get_module_all(node),
         }
 
-        top_name = node.name.split('.', 1)[0]
+        top_name = node.name.split(".", 1)[0]
         for child in node.get_children():
             if node.package and astroid_utils.is_local_import_from(child, top_name):
                 child_data = self._parse_local_import_from(child)
@@ -711,7 +711,7 @@ class Parser(object):
                 child_data = self.parse(child)
 
             if child_data:
-                data['children'].extend(child_data)
+                data["children"].extend(child_data)
 
         return data
 
@@ -719,7 +719,7 @@ class Parser(object):
         data = {}
 
         node_type = node.__class__.__name__.lower()
-        parse_func = getattr(self, 'parse_' + node_type, None)
+        parse_func = getattr(self, "parse_" + node_type, None)
         if parse_func:
             data = parse_func(node)
         else:

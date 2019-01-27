@@ -18,7 +18,6 @@ else:
 
 
 class PythonParserTests(unittest.TestCase):
-
     def parse(self, source):
         node = astroid.extract_node(source)
         return Parser().parse(node)
@@ -29,16 +28,16 @@ class PythonParserTests(unittest.TestCase):
             pass
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], 'foo')
-        self.assertEqual(data['type'], 'function')
+        self.assertEqual(data["name"], "foo")
+        self.assertEqual(data["type"], "function")
 
     def test_parses_all(self):
         source = """
         __all__ = ['Foo', 5.0]
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], '__all__')
-        self.assertEqual(data['value'], ['Foo', 5.0])
+        self.assertEqual(data["name"], "__all__")
+        self.assertEqual(data["value"], ["Foo", 5.0])
 
     @pytest.mark.xfail(reason="Cannot parse list additions")
     def test_parses_all_with_list_addition(self):
@@ -46,8 +45,8 @@ class PythonParserTests(unittest.TestCase):
         __all__ = ['Foo'] + []
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], '__all__')
-        self.assertEqual(data['value'], ['Foo'])
+        self.assertEqual(data["name"], "__all__")
+        self.assertEqual(data["value"], ["Foo"])
 
     @pytest.mark.xfail(reason="Cannot parse list additions")
     def test_parses_all_with_name_addtion(self):
@@ -55,8 +54,8 @@ class PythonParserTests(unittest.TestCase):
         __all__ = ['Foo'] + bar.__all__
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], '__all__')
-        self.assertEqual(data['value'], ['Foo'])
+        self.assertEqual(data["name"], "__all__")
+        self.assertEqual(data["value"], ["Foo"])
 
     @pytest.mark.xfail(reason="Cannot parse list additions")
     def test_parses_all_with_multiple_name_addtions(self):
@@ -66,15 +65,15 @@ class PythonParserTests(unittest.TestCase):
         __all__ += ['foo']
         """
         data = self.parse(source)
-        self.assertEqual(data['name'], '__all__')
-        self.assertEqual(data['value'], ['foo'])
+        self.assertEqual(data["name"], "__all__")
+        self.assertEqual(data["value"], ["foo"])
         source = """
         __all__ = ['foo']
         __all__ = foo
         """
         data = self.parse(source)
-        self.assertEqual(data['name'], '__all__')
-        self.assertEqual(data['value'], [])
+        self.assertEqual(data["name"], "__all__")
+        self.assertEqual(data["value"], [])
 
     def test_parses_all_multiline(self):
         source = """
@@ -84,7 +83,7 @@ class PythonParserTests(unittest.TestCase):
         ]
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['value'], ['foo', 'bar'])
+        self.assertEqual(data["value"], ["foo", "bar"])
 
     @pytest.mark.xfail(reason="Cannot parse list additions")
     def test_parses_all_generator(self):
@@ -92,7 +91,7 @@ class PythonParserTests(unittest.TestCase):
         __all__ = [x for x in dir(token) if x[0] != '_'] + ['foo', 'bar']
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['value'], ['foo', 'bar'])
+        self.assertEqual(data["value"], ["foo", "bar"])
 
     def test_parses_name(self):
         source = "foo.bar"
@@ -103,58 +102,57 @@ class PythonParserTests(unittest.TestCase):
         value = [1, 2, 3, 4]
         source = "{} = {}".format(name, value)
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], name)
-        self.assertEqual(data['value'], value)
+        self.assertEqual(data["name"], name)
+        self.assertEqual(data["value"], value)
 
     def test_parses_nested_list(self):
         name = "__all__"
         value = [[1, 2], [3, 4]]
         source = "{} = {}".format(name, value)
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], name)
-        self.assertEqual(data['value'], value)
+        self.assertEqual(data["name"], name)
+        self.assertEqual(data["value"], value)
 
     def test_arguments(self):
         """Argument parsing of source"""
-        source=(
-            'def foobar(self, bar, baz=42, foo=True,\n'
-            '           *args, **kwargs):\n'
+        source = (
+            "def foobar(self, bar, baz=42, foo=True,\n"
+            "           *args, **kwargs):\n"
             '    "This is a docstring"\n'
-            '    return True\n'
+            "    return True\n"
         )
         data = self.parse(source)[0]
-        self.assertEqual(
-            data['args'],
-            'self, bar, baz=42, foo=True, *args, **kwargs'
-        )
+        self.assertEqual(data["args"], "self, bar, baz=42, foo=True, *args, **kwargs")
 
     def test_advanced_arguments(self):
         """Advanced argument parsing"""
-        source=(
+        source = (
             'def foobar(self, a, b, c=42, d="string", e=(1,2),\n'
             '           f={"a": True}, g=None, h=[1,2,3,4],\n'
-            '           i=dict(a=True), j=False, *args, **kwargs):\n'
+            "           i=dict(a=True), j=False, *args, **kwargs):\n"
             '    "This is a docstring"\n'
-            '    return True\n'
+            "    return True\n"
         )
         data = self.parse(source)[0]
         self.assertEqual(
-            data['args'],
-            ', '.join([
-                'self',
-                'a',
-                'b',
-                'c=42',
-                'd=\'string\'',
-                'e=(1, 2)',
-                'f={\'a\': True}',
-                'g=None',
-                'h=[1, 2, 3, 4]',
-                'i=dict(a=True)',
-                'j=False',
-                '*args',
-                '**kwargs',
-            ])
+            data["args"],
+            ", ".join(
+                [
+                    "self",
+                    "a",
+                    "b",
+                    "c=42",
+                    "d='string'",
+                    "e=(1, 2)",
+                    "f={'a': True}",
+                    "g=None",
+                    "h=[1, 2, 3, 4]",
+                    "i=dict(a=True)",
+                    "j=False",
+                    "*args",
+                    "**kwargs",
+                ]
+            ),
         )
 
     def test_dict_key_assignment(self):
@@ -166,7 +164,7 @@ class PythonParserTests(unittest.TestCase):
         MY_DICT['key2'] = 'value2'
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], 'MY_DICT')
+        self.assertEqual(data["name"], "MY_DICT")
 
     def test_list_index_assignment(self):
         """Ignore assignment to indexes."""
@@ -177,4 +175,4 @@ class PythonParserTests(unittest.TestCase):
         COLOUR[2] = 255
         """
         data = self.parse(source)[0]
-        self.assertEqual(data['name'], 'COLOUR')
+        self.assertEqual(data["name"], "COLOUR")

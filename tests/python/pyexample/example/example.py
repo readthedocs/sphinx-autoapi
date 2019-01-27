@@ -38,8 +38,7 @@ class Foo(object):
         """This method should parse okay"""
         return True
 
-    def method_multiline(self, foo=None, bar=None,
-                         baz=None):
+    def method_multiline(self, foo=None, bar=None, baz=None):
         """This is on multiple lines, but should parse okay too
 
         pydocstyle gives us lines of source. Test if this means that multiline

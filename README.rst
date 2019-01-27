@@ -11,6 +11,9 @@ Sphinx AutoAPI
 .. image:: https://ci.appveyor.com/api/projects/status/5nd33gp2eq7411t1?svg=true
    :target: https://ci.appveyor.com/project/ericholscher/sphinx-autoapi
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+￼   :target: https://github.com/ambv/black
+
 .. warning:: This is a pre-release version. Some or all features might not work yet.
 
 Sphinx AutoAPI aims to provide "autodoc" or "javadoc" style documentation for Sphinx.
