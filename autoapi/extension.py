@@ -238,7 +238,6 @@ def setup(app):
     app.add_autodocumenter(documenters.AutoapiAttributeDocumenter)
     app.add_autodocumenter(documenters.AutoapiModuleDocumenter)
     app.add_autodocumenter(documenters.AutoapiExceptionDocumenter)
-    app.add_stylesheet('autoapi.css')
     directives.register_directive('autoapi-nested-parse', NestedParse)
     directives.register_directive('autoapisummary', AutoapiSummary)
     app.setup_extension('sphinx.ext.autosummary')
