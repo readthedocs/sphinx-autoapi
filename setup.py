@@ -18,7 +18,7 @@ setup(
         'astroid;python_version>="3"',
         'astroid<2;python_version<"3"',
         'PyYAML',
-        'sphinx',
+        'sphinx>=1.6',
         'sphinxcontrib-golangdomain',
         'sphinxcontrib-dotnetdomain',
         'unidecode',

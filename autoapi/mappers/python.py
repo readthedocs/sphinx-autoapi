@@ -280,22 +280,16 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
 
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
-            try:
-                if lines:
-                    self.app.emit(
-                        'autodoc-process-docstring',
-                        cls.type,
-                        obj.name,
-                        None,  # object
-                        None,  # options
-                        lines,
-                    )
-            except KeyError:
-                if (sphinx.version_info >= (1, 6)
-                        and 'autodoc-process-docstring' in self.app.events.events):
-                    raise
-            else:
-                obj.docstring = '\n'.join(lines)
+            if lines and 'autodoc-process-docstring' in self.app.events.events:
+                self.app.emit(
+                    'autodoc-process-docstring',
+                    cls.type,
+                    obj.name,
+                    None,  # object
+                    None,  # options
+                    lines,
+                )
+            obj.docstring = '\n'.join(lines)
 
             for child_data in data.get('children', []):
                 for child_obj in self.create_class(child_data, options=options,

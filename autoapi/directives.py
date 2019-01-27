@@ -10,13 +10,7 @@ from docutils import nodes
 from sphinx import addnodes
 import sphinx.ext.autosummary
 from sphinx.util.nodes import nested_parse_with_titles
-try:
-    from sphinx.util.rst import escape
-except ImportError:
-    # sphinx.util.rst is available in sphinx >=1.4.7 only.
-    # This implementation is taken from sphinx 1.6.5.
-    def escape(text):
-        return re.compile(r'([!-/:-@\[-`{-~])').sub(r'\\\1', text)
+from sphinx.util.rst import escape
 
 
 class AutoapiSummary(Directive):

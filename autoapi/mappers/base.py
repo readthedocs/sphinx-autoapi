@@ -238,10 +238,7 @@ class SphinxMapperBase(object):
 
                         files_to_read.append(filename)
 
-        if sphinx.version_info >= (1, 6):
-            status_iterator = sphinx.util.status_iterator
-        else:
-            status_iterator = self.app.status_iterator
+        status_iterator = sphinx.util.status_iterator
 
         for _path in status_iterator(
                 files_to_read,

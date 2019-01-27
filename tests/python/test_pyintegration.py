@@ -77,8 +77,6 @@ class TestSimpleModule(object):
         assert 'Foo' in index_file
         assert 'Meta' in index_file
 
-    @pytest.mark.skipif(sphinx.version_info < (1, 4),
-                      reason="Cannot override extensions in Sphinx 1.3")
     def test_napoleon_integration_not_loaded(self, builder):
 
         example_path = '_build/text/autoapi/example/index.txt'
@@ -91,8 +89,6 @@ class TestSimpleModule(object):
         assert 'Returns' in example_file
 
 
-@pytest.mark.skipif(sphinx.version_info < (1, 4),
-                    reason="Cannot override extensions in Sphinx 1.3")
 def test_napoleon_integration_loaded(builder):
     confoverrides = {
         'extensions': [
