@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sphinx-autoapi',
-    version='0.6.2',
+    version='0.7.0',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
     url='http://github.com/rtfd/sphinx-autoapi',
