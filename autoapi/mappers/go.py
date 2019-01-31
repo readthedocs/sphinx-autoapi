@@ -173,6 +173,7 @@ class GoPackage(GoPythonMapper):
     type = "package"
     ref_directive = "pkg"
     top_level_object = True
+    _RENDER_LOG_LEVEL = "VERBOSE"
 
 
 class GoType(GoPythonMapper):

@@ -52,6 +52,7 @@ class PythonMapperBase(object):
     type = "base"
     # Create a page in the output for this object.
     top_level_object = False
+    _RENDER_LOG_LEVEL = "DEBUG"
 
     def __init__(self, obj, options=None, jinja_env=None, url_root=None):
         self.obj = obj
@@ -63,6 +64,8 @@ class PythonMapperBase(object):
         self.url_root = url_root
 
     def render(self, **kwargs):
+        LOGGER.log(self._RENDER_LOG_LEVEL, "Rendering %s", self.id)
+
         ctx = {}
         try:
             template = self.jinja_env.get_template(

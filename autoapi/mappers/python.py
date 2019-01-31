@@ -415,6 +415,7 @@ class PythonAttribute(PythonData):
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
     ref_directive = "mod"
+    _RENDER_LOG_LEVEL = "VERBOSE"
 
     def __init__(self, obj, **kwargs):
         super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
