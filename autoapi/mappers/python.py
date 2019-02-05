@@ -90,6 +90,11 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
         if child["type"] != "placeholder":
             continue
 
+        if child["original_path"] in modules:
+            module["children"].remove(child)
+            children.pop(child["name"])
+            continue
+
         imported_from, original_name = child["original_path"].rsplit(".", 1)
         if imported_from in visit_path:
             msg = "Cannot resolve cyclic import: {0}, {1}".format(

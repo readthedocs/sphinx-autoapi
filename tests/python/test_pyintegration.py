@@ -5,6 +5,7 @@ import shutil
 import pytest
 import sphinx
 from sphinx.application import Sphinx
+import sphinx.util.logging
 
 
 @pytest.fixture(scope="class")
@@ -131,6 +132,14 @@ class TestSimplePackage(object):
         assert "example.foo" in index_file
         assert "Foo" in index_file
         assert "module_level_method" in index_file
+
+
+def test_simple_no_false_warnings(builder, caplog):
+    logger = sphinx.util.logging.getLogger("autoapi")
+    logger.logger.addHandler(caplog.handler)
+    builder("pypackageexample")
+
+    assert "Cannot resolve" not in caplog.text
 
 
 def _test_class_content(builder, class_content):
