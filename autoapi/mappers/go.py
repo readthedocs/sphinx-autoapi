@@ -23,7 +23,7 @@ class GoSphinxMapper(SphinxMapperBase):
 
         """
         for _dir in dirs:
-            data = self.read_file(_dir)
+            data = self.read_file(_dir, ignore=ignore)
             if data:
                 self.paths[_dir] = data
 
@@ -31,12 +31,22 @@ class GoSphinxMapper(SphinxMapperBase):
         """Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
+        :param \**kwargs:
+            * ignore (``list``): List of file patterns to ignore
         """
         # TODO support JSON here
         # TODO sphinx way of reporting errors in logs?
 
+        parser_command = ["godocjson"]
+
+        _ignore = kwargs.get("ignore")
+        if _ignore:
+            parser_command.extend(["-e", "{0}".format("|".join(_ignore))])
+
+        parser_command.append(path)
+
         try:
-            parsed_data = json.loads(subprocess.check_output(["godocjson", path]))
+            parsed_data = json.loads(subprocess.check_output(parser_command))
             return parsed_data
         except IOError:
             LOGGER.warning("Error reading file: {0}".format(path))
