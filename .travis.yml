@@ -10,6 +10,8 @@ matrix:
       env: TOXENV=docs
     - python: 3.6
       env: TOXENV=lint
+    - python: 3.6
+      env: TOXENV=formatting
 install:
   - pip install tox-travis
 script:
