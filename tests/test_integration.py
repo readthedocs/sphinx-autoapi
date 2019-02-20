@@ -54,7 +54,7 @@ class JavaScriptTests(LanguageIntegrationTests):
 
 
 class GoTests(LanguageIntegrationTests):
-    def _go_read(self, path):
+    def _go_read(self, path, **kwargs):
         return json.load(open("../fixtures/go.json"))
 
     @patch("autoapi.mappers.go.GoSphinxMapper.read_file", _go_read)
