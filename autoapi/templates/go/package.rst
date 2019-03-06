@@ -4,7 +4,7 @@
 {{ "=" * obj.name|length }}
 
 {% block toc %}
-  {%- if obj.children %}
+  {% if obj.children %}
 
 {# TODO Make this work
 .. toctree::
@@ -12,10 +12,10 @@
 
    {% for item in obj.children|sort %}
    /autoapi/{{ item.id.split('.')|join('/') }}/index
-   {%- endfor %}
+   {% endfor %}
 #}
 
-  {%- endif %}
+  {% endif %}
 {% endblock %}
 
 {% if obj.docstring %}
@@ -23,10 +23,10 @@
 {% endif %}
 
 {% block content %}
-  {%- for obj_item in obj.children|sort %}
+  {% for obj_item in obj.children|sort %}
 
 {% macro render() %}{{ obj_item.render() }}{% endmacro %}
 {{ render()|indent(0) }}
 
-  {%- endfor %}
+  {% endfor %}
 {% endblock %}

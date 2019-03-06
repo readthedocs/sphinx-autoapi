@@ -71,7 +71,7 @@ class DotNetTests(LanguageIntegrationTests):
         return json.load(open("../fixtures/dotnet.json"))
 
     # Mock this because it's slow otherwise
-    def _dotnet_load(self, patterns, dirs, ignore=[]):
+    def _dotnet_load(self, patterns, dirs, ignore=()):
         data = self.read_file(path="inmem")
         self.paths["inmem"] = data
 

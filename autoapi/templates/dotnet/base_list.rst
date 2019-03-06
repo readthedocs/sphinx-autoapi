@@ -41,11 +41,11 @@
 
 {% block content %}
 
-{%- macro display_type(item_type) %}
+{% macro display_type(item_type) %}
 
     .. rubric:: {{ item_type.title() }}
 
-{%- for obj_item in obj.item_map.get(item_type, []) %}
+{% for obj_item in obj.item_map.get(item_type, []) %}
 {% macro render() %}{{ obj_item.summary }}{% endmacro %}
 
     {{ obj_item.type }} :dn:{{ obj_item.ref_directive }}:`{{ obj_item.ref_short_name }}`
@@ -53,14 +53,14 @@
 
         {{ render()|indent(8) }}
 
-{%- endfor %}
-{%- endmacro %}
+{% endfor %}
+{% endmacro %}
 
 .. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
-{%- for item_type in obj.item_map.keys() %}
+{% for item_type in obj.item_map.keys() %}
 {{ display_type(item_type) }}
-{%- endfor %}
+{% endfor %}
 
 
 {% endblock %}

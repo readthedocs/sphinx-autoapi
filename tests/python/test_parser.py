@@ -9,7 +9,7 @@ from textwrap import dedent
 import astroid
 import pytest
 
-from autoapi.mappers.python import Parser
+from autoapi.mappers.python.parser import Parser
 
 if sys.version_info < (3, 0):
     from StringIO import StringIO

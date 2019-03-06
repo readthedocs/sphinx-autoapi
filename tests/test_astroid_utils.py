@@ -1,5 +1,5 @@
 import astroid
-from autoapi.mappers import astroid_utils
+from autoapi.mappers.python import astroid_utils
 import pytest
 
 

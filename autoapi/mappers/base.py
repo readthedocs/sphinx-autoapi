@@ -177,9 +177,8 @@ class SphinxMapperBase(object):
 
         self.jinja_env = Environment(
             loader=FileSystemLoader(template_paths),
-            # Kill this to fix rendering for now
-            # trim_blocks=True,
-            # lstrip_blocks=True,
+            trim_blocks=True,
+            lstrip_blocks=True,
         )
 
         def _wrapped_prepare(value):

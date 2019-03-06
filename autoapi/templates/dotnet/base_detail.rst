@@ -6,23 +6,24 @@
 {% endblock %}
 
 {% block summary %}
-  {%- if obj.summary %}
+  {% if obj.summary %}
 
 {{ obj.summary }}
 
-  {%- endif %}
+  {% endif %}
 {% endblock %}
 
-{%- if obj.namespace %}
+{% if obj.namespace %}
 Namespace
     :dn:ns:`{{ obj.namespace }}`
-{%- endif %}
-{%- if obj.assemblies %}
+
+{% endif %}
+{% if obj.assemblies %}
 Assemblies
-  {%- for assembly in obj.assemblies %}
+  {% for assembly in obj.assemblies %}
     * {{ assembly }}
-  {%- endfor %}
-{%- endif %}
+  {% endfor %}
+{% endif %}
 
 ----
 
@@ -31,14 +32,14 @@ Assemblies
 
 {% block inheritance %}
 
-{%- if obj.inheritance %}
+{% if obj.inheritance %}
 
 Inheritance Hierarchy
 ---------------------
 
 {% for item in obj.inheritance %}
 * :dn:{{ item.ref_directive }}:`{{ item.ref_name }}`
-    {%- endfor %}
+    {% endfor %}
 * :dn:{{ obj.ref_directive }}:`{{ obj.ref_name }}`
 {% endif %}
 
@@ -67,8 +68,8 @@ Syntax
 
 .. dn:{{ obj.ref_type }}:: {{ obj.name }}
 
-{%- for item_type in obj.item_map.keys() %}
-{%- if item_type in obj.item_map %}
+{% for item_type in obj.item_map.keys() %}
+{% if item_type in obj.item_map %}
 
 {{ item_type.title() }}
 {{ "-" * item_type|length }}
@@ -81,7 +82,7 @@ Syntax
     {{ obj_item.render()|indent(4) }}
     {% endfor %}
 
-{%- endif %}
-{%- endfor %}
+{% endif %}
+{% endfor %}
 
 {% endblock %}
