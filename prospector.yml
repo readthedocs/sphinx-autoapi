@@ -5,11 +5,10 @@ doc-warnings: true
 
 ignore-paths:
   - docs
+  - tests
 
 pep8:
-    full: true
-    options:
-        max-line-length: 100
+  run: false
 
 pylint:
   max-line-length: 100
