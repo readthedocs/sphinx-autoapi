@@ -1,5 +1,6 @@
 import collections
 import os
+import sys
 
 import astroid
 from . import astroid_utils
@@ -62,7 +63,15 @@ class Parser(object):
         if not assign_value:
             return []
 
-        target, value = assign_value
+        target = assign_value[0]
+        value = None
+        try:
+            value = self._encode(assign_value[1])
+        except UnicodeDecodeError:
+            # Ignore binary data on Python 2.7
+            if sys.version_info[0] >= 3:
+                raise
+
         data = {
             "type": type_,
             "name": target,
