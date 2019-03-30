@@ -1,21 +1,17 @@
+dist: xenial
 language: python
-python:
-  - 2.7
-  - 3.5
-  - 3.6
-sudo: false
-matrix:
-  include:
-    - python: 3.6
-      env: TOXENV=docs
-    - python: 3.6
-      env: TOXENV=lint
-    - python: 3.6
-      env: TOXENV=formatting
 install:
   - pip install tox-travis
 script:
   - tox
+matrix:
+  include:
+    - python: 3.7
+      env: TOXENV=docs
+    - python: 3.7
+      env: TOXENV=lint
+    - python: 3.7
+      env: TOXENV=formatting
 notifications:
   slack:
     rooms:
