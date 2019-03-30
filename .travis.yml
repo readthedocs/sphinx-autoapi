@@ -4,6 +4,11 @@ install:
   - pip install tox-travis
 script:
   - tox
+-python:
+  - 2.7
+  - 3.5
+  - 3.6
+  - 3.7
 matrix:
   include:
     - python: 3.7
