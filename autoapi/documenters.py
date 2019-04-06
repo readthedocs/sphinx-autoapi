@@ -14,10 +14,11 @@ from . import utils
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
         if hasattr(self.env.app, "registry") and hasattr(
-            self.env.app.registry, "autodocattrgettrs"
+            self.env.app.registry, "autodoc_attrgettrs"
         ):
             attrgetters = self.env.app.registry.autodoc_attrgettrs
         else:
+            # Needed for Sphinx 1.6
             attrgetters = autodoc.AutoDirective._special_attrgetters
 
         for type_, func in attrgetters.items():
