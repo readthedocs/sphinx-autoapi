@@ -1,6 +1,7 @@
 import io
 import os
 import shutil
+import sys
 
 import pytest
 import sphinx
@@ -83,6 +84,31 @@ class TestSimpleModule(object):
         assert "Args" in example_file
 
         assert "Returns" in example_file
+
+
+@pytest.mark.skipif(
+    sys.version_info < (3,), reason="Ellipsis is invalid method contents in Python 2"
+)
+class TestSimpleStubModule(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyiexample")
+
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "class example.Foo" in example_file
+        assert "class Meta" in example_file
+        assert "Another class var docstring" in example_file
+        assert "A class var without a value." in example_file
+        assert "method_okay(self, foo=None, bar=None)" in example_file
+        assert "method_multiline(self, foo=None, bar=None, baz=None)" in example_file
+        assert "method_without_docstring(self)" in example_file
+
+        # Are constructor arguments from the class docstring parsed?
+        assert "Set an attribute" in example_file
 
 
 def test_napoleon_integration_loaded(builder):

@@ -42,7 +42,7 @@ class Parser(object):
                 module_parts.appendleft(module_part)
 
         module_name = ".".join(module_parts)
-        node = astroid.MANAGER.ast_from_file(file_path, module_name)
+        node = astroid.MANAGER.ast_from_file(file_path, module_name, source=True)
         return self.parse(node)
 
     def parse_assign(self, node):

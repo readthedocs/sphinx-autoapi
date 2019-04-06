@@ -6,7 +6,7 @@ from .mappers import (
 )
 
 default_file_mapping = {
-    "python": ["*.py"],
+    "python": ["*.py", "*.pyi"],
     "dotnet": ["project.json", "*.csproj", "*.vbproj"],
     "go": ["*.go"],
     "javascript": ["*.js"],
