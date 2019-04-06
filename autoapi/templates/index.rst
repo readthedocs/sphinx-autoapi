@@ -1,18 +1,15 @@
-Sphinx AutoAPI Index
-####################
+API Reference
+=============
 
-This page is the top-level of your generated API documentation.
-Below is a list of all items that are documented here.
+This page contains auto-generated API reference documentation [#f1]_.
 
 .. toctree::
-   :includehidden:
-   :glob:
-   :maxdepth: 1
+   :titlesonly:
 
-   {# Force whitespace #}
-
-   {%- for page in pages %}
-   {%- if page.top_level_object %}
+   {% for page in pages %}
+   {% if page.top_level_object and page.display %}
    {{ page.include_path }}
-   {%- endif %}
-   {%- endfor %}
+   {% endif %}
+   {% endfor %}
+
+.. [#f1] Created with `sphinx-autoapi <https://github.com/rtfd/sphinx-autoapi>`_

@@ -141,6 +141,14 @@ class PythonMapperBase(object):
         return "/".join(parts)
 
     @property
+    def display(self):
+        """Whether to display this object or not.
+        
+        :type: bool
+        """
+        return True
+
+    @property
     def ref_type(self):
         return self.type
 
