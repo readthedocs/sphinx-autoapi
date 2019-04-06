@@ -68,7 +68,7 @@ class TestSimpleModule(object):
         with io.open(index_path, encoding="utf8") as index_handle:
             index_file = index_handle.read()
 
-        assert "Sphinx AutoAPI Index" in index_file
+        assert "API Reference" in index_file
 
         assert "Foo" in index_file
         assert "Meta" in index_file
@@ -128,7 +128,7 @@ class TestSimplePackage(object):
         with io.open(index_path, encoding="utf8") as index_handle:
             index_file = index_handle.read()
 
-        assert "Sphinx AutoAPI Index" in index_file
+        assert "API Reference" in index_file
         assert "example.foo" in index_file
         assert "Foo" in index_file
         assert "module_level_method" in index_file

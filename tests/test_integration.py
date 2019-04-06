@@ -101,7 +101,7 @@ class IntegrationTests(LanguageIntegrationTests):
 
 class TOCTreeTests(LanguageIntegrationTests):
     def test_toctree_overrides(self):
-        self._run_test("toctreeexample", "_build/text/index.txt", "AutoAPI Index")
+        self._run_test("toctreeexample", "_build/text/index.txt", "API Reference")
 
     def test_toctree_domain_insertion(self):
         """
