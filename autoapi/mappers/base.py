@@ -83,7 +83,7 @@ class PythonMapperBase(object):
 
     @property
     def rendered(self):
-        "Shortcut to render an object in templates."
+        """Shortcut to render an object in templates."""
         return self.render()
 
     def get_absolute_path(self):

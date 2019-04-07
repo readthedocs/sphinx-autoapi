@@ -1,9 +1,17 @@
+.. _autodoc-directives:
+
 Autodoc-Style Directives
-------------------------
+========================
 
 You can opt to write API documentation yourself using autodoc style directives.
 These directives work similarly to autodoc,
-but docstring are retrieved through static analysis instead of through imports.
+but docstrings are retrieved through static analysis instead of through imports.
+
+.. seealso::
+
+    When transitioning to autodoc-style documentation,
+    you may want to turn the :confval:`autoapi_generate_api_docs`
+    option off so that automatic API documentation is no longer generated.
 
 To use these directives you will need to enable the autodoc extension
 in your Sphinx project's ``conf.py``:

@@ -1,6 +1,25 @@
-Sphinx AutoAPI Reference Design
-================================
+Design Reference
+================
 
+Python
+------
+
+When choosing what to document,
+AutoAPI aims to document anything that is accessible through the actual package
+when loaded in Python.
+For example if a function is imported from a submodule into a package,
+that function is documented in both the submodule and the package.
+There are some exceptions to this rule:
+
+* Anything that is imported into a module is not documented.
+  Usually a module is where implementations exist.
+  Therefore an import of something is usually for the usage of the implementation,
+  and not as something to be accessed publicly.
+  
+
+
+.NET
+----
 This document talks about the design of a .NET Sphinx integration.
 This will include a mechanism for generating Javadoc style API references automatically.
 We will describe decisions that lead to specific implementation details.

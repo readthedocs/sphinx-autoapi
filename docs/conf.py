@@ -20,15 +20,16 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['autoapi.extension']
+extensions = ['autoapi.extension', 'sphinx.ext.intersphinx']
 
 autoapi_type = 'python'
 autoapi_dirs = ['../autoapi']
-autoapi_file_pattern = '*.py'
-autoapi_options = ['members', 'undoc-members', 'private-members']
+autoapi_generate_api_docs = False
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+intersphinx_mapping = {
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+    'python': ('https://docs.python.org/3/', None),
+}
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
