@@ -136,4 +136,4 @@ License
 -------
 
 This project is licensed under the MIT License.
-See the `LICENSE.rst <LICENSE.rst>` file for details.
+See the `LICENSE.rst <LICENSE.rst>`_ file for details.
