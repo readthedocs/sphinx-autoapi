@@ -39,56 +39,12 @@ class PythonParserTests(unittest.TestCase):
         self.assertEqual(data["name"], "__all__")
         self.assertEqual(data["value"], ["Foo", 5.0])
 
-    @pytest.mark.xfail(reason="Cannot parse list additions")
-    def test_parses_all_with_list_addition(self):
-        source = """
-        __all__ = ['Foo'] + []
-        """
-        data = self.parse(source)[0]
-        self.assertEqual(data["name"], "__all__")
-        self.assertEqual(data["value"], ["Foo"])
-
-    @pytest.mark.xfail(reason="Cannot parse list additions")
-    def test_parses_all_with_name_addtion(self):
-        source = """
-        __all__ = ['Foo'] + bar.__all__
-        """
-        data = self.parse(source)[0]
-        self.assertEqual(data["name"], "__all__")
-        self.assertEqual(data["value"], ["Foo"])
-
-    @pytest.mark.xfail(reason="Cannot parse list additions")
-    def test_parses_all_with_multiple_name_addtions(self):
-        source = """
-        __all__ = foo + bar
-        __all__ += boop
-        __all__ += ['foo']
-        """
-        data = self.parse(source)
-        self.assertEqual(data["name"], "__all__")
-        self.assertEqual(data["value"], ["foo"])
-        source = """
-        __all__ = ['foo']
-        __all__ = foo
-        """
-        data = self.parse(source)
-        self.assertEqual(data["name"], "__all__")
-        self.assertEqual(data["value"], [])
-
     def test_parses_all_multiline(self):
         source = """
         __all__ = [
             'foo',
             'bar',
         ]
-        """
-        data = self.parse(source)[0]
-        self.assertEqual(data["value"], ["foo", "bar"])
-
-    @pytest.mark.xfail(reason="Cannot parse list additions")
-    def test_parses_all_generator(self):
-        source = """
-        __all__ = [x for x in dir(token) if x[0] != '_'] + ['foo', 'bar']
         """
         data = self.parse(source)[0]
         self.assertEqual(data["value"], ["foo", "bar"])
