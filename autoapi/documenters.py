@@ -42,7 +42,7 @@ class AutoapiDocumenter(autodoc.Documenter):
         for num_splits in range(max_splits, -1, -1):
             path_stack = list(reversed(self.fullname.rsplit(".", num_splits)))
             objects = self.env.autoapi_mapper.objects
-            parent = objects[path_stack.pop()]
+            parent = objects.get(path_stack.pop())
             while parent and path_stack:
                 parent = self.get_attr(parent, path_stack.pop(), None)
 
