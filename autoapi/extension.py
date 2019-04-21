@@ -128,7 +128,12 @@ def doctree_read(app, doctree):
         insert = True
         nodes = doctree.traverse(toctree)
         toc_entry = "%s/index" % app.config.autoapi_root
-        if not nodes:
+        add_entry = (
+            nodes
+            and app.config.autoapi_generate_api_docs
+            and app.config.autoapi_add_toctree_entry
+        )
+        if not add_entry:
             return
         # Capture all existing toctree entries
         for node in nodes:
