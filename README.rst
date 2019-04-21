@@ -63,7 +63,7 @@ AutoAPI can be installed through pip:
 
 Next, add and configure AutoAPI in your Sphinx project's `conf.py`.
 Other languages may require
-[further configuration](https://sphinx-autoapi.readthedocs.io/en/latest/tutorials.html#setting-up-automatic-api-documentation-generation):
+`further configuration <https://sphinx-autoapi.readthedocs.io/en/latest/tutorials.html#setting-up-automatic-api-documentation-generation>`_:
 
 .. code-block:: python
 
