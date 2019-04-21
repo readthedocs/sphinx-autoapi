@@ -86,9 +86,6 @@ class PythonMapperBase(object):
         """Shortcut to render an object in templates."""
         return self.render()
 
-    def get_absolute_path(self):
-        return "/autoapi/{type}/{name}".format(type=self.type, name=self.name)
-
     def get_context_data(self):
         return {"obj": self}
 
