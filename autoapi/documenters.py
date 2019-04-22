@@ -92,6 +92,16 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
     def format_args(self):
         return "(" + self.object.args + ")"
 
+    def format_signature(self):
+        # Set "introspected" attributes at the last possible minute
+        if not self.args:
+            self.args = self.object.args
+
+        if not self.retann:
+            self.retann = self.object.return_annotation
+
+        return super(AutoapiFunctionDocumenter, self).format_signature()
+
 
 class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
     objtype = "apiclass"
@@ -130,6 +140,16 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
 
     def format_args(self):
         return "(" + self.object.args + ")"
+
+    def format_signature(self):
+        # Set "introspected" attributes at the last possible minute
+        if not self.args:
+            self.args = self.object.args
+
+        if not self.retann:
+            self.retann = self.object.return_annotation
+
+        return super(AutoapiMethodDocumenter, self).format_signature()
 
     def import_object(self):
         result = super(AutoapiMethodDocumenter, self).import_object()
