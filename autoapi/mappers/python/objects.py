@@ -130,8 +130,20 @@ class PythonFunction(PythonPythonMapper):
     is_callable = True
     ref_directive = "func"
 
+    def __init__(self, obj, **kwargs):
+        super(PythonFunction, self).__init__(obj, **kwargs)
 
-class PythonMethod(PythonPythonMapper):
+        self.return_annotation = obj["return_annotation"]
+        """The type annotation for the return type of this function.
+
+        This will be ``None`` if an annotation
+        or annotation comment was not given.
+
+        :type: str or None
+        """
+
+
+class PythonMethod(PythonFunction):
     type = "method"
     is_callable = True
     ref_directive = "meth"
@@ -174,6 +186,14 @@ class PythonData(PythonPythonMapper):
         """The value of this attribute.
 
         This will be ``None`` if the value is not constant.
+
+        :type: str or None
+        """
+        self.annotation = obj.get("annotation")
+        """The type annotation of this attribute.
+
+        This will be ``None`` if an annotation
+        or annotation comment was not given.
 
         :type: str or None
         """

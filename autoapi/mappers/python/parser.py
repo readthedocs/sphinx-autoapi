@@ -45,6 +45,9 @@ class Parser(object):
         node = astroid.MANAGER.ast_from_file(file_path, module_name, source=True)
         return self.parse(node)
 
+    def parse_annassign(self, node):
+        return self.parse_assign(node)
+
     def parse_assign(self, node):
         doc = ""
         doc_node = node.next_sibling()
@@ -72,6 +75,8 @@ class Parser(object):
             if sys.version_info[0] >= 3:
                 raise
 
+        annotation = astroid_utils.get_assign_annotation(node)
+
         data = {
             "type": type_,
             "name": target,
@@ -80,6 +85,7 @@ class Parser(object):
             "value": value,
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
+            "annotation": annotation,
         }
 
         return [data]
@@ -141,6 +147,13 @@ class Parser(object):
 
         type_ = "function" if node.type == "function" else "method"
 
+        return_annotation = None
+        if node.returns:
+            return_annotation = node.returns.as_string()
+        # Python 2 has no support for type annotations, so use getattr
+        elif getattr(node, "type_comment_returns", None):
+            return_annotation = node.type_comment_returns.as_string()
+
         data = {
             "type": type_,
             "name": node.name,
@@ -149,6 +162,7 @@ class Parser(object):
             "doc": self._encode(node.doc or ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
+            "return_annotation": return_annotation,
         }
 
         if type_ == "method":
@@ -158,7 +172,7 @@ class Parser(object):
 
         if node.name == "__init__":
             for child in node.get_children():
-                if isinstance(child, astroid.Assign):
+                if isinstance(child, (astroid.nodes.Assign, astroid.nodes.AnnAssign)):
                     child_data = self.parse_assign(child)
                     result.extend(data for data in child_data if data["doc"])
 

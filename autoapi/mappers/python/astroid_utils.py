@@ -151,14 +151,19 @@ def get_assign_value(node):
     Assignments to multiple names are ignored, as per PEP 257.
 
     :param node: The node to get the assignment value from.
-    :type node: astroid.nodes.Assign
+    :type node: astroid.nodes.Assign or astroid.nodes.AnnAssign
 
     :returns: The name that is assigned to,
         and the value assigned to the name (if it can be converted).
     :rtype: tuple(str, object or None) or None
     """
-    if len(node.targets) == 1:
-        target = node.targets[0]
+    try:
+        targets = node.targets
+    except AttributeError:
+        targets = [node.target]
+
+    if len(targets) == 1:
+        target = targets[0]
         if isinstance(target, astroid.nodes.AssignName):
             name = target.name
         elif isinstance(target, astroid.nodes.AssignAttr):
@@ -168,6 +173,33 @@ def get_assign_value(node):
         return (name, _get_const_values(node.value))
 
     return None
+
+
+def get_assign_annotation(node):
+    """Get the type annotation of the assignment of the given node.
+
+    :param node: The node to get the annotation for.
+    :type node: astroid.nodes.Assign or astroid.nodes.AnnAssign
+
+    :returns: The type annotation as a string, or None if one does not exist.
+    :type: str or None
+    """
+    annotation = None
+
+    annotation_node = None
+    try:
+        annotation_node = node.annotation
+    except AttributeError:
+        # Python 2 has no support for type annotations, so use getattr
+        annotation_node = getattr(node, "type_annotation", None)
+
+    if annotation_node:
+        if isinstance(annotation_node, astroid.nodes.Const):
+            annotation = node.value
+        else:
+            annotation = annotation_node.as_string()
+
+    return annotation
 
 
 def is_decorated_with_property(node):

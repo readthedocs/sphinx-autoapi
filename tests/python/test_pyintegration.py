@@ -111,6 +111,79 @@ class TestSimpleStubModule(object):
         assert "Set an attribute" in example_file
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 5), reason="Annotations are invalid in Python <3.5"
+)
+class TestAnnotationsModule(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyannotationsexample")
+
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "max_rating :int = 10" in example_file
+        assert "is_valid" in example_file
+
+        assert "ratings" in example_file
+        assert "List[int]" in example_file
+
+        assert "Dict[int, str]" in example_file
+
+        assert "start:int" in example_file
+        assert "Iterable[int]" in example_file
+
+        assert "List[Union[str, int]]" in example_file
+
+        # TODO: This should not display as a string
+        # after we do proper formatting
+        assert "not_yet_a:'A'" in example_file
+        assert "is_an_a" in example_file
+        assert "ClassVar" in example_file
+
+        assert "instance_var" in example_file
+
+        assert "global_a :A" in example_file
+
+
+@pytest.mark.skipif(
+    sys.version_info < (3,), reason="Annotations are not supported in astroid<2"
+)
+class TestAnnotationCommentsModule(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyannotationcommentsexample")
+
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "max_rating :int = 10" in example_file
+
+        assert "ratings" in example_file
+        assert "List[int]" in example_file
+
+        assert "Dict[int, str]" in example_file
+
+        # TODO: Type is currently unsupported by astroid (#665)
+        assert "start" in example_file
+        assert "Iterable[int]" in example_file
+
+        assert "List[Union[str, int]]" in example_file
+
+        # TODO: This should not display the type after we do proper formatting
+        assert "not_yet_a" in example_file
+        assert "is_an_a" in example_file
+        assert "ClassVar" in example_file
+
+        assert "instance_var" in example_file
+
+        assert "global_a :A" in example_file
+
+
 def test_napoleon_integration_loaded(builder):
     confoverrides = {
         "extensions": ["autoapi.extension", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
