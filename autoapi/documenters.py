@@ -94,10 +94,10 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
 
     def format_signature(self):
         # Set "introspected" attributes at the last possible minute
-        if not self.args:
+        if self.args is None:
             self.args = self.object.args
 
-        if not self.retann:
+        if self.retann is None:
             self.retann = self.object.return_annotation
 
         return super(AutoapiFunctionDocumenter, self).format_signature()
@@ -143,10 +143,10 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
 
     def format_signature(self):
         # Set "introspected" attributes at the last possible minute
-        if not self.args:
+        if self.args is None:
             self.args = self.object.args
 
-        if not self.retann:
+        if self.retann is None:
             self.retann = self.object.return_annotation
 
         return super(AutoapiMethodDocumenter, self).format_signature()
