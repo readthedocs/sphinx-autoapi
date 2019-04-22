@@ -112,7 +112,7 @@ class TestSimpleStubModule(object):
 
 
 @pytest.mark.skipif(
-    sys.version_info < (3, 5), reason="Annotations are invalid in Python <3.5"
+    sys.version_info < (3, 6), reason="Annotations are invalid in Python <3.5"
 )
 class TestAnnotationsModule(object):
     @pytest.fixture(autouse=True, scope="class")
