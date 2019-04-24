@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sphinx-autoapi',
-    version='0.7.1',
+    version='1.0.0',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
     url='http://github.com/rtfd/sphinx-autoapi',
@@ -17,6 +17,7 @@ setup(
     install_requires=[
         'astroid;python_version>="3"',
         'astroid<2;python_version<"3"',
+        'Jinja2',
         'PyYAML',
         'sphinx>=1.6',
         'sphinxcontrib-golangdomain',
