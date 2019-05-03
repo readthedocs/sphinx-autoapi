@@ -22,7 +22,7 @@ Sphinx AutoAPI
     :alt: Supported Python Versions
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/ambv/black
+    :target: https://github.com/python/black
     :alt: Formatted with Black
 
 Sphinx AutoAPI provides "autodoc" style documentation for multiple programming languages
@@ -87,7 +87,7 @@ When the documentation is built,
 AutoAPI will now generate API documentation into an `autoapi/` directory and add an entry to the documentation in your top level table of contents!
 
 To configure AutoAPI behaviour further,
-see the `Configuration documentation <https://sphinx-autoapi.readthedocs.io/en/latest/config.html>`_.
+see the `Configuration documentation <https://sphinx-autoapi.readthedocs.io/en/latest/reference/config.html>`_.
 
 
 Contributing
@@ -105,7 +105,7 @@ Tests are executed through `tox <https://tox.readthedocs.io/en/latest/>`_.
 Code Style
 ~~~~~~~~~~
 
-Code is formatted using `black <https://github.com/ambv/black>`_. 
+Code is formatted using `black <https://github.com/python/black>`_.
 
 You can check your formatting using black's check mode:
 
@@ -130,7 +130,7 @@ You can even get black to format changes automatically when you commit using `pr
 Versioning
 ----------
 
-We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/rtfd/sphinx-autoapi/tags>`_. 
+We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/rtfd/sphinx-autoapi/tags>`_.
 
 License
 -------
