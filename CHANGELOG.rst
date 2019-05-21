@@ -3,6 +3,14 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+next
+----
+
+Bug Fixes
+^^^^^^^^^
+
+* (Go) Remove excessive carriage return in function declarations
+
 v1.0.0 (2019-04-24)
 -------------------
 

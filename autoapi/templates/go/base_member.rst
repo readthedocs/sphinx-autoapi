@@ -1,8 +1,8 @@
 .. go:{{ obj.ref_type }}:: {{ obj.name }}
-{% if obj.type == 'func' %}
-    {% set argjoin = joiner(', ') %}
+{%- if obj.type == 'func' %}
+    {% set argjoin = joiner(', ') -%}
     ({% for param in obj.parameters %}
-        {{ argjoin() }}{{ param.name }} {{ param.type }}
+        {{- argjoin() }}{{ param.name }} {{ param.type -}}
     {% endfor %})
 {% endif %}
 
