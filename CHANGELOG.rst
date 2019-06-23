@@ -3,6 +3,27 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.1.0 (2019-06-23)
+-------------------
+
+Features
+^^^^^^^^
+
+* (Python) Can override ignoring local imports in modules by using __all__.
+
+Bug Fixes
+^^^^^^^^^
+
+* (Python) Fixed incorrect formatting of functions and methods.
+* Added support for Sphinx 2.1.
+
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Fixed some dead links in the README.
+* Fixed lint virtualenv.
+
+
 v1.0.0 (2019-04-24)
 -------------------
 
