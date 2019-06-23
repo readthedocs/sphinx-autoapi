@@ -221,7 +221,7 @@ class Parser(object):
 
         top_name = node.name.split(".", 1)[0]
         for child in node.get_children():
-            if node.package and astroid_utils.is_local_import_from(child, top_name):
+            if astroid_utils.is_local_import_from(child, top_name):
                 child_data = self._parse_local_import_from(child)
             else:
                 child_data = self.parse(child)

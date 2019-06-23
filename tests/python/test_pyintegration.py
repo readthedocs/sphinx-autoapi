@@ -370,3 +370,17 @@ class TestComplexPackage(object):
         assert "simple_function" in wildcard_file
         assert "public_chain" in wildcard_file
         assert "module_level_method" in wildcard_file
+
+    def test_no_imports_in_module_with_all(self):
+        foo_path = "_build/text/autoapi/complex/foo/index.txt"
+        with io.open(foo_path, encoding="utf8") as foo_handle:
+            foo_file = foo_handle.read()
+
+        assert "module_level_method" not in foo_file
+
+    def test_all_overrides_import_in_module_with_all(self):
+        foo_path = "_build/text/autoapi/complex/foo/index.txt"
+        with io.open(foo_path, encoding="utf8") as foo_handle:
+            foo_file = foo_handle.read()
+
+        assert "PublicClass" in foo_file

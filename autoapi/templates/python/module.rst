@@ -47,7 +47,13 @@ Submodules
 {% endif %}
 {% endblock %}
 {% block content %}
+{% if obj.all is not none %}
+{% set visible_children = obj.children|selectattr("short_name", "in", obj.all)|list %}
+{% elif obj.type is equalto("package") %}
 {% set visible_children = obj.children|selectattr("display")|list %}
+{% else %}
+{% set visible_children = obj.children|selectattr("display")|rejectattr("imported")|list %}
+{% endif %}
 {% if visible_children %}
 {{ obj.type|title }} Contents
 {{ "-" * obj.type|length }}---------
@@ -86,9 +92,7 @@ Functions
 {% endblock %}
 {% endif %}
 {% for obj_item in visible_children %}
-{% if obj.all is none or obj_item.short_name in obj.all %}
 {{ obj_item.rendered|indent(0) }}
-{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock %}

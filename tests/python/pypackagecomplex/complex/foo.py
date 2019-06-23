@@ -3,6 +3,11 @@
 This is a description
 """
 
+from ._private_module import PrivateClass as PublicClass
+from ._subpackage import module_level_method
+
+__all__ = ["PublicClass", "Foo"]
+
 
 class Foo(object):
 

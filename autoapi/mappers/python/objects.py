@@ -27,6 +27,7 @@ class PythonPythonMapper(PythonMapperBase):
         self.children = []
         self.args = obj.get("args")
         self.docstring = obj["doc"]
+        self.imported = "original_path" in obj
 
         # For later
         self._class_content = class_content
