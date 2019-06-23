@@ -89,10 +89,10 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
     def can_document_member(cls, member, membername, isattr, parent):
         return isinstance(member, PythonFunction)
 
-    def format_args(self):
+    def format_args(self, **kwargs):
         return "(" + self.object.args + ")"
 
-    def format_signature(self):
+    def format_signature(self, **kwargs):
         # Set "introspected" attributes at the last possible minute
         if self.args is None:
             self.args = self.object.args
@@ -100,7 +100,7 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
         if self.retann is None:
             self.retann = self.object.return_annotation
 
-        return super(AutoapiFunctionDocumenter, self).format_signature()
+        return super(AutoapiFunctionDocumenter, self).format_signature(**kwargs)
 
 
 class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
@@ -113,7 +113,7 @@ class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
     def can_document_member(cls, member, membername, isattr, parent):
         return isinstance(member, PythonClass)
 
-    def format_args(self):
+    def format_args(self, **kwargs):
         return "(" + self.object.args + ")"
 
     def add_directive_header(self, sig):
@@ -138,10 +138,10 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
     def can_document_member(cls, member, membername, isattr, parent):
         return isinstance(member, PythonMethod)
 
-    def format_args(self):
+    def format_args(self, **kwargs):
         return "(" + self.object.args + ")"
 
-    def format_signature(self):
+    def format_signature(self, **kwargs):
         # Set "introspected" attributes at the last possible minute
         if self.args is None:
             self.args = self.object.args
@@ -149,7 +149,7 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
         if self.retann is None:
             self.retann = self.object.return_annotation
 
-        return super(AutoapiMethodDocumenter, self).format_signature()
+        return super(AutoapiMethodDocumenter, self).format_signature(**kwargs)
 
     def import_object(self):
         result = super(AutoapiMethodDocumenter, self).import_object()
@@ -161,6 +161,9 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
                 self.member_order = self.member_order - 1
 
         return result
+
+    def add_directive_header(self, sig):
+        autodoc.Documenter.add_directive_header(self, sig)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
