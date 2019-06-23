@@ -1,7 +1,7 @@
 build: false
 environment:
   matrix:
-    - PYTHON: "C:/Python27"
+    - PYTHON: "C:/Python37"
 install:
   - ps: "[Net.ServicePointManager]::SecurityProtocol = 'Ssl3, Tls, Tls11, Tls12'"
   - ps: "Start-FileDownload 'https://bootstrap.pypa.io/get-pip.py' -FileName 'C:/get-pip.py'"
@@ -10,4 +10,4 @@ install:
   - "%PYTHON%/Scripts/pip.exe install tox"
 test_script:
   - "git clone https://github.com/aspnet/Identity %APPVEYOR_BUILD_FOLDER%/tests/dotnetexample/example/Identity"
-  - "%PYTHON%/Scripts/tox.exe -e py27"
+  - "%PYTHON%/Scripts/tox.exe -e py37"
