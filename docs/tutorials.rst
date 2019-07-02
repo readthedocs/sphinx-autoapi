@@ -140,8 +140,8 @@ AutoAPI will generate documentation when you run Sphinx!
     sphinx-build -b html . _build
 
 
-Javscript
-^^^^^^^^^
+Javascript
+^^^^^^^^^^
 
 Support for Javascript requires you to have jsdoc (http://usejsdoc.org/) installed::
 
