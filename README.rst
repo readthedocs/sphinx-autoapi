@@ -5,8 +5,8 @@ Sphinx AutoAPI
     :target: https://sphinx-autoapi.readthedocs.org
     :alt: Documentation
 
-.. image:: https://travis-ci.org/rtfd/sphinx-autoapi.svg?branch=master
-    :target: https://travis-ci.org/rtfd/sphinx-autoapi
+.. image:: https://travis-ci.org/readthedocs/sphinx-autoapi.svg?branch=master
+    :target: https://travis-ci.org/readthedocs/sphinx-autoapi
     :alt: Travis Build Status
 
 .. image:: https://ci.appveyor.com/api/projects/status/5nd33gp2eq7411t1?svg=true
@@ -39,7 +39,7 @@ Language Support
 Language    Status  Parser
 ==========  ======  ==========================================================
 Python      Stable  Custom using `astroid <https://github.com/PyCQA/astroid>`_
-Go          Alpha   `godocjson <https://github.com/rtfd/godocjson>`_
+Go          Alpha   `godocjson <https://github.com/readthedocs/godocjson>`_
 Javascript  Alpha   `jsdoc <http://usejsdoc.org/>`_
 .NET        Alpha   `docfx <https://dotnet.github.io/docfx/>`_
 ==========  ======  ==========================================================
@@ -130,7 +130,7 @@ You can even get black to format changes automatically when you commit using `pr
 Versioning
 ----------
 
-We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/rtfd/sphinx-autoapi/tags>`_.
+We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/readthedocs/sphinx-autoapi/tags>`_.
 
 License
 -------
