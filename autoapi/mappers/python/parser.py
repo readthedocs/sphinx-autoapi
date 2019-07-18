@@ -127,25 +127,28 @@ class Parser(object):
 
         return [data]
 
-    def _parse_property(self, node):
-        data = {
-            "type": "attribute",
-            "name": node.name,
-            "full_name": self._get_full_name(node.name),
-            "doc": self._encode(node.doc or ""),
-            "from_line_no": node.fromlineno,
-            "to_line_no": node.tolineno,
-        }
-
-        return [data]
+    def parse_asyncfunctiondef(self, node):
+        return self.parse_functiondef(node)
 
     def parse_functiondef(self, node):
-        if astroid_utils.is_decorated_with_property(node):
-            return self._parse_property(node)
         if astroid_utils.is_decorated_with_property_setter(node):
             return []
 
-        type_ = "function" if node.type == "function" else "method"
+        type_ = "method"
+        properties = []
+        if node.type == "function":
+            type_ = "function"
+        elif astroid_utils.is_decorated_with_property(node):
+            type_ = "property"
+            properties.append("property")
+        else:
+            if node.type in ("staticmethod", "classmethod"):
+                properties.append(node.type)
+            if node.is_abstract(pass_is_abstract=False):
+                properties.append("abstractmethod")
+
+        if isinstance(node, astroid.AsyncFunctionDef):
+            properties.append("async")
 
         return_annotation = None
         if node.returns:
@@ -163,9 +166,10 @@ class Parser(object):
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "return_annotation": return_annotation,
+            "properties": properties,
         }
 
-        if type_ == "method":
+        if type_ in ("method", "property"):
             data["method_type"] = node.type
 
         result = [data]

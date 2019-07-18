@@ -5,6 +5,7 @@ from collections import OrderedDict, namedtuple
 
 import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+import sphinx
 import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
@@ -87,7 +88,7 @@ class PythonMapperBase(object):
         return self.render()
 
     def get_context_data(self):
-        return {"obj": self}
+        return {"obj": self, "sphinx_version": sphinx.version_info}
 
     def __lt__(self, other):
         """Object sorting comparison"""

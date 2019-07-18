@@ -3,6 +3,7 @@
 
 This is a description
 """
+import asyncio
 from typing import ClassVar, Dict, Iterable, List, Union
 
 max_rating: int = 10
@@ -19,6 +20,7 @@ rating_names: Dict[int, str] = {0: "zero", 1: "one"}
 
 
 def f(start: int, end: int) -> Iterable[int]:
+    "This is f"
     i = start
     while i < end:
         yield i
@@ -26,6 +28,7 @@ def f(start: int, end: int) -> Iterable[int]:
 
 
 mixed_list: List[Union[str, int]] = [1, "two", 3]
+"This is mixed"
 
 
 def f2(not_yet_a: "A") -> int:
@@ -39,6 +42,23 @@ class A:
     def __init__(self):
         self.instance_var: bool = True
         """This is an instance_var."""
+
+    async def async_method(self, wait: bool) -> int:
+        if wait:
+            await asyncio.sleep(1)
+        return 5
+
+    @property
+    def my_prop(self) -> str:
+        """My property."""
+        return "prop"
+
+
+async def async_function(self, wait: bool) -> int:
+    if wait:
+        await asyncio.sleep(1)
+
+    return 5
 
 
 global_a: A = A()

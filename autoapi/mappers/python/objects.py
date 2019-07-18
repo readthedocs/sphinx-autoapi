@@ -1,5 +1,7 @@
 import collections
 
+import sphinx
+
 from ..base import PythonMapperBase
 
 
@@ -129,7 +131,6 @@ class PythonPythonMapper(PythonMapperBase):
 class PythonFunction(PythonPythonMapper):
     type = "function"
     is_callable = True
-    ref_directive = "func"
 
     def __init__(self, obj, **kwargs):
         super(PythonFunction, self).__init__(obj, **kwargs)
@@ -142,22 +143,35 @@ class PythonFunction(PythonPythonMapper):
 
         :type: str or None
         """
+        self.properties = obj["properties"]
+        """The properties that describe what type of function this is.
+
+        Can be only be: async
+
+        :type: list(str)
+        """
 
 
 class PythonMethod(PythonFunction):
     type = "method"
     is_callable = True
-    ref_directive = "meth"
 
     def __init__(self, obj, **kwargs):
         super(PythonMethod, self).__init__(obj, **kwargs)
 
-        self.method_type = obj["method_type"]
+        self.method_type = obj.get("method_type")
         """The type of method that this object represents.
 
         This can be one of: method, staticmethod, or classmethod.
 
         :type: str
+        """
+        self.properties = obj["properties"]
+        """The properties that describe what type of method this is.
+
+        Can be any of: abstractmethod, async, classmethod, property, staticmethod
+
+        :type: list(str)
         """
 
     @property
@@ -190,7 +204,7 @@ class PythonData(PythonPythonMapper):
 
         :type: str or None
         """
-        self.annotation = obj.get("annotation")
+        self.annotation = obj.get("annotation", obj.get("return_annotation"))
         """The type annotation of this attribute.
 
         This will be ``None`` if an annotation
@@ -207,7 +221,6 @@ class PythonAttribute(PythonData):
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
-    ref_directive = "mod"
     _RENDER_LOG_LEVEL = "VERBOSE"
 
     def __init__(self, obj, **kwargs):

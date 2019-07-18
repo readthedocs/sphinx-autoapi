@@ -198,6 +198,24 @@ class PythonSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     """
 
+    _OBJ_MAP = {
+        cls.type: cls
+        for cls in (
+            PythonClass,
+            PythonFunction,
+            PythonModule,
+            PythonMethod,
+            PythonPackage,
+            PythonAttribute,
+            PythonData,
+            PythonException,
+        )
+    }
+    if sphinx.version_info >= (2, 1):
+        _OBJ_MAP["property"] = PythonMethod
+    else:
+        _OBJ_MAP["property"] = PythonAttribute
+
     def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary
 
@@ -261,21 +279,8 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         :param data: dictionary data of parser output
         """
-        obj_map = dict(
-            (cls.type, cls)
-            for cls in [
-                PythonClass,
-                PythonFunction,
-                PythonModule,
-                PythonMethod,
-                PythonPackage,
-                PythonAttribute,
-                PythonData,
-                PythonException,
-            ]
-        )
         try:
-            cls = obj_map[data["type"]]
+            cls = self._OBJ_MAP[data["type"]]
         except KeyError:
             LOGGER.warning("Unknown type: %s" % data["type"])
         else:

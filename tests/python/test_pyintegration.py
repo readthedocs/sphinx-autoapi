@@ -114,12 +114,12 @@ class TestSimpleStubModule(object):
 @pytest.mark.skipif(
     sys.version_info < (3, 6), reason="Annotations are invalid in Python <3.5"
 )
-class TestAnnotationsModule(object):
+class TestPy3Module(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyannotationsexample")
+        builder("py3example")
 
-    def test_integration(self):
+    def test_annotations(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
@@ -146,6 +146,18 @@ class TestAnnotationsModule(object):
         assert "instance_var" in example_file
 
         assert "global_a :A" in example_file
+
+    def test_async(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        if sphinx.version_info >= (2, 1):
+            assert "async async_method" in example_file
+            assert "async example.async_function" in example_file
+        else:
+            assert "async_method" in example_file
+            assert "async_function" in example_file
 
 
 @pytest.mark.skipif(
