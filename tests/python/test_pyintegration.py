@@ -132,14 +132,12 @@ class TestPy3Module(object):
 
         assert "Dict[int, str]" in example_file
 
-        assert "start:int" in example_file
+        assert "start: int" in example_file
         assert "Iterable[int]" in example_file
 
         assert "List[Union[str, int]]" in example_file
 
-        # TODO: This should not display as a string
-        # after we do proper formatting
-        assert "not_yet_a:'A'" in example_file
+        assert "not_yet_a: A" in example_file
         assert "is_an_a" in example_file
         assert "ClassVar" in example_file
 
@@ -180,14 +178,14 @@ class TestAnnotationCommentsModule(object):
 
         assert "Dict[int, str]" in example_file
 
-        # TODO: Type is currently unsupported by astroid (#665)
-        assert "start" in example_file
+        # When astroid>2.2.5
+        # assert "start: int" in example_file
+        # assert "end: int" in example_file
         assert "Iterable[int]" in example_file
 
         assert "List[Union[str, int]]" in example_file
 
-        # TODO: This should not display the type after we do proper formatting
-        assert "not_yet_a" in example_file
+        assert "not_yet_a: A" in example_file
         assert "is_an_a" in example_file
         assert "ClassVar" in example_file
 

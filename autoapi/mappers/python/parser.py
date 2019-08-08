@@ -157,11 +157,13 @@ class Parser(object):
         elif getattr(node, "type_comment_returns", None):
             return_annotation = node.type_comment_returns.as_string()
 
+        arg_string = astroid_utils.format_args(node.args)
+
         data = {
             "type": type_,
             "name": node.name,
             "full_name": self._get_full_name(node.name),
-            "args": node.args.as_string(),
+            "args": arg_string,
             "doc": self._encode(node.doc or ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,

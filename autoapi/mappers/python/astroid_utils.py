@@ -2,6 +2,7 @@ try:
     import builtins
 except ImportError:
     import __builtin__ as builtins
+import itertools
 import re
 import sys
 
@@ -13,9 +14,11 @@ if sys.version_info < (3,):
     _EXCEPTIONS_MODULE = "exceptions"
     # getattr to keep linter happy
     _STRING_TYPES = getattr(builtins, "basestring")
+    _zip_longest = itertools.izip_longest
 else:
     _EXCEPTIONS_MODULE = "builtins"
     _STRING_TYPES = str
+    _zip_longest = itertools.zip_longest
 
 
 def resolve_import_alias(name, import_names):
@@ -359,3 +362,106 @@ def get_module_all(node):
                     all_.append(elt_name.value)
 
     return all_
+
+
+def merge_annotations(annotations, comment_annotations):
+    for ann, comment_ann in _zip_longest(annotations, comment_annotations):
+        if not ann or isinstance(ann, astroid.Ellipsis):
+            yield comment_ann
+        else:
+            yield ann
+
+
+def _format_args(args, defaults=None, annotations=None):
+    values = []
+
+    if args is None:
+        return ""
+
+    if annotations is None:
+        annotations = []
+
+    if defaults is not None:
+        default_offset = len(args) - len(defaults)
+
+    packed = _zip_longest(args, annotations)
+    for i, (arg, annotation) in enumerate(packed):
+        if isinstance(arg, astroid.Tuple):
+            values.append("({})".format(_format_args(arg.elts)))
+        else:
+            argname = arg.name
+            default_sep = "="
+            if annotation is not None:
+                ann_str = annotation.as_string()
+                if isinstance(annotation, astroid.Const):
+                    ann_str = annotation.value
+                argname = "{}: {}".format(argname, ann_str)
+                default_sep = " = "
+            values.append(argname)
+
+            if defaults is not None and i >= default_offset:
+                if defaults[i - default_offset] is not None:
+                    values[-1] += default_sep + defaults[i - default_offset].as_string()
+
+    return ", ".join(values)
+
+
+def format_args(args_node):
+    result = []
+    positional_only_defaults = []
+    positional_or_keyword_defaults = args_node.defaults
+    if args_node.defaults:
+        args = args_node.args or []
+        positional_or_keyword_defaults = args_node.defaults[-len(args) :]
+        positional_only_defaults = args_node.defaults[
+            : len(args_node.defaults) - len(args)
+        ]
+
+    plain_annotations = getattr(args_node, "annotations", ()) or ()
+    func_comment_annotations = getattr(args_node.parent, "type_comment_args", ()) or ()
+    comment_annotations = getattr(args_node, "type_comment_args", ()) or ()
+    annotations = list(
+        merge_annotations(
+            plain_annotations,
+            merge_annotations(func_comment_annotations, comment_annotations),
+        )
+    )
+
+    if getattr(args_node, "posonlyargs", None):
+        result.append(_format_args(args_node.posonlyargs, positional_only_defaults))
+        result.append("/")
+
+    if args_node.args:
+        result.append(
+            _format_args(args_node.args, positional_or_keyword_defaults, annotations)
+        )
+
+    if args_node.vararg:
+        vararg_result = "*{}".format(args_node.vararg)
+        if getattr(args_node, "varargannotation", None):
+            vararg_result = "{}: {}".format(
+                vararg_result, args_node.varargannotation.as_string()
+            )
+        result.append(vararg_result)
+
+    if getattr(args_node, "kwonlyargs", None):
+        if not args_node.vararg:
+            result.append("*")
+
+        result.append(
+            _format_args(
+                args_node.kwonlyargs,
+                args_node.kw_defaults,
+                args_node.kwonlyargs_annotations,
+            )
+        )
+
+    if args_node.kwarg:
+        kwarg_result = "**{}".format(args_node.kwarg)
+        if getattr(args_node, "kwargannotation", None):
+            kwarg_result = "{}: {}".format(
+                kwarg_result, args_node.kwargannotation.as_string()
+            )
+        result.append(kwarg_result)
+
+    return ", ".join(result)

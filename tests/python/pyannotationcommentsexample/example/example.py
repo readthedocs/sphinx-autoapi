@@ -11,7 +11,7 @@ ratings = [0, 1, 2, 3, 4, 5]  # type: List[int]
 
 rating_names = {0: "zero", 1: "one"}  # type: Dict[int, str]
 
-# TODO: Currently unsupported by astroid (#665)
+
 def f(
     start,  # type: int
     end,  # type: int

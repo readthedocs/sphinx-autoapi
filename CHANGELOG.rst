@@ -3,6 +3,20 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.2.0 (TBC)
+------------
+
+Features
+^^^^^^^^
+
+* (Python) Can read per argument type comments with astroid > 2.2.5.
+
+Bug Fixes
+^^^^^^^^^
+
+* (Python) Forward reference annotations are no longer rendered as strings.
+
+
 v1.1.0 (2019-06-23)
 -------------------
 
