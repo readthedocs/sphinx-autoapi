@@ -10,11 +10,15 @@ Features
 ^^^^^^^^
 
 * (Python) Can read per argument type comments with astroid > 2.2.5.
+* (Python) Added autoapidecorator directive with Sphinx >= 2.0.
+* (Python) Can use autodoc_docstring_signature with Autodoc-style directives.
 
 Bug Fixes
 ^^^^^^^^^
 
 * (Python) Forward reference annotations are no longer rendered as strings.
+* (Python) autoapifunction directive no longer documents async functions as
+    a normal function.
 
 
 v1.1.0 (2019-06-23)

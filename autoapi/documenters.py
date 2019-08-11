@@ -1,3 +1,6 @@
+import re
+
+import sphinx
 from sphinx.ext import autodoc
 
 from .mappers.python import (
@@ -79,7 +82,23 @@ class AutoapiDocumenter(autodoc.Documenter):
         return False, sorted(children)
 
 
-class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
+class _AutoapiDocstringSignatureMixin(object):
+    def format_signature(self, **kwargs):
+        # Set "manual" attributes at the last possible moment.
+        # This is to let a manual entry or docstring searching happen first,
+        # and falling back to the discovered signature only when necessary.
+        if self.args is None:
+            self.args = self.object.args
+
+        if self.retann is None:
+            self.retann = self.object.return_annotation
+
+        return super(_AutoapiDocstringSignatureMixin, self).format_signature(**kwargs)
+
+
+class AutoapiFunctionDocumenter(
+    AutoapiDocumenter, autodoc.FunctionDocumenter, _AutoapiDocstringSignatureMixin
+):
     objtype = "apifunction"
     directivetype = "function"
     # Always prefer AutoapiDocumenters
@@ -92,18 +111,49 @@ class AutoapiFunctionDocumenter(AutoapiDocumenter, autodoc.FunctionDocumenter):
     def format_args(self, **kwargs):
         return "(" + self.object.args + ")"
 
-    def format_signature(self, **kwargs):
-        # Set "introspected" attributes at the last possible minute
-        if self.args is None:
-            self.args = self.object.args
+    def add_directive_header(self, sig):
+        if sphinx.version_info >= (2, 1):
+            autodoc.Documenter.add_directive_header(self, sig)
 
-        if self.retann is None:
-            self.retann = self.object.return_annotation
+            if "async" in self.object.properties:
+                sourcename = self.get_sourcename()
+                self.add_line("   :async:", sourcename)
+        else:
+            super(AutoapiFunctionDocumenter, self).add_directive_header(sig)
 
-        return super(AutoapiFunctionDocumenter, self).format_signature(**kwargs)
+
+if sphinx.version_info >= (2,):
+
+    class AutoapiDecoratorDocumenter(
+        AutoapiFunctionDocumenter, AutoapiDocumenter, autodoc.DecoratorDocumenter
+    ):
+        objtype = "apidecorator"
+        directivetype = "decorator"
+        priority = autodoc.DecoratorDocumenter.priority * 100 + 100
+
+        def format_signature(self, **kwargs):
+            if self.args is None:
+                self.args = self.format_args(**kwargs)
+
+            return super(AutoapiDecoratorDocumenter, self).format_signature(**kwargs)
+
+        def format_args(self, **kwargs):
+            to_format = self.object.args
+
+            if re.match("func\W", to_format) or to_format == "func":
+                if "," not in to_format:
+                    return None
+
+                # We need to do better stripping here.
+                # An annotation with a comma will mess this up.
+                to_format = self.object.args.split(",", 1)[1]
+
+            return "(" + to_format + ")"
 
 
-class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
+class AutoapiClassDocumenter(
+    AutoapiDocumenter, autodoc.ClassDocumenter, _AutoapiDocstringSignatureMixin
+):
     objtype = "apiclass"
     directivetype = "class"
     doc_as_attr = False
@@ -129,7 +179,9 @@ class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
                 self.add_line("   " + "Bases: {}".format(", ".join(bases)), sourcename)
 
 
-class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
+class AutoapiMethodDocumenter(
+    AutoapiDocumenter, autodoc.MethodDocumenter, _AutoapiDocstringSignatureMixin
+):
     objtype = "apimethod"
     directivetype = "method"
     priority = autodoc.MethodDocumenter.priority * 100 + 100
@@ -141,29 +193,33 @@ class AutoapiMethodDocumenter(AutoapiDocumenter, autodoc.MethodDocumenter):
     def format_args(self, **kwargs):
         return "(" + self.object.args + ")"
 
-    def format_signature(self, **kwargs):
-        # Set "introspected" attributes at the last possible minute
-        if self.args is None:
-            self.args = self.object.args
-
-        if self.retann is None:
-            self.retann = self.object.return_annotation
-
-        return super(AutoapiMethodDocumenter, self).format_signature(**kwargs)
-
     def import_object(self):
         result = super(AutoapiMethodDocumenter, self).import_object()
 
         if result:
             if self.object.method_type != "method":
-                self.directivetype = self.object.method_type
+                if sphinx.version_info < (2, 1):
+                    self.directivetype = self.object.method_type
                 # document class and static members before ordinary ones
                 self.member_order = self.member_order - 1
 
         return result
 
     def add_directive_header(self, sig):
-        autodoc.Documenter.add_directive_header(self, sig)
+        if sphinx.version_info >= (2, 1):
+            autodoc.Documenter.add_directive_header(self, sig)
+
+            sourcename = self.get_sourcename()
+            for property_type in (
+                "abstractmethod",
+                "async",
+                "classmethod",
+                "staticmethod",
+            ):
+                if property_type in self.object.properties:
+                    self.add_line("   :{}:".format(property_type), sourcename)
+        else:
+            autodoc.Documenter.add_directive_header(self, sig)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):

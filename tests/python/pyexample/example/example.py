@@ -93,3 +93,12 @@ class Foo(object):
             str: A string.
         """
         return "google"
+
+
+def decorator_okay(func):
+    """This decorator should parse okay."""
+
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
+
+    return wrapper

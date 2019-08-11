@@ -237,6 +237,8 @@ def setup(app):
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
+    if sphinx.version_info >= (2,):
+        app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)
     app.add_autodocumenter(documenters.AutoapiClassDocumenter)
     app.add_autodocumenter(documenters.AutoapiMethodDocumenter)
     app.add_autodocumenter(documenters.AutoapiDataDocumenter)

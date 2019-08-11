@@ -42,8 +42,15 @@ class TestSimpleModule(object):
         self.check_integration("_build/text/autoapi/example/index.txt")
 
     def test_manual_directives(self):
+        example_path = "_build/text/manualapi.txt"
         # The manual directives should contain the same information
-        self.check_integration("_build/text/manualapi.txt")
+        self.check_integration(example_path)
+
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        if sphinx.version_info >= (2,):
+            assert "@example.decorator_okay" in example_file
 
     def check_integration(self, example_path):
         with io.open(example_path, encoding="utf8") as example_handle:
