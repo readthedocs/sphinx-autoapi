@@ -20,7 +20,7 @@ class Parser(object):
         return ".".join(self._name_stack + [name])
 
     def _encode(self, to_encode):
-        if self._encoding:
+        if sys.version_info < (3,) and self._encoding:
             try:
                 return _TEXT_TYPE(to_encode, self._encoding)
             except TypeError:

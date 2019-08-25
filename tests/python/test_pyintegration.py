@@ -401,3 +401,10 @@ class TestComplexPackage(object):
             foo_file = foo_handle.read()
 
         assert "PublicClass" in foo_file
+
+    def test_parses_unicode_file(self):
+        foo_path = "_build/text/autoapi/complex/unicode_data/index.txt"
+        with io.open(foo_path, encoding="utf8") as foo_handle:
+            foo_file = foo_handle.read()
+
+        assert "unicode_str" in foo_file

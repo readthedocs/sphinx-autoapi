@@ -1,3 +1,4 @@
+import io
 import re
 import os
 import fnmatch
@@ -312,6 +313,6 @@ class SphinxMapperBase(object):
         # Render Top Index
         top_level_index = os.path.join(root, "index.rst")
         pages = self.objects.values()
-        with open(top_level_index, "w+") as top_level_file:
+        with open(top_level_index, "wb") as top_level_file:
             content = self.jinja_env.get_template("index.rst")
-            top_level_file.write(content.render(pages=pages))
+            top_level_file.write(content.render(pages=pages).encode("utf-8"))

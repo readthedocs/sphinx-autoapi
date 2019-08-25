@@ -19,6 +19,7 @@ Bug Fixes
 * (Python) Forward reference annotations are no longer rendered as strings.
 * (Python) autoapifunction directive no longer documents async functions as
     a normal function.
+* (Python) Fixed unicode decode errors in some Python 3 situations.
 
 
 v1.1.0 (2019-06-23)

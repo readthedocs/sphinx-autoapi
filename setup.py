@@ -1,4 +1,4 @@
-import codecs
+import io
 
 from setuptools import setup, find_packages
 
@@ -12,7 +12,7 @@ setup(
     license='BSD',
     description='Sphinx API documentation generator',
     packages=find_packages('.'),
-    long_description=codecs.open("README.rst", "r", "utf-8").read(),
+    long_description=io.open("README.rst", "r", encoding="utf-8").read(),
     include_package_data=True,
     install_requires=[
         'astroid;python_version>="3"',
