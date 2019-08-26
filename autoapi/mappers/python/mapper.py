@@ -2,6 +2,8 @@ import collections
 import copy
 import os
 
+import sphinx.util
+from sphinx.util.console import darkgreen, bold
 import sphinx.util.docstrings
 import sphinx.util.logging
 
@@ -216,22 +218,32 @@ class PythonSphinxMapper(SphinxMapperBase):
     else:
         _OBJ_MAP["property"] = PythonAttribute
 
-    def load(self, patterns, dirs, ignore=None):
-        """Load objects from the filesystem into the ``paths`` dictionary
-
-        Also include an attribute on the object, ``relative_path`` which is the
-        shortened, relative path the package/module
-        """
+    def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:
             dir_root = dir_
             if os.path.exists(os.path.join(dir_, "__init__.py")):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
 
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
-                data = self.read_file(path=path)
-                if data:
-                    data["relative_path"] = os.path.relpath(path, dir_root)
-                    self.paths[path] = data
+                yield dir_root, path
+
+    def load(self, patterns, dirs, ignore=None):
+        """Load objects from the filesystem into the ``paths`` dictionary
+
+        Also include an attribute on the object, ``relative_path`` which is the
+        shortened, relative path the package/module
+        """
+        dir_root_files = list(self._find_files(patterns, dirs, ignore))
+        for dir_root, path in sphinx.util.status_iterator(
+            dir_root_files,
+            bold("[AutoAPI] Reading files... "),
+            length=len(dir_root_files),
+            stringify_func=(lambda x: x[1]),
+        ):
+            data = self.read_file(path=path)
+            if data:
+                data["relative_path"] = os.path.relpath(path, dir_root)
+                self.paths[path] = data
 
     def read_file(self, path, **kwargs):
         """Read file input into memory, returning deserialized objects

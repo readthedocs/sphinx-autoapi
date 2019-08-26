@@ -54,7 +54,7 @@ class PythonMapperBase(object):
     type = "base"
     # Create a page in the output for this object.
     top_level_object = False
-    _RENDER_LOG_LEVEL = "DEBUG"
+    _RENDER_LOG_LEVEL = "VERBOSE"
 
     def __init__(self, obj, options=None, jinja_env=None, url_root=None):
         self.obj = obj
@@ -211,7 +211,10 @@ class SphinxMapperBase(object):
         Load objects from the filesystem into the ``paths`` dictionary.
 
         """
-        for path in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
+        paths = list(self.find_files(patterns=patterns, dirs=dirs, ignore=ignore))
+        for path in sphinx.util.status_iterator(
+            paths, bold("[AutoAPI] Reading files... "), "darkgreen", len(paths)
+        ):
             data = self.read_file(path=path)
             if data:
                 self.paths[path] = data
@@ -245,14 +248,7 @@ class SphinxMapperBase(object):
                         if not os.path.isabs(filename):
                             filename = os.path.join(root, filename)
 
-                        files_to_read.append(filename)
-
-        status_iterator = sphinx.util.status_iterator
-
-        for _path in status_iterator(
-            files_to_read, "[AutoAPI] Reading files... ", darkgreen, len(files_to_read)
-        ):
-            yield _path
+                        yield filename
 
     def read_file(self, path, **kwargs):
         """Read file input into memory
@@ -279,7 +275,12 @@ class SphinxMapperBase(object):
 
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for path, data in self.paths.items():
+        for path, data in sphinx.util.status_iterator(
+            self.paths.items(),
+            bold("[AutoAPI] ") + "Mapping Data... ",
+            length=len(self.paths),
+            stringify_func=(lambda x: x[0]),
+        ):
             for obj in self.create_class(data, options=options):
                 self.add_object(obj)
 
@@ -292,8 +293,13 @@ class SphinxMapperBase(object):
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
-        for id, obj in self.objects.items():
-
+        for id, obj in sphinx.util.status_iterator(
+            self.objects.items(),
+            bold("[AutoAPI] ") + "Rendering Data... ",
+            length=len(self.objects),
+            verbosity="INFO",
+            stringify_func=(lambda x: x[0]),
+        ):
             rst = obj.render(
                 include_summaries=self.app.config.autoapi_include_summaries
             )

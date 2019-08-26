@@ -92,16 +92,13 @@ def run_autoapi(app):
         out_suffix = app.config.source_suffix[0]
 
     # Actual meat of the run.
-    LOGGER.info(bold("[AutoAPI] ") + darkgreen("Loading Data"))
     sphinx_mapper_obj.load(
         patterns=file_patterns, dirs=normalized_dirs, ignore=ignore_patterns
     )
 
-    LOGGER.info(bold("[AutoAPI] ") + darkgreen("Mapping Data"))
     sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
     if app.config.autoapi_generate_api_docs:
-        LOGGER.info(bold("[AutoAPI] ") + darkgreen("Rendering Data"))
         sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
 
 

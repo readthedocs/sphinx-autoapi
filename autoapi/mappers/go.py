@@ -1,6 +1,7 @@
 import json
 import subprocess
 
+from sphinx.util.console import darkgreen, bold
 import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -22,7 +23,9 @@ class GoSphinxMapper(SphinxMapperBase):
         Load objects from the filesystem into the ``paths`` dictionary.
 
         """
-        for _dir in dirs:
+        for _dir in sphinx.util.status_iterator(
+            dirs, bold("[AutoAPI] Loading Data "), "darkgreen", len(dirs)
+        ):
             data = self.read_file(_dir, ignore=ignore)
             if data:
                 self.paths[_dir] = data

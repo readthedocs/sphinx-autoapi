@@ -2,6 +2,7 @@ import json
 import subprocess
 import os
 
+from sphinx.util.console import darkgreen, bold
 import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -41,7 +42,12 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
     # Subclassed to iterate over items
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for path, data in self.paths.items():
+        for path, data in sphinx.util.status_iterator(
+            self.paths.items(),
+            bold("[AutoAPI] ") + "Mapping Data... ",
+            length=len(self.paths),
+            stringify_func=(lambda x: x[0]),
+        ):
             for item in data:
                 for obj in self.create_class(item, options):
                     obj.jinja_env = self.jinja_env

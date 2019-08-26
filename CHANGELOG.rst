@@ -12,6 +12,7 @@ Features
 * (Python) Can read per argument type comments with astroid > 2.2.5.
 * (Python) Added autoapidecorator directive with Sphinx >= 2.0.
 * (Python) Can use autodoc_docstring_signature with Autodoc-style directives.
+* Made it more clear which file causes an error, when an error occurs.
 
 Bug Fixes
 ^^^^^^^^^

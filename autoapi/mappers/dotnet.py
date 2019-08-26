@@ -69,17 +69,18 @@ class DotNetSphinxMapper(SphinxMapperBase):
         the canonical source before the default patterns.  Fallback to default
         pattern matches if no ``docfx.json`` files are found.
         """
+        LOGGER.info(bold("[AutoAPI] ") + darkgreen("Loading Data"))
         raise_error = kwargs.get("raise_error", True)
         all_files = set()
         if not self.app.config.autoapi_file_patterns:
-            all_files = set()
-            for _file in self.find_files(
-                patterns=["docfx.json"], dirs=dirs, ignore=ignore
-            ):
-                all_files.add(_file)
+            all_files = set(
+                self.find_files(patterns=["docfx.json"], dirs=dirs, ignore=ignore)
+            )
         if not all_files:
-            for _file in self.find_files(patterns=patterns, dirs=dirs, ignore=ignore):
-                all_files.add(_file)
+            all_files = set(
+                self.find_files(patterns=patterns, dirs=dirs, ignore=ignore)
+            )
+
         if all_files:
             try:
                 command = ["docfx", "metadata", "--raw", "--force"]
@@ -136,7 +137,12 @@ class DotNetSphinxMapper(SphinxMapperBase):
     # Subclassed to iterate over items
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for path, data in self.paths.items():
+        for path, data in sphinx.util.status_iterator(
+            self.paths.items(),
+            bold("[AutoAPI] ") + "Mapping Data... ",
+            length=len(self.paths),
+            stringify_func=(lambda x: x[0]),
+        ):
             references = data.get("references", [])
             for item in data["items"]:
                 for obj in self.create_class(item, options, references=references):
@@ -233,8 +239,13 @@ class DotNetSphinxMapper(SphinxMapperBase):
     def output_rst(self, root, source_suffix):
         if not self.objects:
             raise ExtensionError("No API objects exist. Can't continue")
-        for id, obj in self.objects.items():
 
+        for id, obj in sphinx.util.status_iterator(
+            self.objects.items(),
+            bold("[AutoAPI] ") + "Rendering Data... ",
+            length=len(self.objects),
+            stringify_func=(lambda x: x[0]),
+        ):
             if not obj or not obj.top_level_object:
                 continue
 
