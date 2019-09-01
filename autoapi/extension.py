@@ -7,6 +7,7 @@ This extension allows you to automagically generate API documentation from your 
 import io
 import os
 import shutil
+import sys
 
 import sphinx
 from sphinx.util.console import darkgreen, bold
@@ -21,7 +22,6 @@ from .backends import (
     default_file_mapping,
     default_ignore_patterns,
     default_backend_mapping,
-    available_backends,
     backend_requirements,
 )
 from .directives import AutoapiSummary, NestedParse
@@ -42,6 +42,16 @@ def run_autoapi(app):
     """
     Load AutoAPI data from the filesystem.
     """
+    if app.config.autoapi_type not in default_backend_mapping:
+        raise ExtensionError(
+            "Invalid autoapi_type setting, "
+            "following values is allowed: {}".format(
+                ", ".join(
+                    '"{}"'.format(api_type)
+                    for api_type in sorted(default_backend_mapping)
+                )
+            )
+        )
 
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
@@ -69,19 +79,22 @@ def run_autoapi(app):
     )
     url_root = os.path.join("/", app.config.autoapi_root)
 
-    # check backend availability
-    # in reality if user will attempt to use `go` api type without
-    #  sphinxcontrib.golangdomain installed, sphinx will prohibit
-    #  all operations because of sphinxcontrib.golangdomain
-    #  extension is required
-    if app.config.autoapi_type not in available_backends:
+    if not all(
+        import_name in sys.modules
+        for _, import_name in backend_requirements[app.config.autoapi_type]
+    ):
         raise ExtensionError(
             "AutoAPI of type `{type}` requires following "
-            "packages to be installed: {packages}: ".format(
+            "packages to be installed and included in extensions list: "
+            "{packages}".format(
                 type=app.config.autoapi_type,
                 packages=", ".join(
-                    pkg_name
-                    for pkg_name, _ in backend_requirements[app.config.autoapi_type]
+                    '{import_name} (available as "{pkg_name}" on PyPI)'.format(
+                        pkg_name=pkg_name, import_name=import_name
+                    )
+                    for pkg_name, import_name in backend_requirements[
+                        app.config.autoapi_type
+                    ]
                 ),
             )
         )

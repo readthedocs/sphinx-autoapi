@@ -11,6 +11,7 @@ import pytest
 
 import sphinx
 from sphinx.application import Sphinx
+from sphinx.errors import ExtensionError
 
 
 @contextmanager
@@ -108,3 +109,54 @@ class TOCTreeTests(LanguageIntegrationTests):
         Test that the example_function gets added to the TOC Tree
         """
         self._run_test("toctreeexample", "_build/text/index.txt", "* example_function")
+
+
+class TestExtensionErrors:
+    @pytest.fixture(autouse=True)
+    def unload_go_and_dotned_libraries(self):
+        # unload dotnet and golang domain libraries, because they may be imported before
+        for mod_name in ("sphinxcontrib.dotnetdomain", "sphinxcontrib.golangdomain"):
+            try:
+                del sys.modules[mod_name]
+            except KeyError:
+                pass
+
+    @pytest.mark.parametrize(
+        "proj_name, override_conf, err_msg",
+        [
+            (
+                "toctreeexample",
+                {"autoapi_type": "INVALID VALUE"},
+                (
+                    "Invalid autoapi_type setting, following values is "
+                    'allowed: "dotnet", "go", "javascript", "python"'
+                ),
+            ),
+            (
+                "goexample",
+                {"autoapi_type": "go", "extensions": ["autoapi.extension"]},
+                (
+                    "AutoAPI of type `go` requires following "
+                    "packages to be installed and included in extensions list: "
+                    "sphinxcontrib.golangdomain (available as "
+                    '"sphinxcontrib-golangdomain" on PyPI)'
+                ),
+            ),
+            (
+                "dotnetexample",
+                {"autoapi_type": "dotnet", "extensions": ["autoapi.extension"]},
+                (
+                    "AutoAPI of type `dotnet` requires following "
+                    "packages to be installed and included in extensions list: "
+                    "sphinxcontrib.dotnetdomain (available as "
+                    '"sphinxcontrib-dotnetdomain" on PyPI)'
+                ),
+            ),
+        ],
+    )
+    def test_extension_setup_errors(self, proj_name, override_conf, err_msg):
+        with pytest.raises(ExtensionError) as err_info:
+            with sphinx_build(proj_name, override_conf):
+                pass
+
+        assert str(err_info.value) == err_msg
