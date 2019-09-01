@@ -21,6 +21,8 @@ from .backends import (
     default_file_mapping,
     default_ignore_patterns,
     default_backend_mapping,
+    available_backends,
+    backend_requirements,
 )
 from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
@@ -66,6 +68,23 @@ def run_autoapi(app):
         os.path.join(app.confdir, app.config.autoapi_root)
     )
     url_root = os.path.join("/", app.config.autoapi_root)
+
+    # check backend availability
+    # in reality if user will attempt to use `go` api type without
+    #  sphinxcontrib.golangdomain installed, sphinx will prohibit
+    #  all operations because of sphinxcontrib.golangdomain
+    #  extension is required
+    if app.config.autoapi_type not in available_backends:
+        raise ExtensionError(
+            "AutoAPI of type `{type}` requires following "
+            "packages to be installed: {packages}: ".format(
+                type=app.config.autoapi_type,
+                packages=", ".join(
+                    pkg_name
+                    for pkg_name, _ in backend_requirements[app.config.autoapi_type]
+                ),
+            )
+        )
 
     sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
     sphinx_mapper_obj = sphinx_mapper(
