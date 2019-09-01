@@ -7,6 +7,7 @@ This extension allows you to automagically generate API documentation from your 
 import io
 import os
 import shutil
+import sys
 
 import sphinx
 from sphinx.util.console import darkgreen, bold
@@ -21,6 +22,7 @@ from .backends import (
     default_file_mapping,
     default_ignore_patterns,
     default_backend_mapping,
+    backend_requirements,
 )
 from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
@@ -40,6 +42,16 @@ def run_autoapi(app):
     """
     Load AutoAPI data from the filesystem.
     """
+    if app.config.autoapi_type not in default_backend_mapping:
+        raise ExtensionError(
+            "Invalid autoapi_type setting, "
+            "following values is allowed: {}".format(
+                ", ".join(
+                    '"{}"'.format(api_type)
+                    for api_type in sorted(default_backend_mapping)
+                )
+            )
+        )
 
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
@@ -66,6 +78,26 @@ def run_autoapi(app):
         os.path.join(app.confdir, app.config.autoapi_root)
     )
     url_root = os.path.join("/", app.config.autoapi_root)
+
+    if not all(
+        import_name in sys.modules
+        for _, import_name in backend_requirements[app.config.autoapi_type]
+    ):
+        raise ExtensionError(
+            "AutoAPI of type `{type}` requires following "
+            "packages to be installed and included in extensions list: "
+            "{packages}".format(
+                type=app.config.autoapi_type,
+                packages=", ".join(
+                    '{import_name} (available as "{pkg_name}" on PyPI)'.format(
+                        pkg_name=pkg_name, import_name=import_name
+                    )
+                    for pkg_name, import_name in backend_requirements[
+                        app.config.autoapi_type
+                    ]
+                ),
+            )
+        )
 
     sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
     sphinx_mapper_obj = sphinx_mapper(
