@@ -123,10 +123,11 @@ class GoPythonMapper(PythonMapperBase):
         # Second level
         self.imports = obj.get("imports", [])
         self.children = []
-        self.parameters = map(
+        temp_parameters = map(
             lambda n: {"name": n["name"], "type": n["type"].lstrip("*")},
             obj.get("parameters", []),
         )
+        self.parameters = list(temp_parameters)
         self.docstring = obj.get("doc", "")
 
         # Go Specific
