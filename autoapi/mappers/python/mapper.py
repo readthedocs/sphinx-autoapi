@@ -302,6 +302,7 @@ class PythonSphinxMapper(SphinxMapperBase):
                 options=self.app.config.autoapi_options,
                 jinja_env=self.jinja_env,
                 url_root=self.url_root,
+                app=self.app,
                 **kwargs
             )
 

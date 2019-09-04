@@ -1,8 +1,12 @@
 import collections
+from typing import Optional
 
-import sphinx
+import sphinx.util.logging
 
 from ..base import PythonMapperBase
+
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 class PythonPythonMapper(PythonMapperBase):
@@ -33,6 +37,8 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self._class_content = class_content
+
+        self._display_cache = None  # type: Optional[bool]
 
     @property
     def args(self):
@@ -100,13 +106,10 @@ class PythonPythonMapper(PythonMapperBase):
 
         :type: bool
         """
-        if self.is_undoc_member and "undoc-members" not in self.options:
-            return False
-        if self.is_private_member and "private-members" not in self.options:
-            return False
-        if self.is_special_member and "special-members" not in self.options:
-            return False
-        return True
+        if self._display_cache is None:
+            self._display_cache = not self._ask_ignore(self._should_skip())
+
+        return self._display_cache
 
     @property
     def summary(self):
@@ -123,6 +126,32 @@ class PythonPythonMapper(PythonMapperBase):
                 return line
 
         return ""
+
+    def _should_skip(self):  # type: () -> bool
+        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+        skip_special_member = (
+            self.is_special_member and "special-members" not in self.options
+        )
+
+        return skip_undoc_member or skip_private_member or skip_special_member
+
+    def _ask_ignore(self, skip):  # type: (bool) -> bool
+        try:
+            ask_result = self.app.emit_firstresult(
+                "autoapi-skip-member", self.type, self.id, self, skip, self.options
+            )
+        except Exception:
+            LOGGER.warning(
+                'Exception occurred while evaluating "autoapi-skip-member" '
+                'event hook for "{}"'.format(self),
+                exc_info=True,
+            )
+            return skip
+
+        return ask_result if ask_result is not None else skip
 
     def _children_of_type(self, type_):
         return list(child for child in self.children if child.type == type_)
@@ -174,19 +203,12 @@ class PythonMethod(PythonFunction):
         :type: list(str)
         """
 
-    @property
-    def display(self):
-        """Whether this object should be displayed in documentation.
-
-        This attribute depends on the configuration options given in
-        :confval:`autoapi_options`.
-
-        :type: bool
-        """
-        if self.short_name == "__init__":
-            return False
-
-        return super(PythonMethod, self).display
+    def _should_skip(self):  # type: () -> bool
+        skip = super(PythonMethod, self)._should_skip() or self.name in (
+            "__new__",
+            "__init__",
+        )
+        return self._ask_ignore(skip)
 
 
 class PythonData(PythonPythonMapper):
@@ -301,6 +323,7 @@ class PythonClass(PythonPythonMapper):
 
         if self._class_content in ("both", "init"):
             constructor_docstring = self.constructor_docstring
+
             if constructor_docstring:
                 if self._class_content == "both":
                     docstring = "{0}\n{1}".format(docstring, constructor_docstring)

@@ -142,7 +142,8 @@ class Parser(object):
             type_ = "property"
             properties.append("property")
         else:
-            if node.type in ("staticmethod", "classmethod"):
+            # "__new__" method is implicit classmethod
+            if node.type in ("staticmethod", "classmethod") and node.name != "__new__":
                 properties.append(node.type)
             if node.is_abstract(pass_is_abstract=False):
                 properties.append("abstractmethod")

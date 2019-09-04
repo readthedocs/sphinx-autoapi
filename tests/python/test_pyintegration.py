@@ -2,11 +2,20 @@ import io
 import os
 import shutil
 import sys
+from mock import patch, Mock, call
 
 import pytest
 import sphinx
 from sphinx.application import Sphinx
 import sphinx.util.logging
+
+from autoapi.mappers.python import (
+    PythonModule,
+    PythonFunction,
+    PythonClass,
+    PythonData,
+    PythonMethod,
+)
 
 
 @pytest.fixture(scope="class")
@@ -305,6 +314,110 @@ def test_hiding_private_members(builder):
         private_file = private_handle.read()
 
     assert "public_method" in private_file
+
+
+def test_skiping_members(builder):
+    builder("pyskipexample")
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "foo doc" not in example_file
+    assert "bar doc" not in example_file
+    assert "bar m doc" not in example_file
+    assert "baf doc" in example_file
+    assert "baf m doc" not in example_file
+    assert "baz doc" not in example_file
+    assert "not ignored" in example_file
+
+
+class _CompareInstanceType(object):
+    def __init__(self, type_):
+        self.type = type_
+
+    def __eq__(self, other):
+        return self.type is type(other)
+
+    def __repr__(self):
+        return "<expect type {}>".format(self.type.__name__)
+
+
+def test_skip_members_hook(builder):
+    emit_firstresult_patch = Mock(name="emit_firstresult_patch", return_value=False)
+    with patch("sphinx.application.Sphinx.emit_firstresult", emit_firstresult_patch):
+        builder("pyskipexample")
+
+    options = ["members", "undoc-members", "special-members"]
+
+    mock_calls = [
+        call(
+            "autoapi-skip-member",
+            "module",
+            "example",
+            _CompareInstanceType(PythonModule),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "function",
+            "example.foo",
+            _CompareInstanceType(PythonFunction),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "class",
+            "example.Bar",
+            _CompareInstanceType(PythonClass),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "class",
+            "example.Baf",
+            _CompareInstanceType(PythonClass),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "data",
+            "example.baz",
+            _CompareInstanceType(PythonData),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "data",
+            "example.anchor",
+            _CompareInstanceType(PythonData),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "method",
+            "example.Bar.m",
+            _CompareInstanceType(PythonMethod),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "method",
+            "example.Baf.m",
+            _CompareInstanceType(PythonMethod),
+            False,
+            options,
+        ),
+    ]
+    for mock_call in mock_calls:
+        assert mock_call in emit_firstresult_patch.mock_calls
 
 
 class TestComplexPackage(object):

@@ -56,7 +56,8 @@ class PythonMapperBase(object):
     top_level_object = False
     _RENDER_LOG_LEVEL = "VERBOSE"
 
-    def __init__(self, obj, options=None, jinja_env=None, url_root=None):
+    def __init__(self, obj, app=None, options=None, jinja_env=None, url_root=None):
+        self.app = app
         self.obj = obj
         self.options = options
         if jinja_env:
