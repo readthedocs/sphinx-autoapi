@@ -100,6 +100,22 @@ class PythonPythonMapper(PythonMapperBase):
 
         :type: bool
         """
+        try:
+            skip = (
+                self.app.emit_firstresult(
+                    "autoapi-skip-member",
+                    self._class_content,
+                    self.name,
+                    self,
+                    self.options,
+                )
+                or False
+            )
+            if skip:
+                return False
+        except Exception as exc:
+            raise
+
         if self.is_undoc_member and "undoc-members" not in self.options:
             return False
         if self.is_private_member and "private-members" not in self.options:
@@ -183,10 +199,7 @@ class PythonMethod(PythonFunction):
 
         :type: bool
         """
-        if self.short_name == "__init__":
-            return False
-
-        return super(PythonMethod, self).display
+        return super(PythonMethod, self).display and self.short_name != "__init__"
 
 
 class PythonData(PythonPythonMapper):

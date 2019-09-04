@@ -307,6 +307,21 @@ def test_hiding_private_members(builder):
     assert "public_method" in private_file
 
 
+def test_skiping_members(builder):
+    confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
+    builder("pyskipexample", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "foo doc" not in example_file
+    assert "Bar doc" not in example_file
+    assert "m doc" not in example_file
+    assert "baz doc" not in example_file
+    assert "anchor" in example_file
+
+
 class TestComplexPackage(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
