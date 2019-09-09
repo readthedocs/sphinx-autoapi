@@ -19,12 +19,12 @@ extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
+autoapi_options = ["members", "undoc-members", "special-members"]
+
+SKIP = {"example.foo", "example.Bar", "example.Bar.m", "example.baz"}
 
 
-SKIP = {"foo", "Bar", "m", "baz"}
-
-
-def maybe_skip_member(app, what, name, obj, options):
+def maybe_skip_member(app, what, name, obj, skip, options):
     return name in SKIP
 
 

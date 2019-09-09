@@ -1,6 +1,8 @@
 import collections
+import logging
 
 import sphinx
+from lazy_object_proxy.utils import cached_property
 
 from ..base import PythonMapperBase
 
@@ -91,7 +93,7 @@ class PythonPythonMapper(PythonMapperBase):
         """
         return self.short_name.startswith("__") and self.short_name.endswith("__")
 
-    @property
+    @cached_property
     def display(self):
         """Whether this object should be displayed in documentation.
 
@@ -100,29 +102,16 @@ class PythonPythonMapper(PythonMapperBase):
 
         :type: bool
         """
-        try:
-            skip = (
-                self.app.emit_firstresult(
-                    "autoapi-skip-member",
-                    self._class_content,
-                    self.name,
-                    self,
-                    self.options,
-                )
-                or False
-            )
-            if skip:
-                return False
-        except Exception as exc:
-            raise
+        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+        skip_special_member = (
+            self.is_special_member and "special-members" not in self.options
+        )
 
-        if self.is_undoc_member and "undoc-members" not in self.options:
-            return False
-        if self.is_private_member and "private-members" not in self.options:
-            return False
-        if self.is_special_member and "special-members" not in self.options:
-            return False
-        return True
+        skip = skip_undoc_member or skip_private_member or skip_special_member
+        return not self._ask_ignore(skip)
 
     @property
     def summary(self):
@@ -139,6 +128,21 @@ class PythonPythonMapper(PythonMapperBase):
                 return line
 
         return ""
+
+    def _ask_ignore(self, skip):  # type: (bool) -> bool
+        try:
+            ask_result = self.app.emit_firstresult(
+                "autoapi-skip-member", self.type, self.id, self, skip, self.options
+            )
+        except Exception as exc:
+            logging.error(
+                'Exception occurs while evaluating "autoapi-skip-member" '
+                'event hook for "{}"'.format(self),
+                exc_info=exc,
+            )
+            return skip
+
+        return ask_result or skip
 
     def _children_of_type(self, type_):
         return list(child for child in self.children if child.type == type_)
@@ -190,7 +194,7 @@ class PythonMethod(PythonFunction):
         :type: list(str)
         """
 
-    @property
+    @cached_property
     def display(self):
         """Whether this object should be displayed in documentation.
 
