@@ -1,10 +1,12 @@
 import collections
-import logging
+from typing import Optional
 
-import sphinx
-from lazy_object_proxy.utils import cached_property
+import sphinx.util.logging
 
 from ..base import PythonMapperBase
+
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 class PythonPythonMapper(PythonMapperBase):
@@ -21,11 +23,12 @@ class PythonPythonMapper(PythonMapperBase):
     language = "python"
     is_callable = False
 
-    def __init__(self, obj, class_content="class", **kwargs):
+    def __init__(self, obj, parent=None, class_content="class", **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
 
         self.name = obj["name"]
         self.id = obj.get("full_name", self.name)
+        self.parent = parent  # type: PythonPythonMapper
 
         # Optional
         self.children = []
@@ -35,6 +38,8 @@ class PythonPythonMapper(PythonMapperBase):
 
         # For later
         self._class_content = class_content
+
+        self._display_cache = None  # type: Optional[bool]
 
     @property
     def args(self):
@@ -93,7 +98,7 @@ class PythonPythonMapper(PythonMapperBase):
         """
         return self.short_name.startswith("__") and self.short_name.endswith("__")
 
-    @cached_property
+    @property
     def display(self):
         """Whether this object should be displayed in documentation.
 
@@ -102,16 +107,11 @@ class PythonPythonMapper(PythonMapperBase):
 
         :type: bool
         """
-        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
-        skip_private_member = (
-            self.is_private_member and "private-members" not in self.options
-        )
-        skip_special_member = (
-            self.is_special_member and "special-members" not in self.options
-        )
+        if self._display_cache is not None:
+            return self._display_cache
 
-        skip = skip_undoc_member or skip_private_member or skip_special_member
-        return not self._ask_ignore(skip)
+        result = self._display_cache = not self._ask_ignore(self._should_skip())
+        return result
 
     @property
     def summary(self):
@@ -129,13 +129,24 @@ class PythonPythonMapper(PythonMapperBase):
 
         return ""
 
+    def _should_skip(self):  # type: () -> bool
+        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+        skip_special_member = (
+            self.is_special_member and "special-members" not in self.options
+        )
+
+        return skip_undoc_member or skip_private_member or skip_special_member
+
     def _ask_ignore(self, skip):  # type: (bool) -> bool
         try:
             ask_result = self.app.emit_firstresult(
                 "autoapi-skip-member", self.type, self.id, self, skip, self.options
             )
         except Exception as exc:
-            logging.error(
+            LOGGER.error(
                 'Exception occurs while evaluating "autoapi-skip-member" '
                 'event hook for "{}"'.format(self),
                 exc_info=exc,
@@ -194,16 +205,18 @@ class PythonMethod(PythonFunction):
         :type: list(str)
         """
 
-    @cached_property
-    def display(self):
-        """Whether this object should be displayed in documentation.
+    def _should_skip(self):  # type: () -> bool
+        if self.name not in ("__new__", "__init__"):
+            return super(PythonMethod, self)._should_skip()
 
-        This attribute depends on the configuration options given in
-        :confval:`autoapi_options`.
+        assert isinstance(
+            self.parent, PythonClass
+        ), "Method parent object is always class"
 
-        :type: bool
-        """
-        return super(PythonMethod, self).display and self.short_name != "__init__"
+        if self._class_content == "class":
+            return True
+        else:
+            return self.name == "__new__" and self.parent.constructor is not None
 
 
 class PythonData(PythonPythonMapper):
@@ -316,13 +329,8 @@ class PythonClass(PythonPythonMapper):
     def docstring(self):
         docstring = super(PythonClass, self).docstring
 
-        if self._class_content in ("both", "init"):
-            constructor_docstring = self.constructor_docstring
-            if constructor_docstring:
-                if self._class_content == "both":
-                    docstring = "{0}\n{1}".format(docstring, constructor_docstring)
-                else:
-                    docstring = constructor_docstring
+        if self._class_content not in ("class", "both"):
+            return ""
 
         return docstring
 
@@ -345,6 +353,13 @@ class PythonClass(PythonPythonMapper):
                 return child
 
         return None
+
+    @property
+    def new_constructor(self):
+        try:
+            return next(child for child in self.children)
+        except StopIteration:
+            return None
 
     @property
     def constructor_docstring(self):

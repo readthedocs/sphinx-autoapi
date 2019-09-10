@@ -14,8 +14,15 @@ class Bar:
     """bar doc"""
 
     def m(self):
-        """m doc"""
+        """bar m doc"""
         pass
+
+
+class Baf:
+    """baf docs"""
+
+    def m(self):
+        """baf m docs"""
 
 
 baz = 100

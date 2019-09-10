@@ -286,7 +286,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             obj.submodules.sort()
             obj.subpackages.sort()
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None, parent=None, **kwargs):
         """Create a class from the passed in data
 
         :param data: dictionary data of parser output
@@ -298,6 +298,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         else:
             obj = cls(
                 data,
+                parent=parent,
                 class_content=self.app.config.autoapi_python_class_content,
                 options=self.app.config.autoapi_options,
                 jinja_env=self.jinja_env,
@@ -320,7 +321,7 @@ class PythonSphinxMapper(SphinxMapperBase):
 
             for child_data in data.get("children", []):
                 for child_obj in self.create_class(
-                    child_data, options=options, **kwargs
+                    child_data, parent=obj, options=options, **kwargs
                 ):
                     obj.children.append(child_obj)
             yield obj

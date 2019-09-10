@@ -20,8 +20,7 @@ autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
 autoapi_options = ["members", "undoc-members", "special-members"]
-
-SKIP = {"example.foo", "example.Bar", "example.Bar.m", "example.baz"}
+SKIP = {"example.foo", "example.Bar", "example.Bar.m", "example.Baf.m", "example.baz"}
 
 
 def maybe_skip_member(app, what, name, obj, skip, options):

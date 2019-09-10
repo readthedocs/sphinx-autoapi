@@ -325,7 +325,9 @@ def test_skiping_members(builder):
 
     assert "foo doc" not in example_file
     assert "Bar doc" not in example_file
-    assert "m doc" not in example_file
+    assert "Bar m doc" not in example_file
+    assert "Baf doc" in example_file
+    assert "Baf m doc" not in example_file
     assert "baz doc" not in example_file
     assert "anchor" in example_file
 
@@ -375,6 +377,14 @@ def test_skip_members_hook(builder):
         ),
         call(
             "autoapi-skip-member",
+            "class",
+            "example.Baf",
+            _CompareInstanceType(PythonClass),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
             "data",
             "example.baz",
             _CompareInstanceType(PythonData),
@@ -393,6 +403,14 @@ def test_skip_members_hook(builder):
             "autoapi-skip-member",
             "method",
             "example.Bar.m",
+            _CompareInstanceType(PythonMethod),
+            False,
+            options,
+        ),
+        call(
+            "autoapi-skip-member",
+            "method",
+            "example.Baf.m",
             _CompareInstanceType(PythonMethod),
             False,
             options,
