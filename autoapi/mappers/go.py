@@ -172,6 +172,10 @@ class GoMethod(GoPythonMapper):
     type = "method"
     ref_directive = "meth"
 
+    def __init__(self, obj, **kwargs):
+        super(GoMethod, self).__init__(obj, **kwargs)
+        self.receiver = obj.get("recv")
+
 
 class GoConstant(GoPythonMapper):
     type = "const"
