@@ -128,6 +128,7 @@ class GoPythonMapper(PythonMapperBase):
             obj.get("parameters", []),
         )
         self.parameters = list(temp_parameters)
+        self.results = obj.get("results", [])
         self.docstring = obj.get("doc", "")
 
         # Go Specific
