@@ -65,7 +65,7 @@ class GoSphinxMapper(SphinxMapperBase):
             _type
                 Set the object class
 
-            consts, types, vars, funcs
+            consts, types, vars, funcs, methods
                 Recurse into :py:meth:`create_class` to create child object
                 instances
 
@@ -96,7 +96,7 @@ class GoSphinxMapper(SphinxMapperBase):
             else:
                 # Recurse for children
                 obj = cls(data, jinja_env=self.jinja_env)
-                for child_type in ["consts", "types", "vars", "funcs"]:
+                for child_type in ["consts", "types", "vars", "funcs", "methods"]:
                     for child_data in data.get(child_type, []):
                         obj.children += list(
                             self.create_class(
@@ -104,7 +104,8 @@ class GoSphinxMapper(SphinxMapperBase):
                                 _type=child_type.replace("consts", "const")
                                 .replace("types", "type")
                                 .replace("vars", "variable")
-                                .replace("funcs", "func"),
+                                .replace("funcs", "func")
+                                .replace("methods", "method"),
                             )
                         )
                 yield obj
