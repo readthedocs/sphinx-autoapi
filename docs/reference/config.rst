@@ -63,7 +63,7 @@ Configuration Options
 	:doc:`directives`.
 
 
-Customization Options
+Customisation Options
 ---------------------
 
 .. confval:: autoapi_options
@@ -134,6 +134,36 @@ Customization Options
 	If the class does not have an ``__init__`` or the ``__init__``
 	docstring is empty and the class defines a ``__new__`` with a docstring,
 	the ``__new__`` docstring is used instead of the ``__init__`` docstring.
+
+Events
+~~~~~~
+
+The following events allow you to control the behaviour of AutoAPI.
+
+.. event:: autoapi-skip-member (app, what, name, obj, skip, options)
+
+	(Python only)
+	Emitted when a template has to decide whether a member should be included
+	in the documentation.
+	Usually the member is skipped if a handler returns ``True``,
+	and included otherwise.
+	Handlers should return ``None`` to fall back to the default skipping
+	behaviour of AutoAPI or another attached handler.
+
+	:param app: The Sphinx application object.
+	:param what: The type of the object which the docstring belongs to.
+		This can be one of:
+		``"attribute"``, ``"class"``, ``"data"``, ``"exception"``,
+		``"function"``, ``"method"``, ``"module"``, ``"package"``.
+	:type what: str
+	:param name: The fully qualified name of the object.
+	:type name: str
+	:param obj: The object itself.
+	:type obj: PythonPythonMapper
+	:param skip: Whether AutoAPI will skip this member if the handler
+		does not override the decision.
+	:type skip: bool
+	:param options: The options given to the directive.
 
 
 Debugging Options
