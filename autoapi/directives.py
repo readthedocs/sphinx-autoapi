@@ -53,7 +53,9 @@ class AutoapiSummary(Directive):  # pylint: disable=too-few-public-methods
                 docname = posixpath.join(tree_prefix, obj.name)
                 docname = posixpath.normpath(posixpath.join(dirname, docname))
                 if docname not in env.found_docs:
-                    self.reporter.warning("toctree references unknown document {}".format(docname))
+                    self.reporter.warning(
+                        "toctree references unknown document {}".format(docname)
+                    )
                 docnames.append(docname)
 
             tocnode = addnodes.toctree()

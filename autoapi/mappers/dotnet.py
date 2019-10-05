@@ -172,12 +172,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         except KeyError:
             LOGGER.warning("Unknown type: %s" % data)
         else:
-            obj = cls(
-                data,
-                jinja_env=self.jinja_env,
-                options=options,
-                **kwargs
-            )
+            obj = cls(data, jinja_env=self.jinja_env, options=options, **kwargs)
             obj.url_root = self.url_root
 
             # Append child objects

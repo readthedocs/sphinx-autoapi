@@ -14,6 +14,7 @@ from .mappers.python import (
 
 # pylint: disable=attribute-defined-outside-init,no-self-use,unused-argument
 
+
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
         if hasattr(self.env.app, "registry") and hasattr(

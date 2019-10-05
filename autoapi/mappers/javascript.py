@@ -109,7 +109,6 @@ class JavaScriptPythonMapper(PythonMapperBase):
         )
 
 
-
 class JavaScriptClass(JavaScriptPythonMapper):
     type = "class"
     ref_directive = "class"

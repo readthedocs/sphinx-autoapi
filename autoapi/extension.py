@@ -46,8 +46,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             "Invalid autoapi_type setting, "
             "following values is allowed: {}".format(
                 ", ".join(
-                    '"{}"'.format(api_type)
-                    for api_type in sorted(LANGUAGE_MAPPERS)
+                    '"{}"'.format(api_type) for api_type in sorted(LANGUAGE_MAPPERS)
                 )
             )
         )
