@@ -17,12 +17,11 @@ import sphinx.util.logging
 from docutils.parsers.rst import directives
 
 from . import documenters
-from . import utils
 from .backends import (
-    default_file_mapping,
-    default_ignore_patterns,
-    default_backend_mapping,
-    backend_requirements,
+    DEFAULT_FILE_PATTERNS,
+    DEFAULT_IGNORE_PATTERNS,
+    LANGUAGE_MAPPERS,
+    LANGUAGE_REQUIREMENTS,
 )
 from .directives import AutoapiSummary, NestedParse
 from .settings import API_ROOT
@@ -30,25 +29,25 @@ from .toctree import add_domain_to_toctree
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
-default_options = ["members", "undoc-members", "private-members", "special-members"]
-_viewcode_cache = {}
+_DEFAULT_OPTIONS = ["members", "undoc-members", "private-members", "special-members"]
+_VIEWCODE_CACHE = {}
 """Caches a module's parse results for use in viewcode.
 
 :type: dict(str, tuple)
 """
 
 
-def run_autoapi(app):
+def run_autoapi(app):  # pylint: disable=too-many-branches
     """
     Load AutoAPI data from the filesystem.
     """
-    if app.config.autoapi_type not in default_backend_mapping:
+    if app.config.autoapi_type not in LANGUAGE_MAPPERS:
         raise ExtensionError(
             "Invalid autoapi_type setting, "
             "following values is allowed: {}".format(
                 ", ".join(
                     '"{}"'.format(api_type)
-                    for api_type in sorted(default_backend_mapping)
+                    for api_type in sorted(LANGUAGE_MAPPERS)
                 )
             )
         )
@@ -81,7 +80,7 @@ def run_autoapi(app):
 
     if not all(
         import_name in sys.modules
-        for _, import_name in backend_requirements[app.config.autoapi_type]
+        for _, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
     ):
         raise ExtensionError(
             "AutoAPI of type `{type}` requires following "
@@ -92,14 +91,14 @@ def run_autoapi(app):
                     '{import_name} (available as "{pkg_name}" on PyPI)'.format(
                         pkg_name=pkg_name, import_name=import_name
                     )
-                    for pkg_name, import_name in backend_requirements[
+                    for pkg_name, import_name in LANGUAGE_REQUIREMENTS[
                         app.config.autoapi_type
                     ]
                 ),
             )
         )
 
-    sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+    sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
     sphinx_mapper_obj = sphinx_mapper(
         app, template_dir=app.config.autoapi_template_dir, url_root=url_root
     )
@@ -108,12 +107,12 @@ def run_autoapi(app):
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
     else:
-        file_patterns = default_file_mapping.get(app.config.autoapi_type, [])
+        file_patterns = DEFAULT_FILE_PATTERNS.get(app.config.autoapi_type, [])
 
     if app.config.autoapi_ignore:
         ignore_patterns = app.config.autoapi_ignore
     else:
-        ignore_patterns = default_ignore_patterns.get(app.config.autoapi_type, [])
+        ignore_patterns = DEFAULT_IGNORE_PATTERNS.get(app.config.autoapi_type, [])
 
     if ".rst" in app.config.source_suffix:
         out_suffix = ".rst"
@@ -143,7 +142,7 @@ def build_finished(app, exception):
             LOGGER.info(bold("[AutoAPI] ") + darkgreen("Cleaning generated .rst files"))
         shutil.rmtree(normalized_root)
 
-        sphinx_mapper = default_backend_mapping[app.config.autoapi_type]
+        sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
         if hasattr(sphinx_mapper, "build_finished"):
             sphinx_mapper.build_finished(app, exception)
 
@@ -183,7 +182,7 @@ def doctree_read(app, doctree):
             LOGGER.info(message_prefix + message)
 
 
-def clear_env(app, env):
+def clear_env(_, env):
     """Clears the environment of the unpicklable objects that we left behind."""
     env.autoapi_mapper = None
 
@@ -193,8 +192,8 @@ def viewcode_find(app, modname):
     if modname not in mapper.objects:
         return None
 
-    if modname in _viewcode_cache:
-        return _viewcode_cache[modname]
+    if modname in _VIEWCODE_CACHE:
+        return _VIEWCODE_CACHE[modname]
 
     locations = {}
     module = mapper.objects[modname]
@@ -225,7 +224,7 @@ def viewcode_find(app, modname):
         source = open(module.obj["file_path"]).read()
 
     result = (source, locations)
-    _viewcode_cache[modname] = result
+    _VIEWCODE_CACHE[modname] = result
     return result
 
 
@@ -256,7 +255,7 @@ def setup(app):
     app.add_config_value("autoapi_type", "python", "html")
     app.add_config_value("autoapi_root", API_ROOT, "html")
     app.add_config_value("autoapi_ignore", [], "html")
-    app.add_config_value("autoapi_options", default_options, "html")
+    app.add_config_value("autoapi_options", _DEFAULT_OPTIONS, "html")
     app.add_config_value("autoapi_file_patterns", None, "html")
     app.add_config_value("autoapi_dirs", [], "html")
     app.add_config_value("autoapi_keep_files", False, "html")

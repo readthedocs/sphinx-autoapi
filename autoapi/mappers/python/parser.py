@@ -5,11 +5,6 @@ import sys
 import astroid
 from . import astroid_utils
 
-try:
-    _TEXT_TYPE = unicode
-except NameError:
-    _TEXT_TYPE = str
-
 
 class Parser(object):
     def __init__(self):
@@ -19,15 +14,15 @@ class Parser(object):
     def _get_full_name(self, name):
         return ".".join(self._name_stack + [name])
 
-    def _encode(self, to_encode):
+    def _decode(self, to_decode):
         if sys.version_info < (3,) and self._encoding:
             try:
-                return _TEXT_TYPE(to_encode, self._encoding)
+                return unicode(to_decode, self._encoding)  # pylint: disable=undefined-variable
             except TypeError:
                 # The string was already in the correct format
                 pass
 
-        return to_encode
+        return to_decode
 
     def parse_file(self, file_path):
         directory, filename = os.path.split(file_path)
@@ -69,7 +64,7 @@ class Parser(object):
         target = assign_value[0]
         value = None
         try:
-            value = self._encode(assign_value[1])
+            value = self._decode(assign_value[1])
         except UnicodeDecodeError:
             # Ignore binary data on Python 2.7
             if sys.version_info[0] >= 3:
@@ -81,7 +76,7 @@ class Parser(object):
             "type": type_,
             "name": target,
             "full_name": self._get_full_name(target),
-            "doc": self._encode(doc),
+            "doc": self._decode(doc),
             "value": value,
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
@@ -112,7 +107,7 @@ class Parser(object):
             "full_name": self._get_full_name(node.name),
             "args": args,
             "bases": basenames,
-            "doc": self._encode(node.doc or ""),
+            "doc": self._decode(node.doc or ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "children": [],
@@ -130,7 +125,7 @@ class Parser(object):
     def parse_asyncfunctiondef(self, node):
         return self.parse_functiondef(node)
 
-    def parse_functiondef(self, node):
+    def parse_functiondef(self, node):  # pylint: disable=too-many-branches
         if astroid_utils.is_decorated_with_property_setter(node):
             return []
 
@@ -165,7 +160,7 @@ class Parser(object):
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "args": arg_string,
-            "doc": self._encode(node.doc or ""),
+            "doc": self._decode(node.doc or ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "return_annotation": return_annotation,
@@ -219,7 +214,7 @@ class Parser(object):
             "type": type_,
             "name": node.name,
             "full_name": node.name,
-            "doc": self._encode(node.doc or ""),
+            "doc": self._decode(node.doc or ""),
             "children": [],
             "file_path": path,
             "encoding": node.file_encoding,

@@ -11,8 +11,8 @@ from .mappers.python import (
     PythonAttribute,
     PythonException,
 )
-from . import utils
 
+# pylint: disable=attribute-defined-outside-init,no-self-use,unused-argument
 
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
@@ -22,7 +22,7 @@ class AutoapiDocumenter(autodoc.Documenter):
             attrgetters = self.env.app.registry.autodoc_attrgettrs
         else:
             # Needed for Sphinx 1.6
-            attrgetters = autodoc.AutoDirective._special_attrgetters
+            attrgetters = getattr(autodoc.AutoDirective, "_special_attrgetters")
 
         for type_, func in attrgetters.items():
             if isinstance(obj, type_):
@@ -82,7 +82,7 @@ class AutoapiDocumenter(autodoc.Documenter):
         return False, sorted(children)
 
 
-class _AutoapiDocstringSignatureMixin(object):
+class _AutoapiDocstringSignatureMixin(object):  # pylint: disable=too-few-public-methods
     def format_signature(self, **kwargs):
         # Set "manual" attributes at the last possible moment.
         # This is to let a manual entry or docstring searching happen first,
@@ -140,7 +140,7 @@ if sphinx.version_info >= (2,):
         def format_args(self, **kwargs):
             to_format = self.object.args
 
-            if re.match("func\W", to_format) or to_format == "func":
+            if re.match(r"func\W", to_format) or to_format == "func":
                 if "," not in to_format:
                     return None
 

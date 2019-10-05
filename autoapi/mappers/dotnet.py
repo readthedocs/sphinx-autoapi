@@ -105,8 +105,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 _, error_output = proc.communicate()
                 if error_output:
                     LOGGER.warning(error_output)
-            except (OSError, subprocess.CalledProcessError) as e:
-                LOGGER.warning("Error generating metadata: {0}".format(e))
+            except (OSError, subprocess.CalledProcessError):
+                LOGGER.warning("Error generating metadata", exc_info=True)
                 if raise_error:
                     raise ExtensionError(
                         "Failure in docfx while generating AutoAPI output."
@@ -137,7 +137,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
     # Subclassed to iterate over items
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for path, data in sphinx.util.status_iterator(
+        for _, data in sphinx.util.status_iterator(
             self.paths.items(),
             bold("[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
@@ -150,7 +150,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         self.organize_objects()
 
-    def create_class(self, data, options=None, path=None, **kwargs):
+    def create_class(self, data, options=None, **kwargs):
         """
         Return instance of class based on Roslyn type property
 
@@ -165,8 +165,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         :param data: dictionary data from Roslyn output artifact
         """
-
-        obj_map = dict((cls.type, cls) for cls in ALL_CLASSES)
+        kwargs.pop("path", None)
+        obj_map = {cls.type: cls for cls in ALL_CLASSES}
         try:
             cls = obj_map[data["type"].lower()]
         except KeyError:
@@ -176,9 +176,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 data,
                 jinja_env=self.jinja_env,
                 options=options,
-                url_root=self.url_root,
                 **kwargs
             )
+            obj.url_root = self.url_root
 
             # Append child objects
             # TODO this should recurse in the case we're getting back more
@@ -228,19 +228,19 @@ class DotNetSphinxMapper(SphinxMapperBase):
             _recurse_ns(obj)
 
         # Clean out dead namespaces
-        for key, ns in self.top_namespaces.copy().items():
-            if not ns.children:
+        for key, namespace in self.top_namespaces.copy().items():
+            if not namespace.children:
                 del self.top_namespaces[key]
 
-        for key, ns in self.namespaces.items():
-            if not ns.children:
+        for key, namespace in self.namespaces.copy().items():
+            if not namespace.children:
                 del self.namespaces[key]
 
     def output_rst(self, root, source_suffix):
         if not self.objects:
             raise ExtensionError("No API objects exist. Can't continue")
 
-        for id, obj in sphinx.util.status_iterator(
+        for _, obj in sphinx.util.status_iterator(
             self.objects.items(),
             bold("[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),
@@ -268,7 +268,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             )
 
     @staticmethod
-    def build_finished(app, exception):
+    def build_finished(app, _):
         if app.verbosity > 1:
             LOGGER.info(bold("[AutoAPI] ") + darkgreen("Cleaning generated .yml files"))
         if os.path.exists(DotNetSphinxMapper.DOCFX_OUTPUT_PATH):
@@ -343,7 +343,7 @@ class DotNetPythonMapper(PythonMapperBase):
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
         self.inheritance = [
-            DotNetClass({"uid": name, "name": name})
+            DotNetClass({"uid": name, "name": name}, jinja_env=self.jinja_env)
             for name in obj.get("inheritance", [])
         ]
 
@@ -382,7 +382,7 @@ class DotNetPythonMapper(PythonMapperBase):
             repo = self.source["remote"]["repo"].replace(".git", "")
             path = self.path
             return "{repo}/blob/master/{path}".format(repo=repo, path=path)
-        except Exception:
+        except KeyError:
             return ""
 
     @property
@@ -429,7 +429,7 @@ class DotNetPythonMapper(PythonMapperBase):
 
         See: http://sphinx-doc.org/domains.html#role-cpp:any
         """
-        return self.name.replace("<", "\<").replace("`", "\`")
+        return self.name.replace("<", r"\<").replace("`", r"\`")
 
     @property
     def ref_short_name(self):
@@ -455,7 +455,7 @@ class DotNetPythonMapper(PythonMapperBase):
                 found = DOC_COMMENT_SEE_PATTERN.search(text)
                 if found is None:
                     break
-                ref = found.group("attr_value").replace("<", "\<").replace("`", "\`")
+                ref = found.group("attr_value").replace("<", r"\<").replace("`", r"\`")
 
                 reftype = "any"
                 replacement = ""

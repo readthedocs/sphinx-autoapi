@@ -1,0 +1,22 @@
+[MASTER]
+
+load-plugins=
+
+[MESSAGES CONTROL]
+
+disable=bad-continuation,
+      duplicate-code,
+      fixme,
+      import-error,
+      missing-class-docstring,
+      missing-function-docstring,
+      missing-module-docstring,
+      too-many-locals,
+      too-many-instance-attributes,
+      useless-object-inheritance
+
+enable=c-extension-no-member
+
+[BASIC]
+
+good-names=i,j,id,_

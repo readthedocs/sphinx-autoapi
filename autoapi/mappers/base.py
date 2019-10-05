@@ -1,10 +1,8 @@
-import io
-import re
 import os
 import fnmatch
 from collections import OrderedDict, namedtuple
+import re
 
-import unidecode
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
@@ -12,6 +10,7 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
 import sphinx.util.logging
+import unidecode
 
 from ..settings import API_ROOT
 
@@ -33,7 +32,6 @@ class PythonMapperBase(object):
 
     :param obj: JSON object representing this object
     :param jinja_env: A template environment for rendering this object
-    :param url_root: API URL root prefix
 
     Required attributes:
 
@@ -56,15 +54,15 @@ class PythonMapperBase(object):
     top_level_object = False
     _RENDER_LOG_LEVEL = "VERBOSE"
 
-    def __init__(self, obj, app=None, options=None, jinja_env=None, url_root=None):
+    def __init__(self, obj, jinja_env, app=None, options=None):
         self.app = app
         self.obj = obj
         self.options = options
-        if jinja_env:
-            self.jinja_env = jinja_env
-        if url_root is None:
-            url_root = os.path.join("/", API_ROOT)
-        self.url_root = url_root
+        self.jinja_env = jinja_env
+        self.url_root = os.path.join("/", API_ROOT)
+
+        self.name = None
+        self.id = None
 
     def render(self, **kwargs):
         LOGGER.log(self._RENDER_LOG_LEVEL, "Rendering %s", self.id)
@@ -143,7 +141,7 @@ class PythonMapperBase(object):
     @property
     def display(self):
         """Whether to display this object or not.
-        
+
         :type: bool
         """
         return True
@@ -155,13 +153,6 @@ class PythonMapperBase(object):
     @property
     def ref_directive(self):
         return self.type
-
-    @property
-    def namespace(self):
-        pieces = self.id.split(".")[:-1]
-        if pieces:
-            return ".".join(pieces)
-        return None
 
 
 class SphinxMapperBase(object):
@@ -220,13 +211,13 @@ class SphinxMapperBase(object):
             if data:
                 self.paths[path] = data
 
-    def find_files(self, patterns, dirs, ignore):
+    @staticmethod
+    def find_files(patterns, dirs, ignore):
         # pylint: disable=too-many-nested-blocks
         if not ignore:
             ignore = []
-        files_to_read = []
         for _dir in dirs:
-            for root, dirnames, filenames in os.walk(_dir):
+            for root, _, filenames in os.walk(_dir):
                 for pattern in patterns:
                     for filename in fnmatch.filter(filenames, pattern):
                         skip = False
@@ -276,7 +267,7 @@ class SphinxMapperBase(object):
 
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for path, data in sphinx.util.status_iterator(
+        for _, data in sphinx.util.status_iterator(
             self.paths.items(),
             bold("[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
@@ -294,7 +285,7 @@ class SphinxMapperBase(object):
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
-        for id, obj in sphinx.util.status_iterator(
+        for _, obj in sphinx.util.status_iterator(
             self.objects.items(),
             bold("[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),

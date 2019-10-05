@@ -1,4 +1,3 @@
-import collections
 from typing import Optional
 
 import sphinx.util.logging
@@ -139,17 +138,9 @@ class PythonPythonMapper(PythonMapperBase):
         return skip_undoc_member or skip_private_member or skip_special_member
 
     def _ask_ignore(self, skip):  # type: (bool) -> bool
-        try:
-            ask_result = self.app.emit_firstresult(
-                "autoapi-skip-member", self.type, self.id, self, skip, self.options
-            )
-        except Exception:
-            LOGGER.warning(
-                'Exception occurred while evaluating "autoapi-skip-member" '
-                'event hook for "{}"'.format(self),
-                exc_info=True,
-            )
-            return skip
+        ask_result = self.app.emit_firstresult(
+            "autoapi-skip-member", self.type, self.id, self, skip, self.options
+        )
 
         return ask_result if ask_result is not None else skip
 
@@ -304,7 +295,7 @@ class PythonClass(PythonPythonMapper):
         :type: list(str)
         """
 
-    @PythonPythonMapper.args.getter
+    @property
     def args(self):
         args = self._args
 
@@ -317,7 +308,11 @@ class PythonClass(PythonPythonMapper):
 
         return args
 
-    @PythonPythonMapper.docstring.getter
+    @args.setter
+    def args(self, value):
+        self._args = value
+
+    @property
     def docstring(self):
         docstring = super(PythonClass, self).docstring
 
@@ -331,6 +326,10 @@ class PythonClass(PythonPythonMapper):
                     docstring = constructor_docstring
 
         return docstring
+
+    @docstring.setter
+    def docstring(self, value):
+        self._docstring = value
 
     @property
     def methods(self):

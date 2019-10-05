@@ -70,7 +70,7 @@ def _find_toc_node(toc, ref_id, objtype):
     return None
 
 
-def _get_toc_reference(app, node, toc, docname):
+def _get_toc_reference(node, toc, docname):
     """
     Logic that understands maps a specific node to it's part of the toctree.
 
@@ -90,8 +90,8 @@ def _get_toc_reference(app, node, toc, docname):
         try:
             ref_id = node.children[0].attributes["ids"][0]
             toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
-        except (KeyError, IndexError) as e:
-            LOGGER.warning("Invalid desc node: %s" % e)
+        except (KeyError, IndexError):
+            LOGGER.warning("Invalid desc node", exc_info=True)
             toc_reference = None
 
     return toc_reference
@@ -119,8 +119,8 @@ def add_domain_to_toctree(app, doctree, docname):
     for desc_node in doctree.traverse(addnodes.desc):
         try:
             ref_id = desc_node.children[0].attributes["ids"][0]
-        except (KeyError, IndexError) as e:
-            LOGGER.warning("Invalid desc node: %s" % e)
+        except (KeyError, IndexError):
+            LOGGER.warning("Invalid desc node", exc_info=True)
             continue
         try:
             # Python domain object
@@ -136,7 +136,7 @@ def add_domain_to_toctree(app, doctree, docname):
         )
 
         if parent_node:
-            toc_reference = _get_toc_reference(app, parent_node, toc, docname)
+            toc_reference = _get_toc_reference(parent_node, toc, docname)
             if toc_reference:
                 # Get the last child of our parent's bullet list, this is where "we" live.
                 toc_insertion_point = _traverse_parent(

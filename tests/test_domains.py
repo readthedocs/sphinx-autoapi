@@ -185,7 +185,7 @@ class DotNetPythonMapperTests(unittest.TestCase):
                 },
             },
         }
-        mapped = dotnet.DotNetPythonMapper(obj)
+        mapped = dotnet.DotNetPythonMapper(obj, jinja_env=None)
         self.assertEqual(
             mapped.parameters[0],
             {"name": "a", "type": "{TUser}", "desc": "Test :any:`TUser`"},

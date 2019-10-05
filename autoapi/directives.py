@@ -13,7 +13,7 @@ from sphinx.util.nodes import nested_parse_with_titles
 from sphinx.util.rst import escape
 
 
-class AutoapiSummary(Directive):
+class AutoapiSummary(Directive):  # pylint: disable=too-few-public-methods
     """A version of autosummary that uses static analysis."""
 
     required_arguments = 0
@@ -25,16 +25,6 @@ class AutoapiSummary(Directive):
         "nosignatures": directives.flag,
         "template": directives.unchanged,
     }
-
-    def warn(self, msg):
-        """Add a warning message.
-
-        :param msg: The warning message to add.
-        :type msg: str
-        """
-        self.warnings.append(
-            self.state.document.reporter.warning(msg, line=self.lineno)
-        )
 
     def _get_names(self):
         """Get the names of the objects to include in the table.
@@ -48,8 +38,6 @@ class AutoapiSummary(Directive):
                 yield line
 
     def run(self):
-        self.warnings = []
-
         env = self.state.document.settings.env
         mapper = env.autoapi_mapper
 
@@ -65,7 +53,7 @@ class AutoapiSummary(Directive):
                 docname = posixpath.join(tree_prefix, obj.name)
                 docname = posixpath.normpath(posixpath.join(dirname, docname))
                 if docname not in env.found_docs:
-                    self.warn("toctree references unknown document {}".format(docname))
+                    self.reporter.warning("toctree references unknown document {}".format(docname))
                 docnames.append(docname)
 
             tocnode = addnodes.toctree()
@@ -77,7 +65,7 @@ class AutoapiSummary(Directive):
             tocnode = sphinx.ext.autosummary.autosummary_toc("", "", tocnode)
             nodes_.append(tocnode)
 
-        return self.warnings + nodes_
+        return nodes_
 
     def _get_row(self, obj):
         template = ":{}:`{} <{}>`\\ {}"
@@ -124,7 +112,7 @@ class AutoapiSummary(Directive):
         return [table_spec, table]
 
 
-class NestedParse(Directive):
+class NestedParse(Directive):  # pylint: disable=too-few-public-methods
 
     """Nested parsing to remove the first heading of included rST
 

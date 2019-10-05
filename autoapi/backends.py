@@ -5,7 +5,7 @@ from .mappers import (
     JavaScriptSphinxMapper,
 )
 
-default_file_mapping = {
+DEFAULT_FILE_PATTERNS = {
     "python": ["*.py", "*.pyi"],
     "dotnet": ["project.json", "*.csproj", "*.vbproj"],
     "go": ["*.go"],
@@ -13,13 +13,13 @@ default_file_mapping = {
 }
 
 
-default_ignore_patterns = {
+DEFAULT_IGNORE_PATTERNS = {
     "dotnet": ["*toc.yml", "*index.yml"],
     "python": ["*migrations*"],
 }
 
 
-default_backend_mapping = {
+LANGUAGE_MAPPERS = {
     "python": PythonSphinxMapper,
     "dotnet": DotNetSphinxMapper,
     "go": GoSphinxMapper,
@@ -29,7 +29,7 @@ default_backend_mapping = {
 
 #: describes backend requirements in form
 #: {'backend name': (('1st package name in pypi', '1st package import name'), ...)}
-backend_requirements = {
+LANGUAGE_REQUIREMENTS = {
     "python": (),
     "javascript": (),
     "go": (("sphinxcontrib-golangdomain", "sphinxcontrib.golangdomain"),),

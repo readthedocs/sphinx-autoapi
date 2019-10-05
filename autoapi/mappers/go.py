@@ -1,7 +1,7 @@
 import json
 import subprocess
 
-from sphinx.util.console import darkgreen, bold
+from sphinx.util.console import bold
 import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -34,7 +34,7 @@ class GoSphinxMapper(SphinxMapperBase):
         """Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
-        :param \**kwargs:
+        :param **kwargs:
             * ignore (``list``): List of file patterns to ignore
         """
         # TODO support JSON here

@@ -3,7 +3,7 @@ import copy
 import os
 
 import sphinx.util
-from sphinx.util.console import darkgreen, bold
+from sphinx.util.console import bold
 import sphinx.util.docstrings
 import sphinx.util.logging
 
@@ -301,10 +301,10 @@ class PythonSphinxMapper(SphinxMapperBase):
                 class_content=self.app.config.autoapi_python_class_content,
                 options=self.app.config.autoapi_options,
                 jinja_env=self.jinja_env,
-                url_root=self.url_root,
                 app=self.app,
                 **kwargs
             )
+            obj.url_root = self.url_root
 
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
             if lines and "autodoc-process-docstring" in self.app.events.events:

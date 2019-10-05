@@ -14,11 +14,11 @@ if sys.version_info < (3,):
     _EXCEPTIONS_MODULE = "exceptions"
     # getattr to keep linter happy
     _STRING_TYPES = getattr(builtins, "basestring")
-    _zip_longest = itertools.izip_longest
+    _zip_longest = itertools.izip_longest  # pylint: disable=invalid-name,no-member
 else:
     _EXCEPTIONS_MODULE = "builtins"
-    _STRING_TYPES = str
-    _zip_longest = itertools.zip_longest
+    _STRING_TYPES = (str,)
+    _zip_longest = itertools.zip_longest  # pylint: disable=invalid-name
 
 
 def resolve_import_alias(name, import_names):
@@ -92,11 +92,11 @@ def get_full_basename(node, basename):
             import_name = get_full_import_name(assignment, top_level_name)
             full_basename = basename.replace(top_level_name, import_name, 1)
             break
-        elif isinstance(assignment, astroid.nodes.Import):
+        if isinstance(assignment, astroid.nodes.Import):
             import_name = resolve_import_alias(top_level_name, assignment.names)
             full_basename = basename.replace(top_level_name, import_name, 1)
             break
-        elif isinstance(assignment, astroid.nodes.ClassDef):
+        if isinstance(assignment, astroid.nodes.ClassDef):
             full_basename = "{}.{}".format(assignment.root().name, assignment.name)
             break
 
@@ -185,7 +185,7 @@ def get_assign_annotation(node):
     :type node: astroid.nodes.Assign or astroid.nodes.AnnAssign
 
     :returns: The type annotation as a string, or None if one does not exist.
-    :type: str or None
+    :rtype: str or None
     """
     annotation = None
 
