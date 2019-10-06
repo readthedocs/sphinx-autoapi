@@ -16,10 +16,9 @@ class Parser(object):
 
     def _decode(self, to_decode):
         if sys.version_info < (3,) and self._encoding:
+            # pylint: disable=undefined-variable
             try:
-                return unicode(
-                    to_decode, self._encoding
-                )  # pylint: disable=undefined-variable
+                return unicode(to_decode, self._encoding)
             except TypeError:
                 # The string was already in the correct format
                 pass
