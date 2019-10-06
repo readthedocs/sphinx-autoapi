@@ -3,7 +3,7 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.2.0 (TBC)
+v1.2.0 (2019-10-5)
 ------------
 
 Features
