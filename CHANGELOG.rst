@@ -3,6 +3,17 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.2.1 (TBC)
+------------
+
+Bug Fixes
+^^^^^^^^^
+
+* (Python) "Invalid desc node" warning no longer raised for autodoc-style
+  directives.
+
+
+
 v1.2.0 (2019-10-5)
 ------------
 

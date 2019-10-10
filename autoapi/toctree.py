@@ -120,7 +120,7 @@ def add_domain_to_toctree(app, doctree, docname):
         try:
             ref_id = desc_node.children[0].attributes["ids"][0]
         except (KeyError, IndexError):
-            LOGGER.warning("Invalid desc node", exc_info=True)
+            # autodoc-style directives already add nodes to the toc.
             continue
         try:
             # Python domain object
