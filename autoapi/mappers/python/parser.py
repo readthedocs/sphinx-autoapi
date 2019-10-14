@@ -25,14 +25,14 @@ class Parser(object):
 
         return to_decode
 
-    def parse_file(self, file_path):
+    def _parse_file(self, file_path, condition):
         directory, filename = os.path.split(file_path)
         module_parts = []
         if filename != "__init__.py":
             module_part = os.path.splitext(filename)[0]
             module_parts = [module_part]
         module_parts = collections.deque(module_parts)
-        while os.path.isfile(os.path.join(directory, "__init__.py")):
+        while condition(directory):
             directory, module_part = os.path.split(directory)
             if module_part:
                 module_parts.appendleft(module_part)
@@ -40,6 +40,15 @@ class Parser(object):
         module_name = ".".join(module_parts)
         node = astroid.MANAGER.ast_from_file(file_path, module_name, source=True)
         return self.parse(node)
+
+    def parse_file(self, file_path):
+        return self._parse_file(
+            file_path,
+            lambda directory: os.path.isfile(os.path.join(directory, "__init__.py")),
+        )
+
+    def parse_file_in_namespace(self, file_path, dir_root):
+        return self._parse_file(file_path, lambda directory: directory != dir_root)
 
     def parse_annassign(self, node):
         return self.parse_assign(node)
