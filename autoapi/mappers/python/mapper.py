@@ -1,6 +1,7 @@
 import collections
 import copy
 import os
+import sys
 
 import sphinx.util
 from sphinx.util.console import bold
@@ -218,10 +219,23 @@ class PythonSphinxMapper(SphinxMapperBase):
     else:
         _OBJ_MAP["property"] = PythonAttribute
 
+    def __init__(self, app, template_dir=None, url_root=None):
+        super(PythonSphinxMapper, self).__init__(app, template_dir, url_root)
+
+        if sys.version_info < (3, 3):
+            self._use_implicit_namespace = False
+        else:
+            self._use_implicit_namespace = (
+                self.app.config.autoapi_python_use_implicit_namespaces
+            )
+
     def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:
             dir_root = dir_
-            if os.path.exists(os.path.join(dir_, "__init__.py")):
+            if (
+                os.path.exists(os.path.join(dir_, "__init__.py"))
+                or self._use_implicit_namespace
+            ):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
 
             for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
@@ -240,18 +254,21 @@ class PythonSphinxMapper(SphinxMapperBase):
             length=len(dir_root_files),
             stringify_func=(lambda x: x[1]),
         ):
-            data = self.read_file(path=path)
+            data = self.read_file(path=path, dir_root=dir_root)
             if data:
                 data["relative_path"] = os.path.relpath(path, dir_root)
                 self.paths[path] = data
 
-    def read_file(self, path, **kwargs):
+    def read_file(self, path, dir_root=None, **kwargs):
         """Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
         """
         try:
-            parsed_data = Parser().parse_file(path)
+            if self._use_implicit_namespace:
+                parsed_data = Parser().parse_file_in_namespace(path, dir_root)
+            else:
+                parsed_data = Parser().parse_file(path)
             return parsed_data
         except (IOError, TypeError, ImportError):
             LOGGER.warning("Error reading file: {0}".format(path))
