@@ -521,3 +521,26 @@ class TestComplexPackage(object):
             foo_file = foo_handle.read()
 
         assert "unicode_str" in foo_file
+
+
+@pytest.mark.skipif(
+    sys.version_info < (3, 3), reason="Implicit namespace not supported in python < 3.3"
+)
+class TestImplicitNamespacePackage(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("py3implicitnamespace")
+
+    def test_sibling_import_from_namespace(self):
+        example_path = "_build/text/autoapi/namespace/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "namespace.example.first_method" in example_file
+
+    def test_sub_sibling_import_from_namespace(self):
+        example_path = "_build/text/autoapi/namespace/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "namespace.example.second_sub_method" in example_file
