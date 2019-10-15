@@ -135,6 +135,13 @@ Customisation Options
 	docstring is empty and the class defines a ``__new__`` with a docstring,
 	the ``__new__`` docstring is used instead of the ``__init__`` docstring.
 
+.. confval:: autoapi_python_use_implicit_namespaces
+
+	Default: ``False``
+
+	Wether to consider all directories as root of namespace.
+	This changes the package detection behaviour to be compatible with PEP420.
+
 Events
 ~~~~~~
 
