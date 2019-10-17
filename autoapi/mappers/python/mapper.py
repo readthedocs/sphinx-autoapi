@@ -259,11 +259,12 @@ class PythonSphinxMapper(SphinxMapperBase):
                 data["relative_path"] = os.path.relpath(path, dir_root)
                 self.paths[path] = data
 
-    def read_file(self, path, dir_root=None, **kwargs):
+    def read_file(self, path, **kwargs):
         """Read file input into memory, returning deserialized objects
 
         :param path: Path of file to read
         """
+        dir_root = kwargs.get("dir_root")
         try:
             if self._use_implicit_namespace:
                 parsed_data = Parser().parse_file_in_namespace(path, dir_root)
@@ -326,13 +327,8 @@ class PythonSphinxMapper(SphinxMapperBase):
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
             if lines and "autodoc-process-docstring" in self.app.events.events:
                 self.app.emit(
-                    "autodoc-process-docstring",
-                    cls.type,
-                    obj.name,
-                    None,  # object
-                    None,  # options
-                    lines,
-                )
+                    "autodoc-process-docstring", cls.type, obj.name, None, None, lines
+                )  # object  # options
             obj.docstring = "\n".join(lines)
 
             for child_data in data.get("children", []):
