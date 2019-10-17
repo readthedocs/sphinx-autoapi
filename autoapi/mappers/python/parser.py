@@ -32,7 +32,7 @@ class Parser(object):
             module_part = os.path.splitext(filename)[0]
             module_parts = [module_part]
         module_parts = collections.deque(module_parts)
-        while condition(directory):
+        while directory and condition(directory):
             directory, module_part = os.path.split(directory)
             if module_part:
                 module_parts.appendleft(module_part)
@@ -48,7 +48,9 @@ class Parser(object):
         )
 
     def parse_file_in_namespace(self, file_path, dir_root):
-        return self._parse_file(file_path, lambda directory: directory != dir_root)
+        return self._parse_file(
+            file_path, lambda directory: os.path.abspath(directory) != dir_root
+        )
 
     def parse_annassign(self, node):
         return self.parse_assign(node)
