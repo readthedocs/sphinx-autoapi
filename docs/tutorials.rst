@@ -9,7 +9,7 @@ If you are not sure how to do this,
 you can following the :doc:`sphinx:usage/quickstart` guide in the Sphinx documentation.
 
 The recommended way of installing AutoAPI is through a `virtualenv <https://virtualenv.pypa.io/>`_.
-Once you have a virtualenv set up, you can install AutoAPI with the command::
+Once you have a virtualenv set up, you can install AutoAPI with the commands:
 
 ========== =====================================
 Language   Command
@@ -48,17 +48,17 @@ The directory structure might look like this:
 
     mypackage/
     ├── docs
-    │   ├── _build
-    │   ├── conf.py
-    │   ├── index.rst
-    │   ├── make.bat
-    │   ├── Makefile
-    │   ├── _static
-    │   └── _templates
+    │   ├── _build
+    │   ├── conf.py
+    │   ├── index.rst
+    │   ├── make.bat
+    │   ├── Makefile
+    │   ├── _static
+    │   └── _templates
     ├── mypackage
-    │   ├── _client.py
-    │   ├── __init__.py
-    │   └── _server.py
+    │   ├── _client.py
+    │   ├── __init__.py
+    │   └── _server.py
     └── README.md
 
 ``sphinx-quickstart`` sets up the ``sphinx-build`` to run from
@@ -75,13 +75,13 @@ For example if our source code was inside a ``src/`` directory:
 
     mypackage/
     ├── docs
-    │   ├── _build
-    │   ├── conf.py
-    │   ├── index.rst
-    │   ├── make.bat
-    │   ├── Makefile
-    │   ├── _static
-    │   └── _templates
+    │   ├── _build
+    │   ├── conf.py
+    │   ├── index.rst
+    │   ├── make.bat
+    │   ├── Makefile
+    │   ├── _static
+    │   └── _templates
     ├── README.md
     └── src
         └── mypackage
