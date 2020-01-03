@@ -12,7 +12,7 @@ from sphinx.util.docstrings import prepare_docstring
 import sphinx.util.logging
 import unidecode
 
-from ..settings import API_ROOT
+from ..settings import API_ROOT, TEMPLATE_DIR
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
@@ -164,8 +164,6 @@ class SphinxMapperBase(object):
     """
 
     def __init__(self, app, template_dir=None, url_root=None):
-        from ..settings import TEMPLATE_DIR
-
         self.app = app
 
         template_paths = [TEMPLATE_DIR]
