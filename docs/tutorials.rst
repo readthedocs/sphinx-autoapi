@@ -6,7 +6,7 @@ Setting up Automatic API Documentation Generation
 
 This tutorial will assume that you already have a basic Sphinx project set up.
 If you are not sure how to do this,
-you can following the :doc:`sphinx:usage/quickstart` guide in the Sphinx documentation.
+you can follow the :doc:`sphinx:usage/quickstart` guide in the Sphinx documentation.
 
 The recommended way of installing AutoAPI is through a `virtualenv <https://virtualenv.pypa.io/>`_.
 Once you have a virtualenv set up, you can install AutoAPI with the command:
@@ -44,7 +44,7 @@ For example, say we have a package and we have used ``sphinx-quickstart``
 to create a Sphinx project in a ``docs/`` folder.
 The directory structure might look like this:
 
-.. code-block::
+.. code-block:: none
 
     mypackage/
     ├── docs
@@ -71,7 +71,7 @@ If you are documenting many packages,
 you can point AutoAPI to the directory that contains those packages.
 For example if our source code was inside a ``src/`` directory:
 
-.. code-block::
+.. code-block:: none
 
     mypackage/
     ├── docs
@@ -96,7 +96,7 @@ We can configure :confval:`autoapi_dirs` to be::
 Now that everything is configured,
 AutoAPI will generate documentation when you run Sphinx!
 
-.. code-block::
+.. code-block:: bash
 
     cd docs/
     sphinx-build -b html . _build
@@ -141,7 +141,7 @@ you would configure :confval:`autoapi_dirs` to be::
 Now that everything is configured,
 AutoAPI will generate documentation when you run Sphinx!
 
-.. code-block::
+.. code-block:: bash
 
     cd docs/
     sphinx-build -b html . _build
@@ -177,7 +177,7 @@ you would configure :confval:`autoapi_dirs` to be::
 Now that everything is configured,
 AutoAPI will generate documentation when you run Sphinx!
 
-.. code-block::
+.. code-block:: bash
 
     cd docs/
     sphinx-build -b html . _build
@@ -233,7 +233,7 @@ you would configure :confval:`autoapi_dirs` to be::
 Now that everything is configured,
 AutoAPI will generate documentation when you run Sphinx!
 
-.. code-block::
+.. code-block:: bash
 
     cd docs/
     sphinx-build -b html . _build

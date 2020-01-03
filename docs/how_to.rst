@@ -15,7 +15,7 @@ To get AutoAPI to use these templates,
 point the :confval:`autoapi_template_dir` configuration option to your directory.
 It can be absolute, or relative to where ``sphinx-build`` is run.
 
-.. code-block::
+.. code-block:: python
 
     autoapi_template_dir = '_autoapi_templates'
 
@@ -78,7 +78,7 @@ How to Transition to Manual Documentation
 
 To start writing API documentation yourself,
 you can get AutoAPI to keep its generated files around as a base to start from
-using he :confval:`autoapi_keep_files` option::
+using the :confval:`autoapi_keep_files` option::
 
     autoapi_keep_files = True
 
