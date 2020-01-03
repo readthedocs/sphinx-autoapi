@@ -23,7 +23,7 @@ It can be absolute, or relative to where ``sphinx-build`` is run.
 How to Customise the Index Page
 -------------------------------
 
-The index page that AutoAPI creates is generates using a template.
+The index page that AutoAPI creates is generated using a template.
 So customising the index page follows the same steps as customising a template.
 Simply edit the ``autoapi/templates/index.rst`` template
 with the same steps as :ref:`customising a template <customise-templates>`.
