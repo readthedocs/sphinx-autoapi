@@ -139,8 +139,17 @@ Customisation Options
 
 	Default: ``False``
 
-	Wether to consider all directories as root of namespace.
-	This changes the package detection behaviour to be compatible with PEP420.
+	This changes the package detection behaviour to be compatible with :pep:`420`,
+	but directories in :confval:`autoapi_dirs`
+	are no longer searched recursively for packages.
+	Instead, when this is ``True``,
+	:confval:`autoapi_dirs` should point directly to
+	the directories of implicit namespaces
+	and the directories of packages.
+
+	If searching is still required,
+	this should be done manually in the ``conf.py``.
+
 
 Events
 ~~~~~~

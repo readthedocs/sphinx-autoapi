@@ -3,8 +3,17 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.2.1 (2019-10-9)
+v1.3.0 (TBC)
 ------------
+
+Features
+^^^^^^^^
+* `#151 <https://github.com/rtfd/sphinx-autoapi/issues/151>`: (Python) Added the ``autoapi_python_use_implicit_namespaces`` option to allow
+  AutoAPI to search for implicit namespace packages.
+
+
+v1.2.1 (2019-10-9)
+------------------
 
 Bug Fixes
 ^^^^^^^^^
@@ -14,7 +23,7 @@ Bug Fixes
 
 
 v1.2.0 (2019-10-5)
-------------
+------------------
 
 Features
 ^^^^^^^^
