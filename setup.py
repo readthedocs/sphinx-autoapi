@@ -8,7 +8,7 @@ setup(
     version='1.2.1',
     author='Eric Holscher',
     author_email='eric@ericholscher.com',
-    url='http://github.com/rtfd/sphinx-autoapi',
+    url='http://github.com/readthedocs/sphinx-autoapi',
     license='BSD',
     description='Sphinx API documentation generator',
     packages=find_packages('.'),

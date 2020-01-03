@@ -108,7 +108,7 @@ Go
 Support for Go requires you to have the go environment installed
 (https://golang.org/dl/), as well as our godocjson tool::
 
-    go get github.com/rtfd/godocjson
+    go get github.com/readthedocs/godocjson
 
 and the Go domain extension for Sphinx::
 

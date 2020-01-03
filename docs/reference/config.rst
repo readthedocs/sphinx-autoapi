@@ -35,7 +35,7 @@ Configuration Options
 	A directory that has user-defined templates to override our default templates.
 
 	You can view the default templates in the
-	`autoapi/templates <https://github.com/rtfd/sphinx-autoapi/tree/master/autoapi/templates>`_
+	`autoapi/templates <https://github.com/readthedocs/sphinx-autoapi/tree/master/autoapi/templates>`_
 	directory of the package.
 
 .. confval:: autoapi_file_patterns
