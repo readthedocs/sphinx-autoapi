@@ -9,16 +9,16 @@ If you are not sure how to do this,
 you can following the :doc:`sphinx:usage/quickstart` guide in the Sphinx documentation.
 
 The recommended way of installing AutoAPI is through a `virtualenv <https://virtualenv.pypa.io/>`_.
-Once you have a virtualenv set up, you can install AutoAPI with the command::
+Once you have a virtualenv set up, you can install AutoAPI with the command:
 
-==========   ==========================================================
+==========   ======================================
 Language     Command
-==========   ==========================================================
+==========   ======================================
 Python       ``pip install sphinx-autoapi``
 Go           ``pip install sphinx-autoapi[go]``
 Javascript   ``pip install sphinx-autoapi``
 .NET         ``pip install sphinx-autoapi[dotnet]``
-==========   ==========================================================
+==========   ======================================
 
 Depending on which language you are trying to document,
 each language has a different set of steps for finishing the setup of AutoAPI:
