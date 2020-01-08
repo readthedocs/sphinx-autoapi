@@ -16,8 +16,8 @@ Bug Fixes
 * `#186 <https://github.com/readthedocs/sphinx-autoapi/issues/186>`: (Python)
   Fixed an exception when there are too many argument type annotations
   in a type comment.
-  Instead, a warning is raised to indicate that the extra annotations
-  will be ignored.
+* (Python) args and kwargs type annotations can be read from
+  the function type comment.
 
 
 v1.2.1 (2019-10-9)

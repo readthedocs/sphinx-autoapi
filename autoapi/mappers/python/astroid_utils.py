@@ -429,21 +429,20 @@ def format_args(args_node):
             merge_annotations(func_comment_annotations, comment_annotations),
         )
     )
+    annotation_offset = 0
 
     if getattr(args_node, "posonlyargs", None):
         result.append(_format_args(args_node.posonlyargs, positional_only_defaults))
         result.append("/")
 
     if args_node.args:
-        if len(args_node.args) < len(annotations):
-            msg = "Ignoring extra argument type annotation(s) on {}".format(
-                args_node.scope().qname()
-            )
-            _LOGGER.warning(msg)
-            annotations = annotations[: len(args_node.args)]
-
+        annotation_offset = len(args_node.args)
         result.append(
-            _format_args(args_node.args, positional_or_keyword_defaults, annotations)
+            _format_args(
+                args_node.args,
+                positional_or_keyword_defaults,
+                annotations[:annotation_offset],
+            )
         )
 
     if args_node.vararg:
@@ -452,6 +451,11 @@ def format_args(args_node):
             vararg_result = "{}: {}".format(
                 vararg_result, args_node.varargannotation.as_string()
             )
+        elif len(annotations) > annotation_offset and annotations[annotation_offset]:
+            vararg_result = "{}: {}".format(
+                vararg_result, annotations[annotation_offset].as_string()
+            )
+            annotation_offset += 1
         result.append(vararg_result)
 
     if getattr(args_node, "kwonlyargs", None):
@@ -472,6 +476,11 @@ def format_args(args_node):
             kwarg_result = "{}: {}".format(
                 kwarg_result, args_node.kwargannotation.as_string()
             )
+        elif len(annotations) > annotation_offset and annotations[annotation_offset]:
+            kwarg_result = "{}: {}".format(
+                kwarg_result, annotations[annotation_offset].as_string()
+            )
+            annotation_offset += 1
         result.append(kwarg_result)
 
     return ", ".join(result)
