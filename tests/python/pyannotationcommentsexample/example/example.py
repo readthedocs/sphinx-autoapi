@@ -39,3 +39,8 @@ class A:
 
 
 global_a = A()  # type: A
+
+
+def f3(first_arg, **kwargs):
+    # type: (first_arg, Any) -> None
+    """Annotation incorrectly leaves out `**`."""

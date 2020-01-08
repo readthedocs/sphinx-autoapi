@@ -8,6 +8,9 @@ import sys
 
 import astroid
 import astroid.nodes
+import sphinx.util.logging
+
+_LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 if sys.version_info < (3,):
@@ -432,6 +435,13 @@ def format_args(args_node):
         result.append("/")
 
     if args_node.args:
+        if len(args_node.args) < len(annotations):
+            msg = "Ignoring extra argument type annotation(s) on {}".format(
+                args_node.scope().qname()
+            )
+            _LOGGER.warning(msg)
+            annotations = annotations[: len(args_node.args)]
+
         result.append(
             _format_args(args_node.args, positional_or_keyword_defaults, annotations)
         )
