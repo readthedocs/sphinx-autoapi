@@ -210,6 +210,34 @@ class TestAnnotationCommentsModule(object):
         assert "global_a :A" in example_file
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 8), reason="Positional only arguments need Python >=3.8"
+)
+class TestPositionalOnlyArgumentsModule(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("py38positionalparams")
+
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "f_simple(a, b, /, c, d, *, e, f)" in example_file
+
+        assert (
+            "f_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+            in example_file
+        )
+        assert (
+            "f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+            in example_file
+        )
+        # Requires unreleased astroid >2.4
+        # assert "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)" in example_file
+        assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in example_file
+
+
 def test_napoleon_integration_loaded(builder):
     confoverrides = {
         "extensions": ["autoapi.extension", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]

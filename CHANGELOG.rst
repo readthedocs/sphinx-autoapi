@@ -10,6 +10,8 @@ Features
 ^^^^^^^^
 * `#151 <https://github.com/readthedocs/sphinx-autoapi/issues/151>`: (Python) Added the ``autoapi_python_use_implicit_namespaces`` option to allow
   AutoAPI to search for implicit namespace packages.
+* Added support for Sphinx 2.2 and 2.3.
+* Added support for Python 3.8.
 
 Bug Fixes
 ^^^^^^^^^

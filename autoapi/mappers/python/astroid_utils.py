@@ -367,12 +367,21 @@ def get_module_all(node):
     return all_
 
 
+def _is_ellipsis(node):
+    if sys.version_info < (3, 8):
+        return isinstance(node, astroid.Ellipsis)
+
+    return isinstance(node, astroid.Const) and node.value == Ellipsis
+
+
 def merge_annotations(annotations, comment_annotations):
     for ann, comment_ann in _zip_longest(annotations, comment_annotations):
-        if not ann or isinstance(ann, astroid.Ellipsis):
+        if ann and not _is_ellipsis(ann):
+            yield ann
+        elif comment_ann and not _is_ellipsis(comment_ann):
             yield comment_ann
         else:
-            yield ann
+            yield None
 
 
 def _format_args(args, defaults=None, annotations=None):
@@ -409,7 +418,7 @@ def _format_args(args, defaults=None, annotations=None):
     return ", ".join(values)
 
 
-def format_args(args_node):
+def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statements
     result = []
     positional_only_defaults = []
     positional_or_keyword_defaults = args_node.defaults
@@ -422,7 +431,17 @@ def format_args(args_node):
 
     plain_annotations = getattr(args_node, "annotations", ()) or ()
     func_comment_annotations = getattr(args_node.parent, "type_comment_args", ()) or ()
-    comment_annotations = getattr(args_node, "type_comment_args", ()) or ()
+    comment_annotations = getattr(args_node, "type_comment_args", []) or []
+    if hasattr(args_node, "type_comment_posonlyargs"):
+        comment_annotations = args_node.type_comment_posonlyargs + comment_annotations
+    else:
+        # astroid used to not expose type comments of positional only arguments,
+        # so pad the comments with the number of positional only arguments.
+        comment_annotations = (
+            [None] * len(getattr(args_node, "posonlyargs", ()))
+        ) + comment_annotations
+    if hasattr(args_node, "type_comment_kwonlyargs"):
+        comment_annotations += args_node.type_comment_kwonlyargs
     annotations = list(
         merge_annotations(
             plain_annotations,
@@ -432,18 +451,33 @@ def format_args(args_node):
     annotation_offset = 0
 
     if getattr(args_node, "posonlyargs", None):
-        result.append(_format_args(args_node.posonlyargs, positional_only_defaults))
+        posonlyargs_annotations = args_node.posonlyargs_annotations
+        if not any(args_node.posonlyargs_annotations):
+            num_args = len(args_node.posonlyargs)
+            posonlyargs_annotations = annotations[
+                annotation_offset : annotation_offset + num_args
+            ]
+
+        result.append(
+            _format_args(
+                args_node.posonlyargs, positional_only_defaults, posonlyargs_annotations
+            )
+        )
         result.append("/")
 
+        if not any(args_node.posonlyargs_annotations):
+            annotation_offset += num_args
+
     if args_node.args:
-        annotation_offset = len(args_node.args)
+        num_args = len(args_node.args)
         result.append(
             _format_args(
                 args_node.args,
                 positional_or_keyword_defaults,
-                annotations[:annotation_offset],
+                annotations[annotation_offset : annotation_offset + num_args],
             )
         )
+        annotation_offset += num_args
 
     if args_node.vararg:
         vararg_result = "*{}".format(args_node.vararg)
@@ -462,13 +496,21 @@ def format_args(args_node):
         if not args_node.vararg:
             result.append("*")
 
+        kwonlyargs_annotations = args_node.kwonlyargs_annotations
+        if not any(args_node.kwonlyargs_annotations):
+            num_args = len(args_node.kwonlyargs)
+            kwonlyargs_annotations = annotations[
+                annotation_offset : annotation_offset + num_args
+            ]
+
         result.append(
             _format_args(
-                args_node.kwonlyargs,
-                args_node.kw_defaults,
-                args_node.kwonlyargs_annotations,
+                args_node.kwonlyargs, args_node.kw_defaults, kwonlyargs_annotations,
             )
         )
+
+        if not any(args_node.kwonlyargs_annotations):
+            annotation_offset += num_args
 
     if args_node.kwarg:
         kwarg_result = "**{}".format(args_node.kwarg)
