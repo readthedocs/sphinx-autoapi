@@ -15,7 +15,9 @@ def f_comment(a, b, /, c, d, *, e, f):
     print(a, b, c, d, e, f)
 
 
-def f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float) -> None:
+def f_annotation(
+    a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float
+) -> None:
     print(a, b, c, d, e, f)
 
 
