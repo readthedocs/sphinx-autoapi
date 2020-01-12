@@ -6,6 +6,12 @@
    Bases: {% for base in obj.bases %}:class:`{{ base }}`{% if not loop.last %}, {% endif %}{% endfor %}
 
 
+   {% if include_inheritance_graphs and obj.bases != ["object"] %}
+   .. autoapi-inheritance-diagram:: {{ obj.obj["full_name"] }}
+      :parts: 1
+      {% if include_private_inheritance %}:private-bases:{% endif %}
+
+   {% endif %}
    {% endif %}
    {% if obj.docstring %}
    {{ obj.docstring|prepare_docstring|indent(3) }}

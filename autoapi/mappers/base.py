@@ -85,7 +85,13 @@ class PythonMapperBase(object):
     @property
     def rendered(self):
         """Shortcut to render an object in templates."""
-        return self.render()
+        return self.render(
+            include_inheritance_graphs=self.app.config.autoapi_include_inheritance_graphs,
+            include_private_inheritance=(
+                "private-members" in self.app.config.autoapi_options
+            ),
+            include_summaries=self.app.config.autoapi_include_summaries,
+        )
 
     def get_context_data(self):
         return {"obj": self, "sphinx_version": sphinx.version_info}
@@ -291,7 +297,11 @@ class SphinxMapperBase(object):
             stringify_func=(lambda x: x[0]),
         ):
             rst = obj.render(
-                include_summaries=self.app.config.autoapi_include_summaries
+                include_inheritance_graphs=self.app.config.autoapi_include_inheritance_graphs,
+                include_private_inheritance=(
+                    "private-members" in self.app.config.autoapi_options
+                ),
+                include_summaries=self.app.config.autoapi_include_summaries,
             )
             if not rst:
                 continue

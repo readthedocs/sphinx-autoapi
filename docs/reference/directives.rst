@@ -1,7 +1,10 @@
+Directives
+==========
+
 .. _autodoc-directives:
 
 Autodoc-Style Directives
-========================
+------------------------
 
 You can opt to write API documentation yourself using autodoc style directives.
 These directives work similarly to autodoc,
@@ -40,3 +43,24 @@ The following directives are available:
 
     Equivalent to :rst:dir:`autofunction`, :rst:dir:`autodata`,
     :rst:dir:`automethod`, and :rst:dir:`autoattribute` respectively.
+
+
+Inheritance Diagrams
+--------------------
+
+.. rst:directive:: autoapi-inheritance-diagram
+
+    This directive uses the :mod:`sphinx.ext.inheritance_diagram` extension
+    to create inheritance diagrams for classes.
+
+    For example:
+
+    .. autoapi-inheritance-diagram:: autoapi.mappers.python.objects.PythonModule autoapi.mappers.python.objects.PythonPackage
+        :parts: 1
+
+    :mod:`sphinx.ext.inheritance_diagram` makes use of the
+    :mod:`sphinx.ext.graphviz` extension,
+    and therefore it requires `Graphviz <https://graphviz.org/>`_ to be installed.
+
+    The directive can be configured using the same options as
+    :mod:`sphinx.ext.inheritance_diagram`.

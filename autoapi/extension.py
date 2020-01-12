@@ -24,6 +24,7 @@ from .backends import (
     LANGUAGE_REQUIREMENTS,
 )
 from .directives import AutoapiSummary, NestedParse
+from .inheritance_diagrams import AutoapiInheritanceDiagram
 from .settings import API_ROOT
 from .toctree import add_domain_to_toctree
 
@@ -260,6 +261,7 @@ def setup(app):
     app.add_config_value("autoapi_keep_files", False, "html")
     app.add_config_value("autoapi_add_toctree_entry", True, "html")
     app.add_config_value("autoapi_template_dir", None, "html")
+    app.add_config_value("autoapi_include_inheritance_graphs", False, "html")
     app.add_config_value("autoapi_include_summaries", False, "html")
     app.add_config_value("autoapi_python_use_implicit_namespaces", False, "html")
     app.add_config_value("autoapi_python_class_content", "class", "html")
@@ -277,3 +279,5 @@ def setup(app):
     directives.register_directive("autoapisummary", AutoapiSummary)
     app.setup_extension("sphinx.ext.autosummary")
     app.add_event("autoapi-skip-member")
+    app.setup_extension("sphinx.ext.inheritance_diagram")
+    app.add_directive("autoapi-inheritance-diagram", AutoapiInheritanceDiagram)

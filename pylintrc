@@ -11,6 +11,7 @@ disable=bad-continuation,
       missing-class-docstring,
       missing-function-docstring,
       missing-module-docstring,
+      too-few-public-methods,
       too-many-locals,
       too-many-instance-attributes,
       useless-object-inheritance

@@ -113,6 +113,15 @@ Customisation Options
 	and you will need to include the generated documentation
 	in a TOC tree entry yourself.
 
+.. confval:: autoapi_include_inheritance_graphs
+
+	Defalut: ``False``
+
+	Whether to include inheritance diagrams in generated class documentation.
+	This is a shortcut for needing to edit the templates yourself.
+	It makes use of the :mod:`sphinx.ext.inheritance_diagram` extension,
+	and requires `Graphviz <https://graphviz.org/>`_ to be installed.
+
 .. confval:: autoapi_include_summaries
 
 	Default: ``False``

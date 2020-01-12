@@ -12,6 +12,11 @@ Features
   AutoAPI to search for implicit namespace packages.
 * Added support for Sphinx 2.2 and 2.3.
 * Added support for Python 3.8.
+* `#140 <https://github.com/readthedocs/sphinx-autoapi/issues/140>`: (Python)
+  Added the ``autoapi-inheritance-diagram`` directive to create
+  inheritance diagrams without importing modules.
+  Enable the ``autoapi_include_inheritance_diagrams`` option to
+  turn the diagrams on in generated documentation.
 
 Bug Fixes
 ^^^^^^^^^
