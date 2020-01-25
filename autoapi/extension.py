@@ -30,7 +30,13 @@ from .toctree import add_domain_to_toctree
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
-_DEFAULT_OPTIONS = ["members", "undoc-members", "private-members", "special-members"]
+_DEFAULT_OPTIONS = [
+    "members",
+    "undoc-members",
+    "private-members",
+    "show-inheritance",
+    "special-members",
+]
 _VIEWCODE_CACHE = {}
 """Caches a module's parse results for use in viewcode.
 
@@ -261,7 +267,6 @@ def setup(app):
     app.add_config_value("autoapi_keep_files", False, "html")
     app.add_config_value("autoapi_add_toctree_entry", True, "html")
     app.add_config_value("autoapi_template_dir", None, "html")
-    app.add_config_value("autoapi_include_inheritance_graphs", False, "html")
     app.add_config_value("autoapi_include_summaries", False, "html")
     app.add_config_value("autoapi_python_use_implicit_namespaces", False, "html")
     app.add_config_value("autoapi_python_class_content", "class", "html")

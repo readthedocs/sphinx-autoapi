@@ -68,20 +68,26 @@ Customisation Options
 
 .. confval:: autoapi_options
 
-	Default: ``['members', 'undoc-members', 'private-members', 'special-members']``
+	Default: ``['members', 'undoc-members', 'private-members', 'show-inheritance', 'special-members']``
 
-	Options for display of the documentation.
+	Options for display of the generated documentation.
 
 	* ``members``: Display children of an object
 	* ``undoc-members``: Display objects that have no docstring
 	* ``private-members``: Display private objects (eg. ``_foo`` in Python)
 	* ``special-members``: Display special objects (eg. ``__foo__`` in Python)
+	* ``show-inheritance``: Display a list of base classes below the class signature.
+	* ``show-inheritance-diagram``: Display an inheritance diagram in
+	  generated class documentation.
+	  It makes use of the :mod:`sphinx.ext.inheritance_diagram` extension,
+	  and requires `Graphviz <https://graphviz.org/>`_ to be installed.
+
 
 .. confval:: autoapi_ignore
 
 	Default: Varies By Language
 
-	A list of patterns to ignore when finding files
+	A list of patterns to ignore when finding files.
 	The defaults by language are:
 
 	==========  ============================================
@@ -112,15 +118,6 @@ Customisation Options
 	If this is ``False``, the default AutoAPI index page is not generated
 	and you will need to include the generated documentation
 	in a TOC tree entry yourself.
-
-.. confval:: autoapi_include_inheritance_graphs
-
-	Defalut: ``False``
-
-	Whether to include inheritance diagrams in generated class documentation.
-	This is a shortcut for needing to edit the templates yourself.
-	It makes use of the :mod:`sphinx.ext.inheritance_diagram` extension,
-	and requires `Graphviz <https://graphviz.org/>`_ to be installed.
 
 .. confval:: autoapi_include_summaries
 

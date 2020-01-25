@@ -91,7 +91,6 @@ class TestSimpleModule(object):
         assert "Meta" in index_file
 
     def test_napoleon_integration_not_loaded(self, builder):
-
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
@@ -100,6 +99,13 @@ class TestSimpleModule(object):
         assert "Args" in example_file
 
         assert "Returns" in example_file
+
+    def test_show_inheritance(self, builder):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "Bases:" in example_file
 
 
 @pytest.mark.skipif(
@@ -344,7 +350,18 @@ def test_hiding_private_members(builder):
     assert "public_method" in private_file
 
 
-def test_skiping_members(builder):
+def test_hiding_inheritance(builder):
+    confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
+    builder("pyexample", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "Bases:" not in example_file
+
+
+def test_skipping_members(builder):
     builder("pyskipexample")
 
     example_path = "_build/text/autoapi/example/index.txt"

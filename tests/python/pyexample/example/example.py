@@ -102,3 +102,7 @@ def decorator_okay(func):
         return func(*args, **kwargs)
 
     return wrapper
+
+
+class Bar(Foo):
+    pass

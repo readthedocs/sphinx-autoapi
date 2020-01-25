@@ -15,8 +15,11 @@ Features
 * `#140 <https://github.com/readthedocs/sphinx-autoapi/issues/140>`: (Python)
   Added the ``autoapi-inheritance-diagram`` directive to create
   inheritance diagrams without importing modules.
-  Enable the ``autoapi_include_inheritance_diagrams`` option to
+  Enable the ``show-inheritance-diagram`` AutoAPI option to
   turn the diagrams on in generated documentation.
+* `#183 <https://github.com/readthedocs/sphinx-autoapi/issues/183>`: (Python)
+  Added the ``show-inheritance`` AutoAPI option to be able to enable or disable
+  the display of a list of base classes in generated documentation about a class.
 
 Bug Fixes
 ^^^^^^^^^
