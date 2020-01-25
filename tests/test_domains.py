@@ -2,6 +2,7 @@
 
 import unittest
 
+import mock
 from mock import patch
 
 from autoapi.mappers import dotnet
@@ -185,7 +186,7 @@ class DotNetPythonMapperTests(unittest.TestCase):
                 },
             },
         }
-        mapped = dotnet.DotNetPythonMapper(obj, jinja_env=None)
+        mapped = dotnet.DotNetPythonMapper(obj, app=mock.MagicMock(), jinja_env=None)
         self.assertEqual(
             mapped.parameters[0],
             {"name": "a", "type": "{TUser}", "desc": "Test :any:`TUser`"},

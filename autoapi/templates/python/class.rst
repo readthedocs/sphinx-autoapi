@@ -3,15 +3,15 @@
 
 
    {% if obj.bases %}
-   {% if show_inheritance %}
+   {% if "show-inheritance" in autoapi_options %}
    Bases: {% for base in obj.bases %}:class:`{{ base }}`{% if not loop.last %}, {% endif %}{% endfor %}
    {% endif %}
 
 
-   {% if show_inheritance_diagram and obj.bases != ["object"] %}
+   {% if "show-inheritance-diagram" in autoapi_options and obj.bases != ["object"] %}
    .. autoapi-inheritance-diagram:: {{ obj.obj["full_name"] }}
       :parts: 1
-      {% if include_private_inheritance %}:private-bases:{% endif %}
+      {% if "private-members" in autoapi_options %}:private-bases:{% endif %}
 
    {% endif %}
    {% endif %}

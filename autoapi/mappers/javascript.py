@@ -74,7 +74,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
             LOGGER.warning("Unknown Type: %s" % data)
         else:
             # Recurse for children
-            obj = cls(data, jinja_env=self.jinja_env)
+            obj = cls(data, jinja_env=self.jinja_env, app=self.app)
             if "children" in data:
                 for child_data in data["children"]:
                     for child_obj in self.create_class(child_data, options=options):

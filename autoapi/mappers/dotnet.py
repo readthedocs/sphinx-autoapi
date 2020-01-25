@@ -172,7 +172,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
         except KeyError:
             LOGGER.warning("Unknown type: %s" % data)
         else:
-            obj = cls(data, jinja_env=self.jinja_env, options=options, **kwargs)
+            obj = cls(
+                data, jinja_env=self.jinja_env, app=self.app, options=options, **kwargs
+            )
             obj.url_root = self.url_root
 
             # Append child objects
@@ -338,7 +340,9 @@ class DotNetPythonMapper(PythonMapperBase):
         # Inheritance
         # TODO Support more than just a class type here, should support enum/etc
         self.inheritance = [
-            DotNetClass({"uid": name, "name": name}, jinja_env=self.jinja_env)
+            DotNetClass(
+                {"uid": name, "name": name}, jinja_env=self.jinja_env, app=self.app
+            )
             for name in obj.get("inheritance", [])
         ]
 

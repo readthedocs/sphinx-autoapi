@@ -54,7 +54,7 @@ class PythonMapperBase(object):
     top_level_object = False
     _RENDER_LOG_LEVEL = "VERBOSE"
 
-    def __init__(self, obj, jinja_env, app=None, options=None):
+    def __init__(self, obj, jinja_env, app, options=None):
         self.app = app
         self.obj = obj
         self.options = options
@@ -85,19 +85,15 @@ class PythonMapperBase(object):
     @property
     def rendered(self):
         """Shortcut to render an object in templates."""
-        return self.render(
-            include_private_inheritance=(
-                "private-members" in self.app.config.autoapi_options
-            ),
-            include_summaries=self.app.config.autoapi_include_summaries,
-            show_inheritance=("show-inheritance" in self.app.config.autoapi_options),
-            show_inheritance_diagram=(
-                "show-inheritance-diagram" in self.app.config.autoapi_options
-            ),
-        )
+        return self.render()
 
     def get_context_data(self):
-        return {"obj": self, "sphinx_version": sphinx.version_info}
+        return {
+            "autoapi_options": self.app.config.autoapi_options,
+            "include_summaries": self.app.config.autoapi_include_summaries,
+            "obj": self,
+            "sphinx_version": sphinx.version_info,
+        }
 
     def __lt__(self, other):
         """Object sorting comparison"""
@@ -299,18 +295,7 @@ class SphinxMapperBase(object):
             verbosity="INFO",
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render(
-                include_private_inheritance=(
-                    "private-members" in self.app.config.autoapi_options
-                ),
-                include_summaries=self.app.config.autoapi_include_summaries,
-                show_inheritance=(
-                    "show-inheritance" in self.app.config.autoapi_options
-                ),
-                show_inheritance_diagram=(
-                    "show-inheritance-diagram" in self.app.config.autoapi_options
-                ),
-            )
+            rst = obj.render()
             if not rst:
                 continue
 

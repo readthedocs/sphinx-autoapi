@@ -95,7 +95,7 @@ class GoSphinxMapper(SphinxMapperBase):
                         yield obj
             else:
                 # Recurse for children
-                obj = cls(data, jinja_env=self.jinja_env)
+                obj = cls(data, jinja_env=self.jinja_env, app=self.app)
                 for child_type in ["consts", "types", "vars", "funcs", "methods"]:
                     for child_data in data.get(child_type, []):
                         obj.children += list(

@@ -28,7 +28,10 @@ Context
 Every template is given a set context that can be accessed in the templates.
 This contains:
 
+* ``autoapi_options``: The value of the :confval:`autoapi_options`
+  configuration option.
 * ``obj``: A Python object derived from :class:`PythonMapperBase`.
+* ``sphinx_version``: The contents of :attr:`sphinx.version_info`.
 
 This object has a number of standard attributes you can reliably access per language.
 
