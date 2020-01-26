@@ -281,7 +281,7 @@ def is_constructor(node):
     :param node: The node to check.
     :type node: astroid.nodes.FunctionDef
 
-    :returns: True if the function is a contructor, False otherwise.
+    :returns: True if the function is a constructor, False otherwise.
     :rtype: bool
     """
     return (

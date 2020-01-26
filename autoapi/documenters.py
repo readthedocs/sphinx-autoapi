@@ -79,6 +79,8 @@ class AutoapiDocumenter(autodoc.Documenter):
                 return False, []
 
             children = (child for child in children if child[0] in self.options.members)
+        elif not self.options.inherited_members:
+            children = (child for child in children if not child[1].inherited)
 
         return False, sorted(children)
 

@@ -20,6 +20,12 @@ Features
 * `#183 <https://github.com/readthedocs/sphinx-autoapi/issues/183>`: (Python)
   Added the ``show-inheritance`` AutoAPI option to be able to enable or disable
   the display of a list of base classes in generated documentation about a class.
+  Added the ``inherited-members`` AutoAPI option to be able to enable or disable
+  the display of members inherited from a base class
+  in generated documentation about a class.
+* The ``autoapi_include_summaries`` option has been replaced with the
+  ``show-module-summary`` AutoAPI option.
+  ``autoapi_include_summaries`` will stop working in the next major version.
 
 Bug Fixes
 ^^^^^^^^^

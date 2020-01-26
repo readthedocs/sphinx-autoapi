@@ -1,4 +1,5 @@
 import collections
+import itertools
 import os
 import sys
 
@@ -126,10 +127,25 @@ class Parser(object):
         }
 
         self._name_stack.append(node.name)
-        for child in node.get_children():
-            child_data = self.parse(child)
-            if child_data:
-                data["children"].extend(child_data)
+        seen = set()
+        for base in itertools.chain(iter((node,)), node.ancestors()):
+            if base.qname() in ("__builtins__.object", "builtins.object"):
+                continue
+            for child in base.get_children():
+                name = getattr(child, "name", None)
+                if isinstance(child, (astroid.Assign, astroid.AnnAssign)):
+                    assign_value = astroid_utils.get_assign_value(child)
+                    if not assign_value:
+                        continue
+                    name = assign_value[0]
+                if not name or name in seen:
+                    continue
+                seen.add(name)
+                child_data = self.parse(child)
+                if child_data:
+                    for single_data in child_data:
+                        single_data["inherited"] = base is not node
+                    data["children"].extend(child_data)
         self._name_stack.pop()
 
         return [data]

@@ -73,6 +73,8 @@ Customisation Options
 	Options for display of the generated documentation.
 
 	* ``members``: Display children of an object
+	* ``inherited-members``: Display children of an object
+	  that have been inherited from a base class.
 	* ``undoc-members``: Display objects that have no docstring
 	* ``private-members``: Display private objects (eg. ``_foo`` in Python)
 	* ``special-members``: Display special objects (eg. ``__foo__`` in Python)
@@ -81,6 +83,8 @@ Customisation Options
 	  generated class documentation.
 	  It makes use of the :mod:`sphinx.ext.inheritance_diagram` extension,
 	  and requires `Graphviz <https://graphviz.org/>`_ to be installed.
+	* ``show-module-summary``: Whether to include autosummary directives
+	  in generated module documentation.
 
 
 .. confval:: autoapi_ignore
@@ -118,13 +122,6 @@ Customisation Options
 	If this is ``False``, the default AutoAPI index page is not generated
 	and you will need to include the generated documentation
 	in a TOC tree entry yourself.
-
-.. confval:: autoapi_include_summaries
-
-	Default: ``False``
-
-	Whether include autosummary directives in generated module documentation.
-	This is a shortcut for needing to edit the templates yourself.
 
 .. confval:: autoapi_python_class_content
 

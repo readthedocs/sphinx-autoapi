@@ -60,7 +60,7 @@ Submodules
 
 {% set visible_classes = visible_children|selectattr("type", "equalto", "class")|list %}
 {% set visible_functions = visible_children|selectattr("type", "equalto", "function")|list %}
-{% if include_summaries and (visible_classes or visible_functions) %}
+{% if "show-module-summary" in autoapi_options and (visible_classes or visible_functions) %}
 {% block classes %}
 {% if visible_classes %}
 Classes

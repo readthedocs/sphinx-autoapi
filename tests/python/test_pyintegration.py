@@ -361,6 +361,21 @@ def test_hiding_inheritance(builder):
     assert "Bases:" not in example_file
 
 
+def test_inherited_members(builder):
+    confoverrides = {
+        "autoapi_options": ["members", "inherited-members", "undoc-members"]
+    }
+    builder("pyexample", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "class example.Bar" in example_file
+    i = example_file.index("class example.Bar")
+    assert "method_okay" in example_file[i:]
+
+
 def test_skipping_members(builder):
     builder("pyskipexample")
 

@@ -18,15 +18,27 @@
    {% if obj.docstring %}
    {{ obj.docstring|prepare_docstring|indent(3) }}
    {% endif %}
+   {% if "inherited-members" in autoapi_options %}
    {% set visible_classes = obj.classes|selectattr("display")|list %}
+   {% else %}
+   {% set visible_classes = obj.classes|rejectattr("inherited")|selectattr("display")|list %}
+   {% endif %}
    {% for klass in visible_classes %}
    {{ klass.rendered|indent(3) }}
    {% endfor %}
+   {% if "inherited-members" in autoapi_options %}
    {% set visible_attributes = obj.attributes|selectattr("display")|list %}
+   {% else %}
+   {% set visible_attributes = obj.attributes|rejectattr("inherited")|selectattr("display")|list %}
+   {% endif %}
    {% for attribute in visible_attributes %}
    {{ attribute.rendered|indent(3) }}
    {% endfor %}
+   {% if "inherited-members" in autoapi_options %}
    {% set visible_methods = obj.methods|selectattr("display")|list %}
+   {% else %}
+   {% set visible_methods = obj.methods|rejectattr("inherited")|selectattr("display")|list %}
+   {% endif %}
    {% for method in visible_methods %}
    {{ method.rendered|indent(3) }}
    {% endfor %}

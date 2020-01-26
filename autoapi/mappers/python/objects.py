@@ -33,6 +33,11 @@ class PythonPythonMapper(PythonMapperBase):
         self.args = obj.get("args")
         self.docstring = obj["doc"]
         self.imported = "original_path" in obj
+        self.inherited = obj.get("inherited", False)
+        """Whether this was inherited from an ancestor of the parent class.
+
+        :type: bool
+        """
 
         # For later
         self._class_content = class_content

@@ -8,6 +8,7 @@ import io
 import os
 import shutil
 import sys
+import warnings
 
 import sphinx
 from sphinx.util.console import darkgreen, bold
@@ -35,6 +36,7 @@ _DEFAULT_OPTIONS = [
     "undoc-members",
     "private-members",
     "show-inheritance",
+    "show-module-summary",
     "special-members",
 ]
 _VIEWCODE_CACHE = {}
@@ -42,6 +44,14 @@ _VIEWCODE_CACHE = {}
 
 :type: dict(str, tuple)
 """
+
+
+class RemovedInAutoAPI2Warning(DeprecationWarning):
+    """Indicates something that will be removed in sphinx-autoapi v2."""
+
+
+if "PYTHONWARNINGS" not in os.environ:
+    warnings.filterwarnings("default", category=RemovedInAutoAPI2Warning)
 
 
 def run_autoapi(app):  # pylint: disable=too-many-branches
@@ -60,6 +70,15 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
 
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
+
+    if app.config.autoapi_include_summaries is not None:
+        warnings.warn(
+            "autoapi_include_summaries has been replaced by "
+            "the show-module-summary AutoAPI option\n",
+            RemovedInAutoAPI2Warning,
+        )
+        if app.config.autoapi_include_summaries:
+            app.config.autoapi_options.append("show-module-summary")
 
     # Make sure the paths are full
     normalized_dirs = []
@@ -267,7 +286,7 @@ def setup(app):
     app.add_config_value("autoapi_keep_files", False, "html")
     app.add_config_value("autoapi_add_toctree_entry", True, "html")
     app.add_config_value("autoapi_template_dir", None, "html")
-    app.add_config_value("autoapi_include_summaries", False, "html")
+    app.add_config_value("autoapi_include_summaries", None, "html")
     app.add_config_value("autoapi_python_use_implicit_namespaces", False, "html")
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
