@@ -175,7 +175,7 @@ class Parser(object):
             properties.append("async")
 
         return_annotation = None
-        if node.returns:
+        if getattr(node, "returns", None):
             return_annotation = node.returns.as_string()
         # Python 2 has no support for type annotations, so use getattr
         elif getattr(node, "type_comment_returns", None):
