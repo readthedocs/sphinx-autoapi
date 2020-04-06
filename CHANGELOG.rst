@@ -35,6 +35,10 @@ Bug Fixes
 * (Python) args and kwargs type annotations can be read from
   the function type comment.
 
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* Tests are now included in the sdist.
+
 
 v1.2.1 (2019-10-9)
 ------------------
