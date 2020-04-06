@@ -163,6 +163,9 @@ def _resolve_placeholder(placeholder, original):
     :type original: dict
     """
     new = copy.deepcopy(original)
+    # We are supposed to be resolving the placeholder,
+    # not replacing it with another.
+    assert original["type"] != "placeholder"
     # The name remains the same.
     new["name"] = placeholder["name"]
     new["full_name"] = placeholder["full_name"]
