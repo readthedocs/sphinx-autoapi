@@ -3,7 +3,7 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.3.0 (TBC)
+v1.3.0 (2020-04-05)
 ------------
 
 Breaking Changes
@@ -46,7 +46,7 @@ Trivial/Internal Changes
 * Tests are now included in the sdist.
 
 
-v1.2.1 (2019-10-9)
+v1.2.1 (2019-10-09)
 ------------------
 
 Bug Fixes
@@ -56,7 +56,7 @@ Bug Fixes
   directives.
 
 
-v1.2.0 (2019-10-5)
+v1.2.0 (2019-10-05)
 ------------------
 
 Features
