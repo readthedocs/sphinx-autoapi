@@ -124,9 +124,18 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         )
 
     sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
-    sphinx_mapper_obj = sphinx_mapper(
-        app, template_dir=app.config.autoapi_template_dir, url_root=url_root
-    )
+    template_dir = app.config.autoapi_template_dir
+    if template_dir:
+        if not os.path.isdir(template_dir):
+            template_dir = os.path.join(app.confdir, app.config.autoapi_template_dir)
+        elif not os.path.isabs(template_dir):
+            warnings.warn(
+                "autoapi_template_dir will be expected to be "
+                " relative to conf.py instead of "
+                "relative to where sphinx-build is run\n",
+                RemovedInAutoAPI2Warning,
+            )
+    sphinx_mapper_obj = sphinx_mapper(app, template_dir=template_dir, url_root=url_root)
     app.env.autoapi_mapper = sphinx_mapper_obj
 
     if app.config.autoapi_file_patterns:

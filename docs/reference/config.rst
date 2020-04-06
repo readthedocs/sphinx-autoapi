@@ -33,6 +33,12 @@ Configuration Options
 	Default: ``''``
 
 	A directory that has user-defined templates to override our default templates.
+	The path can either be absolute,
+	or relative to the root of the documentation directory
+	(ie the directory with the ``conf.py`` file).
+	An path relative to where `sphinx-build` is run
+	is allowed for backwards compatibility only
+	and will be removed in a future version.
 
 	You can view the default templates in the
 	`autoapi/templates <https://github.com/readthedocs/sphinx-autoapi/tree/master/autoapi/templates>`_
@@ -109,7 +115,7 @@ Customisation Options
 
 	Path to output the generated AutoAPI files into,
 	including the generated index page.
-	This path should be relative to the root of the documentation directory
+	This path must be relative to the root of the documentation directory
 	(ie the directory with the ``conf.py`` file).
 	This can be used to place the generated documentation
 	anywhere in your documentation hierarchy.

@@ -39,7 +39,7 @@ we need to add it to the list of extensions in Sphinx's ``conf.py`` file::
 For Python, there is only one required configuration option that we need to set.
 :confval:`autoapi_dirs` tells AutoAPI which directories contain
 the source code to document.
-These can either be absolute, or relative to where you run Sphinx.
+This can either be absolute, or relative to Sphinx's conf.py file.
 For example, say we have a package and we have used ``sphinx-quickstart``
 to create a Sphinx project in a ``docs/`` folder.
 The directory structure might look like this:
@@ -131,7 +131,7 @@ For Go, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to where you run Sphinx.
+These can either be absolute, or relative to Sphinx's `conf.py` file.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::
@@ -167,7 +167,7 @@ For Javascript, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to where you run Sphinx.
+These can either be absolute, or relative to Sphinx's `conf.py` file.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::
@@ -223,7 +223,7 @@ For .NET, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to where you run Sphinx.
+These can either be absolute, or relative to Sphinx's `conf.py` file.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::

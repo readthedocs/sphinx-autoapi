@@ -13,7 +13,8 @@ Simply copy whichever templates you want to customise to a local directory
 and edit them.
 To get AutoAPI to use these templates,
 point the :confval:`autoapi_template_dir` configuration option to your directory.
-It can be absolute, or relative to where ``sphinx-build`` is run.
+It can be absolute, or relative to the root of the documentation directory
+(ie the directory with the ``conf.py`` file).
 
 .. code-block:: python
 

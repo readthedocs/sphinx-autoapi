@@ -66,6 +66,8 @@ Bug Fixes
 * (Python) autoapifunction directive no longer documents async functions as
   a normal function.
 * (Python) Fixed unicode decode errors in some Python 3 situations.
+* Documentation more accurately describes what configuration accepts
+  relative paths and where they are relative to.
 
 
 v1.1.0 (2019-06-23)
