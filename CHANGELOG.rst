@@ -6,6 +6,11 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 v1.3.0 (TBC)
 ------------
 
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Dropped support for Python 3.4 and 3.5.
+
 Features
 ^^^^^^^^
 * `#151 <https://github.com/readthedocs/sphinx-autoapi/issues/151>`: (Python) Added the ``autoapi_python_use_implicit_namespaces`` option to allow
@@ -26,6 +31,7 @@ Features
 * The ``autoapi_include_summaries`` option has been replaced with the
   ``show-module-summary`` AutoAPI option.
   ``autoapi_include_summaries`` will stop working in the next major version.
+* Added support for Sphinx 2.4 and 3.0
 
 Bug Fixes
 ^^^^^^^^^

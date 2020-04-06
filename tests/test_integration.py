@@ -29,7 +29,8 @@ def sphinx_build(test_dir, confoverrides=None):
         app.build(force_all=True)
         yield
     finally:
-        shutil.rmtree("_build")
+        if os.path.exists("_build"):
+            shutil.rmtree("_build")
         os.chdir("../..")
 
 
@@ -54,6 +55,10 @@ class JavaScriptTests(LanguageIntegrationTests):
         )
 
 
+@pytest.mark.skipif(
+    sphinx.version_info >= (3,),
+    reason="golangdomain extension does not support sphinx >=3",
+)
 class GoTests(LanguageIntegrationTests):
     def _go_read(self, path, **kwargs):
         return json.load(open("../fixtures/go.json"))
@@ -67,6 +72,10 @@ class GoTests(LanguageIntegrationTests):
         )
 
 
+@pytest.mark.skipif(
+    sphinx.version_info >= (3,),
+    reason="dotnetdomain extension does not support sphinx >=3",
+)
 class DotNetTests(LanguageIntegrationTests):
     def _dotnet_read(self, path):
         return json.load(open("../fixtures/dotnet.json"))
