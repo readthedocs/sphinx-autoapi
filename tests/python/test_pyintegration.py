@@ -239,7 +239,10 @@ class TestPositionalOnlyArgumentsModule(object):
             "f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
             in example_file
         )
-        assert "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)" in example_file
+        assert (
+            "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+            in example_file
+        )
         assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in example_file
 
 
