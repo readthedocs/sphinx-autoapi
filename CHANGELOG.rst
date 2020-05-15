@@ -14,6 +14,8 @@ Features
 
 Bug Fixes
 ^^^^^^^^^
+* `#198 <https://github.com/readthedocs/sphinx-autoapi/issues/198>`:
+  Documentation describes the required layout for template override directories.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^

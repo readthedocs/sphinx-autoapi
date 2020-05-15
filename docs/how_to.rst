@@ -20,6 +20,16 @@ It can be absolute, or relative to the root of the documentation directory
 
     autoapi_template_dir = '_autoapi_templates'
 
+Your template directory must to follow the same layout as the default templates.
+For example, to override the Python class and module templates:
+
+.. code-block:: none
+
+    _autoapi_templates
+    └── python
+        ├── class.rst
+        └── module.rst
+
 
 How to Customise the Index Page
 -------------------------------
