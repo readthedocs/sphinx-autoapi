@@ -1,3 +1,4 @@
+os: linux
 dist: xenial
 language: python
 install:
@@ -9,7 +10,7 @@ python:
   - 3.6
   - 3.7
   - 3.8
-matrix:
+jobs:
   include:
     - python: 3.8
       env: TOXENV=docs
