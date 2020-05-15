@@ -2,6 +2,5 @@
 Sphinx AutoAPI
 """
 
-__version__ = "1.3.0"
-
 from .extension import setup
+from ._version import __version__, __version_info__

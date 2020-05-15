@@ -2,10 +2,13 @@ import io
 
 from setuptools import setup, find_packages
 
+version = {}
+with open("autoapi/_version.py") as fp:
+    exec(fp.read(), version)
 
 setup(
     name="sphinx-autoapi",
-    version="1.3.0",
+    version=version["__version__"],
     author="Eric Holscher",
     author_email="eric@ericholscher.com",
     url="http://github.com/readthedocs/sphinx-autoapi",

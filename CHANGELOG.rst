@@ -3,8 +3,24 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.3.1 (2020-04-05)
+-------------------
+
+Features
+^^^^^^^^
+* `#197 <https://github.com/readthedocs/sphinx-autoapi/issues/197>`: Added
+  ``autoapi.__version__`` and ``autoapi.__version_info__`` attributes
+  for accessing version information.
+
+Bug Fixes
+^^^^^^^^^
+
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 v1.3.0 (2020-04-05)
-------------
+-------------------
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -13,7 +29,8 @@ Breaking Changes
 
 Features
 ^^^^^^^^
-* `#151 <https://github.com/readthedocs/sphinx-autoapi/issues/151>`: (Python) Added the ``autoapi_python_use_implicit_namespaces`` option to allow
+* `#151 <https://github.com/readthedocs/sphinx-autoapi/issues/151>`: (Python)
+  Added the ``autoapi_python_use_implicit_namespaces`` option to allow
   AutoAPI to search for implicit namespace packages.
 * Added support for Sphinx 2.2 and 2.3.
 * Added support for Python 3.8.
@@ -47,7 +64,7 @@ Trivial/Internal Changes
 
 
 v1.2.1 (2019-10-09)
-------------------
+-------------------
 
 Bug Fixes
 ^^^^^^^^^
@@ -57,7 +74,7 @@ Bug Fixes
 
 
 v1.2.0 (2019-10-05)
-------------------
+-------------------
 
 Features
 ^^^^^^^^
@@ -107,18 +124,21 @@ v1.0.0 (2019-04-24)
 Features
 ^^^^^^^^
 
-* `#100 <https://github.com/readthedocs/sphinx-autoapi/issues/100>`: (Python) Added support for documenting C extensions via ``.pyi`` stub files.
+* `#100 <https://github.com/readthedocs/sphinx-autoapi/issues/100>`: (Python)
+  Added support for documenting C extensions via ``.pyi`` stub files.
 * Added support for Sphinx 2.0.
 * Toned down the API reference index page.
 * (Go) Patterns configured in ``autoapi_ignore`` are passed to godocjson.
 * New and improved documentation.
 * No longer need to set ``autoapi_add_toctree_entry`` to False when ``autoapi_generate_api_docs`` is False.
-* `#139 <https://github.com/readthedocs/sphinx-autoapi/issues/139>` Added support for basic type annotations in documentation generation and autodoc-style directives.
+* `#139 <https://github.com/readthedocs/sphinx-autoapi/issues/139>`
+  Added support for basic type annotations in documentation generation and autodoc-style directives.
 
 Bug Fixes
 ^^^^^^^^^
 
-* `#159 <https://github.com/readthedocs/sphinx-autoapi/issues/159>`: (Python) Fixed ``UnicodeDecodeError`` on Python 2 when a documenting an attribute that contains binary data.
+* `#159 <https://github.com/readthedocs/sphinx-autoapi/issues/159>`: (Python)
+  Fixed ``UnicodeDecodeError`` on Python 2 when a documenting an attribute that contains binary data.
 * (Python) Fixed private submodules displaying when ``private-members`` is turned off.
 * Templates no longer produce excessive whitespace.
 * (Python) Fixed an error when giving an invalid object to an autodoc-style directive.
