@@ -21,6 +21,7 @@ class PythonPythonMapper(PythonMapperBase):
 
     language = "python"
     is_callable = False
+    member_order = 0
 
     def __init__(self, obj, class_content="class", **kwargs):
         super(PythonPythonMapper, self).__init__(obj, **kwargs)
@@ -156,6 +157,7 @@ class PythonPythonMapper(PythonMapperBase):
 class PythonFunction(PythonPythonMapper):
     type = "function"
     is_callable = True
+    member_order = 40
 
     def __init__(self, obj, **kwargs):
         super(PythonFunction, self).__init__(obj, **kwargs)
@@ -180,6 +182,7 @@ class PythonFunction(PythonPythonMapper):
 class PythonMethod(PythonFunction):
     type = "method"
     is_callable = True
+    member_order = 50
 
     def __init__(self, obj, **kwargs):
         super(PythonMethod, self).__init__(obj, **kwargs)
@@ -211,6 +214,7 @@ class PythonData(PythonPythonMapper):
     """Global, module level data."""
 
     type = "data"
+    member_order = 10
 
     def __init__(self, obj, **kwargs):
         super(PythonData, self).__init__(obj, **kwargs)
@@ -236,6 +240,7 @@ class PythonAttribute(PythonData):
     """An object/class level attribute."""
 
     type = "attribute"
+    member_order = 10
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
@@ -290,6 +295,7 @@ class PythonPackage(TopLevelPythonPythonMapper):
 
 class PythonClass(PythonPythonMapper):
     type = "class"
+    member_order = 30
 
     def __init__(self, obj, **kwargs):
         super(PythonClass, self).__init__(obj, **kwargs)
@@ -374,3 +380,4 @@ class PythonClass(PythonPythonMapper):
 
 class PythonException(PythonClass):
     type = "exception"
+    member_order = 20

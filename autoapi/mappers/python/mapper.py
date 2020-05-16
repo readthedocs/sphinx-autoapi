@@ -1,5 +1,6 @@
 import collections
 import copy
+import operator
 import os
 import sys
 
@@ -339,4 +340,11 @@ class PythonSphinxMapper(SphinxMapperBase):
                     child_data, options=options, **kwargs
                 ):
                     obj.children.append(child_obj)
+
+            # Parser gives children in source order already
+            if self.app.config.autoapi_member_order == "alphabetical":
+                obj.children.sort(key=operator.attrgetter("name"))
+            elif self.app.config.autoapi_member_order == "groupwise":
+                obj.children.sort(key=lambda x: (x.member_order, x.name))
+
             yield obj

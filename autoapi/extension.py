@@ -290,6 +290,7 @@ def setup(app):
     app.add_config_value("autoapi_root", API_ROOT, "html")
     app.add_config_value("autoapi_ignore", [], "html")
     app.add_config_value("autoapi_options", _DEFAULT_OPTIONS, "html")
+    app.add_config_value("autoapi_member_order", "bysource", "html")
     app.add_config_value("autoapi_file_patterns", None, "html")
     app.add_config_value("autoapi_dirs", [], "html")
     app.add_config_value("autoapi_keep_files", False, "html")

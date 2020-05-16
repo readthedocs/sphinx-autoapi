@@ -394,6 +394,26 @@ def test_skipping_members(builder):
     assert "not ignored" in example_file
 
 
+@pytest.mark.parametrize(
+    "value,order",
+    [
+        ("bysource", ["Foo", "decorator_okay", "Bar"]),
+        ("alphabetical", ["Bar", "Foo", "decorator_okay"]),
+        ("groupwise", ["Bar", "Foo", "decorator_okay"]),
+    ],
+)
+def test_order_members(builder, value, order):
+    confoverrides = {"autoapi_member_order": value}
+    builder("pyexample", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    indexes = [example_file.index(name) for name in order]
+    assert indexes == sorted(indexes)
+
+
 class _CompareInstanceType(object):
     def __init__(self, type_):
         self.type = type_

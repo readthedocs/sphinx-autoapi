@@ -144,6 +144,22 @@ Customisation Options
 	docstring is empty and the class defines a ``__new__`` with a docstring,
 	the ``__new__`` docstring is used instead of the ``__init__`` docstring.
 
+.. confval:: autoapi_member_order
+
+	Default: ``bysource``
+
+	The order to document members.
+
+	* ``alphabetical``: Order members by their name, case sensitively.
+	* ``bysource``: Order members by the order that they were defined in the source code.
+	* ``groupwise``: Order members by their type then alphabetically, in the order:
+       * Submodules and subpackages
+	   * Attributes
+	   * Exceptions
+	   * Classes
+	   * Functions
+	   * Methods
+
 .. confval:: autoapi_python_use_implicit_namespaces
 
 	Default: ``False``

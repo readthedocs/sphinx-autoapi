@@ -3,7 +3,7 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.3.1 (2020-04-05)
+vTBC (TBC)
 -------------------
 
 Features
@@ -11,6 +11,9 @@ Features
 * `#197 <https://github.com/readthedocs/sphinx-autoapi/issues/197>`: Added
   ``autoapi.__version__`` and ``autoapi.__version_info__`` attributes
   for accessing version information.
+* `#201 <https://github.com/readthedocs/sphinx-autoapi/issues/201>`: (Python)
+  Added the ``autoapi_member_order`` option to allow the order that members
+  are documentated to be configurable.
 
 Bug Fixes
 ^^^^^^^^^
@@ -19,7 +22,7 @@ Bug Fixes
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
+* black shows diffs by default
 
 v1.3.0 (2020-04-05)
 -------------------
