@@ -105,4 +105,5 @@ def decorator_okay(func):
 
 
 class Bar(Foo):
-    pass
+    def method_okay(self, foo=None, bar=None):
+        pass

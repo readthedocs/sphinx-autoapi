@@ -526,3 +526,42 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
         result.append(kwarg_result)
 
     return ", ".join(result)
+
+
+def get_func_docstring(node):
+    """Get the docstring of a node, using a parent docstring if needed.
+
+    :param node: The node to get a docstring for.
+    :type node: astroid.nodes.FunctionDef
+    """
+    doc = node.doc
+
+    if doc is None and isinstance(node.parent, astroid.nodes.ClassDef):
+        for base in node.parent.ancestors():
+            for child in base.get_children():
+                if (
+                    isinstance(child, node.__class__)
+                    and child.name == node.name
+                    and child.doc is not None
+                ):
+                    return child.doc
+
+    return doc or ""
+
+
+def get_class_docstring(node):
+    """Get the docstring of a node, using a parent docstring if needed.
+
+    :param node: The node to get a docstring for.
+    :type node: astroid.nodes.ClassDef
+    """
+    doc = node.doc
+
+    if doc is None:
+        for base in node.ancestors():
+            if base.qname() in ("__builtins__.object", "builtins.object"):
+                continue
+            if base.doc is not None:
+                return base.doc
+
+    return doc or ""

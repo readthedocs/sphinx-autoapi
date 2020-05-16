@@ -79,6 +79,10 @@ class TestSimpleModule(object):
         # "self" should not be included in constructor arguments
         assert "Foo(self" not in example_file
 
+        # Overridden methods without their own docstring
+        # should inherit the parent's docstring
+        assert example_file.count("This method should parse okay") == 2
+
         assert not os.path.exists("_build/text/autoapi/method_multiline")
 
         index_path = "_build/text/index.txt"

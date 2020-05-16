@@ -14,6 +14,9 @@ Features
 * `#201 <https://github.com/readthedocs/sphinx-autoapi/issues/201>`: (Python)
   Added the ``autoapi_member_order`` option to allow the order that members
   are documentated to be configurable.
+* `#203 <https://github.com/readthedocs/sphinx-autoapi/issues/203>`: (Python)
+  A class without a docstring inherits one from its parent.
+  A methods without a docstring inherits one from the method that it overrides.
 
 Bug Fixes
 ^^^^^^^^^
