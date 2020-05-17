@@ -6,6 +6,9 @@ Configuration Options
 	**Required**
 
 	Paths (relative or absolute) to the source code that you wish to generate your API documentation from.
+	The paths are searched recursively for files matching :confval:`autoapi_file_patterns`.
+	Relative paths should be relative to the root of the documentation directory
+	(ie the directory with the ``conf.py`` file).
 
 	For Python, if a package directory is specified,
 	the package directory itself will be included in the relative path of the children.
