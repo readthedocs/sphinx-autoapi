@@ -74,7 +74,15 @@ Customisation Options
 
 .. confval:: autoapi_options
 
-	Default: ``['members', 'undoc-members', 'private-members', 'show-inheritance', 'special-members']``
+	Default: [
+	``'members'``,
+	``'undoc-members'``,
+	``'private-members'``,
+	``'show-inheritance'``,
+	``'show-module-summary'``,
+	``'special-members'``,
+	``'imported-members'``,
+	]
 
 	Options for display of the generated documentation.
 
