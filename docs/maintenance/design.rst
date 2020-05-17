@@ -15,7 +15,6 @@ There are some exceptions to this rule:
   Usually a module is where implementations exist.
   Therefore an import of something is usually for the usage of the implementation,
   and not as something to be accessed publicly.
-  
 
 
 .NET

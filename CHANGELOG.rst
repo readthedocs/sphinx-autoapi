@@ -17,6 +17,10 @@ Features
 * `#203 <https://github.com/readthedocs/sphinx-autoapi/issues/203>`: (Python)
   A class without a docstring inherits one from its parent.
   A methods without a docstring inherits one from the method that it overrides.
+* `#204 <https://github.com/readthedocs/sphinx-autoapi/issues/204>`: (Python)
+  Added the ``imported-members`` AutoAPI option to be able to enable or disable
+  documenting objects imported from the same top-level package or module
+  without needing to override templates.
 
 Bug Fixes
 ^^^^^^^^^

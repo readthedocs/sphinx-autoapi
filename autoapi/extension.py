@@ -38,6 +38,7 @@ _DEFAULT_OPTIONS = [
     "show-inheritance",
     "show-module-summary",
     "special-members",
+    "imported-members",
 ]
 _VIEWCODE_CACHE = {}
 """Caches a module's parse results for use in viewcode.

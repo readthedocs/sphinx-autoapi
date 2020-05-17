@@ -140,8 +140,14 @@ class PythonPythonMapper(PythonMapperBase):
         skip_special_member = (
             self.is_special_member and "special-members" not in self.options
         )
+        skip_imported_member = self.imported and "imported-members" not in self.options
 
-        return skip_undoc_member or skip_private_member or skip_special_member
+        return (
+            skip_undoc_member
+            or skip_private_member
+            or skip_special_member
+            or skip_imported_member
+        )
 
     def _ask_ignore(self, skip):  # type: (bool) -> bool
         ask_result = self.app.emit_firstresult(

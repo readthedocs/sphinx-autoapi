@@ -91,6 +91,11 @@ Customisation Options
 	  and requires `Graphviz <https://graphviz.org/>`_ to be installed.
 	* ``show-module-summary``: Whether to include autosummary directives
 	  in generated module documentation.
+	* ``imported-members``: Display objects imported from the same
+	  top level package or module.
+	  The default module template does not include imported objects,
+	  even with this option enabled.
+	  The default package template does.
 
 
 .. confval:: autoapi_ignore

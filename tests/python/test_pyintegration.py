@@ -367,6 +367,29 @@ def test_hiding_inheritance(builder):
     assert "Bases:" not in example_file
 
 
+def test_hiding_imported_members(builder):
+    confoverrides = {"autoapi_options": ["members", "undoc-members"]}
+    builder("pypackagecomplex", confoverrides=confoverrides)
+
+    subpackage_path = "_build/text/autoapi/complex/subpackage/index.txt"
+    with io.open(subpackage_path, encoding="utf8") as subpackage_handle:
+        subpackage_file = subpackage_handle.read()
+
+    assert "Part of a public resolution chain." not in subpackage_file
+
+    package_path = "_build/text/autoapi/complex/index.txt"
+    with io.open(package_path, encoding="utf8") as package_handle:
+        package_file = package_handle.read()
+
+    assert "Part of a public resolution chain." not in package_file
+
+    submodule_path = "_build/text/autoapi/complex/subpackage/submodule/index.txt"
+    with io.open(submodule_path, encoding="utf8") as submodule_handle:
+        submodule_file = submodule_handle.read()
+
+    assert "A private function made public by import." not in submodule_file
+
+
 def test_inherited_members(builder):
     confoverrides = {
         "autoapi_options": ["members", "inherited-members", "undoc-members"]
