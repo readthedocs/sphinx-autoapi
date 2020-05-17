@@ -11,7 +11,9 @@
    {% if "show-inheritance-diagram" in autoapi_options and obj.bases != ["object"] %}
    .. autoapi-inheritance-diagram:: {{ obj.obj["full_name"] }}
       :parts: 1
-      {% if "private-members" in autoapi_options %}:private-bases:{% endif %}
+      {% if "private-members" in autoapi_options %}
+      :private-bases:
+      {% endif %}
 
    {% endif %}
    {% endif %}

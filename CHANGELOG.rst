@@ -26,6 +26,9 @@ Bug Fixes
 ^^^^^^^^^
 * `#198 <https://github.com/readthedocs/sphinx-autoapi/issues/198>`:
   Documentation describes the required layout for template override directories.
+* `#195 <https://github.com/readthedocs/sphinx-autoapi/issues/195>`: (Python)
+  Fixed incorrect formatting when ``show-inheritance-diagram``
+  and ``private-members`` are turned on.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
