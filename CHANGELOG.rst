@@ -33,6 +33,8 @@ Bug Fixes
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 * black shows diffs by default
+* `#207 <https://github.com/readthedocs/sphinx-autoapi/issues/207>`:
+  Fixed a typo in the code of the golang tutorial.
 
 v1.3.0 (2020-04-05)
 -------------------

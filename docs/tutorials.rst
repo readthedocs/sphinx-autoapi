@@ -119,7 +119,7 @@ we need to add it to the list of extensions in Sphinx's ``conf.py`` file
 with the Go domain extension::
 
     extensions = [
-        'sphinxcontrib_golangdomain',
+        'sphinxcontrib.golangdomain',
         'autoapi.extension',
     ]
 
