@@ -61,7 +61,7 @@ Submodules
 {% set visible_classes = visible_children|selectattr("type", "equalto", "class")|list %}
 {% set visible_functions = visible_children|selectattr("type", "equalto", "function")|list %}
 {% if "show-module-summary" in autoapi_options and (visible_classes or visible_functions) %}
-{% block classes %}
+{% block classes scoped %}
 {% if visible_classes %}
 Classes
 ~~~~~~~
@@ -76,7 +76,7 @@ Classes
 {% endif %}
 {% endblock %}
 
-{% block functions %}
+{% block functions scoped %}
 {% if visible_functions %}
 Functions
 ~~~~~~~~~
