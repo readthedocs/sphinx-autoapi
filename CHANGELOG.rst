@@ -3,7 +3,7 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-vTBC (TBC)
+v1.4.0 (2020-06-07)
 -------------------
 
 Features
@@ -32,6 +32,8 @@ Bug Fixes
 * `#193 <https://github.com/readthedocs/sphinx-autoapi/issues/193>` and
 * `#208 <https://github.com/readthedocs/sphinx-autoapi/issues/208>`: (Python)
   Inheritance diagrams can follow imports to find classes to document.
+* `#213 <https://github.com/readthedocs/sphinx-autoapi/issues/213>`: (Python)
+  Fixed module summary never showing.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
