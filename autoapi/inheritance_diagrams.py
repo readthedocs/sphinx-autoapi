@@ -9,25 +9,36 @@ else:
     _BUILTINS = "__builtins__"
 
 
-def _import_class(name, currmodule):
+def _do_import_class(name, currmodule=None):
     path_stack = list(reversed(name.split(".")))
+    if not currmodule:
+        currmodule = path_stack.pop()
+
+    try:
+        target = astroid.MANAGER.ast_from_module_name(currmodule)
+        while target and path_stack:
+            path_part = path_stack.pop()
+            target = (target.getattr(path_part) or (None,))[0]
+            while isinstance(target, astroid.ImportFrom):
+                try:
+                    target = target.do_import_module(path_part)
+                except astroid.AstroidImportError:
+                    target = target.do_import_module()
+                    target = (target.getattr(path_part) or (None,))[0]
+                    break
+    except astroid.AstroidError:
+        target = None
+
+    return target
+
+
+def _import_class(name, currmodule):
     target = None
     if currmodule:
-        try:
-            target = astroid.MANAGER.ast_from_module_name(currmodule)
-            while target and path_stack:
-                target = (target.getattr(path_stack.pop()) or (None,))[0]
-        except astroid.AstroidError:
-            target = None
+        target = _do_import_class(name, currmodule)
 
     if target is None:
-        path_stack = list(reversed(name.split(".")))
-        try:
-            target = astroid.MANAGER.ast_from_module_name(path_stack.pop())
-            while target and path_stack:
-                target = (target.getattr(path_stack.pop()) or (None,))[0]
-        except astroid.AstroidError:
-            target = None
+        target = _do_import_class(name)
 
     if not target:
         raise sphinx.ext.inheritance_diagram.InheritanceException(

@@ -29,12 +29,16 @@ Bug Fixes
 * `#195 <https://github.com/readthedocs/sphinx-autoapi/issues/195>`: (Python)
   Fixed incorrect formatting when ``show-inheritance-diagram``
   and ``private-members`` are turned on.
+* `#193 <https://github.com/readthedocs/sphinx-autoapi/issues/193>` and
+* `#208 <https://github.com/readthedocs/sphinx-autoapi/issues/208>`: (Python)
+  Inheritance diagrams can follow imports to find classes to document.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 * black shows diffs by default
 * `#207 <https://github.com/readthedocs/sphinx-autoapi/issues/207>`:
   Fixed a typo in the code of the golang tutorial.
+
 
 v1.3.0 (2020-04-05)
 -------------------
