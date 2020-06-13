@@ -424,9 +424,9 @@ def test_skipping_members(builder):
 @pytest.mark.parametrize(
     "value,order",
     [
-        ("bysource", ["Foo", "decorator_okay", "Bar"]),
-        ("alphabetical", ["Bar", "Foo", "decorator_okay"]),
-        ("groupwise", ["Bar", "Foo", "decorator_okay"]),
+        ("bysource", [".Foo", ".decorator_okay", ".Bar"]),
+        ("alphabetical", [".Bar", ".Foo", ".decorator_okay"]),
+        ("groupwise", [".Bar", ".Foo", ".decorator_okay"]),
     ],
 )
 def test_order_members(builder, value, order):
