@@ -30,7 +30,7 @@ Bug Fixes
   Fixed incorrect formatting when ``show-inheritance-diagram``
   and ``private-members`` are turned on.
 * `#193 <https://github.com/readthedocs/sphinx-autoapi/issues/193>` and
-* `#208 <https://github.com/readthedocs/sphinx-autoapi/issues/208>`: (Python)
+  `#208 <https://github.com/readthedocs/sphinx-autoapi/issues/208>`: (Python)
   Inheritance diagrams can follow imports to find classes to document.
 * `#213 <https://github.com/readthedocs/sphinx-autoapi/issues/213>`: (Python)
   Fixed module summary never showing.
