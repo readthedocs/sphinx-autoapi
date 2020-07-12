@@ -174,18 +174,16 @@ class TestPy3Module(object):
 
         assert "global_a :A" in example_file
 
-        assert "my_method(self) -> str" in example_file
+        if sphinx.version_info >= (2, 1):
+            assert "my_method(self) -> str" in example_file
 
     def test_async(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
-        if sphinx.version_info >= (3, 1):
+        if sphinx.version_info >= (2, 1):
             assert re.search("async_method[^\n]*:async:", example_file)
-            assert "async example.async_function" in example_file
-        elif sphinx.version_info >= (2, 1):
-            assert "async async_method" in example_file
             assert "async example.async_function" in example_file
         else:
             assert "async_method" in example_file
