@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+TBC (TBC)
+---------
+
+Bug Fixes
+^^^^^^^^^
+* `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`:
+  Fixed return types not showing for methods.
+
+
 v1.4.0 (2020-06-07)
 -------------------
 

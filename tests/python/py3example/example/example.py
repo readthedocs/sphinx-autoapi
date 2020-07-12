@@ -53,6 +53,10 @@ class A:
         """My property."""
         return "prop"
 
+    def my_method(self) -> str:
+        """My method."""
+        return "method"
+
 
 async def async_function(self, wait: bool) -> int:
     if wait:

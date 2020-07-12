@@ -1,6 +1,6 @@
 {%- if obj.display %}
 {% if sphinx_version >= (2, 1) %}
-.. method:: {{ obj.short_name }}({{ obj.args }})
+.. method:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
    {% for property in obj.properties %}
    :{{ property }}:
    {% endfor %}
