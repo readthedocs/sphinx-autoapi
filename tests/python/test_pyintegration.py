@@ -50,6 +50,7 @@ class TestSimpleModule(object):
     def test_integration(self):
         self.check_integration("_build/text/autoapi/example/index.txt")
 
+    @pytest.mark.xfail(sphinx.version_info >= (3, 1), reason="Issue #227")
     def test_manual_directives(self):
         example_path = "_build/text/manualapi.txt"
         # The manual directives should contain the same information
