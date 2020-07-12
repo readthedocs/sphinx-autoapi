@@ -6,6 +6,11 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 TBC (TBC)
 ---------
 
+Features
+^^^^^^^^
+* `#222 <https://github.com/readthedocs/sphinx-autoapi/issues/222>`:
+  Declare the extension as parallel safe.
+
 Bug Fixes
 ^^^^^^^^^
 * `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`:

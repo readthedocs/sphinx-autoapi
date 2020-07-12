@@ -316,3 +316,8 @@ def setup(app):
     app.add_event("autoapi-skip-member")
     app.setup_extension("sphinx.ext.inheritance_diagram")
     app.add_directive("autoapi-inheritance-diagram", AutoapiInheritanceDiagram)
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }

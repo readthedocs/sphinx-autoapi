@@ -23,7 +23,7 @@ from autoapi.mappers.python import (
 def builder():
     cwd = os.getcwd()
 
-    def build(test_dir, confoverrides=None):
+    def build(test_dir, confoverrides=None, **kwargs):
         os.chdir("tests/python/{0}".format(test_dir))
         app = Sphinx(
             srcdir=".",
@@ -32,6 +32,7 @@ def builder():
             doctreedir="_build/.doctrees",
             buildername="text",
             confoverrides=confoverrides,
+            **kwargs
         )
         app.build(force_all=True)
 
@@ -637,6 +638,12 @@ class TestComplexPackage(object):
             foo_file = foo_handle.read()
 
         assert "unicode_str" in foo_file
+
+
+class TestComplexPackageParallel(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pypackagecomplex", parallel=2)
 
 
 @pytest.mark.skipif(
