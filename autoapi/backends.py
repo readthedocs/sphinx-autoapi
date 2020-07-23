@@ -16,6 +16,7 @@ DEFAULT_FILE_PATTERNS = {
 DEFAULT_IGNORE_PATTERNS = {
     "dotnet": ["*toc.yml", "*index.yml"],
     "python": ["*migrations*"],
+    "go": ["_test.go"],
 }
 
 
