@@ -46,13 +46,16 @@ class AutoapiDocumenter(autodoc.Documenter):
         for num_splits in range(max_splits, -1, -1):
             path_stack = list(reversed(self.fullname.rsplit(".", num_splits)))
             objects = self.env.autoapi_mapper.objects
-            parent = objects.get(path_stack.pop())
-            while parent and path_stack:
-                parent = self.get_attr(parent, path_stack.pop(), None)
+            parent = None
+            current = objects.get(path_stack.pop())
+            while current and path_stack:
+                parent = current
+                current = self.get_attr(current, path_stack.pop(), None)
 
-            if parent:
-                self.object = parent
-                self.object_name = parent.name
+            if current:
+                self.object = current
+                self.object_name = current.name
+                self._method_parent = parent
                 return True
 
         return False
@@ -200,6 +203,7 @@ class AutoapiMethodDocumenter(
         result = super(AutoapiMethodDocumenter, self).import_object()
 
         if result:
+            self.parent = self._method_parent
             if self.object.method_type != "method":
                 if sphinx.version_info < (2, 1):
                     self.directivetype = self.object.method_type
