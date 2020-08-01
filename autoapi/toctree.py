@@ -144,14 +144,13 @@ def add_domain_to_toctree(app, doctree, docname):
                 )[-1]
                 # Ensure we're added another bullet list so that we nest inside the parent,
                 # not next to it
-                if toc_insertion_point and isinstance(
-                    toc_insertion_point[0], nodes.bullet_list
+                if len(toc_insertion_point) > 1 and isinstance(
+                    toc_insertion_point[1], nodes.bullet_list
                 ):
-                    new_insert = toc_insertion_point[0]
                     to_add = _build_toc_node(docname, anchor=ref_id, text=ref_text)
-                    new_insert.append(to_add)
+                    toc_insertion_point = toc_insertion_point[1]
                 else:
                     to_add = _build_toc_node(
-                        docname, anchor=ref_id, text=ref_text, bullet=True
+                        docname, anchor=ref_id, text=ref_text, bullet=True,
                     )
-                    toc_insertion_point.append(to_add)
+                toc_insertion_point.append(to_add)
