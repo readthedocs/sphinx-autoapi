@@ -18,6 +18,10 @@ Bug Fixes
 * Fixed incorrect formatting of properties on generated method directives.
 * Fixed every toctree entry getting added as a new list.
 
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* autoapisummary directive inherits from autosummary for future stability.
+
 
 v1.4.0 (2020-06-07)
 -------------------
