@@ -183,7 +183,7 @@ class TestPy3Module(object):
             example_file = example_handle.read()
 
         if sphinx.version_info >= (2, 1):
-            assert re.search("async_method[^\n]*:async:", example_file)
+            assert "async async_method" in example_file
             assert "async example.async_function" in example_file
         else:
             assert "async_method" in example_file

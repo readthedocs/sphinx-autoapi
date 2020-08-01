@@ -15,6 +15,7 @@ Bug Fixes
 ^^^^^^^^^
 * `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`:
   Fixed return types not showing for methods.
+* Fixed incorrect formatting of properties on generated method directives.
 
 
 v1.4.0 (2020-06-07)
