@@ -186,6 +186,9 @@ def doctree_read(app, doctree):
     """
     Inject AutoAPI into the TOC Tree dynamically.
     """
+
+    add_domain_to_toctree(app, doctree, app.env.docname)
+
     if app.env.docname == "index":
         all_docs = set()
         insert = True
@@ -279,7 +282,6 @@ def viewcode_follow_imported(app, modname, attribute):
 def setup(app):
     app.connect("builder-inited", run_autoapi)
     app.connect("doctree-read", doctree_read)
-    app.connect("doctree-resolved", add_domain_to_toctree)
     app.connect("build-finished", build_finished)
     app.connect("env-updated", clear_env)
     if sphinx.version_info >= (1, 8):
