@@ -48,7 +48,7 @@ class NestedParse(Directive):  # pylint: disable=too-few-public-methods
     option_spec = {}
 
     def run(self):
-        node = nodes.paragraph()
+        node = nodes.container()
         node.document = self.state.document
         nested_parse_with_titles(self.state, self.content, node)
         try:
@@ -57,4 +57,4 @@ class NestedParse(Directive):  # pylint: disable=too-few-public-methods
                 del node[0][0]
         except IndexError:
             pass
-        return [node]
+        return node.children
