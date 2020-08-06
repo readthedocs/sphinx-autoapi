@@ -4,7 +4,8 @@
 This is a description
 """
 import asyncio
-from typing import ClassVar, Dict, Iterable, List, Union
+import typing
+from typing import ClassVar, Dict, Iterable, List, Union, overload
 
 max_rating: int = 10
 
@@ -35,7 +36,33 @@ def f2(not_yet_a: "A") -> int:
     ...
 
 
+@overload
+def overloaded_func(a: float) -> float:
+    ...
+
+
+@typing.overload
+def overloaded_func(a: str) -> str:
+    ...
+
+
+def overloaded_func(a: Union[float, str]) -> Union[float, str]:
+    """Overloaded function"""
+    return a * 2
+
+
+@overload
+def undoc_overloaded_func(a: str) -> str:
+    ...
+
+
+def undoc_overloaded_func(a: str) -> str:
+    return a * 2
+
+
 class A:
+    """class A"""
+
     is_an_a: ClassVar[bool] = True
     not_assigned_to: ClassVar[str]
 
@@ -56,6 +83,40 @@ class A:
     def my_method(self) -> str:
         """My method."""
         return "method"
+
+    @overload
+    def overloaded_method(self, a: float) -> float:
+        ...
+
+    @typing.overload
+    def overloaded_method(self, a: str) -> str:
+        ...
+
+    def overloaded_method(self, a: Union[float, str]) -> Union[float, str]:
+        """Overloaded method"""
+        return a * 2
+
+    @overload
+    def undoc_overloaded_method(self, a: float) -> float:
+        ...
+
+    def undoc_overloaded_method(self, a: float) -> float:
+        return a * 2
+
+    @typing.overload
+    @classmethod
+    def overloaded_class_method(cls, a: float) -> float:
+        ...
+
+    @overload
+    @classmethod
+    def overloaded_class_method(cls, a: str) -> str:
+        ...
+
+    @classmethod
+    def overloaded_class_method(cls, a: Union[float, str]) -> Union[float, str]:
+        """Overloaded class method"""
+        return a * 2
 
 
 async def async_function(self, wait: bool) -> int:

@@ -20,9 +20,12 @@ class AutoapiSummary(Autosummary):  # pylint: disable=too-few-public-methods
         for name in names:
             obj = mapper.all_objects[name]
             if isinstance(obj, PythonFunction):
-                sig = "({})".format(obj.args)
-                if obj.return_annotation is not None:
-                    sig += " -> {}".format(obj.return_annotation)
+                if len(obj.signatures) > 1:
+                    sig = "(\u2026)"
+                else:
+                    sig = "({})".format(obj.args)
+                    if obj.return_annotation is not None:
+                        sig += " \u2192 {}".format(obj.return_annotation)
             else:
                 sig = ""
 

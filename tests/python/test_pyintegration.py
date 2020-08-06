@@ -177,6 +177,29 @@ class TestPy3Module(object):
         if sphinx.version_info >= (2, 1):
             assert "my_method(self) -> str" in example_file
 
+    def test_overload(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "overloaded_func(a: float" in example_file
+        assert "overloaded_func(a: str" in example_file
+        assert "overloaded_func(a: Union" not in example_file
+        assert "Overloaded function" in example_file
+
+        assert "overloaded_method(self, a: float" in example_file
+        assert "overloaded_method(self, a: str" in example_file
+        assert "overloaded_method(self, a: Union" not in example_file
+        assert "Overloaded method" in example_file
+
+        assert "overloaded_class_method(cls, a: float" in example_file
+        assert "overloaded_class_method(cls, a: str" in example_file
+        assert "overloaded_class_method(cls, a: Union" not in example_file
+        assert "Overloaded method" in example_file
+
+        assert "undoc_overloaded_func" in example_file
+        assert "undoc_overloaded_method" in example_file
+
     def test_async(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
@@ -188,6 +211,23 @@ class TestPy3Module(object):
         else:
             assert "async_method" in example_file
             assert "async_function" in example_file
+
+
+@pytest.mark.skipif(
+    sys.version_info < (3, 6), reason="Annotations are invalid in Python <3.5"
+)
+def test_py3_hiding_undoc_overloaded_members(builder):
+    confoverrides = {"autoapi_options": ["members", "special-members"]}
+    builder("py3example", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "overloaded_func" in example_file
+    assert "overloaded_method" in example_file
+    assert "undoc_overloaded_func" not in example_file
+    assert "undoc_overloaded_method" not in example_file
 
 
 @pytest.mark.skipif(

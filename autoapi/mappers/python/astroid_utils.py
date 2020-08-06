@@ -275,6 +275,42 @@ def is_decorated_with_property_setter(node):
     return False
 
 
+def is_decorated_with_overload(node):
+    """Check if the function is decorated as an overload definition.
+
+    :param node: The node to check.
+    :type node: astroid.nodes.FunctionDef
+
+    :returns: True if the function is an overload definition, False otherwise.
+    :rtype: bool
+    """
+    if not node.decorators:
+        return False
+
+    for decorator in node.decorators.nodes:
+        if not isinstance(decorator, (astroid.Name, astroid.Attribute)):
+            continue
+
+        try:
+            if _is_overload_decorator(decorator):
+                return True
+        except astroid.InferenceError:
+            pass
+
+    return False
+
+
+def _is_overload_decorator(decorator):
+    for inferred in decorator.infer():
+        if not isinstance(inferred, astroid.nodes.FunctionDef):
+            continue
+
+        if inferred.name == "overload" and inferred.root().name == "typing":
+            return True
+
+    return False
+
+
 def is_constructor(node):
     """Check if the function is a constructor.
 
