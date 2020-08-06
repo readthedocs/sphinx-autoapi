@@ -98,7 +98,7 @@ class Parser(object):
 
         return [data]
 
-    def parse_classdef(self, node, data=None):
+    def parse_classdef(self, node, data=None):  # pylint: disable=too-many-branches
         type_ = "class"
         if astroid_utils.is_exception(node):
             type_ = "exception"
@@ -129,6 +129,7 @@ class Parser(object):
         self._name_stack.append(node.name)
         overridden = set()
         overloads = {}
+        # pylint: disable=too-many-nested-blocks
         for base in itertools.chain(iter((node,)), node.ancestors()):
             seen = set()
             if base.qname() in ("__builtins__.object", "builtins.object"):
