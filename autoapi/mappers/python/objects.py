@@ -183,6 +183,14 @@ class PythonFunction(PythonPythonMapper):
 
         :type: list(str)
         """
+        self.signatures = obj["signatures"]
+        """The list of all signatures ``[(args, return_annotation), ...]`` of this function.
+
+        When this function is not overloaded,
+        it must be the same as ``[(self.args, self.return_annotation)]``.
+
+        :type: list(tuple(str, str))
+        """
 
 
 class PythonMethod(PythonFunction):
