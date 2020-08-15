@@ -98,7 +98,7 @@ class Parser(object):
 
         return [data]
 
-    def parse_classdef(self, node, data=None):  # pylint: disable=too-many-branches
+    def parse_classdef(self, node, data=None):
         type_ = "class"
         if astroid_utils.is_exception(node):
             type_ = "exception"
@@ -129,7 +129,6 @@ class Parser(object):
         self._name_stack.append(node.name)
         overridden = set()
         overloads = {}
-        # pylint: disable=too-many-nested-blocks
         for base in itertools.chain(iter((node,)), node.ancestors()):
             seen = set()
             if base.qname() in ("__builtins__.object", "builtins.object"):
@@ -146,34 +145,9 @@ class Parser(object):
                     continue
                 seen.add(name)
                 child_data = self.parse(child)
-
-                for single_data in child_data:
-                    if single_data["type"] in ("method", "property"):
-                        if name in overloads:
-                            grouped = overloads[name]
-                            if single_data["doc"]:
-                                grouped["doc"] += "\n\n" + single_data["doc"]
-                            if single_data["is_overload"]:
-                                grouped["signatures"].append(
-                                    (
-                                        single_data["args"],
-                                        single_data["return_annotation"],
-                                    )
-                                )
-                            else:
-                                grouped["args"] = single_data["args"]
-                                grouped["return_annotation"] = single_data[
-                                    "return_annotation"
-                                ]
-                            continue
-                        if single_data["is_overload"] and name not in overloads:
-                            overloads[name] = single_data
-                        single_data["signatures"] = [
-                            (single_data["args"], single_data["return_annotation"])
-                        ]
-
-                    single_data["inherited"] = base is not node
-                    data["children"].append(single_data)
+                data["children"].extend(
+                    _parse_child(node, child_data, overloads, base, name)
+                )
 
             overridden.update(seen)
 
@@ -290,30 +264,7 @@ class Parser(object):
             else:
                 child_data = self.parse(child)
 
-            for single_data in child_data:
-                if single_data["type"] == "function":
-                    name = single_data["name"]
-                    if name in overloads:
-                        grouped = overloads[name]
-                        if single_data["doc"]:
-                            grouped["doc"] += "\n\n" + single_data["doc"]
-                        if single_data["is_overload"]:
-                            grouped["signatures"].append(
-                                (single_data["args"], single_data["return_annotation"])
-                            )
-                        else:
-                            grouped["args"] = single_data["args"]
-                            grouped["return_annotation"] = single_data[
-                                "return_annotation"
-                            ]
-                        continue
-                    if single_data["is_overload"] and name not in overloads:
-                        overloads[name] = single_data
-                    single_data["signatures"] = [
-                        (single_data["args"], single_data["return_annotation"])
-                    ]
-
-                data["children"].append(single_data)
+            data["children"].extend(_parse_child(node, child_data, overloads))
 
         return data
 
@@ -330,3 +281,34 @@ class Parser(object):
                 if data:
                     break
         return data
+
+
+def _parse_child(node, child_data, overloads, base=None, name=None):
+    result = []
+    for single_data in child_data:
+        if single_data["type"] in ("function", "method", "property"):
+            if name is None:
+                name = single_data["name"]
+            if name in overloads:
+                grouped = overloads[name]
+                if single_data["doc"]:
+                    grouped["doc"] += "\n\n" + single_data["doc"]
+                if single_data["is_overload"]:
+                    grouped["signatures"].append(
+                        (single_data["args"], single_data["return_annotation"])
+                    )
+                else:
+                    grouped["args"] = single_data["args"]
+                    grouped["return_annotation"] = single_data["return_annotation"]
+                continue
+            if single_data["is_overload"] and name not in overloads:
+                overloads[name] = single_data
+            single_data["signatures"] = [
+                (single_data["args"], single_data["return_annotation"])
+            ]
+
+        if base:
+            single_data["inherited"] = base is not node
+        result.append(single_data)
+
+    return result
