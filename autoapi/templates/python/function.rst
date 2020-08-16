@@ -1,12 +1,9 @@
 {% if obj.display %}
-{% for (args, return_annotation) in obj.signatures %}
-{% if loop.index0 == 0 %}
-.. function:: {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
+.. function:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
 
-{% else %}
+{% for (args, return_annotation) in obj.overloads %}
               {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
 
-{% endif %}
 {% endfor %}
    {% if sphinx_version >= (2, 1) %}
    {% for property in obj.properties %}

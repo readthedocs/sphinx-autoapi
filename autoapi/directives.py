@@ -20,7 +20,7 @@ class AutoapiSummary(Autosummary):  # pylint: disable=too-few-public-methods
         for name in names:
             obj = mapper.all_objects[name]
             if isinstance(obj, PythonFunction):
-                if len(obj.signatures) > 1:
+                if obj.overloads:
                     sig = "(\u2026)"
                 else:
                     sig = "({})".format(obj.args)
