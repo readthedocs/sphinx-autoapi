@@ -200,6 +200,7 @@ class Parser(object):
             "return_annotation": return_annotation,
             "properties": properties,
             "is_overload": astroid_utils.is_decorated_with_overload(node),
+            "overloads": [],
         }
 
         if type_ in ("method", "property"):
@@ -291,21 +292,14 @@ def _parse_child(node, child_data, overloads, base=None, name=None):
                 name = single_data["name"]
             if name in overloads:
                 grouped = overloads[name]
-                if single_data["doc"]:
-                    grouped["doc"] += "\n\n" + single_data["doc"]
+                grouped["doc"] = single_data["doc"]
                 if single_data["is_overload"]:
-                    grouped["signatures"].append(
+                    grouped["overloads"].append(
                         (single_data["args"], single_data["return_annotation"])
                     )
-                else:
-                    grouped["args"] = single_data["args"]
-                    grouped["return_annotation"] = single_data["return_annotation"]
                 continue
             if single_data["is_overload"] and name not in overloads:
                 overloads[name] = single_data
-            single_data["signatures"] = [
-                (single_data["args"], single_data["return_annotation"])
-            ]
 
         if base:
             single_data["inherited"] = base is not node

@@ -1,13 +1,10 @@
 {%- if obj.display %}
 {% if sphinx_version >= (2, 1) %}
-{% for (args, return_annotation) in obj.signatures %}
-{% if loop.index0 == 0 %}
-.. method:: {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
+.. method:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
 
-{% else %}
+{% for (args, return_annotation) in obj.overloads %}
             {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
 
-{% endif %}
 {% endfor %}
    {% if obj.properties %}
    {% for property in obj.properties %}
@@ -18,15 +15,11 @@
 
    {% endif %}
 {% else %}
-{% for (args, return_annotation) in obj.signatures %}
-{% if loop.index0 == 0 %}
-.. {{ obj.method_type }}:: {{ obj.short_name }}({{ args }})
-
-{% else %}
-                        :: {{ obj.short_name }}({{ args }})
-
-{% endif %}
+.. {{ obj.method_type }}:: {{ obj.short_name }}({{ obj.args }})
+{% for (args, return_annotation) in obj.overloads %}
+   {{ " " * (obj.method_type | length) }}   {{ obj.short_name }}({{ args }})
 {% endfor %}
+
 {% endif %}
    {% if obj.docstring %}
    {{ obj.docstring|prepare_docstring|indent(3) }}
