@@ -96,7 +96,9 @@ class DotNetObjectTests(unittest.TestCase):
     def test_class_namespace(self):
         """Class parent resolution"""
         cls = dotnet.DotNetClass(
-            dict(id="Foo.Bar.Widget", type="class"), jinja_env=None, app=None,
+            dict(id="Foo.Bar.Widget", type="class"),
+            jinja_env=None,
+            app=None,
         )
         self.assertEqual(cls.namespace, "Foo.Bar")
         cls = dotnet.DotNetClass(

@@ -222,7 +222,7 @@ class SphinxMapperBase(object):
 
         pattern_regexes = []
         for pattern in patterns:
-            regex = re.compile(fnmatch.translate(pattern).replace('.*', '(.*)'))
+            regex = re.compile(fnmatch.translate(pattern).replace(".*", "(.*)"))
             pattern_regexes.append((pattern, regex))
 
         for _dir in dirs:

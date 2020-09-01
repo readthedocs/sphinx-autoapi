@@ -541,7 +541,9 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
 
         result.append(
             _format_args(
-                args_node.kwonlyargs, args_node.kw_defaults, kwonlyargs_annotations,
+                args_node.kwonlyargs,
+                args_node.kw_defaults,
+                kwonlyargs_annotations,
             )
         )
 

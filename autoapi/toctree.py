@@ -151,6 +151,9 @@ def add_domain_to_toctree(app, doctree, docname):
                     toc_insertion_point = toc_insertion_point[1]
                 else:
                     to_add = _build_toc_node(
-                        docname, anchor=ref_id, text=ref_text, bullet=True,
+                        docname,
+                        anchor=ref_id,
+                        text=ref_text,
+                        bullet=True,
                     )
                 toc_insertion_point.append(to_add)

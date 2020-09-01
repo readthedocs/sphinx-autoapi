@@ -4,5 +4,6 @@
 This is a description
 """
 
+
 class Foo(object):
     pass
