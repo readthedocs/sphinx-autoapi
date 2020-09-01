@@ -219,11 +219,23 @@ class SphinxMapperBase(object):
         # pylint: disable=too-many-nested-blocks
         if not ignore:
             ignore = []
+
+        pattern_regexes = []
+        for pattern in patterns:
+            regex = re.compile(fnmatch.translate(pattern).replace('.*', '(.*)'))
+            pattern_regexes.append((pattern, regex))
+
         for _dir in dirs:
             for root, _, filenames in os.walk(_dir):
-                for pattern in patterns:
+                seen = set()
+                for pattern, pattern_re in pattern_regexes:
                     for filename in fnmatch.filter(filenames, pattern):
                         skip = False
+
+                        match = re.match(pattern_re, filename)
+                        norm_name = match.groups()
+                        if norm_name in seen:
+                            continue
 
                         # Skip ignored files
                         for ignore_pattern in ignore:
@@ -244,6 +256,7 @@ class SphinxMapperBase(object):
                             filename = os.path.join(root, filename)
 
                         yield filename
+                        seen.add(norm_name)
 
     def read_file(self, path, **kwargs):
         """Read file input into memory

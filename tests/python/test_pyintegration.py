@@ -127,6 +127,9 @@ class TestSimpleStubModule(object):
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
+        # Are pyi files preferred
+        assert "DoNotFindThis" not in example_file
+
         assert "class example.Foo" in example_file
         assert "class Meta" in example_file
         assert "Another class var docstring" in example_file
@@ -137,6 +140,22 @@ class TestSimpleStubModule(object):
 
         # Are constructor arguments from the class docstring parsed?
         assert "Set an attribute" in example_file
+
+
+class TestSimpleStubModuleNotPreferred(object):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyiexample2")
+
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        # Are py files preferred
+        assert "DoNotFindThis" not in example_file
+
+        assert "Foo" in example_file
 
 
 @pytest.mark.skipif(

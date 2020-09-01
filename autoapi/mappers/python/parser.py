@@ -4,6 +4,7 @@ import os
 import sys
 
 import astroid
+import astroid.builder
 from . import astroid_utils
 
 
@@ -39,7 +40,7 @@ class Parser(object):
                 module_parts.appendleft(module_part)
 
         module_name = ".".join(module_parts)
-        node = astroid.MANAGER.ast_from_file(file_path, module_name, source=True)
+        node = astroid.builder.AstroidBuilder().file_build(file_path, module_name)
         return self.parse(node)
 
     def parse_file(self, file_path):

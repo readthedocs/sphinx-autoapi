@@ -52,6 +52,12 @@ Configuration Options
 	Default: Varies by Language
 
 	A list containing the file patterns to look for when generating documentation.
+	Patterns should be listed in order of preference.
+	For example,
+	if ``autoapi_file_patterns`` is set to the default value
+	and a `.py` file and a `.pyi` file are found,
+	then the `.py` will be read.
+
 	The defaults by language are:
 
 	==========  ============================================
