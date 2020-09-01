@@ -3,13 +3,20 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-TBC (TBC)
+V1.5.0 (2020-08-31)
 ---------
+
+This will be the last minor version to support Python 2 and Sphinx 1.x/2.x.
 
 Features
 ^^^^^^^^
 * `#222 <https://github.com/readthedocs/sphinx-autoapi/issues/222>`:
-  Declare the extension as parallel safe.
+  Declare the extension as parallel unsafe.
+* `#217 <https://github.com/readthedocs/sphinx-autoapi/issues/217>`:
+  All overload signatures are documented.
+* `#243 <https://github.com/readthedocs/sphinx-autoapi/issues/243>`:
+  Files are found in order of preference according to ``autoapi_file_patterns``.
+* Added support for Sphinx 3.2.
 
 Bug Fixes
 ^^^^^^^^^
@@ -17,6 +24,8 @@ Bug Fixes
   Fixed return types not showing for methods.
 * Fixed incorrect formatting of properties on generated method directives.
 * Fixed every toctree entry getting added as a new list.
+* `#234 <https://github.com/readthedocs/sphinx-autoapi/issues/234>`:
+  Fixed only some entries getting added to the toctree.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
