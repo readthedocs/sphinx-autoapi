@@ -20,11 +20,11 @@ autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_python_class_content = "both"
 autoapi_options = [
-        'members',
-        'undoc-members',  # this is temporary until we add docstrings across the codebase
-        'show-inheritance',
-        'show-module-summary',
-        'special-members',
-        'imported-members',
-        'inherited-members',
+    "members",
+    "undoc-members",  # this is temporary until we add docstrings across the codebase
+    "show-inheritance",
+    "show-module-summary",
+    "special-members",
+    "imported-members",
+    "inherited-members",
 ]
