@@ -52,7 +52,7 @@ def _import_class(name, currmodule):
 
     if isinstance(target, astroid.Module):
         classes = []
-        for child in target.children:
+        for child in target.get_children():
             if isinstance(child, astroid.ClassDef):
                 classes.append(child)
         return classes
