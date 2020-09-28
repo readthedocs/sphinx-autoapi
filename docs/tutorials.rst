@@ -112,7 +112,9 @@ Support for Go requires you to have the go environment installed
 
 and the Go domain extension for Sphinx::
 
-    pip install sphinxcontrib-golangdomain
+    git clone https://github.com/chrisdoherty4/sphinxcontrib-golangdomain
+    cd sphinxcontrib-golangdomain
+    pip install .
 
 To enable the AutoAPI extension,
 we need to add it to the list of extensions in Sphinx's ``conf.py`` file
