@@ -284,11 +284,10 @@ def setup(app):
     app.connect("doctree-read", doctree_read)
     app.connect("build-finished", build_finished)
     app.connect("env-updated", clear_env)
-    if sphinx.version_info >= (1, 8):
-        if "viewcode-find-source" in app.events.events:
-            app.connect("viewcode-find-source", viewcode_find)
-        if "viewcode-follow-imported" in app.events.events:
-            app.connect("viewcode-follow-imported", viewcode_follow_imported)
+    if "viewcode-find-source" in app.events.events:
+        app.connect("viewcode-find-source", viewcode_find)
+    if "viewcode-follow-imported" in app.events.events:
+        app.connect("viewcode-follow-imported", viewcode_follow_imported)
     app.add_config_value("autoapi_type", "python", "html")
     app.add_config_value("autoapi_root", API_ROOT, "html")
     app.add_config_value("autoapi_ignore", [], "html")
@@ -304,8 +303,7 @@ def setup(app):
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
-    if sphinx.version_info >= (2,):
-        app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)
+    app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)
     app.add_autodocumenter(documenters.AutoapiClassDocumenter)
     app.add_autodocumenter(documenters.AutoapiMethodDocumenter)
     app.add_autodocumenter(documenters.AutoapiDataDocumenter)

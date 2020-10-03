@@ -2,7 +2,6 @@ import collections
 import copy
 import operator
 import os
-import sys
 
 import sphinx.util
 from sphinx.util.console import bold
@@ -218,20 +217,14 @@ class PythonSphinxMapper(SphinxMapperBase):
             PythonException,
         )
     }
-    if sphinx.version_info >= (2, 1):
-        _OBJ_MAP["property"] = PythonMethod
-    else:
-        _OBJ_MAP["property"] = PythonAttribute
+    _OBJ_MAP["property"] = PythonMethod
 
     def __init__(self, app, template_dir=None, url_root=None):
         super(PythonSphinxMapper, self).__init__(app, template_dir, url_root)
 
-        if sys.version_info < (3, 3):
-            self._use_implicit_namespace = False
-        else:
-            self._use_implicit_namespace = (
-                self.app.config.autoapi_python_use_implicit_namespaces
-            )
+        self._use_implicit_namespace = (
+            self.app.config.autoapi_python_use_implicit_namespaces
+        )
 
     def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:

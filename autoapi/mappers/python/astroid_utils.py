@@ -1,7 +1,4 @@
-try:
-    import builtins
-except ImportError:
-    import __builtin__ as builtins
+import builtins
 import itertools
 import re
 import sys
@@ -11,17 +8,6 @@ import astroid.nodes
 import sphinx.util.logging
 
 _LOGGER = sphinx.util.logging.getLogger(__name__)
-
-
-if sys.version_info < (3,):
-    _EXCEPTIONS_MODULE = "exceptions"
-    # getattr to keep linter happy
-    _STRING_TYPES = getattr(builtins, "basestring")
-    _zip_longest = itertools.izip_longest  # pylint: disable=invalid-name,no-member
-else:
-    _EXCEPTIONS_MODULE = "builtins"
-    _STRING_TYPES = (str,)
-    _zip_longest = itertools.zip_longest  # pylint: disable=invalid-name
 
 
 def resolve_import_alias(name, import_names):
@@ -196,8 +182,7 @@ def get_assign_annotation(node):
     try:
         annotation_node = node.annotation
     except AttributeError:
-        # Python 2 has no support for type annotations, so use getattr
-        annotation_node = getattr(node, "type_annotation", None)
+        annotation_node = node.type_annotation
 
     if annotation_node:
         if isinstance(annotation_node, astroid.nodes.Const):
@@ -336,10 +321,7 @@ def is_exception(node):
     :returns: True if the class is an exception, False otherwise.
     :rtype: bool
     """
-    if (
-        node.name in ("Exception", "BaseException")
-        and node.root().name == _EXCEPTIONS_MODULE
-    ):
+    if node.name in ("Exception", "BaseException") and node.root().name == "builtins":
         return True
 
     if not hasattr(node, "ancestors"):
@@ -396,7 +378,7 @@ def get_module_all(node):
                     continue
 
                 if isinstance(elt_name, astroid.Const) and isinstance(
-                    elt_name.value, _STRING_TYPES
+                    elt_name.value, str
                 ):
                     all_.append(elt_name.value)
 
@@ -411,7 +393,7 @@ def _is_ellipsis(node):
 
 
 def merge_annotations(annotations, comment_annotations):
-    for ann, comment_ann in _zip_longest(annotations, comment_annotations):
+    for ann, comment_ann in itertools.zip_longest(annotations, comment_annotations):
         if ann and not _is_ellipsis(ann):
             yield ann
         elif comment_ann and not _is_ellipsis(comment_ann):
@@ -432,7 +414,7 @@ def _format_args(args, defaults=None, annotations=None):
     if defaults is not None:
         default_offset = len(args) - len(defaults)
 
-    packed = _zip_longest(args, annotations)
+    packed = itertools.zip_longest(args, annotations)
     for i, (arg, annotation) in enumerate(packed):
         if isinstance(arg, astroid.Tuple):
             values.append("({})".format(_format_args(arg.elts)))
@@ -465,19 +447,11 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
             : len(args_node.defaults) - len(args)
         ]
 
-    plain_annotations = getattr(args_node, "annotations", ()) or ()
-    func_comment_annotations = getattr(args_node.parent, "type_comment_args", ()) or ()
-    comment_annotations = getattr(args_node, "type_comment_args", []) or []
-    if hasattr(args_node, "type_comment_posonlyargs"):
-        comment_annotations = args_node.type_comment_posonlyargs + comment_annotations
-    else:
-        # astroid used to not expose type comments of positional only arguments,
-        # so pad the comments with the number of positional only arguments.
-        comment_annotations = (
-            [None] * len(getattr(args_node, "posonlyargs", ()))
-        ) + comment_annotations
-    if hasattr(args_node, "type_comment_kwonlyargs"):
-        comment_annotations += args_node.type_comment_kwonlyargs
+    plain_annotations = args_node.annotations or ()
+    func_comment_annotations = args_node.parent.type_comment_args or ()
+    comment_annotations = args_node.type_comment_args or []
+    comment_annotations = args_node.type_comment_posonlyargs + comment_annotations
+    comment_annotations += args_node.type_comment_kwonlyargs
     annotations = list(
         merge_annotations(
             plain_annotations,
@@ -486,7 +460,7 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
     )
     annotation_offset = 0
 
-    if getattr(args_node, "posonlyargs", None):
+    if args_node.posonlyargs:
         posonlyargs_annotations = args_node.posonlyargs_annotations
         if not any(args_node.posonlyargs_annotations):
             num_args = len(args_node.posonlyargs)
@@ -517,7 +491,7 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
 
     if args_node.vararg:
         vararg_result = "*{}".format(args_node.vararg)
-        if getattr(args_node, "varargannotation", None):
+        if args_node.varargannotation:
             vararg_result = "{}: {}".format(
                 vararg_result, args_node.varargannotation.as_string()
             )
@@ -528,7 +502,7 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
             annotation_offset += 1
         result.append(vararg_result)
 
-    if getattr(args_node, "kwonlyargs", None):
+    if args_node.kwonlyargs:
         if not args_node.vararg:
             result.append("*")
 
@@ -552,7 +526,7 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
 
     if args_node.kwarg:
         kwarg_result = "**{}".format(args_node.kwarg)
-        if getattr(args_node, "kwargannotation", None):
+        if args_node.kwargannotation:
             kwarg_result = "{}: {}".format(
                 kwarg_result, args_node.kwargannotation.as_string()
             )

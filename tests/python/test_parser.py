@@ -2,6 +2,7 @@
 
 """Test Python parser"""
 
+from io import StringIO
 import sys
 import unittest
 from textwrap import dedent
@@ -10,11 +11,6 @@ import astroid
 import pytest
 
 from autoapi.mappers.python.parser import Parser
-
-if sys.version_info < (3, 0):
-    from StringIO import StringIO
-else:
-    from io import StringIO
 
 
 class PythonParserTests(unittest.TestCase):

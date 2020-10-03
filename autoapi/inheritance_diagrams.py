@@ -1,12 +1,5 @@
-import sys
-
 import astroid
 import sphinx.ext.inheritance_diagram
-
-if sys.version_info >= (3,):
-    _BUILTINS = "builtins"
-else:
-    _BUILTINS = "__builtins__"
 
 
 def _do_import_class(name, currmodule=None):
@@ -80,7 +73,7 @@ class _AutoapiInheritanceGraph(sphinx.ext.inheritance_diagram.InheritanceGraph):
         def recurse(cls):
             if cls in all_classes:
                 return
-            if not show_builtins and cls.root().name == _BUILTINS:
+            if not show_builtins and cls.root().name == "builtins":
                 return
             if not private_bases and cls.name.startswith("_"):
                 return
@@ -101,7 +94,7 @@ class _AutoapiInheritanceGraph(sphinx.ext.inheritance_diagram.InheritanceGraph):
                 return
 
             for base in cls.ancestors(recurs=False):
-                if not show_builtins and base.root().name == _BUILTINS:
+                if not show_builtins and base.root().name == "builtins":
                     continue
                 if not private_bases and base.name.startswith("_"):
                     continue

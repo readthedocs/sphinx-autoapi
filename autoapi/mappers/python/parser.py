@@ -1,7 +1,6 @@
 import collections
 import itertools
 import os
-import sys
 
 import astroid
 import astroid.builder
@@ -15,17 +14,6 @@ class Parser(object):
 
     def _get_full_name(self, name):
         return ".".join(self._name_stack + [name])
-
-    def _decode(self, to_decode):
-        if sys.version_info < (3,) and self._encoding:
-            # pylint: disable=undefined-variable
-            try:
-                return unicode(to_decode, self._encoding)
-            except TypeError:
-                # The string was already in the correct format
-                pass
-
-        return to_decode
 
     def _parse_file(self, file_path, condition):
         directory, filename = os.path.split(file_path)
@@ -76,13 +64,7 @@ class Parser(object):
             return []
 
         target = assign_value[0]
-        value = None
-        try:
-            value = self._decode(assign_value[1])
-        except UnicodeDecodeError:
-            # Ignore binary data on Python 2.7
-            if sys.version_info[0] >= 3:
-                raise
+        value = assign_value[1]
 
         annotation = astroid_utils.get_assign_annotation(node)
 
@@ -90,7 +72,7 @@ class Parser(object):
             "type": type_,
             "name": target,
             "full_name": self._get_full_name(target),
-            "doc": self._decode(doc),
+            "doc": doc,
             "value": value,
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
@@ -121,7 +103,7 @@ class Parser(object):
             "full_name": self._get_full_name(node.name),
             "args": args,
             "bases": basenames,
-            "doc": self._decode(astroid_utils.get_class_docstring(node)),
+            "doc": astroid_utils.get_class_docstring(node),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "children": [],
@@ -182,10 +164,9 @@ class Parser(object):
             properties.append("async")
 
         return_annotation = None
-        if getattr(node, "returns", None):
+        if node.returns:
             return_annotation = node.returns.as_string()
-        # Python 2 has no support for type annotations, so use getattr
-        elif getattr(node, "type_comment_returns", None):
+        elif node.type_comment_returns:
             return_annotation = node.type_comment_returns.as_string()
 
         arg_string = astroid_utils.format_args(node.args)
@@ -195,7 +176,7 @@ class Parser(object):
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "args": arg_string,
-            "doc": self._decode(astroid_utils.get_func_docstring(node)),
+            "doc": astroid_utils.get_func_docstring(node),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "return_annotation": return_annotation,
@@ -251,7 +232,7 @@ class Parser(object):
             "type": type_,
             "name": node.name,
             "full_name": node.name,
-            "doc": self._decode(node.doc or ""),
+            "doc": node.doc or "",
             "children": [],
             "file_path": path,
             "encoding": node.file_encoding,

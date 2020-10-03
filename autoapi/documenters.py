@@ -1,6 +1,5 @@
 import re
 
-import sphinx
 from sphinx.ext import autodoc
 
 from .mappers.python import (
@@ -17,13 +16,7 @@ from .mappers.python import (
 
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
-        if hasattr(self.env.app, "registry") and hasattr(
-            self.env.app.registry, "autodoc_attrgettrs"
-        ):
-            attrgetters = self.env.app.registry.autodoc_attrgettrs
-        else:
-            # Needed for Sphinx 1.6
-            attrgetters = getattr(autodoc.AutoDirective, "_special_attrgetters")
+        attrgetters = self.env.app.registry.autodoc_attrgettrs
 
         for type_, func in attrgetters.items():
             if isinstance(obj, type_):
@@ -118,43 +111,38 @@ class AutoapiFunctionDocumenter(
         return "(" + self.object.args + ")"
 
     def add_directive_header(self, sig):
-        if sphinx.version_info >= (2, 1):
-            autodoc.Documenter.add_directive_header(self, sig)
+        autodoc.Documenter.add_directive_header(self, sig)
 
-            if "async" in self.object.properties:
-                sourcename = self.get_sourcename()
-                self.add_line("   :async:", sourcename)
-        else:
-            super(AutoapiFunctionDocumenter, self).add_directive_header(sig)
+        if "async" in self.object.properties:
+            sourcename = self.get_sourcename()
+            self.add_line("   :async:", sourcename)
 
 
-if sphinx.version_info >= (2,):
+class AutoapiDecoratorDocumenter(
+    AutoapiFunctionDocumenter, AutoapiDocumenter, autodoc.DecoratorDocumenter
+):
+    objtype = "apidecorator"
+    directivetype = "decorator"
+    priority = autodoc.DecoratorDocumenter.priority * 100 + 100
 
-    class AutoapiDecoratorDocumenter(
-        AutoapiFunctionDocumenter, AutoapiDocumenter, autodoc.DecoratorDocumenter
-    ):
-        objtype = "apidecorator"
-        directivetype = "decorator"
-        priority = autodoc.DecoratorDocumenter.priority * 100 + 100
+    def format_signature(self, **kwargs):
+        if self.args is None:
+            self.args = self.format_args(**kwargs)
 
-        def format_signature(self, **kwargs):
-            if self.args is None:
-                self.args = self.format_args(**kwargs)
+        return super(AutoapiDecoratorDocumenter, self).format_signature(**kwargs)
 
-            return super(AutoapiDecoratorDocumenter, self).format_signature(**kwargs)
+    def format_args(self, **kwargs):
+        to_format = self.object.args
 
-        def format_args(self, **kwargs):
-            to_format = self.object.args
+        if re.match(r"func\W", to_format) or to_format == "func":
+            if "," not in to_format:
+                return None
 
-            if re.match(r"func\W", to_format) or to_format == "func":
-                if "," not in to_format:
-                    return None
+            # We need to do better stripping here.
+            # An annotation with a comma will mess this up.
+            to_format = self.object.args.split(",", 1)[1]
 
-                # We need to do better stripping here.
-                # An annotation with a comma will mess this up.
-                to_format = self.object.args.split(",", 1)[1]
-
-            return "(" + to_format + ")"
+        return "(" + to_format + ")"
 
 
 class AutoapiClassDocumenter(
@@ -205,28 +193,23 @@ class AutoapiMethodDocumenter(
         if result:
             self.parent = self._method_parent
             if self.object.method_type != "method":
-                if sphinx.version_info < (2, 1):
-                    self.directivetype = self.object.method_type
                 # document class and static members before ordinary ones
                 self.member_order = self.member_order - 1
 
         return result
 
     def add_directive_header(self, sig):
-        if sphinx.version_info >= (2, 1):
-            autodoc.Documenter.add_directive_header(self, sig)
+        autodoc.Documenter.add_directive_header(self, sig)
 
-            sourcename = self.get_sourcename()
-            for property_type in (
-                "abstractmethod",
-                "async",
-                "classmethod",
-                "staticmethod",
-            ):
-                if property_type in self.object.properties:
-                    self.add_line("   :{}:".format(property_type), sourcename)
-        else:
-            autodoc.Documenter.add_directive_header(self, sig)
+        sourcename = self.get_sourcename()
+        for property_type in (
+            "abstractmethod",
+            "async",
+            "classmethod",
+            "staticmethod",
+        ):
+            if property_type in self.object.properties:
+                self.add_line("   :{}:".format(property_type), sourcename)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):

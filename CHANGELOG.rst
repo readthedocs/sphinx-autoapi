@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+V1.6.0 (TBC)
+------------
+
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Dropped support for Python 2 and Sphinx 1.x/2.x.
+  Python 2 source code can still be parsed.
+
 V1.5.1 (2020-10-01)
 -------------------
 

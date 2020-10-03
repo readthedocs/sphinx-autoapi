@@ -60,8 +60,7 @@ class TestSimpleModule(object):
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
-        if sphinx.version_info >= (2,):
-            assert "@example.decorator_okay" in example_file
+        assert "@example.decorator_okay" in example_file
 
     def check_integration(self, example_path):
         with io.open(example_path, encoding="utf8") as example_handle:
@@ -114,9 +113,6 @@ class TestSimpleModule(object):
         assert "Bases:" in example_file
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3,), reason="Ellipsis is invalid method contents in Python 2"
-)
 class TestSimpleStubModule(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
@@ -158,9 +154,6 @@ class TestSimpleStubModuleNotPreferred(object):
         assert "Foo" in example_file
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 6), reason="Annotations are invalid in Python <3.5"
-)
 class TestPy3Module(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
@@ -192,8 +185,7 @@ class TestPy3Module(object):
 
         assert "global_a :A" in example_file
 
-        if sphinx.version_info >= (2, 1):
-            assert "my_method(self) -> str" in example_file
+        assert "my_method(self) -> str" in example_file
 
     def test_overload(self):
         example_path = "_build/text/autoapi/example/index.txt"
@@ -223,17 +215,10 @@ class TestPy3Module(object):
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
-        if sphinx.version_info >= (2, 1):
-            assert "async async_method" in example_file
-            assert "async example.async_function" in example_file
-        else:
-            assert "async_method" in example_file
-            assert "async_function" in example_file
+        assert "async async_method" in example_file
+        assert "async example.async_function" in example_file
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 6), reason="Annotations are invalid in Python <3.5"
-)
 def test_py3_hiding_undoc_overloaded_members(builder):
     confoverrides = {"autoapi_options": ["members", "special-members"]}
     builder("py3example", confoverrides=confoverrides)
@@ -248,9 +233,6 @@ def test_py3_hiding_undoc_overloaded_members(builder):
     assert "undoc_overloaded_method" not in example_file
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3,), reason="Annotations are not supported in astroid<2"
-)
 class TestAnnotationCommentsModule(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
@@ -702,9 +684,6 @@ class TestComplexPackageParallel(object):
         builder("pypackagecomplex", parallel=2)
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 3), reason="Implicit namespace not supported in python < 3.3"
-)
 class TestImplicitNamespacePackage(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
