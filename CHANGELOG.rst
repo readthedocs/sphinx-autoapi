@@ -3,8 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+V1.5.1 (2020-10-01)
+-------------------
+
+Bug Fixes
+^^^^^^^^^
+* Fixed AttributeError when generating an inheritance diagram for a module.
+
+
 V1.5.0 (2020-08-31)
----------
+-------------------
 
 This will be the last minor version to support Python 2 and Sphinx 1.x/2.x.
 
