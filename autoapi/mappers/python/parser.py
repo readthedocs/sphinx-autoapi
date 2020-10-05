@@ -87,13 +87,15 @@ class Parser(object):
             type_ = "exception"
 
         args = ""
+        annotations = {}
         try:
             constructor = node.lookup("__init__")[1]
         except IndexError:
             pass
         else:
             if isinstance(constructor, astroid.nodes.FunctionDef):
-                args = constructor.args.as_string()
+                args = astroid_utils.format_args(constructor.args)
+                annotations = astroid_utils.get_annotations_dict(constructor.args)
 
         basenames = list(astroid_utils.get_full_basenames(node.bases, node.basenames))
 
@@ -102,6 +104,7 @@ class Parser(object):
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "args": args,
+            "annotations": annotations,
             "bases": basenames,
             "doc": astroid_utils.get_class_docstring(node),
             "from_line_no": node.fromlineno,
@@ -163,11 +166,14 @@ class Parser(object):
         if isinstance(node, astroid.AsyncFunctionDef):
             properties.append("async")
 
+        annotations = astroid_utils.get_annotations_dict(node.args)
         return_annotation = None
         if node.returns:
             return_annotation = node.returns.as_string()
+            annotations["return"] = return_annotation
         elif node.type_comment_returns:
             return_annotation = node.type_comment_returns.as_string()
+            annotations["return"] = return_annotation
 
         arg_string = astroid_utils.format_args(node.args)
 
@@ -176,6 +182,7 @@ class Parser(object):
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "args": arg_string,
+            "annotations": annotations,
             "doc": astroid_utils.get_func_docstring(node),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,

@@ -1,4 +1,5 @@
 import builtins
+import collections
 import itertools
 import re
 import sys
@@ -402,41 +403,33 @@ def merge_annotations(annotations, comment_annotations):
             yield None
 
 
-def _format_args(args, defaults=None, annotations=None):
-    values = []
+def _format_annotation(annotation):
+    if annotation:
+        if isinstance(annotation, astroid.Const):
+            annotation = annotation.value
+        else:
+            annotation = annotation.as_string()
 
-    if args is None:
-        return ""
+    return annotation
 
-    if annotations is None:
-        annotations = []
 
-    if defaults is not None:
-        default_offset = len(args) - len(defaults)
-
+def _iter_args(args, annotations, defaults):
+    default_offset = len(args) - len(defaults)
     packed = itertools.zip_longest(args, annotations)
     for i, (arg, annotation) in enumerate(packed):
+        default = None
+        if defaults is not None and i >= default_offset:
+            if defaults[i - default_offset] is not None:
+                default = defaults[i - default_offset].as_string()
+
+        name = arg.name
         if isinstance(arg, astroid.Tuple):
-            values.append("({})".format(_format_args(arg.elts)))
-        else:
-            argname = arg.name
-            default_sep = "="
-            if annotation is not None:
-                ann_str = annotation.as_string()
-                if isinstance(annotation, astroid.Const):
-                    ann_str = annotation.value
-                argname = "{}: {}".format(argname, ann_str)
-                default_sep = " = "
-            values.append(argname)
+            name = "({})".format(", ".join(x.name for x in arg.elts))
 
-            if defaults is not None and i >= default_offset:
-                if defaults[i - default_offset] is not None:
-                    values[-1] += default_sep + defaults[i - default_offset].as_string()
-
-    return ", ".join(values)
+        yield (name, _format_annotation(annotation), default)
 
 
-def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statements
+def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
     result = []
     positional_only_defaults = []
     positional_or_keyword_defaults = args_node.defaults
@@ -449,8 +442,8 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
 
     plain_annotations = args_node.annotations or ()
     func_comment_annotations = args_node.parent.type_comment_args or ()
-    comment_annotations = args_node.type_comment_args or []
-    comment_annotations = args_node.type_comment_posonlyargs + comment_annotations
+    comment_annotations = args_node.type_comment_posonlyargs
+    comment_annotations += args_node.type_comment_args or []
     comment_annotations += args_node.type_comment_kwonlyargs
     annotations = list(
         merge_annotations(
@@ -468,43 +461,39 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
                 annotation_offset : annotation_offset + num_args
             ]
 
-        result.append(
-            _format_args(
-                args_node.posonlyargs, positional_only_defaults, posonlyargs_annotations
-            )
-        )
-        result.append("/")
+        for arg, annotation, default in _iter_args(
+            args_node.posonlyargs, posonlyargs_annotations, positional_only_defaults
+        ):
+            result.append((None, arg, annotation, default))
+
+        result.append(("/", None, None, None))
 
         if not any(args_node.posonlyargs_annotations):
             annotation_offset += num_args
 
     if args_node.args:
         num_args = len(args_node.args)
-        result.append(
-            _format_args(
-                args_node.args,
-                positional_or_keyword_defaults,
-                annotations[annotation_offset : annotation_offset + num_args],
-            )
-        )
+        for arg, annotation, default in _iter_args(
+            args_node.args,
+            annotations[annotation_offset : annotation_offset + num_args],
+            positional_or_keyword_defaults,
+        ):
+            result.append((None, arg, annotation, default))
+
         annotation_offset += num_args
 
     if args_node.vararg:
-        vararg_result = "*{}".format(args_node.vararg)
+        annotation = None
         if args_node.varargannotation:
-            vararg_result = "{}: {}".format(
-                vararg_result, args_node.varargannotation.as_string()
-            )
+            annotation = _format_annotation(args_node.varargannotation)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            vararg_result = "{}: {}".format(
-                vararg_result, annotations[annotation_offset].as_string()
-            )
+            annotation = _format_annotation(annotations[annotation_offset])
             annotation_offset += 1
-        result.append(vararg_result)
+        result.append(("*", args_node.vararg, annotation, None))
 
     if args_node.kwonlyargs:
         if not args_node.vararg:
-            result.append("*")
+            result.append(("*", None, None, None))
 
         kwonlyargs_annotations = args_node.kwonlyargs_annotations
         if not any(args_node.kwonlyargs_annotations):
@@ -513,31 +502,53 @@ def format_args(args_node):  # pylint: disable=too-many-branches,too-many-statem
                 annotation_offset : annotation_offset + num_args
             ]
 
-        result.append(
-            _format_args(
-                args_node.kwonlyargs,
-                args_node.kw_defaults,
-                kwonlyargs_annotations,
-            )
-        )
+        for arg, annotation, default in _iter_args(
+            args_node.kwonlyargs,
+            kwonlyargs_annotations,
+            args_node.kw_defaults,
+        ):
+            result.append((None, arg, annotation, default))
 
         if not any(args_node.kwonlyargs_annotations):
             annotation_offset += num_args
 
     if args_node.kwarg:
-        kwarg_result = "**{}".format(args_node.kwarg)
+        annotation = None
         if args_node.kwargannotation:
-            kwarg_result = "{}: {}".format(
-                kwarg_result, args_node.kwargannotation.as_string()
-            )
+            annotation = _format_annotation(args_node.kwargannotation)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            kwarg_result = "{}: {}".format(
-                kwarg_result, annotations[annotation_offset].as_string()
-            )
+            annotation = _format_annotation(annotations[annotation_offset])
             annotation_offset += 1
-        result.append(kwarg_result)
+        result.append(("**", args_node.kwarg, annotation, None))
+
+    return result
+
+
+def format_args(args_node):
+    result = []
+
+    args_info = _get_args_info(args_node)
+    for prefix, name, annotation, default in args_info:
+        formatted = "{}{}{}{}".format(
+            prefix or "",
+            name or "",
+            ": {}".format(annotation) if annotation else "",
+            (" = {}" if annotation else "={}").format(default) if default else "",
+        )
+        result.append(formatted)
 
     return ", ".join(result)
+
+
+def get_annotations_dict(args_node):
+    result = collections.OrderedDict()
+
+    args_info = _get_args_info(args_node)
+    for _, name, annotation, __ in args_info:
+        if name and annotation:
+            result[name] = annotation
+
+    return result
 
 
 def get_func_docstring(node):

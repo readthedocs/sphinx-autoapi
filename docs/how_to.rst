@@ -95,3 +95,42 @@ using the :confval:`autoapi_keep_files` option::
 
 Once you have built your documentation with this option turned on,
 you can disable AutoAPI altogether from your project.
+
+
+How to Include Type Annotations as Types in Rendered Docstrings
+---------------------------------------------------------------
+
+Since v3.0, :mod:`sphinx` has included an :mod:`sphinx.ext.autodoc.typehints`
+extension that is capable of rendering type annotations as
+parameter types and return types.
+
+For example the following ReST:
+
+.. code-block::
+
+    .. py:function:: _func(a: int, b: Optional[str]) -> bool
+
+        :param a: The first arg.
+        :param b: The second arg.
+
+        :returns: Something.
+
+would be rendered as:
+
+.. py:function:: _func(a: int, b: Optional[str]) -> bool
+    :noindex:
+
+    :param int a: The first arg.
+    :param b: The second arg.
+    :type b: Optional[str]
+
+    :returns: Something.
+    :rtype: bool
+
+AutoAPI is capable of the same thing.
+To enable this behaviour, load the :mod:`sphinx.ext.autodoc.typehints`
+(or :mod:`sphinx.ext.autodoc`) extension in Sphinx's ``conf.py`` file
+and set :confval:`autodoc_typehints` to ``description`` as normal::
+
+    extensions = ['sphinx.ext.autodoc', 'autoapi.extension']
+    autodoc_typehints = 'description'

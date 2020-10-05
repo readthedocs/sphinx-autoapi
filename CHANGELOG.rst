@@ -12,6 +12,13 @@ Breaking Changes
 * Dropped support for Python 2 and Sphinx 1.x/2.x.
   Python 2 source code can still be parsed.
 
+Features
+^^^^^^^^
+
+* Added support for using type hints as parameter types and return types
+  via the ``sphinx.ext.autodoc.typehints`` extension.
+
+
 V1.5.1 (2020-10-01)
 -------------------
 

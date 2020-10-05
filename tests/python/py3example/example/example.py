@@ -119,7 +119,12 @@ class A:
         return a * 2
 
 
-async def async_function(self, wait: bool) -> int:
+async def async_function(wait: bool) -> int:
+    """Blah.
+
+    Args:
+        wait: Blah
+    """
     if wait:
         await asyncio.sleep(1)
 

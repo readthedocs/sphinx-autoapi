@@ -269,7 +269,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                 parsed_data = Parser().parse_file(path)
             return parsed_data
         except (IOError, TypeError, ImportError):
-            LOGGER.warning("Error reading file: {0}".format(path))
+            LOGGER.warning("Unable to read file: {0}".format(path))
+            LOGGER.debug("Reason:", exc_info=True)
         return None
 
     def _resolve_placeholders(self):
@@ -325,8 +326,9 @@ class PythonSphinxMapper(SphinxMapperBase):
             if lines and "autodoc-process-docstring" in self.app.events.events:
                 self.app.emit(
                     "autodoc-process-docstring", cls.type, obj.name, None, None, lines
-                )  # object  # options
+                )
             obj.docstring = "\n".join(lines)
+            self._record_typehints(obj)
 
             for child_data in data.get("children", []):
                 for child_obj in self.create_class(
@@ -341,3 +343,8 @@ class PythonSphinxMapper(SphinxMapperBase):
                 obj.children.sort(key=lambda x: (x.member_order, x.name))
 
             yield obj
+
+    def _record_typehints(self, obj):
+        if isinstance(obj, (PythonClass, PythonFunction, PythonMethod)):
+            annotations = self.app.env.temp_data.setdefault("annotations", {})
+            annotations[obj.id] = obj.obj["annotations"]
