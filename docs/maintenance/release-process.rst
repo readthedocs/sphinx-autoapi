@@ -28,3 +28,5 @@ Release
     git clean -fdx
     python setup.py sdist bdist_wheel
     twine upload dist/*
+    git tag vX.X.X
+    git push --tags
