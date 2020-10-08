@@ -1,3 +1,5 @@
+import sys
+
 import astroid
 from autoapi.mappers.python import astroid_utils
 import pytest
@@ -104,12 +106,27 @@ class TestAstroidUtils(object):
         "signature,expected",
         [
             ("a: bool, b: int = 5", {"a": "bool", "b": "int"}),
-            ("a: bool, /, b: int, *, c: str", {"a": "bool", "b": "int", "c": "str"}),
-            (
+            pytest.param(
+                "a: bool, /, b: int, *, c: str",
+                {"a": "bool", "b": "int", "c": "str"},
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
+            ),
+            pytest.param(
                 "a: bool, /, b: int, *args, c: str, **kwargs",
                 {"a": "bool", "b": "int", "c": "str"},
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
             ),
-            ("a: int, *args, b: str, **kwargs", {"a": "int", "b": "str"}),
+            pytest.param(
+                "a: int, *args, b: str, **kwargs",
+                {"a": "int", "b": "str"},
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
+            ),
         ],
     )
     def test_parse_annotations(self, signature, expected):
@@ -129,10 +146,19 @@ class TestAstroidUtils(object):
         "signature,expected",
         [
             ("a: bool, b: int = 5, c='hi'", "a: bool, b: int = 5, c='hi'"),
-            ("a: bool, /, b: int, *, c: str", "a: bool, /, b: int, *, c: str"),
-            (
+            pytest.param(
+                "a: bool, /, b: int, *, c: str",
+                "a: bool, /, b: int, *, c: str",
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
+            ),
+            pytest.param(
                 "a: bool, /, b: int, *args, c: str, **kwargs",
                 "a: bool, /, b: int, *args, c: str, **kwargs",
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
             ),
             ("a: int, *args, b: str, **kwargs", "a: int, *args, b: str, **kwargs"),
             ("a: 'A'", "a: A"),
