@@ -187,6 +187,8 @@ class TestPy3Module(object):
 
         assert "my_method(self) -> str" in example_file
 
+        assert "class example.SomeMetaclass" in example_file
+
     def test_overload(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:

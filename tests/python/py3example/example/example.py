@@ -132,3 +132,7 @@ async def async_function(wait: bool) -> int:
 
 
 global_a: A = A()
+
+
+class SomeMetaclass(type):
+    ...
