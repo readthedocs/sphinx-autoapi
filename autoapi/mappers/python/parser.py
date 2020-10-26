@@ -117,7 +117,11 @@ class Parser(object):
         overloads = {}
         for base in itertools.chain(iter((node,)), node.ancestors()):
             seen = set()
-            if base.qname() in ("__builtins__.object", "builtins.object", "builtins.type"):
+            if base.qname() in (
+                "__builtins__.object",
+                "builtins.object",
+                "builtins.type",
+            ):
                 continue
             for child in base.get_children():
                 name = getattr(child, "name", None)

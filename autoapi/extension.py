@@ -131,10 +131,10 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
 
     sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
     template_dir = app.config.autoapi_template_dir
-    if template_dir:
+    if template_dir and not os.path.isabs(template_dir):
         if not os.path.isdir(template_dir):
             template_dir = os.path.join(app.confdir, app.config.autoapi_template_dir)
-        elif not os.path.isabs(template_dir):
+        elif app.confdir != os.getcwd():
             warnings.warn(
                 "autoapi_template_dir will be expected to be "
                 " relative to conf.py instead of "

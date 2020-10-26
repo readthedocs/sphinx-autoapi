@@ -26,6 +26,9 @@ Bug Fixes
 ^^^^^^^^^
 * `#246 <https://github.com/readthedocs/sphinx-autoapi/issues/246>`:
   Fixed TypeError when parsing a class that inherits from ``type``.
+* `#244 <https://github.com/readthedocs/sphinx-autoapi/issues/244>`:
+  Fixed an unnecessary deprecation warning being raised when running
+  sphinx-build from the same directory as conf.py.
 
 
 V1.5.1 (2020-10-01)
