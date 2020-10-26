@@ -19,22 +19,26 @@ from autoapi.mappers.python import (
 )
 
 
+def rebuild(confoverrides=None, **kwargs):
+    app = Sphinx(
+        srcdir=".",
+        confdir=".",
+        outdir="_build/text",
+        doctreedir="_build/.doctrees",
+        buildername="text",
+        confoverrides=confoverrides,
+        **kwargs
+    )
+    app.build()
+
+
 @pytest.fixture(scope="class")
 def builder():
     cwd = os.getcwd()
 
     def build(test_dir, confoverrides=None, **kwargs):
         os.chdir("tests/python/{0}".format(test_dir))
-        app = Sphinx(
-            srcdir=".",
-            confdir=".",
-            outdir="_build/text",
-            doctreedir="_build/.doctrees",
-            buildername="text",
-            confoverrides=confoverrides,
-            **kwargs
-        )
-        app.build(force_all=True)
+        rebuild(confoverrides=confoverrides, **kwargs)
 
     yield build
 
@@ -684,6 +688,51 @@ class TestComplexPackageParallel(object):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pypackagecomplex", parallel=2)
+
+
+def test_caching(builder):
+    mtimes = (0, 0)
+
+    def record_mtime():
+        nonlocal mtimes
+        mtime = 0
+        for root, _, files in os.walk("_build/text/autoapi"):
+            for name in files:
+                this_mtime = os.path.getmtime(os.path.join(root, name))
+                mtime = max(mtime, this_mtime)
+
+        mtimes = (*mtimes[1:], mtime)
+
+    builder("pypackagecomplex", confoverrides={"autoapi_keep_files": True})
+    record_mtime()
+
+    rebuild(confoverrides={"autoapi_keep_files": True})
+    record_mtime()
+
+    assert mtimes[1] == mtimes[0]
+
+    # Check that adding a file rebuilds the docs
+    extra_file = "complex/new.py"
+    with open(extra_file, "w") as out_f:
+        out_f.write("\n")
+
+    try:
+        rebuild(confoverrides={"autoapi_keep_files": True})
+    finally:
+        os.remove(extra_file)
+
+    record_mtime()
+    assert mtimes[1] != mtimes[0]
+
+    # Removing a file also rebuilds the docs
+    rebuild(confoverrides={"autoapi_keep_files": True})
+    record_mtime()
+    assert mtimes[1] != mtimes[0]
+
+    # Changing not keeping files always builds
+    rebuild()
+    record_mtime()
+    assert mtimes[1] != mtimes[0]
 
 
 class TestImplicitNamespacePackage(object):

@@ -15,10 +15,10 @@ class AutoapiSummary(Autosummary):  # pylint: disable=too-few-public-methods
     def get_items(self, names):
         items = []
         env = self.state.document.settings.env
-        mapper = env.autoapi_mapper
+        all_objects = env.autoapi_all_objects
 
         for name in names:
-            obj = mapper.all_objects[name]
+            obj = all_objects[name]
             if isinstance(obj, PythonFunction):
                 if obj.overloads:
                     sig = "(\u2026)"

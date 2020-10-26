@@ -55,6 +55,20 @@ if "PYTHONWARNINGS" not in os.environ:
     warnings.filterwarnings("default", category=RemovedInAutoAPI2Warning)
 
 
+def _normalise_autoapi_dirs(autoapi_dirs, confdir):
+    normalised_dirs = []
+
+    if isinstance(autoapi_dirs, str):
+        autoapi_dirs = [autoapi_dirs]
+    for path in autoapi_dirs:
+        if os.path.isabs(path):
+            normalised_dirs.append(path)
+        else:
+            normalised_dirs.append(os.path.normpath(os.path.join(confdir, path)))
+
+    return normalised_dirs
+
+
 def run_autoapi(app):  # pylint: disable=too-many-branches
     """
     Load AutoAPI data from the filesystem.
@@ -82,17 +96,8 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             app.config.autoapi_options.append("show-module-summary")
 
     # Make sure the paths are full
-    normalized_dirs = []
-    autoapi_dirs = app.config.autoapi_dirs
-    if isinstance(autoapi_dirs, str):
-        autoapi_dirs = [autoapi_dirs]
-    for path in autoapi_dirs:
-        if os.path.isabs(path):
-            normalized_dirs.append(path)
-        else:
-            normalized_dirs.append(os.path.normpath(os.path.join(app.confdir, path)))
-
-    for _dir in normalized_dirs:
+    normalised_dirs = _normalise_autoapi_dirs(app.config.autoapi_dirs, app.confdir)
+    for _dir in normalised_dirs:
         if not os.path.exists(_dir):
             raise ExtensionError(
                 "AutoAPI Directory `{dir}` not found. "
@@ -137,7 +142,6 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
                 RemovedInAutoAPI2Warning,
             )
     sphinx_mapper_obj = sphinx_mapper(app, template_dir=template_dir, url_root=url_root)
-    app.env.autoapi_mapper = sphinx_mapper_obj
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
@@ -157,15 +161,17 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         # Fallback to first suffix listed
         out_suffix = app.config.source_suffix[0]
 
-    # Actual meat of the run.
-    sphinx_mapper_obj.load(
-        patterns=file_patterns, dirs=normalized_dirs, ignore=ignore_patterns
-    )
+    if sphinx_mapper_obj.load(
+        patterns=file_patterns, dirs=normalised_dirs, ignore=ignore_patterns
+    ):
+        sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
-    sphinx_mapper_obj.map(options=app.config.autoapi_options)
+        if app.config.autoapi_generate_api_docs:
+            sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
 
-    if app.config.autoapi_generate_api_docs:
-        sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
+        if app.config.autoapi_type == "python":
+            app.env.autoapi_objects = sphinx_mapper_obj.objects
+            app.env.autoapi_all_objects = sphinx_mapper_obj.all_objects
 
 
 def build_finished(app, exception):
@@ -220,21 +226,16 @@ def doctree_read(app, doctree):
             LOGGER.info(message_prefix + message)
 
 
-def clear_env(_, env):
-    """Clears the environment of the unpicklable objects that we left behind."""
-    env.autoapi_mapper = None
-
-
 def viewcode_find(app, modname):
-    mapper = app.env.autoapi_mapper
-    if modname not in mapper.objects:
+    objects = app.env.autoapi_objects
+    if modname not in objects:
         return None
 
     if modname in _VIEWCODE_CACHE:
         return _VIEWCODE_CACHE[modname]
 
     locations = {}
-    module = mapper.objects[modname]
+    module = objects[modname]
     for child in module.children:
         stack = [("", child)]
         while stack:
@@ -268,11 +269,11 @@ def viewcode_find(app, modname):
 
 def viewcode_follow_imported(app, modname, attribute):
     fullname = "{}.{}".format(modname, attribute)
-    mapper = app.env.autoapi_mapper
-    if fullname not in mapper.all_objects:
+    all_objects = app.env.autoapi_all_objects
+    if fullname not in all_objects:
         return None
 
-    orig_path = mapper.all_objects[fullname].obj.get("original_path", "")
+    orig_path = all_objects[fullname].obj.get("original_path", "")
     if orig_path.endswith(attribute):
         return orig_path[: -len(attribute) - 1]
 
@@ -283,7 +284,6 @@ def setup(app):
     app.connect("builder-inited", run_autoapi)
     app.connect("doctree-read", doctree_read)
     app.connect("build-finished", build_finished)
-    app.connect("env-updated", clear_env)
     if "viewcode-find-source" in app.events.events:
         app.connect("viewcode-find-source", viewcode_find)
     if "viewcode-follow-imported" in app.events.events:

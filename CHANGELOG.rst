@@ -17,6 +17,10 @@ Features
 
 * Added support for using type hints as parameter types and return types
   via the ``sphinx.ext.autodoc.typehints`` extension.
+* `#191 <https://github.com/readthedocs/sphinx-autoapi/issues/191>`:
+  Basic incremental build support is enabled ``autoapi_keep_files`` is enabled.
+	Providing none of the source files have changed,
+	AutoAPI will skip parsing the source code and regenerating the API documentation.
 
 Bug Fixes
 ^^^^^^^^^

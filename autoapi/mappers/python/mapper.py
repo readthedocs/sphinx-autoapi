@@ -3,6 +3,7 @@ import copy
 import operator
 import os
 
+import sphinx.environment
 import sphinx.util
 from sphinx.util.console import bold
 import sphinx.util.docstrings
@@ -226,6 +227,22 @@ class PythonSphinxMapper(SphinxMapperBase):
             self.app.config.autoapi_python_use_implicit_namespaces
         )
 
+    def _need_to_load(self, files):
+        last_files = getattr(self.app.env, "autoapi_source_files", [])
+        self.app.env.autoapi_source_files = files
+
+        last_mtime = getattr(self.app.env, "autoapi_max_mtime", 0)
+        this_mtime = max(os.path.getmtime(file) for _, file in files)
+        self.app.env.autoapi_max_mtime = this_mtime
+
+        if not self.app.config.autoapi_keep_files:
+            return True
+
+        if self.app.env.config_status != sphinx.environment.CONFIG_OK:
+            return True
+
+        return last_files != files or not last_mtime or last_mtime < this_mtime
+
     def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:
             dir_root = dir_
@@ -245,6 +262,12 @@ class PythonSphinxMapper(SphinxMapperBase):
         shortened, relative path the package/module
         """
         dir_root_files = list(self._find_files(patterns, dirs, ignore))
+        if not self._need_to_load(dir_root_files):
+            LOGGER.debug(
+                "[AutoAPI] Skipping read stage because source files have not changed."
+            )
+            return False
+
         for dir_root, path in sphinx.util.status_iterator(
             dir_root_files,
             bold("[AutoAPI] Reading files... "),
@@ -255,6 +278,8 @@ class PythonSphinxMapper(SphinxMapperBase):
             if data:
                 data["relative_path"] = os.path.relpath(path, dir_root)
                 self.paths[path] = data
+
+        return True
 
     def read_file(self, path, **kwargs):
         """Read file input into memory, returning deserialized objects

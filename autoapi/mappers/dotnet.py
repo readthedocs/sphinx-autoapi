@@ -119,6 +119,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
             if data:
                 self.paths[xdoc_path] = data
 
+        return True
+
     def read_file(self, path, **kwargs):
         """Read file input into memory, returning deserialized objects
 

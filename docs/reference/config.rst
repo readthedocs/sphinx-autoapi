@@ -229,7 +229,7 @@ The following events allow you to control the behaviour of AutoAPI.
 	:param options: The options given to the directive.
 
 
-Debugging Options
+Advanced Options
 -----------------
 
 .. confval:: autoapi_keep_files
@@ -238,3 +238,7 @@ Debugging Options
 
 	Keep the AutoAPI generated files on the filesystem after the run.
 	Useful for debugging or transitioning to manual documentation.
+
+	Keeping files will also allow AutoAPI to use incremental builds.
+	Providing none of the source files have changed,
+	AutoAPI will skip parsing the source code and regenerating the API documentation.

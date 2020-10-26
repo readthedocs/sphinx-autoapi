@@ -64,6 +64,12 @@ class PythonMapperBase(object):
         self.name = None
         self.id = None
 
+    def __getstate__(self):
+        """Obtains serialisable data for pickling."""
+        __dict__ = self.__dict__.copy()
+        __dict__.update(app=None, jinja_env=None)  # clear unpickable attributes
+        return __dict__
+
     def render(self, **kwargs):
         LOGGER.log(self._RENDER_LOG_LEVEL, "Rendering %s", self.id)
 
@@ -213,6 +219,8 @@ class SphinxMapperBase(object):
             data = self.read_file(path=path)
             if data:
                 self.paths[path] = data
+
+        return True
 
     @staticmethod
     def find_files(patterns, dirs, ignore):
