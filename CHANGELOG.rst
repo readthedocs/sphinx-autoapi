@@ -18,6 +18,11 @@ Features
 * Added support for using type hints as parameter types and return types
   via the ``sphinx.ext.autodoc.typehints`` extension.
 
+Bug Fixes
+^^^^^^^^^
+* `#246 <https://github.com/readthedocs/sphinx-autoapi/issues/246>`:
+  Fixed TypeError when parsing a class that inherits from ``type``.
+
 
 V1.5.1 (2020-10-01)
 -------------------
