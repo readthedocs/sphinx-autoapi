@@ -212,6 +212,24 @@ class AutoapiMethodDocumenter(
                 self.add_line("   :{}:".format(property_type), sourcename)
 
 
+class AutoapiPropertyDocumenter(
+    AutoapiMethodDocumenter, AutoapiDocumenter, autodoc.PropertyDocumenter
+):
+    objtype = "apiproperty"
+    directivetype = "method"
+    # Always prefer AutoapiDocumenters
+    priority = autodoc.MethodDocumenter.priority * 100 + 100 + 1
+
+    @classmethod
+    def can_document_member(cls, member, membername, isattr, parent):
+        return isinstance(member, PythonMethod) and "property" in member.properties
+
+    def add_directive_header(self, sig):
+        super(AutoapiPropertyDocumenter, self).add_directive_header(sig)
+        sourcename = self.get_sourcename()
+        self.add_line("   :property:", sourcename)
+
+
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
     objtype = "apidata"
     directivetype = "data"

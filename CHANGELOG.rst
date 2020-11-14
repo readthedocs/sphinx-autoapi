@@ -29,6 +29,7 @@ Bug Fixes
 * `#244 <https://github.com/readthedocs/sphinx-autoapi/issues/244>`:
   Fixed an unnecessary deprecation warning being raised when running
   sphinx-build from the same directory as conf.py.
+* Fixed properties documented by Autodoc directives geting documented as methods.
 
 
 V1.5.1 (2020-10-01)
