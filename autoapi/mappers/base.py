@@ -193,6 +193,8 @@ class SphinxMapperBase(object):
             return "\n".join(prepare_docstring(value))
 
         self.jinja_env.filters["prepare_docstring"] = _wrapped_prepare
+        if self.app.config.autoapi_prepare_jinja_env:
+            self.app.config.autoapi_prepare_jinja_env(self.jinja_env)
 
         self.url_root = url_root
 

@@ -753,3 +753,24 @@ class TestImplicitNamespacePackage(object):
             example_file = example_handle.read()
 
         assert "namespace.example.second_sub_method" in example_file
+
+
+def test_custom_jinja_filters(builder):
+    confoverrides = {
+        "autoapi_prepare_jinja_env": (
+            lambda jinja_env: jinja_env.filters.update(
+                {
+                    "prepare_docstring": (
+                        lambda docstring: "This is using custom filters."
+                    )
+                }
+            )
+        ),
+    }
+    builder("pyexample", confoverrides=confoverrides)
+
+    example_path = "_build/text/autoapi/example/index.txt"
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    assert "This is using custom filters." in example_file

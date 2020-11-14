@@ -22,6 +22,22 @@ We provide :samp:`base/base.rst` as an incredibly basic output of every object::
 
 	.. {language}:{type}:: {name}
 
+
+Custom Filters, Tests, and Globals
+----------------------------------
+
+The :confval:`autoapi_prepare_jinja_env` configuration option allows you
+to pass a callback that can edit the :class:`jinja2.Environment` object
+before rendering begins.
+This callback, among other things, can be used to add custom filters,
+tests, and/or globals to the Jinja environment. For example:
+
+.. code-block:: python
+
+	def autoapi_prepare_jinja_env(jinja_env):
+		jinja_env.filters["my_custom_filter"] = lambda value: value.upper()
+
+
 Context
 -------
 
@@ -30,10 +46,13 @@ This contains:
 
 * ``autoapi_options``: The value of the :confval:`autoapi_options`
   configuration option.
+* ``include_summaries``: The value of the :confval:`autoapi_include_summaries`
+  configuration option.
 * ``obj``: A Python object derived from :class:`PythonMapperBase`.
 * ``sphinx_version``: The contents of :attr:`sphinx.version_info`.
 
-This object has a number of standard attributes you can reliably access per language.
+The object in ``obj`` has a number of standard attributes
+that you can reliably access per language.
 
 .. warning::
 

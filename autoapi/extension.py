@@ -302,6 +302,7 @@ def setup(app):
     app.add_config_value("autoapi_python_use_implicit_namespaces", False, "html")
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
+    app.add_config_value("autoapi_prepare_jinja_env", None, "html")
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
     app.add_autodocumenter(documenters.AutoapiPropertyDocumenter)
     app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)

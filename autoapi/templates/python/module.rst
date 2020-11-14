@@ -92,7 +92,7 @@ Functions
 {% endblock %}
 {% endif %}
 {% for obj_item in visible_children %}
-{{ obj_item.rendered|indent(0) }}
+{{ obj_item.render()|indent(0) }}
 {% endfor %}
 {% endif %}
 {% endblock %}

@@ -27,6 +27,7 @@ autoapi_dirs = ['../autoapi']
 autoapi_generate_api_docs = False
 
 intersphinx_mapping = {
+    'jinja': ('https://jinja.palletsprojects.com/en/master/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
     'python': ('https://docs.python.org/3/', None),
 }

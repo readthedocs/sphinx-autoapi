@@ -107,7 +107,7 @@ class PythonPythonMapper(PythonMapperBase):
         """Whether this object should be displayed in documentation.
 
         This attribute depends on the configuration options given in
-        :confval:`autoapi_options`.
+        :confval:`autoapi_options` and the result of :event:`autoapi-skip-member`.
 
         :type: bool
         """
@@ -161,6 +161,8 @@ class PythonPythonMapper(PythonMapperBase):
 
 
 class PythonFunction(PythonPythonMapper):
+    """The representation of a function."""
+
     type = "function"
     is_callable = True
     member_order = 40
@@ -191,6 +193,8 @@ class PythonFunction(PythonPythonMapper):
 
 
 class PythonMethod(PythonFunction):
+    """The representation of a method."""
+
     type = "method"
     is_callable = True
     member_order = 50
@@ -255,6 +259,8 @@ class PythonAttribute(PythonData):
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
+    """A common base class for modules and packages."""
+
     _RENDER_LOG_LEVEL = "VERBOSE"
 
     def __init__(self, obj, **kwargs):
@@ -297,14 +303,20 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
 
 
 class PythonModule(TopLevelPythonPythonMapper):
+    """The representation of a module."""
+
     type = "module"
 
 
 class PythonPackage(TopLevelPythonPythonMapper):
+    """The representation of a package."""
+
     type = "package"
 
 
 class PythonClass(PythonPythonMapper):
+    """The representation of a class."""
+
     type = "class"
     member_order = 30
 
@@ -390,5 +402,7 @@ class PythonClass(PythonPythonMapper):
 
 
 class PythonException(PythonClass):
+    """The representation of an exception class."""
+
     type = "exception"
     member_order = 20
