@@ -9,13 +9,14 @@ python:
   - 3.6
   - 3.7
   - 3.8
+  - 3.9
 jobs:
   include:
-    - python: 3.8
+    - python: 3.9
       env: TOXENV=docs
-    - python: 3.8
+    - python: 3.9
       env: TOXENV=lint
-    - python: 3.8
+    - python: 3.9
       env: TOXENV=formatting
 notifications:
   slack:

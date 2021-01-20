@@ -19,12 +19,13 @@ Features
   via the ``sphinx.ext.autodoc.typehints`` extension.
 * `#191 <https://github.com/readthedocs/sphinx-autoapi/issues/191>`:
   Basic incremental build support is enabled ``autoapi_keep_files`` is enabled.
-	Providing none of the source files have changed,
-	AutoAPI will skip parsing the source code and regenerating the API documentation.
+  Providing none of the source files have changed,
+  AutoAPI will skip parsing the source code and regenerating the API documentation.
 * `#200 <https://github.com/readthedocs/sphinx-autoapi/issues/200>`:
   Can pass a callback that edits the Jinja Environment object before
   template rendering begins.
   This allows custom filters, tests, and globals to be added to the environment.
+* Added support for Python 3.9.
 
 Bug Fixes
 ^^^^^^^^^
