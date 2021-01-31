@@ -9,6 +9,8 @@ V1.6.1 (TBC)
 Features
 ^^^^^^^^
 
+* The fully qualified path of objects are included type annotations
+  so that Sphinx can link to them.
 * Added support for Sphinx 3.3. and 3.4.
 
 

@@ -173,10 +173,12 @@ class Parser(object):
         annotations = astroid_utils.get_annotations_dict(node.args)
         return_annotation = None
         if node.returns:
-            return_annotation = node.returns.as_string()
+            return_annotation = astroid_utils.format_annotation(node.returns, node)
             annotations["return"] = return_annotation
         elif node.type_comment_returns:
-            return_annotation = node.type_comment_returns.as_string()
+            return_annotation = astroid_utils.format_annotation(
+                node.type_comment_returns, node
+            )
             annotations["return"] = return_annotation
 
         arg_string = astroid_utils.format_args(node.args)

@@ -182,6 +182,9 @@ class TestPy3Module(object):
         assert "List[Union[str, int]]" in example_file
 
         assert "not_yet_a: A" in example_file
+        assert "imported: example2.B" in example_file
+        assert "-> example2.B" in example_file
+
         assert "is_an_a" in example_file
         assert "ClassVar" in example_file
 

@@ -73,10 +73,11 @@ def get_full_basename(node, basename):
     full_basename = basename
 
     top_level_name = re.sub(r"\(.*\)", "", basename).split(".", 1)[0]
-    lookup_node = node
-    while not hasattr(lookup_node, "lookup"):
-        lookup_node = lookup_node.parent
+    lookup_node = (
+        node if isinstance(node, astroid.node_classes.LookupMixIn) else node.scope()
+    )
     assigns = lookup_node.lookup(top_level_name)[1]
+
     for assignment in assigns:
         if isinstance(assignment, astroid.nodes.ImportFrom):
             import_name = get_full_import_name(assignment, top_level_name)
@@ -403,12 +404,45 @@ def merge_annotations(annotations, comment_annotations):
             yield None
 
 
-def _format_annotation(annotation):
+def _resolve_annotation(annotation):
+    resolved = None
+
+    if isinstance(annotation, astroid.Const):
+        resolved = get_full_basename(annotation, str(annotation.value))
+    elif isinstance(annotation, astroid.Name):
+        resolved = get_full_basename(annotation, annotation.name)
+    elif isinstance(annotation, astroid.Attribute):
+        resolved = get_full_basename(annotation, annotation.as_string())
+    elif isinstance(annotation, astroid.Subscript):
+        value = _resolve_annotation(annotation.value)
+        slice_ = _resolve_annotation(annotation.slice)
+        resolved = f"{value}[{slice_}]"
+    elif isinstance(annotation, astroid.Tuple):
+        resolved = (
+            "(" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + ")"
+        )
+    elif isinstance(annotation, astroid.List):
+        resolved = (
+            "[" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + "]"
+        )
+    else:
+        resolved = annotation.as_string()
+
+    if resolved.startswith("typing."):
+        return resolved[len("typing.") :]
+
+    return resolved
+
+
+def format_annotation(annotation, parent):
     if annotation:
-        if isinstance(annotation, astroid.Const):
-            annotation = annotation.value
-        else:
-            annotation = annotation.as_string()
+        # Workaround https://github.com/PyCQA/astroid/issues/851
+        if annotation.parent and not isinstance(
+            annotation.parent, astroid.node_classes.NodeNG
+        ):
+            annotation.parent = parent
+
+        return _resolve_annotation(annotation)
 
     return annotation
 
@@ -426,7 +460,7 @@ def _iter_args(args, annotations, defaults):
         if isinstance(arg, astroid.Tuple):
             name = "({})".format(", ".join(x.name for x in arg.elts))
 
-        yield (name, _format_annotation(annotation), default)
+        yield (name, format_annotation(annotation, arg.parent), default)
 
 
 def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
@@ -485,9 +519,11 @@ def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-sta
     if args_node.vararg:
         annotation = None
         if args_node.varargannotation:
-            annotation = _format_annotation(args_node.varargannotation)
+            annotation = format_annotation(args_node.varargannotation, args_node.parent)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            annotation = _format_annotation(annotations[annotation_offset])
+            annotation = format_annotation(
+                annotations[annotation_offset], args_node.parent
+            )
             annotation_offset += 1
         result.append(("*", args_node.vararg, annotation, None))
 
@@ -515,9 +551,11 @@ def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-sta
     if args_node.kwarg:
         annotation = None
         if args_node.kwargannotation:
-            annotation = _format_annotation(args_node.kwargannotation)
+            annotation = format_annotation(args_node.kwargannotation, args_node.parent)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            annotation = _format_annotation(annotations[annotation_offset])
+            annotation = format_annotation(
+                annotations[annotation_offset], args_node.parent
+            )
             annotation_offset += 1
         result.append(("**", args_node.kwarg, annotation, None))
 

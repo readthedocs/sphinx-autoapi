@@ -7,6 +7,9 @@ import asyncio
 import typing
 from typing import ClassVar, Dict, Iterable, List, Union, overload
 
+from example2 import B
+
+
 max_rating: int = 10
 
 is_valid: bool
@@ -33,6 +36,10 @@ mixed_list: List[Union[str, int]] = [1, "two", 3]
 
 
 def f2(not_yet_a: "A") -> int:
+    ...
+
+
+def f3(imported: B) -> B:
     ...
 
 
