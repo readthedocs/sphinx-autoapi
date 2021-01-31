@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+V1.6.1 (TBC)
+------------
+
+Features
+^^^^^^^^
+
+* Added support for Sphinx 3.3. and 3.4.
+
+
 V1.6.0 (2021-01-20)
 -------------------
 
@@ -29,6 +38,7 @@ Features
 
 Bug Fixes
 ^^^^^^^^^
+
 * `#246 <https://github.com/readthedocs/sphinx-autoapi/issues/246>`:
   Fixed TypeError when parsing a class that inherits from ``type``.
 * `#244 <https://github.com/readthedocs/sphinx-autoapi/issues/244>`:
@@ -52,6 +62,7 @@ This will be the last minor version to support Python 2 and Sphinx 1.x/2.x.
 
 Features
 ^^^^^^^^
+
 * `#222 <https://github.com/readthedocs/sphinx-autoapi/issues/222>`:
   Declare the extension as parallel unsafe.
 * `#217 <https://github.com/readthedocs/sphinx-autoapi/issues/217>`:
@@ -62,6 +73,7 @@ Features
 
 Bug Fixes
 ^^^^^^^^^
+
 * `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`:
   Fixed return types not showing for methods.
 * Fixed incorrect formatting of properties on generated method directives.
@@ -71,6 +83,7 @@ Bug Fixes
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 * autoapisummary directive inherits from autosummary for future stability.
 
 
@@ -79,6 +92,7 @@ v1.4.0 (2020-06-07)
 
 Features
 ^^^^^^^^
+
 * `#197 <https://github.com/readthedocs/sphinx-autoapi/issues/197>`: Added
   ``autoapi.__version__`` and ``autoapi.__version_info__`` attributes
   for accessing version information.
@@ -95,6 +109,7 @@ Features
 
 Bug Fixes
 ^^^^^^^^^
+
 * `#198 <https://github.com/readthedocs/sphinx-autoapi/issues/198>`:
   Documentation describes the required layout for template override directories.
 * `#195 <https://github.com/readthedocs/sphinx-autoapi/issues/195>`: (Python)
@@ -108,6 +123,7 @@ Bug Fixes
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 * black shows diffs by default
 * `#207 <https://github.com/readthedocs/sphinx-autoapi/issues/207>`:
   Fixed a typo in the code of the golang tutorial.
@@ -123,6 +139,7 @@ Breaking Changes
 
 Features
 ^^^^^^^^
+
 * `#151 <https://github.com/readthedocs/sphinx-autoapi/issues/151>`: (Python)
   Added the ``autoapi_python_use_implicit_namespaces`` option to allow
   AutoAPI to search for implicit namespace packages.
@@ -146,6 +163,7 @@ Features
 
 Bug Fixes
 ^^^^^^^^^
+
 * `#186 <https://github.com/readthedocs/sphinx-autoapi/issues/186>`: (Python)
   Fixed an exception when there are too many argument type annotations
   in a type comment.
@@ -154,6 +172,7 @@ Bug Fixes
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 * Tests are now included in the sdist.
 
 
