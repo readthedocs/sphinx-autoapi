@@ -126,6 +126,19 @@ class A:
         return a * 2
 
 
+class C:
+    @overload
+    def __init__(self, a: int) -> None:
+        ...
+
+    @typing.overload
+    def __init__(self, a: float) -> None:
+        ...
+
+    def __init__(self, a: str):
+        ...
+
+
 async def async_function(wait: bool) -> int:
     """Blah.
 

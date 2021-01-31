@@ -219,6 +219,13 @@ class TestPy3Module(object):
         assert "undoc_overloaded_func" in example_file
         assert "undoc_overloaded_method" in example_file
 
+        assert "C(a: int" in example_file
+        assert "C(a: float" in example_file
+        assert "C(a: str" not in example_file
+        assert "C(self, a: int" not in example_file
+        assert "C(self, a: float" not in example_file
+        assert "C(self, a: str" not in example_file
+
     def test_async(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:

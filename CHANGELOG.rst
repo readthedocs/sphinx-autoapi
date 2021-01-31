@@ -13,6 +13,12 @@ Features
   so that Sphinx can link to them.
 * Added support for Sphinx 3.3. and 3.4.
 
+Bug Fixes
+^^^^^^^^^
+
+* `#260 <https://github.com/readthedocs/sphinx-autoapi/issues/260>`:
+  The overload signatures of ``__init__`` methods are documented.
+
 
 V1.6.0 (2021-01-20)
 -------------------
@@ -54,6 +60,7 @@ V1.5.1 (2020-10-01)
 
 Bug Fixes
 ^^^^^^^^^
+
 * Fixed AttributeError when generating an inheritance diagram for a module.
 
 
