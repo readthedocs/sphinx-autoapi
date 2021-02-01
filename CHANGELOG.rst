@@ -3,8 +3,8 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-V1.6.1 (TBC)
-------------
+V1.7.0 (2021-01-31)
+-------------------
 
 Features
 ^^^^^^^^
