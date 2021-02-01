@@ -12,6 +12,9 @@ Features
 * The fully qualified path of objects are included type annotations
   so that Sphinx can link to them.
 * Added support for Sphinx 3.3. and 3.4.
+* `#240 <https://github.com/readthedocs/sphinx-autoapi/issues/240>`:
+  The docstrings of ``object.__init__``, ``object.__new__``,
+  ``type.__init__``, and ``type.__new__`` are not inherited.
 
 Bug Fixes
 ^^^^^^^^^

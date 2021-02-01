@@ -163,6 +163,14 @@ class TestPy3Module(object):
     def built(self, builder):
         builder("py3example")
 
+    def test_integration(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "Initialize self" not in example_file
+        assert "a new type" not in example_file
+
     def test_annotations(self):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:

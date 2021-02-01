@@ -5,7 +5,7 @@ Python
 ------
 
 When choosing what to document,
-AutoAPI aims to document anything that is accessible through the actual package
+AutoAPI aims to document anything that is publicly accessible through the actual package
 when loaded in Python.
 For example if a function is imported from a submodule into a package,
 that function is documented in both the submodule and the package.
@@ -15,6 +15,20 @@ There are some exceptions to this rule:
   Usually a module is where implementations exist.
   Therefore an import of something is usually for the usage of the implementation,
   and not as something to be accessed publicly.
+* When the module or package defines an ``__all__``,
+  only the members named in ``__all__`` are documented.
+* When a configuration option indicates that private
+  or special members should also be documented.
+
+Furthermore, AutoAPI follows the same docstring inheritance rules as :func:`inspect.getdoc`,
+with some exceptions:
+
+* The docstrings of the following methods are not inherited because they are usually redundant:
+
+  * :meth:`object.__init__`
+  * :meth:`object.__new__`
+  * :meth:`type.__init__`
+  * :meth:`type.__new__`
 
 
 .NET

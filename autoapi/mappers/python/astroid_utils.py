@@ -599,6 +599,12 @@ def get_func_docstring(node):
 
     if doc is None and isinstance(node.parent, astroid.nodes.ClassDef):
         for base in node.parent.ancestors():
+            if node.name in ("__init__", "__new__") and base.qname() in (
+                "__builtins__.object",
+                "builtins.object",
+                "builtins.type",
+            ):
+                continue
             for child in base.get_children():
                 if (
                     isinstance(child, node.__class__)
@@ -620,7 +626,11 @@ def get_class_docstring(node):
 
     if doc is None:
         for base in node.ancestors():
-            if base.qname() in ("__builtins__.object", "builtins.object"):
+            if base.qname() in (
+                "__builtins__.object",
+                "builtins.object",
+                "builtins.type",
+            ):
                 continue
             if base.doc is not None:
                 return base.doc
