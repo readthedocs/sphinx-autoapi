@@ -237,7 +237,7 @@ The following events allow you to control the behaviour of AutoAPI.
    behaviour of AutoAPI or another attached handler.
 
    .. code-block:: python
-      :caption: inside conf.py
+      :caption: Example conf.py
 
       def skip_util_classes(app, what, name, obj, skip, options):
           if what == "class" and "util" in name:
