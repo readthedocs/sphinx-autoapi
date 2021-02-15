@@ -3,6 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+UNRELEASED (2021-MM-DD)
+-----------------------
+
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Fixed `DeprecationWarning` for invalid escape sequence `\s` in tests.
+* Fixed `FutureWarning` for `Node.traverse()` becoming an iterator instead of list.
+
+
 V1.7.0 (2021-01-31)
 -------------------
 
