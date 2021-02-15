@@ -144,12 +144,12 @@ class DotNetPythonMapperTests(unittest.TestCase):
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'With surrounding characters s<see cref="FOO" />s'
         )
-        self.assertEqual(ret, "With surrounding characters s :any:`FOO`\s")
+        self.assertEqual(ret, r"With surrounding characters s :any:`FOO`\s")
 
         ret = dotnet.DotNetPythonMapper.transform_doc_comments(
             'With surrounding characters s<paramref name="FOO" />s'
         )
-        self.assertEqual(ret, "With surrounding characters s ``FOO``\s")
+        self.assertEqual(ret, r"With surrounding characters s ``FOO``\s")
 
     def test_xml_transform_escape(self):
         """XML transform escaping"""

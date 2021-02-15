@@ -198,7 +198,7 @@ def doctree_read(app, doctree):
     if app.env.docname == "index":
         all_docs = set()
         insert = True
-        nodes = doctree.traverse(toctree)
+        nodes = list(doctree.traverse(toctree))
         toc_entry = "%s/index" % app.config.autoapi_root
         add_entry = (
             nodes
