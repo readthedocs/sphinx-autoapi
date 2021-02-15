@@ -3,6 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+UNRELEASED (2021-MM-DD)
+-----------------------
+
+Features
+^^^^^^^^
+
+* `#267 <https://github.com/readthedocs/sphinx-autoapi/issues/267>` 
+  Expandable value for multi-line string attibutes.
+
+
 V1.7.0 (2021-01-31)
 -------------------
 
