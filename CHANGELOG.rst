@@ -3,6 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+
+UNRELEASED (2021-MM-DD)
+-----------------------
+
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* New example implementation of `autoapi-skip-member` Sphinx event.
+
+
 V1.7.0 (2021-01-31)
 -------------------
 

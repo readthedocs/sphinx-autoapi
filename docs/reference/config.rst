@@ -236,6 +236,17 @@ The following events allow you to control the behaviour of AutoAPI.
    Handlers should return ``None`` to fall back to the default skipping
    behaviour of AutoAPI or another attached handler.
 
+   .. code-block:: python
+      :caption: inside conf.py
+
+      def skip_util_classes(app, what, name, obj, skip, options):
+          if what == "class" and "util" in name:
+             skip = True
+          return skip
+
+      def setup(sphinx):
+         sphinx.connect("autoapi-skip-member", skip_util_classes)
+
    :param app: The Sphinx application object.
    :param what: The type of the object which the docstring belongs to.
       This can be one of:
