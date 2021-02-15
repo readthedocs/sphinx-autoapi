@@ -4,6 +4,7 @@ import re
 import shutil
 import sys
 from mock import patch, Mock, call
+import textwrap
 
 import pytest
 import sphinx
@@ -175,6 +176,9 @@ class TestPy3Module(object):
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
+
+        assert "software = sphinx" in example_file
+        assert "code_snippet = Multiline-String" in example_file
 
         assert "max_rating :int = 10" in example_file
         assert "is_valid" in example_file
@@ -792,3 +796,42 @@ def test_custom_jinja_filters(builder):
         example_file = example_handle.read()
 
     assert "This is using custom filters." in example_file
+
+
+def test_string_module_attributes(builder):
+    """Test toggle for multi-line string attribute values (GitHub #267)."""
+    keep_rst = {
+        "autoapi_keep_files": True,
+        "autoapi_root": "_build/autoapi",  # Preserve RST files under _build for cleanup
+    }
+    builder("py3example", confoverrides=keep_rst)
+
+    example_path = os.path.join(keep_rst["autoapi_root"], "example", "index.rst")
+    with io.open(example_path, encoding="utf8") as example_handle:
+        example_file = example_handle.read()
+
+    code_snippet_contents = [
+        ".. data:: code_snippet",
+        "   :annotation: = Multiline-String",
+        "",
+        "    .. raw:: html",
+        "",
+        "        <details><summary>Show Value</summary>",
+        "",
+        "    .. code-block:: text",
+        "        :linenos:",
+        "",
+        "        ",  # <--- Line array monstrosity to preserve these leading spaces
+        "        # -*- coding: utf-8 -*-",
+        "        from __future__ import absolute_import, division, print_function, unicode_literals",
+        "        # from future.builtins.disabled import *",
+        "        # from builtins import *",
+        "",
+        """        print("chunky o'block")""",
+        "",
+        "",
+        "    .. raw:: html",
+        "",
+        "        </details>",
+    ]
+    assert "\n".join(code_snippet_contents) in example_file
