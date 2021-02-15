@@ -10,6 +10,17 @@ from typing import ClassVar, Dict, Iterable, List, Union, overload
 from example2 import B
 
 
+software = "sphinx"
+
+code_snippet = """
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, division, print_function, unicode_literals
+# from future.builtins.disabled import *
+# from builtins import *
+
+print("chunky o'block")
+"""
+
 max_rating: int = 10
 
 is_valid: bool
