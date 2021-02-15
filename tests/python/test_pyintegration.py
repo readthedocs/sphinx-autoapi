@@ -4,7 +4,6 @@ import re
 import shutil
 import sys
 from mock import patch, Mock, call
-import textwrap
 
 import pytest
 import sphinx
