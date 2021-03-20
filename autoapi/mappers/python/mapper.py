@@ -2,6 +2,7 @@ import collections
 import copy
 import operator
 import os
+import re
 
 import sphinx.environment
 import sphinx.util
@@ -196,6 +197,28 @@ def _resolve_placeholder(placeholder, original):
     placeholder.update(new)
 
 
+def _link_objs(value):
+    result = ""
+
+    delims = r"(\s*[\[\]\(\),]\s*)"
+    delims_re = re.compile(delims)
+    sub_targets = re.split(delims, value.strip())
+
+    for sub_target in sub_targets:
+        sub_target = sub_target.strip()
+        if delims_re.match(sub_target):
+            result += f"{sub_target}"
+            if sub_target.endswith(","):
+                result += " "
+            else:
+                result += "\\ "
+        elif sub_target:
+            result += f":py:obj:`{sub_target}`\ "
+
+    # Strip off the extra "\ "
+    return result[:-2]
+
+
 class PythonSphinxMapper(SphinxMapperBase):
 
     """Auto API domain handler for Python
@@ -223,6 +246,7 @@ class PythonSphinxMapper(SphinxMapperBase):
     def __init__(self, app, template_dir=None, url_root=None):
         super(PythonSphinxMapper, self).__init__(app, template_dir, url_root)
 
+        self.jinja_env.filters["link_objs"] = _link_objs
         self._use_implicit_namespace = (
             self.app.config.autoapi_python_use_implicit_namespaces
         )
