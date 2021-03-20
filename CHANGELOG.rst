@@ -11,6 +11,7 @@ Features
 
 * `#267 <https://github.com/readthedocs/sphinx-autoapi/issues/267>`
   Expandable value for multi-line string attributes.
+* Added support for Sphinx 3.5.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
