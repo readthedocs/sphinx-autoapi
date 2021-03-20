@@ -59,8 +59,8 @@ def get_full_import_name(import_from, name):
     return "{}.{}".format(module_name, partial_basename)
 
 
-def get_full_basename(node, basename):
-    """Resolve a partial base name to the full path.
+def resolve_qualname(node, basename):
+    """Resolve where a node is defined to get its fully qualified name.
 
     :param node: The node representing the base name.
     :type node: astroid.NodeNG
@@ -88,8 +88,10 @@ def get_full_basename(node, basename):
             full_basename = basename.replace(top_level_name, import_name, 1)
             break
         if isinstance(assignment, astroid.nodes.ClassDef):
-            full_basename = "{}.{}".format(assignment.root().name, assignment.name)
+            full_basename = assignment.qname()
             break
+        if isinstance(assignment, astroid.nodes.AssignName):
+            full_basename = "{}.{}".format(assignment.scope().qname(), assignment.name)
 
     if isinstance(node, astroid.nodes.Call):
         full_basename = re.sub(r"\(.*\)", "()", full_basename)
@@ -103,20 +105,17 @@ def get_full_basename(node, basename):
     return full_basename
 
 
-def get_full_basenames(bases, basenames):
-    """Resolve the base nodes and partial names of a class to full names.
+def get_full_basenames(node):
+    """Resolve the partial names of a class' bases to fully qualified names.
 
-    :param bases: The astroid node representing something that a class
-        inherits from.
-    :type bases: iterable(astroid.NodeNG)
-    :param basenames: The partial name of something that a class inherits from.
-    :type basenames: iterable(str)
+    :param node: The class definition node to resolve the bases of.
+    :type: astroid.ClassDef
 
     :returns: The full names.
     :rtype: iterable(str)
     """
-    for base, basename in zip(bases, basenames):
-        yield get_full_basename(base, basename)
+    for base, basename in zip(node.bases, node.basenames):
+        yield _resolve_annotation(base)
 
 
 def _get_const_values(node):
@@ -408,14 +407,17 @@ def _resolve_annotation(annotation):
     resolved = None
 
     if isinstance(annotation, astroid.Const):
-        resolved = get_full_basename(annotation, str(annotation.value))
+        resolved = resolve_qualname(annotation, str(annotation.value))
     elif isinstance(annotation, astroid.Name):
-        resolved = get_full_basename(annotation, annotation.name)
+        resolved = resolve_qualname(annotation, annotation.name)
     elif isinstance(annotation, astroid.Attribute):
-        resolved = get_full_basename(annotation, annotation.as_string())
+        resolved = resolve_qualname(annotation, annotation.as_string())
     elif isinstance(annotation, astroid.Subscript):
         value = _resolve_annotation(annotation.value)
-        slice_ = _resolve_annotation(annotation.slice)
+        if isinstance(annotation.slice, astroid.Tuple):
+            slice_ = ", ".join(_resolve_annotation(elt) for elt in annotation.slice.elts)
+        else:
+            slice_ = _resolve_annotation(annotation.slice)
         resolved = f"{value}[{slice_}]"
     elif isinstance(annotation, astroid.Tuple):
         resolved = (
@@ -430,6 +432,12 @@ def _resolve_annotation(annotation):
 
     if resolved.startswith("typing."):
         return resolved[len("typing.") :]
+
+    # Sphinx is capable of linking anything in the same module
+    # without needing a fully qualified path.
+    module_prefix = annotation.root().name + "."
+    if resolved.startswith(module_prefix):
+        return resolved[len(module_prefix) :]
 
     return resolved
 

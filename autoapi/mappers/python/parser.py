@@ -97,7 +97,7 @@ class Parser(object):
                 args = astroid_utils.format_args(constructor.args)
                 annotations = astroid_utils.get_annotations_dict(constructor.args)
 
-        basenames = list(astroid_utils.get_full_basenames(node.bases, node.basenames))
+        basenames = list(astroid_utils.get_full_basenames(node))
 
         data = {
             "type": type_,

@@ -5,10 +5,12 @@ This is a description
 """
 import asyncio
 import typing
-from typing import ClassVar, Dict, Iterable, List, Union, overload
+from typing import ClassVar, Dict, Iterable, Generic, List, TypeVar, Union, overload
 
 from example2 import B
 
+T = TypeVar("T")
+U = TypeVar("U")
 
 software = "sphinx"
 
@@ -51,6 +53,10 @@ def f2(not_yet_a: "A") -> int:
 
 
 def f3(imported: B) -> B:
+    ...
+
+
+class MyGeneric(Generic[T, U]):
     ...
 
 
@@ -148,6 +154,14 @@ class C:
 
     def __init__(self, a: str):
         ...
+
+
+class D(C):
+    class Da:
+        ...
+    class DB(Da):
+        ...
+    ...
 
 
 async def async_function(wait: bool) -> int:

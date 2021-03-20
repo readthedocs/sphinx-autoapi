@@ -70,7 +70,7 @@ class TestAstroidUtils(object):
             import_, basename
         )
         node = astroid.extract_node(source)
-        basenames = astroid_utils.get_full_basename(node.bases[0], node.basenames[0])
+        basenames = astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
 
     @pytest.mark.parametrize(
@@ -85,7 +85,7 @@ class TestAstroidUtils(object):
             import_, basename
         )
         node = astroid.extract_node(source)
-        basenames = astroid_utils.get_full_basename(node.bases[0], node.basenames[0])
+        basenames = astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
 
     @pytest.mark.parametrize(
