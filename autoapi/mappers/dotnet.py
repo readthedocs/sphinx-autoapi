@@ -104,10 +104,13 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 )
                 _, error_output = proc.communicate()
                 if error_output:
-                    LOGGER.warning(error_output, type="autoapi")
+                    LOGGER.warning(error_output, type="autoapi", subtype="not_readable")
             except (OSError, subprocess.CalledProcessError):
                 LOGGER.warning(
-                    "Error generating metadata", exc_info=True, type="autoapi"
+                    "Error generating metadata",
+                    exc_info=True,
+                    type="autoapi",
+                    subtype="metadata_generation",
                 )
                 if raise_error:
                     raise ExtensionError(
@@ -133,9 +136,17 @@ class DotNetSphinxMapper(SphinxMapperBase):
                 parsed_data = yaml.safe_load(handle)
                 return parsed_data
         except IOError:
-            LOGGER.warning("Error reading file: {0}".format(path), type="autoapi")
+            LOGGER.warning(
+                "Error reading file: {0}".format(path),
+                type="autoapi",
+                subtype="not_readable",
+            )
         except TypeError:
-            LOGGER.warning("Error reading file: {0}".format(path), type="autoapi")
+            LOGGER.warning(
+                "Error reading file: {0}".format(path),
+                type="autoapi",
+                subtype="not_readable",
+            )
         return None
 
     # Subclassed to iterate over items
@@ -174,7 +185,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data["type"].lower()]
         except KeyError:
-            LOGGER.warning("Unknown type: %s" % data, type="autoapi")
+            LOGGER.warning(
+                "Unknown type: %s" % data, type="autoapi", subtype="create_class"
+            )
         else:
             obj = cls(
                 data, jinja_env=self.jinja_env, app=self.app, options=options, **kwargs
