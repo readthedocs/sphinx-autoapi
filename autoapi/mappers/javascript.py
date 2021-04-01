@@ -34,9 +34,17 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
             parsed_data = json.loads(subprocess.check_output([subcmd, "-X", path]))
             return parsed_data
         except IOError:
-            LOGGER.warning("Error reading file: {0}".format(path), type="autoapi")
+            LOGGER.warning(
+                "Error reading file: {0}".format(path),
+                type="autoapi",
+                subtype="not_readable",
+            )
         except TypeError:
-            LOGGER.warning("Error reading file: {0}".format(path), type="autoapi")
+            LOGGER.warning(
+                "Error reading file: {0}".format(path),
+                type="autoapi",
+                subtype="not_readable",
+            )
         return None
 
     # Subclassed to iterate over items
@@ -71,7 +79,9 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data["kind"]]
         except (KeyError, TypeError):
-            LOGGER.warning("Unknown Type: %s" % data, type="autoapi")
+            LOGGER.warning(
+                "Unknown Type: %s" % data, type="autoapi", subtype="create_class"
+            )
         else:
             # Recurse for children
             obj = cls(data, jinja_env=self.jinja_env, app=self.app)

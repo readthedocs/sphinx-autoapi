@@ -91,7 +91,12 @@ def _get_toc_reference(node, toc, docname):
             ref_id = node.children[0].attributes["ids"][0]
             toc_reference = _find_toc_node(toc, ref_id, addnodes.desc)
         except (KeyError, IndexError):
-            LOGGER.warning("Invalid desc node", exc_info=True, type="autoapi")
+            LOGGER.warning(
+                "Invalid desc node",
+                exc_info=True,
+                type="autoapi",
+                subtype="toc_reference",
+            )
             toc_reference = None
 
     return toc_reference

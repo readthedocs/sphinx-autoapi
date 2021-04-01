@@ -52,7 +52,7 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
                 msg = "Invalid __all__ entry {0} in {1}".format(
                     name, original_module["name"]
                 )
-                LOGGER.warning(msg, type="autoapi")
+                LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
                 continue
 
             originals.append(originals_map[name])
@@ -107,7 +107,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
             msg = "Cannot resolve cyclic import: {0}, {1}".format(
                 ", ".join(visit_path), imported_from
             )
-            LOGGER.warning(msg, type="autoapi")
+            LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
             continue
@@ -116,7 +116,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
             msg = "Cannot resolve import of unknown module {0} in {1}".format(
                 imported_from, module_name
             )
-            LOGGER.warning(msg, type="autoapi")
+            LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
             continue
@@ -144,7 +144,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
             msg = "Cannot resolve import of {0} in {1}".format(
                 child["original_path"], module_name
             )
-            LOGGER.warning(msg, type="autoapi")
+            LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
             continue
@@ -319,7 +319,11 @@ class PythonSphinxMapper(SphinxMapperBase):
             return parsed_data
         except (IOError, TypeError, ImportError):
             LOGGER.debug("Reason:", exc_info=True)
-            LOGGER.warning("Unable to read file: {0}".format(path), type="autoapi")
+            LOGGER.warning(
+                "Unable to read file: {0}".format(path),
+                type="autoapi",
+                subtype="not_readable",
+            )
         return None
 
     def _resolve_placeholders(self):
@@ -359,7 +363,11 @@ class PythonSphinxMapper(SphinxMapperBase):
         try:
             cls = self._OBJ_MAP[data["type"]]
         except KeyError:
-            LOGGER.warning("Unknown type: %s" % data["type"], type="autoapi")
+            LOGGER.warning(
+                "Unknown type: %s" % data["type"],
+                type="autoapi",
+                subtype="create_class",
+            )
         else:
             obj = cls(
                 data,
