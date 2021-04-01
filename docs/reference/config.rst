@@ -276,3 +276,35 @@ Advanced Options
    Keeping files will also allow AutoAPI to use incremental builds.
    Providing none of the source files have changed,
    AutoAPI will skip parsing the source code and regenerating the API documentation.
+
+
+Suppressing Warnings
+---------------------
+
+.. confval:: suppress_warnings
+
+   This is a sphinx builtin option that enables the granular filtering of AutoAPI
+   generated warnings.
+
+   Items in the ``suppress_warnings`` list are of the format ``"type.subtype"`` where
+   ``".subtype"`` can be left out to cover all subtypes. To suppress all AutoAPI
+   warnings add the type ``"autoapi"`` to the list:
+
+   .. code-block:: python
+
+      suppress_warnings = ["autoapi"]
+
+   If narrower suppression is wanted, the available subtypes for AutoAPI are:
+
+     * python_import_resolution
+     * metadata_generation
+     * not_readable
+     * create_class
+     * toc_reference
+
+   So if all AutoAPI warnings concerning unreadable sources and failing Python imports should be
+   filtered, but all other warnings should not, the option would be
+
+   .. code-block:: python
+
+      suppress_warnings = ["autoapi.python_import_resolution", "autoapi.not_readable"]
