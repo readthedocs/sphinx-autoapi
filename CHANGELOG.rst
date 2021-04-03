@@ -20,6 +20,7 @@ Trivial/Internal Changes
 * Fixed `DeprecationWarning` for invalid escape sequence `\s` in tests.
 * Fixed `FutureWarning` for `Node.traverse()` becoming an iterator instead of list.
 * New example implementation of `autoapi-skip-member` Sphinx event.
+* Can run tests with tox 4.
 
 
 V1.7.0 (2021-01-31)
