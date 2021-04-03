@@ -176,21 +176,13 @@ def get_assign_annotation(node):
     :returns: The type annotation as a string, or None if one does not exist.
     :rtype: str or None
     """
-    annotation = None
-
     annotation_node = None
     try:
         annotation_node = node.annotation
     except AttributeError:
         annotation_node = node.type_annotation
 
-    if annotation_node:
-        if isinstance(annotation_node, astroid.nodes.Const):
-            annotation = node.value
-        else:
-            annotation = annotation_node.as_string()
-
-    return annotation
+    return format_annotation(annotation_node, node)
 
 
 def is_decorated_with_property(node):

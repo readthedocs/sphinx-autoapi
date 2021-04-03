@@ -22,6 +22,8 @@ Bug Fixes
   not turning off signature type hints.
   ``autodoc_typehints`` integration is consisidered experimental until
   the extension properly supports overload functions.
+* `#261 <https://github.com/readthedocs/sphinx-autoapi/issues/261>`
+  Fixed data annotations causing pickle or deepcopy errors.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
