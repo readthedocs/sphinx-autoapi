@@ -143,9 +143,7 @@ and set :confval:`autodoc_typehints` to ``description`` as normal::
 
 .. note::
 
-    The :mod:`sphinx.ext.autodoc.typehints` extension does not support overload functions.
-    Overloads will not be output when :confval:`autodoc_typehints` is set to
-    anything other than ``signature``.
-    When a documented parameter names a parameter that is specified in only an overload,
-    not the final function definition, the type will not be included in the description
-    when :confval:`autodoc_typehints` is set to ``description``.
+    Unless :confval:`autodoc_typehints` is set to ``none``,
+    the type annotations of overloads will always be output in the signature
+    and never merged into the description
+    because it is impossible to represent all overloads as a list of parameters.

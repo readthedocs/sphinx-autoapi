@@ -170,7 +170,9 @@ class PythonFunction(PythonPythonMapper):
         super(PythonFunction, self).__init__(obj, **kwargs)
 
         autodoc_typehints = getattr(self.app.config, "autodoc_typehints", "signature")
-        show_annotations = autodoc_typehints not in ("none", "description")
+        show_annotations = autodoc_typehints != "none" and not (
+            autodoc_typehints == "description" and not obj["overloads"]
+        )
         self.args = _format_args(obj["args"], show_annotations)
 
         self.return_annotation = obj["return_annotation"] if show_annotations else None
@@ -188,14 +190,10 @@ class PythonFunction(PythonPythonMapper):
 
         :type: list(str)
         """
-        self.overloads = (
-            [
-                (_format_args(args), return_annotation)
-                for args, return_annotation in obj["overloads"]
-            ]
-            if show_annotations
-            else []
-        )
+        self.overloads = [
+            (_format_args(args), return_annotation)
+            for args, return_annotation in obj["overloads"]
+        ]
         """The list of overloaded signatures ``[(args, return_annotation), ...]`` of this function.
 
         :type: list(tuple(str, str))
