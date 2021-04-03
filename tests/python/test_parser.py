@@ -74,7 +74,17 @@ class PythonParserTests(unittest.TestCase):
             "    return True\n"
         )
         data = self.parse(source)[0]
-        self.assertEqual(data["args"], "self, bar, baz=42, foo=True, *args, **kwargs")
+        self.assertEqual(
+            data["args"],
+            [
+                (None, "self", None, None),
+                (None, "bar", None, None),
+                (None, "baz", None, "42"),
+                (None, "foo", None, "True"),
+                ("*", "args", None, None),
+                ("**", "kwargs", None, None),
+            ],
+        )
 
     def test_advanced_arguments(self):
         """Advanced argument parsing"""
@@ -88,23 +98,21 @@ class PythonParserTests(unittest.TestCase):
         data = self.parse(source)[0]
         self.assertEqual(
             data["args"],
-            ", ".join(
-                [
-                    "self",
-                    "a",
-                    "b",
-                    "c=42",
-                    "d='string'",
-                    "e=(1, 2)",
-                    "f={'a': True}",
-                    "g=None",
-                    "h=[1, 2, 3, 4]",
-                    "i=dict(a=True)",
-                    "j=False",
-                    "*args",
-                    "**kwargs",
-                ]
-            ),
+            [
+                (None, "self", None, None),
+                (None, "a", None, None),
+                (None, "b", None, None),
+                (None, "c", None, "42"),
+                (None, "d", None, "'string'"),
+                (None, "e", None, "(1, 2)"),
+                (None, "f", None, "{'a': True}"),
+                (None, "g", None, "None"),
+                (None, "h", None, "[1, 2, 3, 4]"),
+                (None, "i", None, "dict(a=True)"),
+                (None, "j", None, "False"),
+                ("*", "args", None, None),
+                ("**", "kwargs", None, None),
+            ],
         )
 
     def test_dict_key_assignment(self):

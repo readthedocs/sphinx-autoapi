@@ -159,8 +159,10 @@ class C:
 class D(C):
     class Da:
         ...
+
     class DB(Da):
         ...
+
     ...
 
 

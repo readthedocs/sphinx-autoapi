@@ -100,24 +100,30 @@ you can disable AutoAPI altogether from your project.
 How to Include Type Annotations as Types in Rendered Docstrings
 ---------------------------------------------------------------
 
+.. warning::
+
+    This feature is experimental and may change or be removed in future versions.
+
 Since v3.0, :mod:`sphinx` has included an :mod:`sphinx.ext.autodoc.typehints`
 extension that is capable of rendering type annotations as
 parameter types and return types.
 
-For example the following ReST:
+For example the following function:
 
 .. code-block::
 
-    .. py:function:: _func(a: int, b: Optional[str]) -> bool
+    def _func(a: int, b: Optional[str]) -> bool
+        """My function.
 
         :param a: The first arg.
         :param b: The second arg.
 
         :returns: Something.
+        """
 
 would be rendered as:
 
-.. py:function:: _func(a: int, b: Optional[str]) -> bool
+.. py:function:: _func(a, b)
     :noindex:
 
     :param int a: The first arg.
@@ -134,3 +140,12 @@ and set :confval:`autodoc_typehints` to ``description`` as normal::
 
     extensions = ['sphinx.ext.autodoc', 'autoapi.extension']
     autodoc_typehints = 'description'
+
+.. note::
+
+    The :mod:`sphinx.ext.autodoc.typehints` extension does not support overload functions.
+    Overloads will not be output when :confval:`autodoc_typehints` is set to
+    anything other than ``signature``.
+    When a documented parameter names a parameter that is specified in only an overload,
+    not the final function definition, the type will not be included in the description
+    when :confval:`autodoc_typehints` is set to ``description``.

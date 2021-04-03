@@ -14,12 +14,21 @@ Features
 * `#265 <https://github.com/readthedocs/sphinx-autoapi/issues/265>`
   Can resolve the qualified paths of parameters to generics.
 
+Bug Fixes
+^^^^^^^^^
+
+* `#273 <https://github.com/readthedocs/sphinx-autoapi/issues/273>`
+  Fixed setting ``autodoc_typehints`` to ``none`` or ``description``
+  not turning off signature type hints.
+  ``autodoc_typehints`` integration is consisidered experimental until
+  the extension properly supports overload functions.
+
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Fixed `DeprecationWarning` for invalid escape sequence `\s` in tests.
-* Fixed `FutureWarning` for `Node.traverse()` becoming an iterator instead of list.
-* New example implementation of `autoapi-skip-member` Sphinx event.
+* Fixed ``DeprecationWarning`` for invalid escape sequence ``\s`` in tests.
+* Fixed ``FutureWarning`` for ``Node.traverse()`` becoming an iterator instead of list.
+* New example implementation of ``autoapi-skip-member`` Sphinx event.
 * Can run tests with tox 4.
 
 

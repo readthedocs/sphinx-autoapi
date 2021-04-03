@@ -1,5 +1,4 @@
 import builtins
-import collections
 import itertools
 import re
 import sys
@@ -114,7 +113,7 @@ def get_full_basenames(node):
     :returns: The full names.
     :rtype: iterable(str)
     """
-    for base, basename in zip(node.bases, node.basenames):
+    for base in node.bases:
         yield _resolve_annotation(base)
 
 
@@ -415,7 +414,9 @@ def _resolve_annotation(annotation):
     elif isinstance(annotation, astroid.Subscript):
         value = _resolve_annotation(annotation.value)
         if isinstance(annotation.slice, astroid.Tuple):
-            slice_ = ", ".join(_resolve_annotation(elt) for elt in annotation.slice.elts)
+            slice_ = ", ".join(
+                _resolve_annotation(elt) for elt in annotation.slice.elts
+            )
         else:
             slice_ = _resolve_annotation(annotation.slice)
         resolved = f"{value}[{slice_}]"
@@ -471,7 +472,7 @@ def _iter_args(args, annotations, defaults):
         yield (name, format_annotation(annotation, arg.parent), default)
 
 
-def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
+def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
     result = []
     positional_only_defaults = []
     positional_or_keyword_defaults = args_node.defaults
@@ -570,31 +571,18 @@ def _get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-sta
     return result
 
 
-def format_args(args_node):
-    result = []
+def get_return_annotation(node):
+    """Get the return annotation of a node.
+    :type node: astroid.nodes.FunctionDef
+    """
+    return_annotation = None
 
-    args_info = _get_args_info(args_node)
-    for prefix, name, annotation, default in args_info:
-        formatted = "{}{}{}{}".format(
-            prefix or "",
-            name or "",
-            ": {}".format(annotation) if annotation else "",
-            (" = {}" if annotation else "={}").format(default) if default else "",
-        )
-        result.append(formatted)
+    if node.returns:
+        return_annotation = format_annotation(node.returns, node)
+    elif node.type_comment_returns:
+        return_annotation = format_annotation(node.type_comment_returns, node)
 
-    return ", ".join(result)
-
-
-def get_annotations_dict(args_node):
-    result = collections.OrderedDict()
-
-    args_info = _get_args_info(args_node)
-    for _, name, annotation, __ in args_info:
-        if name and annotation:
-            result[name] = annotation
-
-    return result
+    return return_annotation
 
 
 def get_func_docstring(node):

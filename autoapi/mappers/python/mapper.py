@@ -213,7 +213,7 @@ def _link_objs(value):
             else:
                 result += "\\ "
         elif sub_target:
-            result += f":py:obj:`{sub_target}`\ "
+            result += f":py:obj:`{sub_target}`\\ "
 
     # Strip off the extra "\ "
     return result[:-2]
@@ -367,7 +367,7 @@ class PythonSphinxMapper(SphinxMapperBase):
                 options=self.app.config.autoapi_options,
                 jinja_env=self.jinja_env,
                 app=self.app,
-                **kwargs
+                **kwargs,
             )
             obj.url_root = self.url_root
 
@@ -395,5 +395,14 @@ class PythonSphinxMapper(SphinxMapperBase):
 
     def _record_typehints(self, obj):
         if isinstance(obj, (PythonClass, PythonFunction, PythonMethod)):
+            obj_annotations = {}
+            for _, name, annotation, _ in obj.obj["args"]:
+                if name and annotation:
+                    obj_annotations[name] = annotation
+
+            return_annotation = obj.obj.get("return_annotation")
+            if return_annotation:
+                obj_annotations["return"] = return_annotation
+
             annotations = self.app.env.temp_data.setdefault("annotations", {})
-            annotations[obj.id] = obj.obj["annotations"]
+            annotations[obj.id] = obj_annotations

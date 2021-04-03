@@ -1,7 +1,7 @@
 import sys
 
 import astroid
-from autoapi.mappers.python import astroid_utils
+from autoapi.mappers.python import astroid_utils, objects
 import pytest
 
 
@@ -105,24 +105,45 @@ class TestAstroidUtils(object):
     @pytest.mark.parametrize(
         "signature,expected",
         [
-            ("a: bool, b: int = 5", {"a": "bool", "b": "int"}),
+            (
+                "a: bool, b: int = 5",
+                [(None, "a", "bool", None), (None, "b", "int", "5")],
+            ),
             pytest.param(
                 "a: bool, /, b: int, *, c: str",
-                {"a": "bool", "b": "int", "c": "str"},
+                [
+                    (None, "a", "bool", None),
+                    ("/", None, None, None),
+                    (None, "b", "int", None),
+                    ("*", None, None, None),
+                    (None, "c", "str", None),
+                ],
                 marks=pytest.mark.skipif(
                     sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
                 ),
             ),
             pytest.param(
                 "a: bool, /, b: int, *args, c: str, **kwargs",
-                {"a": "bool", "b": "int", "c": "str"},
+                [
+                    (None, "a", "bool", None),
+                    ("/", None, None, None),
+                    (None, "b", "int", None),
+                    ("*", "args", None, None),
+                    (None, "c", "str", None),
+                    ("**", "kwargs", None, None),
+                ],
                 marks=pytest.mark.skipif(
                     sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
                 ),
             ),
             pytest.param(
                 "a: int, *args, b: str, **kwargs",
-                {"a": "int", "b": "str"},
+                [
+                    (None, "a", "int", None),
+                    ("*", "args", None, None),
+                    (None, "b", "str", None),
+                    ("**", "kwargs", None, None),
+                ],
                 marks=pytest.mark.skipif(
                     sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
                 ),
@@ -139,7 +160,7 @@ class TestAstroidUtils(object):
             )
         )
 
-        annotations = astroid_utils.get_annotations_dict(node.args)
+        annotations = astroid_utils.get_args_info(node.args)
         assert annotations == expected
 
     @pytest.mark.parametrize(
@@ -174,5 +195,6 @@ class TestAstroidUtils(object):
             )
         )
 
-        formatted = astroid_utils.format_args(node.args)
+        args_info = astroid_utils.get_args_info(node.args)
+        formatted = objects._format_args(args_info)
         assert formatted == expected

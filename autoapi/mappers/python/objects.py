@@ -8,6 +8,21 @@ from ..base import PythonMapperBase
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
+def _format_args(args_info, include_annotations=True):
+    result = []
+
+    for prefix, name, annotation, default in args_info:
+        formatted = "{}{}{}{}".format(
+            prefix or "",
+            name or "",
+            ": {}".format(annotation) if annotation and include_annotations else "",
+            (" = {}" if annotation else "={}").format(default) if default else "",
+        )
+        result.append(formatted)
+
+    return ", ".join(result)
+
+
 class PythonPythonMapper(PythonMapperBase):
     """A base class for all types of representations of Python objects.
 
@@ -31,7 +46,6 @@ class PythonPythonMapper(PythonMapperBase):
 
         # Optional
         self.children = []
-        self.args = obj.get("args")
         self.docstring = obj["doc"]
         self.imported = "original_path" in obj
         self.inherited = obj.get("inherited", False)
@@ -44,21 +58,6 @@ class PythonPythonMapper(PythonMapperBase):
         self._class_content = class_content
 
         self._display_cache = None  # type: Optional[bool]
-
-    @property
-    def args(self):
-        """The arguments to this object, formatted as a string.
-
-        This will only be set for a function, method, or class.
-        For classes, this does not include ``self``.
-
-        :type: str or None
-        """
-        return self._args
-
-    @args.setter
-    def args(self, value):
-        self._args = value
 
     @property
     def docstring(self):
@@ -170,7 +169,11 @@ class PythonFunction(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(PythonFunction, self).__init__(obj, **kwargs)
 
-        self.return_annotation = obj["return_annotation"]
+        autodoc_typehints = getattr(self.app.config, "autodoc_typehints", "signature")
+        show_annotations = autodoc_typehints not in ("none", "description")
+        self.args = _format_args(obj["args"], show_annotations)
+
+        self.return_annotation = obj["return_annotation"] if show_annotations else None
         """The type annotation for the return type of this function.
 
         This will be ``None`` if an annotation
@@ -185,11 +188,30 @@ class PythonFunction(PythonPythonMapper):
 
         :type: list(str)
         """
-        self.overloads = obj["overloads"]
+        self.overloads = (
+            [
+                (_format_args(args), return_annotation)
+                for args, return_annotation in obj["overloads"]
+            ]
+            if show_annotations
+            else []
+        )
         """The list of overloaded signatures ``[(args, return_annotation), ...]`` of this function.
 
         :type: list(tuple(str, str))
         """
+
+    @property
+    def args(self):
+        """The arguments to this object, formatted as a string.
+
+        :type: str
+        """
+        return self._args
+
+    @args.setter
+    def args(self, value):
+        self._args = value
 
 
 class PythonMethod(PythonFunction):
@@ -241,7 +263,7 @@ class PythonData(PythonPythonMapper):
 
         :type: str or None
         """
-        self.annotation = obj.get("annotation", obj.get("return_annotation"))
+        self.annotation = obj.get("annotation")
         """The type annotation of this attribute.
 
         This will be ``None`` if an annotation
@@ -323,6 +345,8 @@ class PythonClass(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(PythonClass, self).__init__(obj, **kwargs)
 
+        self.args = obj["args"]
+
         self.bases = obj["bases"]
         """The fully qualified names of all base classes.
 
@@ -331,6 +355,10 @@ class PythonClass(PythonPythonMapper):
 
     @property
     def args(self):
+        """The arguments to this object, formatted as a string.
+
+        :type: str
+        """
         args = self._args
 
         constructor = self.constructor
