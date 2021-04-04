@@ -19,7 +19,7 @@ LOGGER = sphinx.util.logging.getLogger(__name__)
 Path = namedtuple("Path", ["absolute", "relative"])
 
 
-class PythonMapperBase(object):
+class PythonMapperBase:
 
     """
     Base object for JSON -> Python object mapping.
@@ -166,7 +166,7 @@ class PythonMapperBase(object):
         return self.type
 
 
-class SphinxMapperBase(object):
+class SphinxMapperBase:
 
     """Base class for mapping `PythonMapperBase` objects to Sphinx.
 

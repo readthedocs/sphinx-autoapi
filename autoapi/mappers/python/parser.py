@@ -7,7 +7,7 @@ import astroid.builder
 from . import astroid_utils
 
 
-class Parser(object):
+class Parser:
     def __init__(self):
         self._name_stack = []
         self._encoding = None

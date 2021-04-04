@@ -3,10 +3,9 @@ import json
 import os
 import sys
 import shutil
-import unittest
 from contextlib import contextmanager
 
-from mock import patch
+from unittest.mock import patch
 import pytest
 
 import sphinx
@@ -34,15 +33,15 @@ def sphinx_build(test_dir, confoverrides=None):
         os.chdir("../..")
 
 
-class LanguageIntegrationTests(unittest.TestCase):
+class LanguageIntegrationTests:
     def _run_test(self, test_dir, test_file, test_string):
         with sphinx_build(test_dir):
             with io.open(test_file, encoding="utf8") as fin:
                 text = fin.read().strip()
-                self.assertIn(test_string, text)
+                assert test_string in text
 
 
-class JavaScriptTests(LanguageIntegrationTests):
+class TestJavaScript(LanguageIntegrationTests):
     def _js_read(self, path):
         return json.load(open("../fixtures/javascript.json"))
 
@@ -59,7 +58,7 @@ class JavaScriptTests(LanguageIntegrationTests):
     sphinx.version_info >= (3,),
     reason="golangdomain extension does not support sphinx >=3",
 )
-class GoTests(LanguageIntegrationTests):
+class TestGo(LanguageIntegrationTests):
     def _go_read(self, path, **kwargs):
         return json.load(open("../fixtures/go.json"))
 
@@ -76,7 +75,7 @@ class GoTests(LanguageIntegrationTests):
     sphinx.version_info >= (3,),
     reason="dotnetdomain extension does not support sphinx >=3",
 )
-class DotNetTests(LanguageIntegrationTests):
+class TestDotNet(LanguageIntegrationTests):
     def _dotnet_read(self, path):
         return json.load(open("../fixtures/dotnet.json"))
 
@@ -100,7 +99,7 @@ class DotNetTests(LanguageIntegrationTests):
         )
 
 
-class IntegrationTests(LanguageIntegrationTests):
+class TestIntegration(LanguageIntegrationTests):
     def test_template_overrides(self):
         self._run_test(
             "templateexample",
@@ -109,7 +108,7 @@ class IntegrationTests(LanguageIntegrationTests):
         )
 
 
-class TOCTreeTests(LanguageIntegrationTests):
+class TestTOCTree(LanguageIntegrationTests):
     def test_toctree_overrides(self):
         self._run_test("toctreeexample", "_build/text/index.txt", "API Reference")
 

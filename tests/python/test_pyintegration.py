@@ -3,7 +3,7 @@ import os
 import re
 import shutil
 import sys
-from mock import patch, Mock, call
+from unittest.mock import patch, Mock, call
 
 import pytest
 import sphinx
@@ -48,7 +48,7 @@ def builder():
         os.chdir(cwd)
 
 
-class TestSimpleModule(object):
+class TestSimpleModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pyexample")
@@ -117,7 +117,7 @@ class TestSimpleModule(object):
         assert "Bases:" in example_file
 
 
-class TestSimpleStubModule(object):
+class TestSimpleStubModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pyiexample")
@@ -142,7 +142,7 @@ class TestSimpleStubModule(object):
         assert "Set an attribute" in example_file
 
 
-class TestSimpleStubModuleNotPreferred(object):
+class TestSimpleStubModuleNotPreferred:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pyiexample2")
@@ -158,7 +158,7 @@ class TestSimpleStubModuleNotPreferred(object):
         assert "Foo" in example_file
 
 
-class TestPy3Module(object):
+class TestPy3Module:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("py3example")
@@ -260,7 +260,7 @@ def test_py3_hiding_undoc_overloaded_members(builder):
     assert "undoc_overloaded_method" not in example_file
 
 
-class TestAnnotationCommentsModule(object):
+class TestAnnotationCommentsModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pyannotationcommentsexample")
@@ -296,7 +296,7 @@ class TestAnnotationCommentsModule(object):
 @pytest.mark.skipif(
     sys.version_info < (3, 8), reason="Positional only arguments need Python >=3.8"
 )
-class TestPositionalOnlyArgumentsModule(object):
+class TestPositionalOnlyArgumentsModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("py38positionalparams")
@@ -341,7 +341,7 @@ def test_napoleon_integration_loaded(builder):
     assert "Args" not in example_file
 
 
-class TestSimplePackage(object):
+class TestSimplePackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pypackageexample")
@@ -514,7 +514,7 @@ def test_order_members(builder, value, order):
     assert indexes == sorted(indexes)
 
 
-class _CompareInstanceType(object):
+class _CompareInstanceType:
     def __init__(self, type_):
         self.type = type_
 
@@ -602,7 +602,7 @@ def test_skip_members_hook(builder):
         assert mock_call in emit_firstresult_patch.mock_calls
 
 
-class TestComplexPackage(object):
+class TestComplexPackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pypackagecomplex")
@@ -705,7 +705,7 @@ class TestComplexPackage(object):
         assert "unicode_str" in foo_file
 
 
-class TestComplexPackageParallel(object):
+class TestComplexPackageParallel:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pypackagecomplex", parallel=2)
@@ -756,7 +756,7 @@ def test_caching(builder):
     assert mtimes[1] != mtimes[0]
 
 
-class TestImplicitNamespacePackage(object):
+class TestImplicitNamespacePackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("py3implicitnamespace")

@@ -33,6 +33,7 @@ Trivial/Internal Changes
 * New example implementation of ``autoapi-skip-member`` Sphinx event.
 * Can run tests with tox 4.
 * Updated packaging to use PEP-517.
+* All unittest style tests have been converted to pytest style tests.
 
 
 V1.7.0 (2021-01-31)

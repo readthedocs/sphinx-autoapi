@@ -81,7 +81,7 @@ class AutoapiDocumenter(autodoc.Documenter):
         return False, sorted(children)
 
 
-class _AutoapiDocstringSignatureMixin(object):  # pylint: disable=too-few-public-methods
+class _AutoapiDocstringSignatureMixin:  # pylint: disable=too-few-public-methods
     def format_signature(self, **kwargs):
         # Set "manual" attributes at the last possible moment.
         # This is to let a manual entry or docstring searching happen first,

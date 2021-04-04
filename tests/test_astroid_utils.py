@@ -57,7 +57,7 @@ def imported_call_cases():
             yield import_, basename, expected
 
 
-class TestAstroidUtils(object):
+class TestAstroidUtils:
     @pytest.mark.parametrize(
         ("import_", "basename", "expected"), list(imported_basename_cases())
     )
