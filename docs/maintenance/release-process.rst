@@ -14,7 +14,7 @@ Pre-Checks
 Preparation
 -----------
 
-1. Update the version number in ``autoapi/_version.py``.
+1. Update the version numbers in ``autoapi/__init__.py``.
 2. Add any missing changelog entries.
 3. Put the version number and release date into the changelog.
 4. Commit and push the changes.
