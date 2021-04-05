@@ -5,13 +5,9 @@ Sphinx AutoAPI
     :target: https://sphinx-autoapi.readthedocs.org
     :alt: Documentation
 
-.. image:: https://travis-ci.org/readthedocs/sphinx-autoapi.svg?branch=master
-    :target: https://travis-ci.org/readthedocs/sphinx-autoapi
-    :alt: Travis Build Status
-
-.. image:: https://ci.appveyor.com/api/projects/status/5nd33gp2eq7411t1?svg=true
-    :target: https://ci.appveyor.com/project/ericholscher/sphinx-autoapi
-    :alt: Appveyor Build Status
+.. image:: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml/badge.svg?branch=master
+    :target: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml?query=branch%3Amaster
+    :alt: Github Build Status
 
 .. image:: https://img.shields.io/pypi/v/sphinx-autoapi.svg
     :target: https://pypi.org/project/sphinx-autoapi/

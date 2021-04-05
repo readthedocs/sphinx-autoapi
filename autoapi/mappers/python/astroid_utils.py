@@ -405,12 +405,13 @@ def _resolve_annotation(annotation):
         resolved = resolve_qualname(annotation, annotation.as_string())
     elif isinstance(annotation, astroid.Subscript):
         value = _resolve_annotation(annotation.value)
-        if isinstance(annotation.slice, astroid.Tuple):
-            slice_ = ", ".join(
-                _resolve_annotation(elt) for elt in annotation.slice.elts
-            )
+        slice_node = annotation.slice
+        if isinstance(slice_node, astroid.Index):
+            slice_node = slice_node.value
+        if isinstance(slice_node, astroid.Tuple):
+            slice_ = ", ".join(_resolve_annotation(elt) for elt in slice_node.elts)
         else:
-            slice_ = _resolve_annotation(annotation.slice)
+            slice_ = _resolve_annotation(slice_node)
         resolved = f"{value}[{slice_}]"
     elif isinstance(annotation, astroid.Tuple):
         resolved = (
