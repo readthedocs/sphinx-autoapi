@@ -105,7 +105,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             )
 
     normalized_root = os.path.normpath(
-        os.path.join(app.confdir, app.config.autoapi_root)
+        os.path.join(app.srcdir, app.config.autoapi_root)
     )
     url_root = os.path.join("/", app.config.autoapi_root)
 
