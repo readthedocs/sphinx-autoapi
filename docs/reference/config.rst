@@ -299,7 +299,6 @@ Suppressing Warnings
      * python_import_resolution
      * metadata_generation
      * not_readable
-     * create_class
      * toc_reference
 
    So if all AutoAPI warnings concerning unreadable sources and failing Python imports should be

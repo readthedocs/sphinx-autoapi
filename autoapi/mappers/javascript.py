@@ -79,9 +79,8 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data["kind"]]
         except (KeyError, TypeError):
-            LOGGER.warning(
-                "Unknown Type: %s" % data, type="autoapi", subtype="create_class"
-            )
+            # this warning intentionally has no (sub-)type
+            LOGGER.warning("Unknown type: %s" % data)
         else:
             # Recurse for children
             obj = cls(data, jinja_env=self.jinja_env, app=self.app)
