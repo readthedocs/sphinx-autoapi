@@ -91,9 +91,8 @@ class GoSphinxMapper(SphinxMapperBase):
             else:
                 cls = obj_map[data["type"]]
         except KeyError:
-            LOGGER.warning(
-                "Unknown Type: %s" % data, type="autoapi", subtype="create_class"
-            )
+            # this warning intentionally has no (sub-)type
+            LOGGER.warning("Unknown type: %s" % data)
         else:
             if cls.inverted_names and "names" in data:
                 # Handle types that have reversed names parameter

@@ -363,11 +363,8 @@ class PythonSphinxMapper(SphinxMapperBase):
         try:
             cls = self._OBJ_MAP[data["type"]]
         except KeyError:
-            LOGGER.warning(
-                "Unknown type: %s" % data["type"],
-                type="autoapi",
-                subtype="create_class",
-            )
+            # this warning intentionally has no (sub-)type
+            LOGGER.warning("Unknown type: %s" % data["type"])
         else:
             obj = cls(
                 data,

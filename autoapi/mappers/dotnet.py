@@ -185,9 +185,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
         try:
             cls = obj_map[data["type"].lower()]
         except KeyError:
-            LOGGER.warning(
-                "Unknown type: %s" % data, type="autoapi", subtype="create_class"
-            )
+            # this warning intentionally has no (sub-)type
+            LOGGER.warning("Unknown type: %s" % data)
         else:
             obj = cls(
                 data, jinja_env=self.jinja_env, app=self.app, options=options, **kwargs
