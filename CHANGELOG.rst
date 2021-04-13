@@ -10,19 +10,25 @@ Features
 ^^^^^^^^
 
 * Expandable value for multi-line string attributes.
-* `#265 <https://github.com/readthedocs/sphinx-autoapi/issues/265>`
+* `#265 <https://github.com/readthedocs/sphinx-autoapi/issues/265>`:
   Can resolve the qualified paths of parameters to generics.
+* `#275 <https://github.com/readthedocs/sphinx-autoapi/issues/275>`:
+  Warnings have been categorised and can be suppressed through ``suppress_warnings``.
+* `#280 <https://github.com/readthedocs/sphinx-autoapi/issues/280>`:
+  Data attributes are documentated in module summaries.
 
 Bug Fixes
 ^^^^^^^^^
 
-* `#273 <https://github.com/readthedocs/sphinx-autoapi/issues/273>`
+* `#273 <https://github.com/readthedocs/sphinx-autoapi/issues/273>`:
   Fixed setting ``autodoc_typehints`` to ``none`` or ``description``
   not turning off signature type hints.
   ``autodoc_typehints`` integration is consisidered experimental until
   the extension properly supports overload functions.
-* `#261 <https://github.com/readthedocs/sphinx-autoapi/issues/261>`
+* `#261 <https://github.com/readthedocs/sphinx-autoapi/issues/261>`:
   Fixed data annotations causing pickle or deepcopy errors.
+* Documentation can be generated when multiple source directories
+  share a single ``conf.py`` file.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,6 +39,8 @@ Trivial/Internal Changes
 * Can run tests with tox 4.
 * Updated packaging to use PEP-517.
 * All unittest style tests have been converted to pytest style tests.
+* An exception raised by docfx is raised directly instead of wrapping it.
+* Started using Github Actions for continuous integration.
 
 
 V1.7.0 (2021-01-31)
