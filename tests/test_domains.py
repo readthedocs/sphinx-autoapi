@@ -93,7 +93,7 @@ class TestDotNetSphinxMapper:
                 "autoapi.mappers.dotnet.DotNetSphinxMapper.read_file", _mock_read
             ):
                 dom = dotnet.DotNetSphinxMapper(MockApplication())
-                dom.load("", "", "", raise_error=False)
+                dom.load("", "", "")
                 dom.map()
                 objs = dom.objects
                 assert len(objs) == 2

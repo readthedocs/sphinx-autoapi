@@ -61,7 +61,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
     DOCFX_OUTPUT_PATH = "_api"
 
     # pylint: disable=arguments-differ
-    def load(self, patterns, dirs, ignore=None, **kwargs):
+    def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary.
 
         If the setting ``autoapi_patterns`` was not specified, look for a
@@ -70,7 +70,6 @@ class DotNetSphinxMapper(SphinxMapperBase):
         pattern matches if no ``docfx.json`` files are found.
         """
         LOGGER.info(bold("[AutoAPI] ") + darkgreen("Loading Data"))
-        raise_error = kwargs.get("raise_error", True)
         all_files = set()
         if not self.app.config.autoapi_file_patterns:
             all_files = set(
@@ -82,40 +81,28 @@ class DotNetSphinxMapper(SphinxMapperBase):
             )
 
         if all_files:
-            try:
-                command = ["docfx", "metadata", "--raw", "--force"]
-                command.extend(all_files)
-                proc = subprocess.Popen(
-                    " ".join(command),
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    shell=True,
-                    env=dict(
-                        (key, os.environ[key])
-                        for key in [
-                            "PATH",
-                            "HOME",
-                            "SYSTEMROOT",
-                            "USERPROFILE",
-                            "WINDIR",
-                        ]
-                        if key in os.environ
-                    ),
-                )
-                _, error_output = proc.communicate()
-                if error_output:
-                    LOGGER.warning(error_output, type="autoapi", subtype="not_readable")
-            except (OSError, subprocess.CalledProcessError):
-                LOGGER.warning(
-                    "Error generating metadata",
-                    exc_info=True,
-                    type="autoapi",
-                    subtype="metadata_generation",
-                )
-                if raise_error:
-                    raise ExtensionError(
-                        "Failure in docfx while generating AutoAPI output."
-                    )
+            command = ["docfx", "metadata", "--raw", "--force"]
+            command.extend(all_files)
+            proc = subprocess.Popen(
+                " ".join(command),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                shell=True,
+                env=dict(
+                    (key, os.environ[key])
+                    for key in [
+                        "PATH",
+                        "HOME",
+                        "SYSTEMROOT",
+                        "USERPROFILE",
+                        "WINDIR",
+                    ]
+                    if key in os.environ
+                ),
+            )
+            _, error_output = proc.communicate()
+            if error_output:
+                LOGGER.warning(error_output, type="autoapi", subtype="not_readable")
         # We now have yaml files
         for xdoc_path in self.find_files(
             patterns=["*.yml"], dirs=[self.DOCFX_OUTPUT_PATH], ignore=ignore

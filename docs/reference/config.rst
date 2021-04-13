@@ -299,8 +299,6 @@ Suppressing Warnings
      * python_import_resolution
        Used if resolving references to objects in an imported module failed. Potential reasons
        include cyclical imports and missing (parent) modules.
-     * metadata_generation
-       (Dotnet only) Generating metadata for input files via docfx failed.
      * not_readable
        Emitted if processing (opening, parsing, ...) an input file failed.
      * toc_reference
