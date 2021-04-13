@@ -9,7 +9,7 @@ Pre-Checks
 1. Check that the dependencies of the package are correct.
 2. Clean the ``.tox`` directory and run the tests.
 3. Commit and push any changes needed to make the tests pass.
-4. Check that the tests passed on travis and appveyor.
+4. Check that the tests passed on github.
 
 Preparation
 -----------
@@ -18,7 +18,7 @@ Preparation
 2. Add any missing changelog entries.
 3. Put the version number and release date into the changelog.
 4. Commit and push the changes.
-5. Check that the tests passed on travis and appveyor.
+5. Check that the tests passed on github.
 
 Release
 -------
