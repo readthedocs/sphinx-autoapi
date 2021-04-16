@@ -193,7 +193,8 @@ def doctree_read(app, doctree):
     Inject AutoAPI into the TOC Tree dynamically.
     """
 
-    add_domain_to_toctree(app, doctree, app.env.docname)
+    if app.config.autoapi_add_objects_to_toctree:
+        add_domain_to_toctree(app, doctree, app.env.docname)
 
     if app.env.docname == "index":
         all_docs = set()
@@ -303,6 +304,7 @@ def setup(app):
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
     app.add_config_value("autoapi_prepare_jinja_env", None, "html")
+    app.add_config_value("autoapi_add_objects_to_toctree", True, "html")
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
     app.add_autodocumenter(documenters.AutoapiPropertyDocumenter)
     app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)

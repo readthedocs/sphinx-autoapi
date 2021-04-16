@@ -151,6 +151,12 @@ Customisation Options
    and you will need to include the generated documentation
    in a TOC tree entry yourself.
 
+.. confval:: autoapi_add_objects_to_toctree
+
+   Default: ``True``
+
+   Whether to insert a TOC tree entry for each object (class, function, etc.).
+
 .. confval:: autoapi_python_class_content
 
    Default: ``class``
