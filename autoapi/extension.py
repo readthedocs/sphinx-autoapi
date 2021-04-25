@@ -169,10 +169,6 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         if app.config.autoapi_generate_api_docs:
             sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
 
-        if app.config.autoapi_type == "python":
-            app.env.autoapi_objects = sphinx_mapper_obj.objects
-            app.env.autoapi_all_objects = sphinx_mapper_obj.all_objects
-
 
 def build_finished(app, exception):
     if not app.config.autoapi_keep_files and app.config.autoapi_generate_api_docs:
@@ -186,6 +182,12 @@ def build_finished(app, exception):
         sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
         if hasattr(sphinx_mapper, "build_finished"):
             sphinx_mapper.build_finished(app, exception)
+
+
+def source_read(app, docname, source):  # pylint: disable=unused-argument
+    # temp_data is cleared after each source file has been processed,
+    # so populate the annotations at the beginning of every file read.
+    app.env.temp_data["annotations"] = getattr(app.env, "autoapi_annotations", {})
 
 
 def doctree_read(app, doctree):
@@ -282,6 +284,7 @@ def viewcode_follow_imported(app, modname, attribute):
 
 def setup(app):
     app.connect("builder-inited", run_autoapi)
+    app.connect("source-read", source_read)
     app.connect("doctree-read", doctree_read)
     app.connect("build-finished", build_finished)
     if "viewcode-find-source" in app.events.events:

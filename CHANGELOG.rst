@@ -3,6 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.8.1 (TBC)
+------------
+
+Bug Fixes
+^^^^^^^^^
+
+* `#273 <https://github.com/readthedocs/sphinx-autoapi/issues/273>`:
+  Fixed type annotations being shown for only a single module.
+
+
 v1.8.0 (2021-04-12)
 -------------------
 

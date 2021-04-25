@@ -834,3 +834,25 @@ def test_string_module_attributes(builder):
         "        </details>",
     ]
     assert "\n".join(code_snippet_contents) in example_file
+
+
+class TestAutodocTypehintsPackage:
+    """Test integrations with the autodoc.typehints extension."""
+
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyautodoc_typehints")
+
+    def test_renders_typehint(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        assert "(*int*)" in example_file
+
+    def test_renders_typehint_in_second_module(self):
+        example2_path = "_build/text/autoapi/example2/index.txt"
+        with io.open(example2_path, encoding="utf8") as example2_handle:
+            example2_file = example2_handle.read()
+
+        assert "(*int*)" in example2_file

@@ -340,6 +340,7 @@ class PythonSphinxMapper(SphinxMapperBase):
 
     def map(self, options=None):
         self._resolve_placeholders()
+        self.app.env.autoapi_annotations = {}
 
         super(PythonSphinxMapper, self).map(options)
 
@@ -354,6 +355,9 @@ class PythonSphinxMapper(SphinxMapperBase):
         for obj in self.objects.values():
             obj.submodules.sort()
             obj.subpackages.sort()
+
+        self.app.env.autoapi_objects = self.objects
+        self.app.env.autoapi_all_objects = self.all_objects
 
     def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
@@ -411,5 +415,4 @@ class PythonSphinxMapper(SphinxMapperBase):
             if return_annotation:
                 obj_annotations["return"] = return_annotation
 
-            annotations = self.app.env.temp_data.setdefault("annotations", {})
-            annotations[obj.id] = obj_annotations
+            self.app.env.autoapi_annotations[obj.id] = obj_annotations
