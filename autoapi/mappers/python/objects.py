@@ -362,6 +362,8 @@ class PythonClass(PythonPythonMapper):
         constructor = self.constructor
         if constructor:
             args = constructor.args
+        else:
+            args = ''
 
         if args.startswith("self"):
             args = args[4:].lstrip(",").lstrip()
