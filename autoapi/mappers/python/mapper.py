@@ -380,6 +380,15 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
             obj.url_root = self.url_root
 
+            for child_data in data.get("children", []):
+                for child_obj in self.create_class(
+                    child_data, options=options, **kwargs
+                ):
+                    obj.children.append(child_obj)
+
+            # Some objects require children to establish their docstring
+            # or type annotations (eg classes with inheritance),
+            # so do this after all children have been created.
             lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
             if lines and "autodoc-process-docstring" in self.app.events.events:
                 self.app.emit(
@@ -387,12 +396,6 @@ class PythonSphinxMapper(SphinxMapperBase):
                 )
             obj.docstring = "\n".join(lines)
             self._record_typehints(obj)
-
-            for child_data in data.get("children", []):
-                for child_obj in self.create_class(
-                    child_data, options=options, **kwargs
-                ):
-                    obj.children.append(child_obj)
 
             # Parser gives children in source order already
             if self.app.config.autoapi_member_order == "alphabetical":
@@ -405,14 +408,25 @@ class PythonSphinxMapper(SphinxMapperBase):
     def _record_typehints(self, obj):
         if isinstance(
             obj, (PythonClass, PythonFunction, PythonMethod)
-        ) and not obj.obj.get("overloads"):
+        ) and not obj.overloads:
             obj_annotations = {}
-            for _, name, annotation, _ in obj.obj["args"]:
+
+            include_return_annotation = True
+            obj_data = obj.obj
+            if isinstance(obj, PythonClass):
+                constructor = obj.constructor
+                if constructor:
+                    include_return_annotation = False
+                    obj_data = constructor.obj
+                else:
+                    return
+
+            for _, name, annotation, _ in obj_data["args"]:
                 if name and annotation:
                     obj_annotations[name] = annotation
 
-            return_annotation = obj.obj.get("return_annotation")
-            if return_annotation:
+            return_annotation = obj_data["return_annotation"]
+            if include_return_annotation and return_annotation:
                 obj_annotations["return"] = return_annotation
 
             self.app.env.autoapi_annotations[obj.id] = obj_annotations

@@ -7,3 +7,4 @@ Autodoc Directives
 
 
 .. autoapidecorator:: example.decorator_okay
+   :noindex:

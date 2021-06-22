@@ -107,3 +107,7 @@ def decorator_okay(func):
 class Bar(Foo):
     def method_okay(self, foo=None, bar=None):
         pass
+
+
+class ClassWithNoInit:
+    pass

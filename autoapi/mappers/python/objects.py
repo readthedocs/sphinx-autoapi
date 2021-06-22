@@ -1,3 +1,4 @@
+import functools
 from typing import Optional
 
 import sphinx.util.logging
@@ -174,6 +175,10 @@ class PythonFunction(PythonPythonMapper):
             autodoc_typehints == "description" and not obj["overloads"]
         )
         self.args = _format_args(obj["args"], show_annotations)
+        """The arguments to this object, formatted as a string.
+
+        :type: str
+        """
 
         self.return_annotation = obj["return_annotation"] if show_annotations else None
         """The type annotation for the return type of this function.
@@ -198,18 +203,6 @@ class PythonFunction(PythonPythonMapper):
 
         :type: list(tuple(str, str))
         """
-
-    @property
-    def args(self):
-        """The arguments to this object, formatted as a string.
-
-        :type: str
-        """
-        return self._args
-
-    @args.setter
-    def args(self, value):
-        self._args = value
 
 
 class PythonMethod(PythonFunction):
@@ -343,8 +336,6 @@ class PythonClass(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super(PythonClass, self).__init__(obj, **kwargs)
 
-        self.args = obj["args"]
-
         self.bases = obj["bases"]
         """The fully qualified names of all base classes.
 
@@ -357,20 +348,34 @@ class PythonClass(PythonPythonMapper):
 
         :type: str
         """
-        args = self._args
+        args = ""
 
-        constructor = self.constructor
-        if constructor:
-            args = constructor.args
-
-        if args.startswith("self"):
-            args = args[4:].lstrip(",").lstrip()
+        if self.constructor:
+            autodoc_typehints = getattr(self.app.config, "autodoc_typehints", "signature")
+            show_annotations = autodoc_typehints != "none" and not (
+                autodoc_typehints == "description" and not self.constructor.overloads
+            )
+            args_data = self.constructor.obj["args"]
+            if args_data and args_data[0][1] == "self":
+                args_data = args_data[1:]
+            args = _format_args(args_data, show_annotations)
 
         return args
 
-    @args.setter
-    def args(self, value):
-        self._args = value
+    @property
+    def overloads(self):
+        overloads = []
+
+        if self.constructor:
+            overload_data = self.constructor.obj["overloads"]
+            if overload_data and overload_data[0][1] == "self":
+                overload_data = overload_data[1:]
+            overloads = [
+                (_format_args(args), return_annotation)
+                for args, return_annotation in overload_data
+            ]
+
+        return overloads
 
     @property
     def docstring(self):
@@ -404,6 +409,7 @@ class PythonClass(PythonPythonMapper):
         return self._children_of_type("class")
 
     @property
+    @functools.lru_cache()
     def constructor(self):
         for child in self.children:
             if child.short_name == "__init__":

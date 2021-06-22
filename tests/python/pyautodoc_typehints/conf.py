@@ -13,7 +13,6 @@ exclude_patterns = ["_build"]
 pygments_style = "sphinx"
 todo_include_todos = False
 html_theme = "alabaster"
-html_static_path = ["_static"]
 htmlhelp_basename = "pyexampledoc"
 extensions = ["sphinx.ext.autodoc", "autoapi.extension", "sphinx.ext.napoleon"]
 autoapi_type = "python"

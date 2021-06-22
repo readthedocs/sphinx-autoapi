@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.8.2 (TBC)
+-------------------
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed error when parsing a class with no constructor.
+
+
 v1.8.1 (2021-04-24)
 -------------------
 

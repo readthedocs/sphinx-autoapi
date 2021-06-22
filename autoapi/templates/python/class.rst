@@ -1,12 +1,8 @@
 {% if obj.display %}
 .. {{ obj.type }}:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
-{% if obj.constructor %}
-
-{% for (args, return_annotation) in obj.constructor.overloads %}
-   {% if args and args.startswith("self, ") %}{% set args = args[6:] %}{% endif %}
+{% for (args, return_annotation) in obj.overloads %}
    {{ " " * (obj.type | length) }}   {{ obj.short_name }}{% if args %}({{ args }}){% endif %}
 {% endfor %}
-{% endif %}
 
 
    {% if obj.bases %}

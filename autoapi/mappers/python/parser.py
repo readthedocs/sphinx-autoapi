@@ -86,22 +86,12 @@ class Parser:
         if astroid_utils.is_exception(node):
             type_ = "exception"
 
-        args = []
-        try:
-            constructor = node.lookup("__init__")[1]
-        except IndexError:
-            pass
-        else:
-            if isinstance(constructor, astroid.nodes.FunctionDef):
-                args = astroid_utils.get_args_info(constructor.args)
-
         basenames = list(astroid_utils.get_full_basenames(node))
 
         data = {
             "type": type_,
             "name": node.name,
             "full_name": self._get_full_name(node.name),
-            "args": args,
             "bases": basenames,
             "doc": astroid_utils.get_class_docstring(node),
             "from_line_no": node.fromlineno,
