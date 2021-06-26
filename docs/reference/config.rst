@@ -7,8 +7,7 @@ Configuration Options
 
    Paths (relative or absolute) to the source code that you wish to generate your API documentation from.
    The paths are searched recursively for files matching :confval:`autoapi_file_patterns`.
-   Relative paths should be relative to the root of the documentation directory
-   (ie the directory with the ``conf.py`` file).
+   Relative paths should be relative to the source directory of your documentation.
 
    For Python, if a package directory is specified,
    the package directory itself will be included in the relative path of the children.
@@ -37,8 +36,7 @@ Configuration Options
 
    A directory that has user-defined templates to override our default templates.
    The path can either be absolute,
-   or relative to the root of the documentation directory
-   (ie the directory with the ``conf.py`` file).
+   or relative to the source directory of your documentation files.
    An path relative to where `sphinx-build` is run
    is allowed for backwards compatibility only
    and will be removed in a future version.
@@ -137,8 +135,7 @@ Customisation Options
 
    Path to output the generated AutoAPI files into,
    including the generated index page.
-   This path must be relative to the root of the documentation directory
-   (ie the directory with the ``conf.py`` file).
+   This path must be relative to the source directory of your documentation files.
    This can be used to place the generated documentation
    anywhere in your documentation hierarchy.
 

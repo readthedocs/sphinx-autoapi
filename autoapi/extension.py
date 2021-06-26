@@ -55,7 +55,7 @@ if "PYTHONWARNINGS" not in os.environ:
     warnings.filterwarnings("default", category=RemovedInAutoAPI2Warning)
 
 
-def _normalise_autoapi_dirs(autoapi_dirs, confdir):
+def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
     normalised_dirs = []
 
     if isinstance(autoapi_dirs, str):
@@ -64,7 +64,7 @@ def _normalise_autoapi_dirs(autoapi_dirs, confdir):
         if os.path.isabs(path):
             normalised_dirs.append(path)
         else:
-            normalised_dirs.append(os.path.normpath(os.path.join(confdir, path)))
+            normalised_dirs.append(os.path.normpath(os.path.join(srcdir, path)))
 
     return normalised_dirs
 
@@ -96,7 +96,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             app.config.autoapi_options.append("show-module-summary")
 
     # Make sure the paths are full
-    normalised_dirs = _normalise_autoapi_dirs(app.config.autoapi_dirs, app.confdir)
+    normalised_dirs = _normalise_autoapi_dirs(app.config.autoapi_dirs, app.srcdir)
     for _dir in normalised_dirs:
         if not os.path.exists(_dir):
             raise ExtensionError(
@@ -133,11 +133,11 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
     template_dir = app.config.autoapi_template_dir
     if template_dir and not os.path.isabs(template_dir):
         if not os.path.isdir(template_dir):
-            template_dir = os.path.join(app.confdir, app.config.autoapi_template_dir)
-        elif app.confdir != os.getcwd():
+            template_dir = os.path.join(app.srcdir, app.config.autoapi_template_dir)
+        elif app.srcdir != os.getcwd():
             warnings.warn(
                 "autoapi_template_dir will be expected to be "
-                " relative to conf.py instead of "
+                "relative to the Sphinx source directory instead of "
                 "relative to where sphinx-build is run\n",
                 RemovedInAutoAPI2Warning,
             )
@@ -173,7 +173,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
 def build_finished(app, exception):
     if not app.config.autoapi_keep_files and app.config.autoapi_generate_api_docs:
         normalized_root = os.path.normpath(
-            os.path.join(app.confdir, app.config.autoapi_root)
+            os.path.join(app.srcdir, app.config.autoapi_root)
         )
         if app.verbosity > 1:
             LOGGER.info(bold("[AutoAPI] ") + darkgreen("Cleaning generated .rst files"))

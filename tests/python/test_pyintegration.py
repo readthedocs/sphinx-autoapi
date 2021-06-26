@@ -19,10 +19,10 @@ from autoapi.mappers.python import (
 )
 
 
-def rebuild(confoverrides=None, **kwargs):
+def rebuild(confoverrides=None, confdir=".", **kwargs):
     app = Sphinx(
         srcdir=".",
-        confdir=".",
+        confdir=confdir,
         outdir="_build/text",
         doctreedir="_build/.doctrees",
         buildername="text",
@@ -119,6 +119,17 @@ class TestSimpleModule:
             example_file = example_handle.read()
 
         assert "Bases:" in example_file
+
+
+class TestMovedConfPy(TestSimpleModule):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pymovedconfpy",
+            confdir="confpy",
+            warningiserror=True,
+            confoverrides={"suppress_warnings": ["app"]},
+        )
 
 
 class TestSimpleStubModule:

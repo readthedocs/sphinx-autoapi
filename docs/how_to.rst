@@ -13,8 +13,8 @@ Simply copy whichever templates you want to customise to a local directory
 and edit them.
 To get AutoAPI to use these templates,
 point the :confval:`autoapi_template_dir` configuration option to your directory.
-It can be absolute, or relative to the root of the documentation directory
-(ie the directory with the ``conf.py`` file).
+It can be absolute, or relative to the root of the documentation source directory
+(ie the directory passed to ``sphinx-build``).
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ How to Configure Where Documentation Appears in the TOC Tree
 
 The :confval:`autoapi_root` configuration option defines where generated documentation is output.
 To change where documentation is output,
-simply change this option to another directory relative to the ``conf.py`` file:
+simply change this option to another directory relative to the documentation source directory:
 
 .. code-block:: python
 

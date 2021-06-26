@@ -1,0 +1,1 @@
+../pyexample/manualapi.rst

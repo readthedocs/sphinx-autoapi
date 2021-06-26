@@ -115,6 +115,10 @@ Bug Fixes
   Fixed an unnecessary deprecation warning being raised when running
   sphinx-build from the same directory as conf.py.
 * Fixed properties documented by Autodoc directives geting documented as methods.
+* `#293 <https://github.com/readthedocs/sphinx-autoapi/issues/293>`:
+  Fixed failure to build out of source conf.py files.
+  Configuration values using relative values are now relative to the source directory
+  instead of relative to the conf.py file.
 
 
 V1.5.1 (2020-10-01)

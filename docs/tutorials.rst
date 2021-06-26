@@ -39,7 +39,8 @@ we need to add it to the list of extensions in Sphinx's ``conf.py`` file::
 For Python, there is only one required configuration option that we need to set.
 :confval:`autoapi_dirs` tells AutoAPI which directories contain
 the source code to document.
-This can either be absolute, or relative to Sphinx's conf.py file.
+These can either be absolute, or relative to the source directory of
+your documentation files.
 For example, say we have a package and we have used ``sphinx-quickstart``
 to create a Sphinx project in a ``docs/`` folder.
 The directory structure might look like this:
@@ -131,7 +132,8 @@ For Go, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to Sphinx's `conf.py` file.
+These can either be absolute, or relative to the source directory of
+your documentation files.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::
@@ -167,7 +169,8 @@ For Javascript, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to Sphinx's `conf.py` file.
+These can either be absolute, or relative to the source directory of
+your documentation files.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::
@@ -196,7 +199,7 @@ By default, ``docfx`` will output metadata files into the ``_api`` path.
 You can configure which path to output files into by setting the path in your
 `docfx configuration file <https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#3-docfx-json-format>`_
 in your project repository.
-For example, if your ``conf.py`` file is located inside a ``docs/`` directory:
+For example, if your documentation source files are located inside a ``docs/`` directory:
 
 .. code:: json
 
@@ -223,7 +226,8 @@ For .NET, this is::
 
 The second configuration option is :confval:`autoapi_dirs`,
 which tells AutoAPI which directories contain the source code to document.
-These can either be absolute, or relative to Sphinx's `conf.py` file.
+These can either be absolute, or relative to the source directory of
+your documentation files.
 So if your documentation was inside a ``docs/`` directory
 and your source code is in an ``example`` directory one level up,
 you would configure :confval:`autoapi_dirs` to be::
