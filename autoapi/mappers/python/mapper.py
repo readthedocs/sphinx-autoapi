@@ -406,9 +406,10 @@ class PythonSphinxMapper(SphinxMapperBase):
             yield obj
 
     def _record_typehints(self, obj):
-        if isinstance(
-            obj, (PythonClass, PythonFunction, PythonMethod)
-        ) and not obj.overloads:
+        if (
+            isinstance(obj, (PythonClass, PythonFunction, PythonMethod))
+            and not obj.overloads
+        ):
             obj_annotations = {}
 
             include_return_annotation = True

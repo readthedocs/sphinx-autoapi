@@ -51,7 +51,11 @@ def builder():
 class TestSimpleModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyexample", warningiserror=True, confoverrides={"suppress_warnings": ["app"]})
+        builder(
+            "pyexample",
+            warningiserror=True,
+            confoverrides={"suppress_warnings": ["app"]},
+        )
 
     def test_integration(self):
         self.check_integration("_build/text/autoapi/example/index.txt")

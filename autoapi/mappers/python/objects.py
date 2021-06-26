@@ -9,10 +9,12 @@ from ..base import PythonMapperBase
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
-def _format_args(args_info, include_annotations=True):
+def _format_args(args_info, include_annotations=True, ignore_self=None):
     result = []
 
-    for prefix, name, annotation, default in args_info:
+    for i, (prefix, name, annotation, default) in enumerate(args_info):
+        if i == 0 and name == ignore_self:
+            continue
         formatted = "{}{}{}{}".format(
             prefix or "",
             name or "",
@@ -351,14 +353,14 @@ class PythonClass(PythonPythonMapper):
         args = ""
 
         if self.constructor:
-            autodoc_typehints = getattr(self.app.config, "autodoc_typehints", "signature")
+            autodoc_typehints = getattr(
+                self.app.config, "autodoc_typehints", "signature"
+            )
             show_annotations = autodoc_typehints != "none" and not (
                 autodoc_typehints == "description" and not self.constructor.overloads
             )
             args_data = self.constructor.obj["args"]
-            if args_data and args_data[0][1] == "self":
-                args_data = args_data[1:]
-            args = _format_args(args_data, show_annotations)
+            args = _format_args(args_data, show_annotations, ignore_self="self")
 
         return args
 
@@ -368,10 +370,15 @@ class PythonClass(PythonPythonMapper):
 
         if self.constructor:
             overload_data = self.constructor.obj["overloads"]
-            if overload_data and overload_data[0][1] == "self":
-                overload_data = overload_data[1:]
+            autodoc_typehints = getattr(
+                self.app.config, "autodoc_typehints", "signature"
+            )
+            show_annotations = autodoc_typehints not in ("none", "description")
             overloads = [
-                (_format_args(args), return_annotation)
+                (
+                    _format_args(args, show_annotations, ignore_self="self"),
+                    return_annotation,
+                )
                 for args, return_annotation in overload_data
             ]
 
