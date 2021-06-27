@@ -12,7 +12,7 @@ def _do_import_class(name, currmodule=None):
         while target and path_stack:
             path_part = path_stack.pop()
             target = (target.getattr(path_part) or (None,))[0]
-            while isinstance(target, astroid.ImportFrom):
+            while isinstance(target, (astroid.ImportFrom, astroid.Import)):
                 try:
                     target = target.do_import_module(path_part)
                 except astroid.AstroidImportError:

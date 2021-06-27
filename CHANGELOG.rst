@@ -94,7 +94,7 @@ Breaking Changes
 Features
 ^^^^^^^^
 
-* Added support for using type hints as parameter types and return types
+* (Python) Added support for using type hints as parameter types and return types
   via the ``sphinx.ext.autodoc.typehints`` extension.
 * `#191 <https://github.com/readthedocs/sphinx-autoapi/issues/191>`:
   Basic incremental build support is enabled ``autoapi_keep_files`` is enabled.
@@ -109,16 +109,18 @@ Features
 Bug Fixes
 ^^^^^^^^^
 
-* `#246 <https://github.com/readthedocs/sphinx-autoapi/issues/246>`:
+* `#246 <https://github.com/readthedocs/sphinx-autoapi/issues/246>`: (Python)
   Fixed TypeError when parsing a class that inherits from ``type``.
 * `#244 <https://github.com/readthedocs/sphinx-autoapi/issues/244>`:
   Fixed an unnecessary deprecation warning being raised when running
   sphinx-build from the same directory as conf.py.
-* Fixed properties documented by Autodoc directives geting documented as methods.
+* (Python) Fixed properties documented by Autodoc directives geting documented as methods.
 * `#293 <https://github.com/readthedocs/sphinx-autoapi/issues/293>`:
   Fixed failure to build out of source conf.py files.
   Configuration values using relative values are now relative to the source directory
   instead of relative to the conf.py file.
+* `#289 <https://github.com/readthedocs/sphinx-autoapi/issues/289>`: (Python)
+  Fixed AttributeError using inheritance diagrams on a module with plain imports.
 
 
 V1.5.1 (2020-10-01)
@@ -140,7 +142,7 @@ Features
 
 * `#222 <https://github.com/readthedocs/sphinx-autoapi/issues/222>`:
   Declare the extension as parallel unsafe.
-* `#217 <https://github.com/readthedocs/sphinx-autoapi/issues/217>`:
+* `#217 <https://github.com/readthedocs/sphinx-autoapi/issues/217>`: (Python)
   All overload signatures are documented.
 * `#243 <https://github.com/readthedocs/sphinx-autoapi/issues/243>`:
   Files are found in order of preference according to ``autoapi_file_patterns``.
@@ -149,9 +151,9 @@ Features
 Bug Fixes
 ^^^^^^^^^
 
-* `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`:
+* `#219 <https://github.com/readthedocs/sphinx-autoapi/issues/219>`: (Python)
   Fixed return types not showing for methods.
-* Fixed incorrect formatting of properties on generated method directives.
+* (Python) Fixed incorrect formatting of properties on generated method directives.
 * Fixed every toctree entry getting added as a new list.
 * `#234 <https://github.com/readthedocs/sphinx-autoapi/issues/234>`:
   Fixed only some entries getting added to the toctree.
