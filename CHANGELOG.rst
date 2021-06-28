@@ -6,10 +6,22 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 v1.8.2 (TBC)
 -------------------
 
+Features
+^^^^^^^^
+
+* `#292 <https://github.com/readthedocs/sphinx-autoapi/issues/292>`:
+  Explicitly use the domain for generated directives.
+
 Bug Fixes
 ^^^^^^^^^
 
 * Fixed error when parsing a class with no constructor.
+* `#293 <https://github.com/readthedocs/sphinx-autoapi/issues/293>`:
+  Fixed failure to build out of source conf.py files.
+  Configuration values using relative values are now relative to the source directory
+  instead of relative to the conf.py file.
+* `#289 <https://github.com/readthedocs/sphinx-autoapi/issues/289>`: (Python)
+  Fixed AttributeError using inheritance diagrams on a module with plain imports.
 
 
 v1.8.1 (2021-04-24)
@@ -115,12 +127,6 @@ Bug Fixes
   Fixed an unnecessary deprecation warning being raised when running
   sphinx-build from the same directory as conf.py.
 * (Python) Fixed properties documented by Autodoc directives geting documented as methods.
-* `#293 <https://github.com/readthedocs/sphinx-autoapi/issues/293>`:
-  Fixed failure to build out of source conf.py files.
-  Configuration values using relative values are now relative to the source directory
-  instead of relative to the conf.py file.
-* `#289 <https://github.com/readthedocs/sphinx-autoapi/issues/289>`: (Python)
-  Fixed AttributeError using inheritance diagrams on a module with plain imports.
 
 
 V1.5.1 (2020-10-01)

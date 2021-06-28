@@ -2,8 +2,8 @@
 :orphan:
 
 {% endif %}
-:mod:`{{ obj.name }}`
-======={{ "=" * obj.name|length }}
+:py:mod:`{{ obj.name }}`
+=========={{ "=" * obj.name|length }}
 
 .. py:module:: {{ obj.name }}
 

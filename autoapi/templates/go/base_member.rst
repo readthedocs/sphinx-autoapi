@@ -5,7 +5,7 @@
     {% for param in obj.parameters %}
         {% set ns.tmpstring = ns.tmpstring ~ argjoin() ~ param.name ~ ' ' ~ param.type %}
     {% endfor %}
-.. {{ obj.ref_type }}:: {{ obj.name }}({{ ns.tmpstring }})
+.. go:{{ obj.ref_type }}:: {{ obj.name }}({{ ns.tmpstring }})
 {% else %}
 .. go:{{ obj.ref_type }}:: {{ obj.name }}
 {% endif %}

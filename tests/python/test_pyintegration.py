@@ -132,6 +132,29 @@ class TestMovedConfPy(TestSimpleModule):
         )
 
 
+class TestSimpleModuleDifferentPrimaryDomain:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pyexample",
+            warningiserror=True,
+            confoverrides={
+                "autoapi_options": [
+                    "members",
+                    "undoc-members",
+                    "private-members",
+                    "special-members",
+                    "imported-members",
+                ],
+                "primary_domain": "cpp",
+                "suppress_warnings": ["app"],
+            },
+        )
+
+    def test_success(self):
+        pass
+
+
 class TestSimpleStubModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
@@ -725,6 +748,9 @@ class TestComplexPackageParallel:
     def built(self, builder):
         builder("pypackagecomplex", parallel=2)
 
+    def test_success(self):
+        pass
+
 
 def test_caching(builder):
     mtimes = (0, 0)
@@ -825,7 +851,7 @@ def test_string_module_attributes(builder):
         example_file = example_handle.read()
 
     code_snippet_contents = [
-        ".. data:: code_snippet",
+        ".. py:data:: code_snippet",
         "   :annotation: = Multiline-String",
         "",
         "    .. raw:: html",
