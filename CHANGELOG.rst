@@ -3,14 +3,8 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.8.2 (TBC)
+v1.8.2 (2021-07-26)
 -------------------
-
-Features
-^^^^^^^^
-
-* `#292 <https://github.com/readthedocs/sphinx-autoapi/issues/292>`:
-  Explicitly use the domain for generated directives.
 
 Bug Fixes
 ^^^^^^^^^
@@ -22,6 +16,8 @@ Bug Fixes
   instead of relative to the conf.py file.
 * `#289 <https://github.com/readthedocs/sphinx-autoapi/issues/289>`: (Python)
   Fixed AttributeError using inheritance diagrams on a module with plain imports.
+* `#292 <https://github.com/readthedocs/sphinx-autoapi/issues/292>`:
+  Explicitly use the domain for generated directives.
 
 
 v1.8.1 (2021-04-24)
