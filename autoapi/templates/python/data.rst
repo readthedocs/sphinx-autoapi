@@ -28,5 +28,5 @@
     {% endif %}
 
 
-   {{ obj.docstring|prepare_docstring|indent(3) }}
+   {{ obj.docstring|indent(3) }}
 {% endif %}

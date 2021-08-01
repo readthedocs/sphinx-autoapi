@@ -21,7 +21,7 @@
    {% endif %}
    {% endif %}
    {% if obj.docstring %}
-   {{ obj.docstring|prepare_docstring|indent(3) }}
+   {{ obj.docstring|indent(3) }}
    {% endif %}
    {% if "inherited-members" in autoapi_options %}
    {% set visible_classes = obj.classes|selectattr("display")|list %}

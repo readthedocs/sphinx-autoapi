@@ -1,5 +1,6 @@
 import io
 import os
+import pathlib
 import re
 import shutil
 import sys
@@ -17,6 +18,7 @@ from autoapi.mappers.python import (
     PythonData,
     PythonMethod,
 )
+import autoapi.settings
 
 
 def rebuild(confoverrides=None, confdir=".", **kwargs):
@@ -821,7 +823,15 @@ class TestImplicitNamespacePackage:
         assert "namespace.example.second_sub_method" in example_file
 
 
-def test_custom_jinja_filters(builder):
+def test_custom_jinja_filters(builder, tmp_path):
+    py_templates = tmp_path / "python"
+    py_templates.mkdir()
+    orig_py_templates = pathlib.Path(autoapi.settings.TEMPLATE_DIR) / "python"
+    orig_template = (orig_py_templates / "class.rst").read_text()
+    (py_templates / "class.rst").write_text(
+        orig_template.replace("obj.docstring", "obj.docstring|prepare_docstring")
+    )
+
     confoverrides = {
         "autoapi_prepare_jinja_env": (
             lambda jinja_env: jinja_env.filters.update(
@@ -832,6 +842,7 @@ def test_custom_jinja_filters(builder):
                 }
             )
         ),
+        "autoapi_template_dir": str(tmp_path),
     }
     builder("pyexample", confoverrides=confoverrides)
 
