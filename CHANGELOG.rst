@@ -3,6 +3,16 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.8.3 (TBC)
+-------------------
+
+Bug Fixes
+^^^^^^^^^
+* `#299 <https://github.com/readthedocs/sphinx-autoapi/issues/299>`: (Python)
+  Fixed incorrect indentation in generated documentation when a class with no
+  constructor has a summary line spanning multiple lines.
+
+
 v1.8.2 (2021-07-26)
 -------------------
 

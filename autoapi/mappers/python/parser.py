@@ -4,7 +4,13 @@ import os
 
 import astroid
 import astroid.builder
+import sphinx.util.docstrings
+
 from . import astroid_utils
+
+
+def _prepare_docstring(doc):
+    return "\n".join(sphinx.util.docstrings.prepare_docstring(doc))
 
 
 class Parser:
@@ -72,7 +78,7 @@ class Parser:
             "type": type_,
             "name": target,
             "full_name": self._get_full_name(target),
-            "doc": doc,
+            "doc": _prepare_docstring(doc),
             "value": value,
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
@@ -93,7 +99,7 @@ class Parser:
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "bases": basenames,
-            "doc": astroid_utils.get_class_docstring(node),
+            "doc": _prepare_docstring(astroid_utils.get_class_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "children": [],
@@ -162,7 +168,7 @@ class Parser:
             "name": node.name,
             "full_name": self._get_full_name(node.name),
             "args": astroid_utils.get_args_info(node.args),
-            "doc": astroid_utils.get_func_docstring(node),
+            "doc": _prepare_docstring(astroid_utils.get_func_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "return_annotation": astroid_utils.get_return_annotation(node),
@@ -218,7 +224,7 @@ class Parser:
             "type": type_,
             "name": node.name,
             "full_name": node.name,
-            "doc": node.doc or "",
+            "doc": _prepare_docstring(node.doc or ""),
             "children": [],
             "file_path": path,
             "encoding": node.file_encoding,

@@ -389,7 +389,8 @@ class PythonSphinxMapper(SphinxMapperBase):
             # Some objects require children to establish their docstring
             # or type annotations (eg classes with inheritance),
             # so do this after all children have been created.
-            lines = sphinx.util.docstrings.prepare_docstring(obj.docstring)
+            lines = obj.docstring.splitlines()
+            lines.append("")  # Add back the trailing newline that .splitlines removes
             if lines and "autodoc-process-docstring" in self.app.events.events:
                 self.app.emit(
                     "autodoc-process-docstring", cls.type, obj.name, None, None, lines

@@ -49,7 +49,8 @@ class PythonPythonMapper(PythonMapperBase):
 
         # Optional
         self.children = []
-        self.docstring = obj["doc"]
+        self._docstring = obj["doc"]
+        self._docstring_resolved = False
         self.imported = "original_path" in obj
         self.inherited = obj.get("inherited", False)
         """Whether this was inherited from an ancestor of the parent class.
@@ -79,6 +80,7 @@ class PythonPythonMapper(PythonMapperBase):
     @docstring.setter
     def docstring(self, value):
         self._docstring = value
+        self._docstring_resolved = True
 
     @property
     def is_undoc_member(self):
@@ -386,9 +388,9 @@ class PythonClass(PythonPythonMapper):
 
     @property
     def docstring(self):
-        docstring = super(PythonClass, self).docstring
+        docstring = super().docstring
 
-        if self._class_content in ("both", "init"):
+        if not self._docstring_resolved and self._class_content in ("both", "init"):
             constructor_docstring = self.constructor_docstring
 
             if constructor_docstring:
@@ -401,7 +403,7 @@ class PythonClass(PythonPythonMapper):
 
     @docstring.setter
     def docstring(self, value):
-        self._docstring = value
+        super(PythonClass, self.__class__).docstring.fset(self, value)
 
     @property
     def methods(self):

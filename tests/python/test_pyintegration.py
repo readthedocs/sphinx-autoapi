@@ -94,6 +94,10 @@ class TestSimpleModule:
 
         assert not os.path.exists("_build/text/autoapi/method_multiline")
 
+        # Inherited constructor docstrings should be included in a merged
+        # (autoapi_python_class_content="both") class docstring only once.
+        assert example_file.count("One __init__.") == 3
+
         index_path = "_build/text/index.txt"
         with io.open(index_path, encoding="utf8") as index_handle:
             index_file = index_handle.read()
