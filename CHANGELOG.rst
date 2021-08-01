@@ -12,6 +12,10 @@ Bug Fixes
   Fixed incorrect indentation in generated documentation when a class with no
   constructor has a summary line spanning multiple lines.
 
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* Fixed broken link to Jinja objects.inv.
+
 
 v1.8.2 (2021-07-26)
 -------------------
