@@ -44,3 +44,23 @@ global_a = A()  # type: A
 def f3(first_arg, **kwargs):
     # type: (first_arg, Any) -> None
     """Annotation incorrectly leaves out `**`."""
+
+class B:
+    """Annotation keeps self/cls and shift all arg types"""
+    def __init__(self, a):
+        # type: (str) -> None
+        pass
+
+    def method(self, b):
+        # type: (list) -> None
+        pass
+
+    @classmethod
+    def class_method(cls, c):
+        # type: (int) -> None
+        pass
+
+    @staticmethod
+    def static_method(d):
+        # type: (float) -> Union[str,None]
+        pass

@@ -330,6 +330,11 @@ class TestAnnotationCommentsModule:
 
         assert "global_a :A" in example_file
 
+        assert "class example.B(a: str)" in example_file
+        assert "method(b: list)" in example_file
+        assert "classmethod class_method(c: int)" in example_file
+        assert "static static_method(d: float)" in example_file
+
 
 @pytest.mark.skipif(
     sys.version_info < (3, 8), reason="Positional only arguments need Python >=3.8"
