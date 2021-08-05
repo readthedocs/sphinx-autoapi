@@ -564,7 +564,10 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
             )
             annotation_offset += 1
         result.append(("**", args_node.kwarg, annotation, None))
-
+    
+    if args_node.parent.type in ("method", "classmethod") and len(result):
+        result.pop(0)
+    
     return result
 
 
