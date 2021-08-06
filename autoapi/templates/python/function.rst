@@ -12,7 +12,7 @@
    {% endif %}
 
    {% if obj.docstring %}
-   {{ obj.docstring|prepare_docstring|indent(3) }}
+   {{ obj.docstring|indent(3) }}
    {% else %}
    {% endif %}
 {% endif %}

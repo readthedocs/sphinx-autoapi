@@ -1,5 +1,6 @@
 import io
 import os
+import pathlib
 import re
 import shutil
 import sys
@@ -17,6 +18,7 @@ from autoapi.mappers.python import (
     PythonData,
     PythonMethod,
 )
+import autoapi.settings
 
 
 def rebuild(confoverrides=None, confdir=".", **kwargs):
@@ -93,6 +95,10 @@ class TestSimpleModule:
         assert example_file.count("This method should parse okay") == 2
 
         assert not os.path.exists("_build/text/autoapi/method_multiline")
+
+        # Inherited constructor docstrings should be included in a merged
+        # (autoapi_python_class_content="both") class docstring only once.
+        assert example_file.count("One __init__.") == 3
 
         index_path = "_build/text/index.txt"
         with io.open(index_path, encoding="utf8") as index_handle:
@@ -822,7 +828,15 @@ class TestImplicitNamespacePackage:
         assert "namespace.example.second_sub_method" in example_file
 
 
-def test_custom_jinja_filters(builder):
+def test_custom_jinja_filters(builder, tmp_path):
+    py_templates = tmp_path / "python"
+    py_templates.mkdir()
+    orig_py_templates = pathlib.Path(autoapi.settings.TEMPLATE_DIR) / "python"
+    orig_template = (orig_py_templates / "class.rst").read_text()
+    (py_templates / "class.rst").write_text(
+        orig_template.replace("obj.docstring", "obj.docstring|prepare_docstring")
+    )
+
     confoverrides = {
         "autoapi_prepare_jinja_env": (
             lambda jinja_env: jinja_env.filters.update(
@@ -833,6 +847,7 @@ def test_custom_jinja_filters(builder):
                 }
             )
         ),
+        "autoapi_template_dir": str(tmp_path),
     }
     builder("pyexample", confoverrides=confoverrides)
 

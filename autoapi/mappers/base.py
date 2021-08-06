@@ -8,7 +8,6 @@ import sphinx
 import sphinx.util
 from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
-from sphinx.util.docstrings import prepare_docstring
 import sphinx.util.logging
 import unidecode
 
@@ -190,7 +189,7 @@ class SphinxMapperBase:
         )
 
         def _wrapped_prepare(value):
-            return "\n".join(prepare_docstring(value))
+            return value
 
         self.jinja_env.filters["prepare_docstring"] = _wrapped_prepare
         if self.app.config.autoapi_prepare_jinja_env:

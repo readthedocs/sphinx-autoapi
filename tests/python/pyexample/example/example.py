@@ -111,3 +111,20 @@ class Bar(Foo):
 
 class ClassWithNoInit:
     pass
+
+
+class One:
+    """One."""
+
+    def __init__(self):
+        """One __init__."""
+        super().__init__()
+
+
+class MultilineOne(One):
+    """This is a naughty summary line
+    that exists on two lines."""
+
+
+class Two(One):
+    """Two."""

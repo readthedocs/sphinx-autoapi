@@ -18,3 +18,4 @@ extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
+autoapi_python_class_content = "both"
