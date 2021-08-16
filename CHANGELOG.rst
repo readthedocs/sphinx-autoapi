@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.8.4 (TBA)
+------------
+
+Bug Fixes
+^^^^^^^^^
+* `#301 <https://github.com/readthedocs/sphinx-autoapi/issues/301>`: (Python)
+  Fixed compatibility with astroid 2.7+.
+
+
 v1.8.3 (2021-07-31)
 -------------------
 
