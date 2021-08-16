@@ -3,8 +3,8 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.8.4 (TBA)
-------------
+v1.8.4 (2021-08-16)
+-------------------
 
 Bug Fixes
 ^^^^^^^^^
