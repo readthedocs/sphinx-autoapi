@@ -3,6 +3,20 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+V1.9.0 (TBC)
+------------
+
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Dropped support for Python 3.6.
+
+Features
+^^^^^^^^
+
+* Added support for Python 3.10.
+
+
 v1.8.4 (2021-08-16)
 -------------------
 
