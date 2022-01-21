@@ -480,7 +480,7 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
     
     func_comment_annotations = args_node.parent.type_comment_args or []
     if args_node.parent.type in ("method", "classmethod"):
-        func_comment_annotations.insert(0, None)
+        func_comment_annotations = [None] + func_comment_annotations
         
     comment_annotations = args_node.type_comment_posonlyargs
     comment_annotations += args_node.type_comment_args or []
