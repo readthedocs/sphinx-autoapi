@@ -126,6 +126,33 @@ class TestSimpleModule:
 
         assert "Bases:" in example_file
 
+    def test_long_signature(self):
+        example_path = "_build/text/autoapi/example/index.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            example_file = example_handle.read()
+
+        summary_row = """
++------------+--------------------------------------------------------------------------------------------+
+| "fn_with_  | A function with a long signature.                                                          |
+| long_sig"  |                                                                                            |
+| (this, *[, |                                                                                            |
+| function,  |                                                                                            |
+| has,       |                                                                                            |
+| quite])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+        """.strip()
+        assert summary_row in example_file
+
+        # Check length of truncated signature
+        parts = []
+        for line in summary_row.splitlines()[1:-1]:
+            part = line.split("|")[1].strip()
+            if part.endswith(","):
+                part += " "
+            parts.append(part)
+        sig_summary = "".join(parts)
+        assert len(sig_summary) <= 60
+
 
 class TestMovedConfPy(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
