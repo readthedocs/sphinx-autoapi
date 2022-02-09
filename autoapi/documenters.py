@@ -165,7 +165,7 @@ class AutoapiClassDocumenter(
 
         if self.options.show_inheritance:
             sourcename = self.get_sourcename()
-            self.add_line(u"", sourcename)
+            self.add_line("", sourcename)
 
             # TODO: Change sphinx to allow overriding of getting base names
             if self.object.bases:

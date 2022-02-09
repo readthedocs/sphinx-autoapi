@@ -121,9 +121,9 @@ class TestDotNetObject:
             {"id": "Foo.Foo-Bar.Widget<T>(TFoo)"}, jinja_env=None, app=None
         )
         assert cls.pathname == os.path.join("Foo", "FooBar", "Widget-T")
-        cls = dotnet.DotNetClass({"id": u"Foo.Bär"}, jinja_env=None, app=None)
+        cls = dotnet.DotNetClass({"id": "Foo.Bär"}, jinja_env=None, app=None)
         assert cls.pathname == os.path.join("Foo", "Bar")
-        cls = dotnet.DotNetClass({"id": u"Ащщ.юИфк"}, jinja_env=None, app=None)
+        cls = dotnet.DotNetClass({"id": "Ащщ.юИфк"}, jinja_env=None, app=None)
         assert cls.pathname == os.path.join("Ashchshch", "iuIfk")
 
     def test_rendered_class_escaping(self):

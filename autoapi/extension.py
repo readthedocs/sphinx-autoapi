@@ -219,8 +219,8 @@ def doctree_read(app, doctree):
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
             # Insert AutoAPI index
-            nodes[-1]["entries"].append((None, u"%s/index" % app.config.autoapi_root))
-            nodes[-1]["includefiles"].append(u"%s/index" % app.config.autoapi_root)
+            nodes[-1]["entries"].append((None, "%s/index" % app.config.autoapi_root))
+            nodes[-1]["includefiles"].append("%s/index" % app.config.autoapi_root)
             message_prefix = bold("[AutoAPI] ")
             message = darkgreen(
                 "Adding AutoAPI TOCTree [{0}] to index.rst".format(toc_entry)

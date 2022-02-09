@@ -18,6 +18,7 @@ class Foo(object):
 
     class_var_without_value = ...
     """A class var without a value."""
+
     class Meta(object):
         """A nested class just to test things out"""
 
