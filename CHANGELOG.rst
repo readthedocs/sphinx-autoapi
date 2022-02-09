@@ -16,6 +16,11 @@ Features
 
 * Added support for Python 3.10.
 
+Bug Fixes
+^^^^^^^^^
+* `#324 <https://github.com/readthedocs/sphinx-autoapi/issues/324>`: (Python)
+  Fail elegantly when no source files are found.
+
 
 v1.8.4 (2021-08-16)
 -------------------
