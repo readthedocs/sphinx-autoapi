@@ -5,6 +5,7 @@ import os
 import re
 
 import sphinx.environment
+from sphinx.errors import ExtensionError
 import sphinx.util
 from sphinx.util.console import bold
 import sphinx.util.docstrings
@@ -286,6 +287,9 @@ class PythonSphinxMapper(SphinxMapperBase):
         shortened, relative path the package/module
         """
         dir_root_files = list(self._find_files(patterns, dirs, ignore))
+        if not dir_root_files:
+            raise ExtensionError(f"No source files found in: {','.join(dirs)}")
+
         if not self._need_to_load(dir_root_files):
             LOGGER.debug(
                 "[AutoAPI] Skipping read stage because source files have not changed."

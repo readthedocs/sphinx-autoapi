@@ -9,6 +9,7 @@ from unittest.mock import patch, Mock, call
 import pytest
 import sphinx
 from sphinx.application import Sphinx
+from sphinx.errors import ExtensionError
 import sphinx.util.logging
 
 from autoapi.mappers.python import (
@@ -912,3 +913,11 @@ class TestAutodocTypehintsPackage:
             example2_file = example2_handle.read()
 
         assert "(*int*)" in example2_file
+
+
+def test_no_files_found(builder):
+    """Test that building does not fail when no sources files are found."""
+    with pytest.raises(ExtensionError) as exc_info:
+        builder("pyemptyexample")
+
+    assert os.path.dirname(__file__) in str(exc_info.value)
