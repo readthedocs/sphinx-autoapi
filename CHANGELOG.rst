@@ -3,6 +3,34 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+V1.9.0 (TBC)
+------------
+
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Dropped support for Python 3.6.
+
+Features
+^^^^^^^^
+
+* Added support for Python 3.10.
+
+Bug Fixes
+^^^^^^^^^
+* `#324 <https://github.com/readthedocs/sphinx-autoapi/issues/324>`: (Python)
+  Fail elegantly when no source files are found.
+
+
+v1.8.4 (2021-08-16)
+-------------------
+
+Bug Fixes
+^^^^^^^^^
+* `#301 <https://github.com/readthedocs/sphinx-autoapi/issues/301>`: (Python)
+  Fixed compatibility with astroid 2.7+.
+
+
 v1.8.3 (2021-07-31)
 -------------------
 

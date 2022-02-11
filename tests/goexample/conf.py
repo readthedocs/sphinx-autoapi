@@ -3,9 +3,9 @@
 templates_path = ["_templates"]
 source_suffix = ".rst"
 master_doc = "index"
-project = u"goexample"
-copyright = u"2015, readthedocs"
-author = u"readthedocs"
+project = "goexample"
+copyright = "2015, readthedocs"
+author = "readthedocs"
 version = "0.1"
 release = "0.1"
 language = None

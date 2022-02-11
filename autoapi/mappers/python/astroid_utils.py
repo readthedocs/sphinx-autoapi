@@ -5,6 +5,9 @@ import sys
 
 import astroid
 import astroid.nodes
+
+# Disable until pylint uses astroid 2.7
+import astroid.nodes.node_classes  # pylint: disable=no-name-in-module
 import sphinx.util.logging
 
 _LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -72,9 +75,14 @@ def resolve_qualname(node, basename):
     full_basename = basename
 
     top_level_name = re.sub(r"\(.*\)", "", basename).split(".", 1)[0]
-    lookup_node = (
-        node if isinstance(node, astroid.node_classes.LookupMixIn) else node.scope()
-    )
+    # Disable until pylint uses astroid 2.7
+    if isinstance(
+        node, astroid.nodes.node_classes.LookupMixIn  # pylint: disable=no-member
+    ):
+        lookup_node = node
+    else:
+        lookup_node = node.scope()
+
     assigns = lookup_node.lookup(top_level_name)[1]
 
     for assignment in assigns:
@@ -182,7 +190,7 @@ def get_assign_annotation(node):
     except AttributeError:
         annotation_node = node.type_annotation
 
-    return format_annotation(annotation_node, node)
+    return format_annotation(annotation_node)
 
 
 def is_decorated_with_property(node):
@@ -436,14 +444,8 @@ def _resolve_annotation(annotation):
     return resolved
 
 
-def format_annotation(annotation, parent):
+def format_annotation(annotation):
     if annotation:
-        # Workaround https://github.com/PyCQA/astroid/issues/851
-        if annotation.parent and not isinstance(
-            annotation.parent, astroid.node_classes.NodeNG
-        ):
-            annotation.parent = parent
-
         return _resolve_annotation(annotation)
 
     return annotation
@@ -462,7 +464,7 @@ def _iter_args(args, annotations, defaults):
         if isinstance(arg, astroid.Tuple):
             name = "({})".format(", ".join(x.name for x in arg.elts))
 
-        yield (name, format_annotation(annotation, arg.parent), default)
+        yield (name, format_annotation(annotation), default)
 
 
 def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
@@ -525,11 +527,9 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
     if args_node.vararg:
         annotation = None
         if args_node.varargannotation:
-            annotation = format_annotation(args_node.varargannotation, args_node.parent)
+            annotation = format_annotation(args_node.varargannotation)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            annotation = format_annotation(
-                annotations[annotation_offset], args_node.parent
-            )
+            annotation = format_annotation(annotations[annotation_offset])
             annotation_offset += 1
         result.append(("*", args_node.vararg, annotation, None))
 
@@ -557,11 +557,9 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
     if args_node.kwarg:
         annotation = None
         if args_node.kwargannotation:
-            annotation = format_annotation(args_node.kwargannotation, args_node.parent)
+            annotation = format_annotation(args_node.kwargannotation)
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
-            annotation = format_annotation(
-                annotations[annotation_offset], args_node.parent
-            )
+            annotation = format_annotation(annotations[annotation_offset])
             annotation_offset += 1
         result.append(("**", args_node.kwarg, annotation, None))
     
@@ -578,9 +576,9 @@ def get_return_annotation(node):
     return_annotation = None
 
     if node.returns:
-        return_annotation = format_annotation(node.returns, node)
+        return_annotation = format_annotation(node.returns)
     elif node.type_comment_returns:
-        return_annotation = format_annotation(node.type_comment_returns, node)
+        return_annotation = format_annotation(node.type_comment_returns)
 
     return return_annotation
 
