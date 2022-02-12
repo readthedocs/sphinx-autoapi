@@ -1,5 +1,5 @@
 class A:
-    def test(a: int) -> bool:
+    def test(self, a: int) -> bool:
         """Test.
         Args:
             a: Argument
