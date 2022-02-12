@@ -45,8 +45,10 @@ def f3(first_arg, **kwargs):
     # type: (first_arg, Any) -> None
     """Annotation incorrectly leaves out `**`."""
 
+
 class B:
     """Annotation keeps self/cls and shift all arg types"""
+
     def __init__(self, a):
         # type: (str) -> None
         pass

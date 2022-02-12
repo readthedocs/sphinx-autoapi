@@ -479,11 +479,11 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
         ]
 
     plain_annotations = args_node.annotations or ()
-    
+
     func_comment_annotations = args_node.parent.type_comment_args or []
     if args_node.parent.type in ("method", "classmethod"):
         func_comment_annotations = [None] + func_comment_annotations
-        
+
     comment_annotations = args_node.type_comment_posonlyargs
     comment_annotations += args_node.type_comment_args or []
     comment_annotations += args_node.type_comment_kwonlyargs
@@ -562,10 +562,10 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
             annotation = format_annotation(annotations[annotation_offset])
             annotation_offset += 1
         result.append(("**", args_node.kwarg, annotation, None))
-    
-    if args_node.parent.type in ("method", "classmethod") and len(result):
+
+    if args_node.parent.type in ("method", "classmethod") and result:
         result.pop(0)
-    
+
     return result
 
 
