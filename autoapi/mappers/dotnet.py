@@ -359,7 +359,7 @@ class DotNetPythonMapper(PythonMapperBase):
         Slugs to a filename using the follow steps
 
         * Decode unicode to approximate ascii
-        * Remove existing hypens
+        * Remove existing hyphens
         * Substitute hyphens for non-word characters
         * Break up the string as paths
         """

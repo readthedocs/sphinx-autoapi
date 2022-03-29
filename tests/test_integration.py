@@ -104,7 +104,7 @@ class TestIntegration(LanguageIntegrationTests):
         self._run_test(
             "templateexample",
             "_build/text/autoapi/example/index.txt",
-            "This is a fuction template override",
+            "This is a function template override",
         )
 
 

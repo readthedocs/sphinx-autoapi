@@ -164,7 +164,7 @@ Bug Fixes
 * `#244 <https://github.com/readthedocs/sphinx-autoapi/issues/244>`:
   Fixed an unnecessary deprecation warning being raised when running
   sphinx-build from the same directory as conf.py.
-* (Python) Fixed properties documented by Autodoc directives geting documented as methods.
+* (Python) Fixed properties documented by Autodoc directives getting documented as methods.
 
 
 V1.5.1 (2020-10-01)
@@ -496,7 +496,7 @@ Bug Fixes
 * `#148 <https://github.com/readthedocs/sphinx-autoapi/issues/148>`: (Python) Fixed astroid 2.0 compatibility.
 * (Python) Fixed filtered classes and attributes getting displayed.
 * (Python) Fixed incorrect display of long lists.
-* `#125 <https://github.com/readthedocs/sphinx-autoapi/issues/125>`: (Javacript) Fixed running incorrect jsdoc command on Windows.
+* `#125 <https://github.com/readthedocs/sphinx-autoapi/issues/125>`: (Javascript) Fixed running incorrect jsdoc command on Windows.
 * `#125 <https://github.com/readthedocs/sphinx-autoapi/issues/125>`: (Python) Support specifying package directories in ``autoapi_dirs``.
 
 Trivial/Internal Changes

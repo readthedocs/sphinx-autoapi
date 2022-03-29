@@ -131,7 +131,7 @@ but we need to have a place to define the page structure in the HTML.
 This can be done before or after the loading of the content into RST.
 We decided to do it before loading into RST because that matches standard Sphinx convention.
 Generally the markup being fed in as RST is considered to be in a file that maps to it's output loation.
-If we tried to maniuplate this structure after loading into the Domain,
+If we tried to manipulate this structure after loading into the Domain,
 that could lead to unexpected consequences like wrong indexes and missing references.
 
 File Structure vs. Hierarchy
