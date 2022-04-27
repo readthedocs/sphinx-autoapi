@@ -131,3 +131,29 @@ class TestPythonParser:
         """
         data = self.parse(source)[0]
         assert data["name"] == "COLOUR"
+
+    def test_allow_redef(self):
+        """Allow redefing variables."""
+        source = """
+        variable = "value"
+        if True:
+            variable = "value2"
+        """
+        # We need `Model` node here, not statement.
+        node = astroid.extract_node(source)
+        data = Parser().parse(node.parent)["children"]
+        assert len(data) == 1
+        assert data[0]["value"] == "value2"
+
+    def test_ignore_failing_statements(self):
+        """Ignore redef if statement failing."""
+        source = """
+        variable = "value"
+        if False:
+            variable = "value2"
+        """
+        # We need `Model` node here, not statement.
+        node = astroid.extract_node(source)
+        data = Parser().parse(node.parent)["children"]
+        assert len(data) == 1
+        assert data[0]["value"] == "value"

@@ -129,7 +129,9 @@ class Parser:
                 seen.add(name)
                 child_data = self.parse(child)
                 data["children"].extend(
-                    _parse_child(node, child_data, overloads, base, name)
+                    _parse_child(
+                        node, child_data, data["children"], overloads, base, name
+                    )
                 )
 
             overridden.update(seen)
@@ -239,9 +241,17 @@ class Parser:
             else:
                 child_data = self.parse(child)
 
-            data["children"].extend(_parse_child(node, child_data, overloads))
+            data["children"].extend(
+                _parse_child(node, child_data, data["children"], overloads)
+            )
 
         return data
+
+    def parse_if(self, node):
+        if not node.test.bool_value() or node.test.bool_value() is "Uninferable":
+            return []
+
+        return [self.parse(body_item)[0] for body_item in node.body]
 
     def parse(self, node):
         data = {}
@@ -258,9 +268,12 @@ class Parser:
         return data
 
 
-def _parse_child(node, child_data, overloads, base=None, name=None):
+def _parse_child(node, child_data, children, overloads, base=None, name=None):
     result = []
     for single_data in child_data:
+        for i, child in enumerate(children):
+            if single_data["full_name"] == child["full_name"] and not single_data["full_name"].endswith("*"):
+                children.pop(i)
         if single_data["type"] in ("function", "method", "property"):
             if name is None:
                 name = single_data["name"]
