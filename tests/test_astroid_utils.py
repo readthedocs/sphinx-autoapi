@@ -181,6 +181,13 @@ class TestAstroidUtils:
                     sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
                 ),
             ),
+            pytest.param(
+                "*, a: int, b: int",
+                "*, a: int, b: int",
+                marks=pytest.mark.skipif(
+                    sys.version_info[:2] < (3, 8), reason="Uses Python 3.8+ syntax"
+                ),
+            ),
             ("a: int, *args, b: str, **kwargs", "a: int, *args, b: str, **kwargs"),
             ("a: 'A'", "a: A"),
         ],
