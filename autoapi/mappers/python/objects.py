@@ -13,7 +13,7 @@ def _format_args(args_info, include_annotations=True, ignore_self=None):
     result = []
 
     for i, (prefix, name, annotation, default) in enumerate(args_info):
-        if i == 0 and name == ignore_self:
+        if i == 0 and ignore_self is not None and name == ignore_self:
             continue
         formatted = "{}{}{}{}".format(
             prefix or "",
