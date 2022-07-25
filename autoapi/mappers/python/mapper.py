@@ -394,11 +394,18 @@ class PythonSphinxMapper(SphinxMapperBase):
             # or type annotations (eg classes with inheritance),
             # so do this after all children have been created.
             lines = obj.docstring.splitlines()
-            lines.append("")  # Add back the trailing newline that .splitlines removes
-            if lines and "autodoc-process-docstring" in self.app.events.events:
-                self.app.emit(
-                    "autodoc-process-docstring", cls.type, obj.name, None, None, lines
-                )
+            if lines:
+                # Add back the trailing newline that .splitlines removes
+                lines.append("")
+                if "autodoc-process-docstring" in self.app.events.events:
+                    self.app.emit(
+                        "autodoc-process-docstring",
+                        cls.type,
+                        obj.name,
+                        None,
+                        None,
+                        lines,
+                    )
             obj.docstring = "\n".join(lines)
             self._record_typehints(obj)
 

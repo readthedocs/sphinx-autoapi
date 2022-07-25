@@ -20,6 +20,8 @@ Bug Fixes
 ^^^^^^^^^
 * `#324 <https://github.com/readthedocs/sphinx-autoapi/issues/324>`: (Python)
   Fail elegantly when no source files are found.
+* (Python) Stop calling ``autodoc-process-docstring`` when docstring is empty.
+  Works around https://github.com/sphinx-doc/sphinx/issues/10701.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
