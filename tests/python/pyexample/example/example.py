@@ -128,3 +128,19 @@ class MultilineOne(One):
 
 class Two(One):
     """Two."""
+
+
+def fn_with_long_sig(
+    this,
+    *,
+    function=None,
+    has=True,
+    quite=True,
+    a,
+    long,
+    signature,
+    many,
+    keyword,
+    arguments
+):
+    """A function with a long signature."""
