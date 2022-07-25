@@ -323,6 +323,6 @@ def setup(app):
     app.add_directive("autoapi-inheritance-diagram", AutoapiInheritanceDiagram)
 
     return {
-        "parallel_read_safe": False,
+        "parallel_read_safe": True,
         "parallel_write_safe": True,
     }
