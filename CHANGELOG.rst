@@ -22,6 +22,10 @@ Bug Fixes
   Fail elegantly when no source files are found.
 * (Python) Stop calling ``autodoc-process-docstring`` when docstring is empty.
   Works around https://github.com/sphinx-doc/sphinx/issues/10701.
+* `#318 <https://github.com/readthedocs/sphinx-autoapi/issues/318>`: (Python)
+  Fixed misaligned argument types on methods/classmethods when using type comments.
+* `#278 <https://github.com/readthedocs/sphinx-autoapi/issues/278>`: (Python)
+  Limit signatures to 60 characters in summaries.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
