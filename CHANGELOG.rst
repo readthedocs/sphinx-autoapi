@@ -29,6 +29,8 @@ Bug Fixes
 * `#278 <https://github.com/readthedocs/sphinx-autoapi/issues/278>`: (Python)
   Limit signatures to 60 characters in summaries.
 * Fix keyerror when using markdown sources.
+* `#328 <https://github.com/readthedocs/sphinx-autoapi/issues/328>`: (Python)
+  Fix kw-only marker getting ignored if first in the signature.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
