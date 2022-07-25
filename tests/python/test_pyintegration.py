@@ -81,9 +81,9 @@ class TestSimpleModule:
         assert "class Meta" in example_file
         assert "attr2" in example_file
         assert "This is the docstring of an instance attribute." in example_file
-        assert "method_okay(self, foo=None, bar=None)" in example_file
-        assert "method_multiline(self, foo=None, bar=None, baz=None)" in example_file
-        assert "method_tricky(self, foo=None, bar=dict(foo=1, bar=2))" in example_file
+        assert "method_okay(foo=None, bar=None)" in example_file
+        assert "method_multiline(foo=None, bar=None, baz=None)" in example_file
+        assert "method_tricky(foo=None, bar=dict(foo=1, bar=2))" in example_file
 
         # Are constructor arguments from the class docstring parsed?
         assert "Set an attribute" in example_file
@@ -179,9 +179,9 @@ class TestSimpleStubModule:
         assert "class Meta" in example_file
         assert "Another class var docstring" in example_file
         assert "A class var without a value." in example_file
-        assert "method_okay(self, foo=None, bar=None)" in example_file
-        assert "method_multiline(self, foo=None, bar=None, baz=None)" in example_file
-        assert "method_without_docstring(self)" in example_file
+        assert "method_okay(foo=None, bar=None)" in example_file
+        assert "method_multiline(foo=None, bar=None, baz=None)" in example_file
+        assert "method_without_docstring()" in example_file
 
         # Are constructor arguments from the class docstring parsed?
         assert "Set an attribute" in example_file
@@ -248,7 +248,7 @@ class TestPy3Module:
 
         assert "global_a :A" in example_file
 
-        assert "my_method(self) -> str" in example_file
+        assert "my_method() -> str" in example_file
 
         assert "class example.SomeMetaclass" in example_file
 
@@ -262,14 +262,14 @@ class TestPy3Module:
         assert "overloaded_func(a: Union" not in example_file
         assert "Overloaded function" in example_file
 
-        assert "overloaded_method(self, a: float" in example_file
-        assert "overloaded_method(self, a: str" in example_file
-        assert "overloaded_method(self, a: Union" not in example_file
+        assert "overloaded_method(a: float" in example_file
+        assert "overloaded_method(a: str" in example_file
+        assert "overloaded_method(a: Union" not in example_file
         assert "Overloaded method" in example_file
 
-        assert "overloaded_class_method(cls, a: float" in example_file
-        assert "overloaded_class_method(cls, a: str" in example_file
-        assert "overloaded_class_method(cls, a: Union" not in example_file
+        assert "overloaded_class_method(a: float" in example_file
+        assert "overloaded_class_method(a: str" in example_file
+        assert "overloaded_class_method(a: Union" not in example_file
         assert "Overloaded method" in example_file
 
         assert "undoc_overloaded_func" in example_file
@@ -336,6 +336,11 @@ class TestAnnotationCommentsModule:
         assert "instance_var" in example_file
 
         assert "global_a :A" in example_file
+
+        assert "class example.B(a: str)" in example_file
+        assert "method(b: list)" in example_file
+        assert "classmethod class_method(c: int)" in example_file
+        assert "static static_method(d: float)" in example_file
 
 
 @pytest.mark.skipif(
@@ -405,7 +410,7 @@ class TestSimplePackage:
             example_foo_file = example_foo_handle.read()
 
         assert "class example.foo.Foo" in example_foo_file
-        assert "method_okay(self, foo=None, bar=None)" in example_foo_file
+        assert "method_okay(foo=None, bar=None)" in example_foo_file
 
         index_path = "_build/text/index.txt"
         with io.open(index_path, encoding="utf8") as index_handle:
