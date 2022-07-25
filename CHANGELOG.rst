@@ -15,6 +15,8 @@ Features
 ^^^^^^^^
 
 * Added support for Python 3.10.
+* `#222 <https://github.com/readthedocs/sphinx-autoapi/issues/222>`:
+  Marked extension as parallel read safe.
 
 Bug Fixes
 ^^^^^^^^^
@@ -26,10 +28,12 @@ Bug Fixes
   Fixed misaligned argument types on methods/classmethods when using type comments.
 * `#278 <https://github.com/readthedocs/sphinx-autoapi/issues/278>`: (Python)
   Limit signatures to 60 characters in summaries.
+* Fix keyerror when using markdown sources.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 * Fixed tests in Sphinx 5.
+* Fixed many typos throughout the documentation.
 
 
 v1.8.4 (2021-08-16)
