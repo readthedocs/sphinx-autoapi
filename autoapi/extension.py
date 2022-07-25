@@ -159,7 +159,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         out_suffix = ".txt"
     else:
         # Fallback to first suffix listed
-        out_suffix = app.config.source_suffix[0]
+        out_suffix = next(iter(app.config.source_suffix))
 
     if sphinx_mapper_obj.load(
         patterns=file_patterns, dirs=normalised_dirs, ignore=ignore_patterns

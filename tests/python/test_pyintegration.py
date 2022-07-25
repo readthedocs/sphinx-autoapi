@@ -953,3 +953,13 @@ def test_no_files_found(builder):
         builder("pyemptyexample")
 
     assert os.path.dirname(__file__) in str(exc_info.value)
+
+
+class TestMdSource:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pyexample",
+            warningiserror=True,
+            confoverrides={"source_suffix": ["md"]},
+        )
