@@ -25,8 +25,7 @@ Release
 
 .. code-block:: bash
 
-    git clean -fdx
-    python setup.py sdist bdist_wheel
-    twine upload dist/*
+    git clean -idx
+    tox -e release
     git tag vX.X.X
     git push --tags
