@@ -155,7 +155,7 @@ Customisation Options
    Which docstring to insert into the content of a class.
 
    * ``class``: Use only the class docstring.
-   * ``both``: Use the concatentation of the class docstring and the
+   * ``both``: Use the concatenation of the class docstring and the
      ``__init__`` docstring.
    * ``init``: Use only the ``__init__`` docstring.
 

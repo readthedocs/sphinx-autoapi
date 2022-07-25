@@ -34,7 +34,7 @@ class PythonMapperBase:
 
     Required attributes:
 
-    :var str id: A globally unique indentifier for this object.
+    :var str id: A globally unique identifier for this object.
                  Generally a fully qualified name, including namespace.
     :var str name: A short "display friendly" name for this object.
 
@@ -121,7 +121,7 @@ class PythonMapperBase:
         Slugs to a filename using the follow steps
 
         * Decode unicode to approximate ascii
-        * Remove existing hypens
+        * Remove existing hyphens
         * Substitute hyphens for non-word characters
         * Break up the string as paths
         """
