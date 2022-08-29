@@ -21,4 +21,4 @@ autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
 autoapi_template_dir = "template_overrides"
 
-exclude_patterns = [autoapi_template_dir]
+exclude_patterns += [autoapi_template_dir]
