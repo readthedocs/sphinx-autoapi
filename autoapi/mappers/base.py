@@ -314,7 +314,7 @@ class SphinxMapperBase:
             self.objects.items(),
             bold("[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),
-            verbosity="INFO",
+            verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
             rst = obj.render()
