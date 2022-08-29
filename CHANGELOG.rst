@@ -100,7 +100,7 @@ Features
 * `#275 <https://github.com/readthedocs/sphinx-autoapi/issues/275>`:
   Warnings have been categorised and can be suppressed through ``suppress_warnings``.
 * `#280 <https://github.com/readthedocs/sphinx-autoapi/issues/280>`:
-  Data attributes are documentated in module summaries.
+  Data attributes are documented in module summaries.
 
 Bug Fixes
 ^^^^^^^^^
@@ -108,7 +108,7 @@ Bug Fixes
 * `#273 <https://github.com/readthedocs/sphinx-autoapi/issues/273>`:
   Fixed setting ``autodoc_typehints`` to ``none`` or ``description``
   not turning off signature type hints.
-  ``autodoc_typehints`` integration is consisidered experimental until
+  ``autodoc_typehints`` integration is considered experimental until
   the extension properly supports overload functions.
 * `#261 <https://github.com/readthedocs/sphinx-autoapi/issues/261>`:
   Fixed data annotations causing pickle or deepcopy errors.
@@ -235,7 +235,7 @@ Features
   for accessing version information.
 * `#201 <https://github.com/readthedocs/sphinx-autoapi/issues/201>`: (Python)
   Added the ``autoapi_member_order`` option to allow the order that members
-  are documentated to be configurable.
+  are documented to be configurable.
 * `#203 <https://github.com/readthedocs/sphinx-autoapi/issues/203>`: (Python)
   A class without a docstring inherits one from its parent.
   A methods without a docstring inherits one from the method that it overrides.
