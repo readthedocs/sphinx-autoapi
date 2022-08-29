@@ -429,7 +429,7 @@ class DotNetPythonMapper(PythonMapperBase):
         As the `<T>` notation is also special syntax in references, indicating
         the reference to Foo.Bar should be named T.
 
-        See: http://sphinx-doc.org/domains.html#role-cpp:any
+        See: https://www.sphinx-doc.org/en/master/#role-cpp:any
         """
         return self.name.replace("<", r"\<").replace("`", r"\`")
 
