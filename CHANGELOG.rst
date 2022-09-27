@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v1.9.1 (TBC)
+------------
+
+Trivial/Internal Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* Use https links where possible in documentation.
+* Pass correct argument types to ``status_iterator``.
+
+
 V1.9.0 (2022-07-25)
 -------------------
 
