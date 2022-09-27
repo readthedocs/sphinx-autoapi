@@ -5,6 +5,7 @@ from .objects import (
     PythonModule,
     PythonMethod,
     PythonPackage,
+    PythonProperty,
     PythonAttribute,
     PythonData,
     PythonException,

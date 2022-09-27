@@ -34,6 +34,11 @@ class Foo(object):
         :type: str
         """
 
+    @property
+    def property_simple(self) -> int:
+        """This property should parse okay."""
+        return 42
+
     def method_okay(self, foo=None, bar=None):
         """This method should parse okay"""
         return True

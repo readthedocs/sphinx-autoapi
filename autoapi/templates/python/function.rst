@@ -5,14 +5,11 @@
               {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
 
 {% endfor %}
-   {% if sphinx_version >= (2, 1) %}
    {% for property in obj.properties %}
    :{{ property }}:
    {% endfor %}
-   {% endif %}
 
    {% if obj.docstring %}
    {{ obj.docstring|indent(3) }}
-   {% else %}
    {% endif %}
 {% endif %}

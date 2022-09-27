@@ -19,6 +19,7 @@ from .objects import (
     PythonModule,
     PythonMethod,
     PythonPackage,
+    PythonProperty,
     PythonAttribute,
     PythonData,
     PythonException,
@@ -237,12 +238,12 @@ class PythonSphinxMapper(SphinxMapperBase):
             PythonModule,
             PythonMethod,
             PythonPackage,
+            PythonProperty,
             PythonAttribute,
             PythonData,
             PythonException,
         )
     }
-    _OBJ_MAP["property"] = PythonMethod
 
     def __init__(self, app, template_dir=None, url_root=None):
         super(PythonSphinxMapper, self).__init__(app, template_dir, url_root)
@@ -421,7 +422,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         if (
             isinstance(obj, (PythonClass, PythonFunction, PythonMethod))
             and not obj.overloads
-        ):
+        ) or isinstance(obj, PythonProperty):
             obj_annotations = {}
 
             include_return_annotation = True

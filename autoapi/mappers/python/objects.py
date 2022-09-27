@@ -169,7 +169,7 @@ class PythonFunction(PythonPythonMapper):
 
     type = "function"
     is_callable = True
-    member_order = 40
+    member_order = 30
 
     def __init__(self, obj, **kwargs):
         super(PythonFunction, self).__init__(obj, **kwargs)
@@ -219,13 +219,6 @@ class PythonMethod(PythonFunction):
     def __init__(self, obj, **kwargs):
         super(PythonMethod, self).__init__(obj, **kwargs)
 
-        self.method_type = obj.get("method_type")
-        """The type of method that this object represents.
-
-        This can be one of: method, staticmethod, or classmethod.
-
-        :type: str
-        """
         self.properties = obj["properties"]
         """The properties that describe what type of method this is.
 
@@ -242,11 +235,34 @@ class PythonMethod(PythonFunction):
         return self._ask_ignore(skip)
 
 
+class PythonProperty(PythonPythonMapper):
+    """The representation of a property on a class."""
+
+    type = "property"
+    member_order = 60
+
+    def __init__(self, obj, **kwargs):
+        super(PythonProperty, self).__init__(obj, **kwargs)
+
+        self.annotation = obj["return_annotation"]
+        """The type annotation of this property.
+
+        :type: str or None
+        """
+        self.properties = obj["properties"]
+        """The properties that describe what type of property this is.
+
+        Can be any of: abstractmethod, classmethod
+
+        :type: list(str)
+        """
+
+
 class PythonData(PythonPythonMapper):
     """Global, module level data."""
 
     type = "data"
-    member_order = 10
+    member_order = 40
 
     def __init__(self, obj, **kwargs):
         super(PythonData, self).__init__(obj, **kwargs)
@@ -272,7 +288,7 @@ class PythonAttribute(PythonData):
     """An object/class level attribute."""
 
     type = "attribute"
-    member_order = 10
+    member_order = 60
 
 
 class TopLevelPythonPythonMapper(PythonPythonMapper):
@@ -335,7 +351,7 @@ class PythonClass(PythonPythonMapper):
     """The representation of a class."""
 
     type = "class"
-    member_order = 30
+    member_order = 20
 
     def __init__(self, obj, **kwargs):
         super(PythonClass, self).__init__(obj, **kwargs)
@@ -410,6 +426,10 @@ class PythonClass(PythonPythonMapper):
         return self._children_of_type("method")
 
     @property
+    def properties(self):
+        return self._children_of_type("property")
+
+    @property
     def attributes(self):
         return self._children_of_type("attribute")
 
@@ -446,4 +466,4 @@ class PythonException(PythonClass):
     """The representation of an exception class."""
 
     type = "exception"
-    member_order = 20
+    member_order = 10

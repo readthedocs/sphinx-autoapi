@@ -91,6 +91,9 @@ class TestSimpleModule:
         # "self" should not be included in constructor arguments
         assert "Foo(self" not in example_file
 
+        assert "property_simple" in example_file
+        assert "This property should parse okay." in example_file
+
         # Overridden methods without their own docstring
         # should inherit the parent's docstring
         assert example_file.count("This method should parse okay") == 2

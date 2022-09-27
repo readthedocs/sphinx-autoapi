@@ -32,6 +32,14 @@
    {{ klass.render()|indent(3) }}
    {% endfor %}
    {% if "inherited-members" in autoapi_options %}
+   {% set visible_properties = obj.properties|selectattr("display")|list %}
+   {% else %}
+   {% set visible_properties = obj.properties|rejectattr("inherited")|selectattr("display")|list %}
+   {% endif %}
+   {% for property in visible_properties %}
+   {{ property.render()|indent(3) }}
+   {% endfor %}
+   {% if "inherited-members" in autoapi_options %}
    {% set visible_attributes = obj.attributes|selectattr("display")|list %}
    {% else %}
    {% set visible_attributes = obj.attributes|rejectattr("inherited")|selectattr("display")|list %}

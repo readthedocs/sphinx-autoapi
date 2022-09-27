@@ -150,18 +150,23 @@ class Parser:
 
         if node.type == "function":
             type_ = "function"
+
+            if isinstance(node, astroid.AsyncFunctionDef):
+                properties.append("async")
         elif astroid_utils.is_decorated_with_property(node):
             type_ = "property"
-            properties.append("property")
+            if node.type == "classmethod":
+                properties.append(node.type)
+            if node.is_abstract(pass_is_abstract=False):
+                properties.append("abstractmethod")
         else:
             # "__new__" method is implicit classmethod
             if node.type in ("staticmethod", "classmethod") and node.name != "__new__":
                 properties.append(node.type)
             if node.is_abstract(pass_is_abstract=False):
                 properties.append("abstractmethod")
-
-        if isinstance(node, astroid.AsyncFunctionDef):
-            properties.append("async")
+            if isinstance(node, astroid.AsyncFunctionDef):
+                properties.append("async")
 
         data = {
             "type": type_,
@@ -176,9 +181,6 @@ class Parser:
             "is_overload": astroid_utils.is_decorated_with_overload(node),
             "overloads": [],
         }
-
-        if type_ in ("method", "property"):
-            data["method_type"] = node.type
 
         result = [data]
 

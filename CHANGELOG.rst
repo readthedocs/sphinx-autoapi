@@ -3,8 +3,20 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v1.9.1 (TBC)
+v2.0.0 (TBC)
 ------------
+
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Dropped support for Sphinx <4.
+* `#352 <https://github.com/readthedocs/sphinx-autoapi/issues/352>`: (Python)
+  Properties are rendered with the ``property`` directive,
+  fixing support for Sphinx 5.2.
+  A new ``PythonPythonMapper`` object (``PythonProperty``) has been created
+  to support this change. This object can be passed to templates, filters,
+  and hooks.
+  A new ``property.rst`` template has also been created to support this change.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^

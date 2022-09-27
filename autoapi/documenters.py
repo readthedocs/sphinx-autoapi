@@ -6,6 +6,7 @@ from .mappers.python import (
     PythonFunction,
     PythonClass,
     PythonMethod,
+    PythonProperty,
     PythonData,
     PythonAttribute,
     PythonException,
@@ -192,8 +193,11 @@ class AutoapiMethodDocumenter(
 
         if result:
             self.parent = self._method_parent
-            if self.object.method_type != "method":
-                # document class and static members before ordinary ones
+            if "staticmethod" in self.object.properties:
+                # document static members before ordinary ones
+                self.member_order = self.member_order - 2
+            elif "classmethod" in self.object.properties:
+                # document class members before ordinary ones but after static ones
                 self.member_order = self.member_order - 1
 
         return result
@@ -212,22 +216,28 @@ class AutoapiMethodDocumenter(
                 self.add_line("   :{}:".format(property_type), sourcename)
 
 
-class AutoapiPropertyDocumenter(
-    AutoapiMethodDocumenter, AutoapiDocumenter, autodoc.PropertyDocumenter
-):
+class AutoapiPropertyDocumenter(AutoapiDocumenter, autodoc.PropertyDocumenter):
     objtype = "apiproperty"
-    directivetype = "method"
-    # Always prefer AutoapiDocumenters
-    priority = autodoc.MethodDocumenter.priority * 100 + 100 + 1
+    directivetype = "property"
+    priority = autodoc.PropertyDocumenter.priority * 100 + 100
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
-        return isinstance(member, PythonMethod) and "property" in member.properties
+        return isinstance(member, PythonProperty)
 
     def add_directive_header(self, sig):
-        super(AutoapiPropertyDocumenter, self).add_directive_header(sig)
+        autodoc.ClassLevelDocumenter.add_directive_header(self, sig)
+
         sourcename = self.get_sourcename()
-        self.add_line("   :property:", sourcename)
+        if self.options.annotation and self.options.annotation is not autodoc.SUPPRESS:
+            self.add_line("   :type: %s" % self.options.annotation, sourcename)
+
+        for property_type in (
+            "abstractmethod",
+            "classmethod",
+        ):
+            if property_type in self.object.properties:
+                self.add_line("   :{}:".format(property_type), sourcename)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):

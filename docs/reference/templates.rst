@@ -73,6 +73,10 @@ Python
 	:members:
 	:show-inheritance:
 
+.. autoapiclass:: autoapi.mappers.python.objects.PythonProperty
+	:members:
+	:show-inheritance:
+
 .. autoapiclass:: autoapi.mappers.python.objects.PythonData
 	:members:
 	:show-inheritance:
