@@ -310,6 +310,6 @@ def setup(app):
                         objname='configuration value',
                         indextemplate='pair: %s; configuration value')
     fdesc = TypedField('parameter', label='Parameters',
-                         names=['param'], typenames=['type'], can_collapse=True)
+                         names=('param',), typenames=('type',), can_collapse=True)
     app.add_object_type('event', 'event', 'pair: %s; event', parse_event,
                         doc_field_types=[fdesc])

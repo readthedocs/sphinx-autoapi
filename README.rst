@@ -36,7 +36,7 @@ Language    Status  Parser
 ==========  ======  ==========================================================
 Python      Stable  Custom using `astroid <https://github.com/PyCQA/astroid>`_
 Go          Alpha   `godocjson <https://github.com/readthedocs/godocjson>`_
-Javascript  Alpha   `jsdoc <http://usejsdoc.org/>`_
+Javascript  Alpha   `jsdoc <https://jsdoc.app/>`_
 .NET        Alpha   `docfx <https://dotnet.github.io/docfx/>`_
 ==========  ======  ==========================================================
 
@@ -126,7 +126,7 @@ You can even get black to format changes automatically when you commit using `pr
 Versioning
 ----------
 
-We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/readthedocs/sphinx-autoapi/tags>`_.
+We use `SemVer <https://semver.org/>`_ for versioning. For the versions available, see the `tags on this repository <https://github.com/readthedocs/sphinx-autoapi/tags>`_.
 
 License
 -------

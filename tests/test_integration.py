@@ -121,7 +121,7 @@ class TestTOCTree(LanguageIntegrationTests):
 
 class TestExtensionErrors:
     @pytest.fixture(autouse=True)
-    def unload_go_and_dotned_libraries(self):
+    def unload_go_and_dotnet_libraries(self):
         # unload dotnet and golang domain libraries, because they may be imported before
         for mod_name in ("sphinxcontrib.dotnetdomain", "sphinxcontrib.golangdomain"):
             try:

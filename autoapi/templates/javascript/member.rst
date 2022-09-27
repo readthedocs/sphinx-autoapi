@@ -1,4 +1,4 @@
-{# Identention in this file is important #}
+{# Indentation in this file is important #}
 
 .. js:{{ obj.type }}:: {{ obj.name }}
 
