@@ -3,8 +3,8 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v2.0.0 (TBC)
-------------
+v2.0.0 (2022-09-27)
+-------------------
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
