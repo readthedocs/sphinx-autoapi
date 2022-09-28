@@ -69,18 +69,17 @@ Functions
 
 
    .. py:attribute:: class_var
-      :annotation: = 42
+      :value: 42
 
       
 
    .. py:attribute:: another_class_var
-      :annotation: = 42
+      :value: 42
 
       Another class var docstring
 
 
    .. py:attribute:: attr2
-      
 
       This is the docstring of an instance attribute.
 

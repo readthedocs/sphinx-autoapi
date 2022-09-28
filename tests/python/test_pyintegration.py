@@ -4,22 +4,21 @@ import pathlib
 import re
 import shutil
 import sys
-from unittest.mock import patch, Mock, call
+from unittest.mock import Mock, call, patch
 
+import autoapi.settings
 import pytest
 import sphinx
-from sphinx.application import Sphinx
-from sphinx.errors import ExtensionError
 import sphinx.util.logging
-
 from autoapi.mappers.python import (
-    PythonModule,
-    PythonFunction,
     PythonClass,
     PythonData,
+    PythonFunction,
     PythonMethod,
+    PythonModule,
 )
-import autoapi.settings
+from sphinx.application import Sphinx
+from sphinx.errors import ExtensionError
 
 
 def rebuild(confoverrides=None, confdir=".", **kwargs):
@@ -30,7 +29,7 @@ def rebuild(confoverrides=None, confdir=".", **kwargs):
         doctreedir="_build/.doctrees",
         buildername="text",
         confoverrides=confoverrides,
-        **kwargs
+        **kwargs,
     )
     app.build()
 
@@ -254,7 +253,7 @@ class TestPy3Module:
         assert "software = sphinx" in example_file
         assert "code_snippet = Multiline-String" in example_file
 
-        assert "max_rating :int = 10" in example_file
+        assert "max_rating: int = 10" in example_file
         assert "is_valid" in example_file
 
         assert "ratings" in example_file
@@ -276,7 +275,7 @@ class TestPy3Module:
 
         assert "instance_var" in example_file
 
-        assert "global_a :A" in example_file
+        assert "global_a: A" in example_file
 
         assert "my_method() -> str" in example_file
 
@@ -345,7 +344,7 @@ class TestAnnotationCommentsModule:
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
-        assert "max_rating :int = 10" in example_file
+        assert "max_rating: int = 10" in example_file
 
         assert "ratings" in example_file
         assert "List[int]" in example_file
@@ -365,7 +364,7 @@ class TestAnnotationCommentsModule:
 
         assert "instance_var" in example_file
 
-        assert "global_a :A" in example_file
+        assert "global_a: A" in example_file
 
         assert "class example.B(a: str)" in example_file
         assert "method(b: list)" in example_file
@@ -903,7 +902,7 @@ def test_string_module_attributes(builder):
 
     code_snippet_contents = [
         ".. py:data:: code_snippet",
-        "   :annotation: = Multiline-String",
+        "   :value: Multiline-String",
         "",
         "    .. raw:: html",
         "",
