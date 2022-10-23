@@ -6,6 +6,10 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 v2.0.1 (TBC)
 ------------
 
+Features
+^^^^^^^^
+* Can turn off the addition of documented objects to the TOC tree.
+
 Bug Fixes
 ^^^^^^^^^
 * `#330 <https://github.com/readthedocs/sphinx-autoapi/issues/330>`: (Python)
