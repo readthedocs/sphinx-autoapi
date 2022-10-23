@@ -3,6 +3,15 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
+v2.0.1 (TBC)
+------------
+
+Bug Fixes
+^^^^^^^^^
+* `#330 <https://github.com/readthedocs/sphinx-autoapi/issues/330>`: (Python)
+  Render tuple values as tuples, not lists.
+
+
 v2.0.0 (2022-09-27)
 -------------------
 

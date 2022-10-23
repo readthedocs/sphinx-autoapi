@@ -4,6 +4,11 @@
 This is a description
 """
 
+A_TUPLE = ("a", "b")
+"""A tuple to be rendered as a tuple."""
+A_LIST = ["c", "d"]
+"""A list to be rendered as a list."""
+
 
 class Foo(object):
     """Can we parse arguments from the class docstring?
