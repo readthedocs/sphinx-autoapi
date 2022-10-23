@@ -109,6 +109,10 @@ class TestSimpleModule:
         # Lists should be rendered as lists, not tuples
         assert "['c', 'd']" in example_file
 
+        # Assigning a class level attribute at the module level
+        # should not get documented as a module level attribute.
+        assert "dinglebop" not in example_file
+
         index_path = "_build/text/index.txt"
         with io.open(index_path, encoding="utf8") as index_handle:
             index_file = index_handle.read()

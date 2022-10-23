@@ -49,9 +49,20 @@ class Parser:
         )
 
     def parse_annassign(self, node):
-        return self.parse_assign(node)
+        # Don't document module level assignments to class attributes
+        if isinstance(node.target, astroid.nodes.AssignAttr):
+            return []
+
+        return self._parse_assign(node)
 
     def parse_assign(self, node):
+        # Don't document module level assignments to class attributes
+        if any(isinstance(target, astroid.nodes.AssignAttr) for target in node.targets):
+            return []
+
+        return self._parse_assign(node)
+
+    def _parse_assign(self, node):
         doc = ""
         doc_node = node.next_sibling()
         if isinstance(doc_node, astroid.nodes.Expr) and isinstance(
@@ -187,7 +198,7 @@ class Parser:
         if node.name == "__init__":
             for child in node.get_children():
                 if isinstance(child, (astroid.nodes.Assign, astroid.nodes.AnnAssign)):
-                    child_data = self.parse_assign(child)
+                    child_data = self._parse_assign(child)
                     result.extend(data for data in child_data if data["doc"])
 
         return result

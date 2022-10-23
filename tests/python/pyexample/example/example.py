@@ -105,6 +105,9 @@ class Foo(object):
         return "google"
 
 
+Foo.bar = "dinglebop"
+
+
 def decorator_okay(func):
     """This decorator should parse okay."""
 

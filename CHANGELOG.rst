@@ -14,6 +14,9 @@ Bug Fixes
 ^^^^^^^^^
 * `#330 <https://github.com/readthedocs/sphinx-autoapi/issues/330>`: (Python)
   Render tuple values as tuples, not lists.
+* `#341 <https://github.com/readthedocs/sphinx-autoapi/issues/341>`: (Python)
+  Fix module level assignments to class attributes being documented as
+  module level attributes.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
