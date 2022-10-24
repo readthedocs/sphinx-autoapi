@@ -139,6 +139,9 @@ def _get_const_values(node):
                 break
         else:
             value = new_value
+
+        if isinstance(node, astroid.nodes.Tuple):
+            value = tuple(new_value)
     elif isinstance(node, astroid.nodes.Const):
         value = node.value
 

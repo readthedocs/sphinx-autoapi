@@ -16,3 +16,5 @@ _api_
 .pytest_cache/
 build/
 dist/
+tests/python/pyexample/autoapi/example/index.rst
+tests/python/pymovedconfpy/autoapi/example/index.rst
