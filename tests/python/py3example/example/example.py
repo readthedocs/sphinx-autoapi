@@ -12,9 +12,11 @@ from example2 import B
 T = TypeVar("T")
 U = TypeVar("U")
 
-software = "sphinx"
+software = "sphin'x"
+more_software = 'sphinx"autoapi'
 
-code_snippet = """
+code_snippet = """The following is some code:
+
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
 # from future.builtins.disabled import *

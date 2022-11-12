@@ -17,16 +17,18 @@
 
     .. code-block:: python
 
-        """
-        {{ obj.value|indent(width=8) }}
-        """
+        """{{ obj.value|indent(width=8,blank=true) }}"""
 
     .. raw:: html
 
         </details>
 
             {%- else -%}
+              {%- if obj.value is string -%}
+                {{ "%r" % obj.value|string|truncate(100) }}
+              {%- else -%}
                 {{ obj.value|string|truncate(100) }}
+              {%- endif -%}
             {%- endif %}
    {%- endif %}
 

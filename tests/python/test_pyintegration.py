@@ -259,7 +259,8 @@ class TestPy3Module:
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()
 
-        assert "software = sphinx" in example_file
+        assert '''software = "sphin'x"''' in example_file
+        assert """more_software = 'sphinx"autoapi'""" in example_file
         assert "code_snippet = Multiline-String" in example_file
 
         assert "max_rating: int = 10" in example_file
@@ -919,15 +920,14 @@ def test_string_module_attributes(builder):
         "",
         "    .. code-block:: python",
         "",
-        '        """',
+        '        """The following is some code:',
         "        ",  # <--- Line array monstrosity to preserve these leading spaces
         "        # -*- coding: utf-8 -*-",
         "        from __future__ import absolute_import, division, print_function, unicode_literals",
         "        # from future.builtins.disabled import *",
         "        # from builtins import *",
-        "",
+        "        ",
         """        print("chunky o'block")""",
-        "",
         '        """',
         "",
         "    .. raw:: html",
