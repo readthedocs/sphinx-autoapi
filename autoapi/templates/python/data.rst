@@ -15,10 +15,11 @@
 
         <details><summary>Show Value</summary>
 
-    .. code-block:: text
-        :linenos:
+    .. code-block:: python
 
+        """
         {{ obj.value|indent(width=8) }}
+        """
 
     .. raw:: html
 
