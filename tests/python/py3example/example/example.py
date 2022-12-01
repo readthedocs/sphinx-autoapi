@@ -14,6 +14,7 @@ U = TypeVar("U")
 
 software = "sphin'x"
 more_software = 'sphinx"autoapi'
+interesting_string = "interesting\"fun\'\'string"
 
 code_snippet = """The following is some code:
 
