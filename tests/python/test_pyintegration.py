@@ -975,3 +975,29 @@ class TestMdSource:
             warningiserror=True,
             confoverrides={"source_suffix": ["md"]},
         )
+
+
+class TestMemberOrder:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pyexample",
+            warningiserror=True,
+            confoverrides={
+                "suppress_warnings": ["app"],
+                "autodoc_member_order": "bysource",
+            },
+        )
+
+    def test_line_number_order(self):
+        example_path = "_build/text/manualapi.txt"
+        with io.open(example_path, encoding="utf8") as example_handle:
+            lines = example_handle.readlines()
+
+        method_tricky_pos = lines.index(
+            "   method_tricky(foo=None, bar=dict(foo=1, bar=2))\n"
+        )
+        method_sphinx_docs_pos = lines.index("   method_sphinx_docs(foo, bar=0)\n")
+
+        # method_tricky is defined in the source before method_sphinx_docs
+        assert method_tricky_pos < method_sphinx_docs_pos
