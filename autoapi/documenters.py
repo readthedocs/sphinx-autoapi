@@ -79,7 +79,7 @@ class AutoapiDocumenter(autodoc.Documenter):
         elif not self.options.inherited_members:
             children = (child for child in children if not child[1].inherited)
 
-        return False, sorted(children)
+        return False, children
 
 
 class _AutoapiDocstringSignatureMixin:  # pylint: disable=too-few-public-methods
