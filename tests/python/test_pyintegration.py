@@ -276,7 +276,7 @@ class TestPy3Module:
         assert "start: int" in example_file
         assert "Iterable[int]" in example_file
 
-        if sys.version_info >= (3, 9):
+        if sys.version_info >= (3, 8):
             assert "List[str | int]" in example_file
         else:
             assert "List[Union[str, int]]" in example_file
@@ -371,7 +371,7 @@ class TestAnnotationCommentsModule:
         # assert "end: int" in example_file
         assert "Iterable[int]" in example_file
 
-        if sys.version_info >= (3, 9):
+        if sys.version_info >= (3, 8):
             assert "List[str | int]" in example_file
         else:
             assert "List[Union[str, int]]" in example_file
@@ -405,7 +405,7 @@ class TestPositionalOnlyArgumentsModule:
 
         assert "f_simple(a, b, /, c, d, *, e, f)" in example_file
 
-        if sys.version_info >= (3, 9):
+        if sys.version_info >= (3, 8):
             assert (
                 "f_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
                 in example_file
