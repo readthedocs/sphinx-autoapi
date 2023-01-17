@@ -51,9 +51,7 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
                 continue
 
             if name not in originals_map:
-                msg = "Invalid __all__ entry {0} in {1}".format(
-                    name, original_module["name"]
-                )
+                msg = f"Invalid __all__ entry {name} in {original_module['name']}"
                 LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
                 continue
 
@@ -115,9 +113,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
             continue
 
         if imported_from not in modules:
-            msg = "Cannot resolve import of unknown module {0} in {1}".format(
-                imported_from, module_name
-            )
+            msg = f"Cannot resolve import of unknown module {imported_from} in {module_name}"
             LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
@@ -143,9 +139,7 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
                 original = originals_map[new_placeholder["name"]]
                 _resolve_placeholder(new_placeholder, original)
         elif original_name not in modules[imported_from][1]:
-            msg = "Cannot resolve import of {0} in {1}".format(
-                child["original_path"], module_name
-            )
+            msg = f"Cannot resolve import of {child['original_path']} in {module_name}"
             LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
@@ -246,7 +240,7 @@ class PythonSphinxMapper(SphinxMapperBase):
     }
 
     def __init__(self, app, template_dir=None, url_root=None):
-        super(PythonSphinxMapper, self).__init__(app, template_dir, url_root)
+        super().__init__(app, template_dir, url_root)
 
         self.jinja_env.filters["link_objs"] = _link_objs
         self._use_implicit_namespace = (
@@ -325,7 +319,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         except (IOError, TypeError, ImportError):
             LOGGER.debug("Reason:", exc_info=True)
             LOGGER.warning(
-                "Unable to read file: {0}".format(path),
+                f"Unable to read file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
@@ -347,14 +341,14 @@ class PythonSphinxMapper(SphinxMapperBase):
         self._resolve_placeholders()
         self.app.env.autoapi_annotations = {}
 
-        super(PythonSphinxMapper, self).map(options)
+        super().map(options)
 
         parents = {obj.name: obj for obj in self.objects.values()}
         for obj in self.objects.values():
             parent_name = obj.name.rsplit(".", 1)[0]
             if parent_name in parents and parent_name != obj.name:
                 parent = parents[parent_name]
-                attr = "sub{}s".format(obj.type)
+                attr = f"sub{obj.type}s"
                 getattr(parent, attr).append(obj)
 
         for obj in self.objects.values():
@@ -373,7 +367,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             cls = self._OBJ_MAP[data["type"]]
         except KeyError:
             # this warning intentionally has no (sub-)type
-            LOGGER.warning("Unknown type: %s" % data["type"])
+            LOGGER.warning(f"Unknown type: {data['type']}")
         else:
             obj = cls(
                 data,

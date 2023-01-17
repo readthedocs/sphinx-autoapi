@@ -74,14 +74,10 @@ class PythonMapperBase:
 
         ctx = {}
         try:
-            template = self.jinja_env.get_template(
-                "{language}/{type}.rst".format(language=self.language, type=self.type)
-            )
+            template = self.jinja_env.get_template(f"{self.language}/{self.type}.rst")
         except TemplateNotFound:
             # Use a try/except here so we fallback to language specific defaults, over base defaults
-            template = self.jinja_env.get_template(
-                "base/{type}.rst".format(type=self.type)
-            )
+            template = self.jinja_env.get_template(f"base/{self.type}.rst")
 
         ctx.update(**self.get_context_data())
         ctx.update(**kwargs)
@@ -104,10 +100,10 @@ class PythonMapperBase:
         """Object sorting comparison"""
         if isinstance(other, PythonMapperBase):
             return self.id < other.id
-        return super(PythonMapperBase, self).__lt__(other)
+        return super().__lt__(other)
 
     def __str__(self):
-        return "<{cls} {id}>".format(cls=self.__class__.__name__, id=self.id)
+        return f"<{self.__class__.__name__} {self.id}>"
 
     @property
     def short_name(self):
@@ -253,7 +249,7 @@ class SphinxMapperBase:
                             ):
                                 LOGGER.info(
                                     bold("[AutoAPI] ")
-                                    + darkgreen("Ignoring %s/%s" % (root, filename))
+                                    + darkgreen(f"Ignoring {root}/{filename}")
                                 )
                                 skip = True
 

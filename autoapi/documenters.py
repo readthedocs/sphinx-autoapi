@@ -12,7 +12,7 @@ from .mappers.python import (
     PythonException,
 )
 
-# pylint: disable=attribute-defined-outside-init,no-self-use,unused-argument
+# pylint: disable=attribute-defined-outside-init,unused-argument
 
 
 class AutoapiDocumenter(autodoc.Documenter):
@@ -93,7 +93,7 @@ class _AutoapiDocstringSignatureMixin:  # pylint: disable=too-few-public-methods
         if self.retann is None:
             self.retann = self.object.return_annotation
 
-        return super(_AutoapiDocstringSignatureMixin, self).format_signature(**kwargs)
+        return super().format_signature(**kwargs)
 
 
 class AutoapiFunctionDocumenter(
@@ -130,7 +130,7 @@ class AutoapiDecoratorDocumenter(
         if self.args is None:
             self.args = self.format_args(**kwargs)
 
-        return super(AutoapiDecoratorDocumenter, self).format_signature(**kwargs)
+        return super().format_signature(**kwargs)
 
     def format_args(self, **kwargs):
         to_format = self.object.args
@@ -170,8 +170,8 @@ class AutoapiClassDocumenter(
 
             # TODO: Change sphinx to allow overriding of getting base names
             if self.object.bases:
-                bases = [":class:`{}`".format(base) for base in self.object.bases]
-                self.add_line("   " + "Bases: {}".format(", ".join(bases)), sourcename)
+                bases = ", ".join(f":class:`{base}`" for base in self.object.bases)
+                self.add_line(f"   Bases: {bases}", sourcename)
 
 
 class AutoapiMethodDocumenter(
@@ -189,7 +189,7 @@ class AutoapiMethodDocumenter(
         return "(" + self.object.args + ")"
 
     def import_object(self):
-        result = super(AutoapiMethodDocumenter, self).import_object()
+        result = super().import_object()
 
         if result:
             self.parent = self._method_parent
@@ -213,7 +213,7 @@ class AutoapiMethodDocumenter(
             "staticmethod",
         ):
             if property_type in self.object.properties:
-                self.add_line("   :{}:".format(property_type), sourcename)
+                self.add_line(f"   :{property_type}:", sourcename)
 
 
 class AutoapiPropertyDocumenter(AutoapiDocumenter, autodoc.PropertyDocumenter):
@@ -230,14 +230,14 @@ class AutoapiPropertyDocumenter(AutoapiDocumenter, autodoc.PropertyDocumenter):
 
         sourcename = self.get_sourcename()
         if self.options.annotation and self.options.annotation is not autodoc.SUPPRESS:
-            self.add_line("   :type: %s" % self.options.annotation, sourcename)
+            self.add_line(f"   :type: {self.options.annotation}", sourcename)
 
         for property_type in (
             "abstractmethod",
             "classmethod",
         ):
             if property_type in self.object.properties:
-                self.add_line("   :{}:".format(property_type), sourcename)
+                self.add_line(f"   :{property_type}:", sourcename)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
@@ -255,13 +255,11 @@ class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
         if not self.options.annotation:
             # TODO: Change sphinx to allow overriding of object description
             if self.object.value is not None:
-                self.add_line(
-                    "   :annotation: = {}".format(self.object.value), sourcename
-                )
+                self.add_line(f"   :annotation: = {self.object.value}", sourcename)
         elif self.options.annotation is autodoc.SUPPRESS:
             pass
         else:
-            self.add_line("   :annotation: %s" % self.options.annotation, sourcename)
+            self.add_line(f"   :annotation: {self.options.annotation}", sourcename)
 
 
 class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter):
@@ -280,13 +278,11 @@ class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter)
         if not self.options.annotation:
             # TODO: Change sphinx to allow overriding of object description
             if self.object.value is not None:
-                self.add_line(
-                    "   :annotation: = {}".format(self.object.value), sourcename
-                )
+                self.add_line(f"   :annotation: = {self.object.value}", sourcename)
         elif self.options.annotation is autodoc.SUPPRESS:
             pass
         else:
-            self.add_line("   :annotation: %s" % self.options.annotation, sourcename)
+            self.add_line(f"   :annotation: {self.options.annotation}", sourcename)
 
 
 class AutoapiModuleDocumenter(AutoapiDocumenter, autodoc.ModuleDocumenter):

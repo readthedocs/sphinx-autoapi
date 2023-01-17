@@ -4,8 +4,7 @@ load-plugins=
 
 [MESSAGES CONTROL]
 
-disable=bad-continuation,
-      duplicate-code,
+disable=duplicate-code,
       fixme,
       import-error,
       missing-class-docstring,

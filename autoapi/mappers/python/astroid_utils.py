@@ -58,7 +58,7 @@ def get_full_import_name(import_from, name):
             import_from.modname, level=import_from.level
         )
 
-    return "{}.{}".format(module_name, partial_basename)
+    return f"{module_name}.{partial_basename}"
 
 
 def resolve_qualname(node, basename):
@@ -98,7 +98,7 @@ def resolve_qualname(node, basename):
             full_basename = assignment.qname()
             break
         if isinstance(assignment, astroid.nodes.AssignName):
-            full_basename = "{}.{}".format(assignment.scope().qname(), assignment.name)
+            full_basename = f"{assignment.scope().qname()}.{assignment.name}"
 
     if isinstance(node, astroid.nodes.Call):
         full_basename = re.sub(r"\(.*\)", "()", full_basename)

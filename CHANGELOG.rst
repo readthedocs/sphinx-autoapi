@@ -9,6 +9,7 @@ v2.0.1 (TBC)
 Features
 ^^^^^^^^
 * Can turn off the addition of documented objects to the TOC tree.
+* Added support for Python 3.11.
 
 Bug Fixes
 ^^^^^^^^^

@@ -74,13 +74,9 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
     Load AutoAPI data from the filesystem.
     """
     if app.config.autoapi_type not in LANGUAGE_MAPPERS:
+        allowed = ", ".join(f'"{api_type}"' for api_type in sorted(LANGUAGE_MAPPERS))
         raise ExtensionError(
-            "Invalid autoapi_type setting, "
-            "following values is allowed: {}".format(
-                ", ".join(
-                    '"{}"'.format(api_type) for api_type in sorted(LANGUAGE_MAPPERS)
-                )
-            )
+            f"Invalid autoapi_type setting, following values are allowed: {allowed}"
         )
 
     if not app.config.autoapi_dirs:
@@ -100,8 +96,8 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
     for _dir in normalised_dirs:
         if not os.path.exists(_dir):
             raise ExtensionError(
-                "AutoAPI Directory `{dir}` not found. "
-                "Please check your `autoapi_dirs` setting.".format(dir=_dir)
+                f"AutoAPI Directory `{_dir}` not found. "
+                "Please check your `autoapi_dirs` setting."
             )
 
     normalized_root = os.path.normpath(
@@ -113,20 +109,13 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         import_name in sys.modules
         for _, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
     ):
+        packages = ", ".join(
+            f'{import_name} (available as "{pkg_name}" on PyPI)'
+            for pkg_name, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
+        )
         raise ExtensionError(
-            "AutoAPI of type `{type}` requires following "
-            "packages to be installed and included in extensions list: "
-            "{packages}".format(
-                type=app.config.autoapi_type,
-                packages=", ".join(
-                    '{import_name} (available as "{pkg_name}" on PyPI)'.format(
-                        pkg_name=pkg_name, import_name=import_name
-                    )
-                    for pkg_name, import_name in LANGUAGE_REQUIREMENTS[
-                        app.config.autoapi_type
-                    ]
-                ),
-            )
+            "AutoAPI of type `{app.config.autoapi_type}` requires following "
+            f"packages to be installed and included in extensions list: {packages}"
         )
 
     sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
@@ -202,7 +191,7 @@ def doctree_read(app, doctree):
         all_docs = set()
         insert = True
         nodes = list(doctree.traverse(toctree))
-        toc_entry = "%s/index" % app.config.autoapi_root
+        toc_entry = f"{app.config.autoapi_root}/index"
         add_entry = (
             nodes
             and app.config.autoapi_generate_api_docs
@@ -220,12 +209,10 @@ def doctree_read(app, doctree):
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
             # Insert AutoAPI index
-            nodes[-1]["entries"].append((None, "%s/index" % app.config.autoapi_root))
-            nodes[-1]["includefiles"].append("%s/index" % app.config.autoapi_root)
+            nodes[-1]["entries"].append((None, f"{app.config.autoapi_root}/index"))
+            nodes[-1]["includefiles"].append(f"{app.config.autoapi_root}/index")
             message_prefix = bold("[AutoAPI] ")
-            message = darkgreen(
-                "Adding AutoAPI TOCTree [{0}] to index.rst".format(toc_entry)
-            )
+            message = darkgreen(f"Adding AutoAPI TOCTree [{toc_entry}] to index.rst")
             LOGGER.info(message_prefix + message)
 
 
@@ -259,11 +246,12 @@ def viewcode_find(app, modname):
             stack.extend((full_name + ".", gchild) for gchild in children)
 
     if module.obj["encoding"]:
-        source = io.open(
-            module.obj["file_path"], encoding=module.obj["encoding"]
-        ).read()
+        stream = io.open(module.obj["file_path"], encoding=module.obj["encoding"])
     else:
-        source = open(module.obj["file_path"]).read()
+        stream = open(module.obj["file_path"])
+
+    with stream as in_f:
+        source = in_f.read()
 
     result = (source, locations)
     _VIEWCODE_CACHE[modname] = result
@@ -271,7 +259,7 @@ def viewcode_find(app, modname):
 
 
 def viewcode_follow_imported(app, modname, attribute):
-    fullname = "{}.{}".format(modname, attribute)
+    fullname = f"{modname}.{attribute}"
     all_objects = app.env.autoapi_all_objects
     if fullname not in all_objects:
         return None

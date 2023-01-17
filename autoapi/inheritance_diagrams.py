@@ -35,9 +35,7 @@ def _import_class(name, currmodule):
 
     if not target:
         raise sphinx.ext.inheritance_diagram.InheritanceException(
-            "Could not import class or module {} specified for inheritance diagram".format(
-                name
-            )
+            f"Could not import class or module {name} specified for inheritance diagram"
         )
 
     if isinstance(target, astroid.ClassDef):
@@ -51,7 +49,7 @@ def _import_class(name, currmodule):
         return classes
 
     raise sphinx.ext.inheritance_diagram.InheritanceException(
-        "{} specified for inheritance diagram is not a class or module".format(name)
+        f"{name} specified for inheritance diagram is not a class or module"
     )
 
 
@@ -128,6 +126,6 @@ class AutoapiInheritanceDiagram(sphinx.ext.inheritance_diagram.InheritanceDiagra
         old_graph = sphinx.ext.inheritance_diagram.InheritanceGraph
         sphinx.ext.inheritance_diagram.InheritanceGraph = _AutoapiInheritanceGraph
         try:
-            return super(AutoapiInheritanceDiagram, self).run()
+            return super().run()
         finally:
             sphinx.ext.inheritance_diagram.InheritanceGraph = old_graph

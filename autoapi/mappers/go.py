@@ -46,7 +46,7 @@ class GoSphinxMapper(SphinxMapperBase):
 
         _ignore = kwargs.get("ignore")
         if _ignore:
-            parser_command.extend(["-e", "{0}".format("|".join(_ignore))])
+            parser_command.extend(["-e", "|".join(_ignore)])
 
         parser_command.append(path)
 
@@ -55,13 +55,13 @@ class GoSphinxMapper(SphinxMapperBase):
             return parsed_data
         except IOError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
         except TypeError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
@@ -86,13 +86,13 @@ class GoSphinxMapper(SphinxMapperBase):
         try:
             # Contextual type data from children recursion
             if _type:
-                LOGGER.debug("Forcing Go Type %s" % _type)
+                LOGGER.debug(f"Forcing Go Type {_type}")
                 cls = obj_map[_type]
             else:
                 cls = obj_map[data["type"]]
         except KeyError:
             # this warning intentionally has no (sub-)type
-            LOGGER.warning("Unknown type: %s" % data)
+            LOGGER.warning(f"Unknown type: {data}")
         else:
             if cls.inverted_names and "names" in data:
                 # Handle types that have reversed names parameter
@@ -128,7 +128,7 @@ class GoPythonMapper(PythonMapperBase):
     inverted_names = False
 
     def __init__(self, obj, **kwargs):
-        super(GoPythonMapper, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
         self.name = obj.get("name") or obj.get("packageName")
         self.id = self.name
 
@@ -149,7 +149,7 @@ class GoPythonMapper(PythonMapperBase):
         self.bugs = obj.get("bugs", [])
 
     def __str__(self):
-        return "<{cls} {id}>".format(cls=self.__class__.__name__, id=self.id)
+        return f"<{self.__class__.__name__} {self.id}>"
 
     @property
     def short_name(self):
@@ -186,7 +186,7 @@ class GoMethod(GoPythonMapper):
     ref_directive = "meth"
 
     def __init__(self, obj, **kwargs):
-        super(GoMethod, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
         self.receiver = obj.get("recv")
 
 

@@ -35,13 +35,13 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
             return parsed_data
         except IOError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
         except TypeError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
@@ -80,7 +80,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
             cls = obj_map[data["kind"]]
         except (KeyError, TypeError):
             # this warning intentionally has no (sub-)type
-            LOGGER.warning("Unknown type: %s" % data)
+            LOGGER.warning(f"Unknown type: {data}")
         else:
             # Recurse for children
             obj = cls(data, jinja_env=self.jinja_env, app=self.app)
@@ -103,7 +103,7 @@ class JavaScriptPythonMapper(PythonMapperBase):
         so we try and keep standard naming to keep templates more re-usable.
         """
 
-        super(JavaScriptPythonMapper, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
         self.name = obj.get("name")
         self.id = self.name
 

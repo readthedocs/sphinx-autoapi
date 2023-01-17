@@ -15,11 +15,11 @@ def _format_args(args_info, include_annotations=True, ignore_self=None):
     for i, (prefix, name, annotation, default) in enumerate(args_info):
         if i == 0 and ignore_self is not None and name == ignore_self:
             continue
-        formatted = "{}{}{}{}".format(
-            prefix or "",
-            name or "",
-            ": {}".format(annotation) if annotation and include_annotations else "",
-            (" = {}" if annotation else "={}").format(default) if default else "",
+        formatted = (
+            (prefix or "")
+            + (name or "")
+            + (f": {annotation}" if annotation and include_annotations else "")
+            + ((" = {}" if annotation else "={}").format(default) if default else "")
         )
         result.append(formatted)
 
@@ -42,7 +42,7 @@ class PythonPythonMapper(PythonMapperBase):
     member_order = 0
 
     def __init__(self, obj, class_content="class", **kwargs):
-        super(PythonPythonMapper, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.name = obj["name"]
         self.id = obj.get("full_name", self.name)
@@ -172,7 +172,7 @@ class PythonFunction(PythonPythonMapper):
     member_order = 30
 
     def __init__(self, obj, **kwargs):
-        super(PythonFunction, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         autodoc_typehints = getattr(self.app.config, "autodoc_typehints", "signature")
         show_annotations = autodoc_typehints != "none" and not (
@@ -217,7 +217,7 @@ class PythonMethod(PythonFunction):
     member_order = 50
 
     def __init__(self, obj, **kwargs):
-        super(PythonMethod, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.properties = obj["properties"]
         """The properties that describe what type of method this is.
@@ -228,7 +228,7 @@ class PythonMethod(PythonFunction):
         """
 
     def _should_skip(self):  # type: () -> bool
-        skip = super(PythonMethod, self)._should_skip() or self.name in (
+        skip = super()._should_skip() or self.name in (
             "__new__",
             "__init__",
         )
@@ -242,7 +242,7 @@ class PythonProperty(PythonPythonMapper):
     member_order = 60
 
     def __init__(self, obj, **kwargs):
-        super(PythonProperty, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.annotation = obj["return_annotation"]
         """The type annotation of this property.
@@ -265,7 +265,7 @@ class PythonData(PythonPythonMapper):
     member_order = 40
 
     def __init__(self, obj, **kwargs):
-        super(PythonData, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.value = obj.get("value")
         """The value of this attribute.
@@ -297,7 +297,7 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
     _RENDER_LOG_LEVEL = "VERBOSE"
 
     def __init__(self, obj, **kwargs):
-        super(TopLevelPythonPythonMapper, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.top_level_object = "." not in self.name
         """Whether this object is at the very top level (True) or not (False).
@@ -354,7 +354,7 @@ class PythonClass(PythonPythonMapper):
     member_order = 20
 
     def __init__(self, obj, **kwargs):
-        super(PythonClass, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         self.bases = obj["bases"]
         """The fully qualified names of all base classes.
@@ -411,7 +411,7 @@ class PythonClass(PythonPythonMapper):
 
             if constructor_docstring:
                 if self._class_content == "both":
-                    docstring = "{0}\n{1}".format(docstring, constructor_docstring)
+                    docstring = f"{docstring}\n{constructor_docstring}"
                 else:
                     docstring = constructor_docstring
 
