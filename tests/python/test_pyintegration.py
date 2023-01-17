@@ -276,7 +276,10 @@ class TestPy3Module:
         assert "start: int" in example_file
         assert "Iterable[int]" in example_file
 
-        assert "List[Union[str, int]]" in example_file
+        if sys.version_info >= (3, 9):
+            assert "List[str | int]" in example_file
+        else:
+            assert "List[Union[str, int]]" in example_file
 
         assert "not_yet_a: A" in example_file
         assert "imported: example2.B" in example_file
@@ -368,7 +371,10 @@ class TestAnnotationCommentsModule:
         # assert "end: int" in example_file
         assert "Iterable[int]" in example_file
 
-        assert "List[Union[str, int]]" in example_file
+        if sys.version_info >= (3, 9):
+            assert "List[str | int]" in example_file
+        else:
+            assert "List[Union[str, int]]" in example_file
 
         assert "not_yet_a: A" in example_file
         assert "is_an_a" in example_file
@@ -399,18 +405,32 @@ class TestPositionalOnlyArgumentsModule:
 
         assert "f_simple(a, b, /, c, d, *, e, f)" in example_file
 
-        assert (
-            "f_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-            in example_file
-        )
-        assert (
-            "f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-            in example_file
-        )
-        assert (
-            "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-            in example_file
-        )
+        if sys.version_info >= (3, 9):
+            assert (
+                "f_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
+                in example_file
+            )
+            assert (
+                "f_annotation(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
+                in example_file
+            )
+            assert (
+                "f_arg_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
+                in example_file
+            )
+        else:
+            assert (
+                "f_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+                in example_file
+            )
+            assert (
+                "f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+                in example_file
+            )
+            assert (
+                "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
+                in example_file
+            )
         assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in example_file
 
 
