@@ -3,8 +3,8 @@ Changelog
 
 Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.<patch>``).
 
-v2.0.1 (TBC)
-------------
+v2.0.1 (2023-01-16)
+-------------------
 
 Features
 ^^^^^^^^
@@ -18,6 +18,8 @@ Bug Fixes
 * `#341 <https://github.com/readthedocs/sphinx-autoapi/issues/341>`: (Python)
   Fix module level assignments to class attributes being documented as
   module level attributes.
+* (Python) Fix "bysource" sort order showing items in alphabetical order.
+* (Python) Use the correct directives for a variable type and value.
 
 Trivial/Internal Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
