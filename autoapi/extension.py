@@ -114,7 +114,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             for pkg_name, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
         )
         raise ExtensionError(
-            "AutoAPI of type `{app.config.autoapi_type}` requires following "
+            f"AutoAPI of type `{app.config.autoapi_type}` requires following "
             f"packages to be installed and included in extensions list: {packages}"
         )
 
@@ -248,7 +248,7 @@ def viewcode_find(app, modname):
     if module.obj["encoding"]:
         stream = io.open(module.obj["file_path"], encoding=module.obj["encoding"])
     else:
-        stream = open(module.obj["file_path"])
+        stream = open(module.obj["file_path"], encoding="utf-8")
 
     with stream as in_f:
         source = in_f.read()

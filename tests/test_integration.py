@@ -136,7 +136,7 @@ class TestExtensionErrors:
                 "toctreeexample",
                 {"autoapi_type": "INVALID VALUE"},
                 (
-                    "Invalid autoapi_type setting, following values is "
+                    "Invalid autoapi_type setting, following values are "
                     'allowed: "dotnet", "go", "javascript", "python"'
                 ),
             ),

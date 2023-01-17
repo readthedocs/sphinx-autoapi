@@ -83,8 +83,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
         if all_files:
             command = ["docfx", "metadata", "--raw", "--force"]
             command.extend(all_files)
-            proc = subprocess.Popen(
-                " ".join(command),
+            proc = subprocess.run(
+                command,
+                check=False,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 shell=True,
@@ -100,9 +101,8 @@ class DotNetSphinxMapper(SphinxMapperBase):
                     if key in os.environ
                 ),
             )
-            _, error_output = proc.communicate()
-            if error_output:
-                LOGGER.warning(error_output, type="autoapi", subtype="not_readable")
+            if proc.stderr:
+                LOGGER.warning(proc.stderr, type="autoapi", subtype="not_readable")
         # We now have yaml files
         for xdoc_path in self.find_files(
             patterns=["*.yml"], dirs=[self.DOCFX_OUTPUT_PATH], ignore=ignore
@@ -119,18 +119,18 @@ class DotNetSphinxMapper(SphinxMapperBase):
         :param path: Path of file to read
         """
         try:
-            with open(path, "r") as handle:
+            with open(path, "r", encoding="utf-8") as handle:
                 parsed_data = yaml.safe_load(handle)
                 return parsed_data
         except IOError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
         except TypeError:
             LOGGER.warning(
-                "Error reading file: {0}".format(path),
+                f"Error reading file: {path}",
                 type="autoapi",
                 subtype="not_readable",
             )
@@ -173,7 +173,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
             cls = obj_map[data["type"].lower()]
         except KeyError:
             # this warning intentionally has no (sub-)type
-            LOGGER.warning("Unknown type: %s" % data)
+            LOGGER.warning(f"Unknown type: {data}")
         else:
             obj = cls(
                 data, jinja_env=self.jinja_env, app=self.app, options=options, **kwargs
@@ -255,7 +255,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
             detail_dir = os.path.join(root, obj.pathname)
             ensuredir(detail_dir)
-            path = os.path.join(detail_dir, "%s%s" % ("index", source_suffix))
+            path = os.path.join(detail_dir, f"index{source_suffix}")
             with open(path, "wb") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
 
@@ -291,7 +291,7 @@ class DotNetPythonMapper(PythonMapperBase):
             for obj in kwargs.pop("references", [])
             if "uid" in obj
         )
-        super(DotNetPythonMapper, self).__init__(obj, **kwargs)
+        super().__init__(obj, **kwargs)
 
         # Always exist
         self.id = obj.get("uid", obj.get("id"))
@@ -350,7 +350,7 @@ class DotNetPythonMapper(PythonMapperBase):
         ]
 
     def __str__(self):
-        return "<{cls} {id}>".format(cls=self.__class__.__name__, id=self.id)
+        return f"<{self.__class__.__name__} {self.id}>"
 
     @property
     def pathname(self):
@@ -383,7 +383,7 @@ class DotNetPythonMapper(PythonMapperBase):
         try:
             repo = self.source["remote"]["repo"].replace(".git", "")
             path = self.path
-            return "{repo}/blob/master/{path}".format(repo=repo, path=path)
+            return f"{repo}/blob/master/{path}"
         except KeyError:
             return ""
 
@@ -466,11 +466,11 @@ class DotNetPythonMapper(PythonMapperBase):
                 if ref[1] == ":" and ref[0] in DOC_COMMENT_IDENTITIES:
                     reftype = DOC_COMMENT_IDENTITIES[ref[:1]]
                     ref = ref[2:]
-                    replacement = ":{reftype}:`{ref}`".format(reftype=reftype, ref=ref)
+                    replacement = f":{reftype}:`{ref}`"
                 elif ref[:2] == "!:":
                     replacement = ref[2:]
                 else:
-                    replacement = ":any:`{ref}`".format(ref=ref)
+                    replacement = f":any:`{ref}`"
 
                 # Escape following text
                 text_end = text[found.end() :]
@@ -529,7 +529,7 @@ class DotNetPythonMapper(PythonMapperBase):
             elif part.get("name") == ">":
                 parts.append("}")
             elif "fullName" in part and "uid" in part:
-                parts.append("{fullName}<{uid}>".format(**part))
+                parts.append(f"{part['fullName']}<{part['uid']}>")
             elif "uid" in part:
                 parts.append(part["uid"])
             elif "fullName" in part:

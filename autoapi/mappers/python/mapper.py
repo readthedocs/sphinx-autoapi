@@ -104,9 +104,8 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
 
         imported_from, original_name = child["original_path"].rsplit(".", 1)
         if imported_from in visit_path:
-            msg = "Cannot resolve cyclic import: {0}, {1}".format(
-                ", ".join(visit_path), imported_from
-            )
+            visit_str = ", ".join(visit_path)
+            msg = f"Cannot resolve cyclic import: {visit_str}, {imported_from}"
             LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])

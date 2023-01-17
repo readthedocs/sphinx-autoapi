@@ -319,7 +319,7 @@ class SphinxMapperBase:
 
             detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
-            path = os.path.join(detail_dir, "%s%s" % ("index", source_suffix))
+            path = os.path.join(detail_dir, f"index{source_suffix}")
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
 

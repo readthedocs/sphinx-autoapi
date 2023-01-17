@@ -261,7 +261,7 @@ class TestPy3Module:
 
         assert '''software = "sphin'x"''' in example_file
         assert """more_software = 'sphinx"autoapi'""" in example_file
-        assert '''interesting_string = "interesting\"fun\'\'string"''' in example_file
+        assert "interesting_string = 'interesting\"fun\\'\\\\\\'string'" in example_file
 
         assert "code_snippet = Multiline-String" in example_file
 

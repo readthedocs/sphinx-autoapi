@@ -465,7 +465,8 @@ def _iter_args(args, annotations, defaults):
 
         name = arg.name
         if isinstance(arg, astroid.Tuple):
-            name = "({})".format(", ".join(x.name for x in arg.elts))
+            argument_names = ", ".join(x.name for x in arg.elts)
+            name = f"({argument_names})"
 
         yield (name, format_annotation(annotation), default)
 
