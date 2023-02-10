@@ -264,7 +264,13 @@ def viewcode_follow_imported(app, modname, attribute):
     if fullname not in all_objects:
         return None
 
-    orig_path = all_objects[fullname].obj.get("original_path", "")
+    if all_objects[fullname].obj.get("type") == 'method':
+        fullname = fullname[:fullname.rfind('.')]
+        attribute = attribute[:attribute.rfind('.')]
+    while all_objects[fullname].obj.get("original_path", "") != "":
+        fullname = all_objects[fullname].obj.get("original_path")
+
+    orig_path = fullname
     if orig_path.endswith(attribute):
         return orig_path[: -len(attribute) - 1]
 
