@@ -6,6 +6,7 @@ import shutil
 import sys
 from unittest.mock import Mock, call, patch
 
+from packaging import version
 import autoapi.settings
 import pytest
 import sphinx
@@ -20,6 +21,7 @@ from autoapi.mappers.python import (
 from sphinx.application import Sphinx
 from sphinx.errors import ExtensionError
 
+sphinx_version = version.parse(sphinx.__version__).release
 
 def rebuild(confoverrides=None, confdir=".", **kwargs):
     app = Sphinx(
@@ -276,7 +278,7 @@ class TestPy3Module:
         assert "start: int" in example_file
         assert "Iterable[int]" in example_file
 
-        if sys.version_info >= (3, 8):
+        if sphinx_version >= (6,):
             assert "List[str | int]" in example_file
         else:
             assert "List[Union[str, int]]" in example_file
@@ -371,7 +373,7 @@ class TestAnnotationCommentsModule:
         # assert "end: int" in example_file
         assert "Iterable[int]" in example_file
 
-        if sys.version_info >= (3, 8):
+        if sphinx_version >= (6,):
             assert "List[str | int]" in example_file
         else:
             assert "List[Union[str, int]]" in example_file
@@ -405,7 +407,7 @@ class TestPositionalOnlyArgumentsModule:
 
         assert "f_simple(a, b, /, c, d, *, e, f)" in example_file
 
-        if sys.version_info >= (3, 8):
+        if sphinx_version >= (6,):
             assert (
                 "f_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
                 in example_file
