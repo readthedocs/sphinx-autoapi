@@ -1,7 +1,7 @@
 import json
 import subprocess
 
-from sphinx.util.console import bold
+from sphinx.util.console import colorize
 import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -24,7 +24,7 @@ class GoSphinxMapper(SphinxMapperBase):
 
         """
         for _dir in sphinx.util.status_iterator(
-            dirs, bold("[AutoAPI] Loading Data "), "darkgreen", len(dirs)
+            dirs, colorize("bold", "[AutoAPI] Loading Data "), "darkgreen", len(dirs)
         ):
             data = self.read_file(_dir, ignore=ignore)
             if data:
@@ -123,7 +123,6 @@ class GoSphinxMapper(SphinxMapperBase):
 
 
 class GoPythonMapper(PythonMapperBase):
-
     language = "go"
     inverted_names = False
 

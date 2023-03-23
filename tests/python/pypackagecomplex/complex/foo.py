@@ -10,7 +10,6 @@ __all__ = ["PublicClass", "Foo"]
 
 
 class Foo(object):
-
     class_var = 42  #: Class var docstring
 
     another_class_var = 42

@@ -2,6 +2,14 @@
 requires = ["setuptools>=46.4.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[[tool.mypy.overrides]]
+module = "astroid.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "autoapi.documenters"
+ignore_errors = true
+
 [tool.towncrier]
 directory = "docs/changes"
 filename = "CHANGELOG.rst"

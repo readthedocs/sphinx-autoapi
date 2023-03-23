@@ -53,7 +53,6 @@ class NestedParse(Directive):  # pylint: disable=too-few-public-methods
     required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = False
-    option_spec = {}
 
     def run(self):
         node = nodes.container()

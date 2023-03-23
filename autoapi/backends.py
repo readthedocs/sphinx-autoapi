@@ -1,3 +1,5 @@
+from typing import Dict, Sequence, Tuple
+
 from .mappers import (
     DotNetSphinxMapper,
     PythonSphinxMapper,
@@ -30,9 +32,9 @@ LANGUAGE_MAPPERS = {
 
 #: describes backend requirements in form
 #: {'backend name': (('1st package name in pypi', '1st package import name'), ...)}
-LANGUAGE_REQUIREMENTS = {
+LANGUAGE_REQUIREMENTS: Dict[str, Sequence[Tuple[str, str]]] = {
     "python": (),
     "javascript": (),
     "go": (("sphinxcontrib-golangdomain", "sphinxcontrib.golangdomain"),),
     "dotnet": (("sphinxcontrib-dotnetdomain", "sphinxcontrib.dotnetdomain"),),
-}  # type: Dict[str, Sequence[Tuple[str, str]]]
+}

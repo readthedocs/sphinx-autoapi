@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Sphinx Auto-API Top-level Extension.
+"""Sphinx Auto-API Top-level Extension.
 
 This extension allows you to automagically generate API documentation from your project.
 """
@@ -8,10 +6,11 @@ import io
 import os
 import shutil
 import sys
+from typing import Dict, Tuple
 import warnings
 
 import sphinx
-from sphinx.util.console import darkgreen, bold
+from sphinx.util.console import colorize
 from sphinx.addnodes import toctree
 from sphinx.errors import ExtensionError
 import sphinx.util.logging
@@ -40,11 +39,8 @@ _DEFAULT_OPTIONS = [
     "special-members",
     "imported-members",
 ]
-_VIEWCODE_CACHE = {}
-"""Caches a module's parse results for use in viewcode.
-
-:type: dict(str, tuple)
-"""
+_VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
+"""Caches a module's parse results for use in viewcode."""
 
 
 class RemovedInAutoAPI2Warning(DeprecationWarning):
@@ -165,7 +161,10 @@ def build_finished(app, exception):
             os.path.join(app.srcdir, app.config.autoapi_root)
         )
         if app.verbosity > 1:
-            LOGGER.info(bold("[AutoAPI] ") + darkgreen("Cleaning generated .rst files"))
+            LOGGER.info(
+                colorize("bold", "[AutoAPI] ")
+                + colorize("darkgreen", "Cleaning generated .rst files")
+            )
         shutil.rmtree(normalized_root)
 
         sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
@@ -211,8 +210,10 @@ def doctree_read(app, doctree):
             # Insert AutoAPI index
             nodes[-1]["entries"].append((None, f"{app.config.autoapi_root}/index"))
             nodes[-1]["includefiles"].append(f"{app.config.autoapi_root}/index")
-            message_prefix = bold("[AutoAPI] ")
-            message = darkgreen(f"Adding AutoAPI TOCTree [{toc_entry}] to index.rst")
+            message_prefix = colorize("bold", "[AutoAPI] ")
+            message = colorize(
+                "darkgreen", f"Adding AutoAPI TOCTree [{toc_entry}] to index.rst"
+            )
             LOGGER.info(message_prefix + message)
 
 

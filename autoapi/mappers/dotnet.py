@@ -1,14 +1,15 @@
+from collections import defaultdict
 import re
 import os
 import subprocess
 import traceback
 import shutil
-from collections import defaultdict
+from typing import Dict
 import unidecode
 
 import yaml
 from sphinx.util.osutil import ensuredir
-from sphinx.util.console import darkgreen, bold
+from sphinx.util.console import colorize
 import sphinx.util.logging
 from sphinx.errors import ExtensionError
 
@@ -56,7 +57,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
     :param app: Sphinx application passed in as part of the extension
     """
 
-    top_namespaces = {}
+    top_namespaces: Dict[str, "DotNetNamespace"] = {}
 
     DOCFX_OUTPUT_PATH = "_api"
 
@@ -69,7 +70,9 @@ class DotNetSphinxMapper(SphinxMapperBase):
         the canonical source before the default patterns.  Fallback to default
         pattern matches if no ``docfx.json`` files are found.
         """
-        LOGGER.info(bold("[AutoAPI] ") + darkgreen("Loading Data"))
+        LOGGER.info(
+            colorize("bold", "[AutoAPI] ") + colorize("darkgreen", "Loading Data")
+        )
         all_files = set()
         if not self.app.config.autoapi_file_patterns:
             all_files = set(
@@ -141,7 +144,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
         """Trigger find of serialized sources and build objects"""
         for _, data in sphinx.util.status_iterator(
             self.paths.items(),
-            bold("[AutoAPI] ") + "Mapping Data... ",
+            colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
             stringify_func=(lambda x: x[0]),
         ):
@@ -242,7 +245,7 @@ class DotNetSphinxMapper(SphinxMapperBase):
 
         for _, obj in sphinx.util.status_iterator(
             self.objects.items(),
-            bold("[AutoAPI] ") + "Rendering Data... ",
+            colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),
             stringify_func=(lambda x: x[0]),
         ):
@@ -270,7 +273,10 @@ class DotNetSphinxMapper(SphinxMapperBase):
     @staticmethod
     def build_finished(app, _):
         if app.verbosity > 1:
-            LOGGER.info(bold("[AutoAPI] ") + darkgreen("Cleaning generated .yml files"))
+            LOGGER.info(
+                colorize("bold", "[AutoAPI] ")
+                + colorize("darkgreen", "Cleaning generated .yml files")
+            )
         if os.path.exists(DotNetSphinxMapper.DOCFX_OUTPUT_PATH):
             shutil.rmtree(DotNetSphinxMapper.DOCFX_OUTPUT_PATH)
 

@@ -2,7 +2,7 @@ import json
 import subprocess
 import os
 
-from sphinx.util.console import bold
+from sphinx.util.console import colorize
 import sphinx.util.logging
 
 from .base import PythonMapperBase, SphinxMapperBase
@@ -52,7 +52,7 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
         """Trigger find of serialized sources and build objects"""
         for _, data in sphinx.util.status_iterator(
             self.paths.items(),
-            bold("[AutoAPI] ") + "Mapping Data... ",
+            colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
             stringify_func=(lambda x: x[0]),
         ):
@@ -92,7 +92,6 @@ class JavaScriptSphinxMapper(SphinxMapperBase):
 
 
 class JavaScriptPythonMapper(PythonMapperBase):
-
     language = "javascript"
 
     def __init__(self, obj, **kwargs):

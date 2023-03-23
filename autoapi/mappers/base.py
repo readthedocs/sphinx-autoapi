@@ -6,7 +6,7 @@ import re
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
-from sphinx.util.console import darkgreen, bold
+from sphinx.util.console import colorize
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 import unidecode
@@ -211,7 +211,10 @@ class SphinxMapperBase:
         """
         paths = list(self.find_files(patterns=patterns, dirs=dirs, ignore=ignore))
         for path in sphinx.util.status_iterator(
-            paths, bold("[AutoAPI] Reading files... "), "darkgreen", len(paths)
+            paths,
+            colorize("bold", "[AutoAPI] Reading files... "),
+            "darkgreen",
+            len(paths),
         ):
             data = self.read_file(path=path)
             if data:
@@ -248,8 +251,10 @@ class SphinxMapperBase:
                                 os.path.join(root, filename), ignore_pattern
                             ):
                                 LOGGER.info(
-                                    bold("[AutoAPI] ")
-                                    + darkgreen(f"Ignoring {root}/{filename}")
+                                    colorize("bold", "[AutoAPI] ")
+                                    + colorize(
+                                        "darkgreen", f"Ignoring {root}/{filename}"
+                                    )
                                 )
                                 skip = True
 
@@ -290,7 +295,7 @@ class SphinxMapperBase:
         """Trigger find of serialized sources and build objects"""
         for _, data in sphinx.util.status_iterator(
             self.paths.items(),
-            bold("[AutoAPI] ") + "Mapping Data... ",
+            colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
             stringify_func=(lambda x: x[0]),
         ):
@@ -308,7 +313,7 @@ class SphinxMapperBase:
     def output_rst(self, root, source_suffix):
         for _, obj in sphinx.util.status_iterator(
             self.objects.items(),
-            bold("[AutoAPI] ") + "Rendering Data... ",
+            colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),
             verbosity=1,
             stringify_func=(lambda x: x[0]),

@@ -458,7 +458,6 @@ class TestSimplePackage:
         builder("pypackageexample")
 
     def test_integration_with_package(self):
-
         example_path = "_build/text/autoapi/example/index.txt"
         with io.open(example_path, encoding="utf8") as example_handle:
             example_file = example_handle.read()

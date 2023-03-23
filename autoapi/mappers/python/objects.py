@@ -1,5 +1,5 @@
 import functools
-from typing import Optional
+from typing import List, Optional
 
 import sphinx.util.logging
 
@@ -41,14 +41,14 @@ class PythonPythonMapper(PythonMapperBase):
     is_callable = False
     member_order = 0
 
-    def __init__(self, obj, class_content="class", **kwargs):
+    def __init__(self, obj, class_content="class", **kwargs) -> None:
         super().__init__(obj, **kwargs)
 
         self.name = obj["name"]
         self.id = obj.get("full_name", self.name)
 
         # Optional
-        self.children = []
+        self.children: List[PythonPythonMapper] = []
         self._docstring = obj["doc"]
         self._docstring_resolved = False
         self.imported = "original_path" in obj
@@ -61,7 +61,7 @@ class PythonPythonMapper(PythonMapperBase):
         # For later
         self._class_content = class_content
 
-        self._display_cache = None  # type: Optional[bool]
+        self._display_cache: Optional[bool] = None
 
     @property
     def docstring(self):
