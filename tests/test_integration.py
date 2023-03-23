@@ -116,7 +116,9 @@ class TestTOCTree(LanguageIntegrationTests):
         """
         Test that the example_function gets added to the TOC Tree
         """
-        self._run_test("toctreeexample", "_build/text/index.txt", "* example_function")
+        self._run_test(
+            "toctreeexample", "_build/text/index.txt", '* "example_function()"'
+        )
 
 
 class TestExtensionErrors:
