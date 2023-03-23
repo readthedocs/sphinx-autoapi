@@ -15,10 +15,9 @@ Preparation
 -----------
 
 1. Update the version numbers in ``autoapi/__init__.py``.
-2. Add any missing changelog entries.
-3. Put the version number and release date into the changelog.
-4. Commit and push the changes.
-5. Check that the tests passed on github.
+2. Run ``tox -e release_notes -- build``
+3. Commit and push the changes.
+4. Check that the tests passed on github.
 
 Release
 -------

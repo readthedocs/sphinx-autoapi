@@ -1,3 +1,10 @@
 [build-system]
 requires = ["setuptools>=46.4.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.towncrier]
+directory = "docs/changes"
+filename = "CHANGELOG.rst"
+package = "autoapi"
+title_format = "v{version} ({project_date})"
+underlines = ["-", "^", "\""]
