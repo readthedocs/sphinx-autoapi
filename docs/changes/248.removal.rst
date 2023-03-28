@@ -1,0 +1,1 @@
+Support for documenting languages other than Python is deprecated.

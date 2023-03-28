@@ -20,6 +20,10 @@ Javascript   ``pip install sphinx-autoapi``
 .NET         ``pip install sphinx-autoapi[dotnet]``
 ==========   ======================================
 
+.. warning::
+
+    Support for all languages other than Python will be removed in the next major version!
+
 Depending on which language you are trying to document,
 each language has a different set of steps for finishing the setup of AutoAPI:
 

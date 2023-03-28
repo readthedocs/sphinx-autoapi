@@ -31,6 +31,10 @@ AutoAPI finds and generates documentation by parsing source code.
 Language Support
 ----------------
 
+.. warning::
+
+    Support for all languages other than Python will be removed in the next major version!
+
 ==========  ======  ==========================================================
 Language    Status  Parser
 ==========  ======  ==========================================================

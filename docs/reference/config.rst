@@ -30,6 +30,10 @@ Configuration Options
    .NET        ``'dotnet'``
    ==========  ================
 
+   .. warning::
+
+      Support for all languages other than Python will be removed in the next major version!
+
 .. confval:: autoapi_template_dir
 
    Default: ``''``
