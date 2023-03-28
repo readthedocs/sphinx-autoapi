@@ -127,6 +127,16 @@ You can even get black to format changes automatically when you commit using `pr
     pip install pre-commit
     pre-commit install
 
+Release Notes
+~~~~~~~~~~~~~
+
+Release notes are managed through `towncrier <https://towncrier.readthedocs.io/en/stable/index.html>`_.
+When making a pull request you will need to create a news fragment to document your change:
+
+.. code-block:: bash
+
+    tox -e release_notes -- create --help
+
 Versioning
 ----------
 
