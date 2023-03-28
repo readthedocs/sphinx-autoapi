@@ -5,6 +5,25 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v2.1.0 (2023-03-28)
+-------------------
+
+Deprecations and Removals
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Support for documenting languages other than Python is deprecated. (#248)
+- Removed the option to have autoapi generate toctree entries for domain objects.
+  Domain objects are now added to the toctree by Sphinx.
+  Dropped support for sphinx < 5.2.0. (#369)
+
+
+Misc
+^^^^
+
+- Added basic type checking.
+- Integrated towncrier into the release workflow.
+
+
 v2.0.1 (2023-01-16)
 -------------------
 

@@ -1,3 +1,0 @@
-Removed the option to have autoapi generate toctree entries for domain objects.
-Domain objects are now added to the toctree by Sphinx.
-Dropped support for sphinx < 5.2.0.
