@@ -10,6 +10,9 @@ ignore_missing_imports = true
 module = "autoapi.documenters"
 ignore_errors = true
 
+[tool.ruff.pydocstyle]
+convention = "google"
+
 [tool.towncrier]
 directory = "docs/changes"
 filename = "CHANGELOG.rst"

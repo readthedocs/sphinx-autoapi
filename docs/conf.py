@@ -20,7 +20,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['autoapi.extension', 'sphinx.ext.intersphinx']
+extensions = ['autoapi.extension', 'sphinx.ext.intersphinx', 'sphinx.ext.napoleon']
 
 autoapi_type = 'python'
 autoapi_dirs = ['../autoapi']
@@ -73,7 +73,7 @@ language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'changes/*.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

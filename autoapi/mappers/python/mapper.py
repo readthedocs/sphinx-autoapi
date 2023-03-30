@@ -77,15 +77,13 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
 def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
     """Resolve all placeholder children under a module.
 
-    :param modules: A mapping of module names to their data dictionary.
-        Placeholders are resolved in place.
-    :type modules: dict(str, dict)
-    :param module_name: The name of the module to resolve.
-    :type module_name: str
-    :param visit_path: An ordered set of visited module names.
-    :type visited: collections.OrderedDict
-    :param resolved: A set of already resolved module names.
-    :type resolved: set(str)
+    Args:
+        modules (dict(str, dict)): A mapping of module names to their
+            data dictionary. Placeholders are resolved in place.
+        module_name (str): The name of the module to resolve.
+        visit_path: An ordered set of visited module names.
+        visited (collections.OrderedDict)
+        resolved (set(str)): A set of already resolved module names.
     """
     if module_name in resolved:
         return
@@ -157,10 +155,9 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
 def _resolve_placeholder(placeholder, original):
     """Resolve a placeholder to the given original object.
 
-    :param placeholder: The placeholder to resolve, in place.
-    :type placeholder: dict
-    :param original: The object that the placeholder represents.
-    :type original: dict
+    Args:
+        placeholder (dict): The placeholder to resolve, in place.
+        original (dict): The object that the placeholder represents.
     """
     new = copy.deepcopy(original)
     # We are supposed to be resolving the placeholder,
@@ -223,7 +220,8 @@ class PythonSphinxMapper(SphinxMapperBase):
 
     Parses directly from Python files.
 
-    :param app: Sphinx application passed in as part of the extension
+    Args:
+        app: Sphinx application passed in as part of the extension
     """
 
     _OBJ_MAP = {
@@ -309,7 +307,8 @@ class PythonSphinxMapper(SphinxMapperBase):
     def read_file(self, path, **kwargs):
         """Read file input into memory, returning deserialized objects
 
-        :param path: Path of file to read
+        Args:
+            path: Path of file to read
         """
         dir_root = kwargs.get("dir_root")
         try:
@@ -363,7 +362,8 @@ class PythonSphinxMapper(SphinxMapperBase):
     def create_class(self, data, options=None, **kwargs):
         """Create a class from the passed in data
 
-        :param data: dictionary data of parser output
+        Args:
+            data: dictionary data of parser output
         """
         try:
             cls = self._OBJ_MAP[data["type"]]

@@ -1,5 +1,4 @@
-"""
-Basic settings for AutoAPI projects.
+"""Basic settings for AutoAPI projects.
 
 You shouldn't need to touch this.
 """

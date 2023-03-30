@@ -20,8 +20,7 @@ Path = namedtuple("Path", ["absolute", "relative"])
 
 class PythonMapperBase:
 
-    """
-    Base object for JSON -> Python object mapping.
+    """Base object for JSON -> Python object mapping.
 
     Subclasses of this object will handle their language specific JSON input,
     and map that onto this standard Python object.
@@ -29,22 +28,24 @@ class PythonMapperBase:
 
     Arguments:
 
-    :param obj: JSON object representing this object
-    :param jinja_env: A template environment for rendering this object
+    Args:
+        obj: JSON object representing this object
+        jinja_env: A template environment for rendering this object
 
     Required attributes:
 
-    :var str id: A globally unique identifier for this object.
-                 Generally a fully qualified name, including namespace.
-    :var str name: A short "display friendly" name for this object.
+    Attributes:
+        id (str): A globally unique identifier for this object.
+            Generally a fully qualified name, including namespace.
+        name (str): A short "display friendly" name for this object.
+        docstring (str): The documentation for this object
+        imports (list): Imports in this object
+        children (list): Children of this object
+        parameters (list): Parameters to this object
+        methods (list): Methods on this object
 
     Optional attributes:
 
-    :var str docstring: The documentation for this object
-    :var list imports: Imports in this object
-    :var list children: Children of this object
-    :var list parameters: Parameters to this object
-    :var list methods: Methods on this object
     """
 
     language = "base"
@@ -164,8 +165,8 @@ class SphinxMapperBase:
 
     """Base class for mapping `PythonMapperBase` objects to Sphinx.
 
-    :param app: Sphinx application instance
-
+    Args:
+        app: Sphinx application instance
     """
 
     def __init__(self, app, template_dir=None, url_root=None):
@@ -204,10 +205,7 @@ class SphinxMapperBase:
         self.top_level_objects = OrderedDict()
 
     def load(self, patterns, dirs, ignore=None):
-        """
-        Load objects from the filesystem into the ``paths`` dictionary.
-
-        """
+        """Load objects from the filesystem into the ``paths`` dictionary."""
         paths = list(self.find_files(patterns=patterns, dirs=dirs, ignore=ignore))
         for path in sphinx.util.status_iterator(
             paths,
@@ -270,17 +268,18 @@ class SphinxMapperBase:
     def read_file(self, path, **kwargs):
         """Read file input into memory
 
-        :param path: Path of file to read
+        Args:
+            path: Path of file to read
         """
         # TODO support JSON here
         # TODO sphinx way of reporting errors in logs?
         raise NotImplementedError
 
     def add_object(self, obj):
-        """
-        Add object to local and app environment storage
+        """Add object to local and app environment storage
 
-        :param obj: Instance of a AutoAPI object
+        Args:
+            obj: Instance of a AutoAPI object
         """
         self.objects[obj.id] = obj
         self.all_objects[obj.id] = obj
@@ -302,10 +301,10 @@ class SphinxMapperBase:
                 self.add_object(obj)
 
     def create_class(self, data, options=None, **kwargs):
-        """
-        Create class object.
+        """Create class object.
 
-        :param data: Instance of a AutoAPI object
+        Args:
+            data: Instance of a AutoAPI object
         """
         raise NotImplementedError
 

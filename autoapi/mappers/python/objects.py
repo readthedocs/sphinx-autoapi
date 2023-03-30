@@ -29,12 +29,10 @@ def _format_args(args_info, include_annotations=True, ignore_self=None):
 class PythonPythonMapper(PythonMapperBase):
     """A base class for all types of representations of Python objects.
 
-    :var name: The name given to this object.
-    :vartype name: str
-    :var id: A unique identifier for this object.
-    :vartype id: str
-    :var children: The members of this object.
-    :vartype children: list(PythonPythonMapper)
+    Attributes:
+        name (str): The name given to this object.
+        id (str): A unique identifier for this object.
+        children (list(PythonPythonMapper)): The members of this object.
     """
 
     language = "python"

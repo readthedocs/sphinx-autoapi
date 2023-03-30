@@ -65,9 +65,7 @@ def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
 
 
 def run_autoapi(app):  # pylint: disable=too-many-branches
-    """
-    Load AutoAPI data from the filesystem.
-    """
+    """Load AutoAPI data from the filesystem."""
     if app.config.autoapi_type not in LANGUAGE_MAPPERS:
         allowed = ", ".join(f'"{api_type}"' for api_type in sorted(LANGUAGE_MAPPERS))
         raise ExtensionError(
@@ -178,9 +176,7 @@ def source_read(app, docname, source):  # pylint: disable=unused-argument
 
 
 def doctree_read(app, doctree):
-    """
-    Inject AutoAPI into the TOC Tree dynamically.
-    """
+    """Inject AutoAPI into the TOC Tree dynamically."""
 
     if app.env.docname == "index":
         all_docs = set()

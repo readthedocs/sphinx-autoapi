@@ -285,8 +285,9 @@ class DotNetPythonMapper(PythonMapperBase):
 
     """Base .NET object representation
 
-    :param references: object reference list from docfx
-    :type references: list of dict objects
+    Args:
+        references (list of dict objects): object reference list from
+            docfx
     """
 
     language = "dotnet"
@@ -446,14 +447,13 @@ class DotNetPythonMapper(PythonMapperBase):
 
     @staticmethod
     def transform_doc_comments(text):
-        """
-        Parse XML content for references and other syntax.
+        """Parse XML content for references and other syntax.
 
         This avoids an LXML dependency, we only need to parse out a small subset
         of elements here. Iterate over string to reduce regex pattern complexity
         and make substitutions easier
 
-        .. seealso::
+        See Also:
 
             `Doc comment reference <https://msdn.microsoft.com/en-us/library/5ast78ax.aspx>`
                 Reference on XML documentation comment syntax
@@ -514,13 +514,15 @@ class DotNetPythonMapper(PythonMapperBase):
         a compound reference that should be linked in a special way. Resolve to
         a nested reference, with the corrected nodes.
 
-        .. note::
+        Note:
             This uses a special format that is interpreted by the domain for
             parameter type and return type fields.
 
-        :param obj_name: spec identifier to resolve to a correct reference
-        :returns: resolved string with one or more references
-        :rtype: str
+        Args:
+            obj_name: spec identifier to resolve to a correct reference
+
+        Returns:
+            str: resolved string with one or more references
         """
         ref = self.references.get(obj_name)
         if ref is None:

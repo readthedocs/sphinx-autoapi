@@ -40,13 +40,13 @@ def resolve_import_alias(name, import_names):
 def get_full_import_name(import_from, name):
     """Get the full path of a name from a ``from x import y`` statement.
 
-    :param import_from: The astroid node to resolve the name of.
-    :type import_from: astroid.nodes.ImportFrom
-    :param name:
-    :type name: str
+    Args:
+        import_from (astroid.nodes.ImportFrom): The astroid node to
+            resolve the name of.
+        name (str)
 
-    :returns: The full import path of the name.
-    :rtype: str
+    Returns:
+        str: The full import path of the name.
     """
     partial_basename = resolve_import_alias(name, import_from.names)
 
@@ -64,13 +64,12 @@ def get_full_import_name(import_from, name):
 def resolve_qualname(node, basename):
     """Resolve where a node is defined to get its fully qualified name.
 
-    :param node: The node representing the base name.
-    :type node: astroid.NodeNG
-    :param basename: The partial base name to resolve.
-    :type basename: str
+    Args:
+        node (astroid.NodeNG): The node representing the base name.
+        basename (str): The partial base name to resolve.
 
-    :returns: The fully resolved base name.
-    :rtype: str
+    Returns:
+        str: The fully resolved base name.
     """
     full_basename = basename
 
@@ -115,11 +114,12 @@ def resolve_qualname(node, basename):
 def get_full_basenames(node):
     """Resolve the partial names of a class' bases to fully qualified names.
 
-    :param node: The class definition node to resolve the bases of.
+    Args:
+        node: The class definition node to resolve the bases of.
     :type: astroid.ClassDef
 
-    :returns: The full names.
-    :rtype: iterable(str)
+    Returns:
+        iterable(str): The full names.
     """
     for base in node.bases:
         yield _resolve_annotation(base)
@@ -153,12 +153,13 @@ def get_assign_value(node):
 
     Assignments to multiple names are ignored, as per PEP 257.
 
-    :param node: The node to get the assignment value from.
-    :type node: astroid.nodes.Assign or astroid.nodes.AnnAssign
+    Args:
+        node (astroid.nodes.Assign or astroid.nodes.AnnAssign): The node
+            to get the assignment value from.
 
-    :returns: The name that is assigned to,
-        and the value assigned to the name (if it can be converted).
-    :rtype: tuple(str, object or None) or None
+    Returns:
+        tuple(str, object or None) or None: The name that is assigned
+        to, and the value assigned to the name (if it can be converted).
     """
     try:
         targets = node.targets
@@ -181,11 +182,13 @@ def get_assign_value(node):
 def get_assign_annotation(node):
     """Get the type annotation of the assignment of the given node.
 
-    :param node: The node to get the annotation for.
-    :type node: astroid.nodes.Assign or astroid.nodes.AnnAssign
+    Args:
+        node (astroid.nodes.Assign or astroid.nodes.AnnAssign): The node
+            to get the annotation for.
 
-    :returns: The type annotation as a string, or None if one does not exist.
-    :rtype: str or None
+    Returns:
+        str or None: The type annotation as a string, or None if one
+        does not exist.
     """
     annotation_node = None
     try:
@@ -199,11 +202,11 @@ def get_assign_annotation(node):
 def is_decorated_with_property(node):
     """Check if the function is decorated as a property.
 
-    :param node: The node to check.
-    :type node: astroid.nodes.FunctionDef
+    Args:
+        node (astroid.nodes.FunctionDef): The node to check.
 
-    :returns: True if the function is a property, False otherwise.
-    :rtype: bool
+    Returns:
+        bool: True if the function is a property, False otherwise.
     """
     if not node.decorators:
         return False
@@ -244,11 +247,12 @@ def _is_property_decorator(decorator):
 def is_decorated_with_property_setter(node):
     """Check if the function is decorated as a property setter.
 
-    :param node: The node to check.
-    :type node: astroid.nodes.FunctionDef
+    Args:
+        node (astroid.nodes.FunctionDef): The node to check.
 
-    :returns: True if the function is a property setter, False otherwise.
-    :rtype: bool
+    Returns:
+        bool: True if the function is a property setter, False
+        otherwise.
     """
     if not node.decorators:
         return False
@@ -266,11 +270,12 @@ def is_decorated_with_property_setter(node):
 def is_decorated_with_overload(node):
     """Check if the function is decorated as an overload definition.
 
-    :param node: The node to check.
-    :type node: astroid.nodes.FunctionDef
+    Args:
+        node (astroid.nodes.FunctionDef): The node to check.
 
-    :returns: True if the function is an overload definition, False otherwise.
-    :rtype: bool
+    Returns:
+        bool: True if the function is an overload definition, False
+        otherwise.
     """
     if not node.decorators:
         return False
@@ -302,11 +307,11 @@ def _is_overload_decorator(decorator):
 def is_constructor(node):
     """Check if the function is a constructor.
 
-    :param node: The node to check.
-    :type node: astroid.nodes.FunctionDef
+    Args:
+        node (astroid.nodes.FunctionDef): The node to check.
 
-    :returns: True if the function is a constructor, False otherwise.
-    :rtype: bool
+    Returns:
+        bool: True if the function is a constructor, False otherwise.
     """
     return (
         node.parent
@@ -318,11 +323,11 @@ def is_constructor(node):
 def is_exception(node):
     """Check if a class is an exception.
 
-    :param node: The node to check.
-    :type node: astroid.nodes.ClassDef
+    Args:
+        node (astroid.nodes.ClassDef): The node to check.
 
-    :returns: True if the class is an exception, False otherwise.
-    :rtype: bool
+    Returns:
+        bool: True if the class is an exception, False otherwise.
     """
     if node.name in ("Exception", "BaseException") and node.root().name == "builtins":
         return True
@@ -336,15 +341,13 @@ def is_exception(node):
 def is_local_import_from(node, package_name):
     """Check if a node is an import from the local package.
 
-    :param node: The node to check.
-    :type node: astroid.node.NodeNG
+    Args:
+        node (astroid.node.NodeNG): The node to check.
+        package_name (str): The name of the local package.
 
-    :param package_name: The name of the local package.
-    :type package_name: str
-
-    :returns: True if the node is an import from the local package,
+    Returns:
+        bool: True if the node is an import from the local package,
         False otherwise.
-    :rtype: bool
     """
     if not isinstance(node, astroid.ImportFrom):
         return False
@@ -359,11 +362,12 @@ def is_local_import_from(node, package_name):
 def get_module_all(node):
     """Get the contents of the ``__all__`` variable from a module.
 
-    :param node: The module to get ``__all__`` from.
-    :type node: astroid.nodes.Module
+    Args:
+        node (astroid.nodes.Module): The module to get ``__all__`` from.
 
-    :returns: The contents of ``__all__`` if defined. Otherwise None.
-    :rtype: list(str) or None
+    Returns:
+        list(str) or None: The contents of ``__all__`` if defined.
+        Otherwise None.
     """
     all_ = None
 
@@ -575,7 +579,9 @@ def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-stat
 
 def get_return_annotation(node):
     """Get the return annotation of a node.
-    :type node: astroid.nodes.FunctionDef
+
+    Args:
+        node (astroid.nodes.FunctionDef)
     """
     return_annotation = None
 
@@ -590,8 +596,9 @@ def get_return_annotation(node):
 def get_func_docstring(node):
     """Get the docstring of a node, using a parent docstring if needed.
 
-    :param node: The node to get a docstring for.
-    :type node: astroid.nodes.FunctionDef
+    Args:
+        node (astroid.nodes.FunctionDef): The node to get a docstring
+            for.
     """
     doc = node.doc
 
@@ -617,8 +624,8 @@ def get_func_docstring(node):
 def get_class_docstring(node):
     """Get the docstring of a node, using a parent docstring if needed.
 
-    :param node: The node to get a docstring for.
-    :type node: astroid.nodes.ClassDef
+    Args:
+        node (astroid.nodes.ClassDef): The node to get a docstring for.
     """
     doc = node.doc
 
