@@ -203,7 +203,9 @@ class PythonFunction(PythonPythonMapper):
             (_format_args(args), return_annotation)
             for args, return_annotation in obj["overloads"]
         ]
-        """The list of overloaded signatures ``[(args, return_annotation), ...]`` of this function.
+        """The overloaded signatures of this function.
+
+        Each tuple is a tuple of ``(args, return_annotation)``
 
         :type: list(tuple(str, str))
         """

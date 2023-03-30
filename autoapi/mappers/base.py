@@ -76,7 +76,6 @@ class PythonMapperBase:
         try:
             template = self.jinja_env.get_template(f"{self.language}/{self.type}.rst")
         except TemplateNotFound:
-            # Use a try/except here so we fallback to language specific defaults, over base defaults
             template = self.jinja_env.get_template(f"base/{self.type}.rst")
 
         ctx.update(**self.get_context_data())

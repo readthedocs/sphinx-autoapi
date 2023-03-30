@@ -112,7 +112,10 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
             continue
 
         if imported_from not in modules:
-            msg = f"Cannot resolve import of unknown module {imported_from} in {module_name}"
+            msg = (
+                f"Cannot resolve import of unknown module {imported_from}"
+                f" in {module_name}"
+            )
             LOGGER.warning(msg, type="autoapi", subtype="python_import_resolution")
             module["children"].remove(child)
             children.pop(child["name"])
