@@ -23,6 +23,7 @@ from sphinx.errors import ExtensionError
 
 sphinx_version = version.parse(sphinx.__version__).release
 
+
 def rebuild(confoverrides=None, confdir=".", **kwargs):
     app = Sphinx(
         srcdir=".",
