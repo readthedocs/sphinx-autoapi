@@ -42,12 +42,12 @@ _VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
 """Caches a module's parse results for use in viewcode."""
 
 
-class RemovedInAutoAPI2Warning(DeprecationWarning):
-    """Indicates something that will be removed in sphinx-autoapi v2."""
+class RemovedInAutoAPI3Warning(DeprecationWarning):
+    """Indicates something that will be removed in sphinx-autoapi v3."""
 
 
 if "PYTHONWARNINGS" not in os.environ:
-    warnings.filterwarnings("default", category=RemovedInAutoAPI2Warning)
+    warnings.filterwarnings("default", category=RemovedInAutoAPI3Warning)
 
 
 def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
@@ -72,6 +72,13 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
             f"Invalid autoapi_type setting, following values are allowed: {allowed}"
         )
 
+    if app.config.autoapi_type != "python":
+        warnings.warn(
+            "Support for documenting languages other than Python "
+            "will be removed in AutoAPI v3.",
+            RemovedInAutoAPI3Warning,
+        )
+
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
 
@@ -79,7 +86,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         warnings.warn(
             "autoapi_include_summaries has been replaced by "
             "the show-module-summary AutoAPI option\n",
-            RemovedInAutoAPI2Warning,
+            RemovedInAutoAPI3Warning,
         )
         if app.config.autoapi_include_summaries:
             app.config.autoapi_options.append("show-module-summary")
@@ -121,7 +128,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
                 "autoapi_template_dir will be expected to be "
                 "relative to the Sphinx source directory instead of "
                 "relative to where sphinx-build is run\n",
-                RemovedInAutoAPI2Warning,
+                RemovedInAutoAPI3Warning,
             )
     sphinx_mapper_obj = sphinx_mapper(app, template_dir=template_dir, url_root=url_root)
 
