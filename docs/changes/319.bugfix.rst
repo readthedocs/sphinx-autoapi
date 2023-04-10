@@ -1,0 +1,1 @@
+Fix "document isn't included" warning when using autoapi_add_toctree_entry

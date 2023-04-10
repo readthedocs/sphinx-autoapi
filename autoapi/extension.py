@@ -207,8 +207,8 @@ def doctree_read(app, doctree):
                 insert = False
         if insert and app.config.autoapi_add_toctree_entry:
             # Insert AutoAPI index
-            nodes[-1]["entries"].append((None, f"{app.config.autoapi_root}/index"))
-            nodes[-1]["includefiles"].append(f"{app.config.autoapi_root}/index")
+            nodes[-1]["entries"].append((None, toc_entry))
+            nodes[-1]["includefiles"].append(toc_entry)
             message_prefix = colorize("bold", "[AutoAPI] ")
             message = colorize(
                 "darkgreen", f"Adding AutoAPI TOCTree [{toc_entry}] to index.rst"
@@ -274,7 +274,10 @@ def viewcode_follow_imported(app, modname, attribute):
 def setup(app):
     app.connect("builder-inited", run_autoapi)
     app.connect("source-read", source_read)
-    app.connect("doctree-read", doctree_read)
+    # Use a lower priority than the default to ensure that we can
+    # inject into the toctree before Sphinx tries to use it
+    # in another doctree-read transformer.
+    app.connect("doctree-read", doctree_read, priority=400)
     app.connect("build-finished", build_finished)
     if "viewcode-find-source" in app.events.events:
         app.connect("viewcode-find-source", viewcode_find)

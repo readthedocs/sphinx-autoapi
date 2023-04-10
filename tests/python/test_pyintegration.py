@@ -24,14 +24,13 @@ from sphinx.errors import ExtensionError
 sphinx_version = version.parse(sphinx.__version__).release
 
 
-def rebuild(confoverrides=None, confdir=".", **kwargs):
+def rebuild(confdir=".", **kwargs):
     app = Sphinx(
         srcdir=".",
         confdir=confdir,
         outdir="_build/text",
         doctreedir="_build/.doctrees",
         buildername="text",
-        confoverrides=confoverrides,
         **kwargs,
     )
     app.build()
@@ -41,9 +40,19 @@ def rebuild(confoverrides=None, confdir=".", **kwargs):
 def builder():
     cwd = os.getcwd()
 
-    def build(test_dir, confoverrides=None, **kwargs):
+    def build(test_dir, **kwargs):
+        if kwargs.get("warningiserror"):
+            # Add any warnings raised when using `Sphinx` more than once
+            # in a Python session.
+            confoverrides = kwargs.setdefault("confoverrides", {})
+            confoverrides.setdefault("suppress_warnings", [])
+            suppress = confoverrides["suppress_warnings"]
+            suppress.append("app.add_node")
+            suppress.append("app.add_directive")
+            suppress.append("app.add_role")
+
         os.chdir("tests/python/{0}".format(test_dir))
-        rebuild(confoverrides=confoverrides, **kwargs)
+        rebuild(**kwargs)
 
     yield build
 
@@ -59,7 +68,6 @@ class TestSimpleModule:
         builder(
             "pyexample",
             warningiserror=True,
-            confoverrides={"suppress_warnings": ["app"]},
         )
 
     def test_integration(self):
@@ -176,7 +184,6 @@ class TestMovedConfPy(TestSimpleModule):
             "pymovedconfpy",
             confdir="confpy",
             warningiserror=True,
-            confoverrides={"suppress_warnings": ["app"]},
         )
 
 
@@ -195,7 +202,6 @@ class TestSimpleModuleDifferentPrimaryDomain:
                     "imported-members",
                 ],
                 "primary_domain": "cpp",
-                "suppress_warnings": ["app"],
             },
         )
 
@@ -1008,7 +1014,6 @@ class TestMemberOrder:
             "pyexample",
             warningiserror=True,
             confoverrides={
-                "suppress_warnings": ["app"],
                 "autodoc_member_order": "bysource",
             },
         )
