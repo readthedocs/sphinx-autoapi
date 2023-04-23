@@ -2,6 +2,7 @@
 
 This extension allows you to automagically generate API documentation from your project.
 """
+import collections
 import io
 import os
 import shutil
@@ -38,6 +39,11 @@ _DEFAULT_OPTIONS = [
     "special-members",
     "imported-members",
 ]
+_TEMPLATE_SUFFIXES = {
+    "markdown": ".md",
+    "restructuredtext": ".rst",
+}
+"""Map an output format to the file extension of the templates to use."""
 _VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
 """Caches a module's parse results for use in viewcode."""
 
@@ -62,6 +68,35 @@ def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
             normalised_dirs.append(os.path.normpath(os.path.join(srcdir, path)))
 
     return normalised_dirs
+
+
+def _normalise_source_suffix(source_suffix):
+    result = collections.OrderedDict()
+
+    if isinstance(source_suffix, str):
+        result[source_suffix] = "restructuredtext"
+    elif isinstance(source_suffix, list):
+        for suffix in source_suffix:
+            result[suffix] = "restructuredtext"
+    else:
+        result = source_suffix
+
+    return result
+
+
+def _normalise_output_suffix(output_suffix, source_suffix):
+    result = output_suffix
+
+    if not result:
+        if ".rst" in source_suffix:
+            result = ".rst"
+        elif ".txt" in source_suffix:
+            result = ".txt"
+        else:
+            # Fallback to first suffix listed
+            result = next(iter(source_suffix))
+
+    return result
 
 
 def run_autoapi(app):  # pylint: disable=too-many-branches
@@ -142,13 +177,17 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
     else:
         ignore_patterns = DEFAULT_IGNORE_PATTERNS.get(app.config.autoapi_type, [])
 
-    if ".rst" in app.config.source_suffix:
-        out_suffix = ".rst"
-    elif ".txt" in app.config.source_suffix:
-        out_suffix = ".txt"
+    source_suffix = _normalise_source_suffix(app.config.source_suffix)
+    out_suffix = _normalise_output_suffix(app.config.autoapi_output_suffix, source_suffix)
+    output_format = source_suffix.get(out_suffix)
+    if output_format:
+        if app.config.autoapi_type == "python":
+            if output_format not in _TEMPLATE_SUFFIXES:
+                raise ExtensionError(f"Unknown output format '{output_format}'")
+        elif output_format != "restructuredtext":
+            raise ExtensionError(f"Unknown output format '{output_format}'")
     else:
-        # Fallback to first suffix listed
-        out_suffix = next(iter(app.config.source_suffix))
+        raise ExtensionError(f"autoapi_output_suffix '{out_suffix}' must be registered with source_suffix")
 
     if sphinx_mapper_obj.load(
         patterns=file_patterns, dirs=normalised_dirs, ignore=ignore_patterns
@@ -156,6 +195,7 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
         sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
         if app.config.autoapi_generate_api_docs:
+            app.env.autoapi_template_suffix = _TEMPLATE_SUFFIXES[output_format]
             sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
 
 
@@ -298,6 +338,7 @@ def setup(app):
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
     app.add_config_value("autoapi_prepare_jinja_env", None, "html")
+    app.add_config_value("autoapi_output_suffix", None, "html")
     app.add_autodocumenter(documenters.AutoapiFunctionDocumenter)
     app.add_autodocumenter(documenters.AutoapiPropertyDocumenter)
     app.add_autodocumenter(documenters.AutoapiDecoratorDocumenter)

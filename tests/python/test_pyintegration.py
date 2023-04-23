@@ -187,6 +187,15 @@ class TestMovedConfPy(TestSimpleModule):
         )
 
 
+class TestSimpleMarkdown(TestSimpleModule):
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pymarkdownexample",
+            warningiserror=True,
+        )
+
+
 class TestSimpleModuleDifferentPrimaryDomain:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):

@@ -18,6 +18,11 @@ LOGGER = sphinx.util.logging.getLogger(__name__)
 Path = namedtuple("Path", ["absolute", "relative"])
 
 
+def _md_fence(config):
+    colon_fence = "colon_fence" in getattr(config, "myst_enable_extensions", [])
+    return ":::" if colon_fence else "```"
+
+
 class PythonMapperBase:
 
     """Base object for JSON -> Python object mapping.
@@ -75,9 +80,11 @@ class PythonMapperBase:
 
         ctx = {}
         try:
-            template = self.jinja_env.get_template(f"{self.language}/{self.type}.rst")
+            template_suffix = self.app.env.autoapi_template_suffix
+            template_path = f"{self.language}/{self.type}{template_suffix}"
+            template = self.jinja_env.get_template(template_path)
         except TemplateNotFound:
-            template = self.jinja_env.get_template(f"base/{self.type}.rst")
+            template = self.jinja_env.get_template(f"base/{self.type}{template_suffix}")
 
         ctx.update(**self.get_context_data())
         ctx.update(**kwargs)
@@ -92,6 +99,7 @@ class PythonMapperBase:
         return {
             "autoapi_options": self.app.config.autoapi_options,
             "include_summaries": self.app.config.autoapi_include_summaries,
+            "md_fence": _md_fence(self.app.config),
             "obj": self,
             "sphinx_version": sphinx.version_info,
         }
@@ -327,12 +335,17 @@ class SphinxMapperBase:
                 detail_file.write(rst.encode("utf-8"))
 
         if self.app.config.autoapi_add_toctree_entry:
-            self._output_top_rst(root)
+            self._output_top_rst(root, source_suffix)
 
-    def _output_top_rst(self, root):
+    def _output_top_rst(self, root, source_suffix):
         # Render Top Index
-        top_level_index = os.path.join(root, "index.rst")
+        top_level_index = os.path.join(root, f"index{source_suffix}")
         pages = self.objects.values()
+        md_fence = _md_fence(self.app.config)
+
+        template_suffix = self.app.env.autoapi_template_suffix
+        template = self.jinja_env.get_template(f"index{template_suffix}")
+        content = template.render(pages=pages, md_fence=md_fence)
+
         with open(top_level_index, "wb") as top_level_file:
-            content = self.jinja_env.get_template("index.rst")
-            top_level_file.write(content.render(pages=pages).encode("utf-8"))
+            top_level_file.write(content.encode("utf-8"))
