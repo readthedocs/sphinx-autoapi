@@ -21,11 +21,11 @@ Sphinx AutoAPI
     :target: https://github.com/python/black
     :alt: Formatted with Black
 
-Sphinx AutoAPI provides "autodoc" style documentation for multiple programming languages
+Sphinx AutoAPI is a Sphinx extension for generating complete API documentation
 without needing to load, run, or import the project being documented.
 
 In contrast to the traditional `Sphinx autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_,
-which is Python-only and uses code imports,
+which requires manual authoring and uses code imports,
 AutoAPI finds and generates documentation by parsing source code.
 
 Language Support

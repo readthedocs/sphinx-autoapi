@@ -1,12 +1,14 @@
 Tutorials
 =========
 
-Setting up Automatic API Documentation Generation
--------------------------------------------------
-
-This tutorial will assume that you already have a basic Sphinx project set up.
+These tutorials will guide you through how to start using AutoAPI.
+They will assume that you already have a basic Sphinx project set up.
 If you are not sure how to do this,
 you can follow the :doc:`sphinx:usage/quickstart` guide in the Sphinx documentation.
+
+
+Setting up Automatic API Documentation Generation
+-------------------------------------------------
 
 The recommended way of installing AutoAPI is through a `virtualenv <https://virtualenv.pypa.io/>`_.
 Once you have a virtualenv set up, you can install AutoAPI with the command:
@@ -25,11 +27,7 @@ Javascript   ``pip install sphinx-autoapi``
     Support for all languages other than Python will be removed in the next major version!
 
 Depending on which language you are trying to document,
-each language has a different set of steps for finishing the setup of AutoAPI:
-
-.. contents::
-    :local:
-    :backlinks: none
+each language has a different set of steps for finishing the setup of AutoAPI.
 
 
 Python

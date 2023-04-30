@@ -1,6 +1,13 @@
 How-to Guides
 =============
 
+These guides will take you through the steps to perform common actions
+or solve common problems in AutoAPI. 
+They will assume that you already have a Sphinx project with AutoAPI
+set up already.
+If you don't know how to do this then read the :doc:`tutorials`.
+
+
 .. _customise-templates:
 
 How to Customise Layout Through Templates
