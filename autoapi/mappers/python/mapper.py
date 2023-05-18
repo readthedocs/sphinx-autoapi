@@ -322,8 +322,8 @@ class PythonSphinxMapper(SphinxMapperBase):
             else:
                 parsed_data = Parser().parse_file(path)
             return parsed_data
-        except (IOError, TypeError, ImportError):
-            LOGGER.debug("Reason:", exc_info=True)
+        except Exception as e:
+            LOGGER.debug("Reason: Received Exception of type " + str(type(e)) + ": " + str(e), exc_info=True)
             LOGGER.warning(
                 "Unable to read file: {0}".format(path),
                 type="autoapi",
