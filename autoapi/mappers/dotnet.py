@@ -5,13 +5,13 @@ import subprocess
 import traceback
 import shutil
 from typing import Dict
-import unidecode
 
-import yaml
+import anyascii
 from sphinx.util.osutil import ensuredir
 from sphinx.util.console import colorize
 import sphinx.util.logging
 from sphinx.errors import ExtensionError
+import yaml
 
 from .base import PythonMapperBase, SphinxMapperBase
 
@@ -375,7 +375,7 @@ class DotNetPythonMapper(PythonMapperBase):
             slug = self.name.split("(")[0]
         except IndexError:
             pass
-        slug = unidecode.unidecode(slug)
+        slug = anyascii.anyascii(slug)
         slug = slug.replace("-", "")
         slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
         return os.path.join(*slug.split("."))

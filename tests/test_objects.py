@@ -124,7 +124,7 @@ class TestDotNetObject:
         cls = dotnet.DotNetClass({"id": "Foo.Bär"}, jinja_env=None, app=None)
         assert cls.pathname == os.path.join("Foo", "Bar")
         cls = dotnet.DotNetClass({"id": "Ащщ.юИфк"}, jinja_env=None, app=None)
-        assert cls.pathname == os.path.join("Ashchshch", "iuIfk")
+        assert cls.pathname == os.path.join("Ashchshch", "yuIfk")
 
     def test_rendered_class_escaping(self):
         """Rendered class escaping"""

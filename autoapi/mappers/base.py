@@ -3,13 +3,13 @@ import fnmatch
 from collections import OrderedDict, namedtuple
 import re
 
+import anyascii
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
 from sphinx.util.console import colorize
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
-import unidecode
 
 from ..settings import API_ROOT, TEMPLATE_DIR
 
@@ -122,7 +122,7 @@ class PythonMapperBase:
         * Break up the string as paths
         """
         slug = self.name
-        slug = unidecode.unidecode(slug)
+        slug = anyascii.anyascii(slug)
         slug = slug.replace("-", "")
         slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
         return os.path.join(*slug.split("."))
