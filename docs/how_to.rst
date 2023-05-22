@@ -8,6 +8,88 @@ set up already.
 If you don't know how to do this then read the :doc:`tutorials`.
 
 
+.. _customise-documented-api:
+
+How to Customise What Gets Documented
+-------------------------------------
+
+With the default settings,
+AutoAPI will document everything that is publicly accessible through the actual package
+when loaded in Python.
+For example if a function is imported from a submodule into a package
+then that function is documented in both the submodule and the package.
+
+However there are multiple options available for controlling what AutoAPI will document.
+
+
+Connect to the :event:`autoapi-skip-member` event
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :event:`autoapi-skip-member` event is emitted whenever
+a template has to decide whether a member should be included in the documentation.
+
+For example, to document only packages
+-- in other words, to not document submodules --
+you could implement an event handler in your conf.py like the following.
+
+.. code-block:: python
+
+    def skip_submodules(app, what, name, obj, skip, options):
+        if what == "module":
+            skip = True
+        return skip
+
+
+    def setup(sphinx):
+        sphinx.connect("autoapi-skip-member", skip_submodules)
+
+
+Set ``__all__``
+^^^^^^^^^^^^^^^
+
+AutoAPI treats the definition of `__all__ <https://docs.python.org/tutorial/modules.html#importing-from-a-package>`_
+as the specification of what objects are public in a module or package, and which aren't.
+
+In the following example, only ``func_a()`` and ``A`` would be documented.
+
+.. code-block:: python
+
+    # mypackage/__init__.py
+    from . import B
+
+    __all__ = ("A", "func_a")
+
+    class A:
+        ...
+
+    def func_a():
+        ...
+
+    def func_b():
+        ...
+
+
+Configure :confval:`autoapi_options`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :confval:`autoapi_options` configuration value gives some high level control
+over what is documented.
+For example you can hide members that don't have a docstring,
+document private members, and hide magic methods.
+See :confval:`autoapi_options` for more information on how to use this option.
+
+
+Customise the API Documentation Templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, you can configure what gets rendered by customising the templates.
+This is a rather heavy handed approach,
+so it should only be necessary when the other options do not give you
+the control the you need.
+You can learn how to customise the templates in the next section;
+:ref:`customise-templates`.
+
+
 .. _customise-templates:
 
 How to Customise Layout Through Templates
@@ -37,6 +119,8 @@ For example, to override the Python class and module templates:
         ├── class.rst
         └── module.rst
 
+
+.. _customise-index-page:
 
 How to Customise the Index Page
 -------------------------------

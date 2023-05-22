@@ -57,7 +57,8 @@ that you can reliably access per language.
 .. warning::
 
 	These classes should not be constructed manually.
-	They can be reliably accessed through templates only.
+	They can be reliably accessed through templates
+	and :event:`autoapi-skip-member` only.
 
 Python
 ~~~~~~
