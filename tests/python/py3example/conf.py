@@ -18,6 +18,7 @@ extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_python_class_content = "both"
+autoapi_keep_files = True
 autoapi_options = [
     "members",
     "undoc-members",  # this is temporary until we add docstrings across the codebase

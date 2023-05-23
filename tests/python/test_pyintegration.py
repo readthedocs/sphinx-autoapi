@@ -1,16 +1,11 @@
 import io
 import os
 import pathlib
-import re
 import shutil
 import sys
-from unittest.mock import Mock, call, patch
+from unittest.mock import Mock, call
 
-from packaging import version
 import autoapi.settings
-import pytest
-import sphinx
-import sphinx.util.logging
 from autoapi.mappers.python import (
     PythonClass,
     PythonData,
@@ -18,8 +13,13 @@ from autoapi.mappers.python import (
     PythonMethod,
     PythonModule,
 )
+from bs4 import BeautifulSoup
+from packaging import version
+import pytest
+import sphinx
 from sphinx.application import Sphinx
 from sphinx.errors import ExtensionError
+import sphinx.util.logging
 
 sphinx_version = version.parse(sphinx.__version__).release
 
@@ -28,9 +28,9 @@ def rebuild(confdir=".", **kwargs):
     app = Sphinx(
         srcdir=".",
         confdir=confdir,
-        outdir="_build/text",
+        outdir="_build/html",
         doctreedir="_build/.doctrees",
-        buildername="text",
+        buildername="html",
         **kwargs,
     )
     app.build()
@@ -58,8 +58,24 @@ def builder():
 
     try:
         shutil.rmtree("_build")
+        if (pathlib.Path("autoapi") / "index.rst").exists():
+            shutil.rmtree("autoapi")
     finally:
         os.chdir(cwd)
+
+
+@pytest.fixture(scope="class")
+def parse():
+    cache = {}
+
+    def parser(path):
+        if path not in cache:
+            with io.open(path, encoding="utf8") as file_handle:
+                cache[path] = BeautifulSoup(file_handle, features="html.parser")
+
+        return cache[path]
+
+    yield parser
 
 
 class TestSimpleModule:
@@ -68,113 +84,147 @@ class TestSimpleModule:
         builder(
             "pyexample",
             warningiserror=True,
+            confoverrides={"exclude_patterns": ["manualapi.rst"]},
         )
 
-    def test_integration(self):
-        self.check_integration("_build/text/autoapi/example/index.txt")
+    def test_integration(self, parse):
+        self.check_integration(parse, "_build/html/autoapi/example/index.html")
 
-    def test_manual_directives(self):
-        example_path = "_build/text/manualapi.txt"
-        # The manual directives should contain the same information
-        self.check_integration(example_path)
+        index_file = parse("_build/html/index.html")
 
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+        toctree = index_file.select("li > a")
+        assert any(item.text == "API Reference" for item in toctree)
 
-        assert "@example.decorator_okay" in example_file
+    def check_integration(self, parse, example_path):
+        example_file = parse(example_path)
+        foo_sig = example_file.find(id="example.Foo")
+        assert foo_sig
+        assert foo_sig.find(class_="sig-name").text == "Foo"
+        assert foo_sig.find(class_="sig-param").text == "attr"
 
-    def check_integration(self, example_path):
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+        # Check that nested classes are documented
+        foo = foo_sig.parent
+        assert foo.find(id="example.Foo.Meta")
 
-        assert "class example.Foo" in example_file
-        assert "class Meta" in example_file
-        assert "attr2" in example_file
-        assert "This is the docstring of an instance attribute." in example_file
-        assert "method_okay(foo=None, bar=None)" in example_file
-        assert "method_multiline(foo=None, bar=None, baz=None)" in example_file
-        assert "method_tricky(foo=None, bar=dict(foo=1, bar=2))" in example_file
+        # Check that class attributes are documented
+        attr2 = foo.find(id="example.Foo.attr2")
+        assert "attr2" in attr2.text
+        # Check that attribute docstrings are used
+        assert attr2.parent.find("dd").text.startswith(
+            "This is the docstring of an instance attribute."
+        )
+
+        method_okay = foo.find(id="example.Foo.method_okay")
+        assert method_okay
+        args = method_okay.find_all(class_="sig-param")
+        assert len(args) == 2
+        assert args[0].text == "foo=None"
+        assert args[1].text == "bar=None"
+
+        method_multiline = foo.find(id="example.Foo.method_multiline")
+        assert method_multiline
+        args = method_multiline.find_all(class_="sig-param")
+        assert len(args) == 3
+        assert args[0].text == "foo=None"
+        assert args[1].text == "bar=None"
+        assert args[2].text == "baz=None"
+
+        method_tricky = foo.find(id="example.Foo.method_tricky")
+        assert method_tricky
+        args = method_tricky.find_all(class_="sig-param")
+        assert len(args) == 2
+        assert args[0].text == "foo=None"
+        assert args[1].text == "bar=dict(foo=1, bar=2)"
 
         # Are constructor arguments from the class docstring parsed?
-        assert "Set an attribute" in example_file
+        init_args = foo.parent.find_next(class_="field-list")
+        assert "Set an attribute" in init_args.text
 
         # "self" should not be included in constructor arguments
-        assert "Foo(self" not in example_file
+        assert len(foo_sig.find_all(class_="sig-param")) == 1
 
-        assert "property_simple" in example_file
-        assert "This property should parse okay." in example_file
+        property_simple = foo.find(id="example.Foo.property_simple")
+        assert property_simple
+        assert (
+            property_simple.parent.find("dd").text.strip()
+            == "This property should parse okay."
+        )
 
         # Overridden methods without their own docstring
         # should inherit the parent's docstring
-        assert example_file.count("This method should parse okay") == 2
+        bar_method_okay = example_file.find(id="example.Bar.method_okay")
+        assert (
+            bar_method_okay.parent.find("dd").text.strip()
+            == "This method should parse okay"
+        )
 
-        assert not os.path.exists("_build/text/autoapi/method_multiline")
+        assert not os.path.exists("_build/html/autoapi/method_multiline")
 
         # Inherited constructor docstrings should be included in a merged
         # (autoapi_python_class_content="both") class docstring only once.
-        assert example_file.count("One __init__.") == 3
+        two = example_file.find(id="example.Two")
+        assert two.parent.find("dd").text.count("One __init__") == 1
 
         # Tuples should be rendered as tuples, not lists
-        assert "('a', 'b')" in example_file
+        a_tuple = example_file.find(id="example.A_TUPLE")
+        assert a_tuple.find(class_="property").text.endswith("('a', 'b')")
         # Lists should be rendered as lists, not tuples
-        assert "['c', 'd']" in example_file
+        a_list = example_file.find(id="example.A_LIST")
+        assert a_list.find(class_="property").text.endswith("['c', 'd']")
 
         # Assigning a class level attribute at the module level
         # should not get documented as a module level attribute.
-        assert "dinglebop" not in example_file
+        assert "dinglebop" not in example_file.text
 
-        index_path = "_build/text/index.txt"
-        with io.open(index_path, encoding="utf8") as index_handle:
-            index_file = index_handle.read()
+        index_file = parse("_build/html/index.html")
 
-        assert "API Reference" in index_file
+        toctree = index_file.select("li > a")
+        assert any(item.text == "Foo" for item in toctree)
+        assert any(item.text == "Foo.Meta" for item in toctree)
 
-        assert "Foo" in index_file
-        assert "Meta" in index_file
-
-    def test_napoleon_integration_not_loaded(self, builder):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_napoleon_integration_not_loaded(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
         # Check that docstrings are not transformed without napoleon loaded
-        assert "Args" in example_file
+        method_google = example_file.find(id="example.Foo.method_google_docs")
+        assert "Args" in method_google.parent.find("dd").text
+        assert "Returns" in method_google.parent.find("dd").text
 
-        assert "Returns" in example_file
+    def test_show_inheritance(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-    def test_show_inheritance(self, builder):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+        foo = example_file.find(id="example.Foo")
+        foo_docstring = foo.parent.find("dd").contents[0]
+        assert foo_docstring.text.startswith("Bases:")
 
-        assert "Bases:" in example_file
+    def test_long_signature(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-    def test_long_signature(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+        summary_row = example_file.find_all(class_="autosummary")[1].find_all("tr")[-1]
+        assert summary_row
+        cells = summary_row.find_all("td")
+        assert (
+            cells[0].text.replace("\xa0", " ")
+            == "fn_with_long_sig(this, *[, function, has, quite])"
+        )
+        assert cells[1].text.strip() == "A function with a long signature."
 
-        summary_row = """
-+------------+--------------------------------------------------------------------------------------------+
-| "fn_with_  | A function with a long signature.                                                          |
-| long_sig"  |                                                                                            |
-| (this, *[, |                                                                                            |
-| function,  |                                                                                            |
-| has,       |                                                                                            |
-| quite])    |                                                                                            |
-+------------+--------------------------------------------------------------------------------------------+
-        """.strip()
-        assert summary_row in example_file
 
-        # Check length of truncated signature
-        parts = []
-        for line in summary_row.splitlines()[1:-1]:
-            part = line.split("|")[1].strip()
-            if part.endswith(","):
-                part += " "
-            parts.append(part)
-        sig_summary = "".join(parts)
-        assert len(sig_summary) <= 60
+class TestSimpleModuleManual:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pyexample",
+            warningiserror=True,
+            confoverrides={
+                "autoapi_generate_api_docs": False,
+                "autoapi_add_toctree_entry": False,
+            },
+        )
+
+    def test_manual_directives(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+        assert example_file.find(id="example.decorator_okay")
 
 
 class TestMovedConfPy(TestSimpleModule):
@@ -184,70 +234,70 @@ class TestMovedConfPy(TestSimpleModule):
             "pymovedconfpy",
             confdir="confpy",
             warningiserror=True,
+            confoverrides={"exclude_patterns": ["manualapi.rst"]},
         )
 
 
-class TestSimpleModuleDifferentPrimaryDomain:
+class TestSimpleModuleDifferentPrimaryDomain(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder(
             "pyexample",
             warningiserror=True,
             confoverrides={
-                "autoapi_options": [
-                    "members",
-                    "undoc-members",
-                    "private-members",
-                    "special-members",
-                    "imported-members",
-                ],
+                "exclude_patterns": ["manualapi.rst"],
                 "primary_domain": "cpp",
             },
         )
-
-    def test_success(self):
-        pass
 
 
 class TestSimpleStubModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyiexample")
+        builder("pyiexample", warningiserror=True)
 
-    def test_integration(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
         # Are pyi files preferred
         assert "DoNotFindThis" not in example_file
 
-        assert "class example.Foo" in example_file
-        assert "class Meta" in example_file
-        assert "Another class var docstring" in example_file
-        assert "A class var without a value." in example_file
-        assert "method_okay(foo=None, bar=None)" in example_file
-        assert "method_multiline(foo=None, bar=None, baz=None)" in example_file
-        assert "method_without_docstring()" in example_file
+        foo_sig = example_file.find(id="example.Foo")
+        assert foo_sig
+        foo = foo_sig.parent
+        assert foo.find(id="example.Foo.Meta")
+        class_var = foo.find(id="example.Foo.another_class_var")
+        class_var_docstring = class_var.parent.find("dd").contents[0].text
+        assert class_var_docstring.strip() == "Another class var docstring"
+        class_var = foo.find(id="example.Foo.class_var_without_value")
+        class_var_docstring = class_var.parent.find("dd").contents[0].text
+        assert class_var_docstring.strip() == "A class var without a value."
+
+        method_okay = foo.find(id="example.Foo.method_okay")
+        assert method_okay
+        method_multiline = foo.find(id="example.Foo.method_multiline")
+        assert method_multiline
+        method_without_docstring = foo.find(id="example.Foo.method_without_docstring")
+        assert method_without_docstring
 
         # Are constructor arguments from the class docstring parsed?
-        assert "Set an attribute" in example_file
+        init_args = foo.parent.find_next(class_="field-list")
+        assert "Set an attribute" in init_args.text
 
 
 class TestSimpleStubModuleNotPreferred:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyiexample2")
+        builder("pyiexample2", warningiserror=True)
 
-    def test_integration(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
         # Are py files preferred
         assert "DoNotFindThis" not in example_file
 
-        assert "Foo" in example_file
+        foo_sig = example_file.find(id="example.Foo")
+        assert foo_sig
 
 
 class TestPy3Module:
@@ -255,148 +305,238 @@ class TestPy3Module:
     def built(self, builder):
         builder("py3example")
 
-    def test_integration(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
         assert "Initialize self" not in example_file
         assert "a new type" not in example_file
 
-    def test_annotations(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_annotations(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert '''software = "sphin'x"''' in example_file
-        assert """more_software = 'sphinx"autoapi'""" in example_file
-        assert "interesting_string = 'interesting\"fun\\'\\\\\\'string'" in example_file
+        software = example_file.find(id="example.software")
+        assert software
+        software_value = software.find(class_="property").contents[-1]
+        assert software_value.text.endswith('''"sphin'x"''')
+        more_software = example_file.find(id="example.more_software")
+        assert more_software
+        more_software_value = more_software.find(class_="property").contents[-1]
+        assert more_software_value.text.endswith("""'sphinx"autoapi'""")
+        interesting = example_file.find(id="example.interesting_string")
+        assert interesting
+        interesting_value = interesting.find(class_="property").contents[-1]
+        assert interesting_value.text.endswith("'interesting\"fun\\'\\\\\\'string'")
 
-        assert "code_snippet = Multiline-String" in example_file
+        code_snippet = example_file.find(id="example.code_snippet")
+        assert code_snippet
+        code_snippet_value = code_snippet.find(class_="property").contents[-1]
+        assert code_snippet_value.text == "Multiline-String"
 
-        assert "max_rating: int = 10" in example_file
-        assert "is_valid" in example_file
+        max_rating = example_file.find(id="example.max_rating")
+        assert max_rating
+        max_rating_value = max_rating.find_all(class_="property")
+        assert max_rating_value[0].text == ": int"
+        assert max_rating_value[1].text == " = 10"
 
-        assert "ratings" in example_file
-        assert "List[int]" in example_file
+        # TODO: This should either not have a value
+        # or should display the value as part of the type declaration.
+        # This prevents setting warningiserror.
+        assert example_file.find(id="example.is_valid")
 
-        assert "Dict[int, str]" in example_file
+        ratings = example_file.find(id="example.ratings")
+        assert ratings
+        ratings_value = ratings.find_all(class_="property")
+        assert "List[int]" in ratings_value[0].text
 
-        assert "start: int" in example_file
-        assert "Iterable[int]" in example_file
+        rating_names = example_file.find(id="example.rating_names")
+        assert rating_names
+        rating_names_value = rating_names.find_all(class_="property")
+        assert "Dict[int, str]" in rating_names_value[0].text
 
+        f = example_file.find(id="example.f")
+        assert f
+        # TODO: Fix for all versions
+        if sys.version_info >= (3, 8):
+            assert f.find(class_="sig-param").text == "start: int"
+        assert f.find(class_="sig-return-typehint").text == "Iterable[int]"
+
+        mixed_list = example_file.find(id="example.mixed_list")
+        assert mixed_list
+        mixed_list_value = mixed_list.find_all(class_="property")
         if sphinx_version >= (6,):
-            assert "List[str | int]" in example_file
+            assert "List[str | int]" in mixed_list_value[0].text
         else:
-            assert "List[Union[str, int]]" in example_file
+            assert "List[Union[str, int]]" in mixed_list_value[0].text
 
-        assert "not_yet_a: A" in example_file
-        assert "imported: example2.B" in example_file
-        assert "-> example2.B" in example_file
+        f2 = example_file.find(id="example.f2")
+        assert f2
+        arg = f2.find(class_="sig-param")
+        assert arg.contents[0].text == "not_yet_a"
+        assert arg.find("a").text == "A"
 
-        assert "is_an_a" in example_file
-        assert "ClassVar" in example_file
+        f3 = example_file.find(id="example.f3")
+        assert f3
+        arg = f3.find(class_="sig-param")
+        assert arg.contents[0].text == "imported"
+        assert arg.find("a").text == "example2.B"
+        returns = f3.find(class_="sig-return-typehint")
+        assert returns.find("a").text == "example2.B"
 
-        assert "instance_var" in example_file
+        is_an_a = example_file.find(id="example.A.is_an_a")
+        assert is_an_a
+        is_an_a_value = is_an_a.find_all(class_="property")
+        assert "ClassVar" in is_an_a_value[0].text
 
-        assert "global_a: A" in example_file
+        assert example_file.find(id="example.A.instance_var")
 
-        assert "my_method() -> str" in example_file
+        global_a = example_file.find(id="example.global_a")
+        assert global_a
+        global_a_value = global_a.find_all(class_="property")
+        assert global_a_value[0].text == ": A"
 
-        assert "class example.SomeMetaclass" in example_file
+        assert example_file.find(id="example.SomeMetaclass")
 
-    def test_overload(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_overload(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert "overloaded_func(a: float" in example_file
-        assert "overloaded_func(a: str" in example_file
-        assert "overloaded_func(a: Union" not in example_file
-        assert "Overloaded function" in example_file
+        overloaded_func = example_file.find(id="example.overloaded_func")
+        assert overloaded_func
+        arg = overloaded_func.find(class_="sig-param")
+        assert arg.text == "a: float"
+        overloaded_func = overloaded_func.next_sibling.next_sibling
+        arg = overloaded_func.find(class_="sig-param")
+        assert arg.text == "a: str"
+        docstring = overloaded_func.next_sibling.next_sibling
+        assert docstring.tag != "dt"
+        assert docstring.text.strip() == "Overloaded function"
 
-        assert "overloaded_method(a: float" in example_file
-        assert "overloaded_method(a: str" in example_file
-        assert "overloaded_method(a: Union" not in example_file
-        assert "Overloaded method" in example_file
+        overloaded_method = example_file.find(id="example.A.overloaded_method")
+        assert overloaded_method
+        arg = overloaded_method.find(class_="sig-param")
+        assert arg.text == "a: float"
+        overloaded_method = overloaded_method.next_sibling.next_sibling
+        arg = overloaded_method.find(class_="sig-param")
+        assert arg.text == "a: str"
+        docstring = overloaded_method.next_sibling.next_sibling
+        assert docstring.tag != "dt"
+        assert docstring.text.strip() == "Overloaded method"
 
-        assert "overloaded_class_method(a: float" in example_file
-        assert "overloaded_class_method(a: str" in example_file
-        assert "overloaded_class_method(a: Union" not in example_file
-        assert "Overloaded method" in example_file
+        overloaded_class_method = example_file.find(
+            id="example.A.overloaded_class_method"
+        )
+        assert overloaded_class_method
+        arg = overloaded_class_method.find(class_="sig-param")
+        assert arg.text == "a: float"
+        overloaded_class_method = overloaded_class_method.next_sibling.next_sibling
+        arg = overloaded_class_method.find(class_="sig-param")
+        assert arg.text == "a: str"
+        docstring = overloaded_class_method.next_sibling.next_sibling
+        assert docstring.tag != "dt"
+        assert docstring.text.strip() == "Overloaded class method"
 
-        assert "undoc_overloaded_func" in example_file
-        assert "undoc_overloaded_method" in example_file
+        assert example_file.find(id="example.undoc_overloaded_func")
+        assert example_file.find(id="example.A.undoc_overloaded_method")
 
-        assert "C(a: int" in example_file
-        assert "C(a: float" in example_file
-        assert "C(a: str" not in example_file
-        assert "C(self, a: int" not in example_file
-        assert "C(self, a: float" not in example_file
-        assert "C(self, a: str" not in example_file
+        c = example_file.find(id="example.C")
+        assert c
+        arg = c.find(class_="sig-param")
+        assert arg.text == "a: int"
+        c = c.next_sibling.next_sibling
+        arg = c.find(class_="sig-param")
+        assert arg.text == "a: float"
+        docstring = c.next_sibling.next_sibling
+        assert docstring.tag != "dt"
 
-    def test_async(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+        # D inherits overloaded constructor
+        d = example_file.find(id="example.D")
+        assert d
+        arg = d.find(class_="sig-param")
+        assert arg.text == "a: int"
+        d = d.next_sibling.next_sibling
+        arg = d.find(class_="sig-param")
+        assert arg.text == "a: float"
+        docstring = d.next_sibling.next_sibling
+        assert docstring.tag != "dt"
 
-        assert "async async_method" in example_file
-        assert "async example.async_function" in example_file
+    def test_async(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        async_method = example_file.find(id="example.A.async_method")
+        assert async_method.find(class_="property").text.strip() == "async"
+        async_function = example_file.find(id="example.async_function")
+        assert async_function.find(class_="property").text.strip() == "async"
 
 
-def test_py3_hiding_undoc_overloaded_members(builder):
+def test_py3_hiding_undoc_overloaded_members(builder, parse):
     confoverrides = {"autoapi_options": ["members", "special-members"]}
     builder("py3example", confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "overloaded_func" in example_file
-    assert "overloaded_method" in example_file
-    assert "undoc_overloaded_func" not in example_file
-    assert "undoc_overloaded_method" not in example_file
+    overloaded_func = example_file.find(id="example.overloaded_func")
+    assert overloaded_func
+    overloaded_method = example_file.find(id="example.A.overloaded_method")
+    assert overloaded_method
+    assert not example_file.find(id="example.undoc_overloaded_func")
+    assert not example_file.find(id="example.A.undoc_overloaded_method")
 
 
 class TestAnnotationCommentsModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyannotationcommentsexample")
+        builder("pyannotationcommentsexample", warningiserror=True)
 
-    def test_integration(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert "max_rating: int = 10" in example_file
+        max_rating = example_file.find(id="example.max_rating")
+        assert max_rating
+        max_rating_value = max_rating.find_all(class_="property")
+        assert max_rating_value[0].text == ": int"
+        assert max_rating_value[1].text == " = 10"
 
-        assert "ratings" in example_file
-        assert "List[int]" in example_file
+        ratings = example_file.find(id="example.ratings")
+        assert ratings
+        ratings_value = ratings.find_all(class_="property")
+        assert "List[int]" in ratings_value[0].text
 
-        assert "Dict[int, str]" in example_file
+        rating_names = example_file.find(id="example.rating_names")
+        assert rating_names
+        rating_names_value = rating_names.find_all(class_="property")
+        assert "Dict[int, str]" in rating_names_value[0].text
 
-        # When astroid>2.2.5
-        # assert "start: int" in example_file
-        # assert "end: int" in example_file
-        assert "Iterable[int]" in example_file
+        f = example_file.find(id="example.f")
+        assert f
+        # TODO: Fix for all versions
+        if sys.version_info >= (3, 8):
+            assert f.find(class_="sig-param").text == "start: int"
+        assert f.find(class_="sig-return-typehint").text == "Iterable[int]"
 
+        mixed_list = example_file.find(id="example.mixed_list")
+        assert mixed_list
+        mixed_list_value = mixed_list.find_all(class_="property")
         if sphinx_version >= (6,):
-            assert "List[str | int]" in example_file
+            assert "List[str | int]" in mixed_list_value[0].text
         else:
-            assert "List[Union[str, int]]" in example_file
+            assert "List[Union[str, int]]" in mixed_list_value[0].text
 
-        assert "not_yet_a: A" in example_file
-        assert "is_an_a" in example_file
-        assert "ClassVar" in example_file
+        f2 = example_file.find(id="example.f2")
+        assert f2
+        arg = f2.find(class_="sig-param")
+        assert arg.contents[0].text == "not_yet_a"
+        assert arg.find("a").text == "A"
 
-        assert "instance_var" in example_file
+        is_an_a = example_file.find(id="example.A.is_an_a")
+        assert is_an_a
+        is_an_a_value = is_an_a.find_all(class_="property")
+        assert "ClassVar" in is_an_a_value[0].text
 
-        assert "global_a: A" in example_file
+        assert example_file.find(id="example.A.instance_var")
 
-        assert "class example.B(a: str)" in example_file
-        assert "method(b: list)" in example_file
-        assert "classmethod class_method(c: int)" in example_file
-        assert "static static_method(d: float)" in example_file
+        global_a = example_file.find(id="example.global_a")
+        assert global_a
+        global_a_value = global_a.find_all(class_="property")
+        assert global_a_value[0].text == ": A"
 
 
 @pytest.mark.skipif(
@@ -405,231 +545,228 @@ class TestAnnotationCommentsModule:
 class TestPositionalOnlyArgumentsModule:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("py38positionalparams")
+        builder("py38positionalparams", warningiserror=True)
 
-    def test_integration(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert "f_simple(a, b, /, c, d, *, e, f)" in example_file
+        f_simple = example_file.find(id="example.f_simple")
+        assert "f_simple(a, b, /, c, d, *, e, f)" in f_simple.text
 
         if sphinx_version >= (6,):
+            f_comment = example_file.find(id="example.f_comment")
             assert (
                 "f_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
-                in example_file
+                in f_comment.text
             )
+            f_annotation = example_file.find(id="example.f_annotation")
             assert (
                 "f_annotation(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
-                in example_file
+                in f_annotation.text
             )
+            f_arg_comment = example_file.find(id="example.f_arg_comment")
             assert (
                 "f_arg_comment(a: int, b: int, /, c: int | None, d: int | None, *, e: float, f: float)"
-                in example_file
+                in f_arg_comment.text
             )
         else:
+            f_comment = example_file.find(id="example.f_comment")
             assert (
                 "f_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-                in example_file
+                in f_comment.text
             )
+            f_annotation = example_file.find(id="example.f_annotation")
             assert (
                 "f_annotation(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-                in example_file
+                in f_annotation.text
             )
+            f_arg_comment = example_file.find(id="example.f_arg_comment")
             assert (
                 "f_arg_comment(a: int, b: int, /, c: Optional[int], d: Optional[int], *, e: float, f: float)"
-                in example_file
+                in f_arg_comment.text
             )
-        assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in example_file
+
+        f_no_cd = example_file.find(id="example.f_no_cd")
+        assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in f_no_cd.text
 
 
-def test_napoleon_integration_loaded(builder):
+def test_napoleon_integration_loaded(builder, parse):
     confoverrides = {
-        "extensions": ["autoapi.extension", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
+        "exclude_patterns": ["manualapi.rst"],
+        "extensions": [
+            "autoapi.extension",
+            "sphinx.ext.autodoc",
+            "sphinx.ext.napoleon",
+        ],
     }
 
-    builder("pyexample", confoverrides=confoverrides)
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "Parameters" in example_file
-
-    assert "Return type" in example_file
-
-    assert "Args" not in example_file
+    method_google = example_file.find(id="example.Foo.method_google_docs")
+    params, returns, return_type = method_google.parent.select(".field-list > dt")
+    assert params.text == "Parameters:"
+    assert returns.text == "Returns:"
+    assert return_type.text == "Return type:"
 
 
 class TestSimplePackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pypackageexample")
+        builder("pypackageexample", warningiserror=True)
 
-    def test_integration_with_package(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_integration_with_package(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert "example.foo" in example_file
-        assert "example.module_level_method(foo, bar)" in example_file
+        entries = example_file.find_all(class_="toctree-l1")
+        assert any(entry.text == "example.foo" for entry in entries)
+        assert example_file.find(id="example.module_level_method")
 
-        example_foo_path = "_build/text/autoapi/example/foo/index.txt"
-        with io.open(example_foo_path, encoding="utf8") as example_foo_handle:
-            example_foo_file = example_foo_handle.read()
+        example_foo_file = parse("_build/html/autoapi/example/foo/index.html")
 
-        assert "class example.foo.Foo" in example_foo_file
-        assert "method_okay(foo=None, bar=None)" in example_foo_file
+        foo = example_foo_file.find(id="example.foo.Foo")
+        assert foo
+        method_okay = foo.parent.find(id="example.foo.Foo.method_okay")
+        assert method_okay
 
-        index_path = "_build/text/index.txt"
-        with io.open(index_path, encoding="utf8") as index_handle:
-            index_file = index_handle.read()
+        index_file = parse("_build/html/index.html")
 
-        assert "API Reference" in index_file
-        assert "example.foo" in index_file
-        assert "Foo" in index_file
-        assert "module_level_method" in index_file
+        toctree = index_file.select("li > a")
+        assert any(item.text == "API Reference" for item in toctree)
+        assert any(item.text == "example.foo" for item in toctree)
+        assert any(item.text == "Foo" for item in toctree)
+        assert any(item.text == "module_level_method()" for item in toctree)
 
 
 def test_simple_no_false_warnings(builder, caplog):
     logger = sphinx.util.logging.getLogger("autoapi")
     logger.logger.addHandler(caplog.handler)
-    builder("pypackageexample")
+    builder("pypackageexample", warningiserror=True)
 
     assert "Cannot resolve" not in caplog.text
 
 
-def _test_class_content(builder, class_content):
-    confoverrides = {"autoapi_python_class_content": class_content}
+def _test_class_content(builder, parse, class_content):
+    confoverrides = {
+        "autoapi_python_class_content": class_content,
+        "exclude_patterns": ["manualapi.rst"],
+    }
 
-    builder("pyexample", confoverrides=confoverrides)
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-        if class_content == "init":
-            assert "Can we parse arguments" not in example_file
-        else:
-            assert "Can we parse arguments" in example_file
+    foo = example_file.find(id="example.Foo").parent.find("dd")
+    if class_content == "init":
+        assert "Can we parse arguments" not in foo.text
+    else:
+        assert "Can we parse arguments" in foo.text
 
-        if class_content not in ("both", "init"):
-            assert "Constructor docstring" not in example_file
-        else:
-            assert "Constructor docstring" in example_file
-
-
-def test_class_class_content(builder):
-    _test_class_content(builder, "class")
+    if class_content not in ("both", "init"):
+        assert "Constructor docstring" not in foo.text
+    else:
+        assert "Constructor docstring" in foo.text
 
 
-def test_both_class_content(builder):
-    _test_class_content(builder, "both")
+def test_class_class_content(builder, parse):
+    _test_class_content(builder, parse, "class")
 
 
-def test_init_class_content(builder):
-    _test_class_content(builder, "init")
+def test_both_class_content(builder, parse):
+    _test_class_content(builder, parse, "both")
 
 
-def test_hiding_private_members(builder):
+def test_init_class_content(builder, parse):
+    _test_class_content(builder, parse, "init")
+
+
+def test_hiding_private_members(builder, parse):
     confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
-    builder("pypackageexample", confoverrides=confoverrides)
+    builder("pypackageexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "private" not in example_file
+    entries = example_file.find_all(class_="toctree-l1")
+    assert all("private" not in entry.text for entry in entries)
 
-    private_path = "_build/text/autoapi/example/_private_module/index.txt"
-    with io.open(private_path, encoding="utf8") as private_handle:
-        private_file = private_handle.read()
+    private_file = parse("_build/html/autoapi/example/_private_module/index.html")
 
-    assert "public_method" in private_file
+    assert private_file.find(id="example._private_module.PrivateClass.public_method")
 
 
-def test_hiding_inheritance(builder):
-    confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
-    builder("pyexample", confoverrides=confoverrides)
+def test_hiding_inheritance(builder, parse):
+    confoverrides = {
+        "autoapi_options": ["members", "undoc-members", "special-members"],
+        "exclude_patterns": ["manualapi.rst"],
+    }
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "Bases:" not in example_file
+    assert "Bases:" not in example_file.find(id="example.Foo").parent.find("dd").text
 
 
-def test_hiding_imported_members(builder):
+def test_hiding_imported_members(builder, parse):
     confoverrides = {"autoapi_options": ["members", "undoc-members"]}
     builder("pypackagecomplex", confoverrides=confoverrides)
 
-    subpackage_path = "_build/text/autoapi/complex/subpackage/index.txt"
-    with io.open(subpackage_path, encoding="utf8") as subpackage_handle:
-        subpackage_file = subpackage_handle.read()
+    subpackage_file = parse("_build/html/autoapi/complex/subpackage/index.html")
+    assert not subpackage_file.find(id="complex.subpackage.public_chain")
 
-    assert "Part of a public resolution chain." not in subpackage_file
+    package_file = parse("_build/html/autoapi/complex/index.html")
+    assert not package_file.find(id="complex.public_chain")
 
-    package_path = "_build/text/autoapi/complex/index.txt"
-    with io.open(package_path, encoding="utf8") as package_handle:
-        package_file = package_handle.read()
-
-    assert "Part of a public resolution chain." not in package_file
-
-    submodule_path = "_build/text/autoapi/complex/subpackage/submodule/index.txt"
-    with io.open(submodule_path, encoding="utf8") as submodule_handle:
-        submodule_file = submodule_handle.read()
-
-    assert "A private function made public by import." not in submodule_file
+    submodule_file = parse("_build/html/autoapi/complex/subpackage/index.html")
+    assert not submodule_file.find(id="complex.subpackage.now_public_function")
 
 
-def test_inherited_members(builder):
+def test_inherited_members(builder, parse):
     confoverrides = {
-        "autoapi_options": ["members", "inherited-members", "undoc-members"]
+        "autoapi_options": ["members", "inherited-members", "undoc-members"],
+        "exclude_patterns": ["manualapi.rst"],
     }
-    builder("pyexample", confoverrides=confoverrides)
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "class example.Bar" in example_file
-    i = example_file.index("class example.Bar")
-    assert "method_okay" in example_file[i:]
+    bar = example_file.find(id="example.Bar")
+    assert bar
+    assert bar.parent.find(id="example.Bar.method_okay")
 
 
-def test_skipping_members(builder):
-    builder("pyskipexample")
+def test_skipping_members(builder, parse):
+    builder("pyskipexample", warningiserror=True)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "foo doc" not in example_file
-    assert "bar doc" not in example_file
-    assert "bar m doc" not in example_file
-    assert "baf doc" in example_file
-    assert "baf m doc" not in example_file
-    assert "baz doc" not in example_file
-    assert "not ignored" in example_file
+    assert not example_file.find(id="example.foo")
+    assert not example_file.find(id="example.Bar")
+    assert not example_file.find(id="example.Bar.m")
+    assert example_file.find(id="example.Baf")
+    assert not example_file.find(id="example.Baf.m")
+    assert not example_file.find(id="example.baz")
+    assert example_file.find(id="example.anchor")
 
 
 @pytest.mark.parametrize(
     "value,order",
     [
-        ("bysource", [".Foo", ".decorator_okay", ".Bar"]),
-        ("alphabetical", [".Bar", ".Foo", ".decorator_okay"]),
-        ("groupwise", [".Bar", ".Foo", ".decorator_okay"]),
+        ("bysource", ["Foo", "decorator_okay", "Bar"]),
+        ("alphabetical", ["Bar", "Foo", "decorator_okay"]),
+        ("groupwise", ["Bar", "Foo", "decorator_okay"]),
     ],
 )
-def test_order_members(builder, value, order):
-    confoverrides = {"autoapi_member_order": value}
-    builder("pyexample", confoverrides=confoverrides)
+def test_order_members(builder, parse, value, order):
+    confoverrides = {
+        "autoapi_member_order": value,
+        "exclude_patterns": ["manualapi.rst"],
+    }
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    indexes = [example_file.index(name) for name in order]
+    indexes = [example_file.find(id=f"example.{name}").sourceline for name in order]
     assert indexes == sorted(indexes)
 
 
@@ -645,9 +782,33 @@ class _CompareInstanceType:
 
 
 def test_skip_members_hook(builder):
-    emit_firstresult_patch = Mock(name="emit_firstresult_patch", return_value=False)
-    with patch("sphinx.application.Sphinx.emit_firstresult", emit_firstresult_patch):
-        builder("pyskipexample")
+    os.chdir("tests/python/pyskipexample")
+    emit_firstresult_patch = None
+
+    class MockSphinx(Sphinx):
+        def __init__(self, *args, **kwargs):
+            nonlocal emit_firstresult_patch
+            emit_firstresult_patch = Mock(wraps=self.emit_firstresult)
+            self.emit_firstresult = emit_firstresult_patch
+
+            super().__init__(*args, **kwargs)
+
+    app = MockSphinx(
+        srcdir=".",
+        confdir=".",
+        outdir="_build/html",
+        doctreedir="_build/.doctrees",
+        buildername="html",
+        warningiserror=True,
+        confoverrides={
+            "suppress_warnings": [
+                "app.add_node",
+                "app.add_directive",
+                "app.add_role",
+            ]
+        },
+    )
+    app.build()
 
     options = ["members", "undoc-members", "special-members"]
 
@@ -703,14 +864,6 @@ def test_skip_members_hook(builder):
         call(
             "autoapi-skip-member",
             "method",
-            "example.Bar.m",
-            _CompareInstanceType(PythonMethod),
-            False,
-            options,
-        ),
-        call(
-            "autoapi-skip-member",
-            "method",
             "example.Baf.m",
             _CompareInstanceType(PythonMethod),
             False,
@@ -724,113 +877,86 @@ def test_skip_members_hook(builder):
 class TestComplexPackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
+        # We don't set warningiserror=True because we test that invalid imports
+        # do not fail the build
         builder("pypackagecomplex")
 
-    def test_public_chain_resolves(self):
-        submodule_path = "_build/text/autoapi/complex/subpackage/submodule/index.txt"
-        with io.open(submodule_path, encoding="utf8") as submodule_handle:
-            submodule_file = submodule_handle.read()
+    def test_public_chain_resolves(self, parse):
+        submodule_file = parse(
+            "_build/html/autoapi/complex/subpackage/submodule/index.html"
+        )
 
-        assert "Part of a public resolution chain." in submodule_file
+        assert submodule_file.find(id="complex.subpackage.submodule.public_chain")
 
-        subpackage_path = "_build/text/autoapi/complex/subpackage/index.txt"
-        with io.open(subpackage_path, encoding="utf8") as subpackage_handle:
-            subpackage_file = subpackage_handle.read()
+        subpackage_file = parse("_build/html/autoapi/complex/subpackage/index.html")
 
-        assert "Part of a public resolution chain." in subpackage_file
+        assert subpackage_file.find(id="complex.subpackage.public_chain")
 
-        package_path = "_build/text/autoapi/complex/index.txt"
-        with io.open(package_path, encoding="utf8") as package_handle:
-            package_file = package_handle.read()
+        package_file = parse("_build/html/autoapi/complex/index.html")
 
-        assert "Part of a public resolution chain." in package_file
+        assert package_file.find(id="complex.public_chain")
 
-    def test_private_made_public(self):
-        submodule_path = "_build/text/autoapi/complex/subpackage/submodule/index.txt"
-        with io.open(submodule_path, encoding="utf8") as submodule_handle:
-            submodule_file = submodule_handle.read()
+    def test_private_made_public(self, parse):
+        submodule_file = parse("_build/html/autoapi/complex/subpackage/index.html")
 
-        assert "A private function made public by import." in submodule_file
+        assert submodule_file.find(id="complex.subpackage.now_public_function")
 
-    def test_multiple_import_locations(self):
-        submodule_path = "_build/text/autoapi/complex/subpackage/submodule/index.txt"
-        with io.open(submodule_path, encoding="utf8") as submodule_handle:
-            submodule_file = submodule_handle.read()
+    def test_multiple_import_locations(self, parse):
+        submodule_file = parse(
+            "_build/html/autoapi/complex/subpackage/submodule/index.html"
+        )
 
-        assert "A public function imported in multiple places." in submodule_file
+        assert submodule_file.find(
+            id="complex.subpackage.submodule.public_multiple_imports"
+        )
 
-        subpackage_path = "_build/text/autoapi/complex/subpackage/index.txt"
-        with io.open(subpackage_path, encoding="utf8") as subpackage_handle:
-            subpackage_file = subpackage_handle.read()
+        subpackage_file = parse("_build/html/autoapi/complex/subpackage/index.html")
 
-        assert "A public function imported in multiple places." in subpackage_file
+        assert subpackage_file.find(id="complex.subpackage.public_multiple_imports")
 
-        package_path = "_build/text/autoapi/complex/index.txt"
-        with io.open(package_path, encoding="utf8") as package_handle:
-            package_file = package_handle.read()
+        package_file = parse("_build/html/autoapi/complex/index.html")
 
-        assert "A public function imported in multiple places." in package_file
+        assert package_file.find(id="complex.public_multiple_imports")
 
-    def test_simple_wildcard_imports(self):
-        wildcard_path = "_build/text/autoapi/complex/wildcard/index.txt"
-        with io.open(wildcard_path, encoding="utf8") as wildcard_handle:
-            wildcard_file = wildcard_handle.read()
+    def test_simple_wildcard_imports(self, parse):
+        wildcard_file = parse("_build/html/autoapi/complex/wildcard/index.html")
 
-        assert "public_chain" in wildcard_file
-        assert "now_public_function" in wildcard_file
-        assert "public_multiple_imports" in wildcard_file
-        assert "module_level_method" in wildcard_file
+        assert wildcard_file.find(id="complex.wildcard.public_chain")
+        assert wildcard_file.find(id="complex.wildcard.now_public_function")
+        assert wildcard_file.find(id="complex.wildcard.public_multiple_imports")
+        assert wildcard_file.find(id="complex.wildcard.module_level_method")
 
-    def test_wildcard_chain(self):
-        wildcard_path = "_build/text/autoapi/complex/wildchain/index.txt"
-        with io.open(wildcard_path, encoding="utf8") as wildcard_handle:
-            wildcard_file = wildcard_handle.read()
+    def test_wildcard_all_imports(self, parse):
+        wildcard_file = parse("_build/html/autoapi/complex/wildall/index.html")
 
-        assert "public_chain" in wildcard_file
-        assert "module_level_method" in wildcard_file
+        assert not wildcard_file.find(id="complex.wildall.not_all")
+        assert not wildcard_file.find(id="complex.wildall.NotAllClass")
+        assert not wildcard_file.find(id="complex.wildall.does_not_exist")
+        assert wildcard_file.find(id="complex.wildall.SimpleClass")
+        assert wildcard_file.find(id="complex.wildall.simple_function")
+        assert wildcard_file.find(id="complex.wildall.public_chain")
+        assert wildcard_file.find(id="complex.wildall.module_level_method")
 
-    def test_wildcard_all_imports(self):
-        wildcard_path = "_build/text/autoapi/complex/wildall/index.txt"
-        with io.open(wildcard_path, encoding="utf8") as wildcard_handle:
-            wildcard_file = wildcard_handle.read()
+    def test_no_imports_in_module_with_all(self, parse):
+        foo_file = parse("_build/html/autoapi/complex/foo/index.html")
 
-        assert "not_all" not in wildcard_file
-        assert "NotAllClass" not in wildcard_file
-        assert "does_not_exist" not in wildcard_file
-        assert "SimpleClass" in wildcard_file
-        assert "simple_function" in wildcard_file
-        assert "public_chain" in wildcard_file
-        assert "module_level_method" in wildcard_file
+        assert not foo_file.find(id="complex.foo.module_level_method")
 
-    def test_no_imports_in_module_with_all(self):
-        foo_path = "_build/text/autoapi/complex/foo/index.txt"
-        with io.open(foo_path, encoding="utf8") as foo_handle:
-            foo_file = foo_handle.read()
+    def test_all_overrides_import_in_module_with_all(self, parse):
+        foo_file = parse("_build/html/autoapi/complex/foo/index.html")
 
-        assert "module_level_method" not in foo_file
+        assert foo_file.find(id="complex.foo.PublicClass")
 
-    def test_all_overrides_import_in_module_with_all(self):
-        foo_path = "_build/text/autoapi/complex/foo/index.txt"
-        with io.open(foo_path, encoding="utf8") as foo_handle:
-            foo_file = foo_handle.read()
+    def test_parses_unicode_file(self, parse):
+        foo_file = parse("_build/html/autoapi/complex/unicode_data/index.html")
 
-        assert "PublicClass" in foo_file
-
-    def test_parses_unicode_file(self):
-        foo_path = "_build/text/autoapi/complex/unicode_data/index.txt"
-        with io.open(foo_path, encoding="utf8") as foo_handle:
-            foo_file = foo_handle.read()
-
-        assert "unicode_str" in foo_file
+        assert foo_file.find(id="complex.unicode_data.unicode_str")
 
 
-class TestComplexPackageParallel:
+class TestComplexPackageParallel(TestComplexPackage):
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
         builder("pypackagecomplex", parallel=2)
-
-    def test_success(self):
-        pass
 
 
 def test_caching(builder):
@@ -839,7 +965,7 @@ def test_caching(builder):
     def record_mtime():
         nonlocal mtimes
         mtime = 0
-        for root, _, files in os.walk("_build/text/autoapi"):
+        for root, _, files in os.walk("_build/html/autoapi"):
             for name in files:
                 this_mtime = os.path.getmtime(os.path.join(root, name))
                 mtime = max(mtime, this_mtime)
@@ -881,24 +1007,20 @@ def test_caching(builder):
 class TestImplicitNamespacePackage:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
+        # TODO: Cannot set warningiserror=True because namespaces are not added
+        # to the toctree automatically.
         builder("py3implicitnamespace")
 
-    def test_sibling_import_from_namespace(self):
-        example_path = "_build/text/autoapi/namespace/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_sibling_import_from_namespace(self, parse):
+        example_file = parse("_build/html/autoapi/namespace/example/index.html")
+        assert example_file.find(id="namespace.example.first_method")
 
-        assert "namespace.example.first_method" in example_file
-
-    def test_sub_sibling_import_from_namespace(self):
-        example_path = "_build/text/autoapi/namespace/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
-
-        assert "namespace.example.second_sub_method" in example_file
+    def test_sub_sibling_import_from_namespace(self, parse):
+        example_file = parse("_build/html/autoapi/namespace/example/index.html")
+        assert example_file.find(id="namespace.example.second_sub_method")
 
 
-def test_custom_jinja_filters(builder, tmp_path):
+def test_custom_jinja_filters(builder, parse, tmp_path):
     py_templates = tmp_path / "python"
     py_templates.mkdir()
     orig_py_templates = pathlib.Path(autoapi.settings.TEMPLATE_DIR) / "python"
@@ -912,31 +1034,30 @@ def test_custom_jinja_filters(builder, tmp_path):
             lambda jinja_env: jinja_env.filters.update(
                 {
                     "prepare_docstring": (
-                        lambda docstring: "This is using custom filters."
+                        lambda docstring: "This is using custom filters.\n"
                     )
                 }
             )
         ),
         "autoapi_template_dir": str(tmp_path),
+        "exclude_patterns": ["manualapi.rst"],
     }
-    builder("pyexample", confoverrides=confoverrides)
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_path = "_build/text/autoapi/example/index.txt"
-    with io.open(example_path, encoding="utf8") as example_handle:
-        example_file = example_handle.read()
+    example_file = parse("_build/html/autoapi/example/index.html")
 
-    assert "This is using custom filters." in example_file
+    foo = example_file.find(id="example.Foo").parent.find("dd")
+    assert "This is using custom filters." in foo.text
 
 
 def test_string_module_attributes(builder):
     """Test toggle for multi-line string attribute values (GitHub #267)."""
     keep_rst = {
         "autoapi_keep_files": True,
-        "autoapi_root": "_build/autoapi",  # Preserve RST files under _build for cleanup
     }
     builder("py3example", confoverrides=keep_rst)
 
-    example_path = os.path.join(keep_rst["autoapi_root"], "example", "index.rst")
+    example_path = os.path.join("autoapi", "example", "index.rst")
     with io.open(example_path, encoding="utf8") as example_handle:
         example_file = example_handle.read()
 
@@ -972,21 +1093,21 @@ class TestAutodocTypehintsPackage:
 
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
-        builder("pyautodoc_typehints")
+        builder("pyautodoc_typehints", warningiserror=True)
 
-    def test_renders_typehint(self):
-        example_path = "_build/text/autoapi/example/index.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            example_file = example_handle.read()
+    def test_renders_typehint(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
 
-        assert "(*int*)" in example_file
+        test = example_file.find(id="example.A.test")
+        args = test.parent.select(".field-list > dd")
+        assert args[0].text.startswith("a (int)")
 
-    def test_renders_typehint_in_second_module(self):
-        example2_path = "_build/text/autoapi/example2/index.txt"
-        with io.open(example2_path, encoding="utf8") as example2_handle:
-            example2_file = example2_handle.read()
+    def test_renders_typehint_in_second_module(self, parse):
+        example2_file = parse("_build/html/autoapi/example2/index.html")
 
-        assert "(*int*)" in example2_file
+        test = example2_file.find(id="example2.B.test")
+        args = test.parent.select(".field-list > dd")
+        assert args[0].text.startswith("a (int)")
 
 
 def test_no_files_found(builder):
@@ -1015,18 +1136,15 @@ class TestMemberOrder:
             warningiserror=True,
             confoverrides={
                 "autodoc_member_order": "bysource",
+                "autoapi_generate_api_docs": False,
+                "autoapi_add_toctree_entry": False,
             },
         )
 
-    def test_line_number_order(self):
-        example_path = "_build/text/manualapi.txt"
-        with io.open(example_path, encoding="utf8") as example_handle:
-            lines = example_handle.readlines()
+    def test_line_number_order(self, parse):
+        example_file = parse("_build/html/manualapi.html")
 
-        method_tricky_pos = lines.index(
-            "   method_tricky(foo=None, bar=dict(foo=1, bar=2))\n"
-        )
-        method_sphinx_docs_pos = lines.index("   method_sphinx_docs(foo, bar=0)\n")
+        method_tricky = example_file.find(id="example.Foo.method_tricky")
+        method_sphinx_docs = example_file.find(id="example.Foo.method_sphinx_docs")
 
-        # method_tricky is defined in the source before method_sphinx_docs
-        assert method_tricky_pos < method_sphinx_docs_pos
+        assert method_tricky.sourceline < method_sphinx_docs.sourceline
