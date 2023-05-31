@@ -355,9 +355,7 @@ class TestPy3Module:
 
         f = example_file.find(id="example.f")
         assert f
-        # TODO: Fix for all versions
-        if sys.version_info >= (3, 8):
-            assert f.find(class_="sig-param").text == "start: int"
+        assert f.find(class_="sig-param").text == "start: int"
         assert f.find(class_="sig-return-typehint").text == "Iterable[int]"
 
         mixed_list = example_file.find(id="example.mixed_list")
@@ -507,9 +505,7 @@ class TestAnnotationCommentsModule:
 
         f = example_file.find(id="example.f")
         assert f
-        # TODO: Fix for all versions
-        if sys.version_info >= (3, 8):
-            assert f.find(class_="sig-param").text == "start: int"
+        assert f.find(class_="sig-param").text == "start: int"
         assert f.find(class_="sig-return-typehint").text == "Iterable[int]"
 
         mixed_list = example_file.find(id="example.mixed_list")

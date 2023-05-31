@@ -163,6 +163,25 @@ class TestAstroidUtils:
         annotations = astroid_utils.get_args_info(node.args)
         assert annotations == expected
 
+    def test_parse_split_type_comments(self):
+        node = astroid.extract_node(
+            """
+            def func(
+                a, # type: int
+                b, # type: int
+            ): # type: (...) -> str
+                pass
+        """
+        )
+
+        annotations = astroid_utils.get_args_info(node.args)
+
+        expected = [
+            (None, "a", "int", None),
+            (None, "b", "int", None),
+        ]
+        assert annotations == expected
+
     @pytest.mark.parametrize(
         "signature,expected",
         [

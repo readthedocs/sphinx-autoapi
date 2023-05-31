@@ -1,7 +1,6 @@
 import builtins
 import itertools
 import re
-import sys
 
 import astroid
 import astroid.nodes
@@ -393,9 +392,6 @@ def get_module_all(node):
 
 
 def _is_ellipsis(node):
-    if sys.version_info < (3, 8):
-        return isinstance(node, astroid.Ellipsis)
-
     return isinstance(node, astroid.Const) and node.value == Ellipsis
 
 
