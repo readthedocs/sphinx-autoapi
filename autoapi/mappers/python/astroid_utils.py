@@ -432,6 +432,10 @@ def _resolve_annotation(annotation):
         resolved = (
             "[" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + "]"
         )
+    elif isinstance(annotation, astroid.BinOp) and annotation.op == "|":
+        left = _resolve_annotation(annotation.left)
+        right = _resolve_annotation(annotation.right)
+        resolved = f"{left} | {right}"
     else:
         resolved = annotation.as_string()
 

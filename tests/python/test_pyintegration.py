@@ -586,6 +586,49 @@ class TestPositionalOnlyArgumentsModule:
         assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in f_no_cd.text
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="Union pipe syntax requires Python >=3.10"
+)
+class TestPipeUnionModule:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("py310unionpipe", warningiserror=True)
+
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        simple = example_file.find(id="example.simple")
+        args = simple.find_all(class_="sig-param")
+        assert len(args) == 1
+        links = args[0].select("span > a")
+        assert len(links) == 1
+        assert links[0].text == "pathlib.Path"
+
+        optional = example_file.find(id="example.optional")
+        args = optional.find_all(class_="sig-param")
+        assert len(args) == 1
+        links = args[0].select("span > a")
+        assert len(links) == 2
+        assert links[0].text == "pathlib.Path"
+        assert links[1].text == "None"
+
+        union = example_file.find(id="example.union")
+        args = union.find_all(class_="sig-param")
+        assert len(args) == 1
+        links = args[0].select("span > a")
+        assert len(links) == 2
+        assert links[0].text == "pathlib.Path"
+        assert links[1].text == "None"
+
+        pipe = example_file.find(id="example.pipe")
+        args = pipe.find_all(class_="sig-param")
+        assert len(args) == 1
+        links = args[0].select("span > a")
+        assert len(links) == 2
+        assert links[0].text == "pathlib.Path"
+        assert links[1].text == "None"
+
+
 def test_napoleon_integration_loaded(builder, parse):
     confoverrides = {
         "exclude_patterns": ["manualapi.rst"],
