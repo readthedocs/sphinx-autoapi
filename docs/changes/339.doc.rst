@@ -1,1 +1,0 @@
-Made it clearer how to customise what objects AutoAPI will document.

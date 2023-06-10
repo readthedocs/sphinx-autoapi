@@ -5,6 +5,31 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v2.1.1 (2023-06-10)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix "document isn't included" warning when using autoapi_add_toctree_entry (#319)
+- Types used in PEP-604 union syntax can be linked with intersphinx (#366)
+- Fix class overrides not rendering correctly.
+- Fix separated type comments for arguments not merging correctly in Python 3.7
+- Fixed viewcode being unable to find the source code for imported objects
+
+
+Improved Documentation
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Made it clearer how to customise what objects AutoAPI will document. (#339)
+
+
+Misc
+^^^^
+
+- #375, #382
+
+
 v2.1.0 (2023-03-28)
 -------------------
 

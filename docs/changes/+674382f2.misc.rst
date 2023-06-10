@@ -1,1 +1,0 @@
-Switched linter from pylint to ruff

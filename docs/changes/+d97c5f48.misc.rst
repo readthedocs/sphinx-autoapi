@@ -1,1 +1,0 @@
-Tests build HTML output and parse the HTML to validate the output structure.
