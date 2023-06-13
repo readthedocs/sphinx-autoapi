@@ -331,7 +331,10 @@ class PythonSphinxMapper(SphinxMapperBase):
         modules = {}
         for module in self.paths.values():
             children = {child["name"]: child for child in module["children"]}
-            modules[module["name"]] = (module, children)
+            if module["name"] not in modules:
+                modules[module["name"]] = (module, children)
+            else:  # Update the module if it already exists
+                modules[module["name"]][1].update(children)
 
         resolved = set()
         for module_name in modules:
