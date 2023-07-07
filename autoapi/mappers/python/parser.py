@@ -237,7 +237,7 @@ class Parser:
             "type": type_,
             "name": node.name,
             "full_name": node.name,
-            "doc": _prepare_docstring(node.doc or ""),
+            "doc": _prepare_docstring(node.doc_node.value if node.doc_node else ""),
             "children": [],
             "file_path": path,
             "encoding": node.file_encoding,

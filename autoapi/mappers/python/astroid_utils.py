@@ -600,9 +600,9 @@ def get_func_docstring(node):
         node (astroid.nodes.FunctionDef): The node to get a docstring
             for.
     """
-    doc = node.doc
+    doc = node.doc_node.value if node.doc_node else ""
 
-    if doc is None and isinstance(node.parent, astroid.nodes.ClassDef):
+    if not doc and isinstance(node.parent, astroid.nodes.ClassDef):
         for base in node.parent.ancestors():
             if node.name in ("__init__", "__new__") and base.qname() in (
                 "__builtins__.object",
@@ -614,11 +614,11 @@ def get_func_docstring(node):
                 if (
                     isinstance(child, node.__class__)
                     and child.name == node.name
-                    and child.doc is not None
+                    and child.doc_node is not None
                 ):
-                    return child.doc
+                    return child.doc_node.value
 
-    return doc or ""
+    return doc
 
 
 def get_class_docstring(node):
@@ -627,9 +627,9 @@ def get_class_docstring(node):
     Args:
         node (astroid.nodes.ClassDef): The node to get a docstring for.
     """
-    doc = node.doc
+    doc = node.doc_node.value if node.doc_node else ""
 
-    if doc is None:
+    if not doc:
         for base in node.ancestors():
             if base.qname() in (
                 "__builtins__.object",
@@ -637,7 +637,7 @@ def get_class_docstring(node):
                 "builtins.type",
             ):
                 continue
-            if base.doc is not None:
-                return base.doc
+            if base.doc_node is not None:
+                return base.doc_node.value
 
-    return doc or ""
+    return doc
