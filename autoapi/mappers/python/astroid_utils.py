@@ -73,10 +73,7 @@ def resolve_qualname(node, basename):
     full_basename = basename
 
     top_level_name = re.sub(r"\(.*\)", "", basename).split(".", 1)[0]
-    # Disable until pylint uses astroid 2.7
-    if isinstance(
-        node, astroid.nodes.node_classes.LookupMixIn  # pylint: disable=no-member
-    ):
+    if isinstance(node, astroid.nodes.LocalsDictNodeNG):
         lookup_node = node
     else:
         lookup_node = node.scope()
@@ -417,7 +414,8 @@ def _resolve_annotation(annotation):
     elif isinstance(annotation, astroid.Subscript):
         value = _resolve_annotation(annotation.value)
         slice_node = annotation.slice
-        if isinstance(slice_node, astroid.Index):
+        # astroid.Index was removed in astroid v3
+        if hasattr(astroid, "Index") and isinstance(slice_node, astroid.Index):
             slice_node = slice_node.value
         if isinstance(slice_node, astroid.Tuple):
             slice_ = ", ".join(_resolve_annotation(elt) for elt in slice_node.elts)
