@@ -5,8 +5,8 @@ Sphinx AutoAPI
     :target: https://sphinx-autoapi.readthedocs.org
     :alt: Documentation
 
-.. image:: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml/badge.svg?branch=master
-    :target: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml?query=branch%3Amaster
+.. image:: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml/badge.svg?branch=main
+    :target: https://github.com/readthedocs/sphinx-autoapi/actions/workflows/main.yml?query=branch%3Amain
     :alt: Github Build Status
 
 .. image:: https://img.shields.io/pypi/v/sphinx-autoapi.svg
