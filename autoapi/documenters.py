@@ -12,8 +12,6 @@ from .mappers.python import (
     PythonException,
 )
 
-# pylint: disable=attribute-defined-outside-init,unused-argument
-
 
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
@@ -82,7 +80,7 @@ class AutoapiDocumenter(autodoc.Documenter):
         return False, children
 
 
-class _AutoapiDocstringSignatureMixin:  # pylint: disable=too-few-public-methods
+class _AutoapiDocstringSignatureMixin:
     def format_signature(self, **kwargs):
         # Set "manual" attributes at the last possible moment.
         # This is to let a manual entry or docstring searching happen first,

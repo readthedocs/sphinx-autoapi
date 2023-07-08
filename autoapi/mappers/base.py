@@ -221,7 +221,6 @@ class SphinxMapperBase:
 
     @staticmethod
     def find_files(patterns, dirs, ignore):
-        # pylint: disable=too-many-nested-blocks
         if not ignore:
             ignore = []
 

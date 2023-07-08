@@ -5,8 +5,7 @@ import re
 import astroid
 import astroid.nodes
 
-# Disable until pylint uses astroid 2.7
-import astroid.nodes.node_classes  # pylint: disable=no-name-in-module
+import astroid.nodes.node_classes
 import sphinx.util.logging
 
 _LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -473,7 +472,7 @@ def _iter_args(args, annotations, defaults):
         yield (name, format_annotation(annotation), default)
 
 
-def get_args_info(args_node):  # pylint: disable=too-many-branches,too-many-statements
+def get_args_info(args_node):
     result = []
     positional_only_defaults = []
     positional_or_keyword_defaults = args_node.defaults

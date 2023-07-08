@@ -60,7 +60,7 @@ def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
     return normalised_dirs
 
 
-def run_autoapi(app):  # pylint: disable=too-many-branches
+def run_autoapi(app):
     """Load AutoAPI data from the filesystem."""
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
@@ -143,7 +143,7 @@ def build_finished(app, exception):
         shutil.rmtree(normalized_root)
 
 
-def source_read(app, docname, source):  # pylint: disable=unused-argument
+def source_read(app, docname, source):
     # temp_data is cleared after each source file has been processed,
     # so populate the annotations at the beginning of every file read.
     app.env.temp_data["annotations"] = getattr(app.env, "autoapi_annotations", {})

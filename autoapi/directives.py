@@ -9,7 +9,7 @@ from sphinx.util.nodes import nested_parse_with_titles
 from .mappers.python.objects import PythonFunction
 
 
-class AutoapiSummary(Autosummary):  # pylint: disable=too-few-public-methods
+class AutoapiSummary(Autosummary):
     """A version of autosummary that uses static analysis."""
 
     def get_items(self, names):
@@ -40,7 +40,7 @@ class AutoapiSummary(Autosummary):  # pylint: disable=too-few-public-methods
         return items
 
 
-class NestedParse(Directive):  # pylint: disable=too-few-public-methods
+class NestedParse(Directive):
 
     """Nested parsing to remove the first heading of included rST
 

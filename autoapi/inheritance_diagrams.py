@@ -65,7 +65,7 @@ class _AutoapiInheritanceGraph(sphinx.ext.inheritance_diagram.InheritanceGraph):
 
     def _class_info(
         self, classes, show_builtins, private_bases, parts, aliases, top_classes
-    ):  # pylint: disable=too-many-arguments
+    ):
         all_classes = {}
 
         def recurse(cls):

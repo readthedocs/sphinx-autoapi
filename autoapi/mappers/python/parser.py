@@ -152,7 +152,7 @@ class Parser:
     def parse_asyncfunctiondef(self, node):
         return self.parse_functiondef(node)
 
-    def parse_functiondef(self, node):  # pylint: disable=too-many-branches
+    def parse_functiondef(self, node):
         if astroid_utils.is_decorated_with_property_setter(node):
             return []
 
