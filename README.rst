@@ -28,22 +28,6 @@ In contrast to the traditional `Sphinx autodoc <https://www.sphinx-doc.org/en/ma
 which requires manual authoring and uses code imports,
 AutoAPI finds and generates documentation by parsing source code.
 
-Language Support
-----------------
-
-.. warning::
-
-    Support for all languages other than Python will be removed in the next major version!
-
-==========  ======  ==========================================================
-Language    Status  Parser
-==========  ======  ==========================================================
-Python      Stable  Custom using `astroid <https://github.com/PyCQA/astroid>`_
-Go          Alpha   `godocjson <https://github.com/readthedocs/godocjson>`_
-Javascript  Alpha   `jsdoc <https://jsdoc.app/>`_
-.NET        Alpha   `docfx <https://dotnet.github.io/docfx/>`_
-==========  ======  ==========================================================
-
 Getting Started
 ---------------
 
@@ -62,29 +46,16 @@ AutoAPI can be installed through pip:
     pip install sphinx-autoapi
 
 Next, add and configure AutoAPI in your Sphinx project's `conf.py`.
-Other languages may require
-`further configuration <https://sphinx-autoapi.readthedocs.io/en/latest/tutorials.html#setting-up-automatic-api-documentation-generation>`_:
 
 .. code-block:: python
 
     extensions.append('autoapi.extension')
 
-    autoapi_type = 'python'
     autoapi_dirs = ['path/to/source/files', 'src']
 
-Where `autoapi_type` can be one of any of the supported languages:
-
-==========  ================
-Language    ``autoapi_type``
-==========  ================
-Python      ``'python'``
-Go          ``'go'``
-Javascript  ``'javascript'``
-.NET        ``'dotnet'``
-==========  ================
-
 When the documentation is built,
-AutoAPI will now generate API documentation into an `autoapi/` directory and add an entry to the documentation in your top level table of contents!
+AutoAPI will now generate API documentation into an `autoapi/` directory
+and add an entry to the documentation in your top level table of contents!
 
 To configure AutoAPI behaviour further,
 see the `Configuration documentation <https://sphinx-autoapi.readthedocs.io/en/latest/reference/config.html>`_.

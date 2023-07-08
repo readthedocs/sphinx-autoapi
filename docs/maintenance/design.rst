@@ -31,36 +31,6 @@ with some exceptions:
   * :meth:`type.__new__`
 
 
-.NET
-----
-This document talks about the design of a .NET Sphinx integration.
-This will include a mechanism for generating Javadoc style API references automatically.
-We will describe decisions that lead to specific implementation details.
-
-Goals
------
-
-The main goal of this project is to be able to generate a MSDN or Javadoc style API reference from a .Net project in Sphinx.
-
-Primary Goals
-~~~~~~~~~~~~~
-
-* Build MSDN/Javadoc style HTML output for arbitrary .Net code.
-* Have specific pages for each Package, Class, and all class-level structures.
-	
-	- `/api/System/`
-	- `/api/System/String/`
-	- `/api/System/String/Constructors/`
-
-Secondary Goals
-~~~~~~~~~~~~~~~
-
-* Allow for definition of .Net classes inside of normal Sphinx prose docs (classic Sphinx style definition).
-* Allow generation of Javadoc style docs from other languages.
-
-Requirements
-~~~~~~~~~~~~
-
 Introduction
 ------------
 
@@ -97,6 +67,7 @@ Autodoc is a Python-only solution that imports the author's code into memory, an
 This will generate output that looks like:
 
 .. class:: Noodle
+   :noindex:
 
    Noodle's docstring.
 
@@ -109,36 +80,19 @@ Proposed Architecture
 
 The proposed architecture for this project is as follows:
 
-	* A program that will generate a YAML (or JSON) file from a .Net project, representing it's full API information.
-	* Read the YAML and generate an appropriate tree structure that will the outputted HTML will look like (YAMLTree)
-
-	    - If time allows, we will allow a merging of these objects with multiple YAML files to allow for prose content to be injected into the output
-
-	* Take the YAML structure and generate in-memory rst that corresponds to the Sphinx dotnet Domain objects
-	* dotnet Domain will output HTML based on the doctree generated from the in-memory RST
+    * A parser will read the source files into an internal representation of the objects that can be documented.
+	* Take the internal representation and generate in-memory rst that corresponds to the Sphinx domain objects.
+	* Sphinx will output HTML based on the doctree generated from the in-memory rst.
 
 In diagram form::
 
-	Code -> YAML -> YAMLTree -> RST (Dotnet Domain) -> Sphinx -> HTML
-
-YAMLTree
-~~~~~~~~
-
-One of the main problems is how to actually structure the outputted HTML pages.
-The YAML file will likely be ordered,
-but we need to have a place to define the page structure in the HTML.
-
-This can be done before or after the loading of the content into RST.
-We decided to do it before loading into RST because that matches standard Sphinx convention.
-Generally the markup being fed in as RST is considered to be in a file that maps to it's output location.
-If we tried to manipulate this structure after loading into the Domain,
-that could lead to unexpected consequences like wrong indexes and missing references.
+	Code -> Internal Objects -> RST -> Sphinx -> HTML
 
 File Structure vs. Hierarchy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specific ID's should have one specific detail representation. 
-This means that every YAML docid object should only have one place that it is rendered with a ``.. dn:<method>`` canonical identifier.
+This means that every internal object should only have one place that it is rendered with a ``.. <domain>:<type>::`` canonical identifier.
 All other places it is referenced should be in either:
 
 	* A reference 
@@ -158,9 +112,8 @@ There will be Sphinx configuration for how things get built:
     autoapi_root = 'api' # Where HTML is generated
     autoapi_dirs = ['yaml'] # Directory of YAML sources
 
-We will then loop over all YAML files in the ``autoapi_dir`` and parse them.
+We will then loop over all source files in the ``autoapi_dir`` and parse them.
 They will then be output into ``autoapi_root`` inside the documentation.
-
 
 
 Examples
@@ -174,16 +127,3 @@ A nice example of Sphinx Python output similar to what we want:
 An example domain for Spec:
 
 * https://subversion.xray.aps.anl.gov/bcdaext/specdomain/trunk/src/specdomain/sphinxcontrib/specdomain.py
-
-Other Ideas
------------
-
-.. warning:: Things in this section might not get implemented.
-
-The .Net domain will not be able to depend on importing code from the users code base. We might be able to implement similar authoring tools with the YAML file. We might be able to output the YAML subtree of an object with autodoc style tools:
-
-.. code-block:: rst
-
-   .. autodnclass:: System.String
-      :members:
-

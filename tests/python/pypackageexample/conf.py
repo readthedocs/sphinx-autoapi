@@ -15,7 +15,6 @@ todo_include_todos = False
 html_theme = "alabaster"
 htmlhelp_basename = "pypackageexampledoc"
 extensions = ["autoapi.extension"]
-autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
 autoapi_keep_files = True

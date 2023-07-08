@@ -15,6 +15,5 @@ todo_include_todos = False
 html_theme = "alabaster"
 htmlhelp_basename = "pypackagecomplexdoc"
 extensions = ["autoapi.extension"]
-autoapi_type = "python"
 autoapi_dirs = ["complex"]
 autoapi_file_pattern = "*.py"

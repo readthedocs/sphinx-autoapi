@@ -16,6 +16,5 @@ html_theme = "alabaster"
 htmlhelp_basename = "pyexampledoc"
 extensions = ["sphinx.ext.intersphinx", "sphinx.ext.autodoc", "autoapi.extension"]
 intersphinx_mapping = {"python": ("https://docs.python.org/3.10", None)}
-autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"

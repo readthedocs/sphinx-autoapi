@@ -5,7 +5,6 @@ This extension allows you to automagically generate API documentation from your 
 import io
 import os
 import shutil
-import sys
 from typing import Dict, Tuple
 import warnings
 
@@ -17,18 +16,15 @@ import sphinx.util.logging
 from docutils.parsers.rst import directives
 
 from . import documenters
-from .backends import (
-    DEFAULT_FILE_PATTERNS,
-    DEFAULT_IGNORE_PATTERNS,
-    LANGUAGE_MAPPERS,
-    LANGUAGE_REQUIREMENTS,
-)
 from .directives import AutoapiSummary, NestedParse
 from .inheritance_diagrams import AutoapiInheritanceDiagram
+from .mappers import PythonSphinxMapper
 from .settings import API_ROOT
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
+_DEFAULT_FILE_PATTERNS = ["*.py", "*.pyi"]
+_DEFAULT_IGNORE_PATTERNS = ["*migrations*"]
 _DEFAULT_OPTIONS = [
     "members",
     "undoc-members",
@@ -66,19 +62,6 @@ def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
 
 def run_autoapi(app):  # pylint: disable=too-many-branches
     """Load AutoAPI data from the filesystem."""
-    if app.config.autoapi_type not in LANGUAGE_MAPPERS:
-        allowed = ", ".join(f'"{api_type}"' for api_type in sorted(LANGUAGE_MAPPERS))
-        raise ExtensionError(
-            f"Invalid autoapi_type setting, following values are allowed: {allowed}"
-        )
-
-    if app.config.autoapi_type != "python":
-        warnings.warn(
-            "Support for documenting languages other than Python "
-            "will be removed in AutoAPI v3.",
-            RemovedInAutoAPI3Warning,
-        )
-
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
 
@@ -105,20 +88,6 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
     )
     url_root = os.path.join("/", app.config.autoapi_root)
 
-    if not all(
-        import_name in sys.modules
-        for _, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
-    ):
-        packages = ", ".join(
-            f'{import_name} (available as "{pkg_name}" on PyPI)'
-            for pkg_name, import_name in LANGUAGE_REQUIREMENTS[app.config.autoapi_type]
-        )
-        raise ExtensionError(
-            f"AutoAPI of type `{app.config.autoapi_type}` requires following "
-            f"packages to be installed and included in extensions list: {packages}"
-        )
-
-    sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
     template_dir = app.config.autoapi_template_dir
     if template_dir and not os.path.isabs(template_dir):
         if not os.path.isdir(template_dir):
@@ -130,17 +99,19 @@ def run_autoapi(app):  # pylint: disable=too-many-branches
                 "relative to where sphinx-build is run\n",
                 RemovedInAutoAPI3Warning,
             )
-    sphinx_mapper_obj = sphinx_mapper(app, template_dir=template_dir, url_root=url_root)
+    sphinx_mapper_obj = PythonSphinxMapper(
+        app, template_dir=template_dir, url_root=url_root
+    )
 
     if app.config.autoapi_file_patterns:
         file_patterns = app.config.autoapi_file_patterns
     else:
-        file_patterns = DEFAULT_FILE_PATTERNS.get(app.config.autoapi_type, [])
+        file_patterns = _DEFAULT_FILE_PATTERNS
 
     if app.config.autoapi_ignore:
         ignore_patterns = app.config.autoapi_ignore
     else:
-        ignore_patterns = DEFAULT_IGNORE_PATTERNS.get(app.config.autoapi_type, [])
+        ignore_patterns = _DEFAULT_IGNORE_PATTERNS
 
     if ".rst" in app.config.source_suffix:
         out_suffix = ".rst"
@@ -170,10 +141,6 @@ def build_finished(app, exception):
                 + colorize("darkgreen", "Cleaning generated .rst files")
             )
         shutil.rmtree(normalized_root)
-
-        sphinx_mapper = LANGUAGE_MAPPERS[app.config.autoapi_type]
-        if hasattr(sphinx_mapper, "build_finished"):
-            sphinx_mapper.build_finished(app, exception)
 
 
 def source_read(app, docname, source):  # pylint: disable=unused-argument
@@ -289,7 +256,6 @@ def setup(app):
         app.connect("viewcode-find-source", viewcode_find)
     if "viewcode-follow-imported" in app.events.events:
         app.connect("viewcode-follow-imported", viewcode_follow_imported)
-    app.add_config_value("autoapi_type", "python", "html")
     app.add_config_value("autoapi_root", API_ROOT, "html")
     app.add_config_value("autoapi_ignore", [], "html")
     app.add_config_value("autoapi_options", _DEFAULT_OPTIONS, "html")

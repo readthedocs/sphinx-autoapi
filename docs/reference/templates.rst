@@ -9,18 +9,18 @@ Structure
 ---------
 
 Every type of data structure has its own template.
-It uses the form :samp:`{language}/{type}.rst` to find the template to render.
+It uses the form :samp:`python/{type}.rst` to find the template to render.
 The full search path is:
 
-	* :samp:`{language}/{type}.rst`
+	* :samp:`python/{type}.rst`
 
-So for a .NET Class, this would resolve to:
+So for a Python Class, this would resolve to:
 
-	* :samp:`dotnet/class.rst`
+	* :samp:`python/class.rst`
 
 We provide :samp:`base/base.rst` as an incredibly basic output of every object::
 
-	.. {language}:{type}:: {name}
+	.. py:{type}:: {name}
 
 
 Custom Filters, Tests, and Globals
@@ -48,20 +48,17 @@ This contains:
   configuration option.
 * ``include_summaries``: The value of the :confval:`autoapi_include_summaries`
   configuration option.
-* ``obj``: A Python object derived from :class:`PythonMapperBase`.
+* ``obj``: A Python object derived from :class:`PythonPythonMapper`.
 * ``sphinx_version``: The contents of :attr:`sphinx.version_info`.
 
 The object in ``obj`` has a number of standard attributes
-that you can reliably access per language.
+that you can reliably access.
 
 .. warning::
 
 	These classes should not be constructed manually.
 	They can be reliably accessed through templates
 	and :event:`autoapi-skip-member` only.
-
-Python
-~~~~~~
 
 .. autoapiclass:: autoapi.mappers.python.objects.PythonPythonMapper
 	:members:
@@ -105,21 +102,3 @@ Python
 .. autoapiclass:: autoapi.mappers.python.objects.PythonException
 	:members:
 	:show-inheritance:
-
-Go
-~~~
-
-.. autoapiclass:: autoapi.mappers.go.GoPythonMapper
-	:members:
-
-Javascript
-~~~~~~~~~~
-
-.. autoapiclass:: autoapi.mappers.javascript.JavaScriptPythonMapper
-	:members:
-
-.NET
-~~~~
-
-.. autoapiclass:: autoapi.mappers.dotnet.DotNetPythonMapper
-	:members:

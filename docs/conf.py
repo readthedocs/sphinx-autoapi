@@ -41,7 +41,6 @@ html_static_path = ['_static']
 html_css_files = ['overrides.css']
 
 # -- Options for AutoAPI extension -------------------------------------------
-autoapi_type = 'python'
 autoapi_dirs = ['../autoapi']
 autoapi_generate_api_docs = False
 

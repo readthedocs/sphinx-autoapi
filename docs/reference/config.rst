@@ -14,26 +14,6 @@ Configuration Options
    If an ordinary directory is specified,
    that directory will not be included in the relative path.
 
-.. confval:: autoapi_type
-
-   Default: ``python``
-
-   Set the type of files you are documenting.
-   This depends on the programming language that you are using:
-
-   ==========  ================
-   Language    ``autoapi_type``
-   ==========  ================
-   Python      ``'python'``
-   Go          ``'go'``
-   Javascript  ``'javascript'``
-   .NET        ``'dotnet'``
-   ==========  ================
-
-   .. warning::
-
-      Support for all languages other than Python will be removed in the next major version!
-
 .. confval:: autoapi_template_dir
 
    Default: ``''``
@@ -51,7 +31,7 @@ Configuration Options
 
 .. confval:: autoapi_file_patterns
 
-   Default: Varies by Language
+   Default: ``['*.py', '*.pyi']``
 
    A list containing the file patterns to look for when generating documentation.
    Patterns should be listed in order of preference.
@@ -59,17 +39,6 @@ Configuration Options
    if ``autoapi_file_patterns`` is set to the default value
    and a `.py` file and a `.pyi` file are found,
    then the `.py` will be read.
-
-   The defaults by language are:
-
-   ==========  ============================================
-   Language    ``autoapi_file_patterns``
-   ==========  ============================================
-   Python      ``['*.py', '*.pyi']``
-   Go          ``['*.go']``
-   Javascript  ``['*.js']``
-   .NET        ``['project.json', '*.csproj', '*.vbproj']``
-   ==========  ============================================
 
 .. confval:: autoapi_generate_api_docs
 
@@ -119,19 +88,9 @@ Customisation Options
 
 .. confval:: autoapi_ignore
 
-   Default: Varies By Language
+   Default: ``['*migrations*']``
 
    A list of patterns to ignore when finding files.
-   The defaults by language are:
-
-   ==========  ============================================
-   Language    ``autoapi_file_patterns``
-   ==========  ============================================
-   Python      ``['*migrations*']``
-   Go          ``[]``
-   Javascript  ``[]``
-   .NET        ``['*toc.yml', '*index.yml']``
-   ==========  ============================================
 
 .. confval:: autoapi_root
 
@@ -229,7 +188,6 @@ The following events allow you to control the behaviour of AutoAPI.
 
 .. event:: autoapi-skip-member (app, what, name, obj, skip, options)
 
-   (Python only)
    Emitted when a template has to decide whether a member should be included
    in the documentation.
    Usually the member is skipped if a handler returns ``True``,

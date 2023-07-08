@@ -16,6 +16,5 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 htmlhelp_basename = "pyexampledoc"
 extensions = ["autoapi.extension"]
-autoapi_type = "python"
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"

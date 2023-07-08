@@ -15,7 +15,6 @@ todo_include_todos = False
 html_theme = "alabaster"
 htmlhelp_basename = "py3implicitnamespacedoc"
 extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
-autoapi_type = "python"
 autoapi_dirs = ["namespace"]
 autoapi_file_pattern = "*.py"
 autoapi_python_use_implicit_namespaces = True
