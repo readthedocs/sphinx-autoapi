@@ -11,6 +11,13 @@ from sphinx.util.console import colorize
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 
+try:
+    from sphinx.util.display import status_iterator
+except ImportError:
+    # This method was moved into sphinx.util.display in Sphinx 6.1.0. Before
+    # that it resided in sphinx.util.
+    from sphinx.util import status_iterator
+
 from ..settings import API_ROOT, TEMPLATE_DIR
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -207,7 +214,7 @@ class SphinxMapperBase:
     def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary."""
         paths = list(self.find_files(patterns=patterns, dirs=dirs, ignore=ignore))
-        for path in sphinx.util.display.status_iterator(
+        for path in status_iterator(
             paths,
             colorize("bold", "[AutoAPI] Reading files... "),
             "darkgreen",
@@ -290,7 +297,7 @@ class SphinxMapperBase:
 
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for _, data in sphinx.util.display.status_iterator(
+        for _, data in status_iterator(
             self.paths.items(),
             colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
@@ -308,7 +315,7 @@ class SphinxMapperBase:
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
-        for _, obj in sphinx.util.display.status_iterator(
+        for _, obj in status_iterator(
             self.objects.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),

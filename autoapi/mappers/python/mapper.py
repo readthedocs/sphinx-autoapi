@@ -11,6 +11,13 @@ from sphinx.util.console import colorize
 import sphinx.util.docstrings
 import sphinx.util.logging
 
+try:
+    from sphinx.util.display import status_iterator
+except ImportError:
+    # This method was moved into sphinx.util.display in Sphinx 6.1.0. Before
+    # that it resided in sphinx.util.
+    from sphinx.util import status_iterator
+
 from ..base import SphinxMapperBase
 from .parser import Parser
 from .objects import (
@@ -291,7 +298,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
             return False
 
-        for dir_root, path in sphinx.util.display.status_iterator(
+        for dir_root, path in status_iterator(
             dir_root_files,
             colorize("bold", "[AutoAPI] Reading files... "),
             length=len(dir_root_files),
