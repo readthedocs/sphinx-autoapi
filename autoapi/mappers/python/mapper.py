@@ -291,7 +291,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
             return False
 
-        for dir_root, path in sphinx.util.status_iterator(
+        for dir_root, path in sphinx.util.display.status_iterator(
             dir_root_files,
             colorize("bold", "[AutoAPI] Reading files... "),
             length=len(dir_root_files),
