@@ -322,9 +322,24 @@ class SphinxMapperBase:
             detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, f"index{source_suffix}")
+
+            # -- DEBUGGING --
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
 
+                if self.app.config.autoapi_render_in_single_page:
+                    for obj_child in obj.children:
+                        if obj_child.type in self.app.config.autoapi_render_in_single_page:
+                            print(f"Object {obj_child.name} was found")
+
+                            path = os.path.join(detail_dir, f"{obj_child.name}{source_suffix}")
+                            with open(path, "wb+") as detail_file:
+
+                                rst = obj_child.render()
+                                if not rst:
+                                    continue
+                                detail_file.write(rst.encode("utf-8"))
+            
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
 
