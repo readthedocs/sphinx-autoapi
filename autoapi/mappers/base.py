@@ -4,6 +4,7 @@ from collections import OrderedDict, namedtuple
 import re
 
 import anyascii
+from docutils.parsers.rst import convert_directive_function
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
@@ -12,7 +13,7 @@ from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 
-from ..settings import API_ROOT, TEMPLATE_DIR
+from ..settings import API_ROOT, TEMPLATE_DIR, SINGLE_PAGE_LEVELS
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
@@ -306,7 +307,42 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
+    def output_child_rst(self, obj, obj_parent, detail_dir, single_page_level, source_suffix):
+
+        if not obj.display:
+            return
+
+        obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj.type)
+        desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
+        needs_single_page = obj_child_page_level <= desired_page_level
+        if not needs_single_page:
+            return
+
+        obj_child_rst = obj.render(
+            needs_single_page=needs_single_page,
+        )
+        if not obj_child_rst:
+            return
+
+        ensuredir(os.path.join(detail_dir, obj.short_name))
+        path = os.path.join(
+            detail_dir, obj.short_name, f"index{source_suffix}"
+        )
+
+        with open(path, "wb+") as obj_child_detail_file:
+            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+
+        for obj_child in obj.children:
+            child_detail_dir = os.path.join(detail_dir, obj.name)
+            self.output_child_rst(obj_child, obj, child_detail_dir, single_page_level, source_suffix)
+
+
     def output_rst(self, root, source_suffix):
+        # Evaluate which object types should render in a single page
+        single_page_level = self.app.config.autoapi_single_page_level
+        desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level)
+        single_page_objects = SINGLE_PAGE_LEVELS[:desired_page_level+1]
+
         for _, obj in status_iterator(
             self.objects.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
@@ -314,15 +350,24 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render()
+            if not obj.display:
+                continue
+
+            rst = obj.render(single_page_objects=single_page_objects)
             if not rst:
                 continue
 
             detail_dir = obj.include_dir(root=root)
             ensuredir(detail_dir)
             path = os.path.join(detail_dir, f"index{source_suffix}")
+
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
+                
+                for obj_child in obj.children:
+                    self.output_child_rst(obj_child, obj, detail_dir=detail_dir,
+                                          single_page_level=single_page_level,
+                                          source_suffix=source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
