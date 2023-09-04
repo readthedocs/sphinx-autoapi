@@ -73,7 +73,17 @@ Classes
    {{ klass.id }}
 {% endfor %}
 
+{% if "class" in render_in_single_page %}
+{% for klass in visible_classes %}
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
 
+   {{ klass.name }}
+
+{% endfor %}
+{% endif %}
 {% endif %}
 {% endblock %}
 
@@ -88,10 +98,19 @@ Functions
    {{ function.id }}
 {% endfor %}
 
+{% if "function" in render_in_single_page %}
+{% for function in visible_functions %}
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
 
+   {{ function.name }}
+
+{% endfor %}
+{% endif %}
 {% endif %}
 {% endblock %}
-
 {% block attributes scoped %}
 {% if visible_attributes %}
 Attributes
@@ -103,12 +122,26 @@ Attributes
    {{ attribute.id }}
 {% endfor %}
 
+{% if "attribute" in render_in_single_page %}
+{% for attr in visible_attributes %}
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
 
+   {{ attr.name }}
+
+{% endfor %}
+{% endif %}
 {% endif %}
 {% endblock %}
 {% endif %}
+
 {% for obj_item in visible_children %}
+{% if obj_item.type not in render_in_single_page %}
 {{ obj_item.render()|indent(0) }}
+{% endif %}
 {% endfor %}
+
 {% endif %}
 {% endblock %}

@@ -317,7 +317,7 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render()
+            rst = obj.render(render_in_single_page=render_in_single_page)
             if not rst:
                 continue
 
