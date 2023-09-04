@@ -334,7 +334,9 @@ class SphinxMapperBase:
                         if obj_child.type not in render_in_single_page:
                             continue
 
-                        obj_child_rst = obj_child.render(needs_single_page=True)
+                        obj_child_rst = obj_child.render(
+                                render_in_single_page=render_in_single_page
+                        )
                         if not obj_child_rst:
                             continue
 

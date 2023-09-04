@@ -1,4 +1,12 @@
 {%- if obj.display %}
+
+{% if render_in_single_page %}
+
+{{ obj.short_name }}
+{{ "=" * obj.short_name | length }}
+
+{% endif %}
+
 .. py:property:: {{ obj.short_name }}
    {% if obj.annotation %}
    :type: {{ obj.annotation }}
