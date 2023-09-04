@@ -330,21 +330,22 @@ class SphinxMapperBase:
 
                 if render_in_single_page:
                     for obj_child in obj.children:
-
                         if obj_child.type not in render_in_single_page:
                             continue
 
                         obj_child_rst = obj_child.render(
-                                render_in_single_page=render_in_single_page
+                            render_in_single_page=render_in_single_page
                         )
                         if not obj_child_rst:
                             continue
 
-                        path = os.path.join(detail_dir, f"{obj_child.name}{source_suffix}")
+                        path = os.path.join(
+                            detail_dir, f"{obj_child.name}{source_suffix}"
+                        )
 
                         with open(path, "wb+") as obj_child_detail_file:
                             obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
-            
+
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
 
