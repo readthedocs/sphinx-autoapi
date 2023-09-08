@@ -332,6 +332,11 @@ class SphinxMapperBase:
                     continue
 
                 for obj_child in obj.children:
+
+                    # HACK: this should be controlled by the templates
+                    if not obj_child.display:
+                        continue
+
                     if obj_child.type not in render_in_single_page:
                         continue
 
