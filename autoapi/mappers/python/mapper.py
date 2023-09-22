@@ -268,6 +268,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             dir_root = dir_
             if (
                 os.path.exists(os.path.join(dir_, "__init__.py"))
+                or os.path.exists(os.path.join(dir_, "__init__.pyi"))
                 or self._use_implicit_namespace
             ):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))

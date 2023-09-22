@@ -24,7 +24,7 @@ class Parser:
     def _parse_file(self, file_path, condition):
         directory, filename = os.path.split(file_path)
         module_parts = []
-        if filename != "__init__.py":
+        if filename != "__init__.py" and filename != "__init__.pyi":
             module_part = os.path.splitext(filename)[0]
             module_parts = [module_part]
         module_parts = collections.deque(module_parts)
@@ -40,7 +40,10 @@ class Parser:
     def parse_file(self, file_path):
         return self._parse_file(
             file_path,
-            lambda directory: os.path.isfile(os.path.join(directory, "__init__.py")),
+            lambda directory: (
+                os.path.isfile(os.path.join(directory, "__init__.py"))
+                or os.path.isfile(os.path.join(directory, "__init__.pyi"))
+            ),
         )
 
     def parse_file_in_namespace(self, file_path, dir_root):

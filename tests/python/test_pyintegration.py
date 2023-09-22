@@ -300,6 +300,20 @@ class TestSimpleStubModuleNotPreferred:
         assert foo_sig
 
 
+class TestStubInitModuleInSubmodule:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pyisubmoduleinit", warningiserror=True)
+
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        # Documentation should list
+        # submodule_foo instead of __init__
+        assert example_file.find(title="submodule_foo")
+        assert not example_file.find(title="__init__")
+
+
 class TestPy3Module:
     @pytest.fixture(autouse=True, scope="class")
     def built(self, builder):
