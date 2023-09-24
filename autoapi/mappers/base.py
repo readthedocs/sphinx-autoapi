@@ -8,15 +8,9 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
 from sphinx.util.console import colorize
+from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
-
-try:
-    from sphinx.util.display import status_iterator
-except ImportError:
-    # This method was moved into sphinx.util.display in Sphinx 6.1.0. Before
-    # that it resided in sphinx.util.
-    from sphinx.util import status_iterator
 
 from ..settings import API_ROOT, TEMPLATE_DIR
 

@@ -8,15 +8,9 @@ import sphinx.environment
 from sphinx.errors import ExtensionError
 import sphinx.util
 from sphinx.util.console import colorize
+from sphinx.util.display import status_iterator
 import sphinx.util.docstrings
 import sphinx.util.logging
-
-try:
-    from sphinx.util.display import status_iterator
-except ImportError:
-    # This method was moved into sphinx.util.display in Sphinx 6.1.0. Before
-    # that it resided in sphinx.util.
-    from sphinx.util import status_iterator
 
 from ..base import SphinxMapperBase
 from .parser import Parser
