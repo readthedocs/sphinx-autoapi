@@ -80,8 +80,8 @@ class _AutoapiInheritanceGraph(sphinx.ext.inheritance_diagram.InheritanceGraph):
             fullname = self.class_name(cls, 0, aliases)
 
             tooltip = None
-            if cls.doc:
-                doc = cls.doc.strip().split("\n")[0]
+            if cls.doc_node:
+                doc = cls.doc_node.value.strip().split("\n")[0]
                 if doc:
                     tooltip = '"%s"' % doc.replace('"', '\\"')
 
