@@ -99,15 +99,15 @@ Functions
 {% endfor %}
 
 {% if "function" in render_in_single_page %}
-{% for function in visible_functions %}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
    :hidden:
 
+{% for function in visible_functions %}
    {{ function.name }}
-
 {% endfor %}
+
 {% endif %}
 {% endif %}
 {% endblock %}
@@ -123,15 +123,15 @@ Attributes
 {% endfor %}
 
 {% if "attribute" in render_in_single_page %}
-{% for attr in visible_attributes %}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
    :hidden:
 
+{% for attr in visible_attributes %}
    {{ attr.name }}
-
 {% endfor %}
+
 {% endif %}
 {% endif %}
 {% endblock %}
