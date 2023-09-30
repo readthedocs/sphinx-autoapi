@@ -244,7 +244,7 @@ How to Add Citation Link
 ------------------------
 
 When using `numpydoc <https://pypi.org/project/numpydoc/>`_ style docstring,
-you must use unique anchor to avoid collision.
+you may need to use unique anchor to avoid collision.
 
 .. code-block::
 
