@@ -22,9 +22,7 @@ Preparation
 Release
 -------
 
-.. code-block:: bash
-
-    git clean -idx
-    tox -e release
-    git tag vX.X.X
-    git push --tags
+Create a new release in github that tags the commit
+and uses the built release notes as the description.
+The tag created by the release will trigger the github actions to
+build and upload the package to PyPI.
