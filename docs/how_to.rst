@@ -238,3 +238,20 @@ and set :confval:`autodoc_typehints` to ``description`` as normal::
     the type annotations of overloads will always be output in the signature
     and never merged into the description
     because it is impossible to represent all overloads as a list of parameters.
+
+
+How to Add Citation Link
+------------------------
+
+When using `numpydoc <https://pypi.org/project/numpydoc/>`_ style docstring,
+you must use unique anchor to avoid collision.
+
+.. code-block::
+
+    def _func(a: int, b: Optional[str]) -> bool
+        """External link [#my-link]_.
+
+        References
+        ----------
+        .. [#my-link] https://example.com/
+        """
