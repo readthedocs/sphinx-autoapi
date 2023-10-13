@@ -308,7 +308,7 @@ class SphinxMapperBase:
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
-        render_in_single_page = self.app.config.autoapi_render_in_single_page
+        single_page_level = self.app.config.autoapi_autoapi_single_page_level
 
         for _, obj in sphinx.util.status_iterator(
             self.objects.items(),
@@ -317,7 +317,7 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render(render_in_single_page=render_in_single_page)
+            rst = obj.render(autoapi_single_page_level=single_page_level)
             if not rst:
                 continue
 
@@ -328,7 +328,7 @@ class SphinxMapperBase:
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
 
-                if not render_in_single_page:
+                if not single_page_level:
                     continue
 
                 for obj_child in obj.children:
@@ -337,11 +337,11 @@ class SphinxMapperBase:
                     if not obj_child.display:
                         continue
 
-                    if obj_child.type not in render_in_single_page:
+                    if obj_child.type not in single_page_level:
                         continue
 
                     obj_child_rst = obj_child.render(
-                        render_in_single_page=render_in_single_page
+                        single_page_level=single_page_level
                     )
                     if not obj_child_rst:
                         continue
