@@ -1,10 +1,7 @@
 {%- if obj.display %}
-
 {% if needs_single_page %}
-
 {{ obj.short_name }}
 {{ "=" * obj.short_name | length }}
-
 {% endif %}
 
 .. py:method:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
