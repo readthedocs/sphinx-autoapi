@@ -1,6 +1,6 @@
 {% if obj.display %}
 
-{% if render_in_single_page %}
+{% if needs_single_page %}
 
 {{ obj.short_name }}
 {{ "=" * obj.short_name | length }}

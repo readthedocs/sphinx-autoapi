@@ -12,7 +12,7 @@ from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 
-from ..settings import API_ROOT, TEMPLATE_DIR
+from ..settings import API_ROOT, TEMPLATE_DIR, SINGLE_PAGE_LEVELS
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
@@ -309,7 +309,11 @@ class SphinxMapperBase:
         raise NotImplementedError
 
     def output_rst(self, root, source_suffix):
-        single_page_level = self.app.config.autoapi_autoapi_single_page_level
+        single_page_level = self.app.config.autoapi_single_page_level
+        desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level)
+        single_page_objects = SINGLE_PAGE_LEVELS[:desired_page_level+1]
+        print(f"Single page objects: { single_page_objects }")
+
         for _, obj in status_iterator(
             self.objects.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
@@ -317,7 +321,7 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render(autoapi_single_page_level=single_page_level)
+            rst = obj.render(single_page_objects=single_page_objects)
             if not rst:
                 continue
 
@@ -328,19 +332,20 @@ class SphinxMapperBase:
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
 
-                if not single_page_level:
-                    continue
-
                 for obj_child in obj.children:
 
                     if not obj_child.display:
                         continue
 
-                    if obj_child.type not in single_page_level:
+                    obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj_child.type)
+                    desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
+                    needs_single_page = obj_child_page_level <= desired_page_level
+                    print(f"Found type {obj_child.type} -> rendering -> {needs_single_page}")
+                    if not needs_single_page:
                         continue
 
                     obj_child_rst = obj_child.render(
-                        single_page_level=single_page_level
+                        needs_single_page=needs_single_page
                     )
                     if not obj_child_rst:
                         continue

@@ -73,7 +73,7 @@ Classes
    {{ klass.id }}
 {% endfor %}
 
-{% if "class" in render_in_single_page %}
+{% if "class" in single_page_objects %}
 {% for klass in visible_classes %}
 .. toctree::
    :titlesonly:
@@ -98,7 +98,7 @@ Functions
    {{ function.id }}
 {% endfor %}
 
-{% if "function" in render_in_single_page %}
+{% if "function" in single_page_objects %}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -122,7 +122,7 @@ Attributes
    {{ attribute.id }}
 {% endfor %}
 
-{% if "attribute" in render_in_single_page %}
+{% if "attribute" in single_page_objects %}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -138,7 +138,7 @@ Attributes
 {% endif %}
 
 {% for obj_item in visible_children %}
-{% if obj_item.type not in render_in_single_page %}
+{% if obj_item.type not in single_page_objects %}
 {{ obj_item.render()|indent(0) }}
 {% endif %}
 {% endfor %}
