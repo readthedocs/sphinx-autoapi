@@ -8,6 +8,7 @@ import sphinx.environment
 from sphinx.errors import ExtensionError
 import sphinx.util
 from sphinx.util.console import colorize
+from sphinx.util.display import status_iterator
 import sphinx.util.docstrings
 import sphinx.util.logging
 
@@ -291,7 +292,7 @@ class PythonSphinxMapper(SphinxMapperBase):
             )
             return False
 
-        for dir_root, path in sphinx.util.status_iterator(
+        for dir_root, path in status_iterator(
             dir_root_files,
             colorize("bold", "[AutoAPI] Reading files... "),
             length=len(dir_root_files),

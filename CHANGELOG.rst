@@ -5,6 +5,29 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.0.0 (2023-09-26)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Ensure `tooltip` is always a `str`. (str-tooltip)
+- Replaced usage of deprecated sphinx.util.status_iterator (#391)
+
+
+Deprecations and Removals
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Removed support for documenting languages other than Python (#248)
+- Removed support for Python 3.7
+
+
+Misc
+^^^^
+
+- #389, #390, #392, #407
+
+
 v2.1.1 (2023-06-10)
 -------------------
 

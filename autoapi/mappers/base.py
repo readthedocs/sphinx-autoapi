@@ -8,6 +8,7 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
 from sphinx.util.console import colorize
+from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 
@@ -207,7 +208,7 @@ class SphinxMapperBase:
     def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary."""
         paths = list(self.find_files(patterns=patterns, dirs=dirs, ignore=ignore))
-        for path in sphinx.util.status_iterator(
+        for path in status_iterator(
             paths,
             colorize("bold", "[AutoAPI] Reading files... "),
             "darkgreen",
@@ -290,7 +291,7 @@ class SphinxMapperBase:
 
     def map(self, options=None):
         """Trigger find of serialized sources and build objects"""
-        for _, data in sphinx.util.status_iterator(
+        for _, data in status_iterator(
             self.paths.items(),
             colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
             length=len(self.paths),
@@ -309,8 +310,7 @@ class SphinxMapperBase:
 
     def output_rst(self, root, source_suffix):
         single_page_level = self.app.config.autoapi_autoapi_single_page_level
-
-        for _, obj in sphinx.util.status_iterator(
+        for _, obj in status_iterator(
             self.objects.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
             length=len(self.objects),
