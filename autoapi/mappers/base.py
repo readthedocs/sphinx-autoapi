@@ -333,7 +333,6 @@ class SphinxMapperBase:
 
                 for obj_child in obj.children:
 
-                    # HACK: this should be controlled by the templates
                     if not obj_child.display:
                         continue
 
