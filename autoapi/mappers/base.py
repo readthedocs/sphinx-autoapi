@@ -312,7 +312,6 @@ class SphinxMapperBase:
         single_page_level = self.app.config.autoapi_single_page_level
         desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level)
         single_page_objects = SINGLE_PAGE_LEVELS[:desired_page_level+1]
-        print(f"Single page objects: { single_page_objects }")
 
         for _, obj in status_iterator(
             self.objects.items(),
@@ -340,7 +339,6 @@ class SphinxMapperBase:
                     obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj_child.type)
                     desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
                     needs_single_page = obj_child_page_level <= desired_page_level
-                    print(f"Found type {obj_child.type} -> rendering -> {needs_single_page}")
                     if not needs_single_page:
                         continue
 
