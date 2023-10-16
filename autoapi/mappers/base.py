@@ -321,6 +321,9 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
+            if not obj.display:
+                continue
+
             rst = obj.render(single_page_objects=single_page_objects)
             if not rst:
                 continue
