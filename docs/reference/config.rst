@@ -181,6 +181,31 @@ Customisation Options
       :noindex:
 
 
+.. confval:: autoapi_single_page_level
+
+   Default: ``'module'``
+
+   This configuration value specifies the level at which objects are rendered on
+   a single page. Valid levels, in descending order of hierarchy, are as
+   follows:
+
+     * Package
+
+     * Module
+
+     * Class
+
+     * Function
+
+     * Method
+
+     * Attribute
+
+     * Property
+
+     * Data
+
+
 Events
 ~~~~~~
 
