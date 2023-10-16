@@ -4,6 +4,7 @@ from collections import OrderedDict, namedtuple
 import re
 
 import anyascii
+from docutils.parsers.rst import convert_directive_function
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
@@ -331,27 +332,9 @@ class SphinxMapperBase:
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
                 
-                if obj.all:
-                    visible_children = [
-                        child
-                        for child in obj.children
-                        if child.short_name in obj.all
-                    ]
-                elif obj.type == "package":
-                    visible_children = [
-                        child
-                        for child in obj.children
-                        if child.display is True
-                    ]
-                else:
-                    visible_children = [
-                        child
-                        for child in obj.children
-                        if child.display is True
-                        and child.imported == False
-                    ]
-
-                for obj_child in visible_children:
+                for obj_child in obj.children:
+                    if not obj_child.display:
+                        continue
 
                     obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj_child.type)
                     desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
