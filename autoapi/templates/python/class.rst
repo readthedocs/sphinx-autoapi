@@ -3,6 +3,7 @@
 {{ obj.short_name }}
 {{ "=" * obj.short_name | length }}
 {% endif %}
+
 .. py:{{ obj.type }}:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
 
 {% for (args, return_annotation) in obj.overloads %}

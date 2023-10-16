@@ -330,11 +330,28 @@ class SphinxMapperBase:
 
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
+                
+                if obj.all:
+                    visible_children = [
+                        child
+                        for child in obj.children
+                        if child.short_name in obj.all
+                    ]
+                elif obj.type == "package":
+                    visible_children = [
+                        child
+                        for child in obj.children
+                        if child.display is True
+                    ]
+                else:
+                    visible_children = [
+                        child
+                        for child in obj.children
+                        if child.display is True
+                        and child.imported == False
+                    ]
 
-                for obj_child in obj.children:
-
-                    if not obj_child.display:
-                        continue
+                for obj_child in visible_children:
 
                     obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj_child.type)
                     desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 

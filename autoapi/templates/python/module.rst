@@ -19,6 +19,7 @@
 {% if visible_subpackages %}
 Subpackages
 -----------
+
 .. toctree::
    :titlesonly:
    :maxdepth: 3
@@ -35,6 +36,7 @@ Subpackages
 {% if visible_submodules %}
 Submodules
 ----------
+
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -61,9 +63,9 @@ Submodules
 {% set visible_classes = visible_children|selectattr("type", "equalto", "class")|list %}
 {% set visible_functions = visible_children|selectattr("type", "equalto", "function")|list %}
 {% set visible_attributes = visible_children|selectattr("type", "equalto", "data")|list %}
-{% if "show-module-summary" in autoapi_options and (visible_classes or visible_functions) %}
+{%- if "show-module-summary" in autoapi_options and (visible_classes or visible_functions) -%}
 {% block classes scoped %}
-{% if visible_classes %}
+{%- if visible_classes -%}
 Classes
 ~~~~~~~
 
@@ -83,12 +85,12 @@ Classes
    {{ klass.name }}
 
 {% endfor %}
-{% endif %}
-{% endif %}
+{%- endif -%}
+{%- endif -%}
 {% endblock %}
 
 {% block functions scoped %}
-{% if visible_functions %}
+{%- if visible_functions -%}
 Functions
 ~~~~~~~~~
 
@@ -98,7 +100,7 @@ Functions
    {{ function.id }}
 {% endfor %}
 
-{% if "function" in single_page_objects %}
+{%- if "function" in single_page_objects -%}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -108,11 +110,11 @@ Functions
    {{ function.name }}
 {% endfor %}
 
-{% endif %}
-{% endif %}
+{%- endif -%}
+{%- endif -%}
 {% endblock %}
 {% block attributes scoped %}
-{% if visible_attributes %}
+{%- if visible_attributes -%}
 Attributes
 ~~~~~~~~~~
 
@@ -122,7 +124,7 @@ Attributes
    {{ attribute.id }}
 {% endfor %}
 
-{% if "attribute" in single_page_objects %}
+{%- if "attribute" in single_page_objects -%}
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -132,8 +134,8 @@ Attributes
    {{ attr.name }}
 {% endfor %}
 
-{% endif %}
-{% endif %}
+{%- endif -%}
+{%- endif -%}
 {% endblock %}
 {% endif %}
 
