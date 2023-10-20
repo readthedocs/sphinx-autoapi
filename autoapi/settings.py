@@ -15,6 +15,7 @@ SINGLE_PAGE_LEVELS = [
     "package",
     "module",
     "class",
+    "exception",
     "function",
     "method",
     "attribute",
