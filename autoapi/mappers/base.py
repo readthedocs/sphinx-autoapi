@@ -309,7 +309,38 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
+    def output_child_rst(self, obj, obj_parent, detail_dir, single_page_level, source_suffix):
+
+        if not obj.display:
+            return
+
+        obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj.type)
+        desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
+        needs_single_page = obj_child_page_level <= desired_page_level
+        if not needs_single_page:
+            return
+
+        obj_child_rst = obj.render(
+            needs_single_page=needs_single_page,
+        )
+        if not obj_child_rst:
+            return
+
+        ensuredir(os.path.join(detail_dir, obj.short_name))
+        path = os.path.join(
+            detail_dir, obj.short_name, f"index{source_suffix}"
+        )
+
+        with open(path, "wb+") as obj_child_detail_file:
+            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+
+        for obj_child in obj.children:
+            child_detail_dir = os.path.join(detail_dir, obj.name)
+            self.output_child_rst(obj_child, obj, child_detail_dir, single_page_level, source_suffix)
+
+
     def output_rst(self, root, source_suffix):
+        # Evaluate which object types should render in a single page
         single_page_level = self.app.config.autoapi_single_page_level
         desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level)
         single_page_objects = SINGLE_PAGE_LEVELS[:desired_page_level+1]
@@ -336,27 +367,9 @@ class SphinxMapperBase:
                 detail_file.write(rst.encode("utf-8"))
                 
                 for obj_child in obj.children:
-                    if not obj_child.display:
-                        continue
-
-                    obj_child_page_level = SINGLE_PAGE_LEVELS.index(obj_child.type)
-                    desired_page_level = SINGLE_PAGE_LEVELS.index(single_page_level) 
-                    needs_single_page = obj_child_page_level <= desired_page_level
-                    if not needs_single_page:
-                        continue
-
-                    obj_child_rst = obj_child.render(
-                        needs_single_page=needs_single_page
-                    )
-                    if not obj_child_rst:
-                        continue
-
-                    path = os.path.join(
-                        detail_dir, f"{obj_child.name}{source_suffix}"
-                    )
-
-                    with open(path, "wb+") as obj_child_detail_file:
-                        obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+                    self.output_child_rst(obj_child, obj, detail_dir=detail_dir,
+                                          single_page_level=single_page_level,
+                                          source_suffix=source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
