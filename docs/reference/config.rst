@@ -199,7 +199,7 @@ Customisation Options
 
      * Method
 
-     * Property
+     * Attribute
 
      * Data
 

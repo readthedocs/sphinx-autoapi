@@ -18,7 +18,7 @@ SINGLE_PAGE_LEVELS = [
     "class",
     "function",
     "method",
-    "attribute",
     "property",
+    "attribute",
     "data",
 ]
