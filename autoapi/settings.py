@@ -14,8 +14,8 @@ API_ROOT = "autoapi"
 SINGLE_PAGE_LEVELS = [
     "package",
     "module",
-    "class",
     "exception",
+    "class",
     "function",
     "method",
     "attribute",

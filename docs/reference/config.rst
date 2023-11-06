@@ -199,8 +199,6 @@ Customisation Options
 
      * Method
 
-     * Attribute
-
      * Property
 
      * Data
