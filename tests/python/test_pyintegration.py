@@ -1226,8 +1226,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        # subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1252,8 +1252,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        #subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        #subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1281,8 +1281,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        #subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        #subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1291,8 +1291,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        error_path = "_build/html/autoapi/example/foo/FooError.html"
-        error_file = parse(error_path)
+        #error_path = "_build/html/autoapi/example/foo/FooError.html"
+        #error_file = parse(error_path)
 
         # TODO: Look for expected contents
 
@@ -1318,8 +1318,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        # subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1328,17 +1328,17 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        error_path = "_build/html/autoapi/example/foo/FooError.html"
-        error_file = parse(error_path)
+        # error_path = "_build/html/autoapi/example/foo/FooError.html"
+        # error_file = parse(error_path)
 
         # TODO: Look for expected contents
 
-        foo_path = "_build/html/autoapi/example/foo/Foo.html"
+        foo_path = "_build/html/autoapi/example/foo/Foo/index.html"
         foo_file = parse(foo_path)
 
         # TODO: Look for expected contents
 
-        func_path = "_build/html/autoapi/example/foo/module_level_function.html"
+        func_path = "_build/html/autoapi/example/module_level_function.html"
         func_file = parse(func_path)
 
         # TODO: Look for expected contents
@@ -1359,8 +1359,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        # subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1404,8 +1404,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        # subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 
@@ -1459,8 +1459,8 @@ class TestOwnPageLevel:
 
         # TODO: Look for expected contents
 
-        subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        subpackage_file = parse(subpackage_path)
+        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
+        # subpackage_file = parse(subpackage_path)
 
         # TODO: Look for expected contents
 

@@ -81,7 +81,7 @@ Attributes
    :hidden:
 
                      {% for attribute in visible_attributes %}
-   {{ attribute.short_name }}/index.rst
+   {{ attribute.short_name }}
                      {% endfor %}
 
                   {% endif%}
@@ -127,7 +127,18 @@ Classes
    :hidden:
 
                      {% for klass in visible_classes %}
+   {# 
+       The set own_page_types sometimes is not ordered! This changes the value of
+       its last element. Thus, the best way to check is to verify if 'function'
+       lies within the list
+       Do -> if 'function' not in own_page_types
+       Instead of -> if "class" == (own_page_types | list | last)
+   #}
+   {% if "method" not in own_page_types %}
+   {{ klass.short_name }}.rst
+   {% else %}
    {{ klass.short_name }}/index.rst
+   {% endif %}
                      {% endfor %}
 
                   {% endif %}
@@ -145,12 +156,12 @@ Classes
                {% if "function" in own_page_types or "show-module-summary" in autoapi_options %}
 Functions
 ---------
-                  {% if "class" in own_page_types %}
+                  {% if "function" in own_page_types %}
 .. toctree::
    :hidden:
 
                      {% for function in visible_functions %}
-   {{ function.short_name }}/index.rst
+   {{ function.short_name }}.rst
                      {% endfor %}
 
                   {% endif %}
