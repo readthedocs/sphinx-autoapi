@@ -329,6 +329,35 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
+    def output_child_rst(self, obj, obj_parent, detail_dir, source_suffix):
+
+        if not obj.display:
+            return
+
+        obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)
+        desired_page_level = _OWN_PAGE_LEVELS.index(self.app.config.autoapi_own_page_level)
+        is_own_page = obj_child_page_level <= desired_page_level
+        if not is_own_page:
+            return
+
+        obj_child_rst = obj.render(
+            is_own_page=is_own_page,
+        )
+        if not obj_child_rst:
+            return
+
+        ensuredir(os.path.join(detail_dir, obj.short_name))
+        path = os.path.join(
+            detail_dir, obj.short_name, f"index{source_suffix}"
+        )
+
+        with open(path, "wb+") as obj_child_detail_file:
+            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+
+        for obj_child in obj.children:
+            child_detail_dir = os.path.join(detail_dir, obj.name)
+            self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
+
     def output_rst(self, root, source_suffix):
         for _, obj in status_iterator(
             self.objects_to_render.items(),
@@ -349,6 +378,9 @@ class SphinxMapperBase:
             path = os.path.join(detail_dir, f"index{source_suffix}")
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
+            
+            for obj_child in obj.children:
+                self.output_child_rst(obj_child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
