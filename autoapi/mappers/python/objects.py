@@ -38,6 +38,7 @@ class PythonPythonMapper(PythonMapperBase):
     language = "python"
     is_callable = False
     member_order = 0
+    type: str
 
     def __init__(self, obj, class_content="class", **kwargs) -> None:
         super().__init__(obj, **kwargs)
