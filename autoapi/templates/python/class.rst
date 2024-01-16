@@ -1,7 +1,7 @@
 {% if obj.display %}
-{% if needs_single_page %}
-{{ obj.short_name }}
-{{ "=" * obj.short_name | length }}
+{% if is_own_page %}
+{{ obj.name }}
+{{ "=" * obj.name | length }}
 {% endif %}
 
 .. py:{{ obj.type }}:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
@@ -30,6 +30,7 @@
    {% if obj.docstring %}
    {{ obj.docstring|indent(3) }}
    {% endif %}
+   {# TODO: Rendering of all children below this line must be conditional on own_page_types #}
    {% if "inherited-members" in autoapi_options %}
    {% set visible_classes = obj.classes|selectattr("display")|list %}
    {% else %}

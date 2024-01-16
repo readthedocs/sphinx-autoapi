@@ -1,7 +1,8 @@
 {%- if obj.display %}
-{% if needs_single_page %}
-{{ obj.short_name }}
-{{ "=" * obj.short_name | length }}
+{% if is_own_page %}
+{{ obj.name }}
+{{ "=" * obj.name | length }}
+
 {% endif %}
 .. py:property:: {{ obj.short_name }}
    {% if obj.annotation %}

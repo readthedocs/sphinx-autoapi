@@ -181,7 +181,7 @@ Customisation Options
       :noindex:
 
 
-.. confval:: autoapi_single_page_level
+.. confval:: autoapi_own_page_level
 
    Default: ``'module'``
 
