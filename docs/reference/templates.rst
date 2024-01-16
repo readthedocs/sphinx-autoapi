@@ -49,6 +49,8 @@ This contains:
 * ``include_summaries``: The value of the :confval:`autoapi_include_summaries`
   configuration option.
 * ``obj``: A Python object derived from :class:`PythonPythonMapper`.
+* ``own_page_types``: A set of strings that contains the object types that
+  render on their own page.
 * ``sphinx_version``: The contents of :attr:`sphinx.version_info`.
 
 The object in ``obj`` has a number of standard attributes
