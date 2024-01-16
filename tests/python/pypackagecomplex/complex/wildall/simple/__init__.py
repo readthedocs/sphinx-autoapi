@@ -4,7 +4,7 @@ __all__ = [
     "SimpleClass",
     "simple_function",
     "public_chain",
-    "module_level_method",
+    "module_level_function",
     "does_not_exist",
 ]
 

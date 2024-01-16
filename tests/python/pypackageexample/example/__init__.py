@@ -2,6 +2,6 @@
 from . import foo
 
 
-def module_level_method(foo, bar):
+def module_level_function(foo, bar):
     """A module level method"""
     pass
