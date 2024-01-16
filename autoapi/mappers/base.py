@@ -327,6 +327,50 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
+    def output_child_rst(self, obj, obj_parent, detail_dir, source_suffix):
+
+        if not obj.display:
+            return
+
+        # Skip nested cases like functions in functions or clases in clases
+        if obj.type == obj_parent.type:
+            return
+
+        obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)
+        desired_page_level = _OWN_PAGE_LEVELS.index(self.app.config.autoapi_own_page_level)
+        is_own_page = obj_child_page_level <= desired_page_level
+        if not is_own_page:
+            return
+
+        obj_child_rst = obj.render(
+            is_own_page=is_own_page,
+        )
+        if not obj_child_rst:
+            return
+
+        function_page_level = _OWN_PAGE_LEVELS.index("function")
+        is_level_beyond_function = function_page_level < desired_page_level
+        if obj.type in ["exception", "class"]:
+            if not is_level_beyond_function:
+                outfile = f"{obj.short_name}{source_suffix}"
+                path = os.path.join(detail_dir, outfile)
+            else:
+                outdir = os.path.join(detail_dir, obj.short_name)
+                ensuredir(outdir)
+                path = os.path.join(outdir, f"index{source_suffix}")
+        else:
+            is_parent_in_detail_dir = detail_dir.endswith(obj_parent.short_name)
+            outdir = detail_dir if is_parent_in_detail_dir else os.path.join(detail_dir, obj_parent.short_name)
+            ensuredir(outdir)
+            path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
+
+        with open(path, "wb+") as obj_child_detail_file:
+            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+
+        for obj_child in obj.children:
+            child_detail_dir = os.path.join(detail_dir, obj.name)
+            self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
+
     def output_rst(self, root, source_suffix):
         for _, obj in status_iterator(
             self.objects_to_render.items(),
@@ -347,6 +391,9 @@ class SphinxMapperBase:
             path = os.path.join(detail_dir, f"index{source_suffix}")
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
+            
+            for child in obj.children:
+                self.output_child_rst(child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
