@@ -1,4 +1,9 @@
 {% if obj.display %}
+{% if is_own_page %}
+{{ obj.name }}
+{{ "=" * obj.name | length }}
+
+{% endif %}
 .. py:{{ obj.type }}:: {{ obj.name }}
    {%- if obj.annotation is not none %}
 
