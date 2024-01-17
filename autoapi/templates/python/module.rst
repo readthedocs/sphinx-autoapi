@@ -156,7 +156,7 @@ Classes
                {% if "function" in own_page_types or "show-module-summary" in autoapi_options %}
 Functions
 ---------
-                  {% if "class" in own_page_types %}
+                  {% if "function" in own_page_types %}
 .. toctree::
    :hidden:
 
