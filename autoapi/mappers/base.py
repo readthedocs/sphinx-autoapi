@@ -350,16 +350,31 @@ class SphinxMapperBase:
         if not obj_child_rst:
             return
 
-        ensuredir(os.path.join(detail_dir, obj.short_name))
-        path = os.path.join(
-            detail_dir, obj.short_name, f"index{source_suffix}"
-        )
+        # Create the proper path according to the type of object and the desired
+        # page level. If page level stops at exception, class, or function, then
+        # the following path must be created:
+        # created:
+        # detail_dir / obj_name.rst                    (example/Foo.rst)
+        #If own pages stops at others below this category, then the following
+        # should be created for a class and its children:
+        # detail_dir / obj_parent_name / index.rst     (example/Foo/index.rst)
+        # detail_dir / obj_parent_name / obj_name.rst  (example/Foo/foo.rst)
+        is_last_level = obj_child_page_level == desired_page_level
+        if obj.type in ["exception", "class", "function"]:
+            if is_last_level:
+                outfile = f"{obj.short_name}{source_suffix}"
+                path = os.path.join(detail_dir, outfile)
+            else:
+                outdir = os.path.join(detail_dir, obj.short_name)
+                path = os.path.join(outdir, f"index{source_suffix}")
+        else:
+            outdir = os.path.join(detail_dir, obj_parent.short_name)
+            path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
 
         with open(path, "wb+") as obj_child_detail_file:
             obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
 
         for obj_child in obj.children:
-
             child_detail_dir = os.path.join(detail_dir, obj.name)
             self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
 
