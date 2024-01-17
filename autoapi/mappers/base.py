@@ -334,6 +334,10 @@ class SphinxMapperBase:
         if not obj.display:
             return
 
+        # Skip nested cases like functions in functions or clases in clases
+        if obj.type == obj_parent.type:
+            return
+
         obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)
         desired_page_level = _OWN_PAGE_LEVELS.index(self.app.config.autoapi_own_page_level)
         is_own_page = obj_child_page_level <= desired_page_level
@@ -355,6 +359,7 @@ class SphinxMapperBase:
             obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
 
         for obj_child in obj.children:
+
             child_detail_dir = os.path.join(detail_dir, obj.name)
             self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
 
@@ -379,8 +384,8 @@ class SphinxMapperBase:
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
             
-            for obj_child in obj.children:
-                self.output_child_rst(obj_child, obj, detail_dir, source_suffix)
+            for child in obj.children:
+                self.output_child_rst(child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
