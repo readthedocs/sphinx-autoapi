@@ -161,7 +161,7 @@ Functions
    :hidden:
 
                      {% for function in visible_functions %}
-   {{ function.short_name }}/index.rst
+   {{ function.short_name }}.rst
                      {% endfor %}
 
                   {% endif %}

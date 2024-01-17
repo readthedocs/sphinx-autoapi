@@ -366,9 +366,11 @@ class SphinxMapperBase:
                 path = os.path.join(detail_dir, outfile)
             else:
                 outdir = os.path.join(detail_dir, obj.short_name)
+                ensuredir(outdir)
                 path = os.path.join(outdir, f"index{source_suffix}")
         else:
             outdir = os.path.join(detail_dir, obj_parent.short_name)
+            ensuredir(outdir)
             path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
 
         with open(path, "wb+") as obj_child_detail_file:
