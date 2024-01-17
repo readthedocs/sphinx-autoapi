@@ -369,7 +369,10 @@ class SphinxMapperBase:
                 ensuredir(outdir)
                 path = os.path.join(outdir, f"index{source_suffix}")
         else:
-            outdir = os.path.join(detail_dir, obj_parent.short_name)
+            if detail_dir.endswith(obj_parent.short_name):
+                outdir = detail_dir
+            else:
+                outdir = os.path.join(detail_dir, obj_parent.short_name)
             ensuredir(outdir)
             path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
 
