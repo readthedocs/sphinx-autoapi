@@ -127,7 +127,18 @@ Classes
    :hidden:
 
                      {% for klass in visible_classes %}
+   {# 
+       The set own_page_types sometimes is not ordered! This changes the value of
+       its last element. Thus, the best way to check is to verify if 'function'
+       lies within the list
+       Do -> if 'function' not in own_page_types
+       Instead of -> if "class" == (own_page_types | list | last)
+   #}
+   {% if "function" not in own_page_types %}
+   {{ klass.short_name }}.rst
+   {% else %}
    {{ klass.short_name }}/index.rst
+   {% endif %}
                      {% endfor %}
 
                   {% endif %}
