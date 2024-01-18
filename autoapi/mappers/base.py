@@ -350,15 +350,6 @@ class SphinxMapperBase:
         if not obj_child_rst:
             return
 
-        # Create the proper path according to the type of object and the desired
-        # page level. If page level stops at exception, class, or function, then
-        # the following path must be created:
-        # created:
-        # detail_dir / obj_name.rst                    (example/Foo.rst)
-        #If own pages stops at others below this category, then the following
-        # should be created for a class and its children:
-        # detail_dir / obj_parent_name / index.rst     (example/Foo/index.rst)
-        # detail_dir / obj_parent_name / obj_name.rst  (example/Foo/foo.rst)
         function_page_level = _OWN_PAGE_LEVELS.index("function")
         is_level_beyond_function = function_page_level < desired_page_level
         if obj.type in ["exception", "class"]:
