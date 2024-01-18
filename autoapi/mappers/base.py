@@ -360,7 +360,7 @@ class SphinxMapperBase:
         # detail_dir / obj_parent_name / index.rst     (example/Foo/index.rst)
         # detail_dir / obj_parent_name / obj_name.rst  (example/Foo/foo.rst)
         is_last_level = obj_child_page_level == desired_page_level
-        if obj.type in ["exception", "class", "function"]:
+        if obj.type in ["exception", "class"]:
             if is_last_level:
                 outfile = f"{obj.short_name}{source_suffix}"
                 path = os.path.join(detail_dir, outfile)
