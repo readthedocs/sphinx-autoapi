@@ -134,7 +134,7 @@ Classes
        Do -> if 'function' not in own_page_types
        Instead of -> if "class" == (own_page_types | list | last)
    #}
-   {% if "function" not in own_page_types %}
+   {% if "method" not in own_page_types %}
    {{ klass.short_name }}.rst
    {% else %}
    {{ klass.short_name }}/index.rst

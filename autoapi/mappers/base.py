@@ -359,9 +359,9 @@ class SphinxMapperBase:
         # should be created for a class and its children:
         # detail_dir / obj_parent_name / index.rst     (example/Foo/index.rst)
         # detail_dir / obj_parent_name / obj_name.rst  (example/Foo/foo.rst)
-        is_last_level = obj_child_page_level == desired_page_level
+        own_page_level = self.app.config.autoapi_own_page_level
         if obj.type in ["exception", "class"]:
-            if is_last_level:
+            if own_page_level == "function":
                 outfile = f"{obj.short_name}{source_suffix}"
                 path = os.path.join(detail_dir, outfile)
             else:
@@ -369,10 +369,8 @@ class SphinxMapperBase:
                 ensuredir(outdir)
                 path = os.path.join(outdir, f"index{source_suffix}")
         else:
-            if detail_dir.endswith(obj_parent.short_name):
-                outdir = detail_dir
-            else:
-                outdir = os.path.join(detail_dir, obj_parent.short_name)
+            is_parent_in_detail_dir = detail_dir.endswith(obj_parent.short_name)
+            outdir = detail_dir if is_parent_in_detail_dir else os.path.join(detail_dir, obj_parent.short_name)
             ensuredir(outdir)
             path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
 
