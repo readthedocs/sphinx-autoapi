@@ -37,30 +37,66 @@
    {% set visible_classes = obj.classes|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
    {% for klass in visible_classes %}
-   {{ klass.render()|indent(3) }}
+   {{ klass.render(own_page_types=[])|indent(3) }}
    {% endfor %}
    {% if "inherited-members" in autoapi_options %}
    {% set visible_properties = obj.properties|selectattr("display")|list %}
    {% else %}
    {% set visible_properties = obj.properties|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
+   {% if "property" in own_page_types and visible_properties %}
+   Properties
+   ----------
+
+   .. toctree::
+      :hidden:
+
+      {% for property in visible_properties %}
+      {{ property.name }}.rst
+      {% endfor %}
+   {% else %}
    {% for property in visible_properties %}
    {{ property.render()|indent(3) }}
    {% endfor %}
+   {% endif %}
    {% if "inherited-members" in autoapi_options %}
    {% set visible_attributes = obj.attributes|selectattr("display")|list %}
    {% else %}
    {% set visible_attributes = obj.attributes|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
+   {% if "attribute" in own_page_types and visible_attributes %}
+   Attributes
+   ----------
+
+   .. toctree::
+      :hidden:
+
+      {% for attribute in visible_attributes %}
+      {{ attribute.name }}.rst
+      {% endfor %}
+   {% else %}
    {% for attribute in visible_attributes %}
    {{ attribute.render()|indent(3) }}
    {% endfor %}
+   {% endif %}
    {% if "inherited-members" in autoapi_options %}
    {% set visible_methods = obj.methods|selectattr("display")|list %}
    {% else %}
    {% set visible_methods = obj.methods|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
+   {% if "method" in own_page_types and visible_methods %}
+   Methods
+   -------
+
+   .. toctree::
+      :hidden:
+
+      {% for method in visible_methods %}
+      {{ method.name }}.rst
+      {% endfor %}
+   {% else %}
    {% for method in visible_methods %}
    {{ method.render()|indent(3) }}
    {% endfor %}
+   {% endif %}
 {% endif %}
