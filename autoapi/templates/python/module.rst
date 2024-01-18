@@ -81,7 +81,7 @@ Attributes
    :hidden:
 
                      {% for attribute in visible_attributes %}
-   {{ attribute.short_name }}/index.rst
+   {{ attribute.short_name }}
                      {% endfor %}
 
                   {% endif%}

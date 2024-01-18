@@ -45,6 +45,7 @@
    {% set visible_properties = obj.properties|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
    {% if "property" in own_page_types and visible_properties %}
+
    Properties
    ----------
 
@@ -52,7 +53,7 @@
       :hidden:
 
       {% for property in visible_properties %}
-      {{ property.name }}.rst
+      {{ property.name }}
       {% endfor %}
    {% else %}
    {% for property in visible_properties %}
@@ -65,6 +66,7 @@
    {% set visible_attributes = obj.attributes|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
    {% if "attribute" in own_page_types and visible_attributes %}
+
    Attributes
    ----------
 
@@ -72,7 +74,7 @@
       :hidden:
 
       {% for attribute in visible_attributes %}
-      {{ attribute.name }}.rst
+      {{ attribute.name }}
       {% endfor %}
    {% else %}
    {% for attribute in visible_attributes %}
@@ -85,6 +87,7 @@
    {% set visible_methods = obj.methods|rejectattr("inherited")|selectattr("display")|list %}
    {% endif %}
    {% if "method" in own_page_types and visible_methods %}
+
    Methods
    -------
 
@@ -92,7 +95,7 @@
       :hidden:
 
       {% for method in visible_methods %}
-      {{ method.name }}.rst
+      {{ method.name }}
       {% endfor %}
    {% else %}
    {% for method in visible_methods %}
