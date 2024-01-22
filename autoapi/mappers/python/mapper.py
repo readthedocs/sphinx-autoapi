@@ -62,12 +62,14 @@ def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
     placeholders = []
     for original in originals:
         new_full_name = placeholder["full_name"].replace("*", original["name"])
+        new_qual_name = placeholder["qual_name"].replace("*", original["name"])
         new_original_path = placeholder["original_path"].replace("*", original["name"])
         if "original_path" in original:
             new_original_path = original["original_path"]
         new_placeholder = dict(
             placeholder,
             name=original["name"],
+            qual_name=new_qual_name,
             full_name=new_full_name,
             original_path=new_original_path,
         )
@@ -167,6 +169,7 @@ def _resolve_placeholder(placeholder, original):
     assert original["type"] != "placeholder"
     # The name remains the same.
     new["name"] = placeholder["name"]
+    new["qual_name"] = placeholder["qual_name"]
     new["full_name"] = placeholder["full_name"]
     # Record where the placeholder originally came from.
     new["original_path"] = original["full_name"]
@@ -217,8 +220,7 @@ def _link_objs(value):
 
 
 class PythonSphinxMapper(SphinxMapperBase):
-
-    """Auto API domain handler for Python
+    """AutoAPI domain handler for Python
 
     Parses directly from Python files.
 
@@ -241,8 +243,8 @@ class PythonSphinxMapper(SphinxMapperBase):
         )
     }
 
-    def __init__(self, app, template_dir=None, url_root=None):
-        super().__init__(app, template_dir, url_root)
+    def __init__(self, app, template_dir=None, dir_root=None, url_root=None):
+        super().__init__(app, template_dir, dir_root, url_root)
 
         self.jinja_env.filters["link_objs"] = _link_objs
         self._use_implicit_namespace = (
@@ -346,9 +348,13 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         super().map(options)
 
-        top_level_objects = {obj.id: obj for obj in self.all_objects.values() if isinstance(obj, TopLevelPythonPythonMapper)}
+        top_level_objects = {
+            obj.id: obj
+            for obj in self.all_objects.values()
+            if isinstance(obj, TopLevelPythonPythonMapper)
+        }
         parents = {obj.name: obj for obj in top_level_objects.values()}
-        for obj in self.objects_to_render.values():
+        for obj in top_level_objects.values():
             parent_name = obj.name.rsplit(".", 1)[0]
             if parent_name in parents and parent_name != obj.name:
                 parent = parents[parent_name]
@@ -380,9 +386,9 @@ class PythonSphinxMapper(SphinxMapperBase):
                 options=self.app.config.autoapi_options,
                 jinja_env=self.jinja_env,
                 app=self.app,
+                url_root=self.url_root,
                 **kwargs,
             )
-            obj.url_root = self.url_root
 
             for child_data in data.get("children", []):
                 for child_obj in self.create_class(

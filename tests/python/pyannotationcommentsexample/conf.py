@@ -17,3 +17,4 @@ htmlhelp_basename = "pyexampledoc"
 extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_dirs = ["example"]
 autoapi_file_pattern = "*.py"
+autoapi_keep_files = True

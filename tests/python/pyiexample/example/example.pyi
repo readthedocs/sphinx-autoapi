@@ -26,12 +26,15 @@ class Foo(object):
         def foo():
             """The foo class method"""
             ...
+
     def __init__(self, attr):
         """Constructor docstring"""
         ...
+
     def method_okay(self, foo=None, bar=None):
         """This method should parse okay"""
         ...
+
     def method_multiline(self, foo=None, bar=None, baz=None):
         """This is on multiple lines, but should parse okay too
 
@@ -39,4 +42,5 @@ class Foo(object):
         definitions are covered in the way we're anticipating here
         """
         ...
+
     def method_without_docstring(self): ...

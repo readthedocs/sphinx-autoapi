@@ -2,6 +2,7 @@
 
 This extension allows you to automagically generate API documentation from your project.
 """
+
 import io
 import os
 import shutil
@@ -33,6 +34,13 @@ _DEFAULT_OPTIONS = [
     "show-module-summary",
     "special-members",
     "imported-members",
+]
+_VALID_PAGE_LEVELS = [
+    "module",
+    "class",
+    "function",
+    "method",
+    "attribute",
 ]
 _VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
 """Caches a module's parse results for use in viewcode."""
@@ -74,6 +82,10 @@ def run_autoapi(app):
         if app.config.autoapi_include_summaries:
             app.config.autoapi_options.append("show-module-summary")
 
+    own_page_level = app.config.autoapi_own_page_level
+    if own_page_level not in _VALID_PAGE_LEVELS:
+        raise ValueError(f"Invalid autoapi_own_page_level '{own_page_level}")
+
     # Make sure the paths are full
     normalised_dirs = _normalise_autoapi_dirs(app.config.autoapi_dirs, app.srcdir)
     for _dir in normalised_dirs:
@@ -100,7 +112,7 @@ def run_autoapi(app):
                 RemovedInAutoAPI3Warning,
             )
     sphinx_mapper_obj = PythonSphinxMapper(
-        app, template_dir=template_dir, url_root=url_root
+        app, template_dir=template_dir, dir_root=normalized_root, url_root=url_root
     )
 
     if app.config.autoapi_file_patterns:
@@ -127,7 +139,7 @@ def run_autoapi(app):
         sphinx_mapper_obj.map(options=app.config.autoapi_options)
 
         if app.config.autoapi_generate_api_docs:
-            sphinx_mapper_obj.output_rst(root=normalized_root, source_suffix=out_suffix)
+            sphinx_mapper_obj.output_rst(source_suffix=out_suffix)
 
 
 def build_finished(app, exception):

@@ -189,19 +189,16 @@ Customisation Options
    a single page. Valid levels, in descending order of hierarchy, are as
    follows:
 
-     * Package
+      * ``module``: Packages, modules, subpackages, and submodules.
 
-     * Module
+      * ``class``: Classes, exceptions, and all object types mentioned above.
 
-     * Class
+      * ``function``: Functions, and all object types mentioned above.
 
-     * Function
+      * ``method``: Methods, and all object types mentioned above.
 
-     * Method
-
-     * Attribute
-
-     * Data
+      * ``attribute``: Class and module level attributes, properties,
+        and all object types mentioned above.
 
 
 Events
