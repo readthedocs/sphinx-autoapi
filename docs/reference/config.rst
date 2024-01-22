@@ -79,11 +79,9 @@ Customisation Options
      and requires `Graphviz <https://graphviz.org/>`_ to be installed.
    * ``show-module-summary``: Whether to include autosummary directives
      in generated module documentation.
-   * ``imported-members``: Display objects imported from the same
-     top level package or module.
-     The default module template does not include imported objects,
-     even with this option enabled.
-     The default package template does.
+   * ``imported-members``: For objects imported into a package,
+     display objects imported from the same top level package or module.
+     This option does not effect objects imported into a module.
 
 
 .. confval:: autoapi_ignore
@@ -189,19 +187,16 @@ Customisation Options
    a single page. Valid levels, in descending order of hierarchy, are as
    follows:
 
-     * Package
+      * ``module``: Packages, modules, subpackages, and submodules.
 
-     * Module
+      * ``class``: Classes, exceptions, and all object types mentioned above.
 
-     * Class
+      * ``function``: Functions, and all object types mentioned above.
 
-     * Function
+      * ``method``: Methods, and all object types mentioned above.
 
-     * Method
-
-     * Attribute
-
-     * Data
+      * ``attribute``: Class and module level attributes, properties,
+        and all object types mentioned above.
 
 
 Events

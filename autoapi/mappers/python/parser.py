@@ -15,11 +15,15 @@ def _prepare_docstring(doc):
 
 class Parser:
     def __init__(self):
-        self._name_stack = []
+        self._qual_name_stack = []
+        self._full_name_stack = []
         self._encoding = None
 
+    def _get_qual_name(self, name):
+        return ".".join(self._qual_name_stack + [name])
+
     def _get_full_name(self, name):
-        return ".".join(self._name_stack + [name])
+        return ".".join(self._full_name_stack + [name])
 
     def _parse_file(self, file_path, condition):
         directory, filename = os.path.split(file_path)
@@ -91,6 +95,7 @@ class Parser:
         data = {
             "type": type_,
             "name": target,
+            "qual_name": self._get_qual_name(target),
             "full_name": self._get_full_name(target),
             "doc": _prepare_docstring(doc),
             "value": value,
@@ -111,6 +116,7 @@ class Parser:
         data = {
             "type": type_,
             "name": node.name,
+            "qual_name": self._get_qual_name(node.name),
             "full_name": self._get_full_name(node.name),
             "bases": basenames,
             "doc": _prepare_docstring(astroid_utils.get_class_docstring(node)),
@@ -119,7 +125,8 @@ class Parser:
             "children": [],
         }
 
-        self._name_stack.append(node.name)
+        self._qual_name_stack.append(node.name)
+        self._full_name_stack.append(node.name)
         overridden = set()
         overloads = {}
         for base in itertools.chain(iter((node,)), node.ancestors()):
@@ -148,7 +155,8 @@ class Parser:
 
             overridden.update(seen)
 
-        self._name_stack.pop()
+        self._qual_name_stack.pop()
+        self._full_name_stack.pop()
 
         return [data]
 
@@ -185,6 +193,7 @@ class Parser:
         data = {
             "type": type_,
             "name": node.name,
+            "qual_name": self._get_qual_name(node.name),
             "full_name": self._get_full_name(node.name),
             "args": astroid_utils.get_args_info(node.args),
             "doc": _prepare_docstring(astroid_utils.get_func_docstring(node)),
@@ -209,14 +218,19 @@ class Parser:
     def _parse_local_import_from(self, node):
         result = []
 
-        for name, alias in node.names:
-            is_wildcard = (alias or name) == "*"
-            full_name = self._get_full_name(alias or name)
-            original_path = astroid_utils.get_full_import_name(node, alias or name)
+        for import_name, alias in node.names:
+            is_wildcard = (alias or import_name) == "*"
+            original_path = astroid_utils.get_full_import_name(
+                node, alias or import_name
+            )
+            name = original_path if is_wildcard else (alias or import_name)
+            qual_name = self._get_qual_name(alias or import_name)
+            full_name = self._get_full_name(alias or import_name)
 
             data = {
                 "type": "placeholder",
-                "name": original_path if is_wildcard else (alias or name),
+                "name": name,
+                "qual_name": qual_name,
                 "full_name": full_name,
                 "original_path": original_path,
             }
@@ -233,12 +247,13 @@ class Parser:
         if node.package:
             type_ = "package"
 
-        self._name_stack = [node.name]
+        self._full_name_stack = [node.name]
         self._encoding = node.file_encoding
 
         data = {
             "type": type_,
             "name": node.name,
+            "qual_name": node.name,
             "full_name": node.name,
             "doc": _prepare_docstring(node.doc_node.value if node.doc_node else ""),
             "children": [],

@@ -1,4 +1,5 @@
 import functools
+import pathlib
 from typing import List, Optional
 
 import sphinx.util.logging
@@ -44,6 +45,7 @@ class PythonPythonMapper(PythonMapperBase):
         super().__init__(obj, **kwargs)
 
         self.name = obj["name"]
+        self.qual_name = obj["qual_name"]
         self.id = obj.get("full_name", self.name)
 
         # Optional
@@ -56,6 +58,7 @@ class PythonPythonMapper(PythonMapperBase):
 
         :type: bool
         """
+        self._hide = obj.get("hide", False)
 
         # For later
         self._class_content = class_content
@@ -80,6 +83,16 @@ class PythonPythonMapper(PythonMapperBase):
     def docstring(self, value):
         self._docstring = value
         self._docstring_resolved = True
+
+    @property
+    def is_top_level_object(self):
+        """Whether this object is at the very top level (True) or not (False).
+
+        This will be False for subpackages and submodules.
+
+        :type: bool
+        """
+        return "." not in self.id
 
     @property
     def is_undoc_member(self):
@@ -144,12 +157,17 @@ class PythonPythonMapper(PythonMapperBase):
             self.is_special_member and "special-members" not in self.options
         )
         skip_imported_member = self.imported and "imported-members" not in self.options
+        skip_inherited_member = (
+            self.inherited and "inherited-members" not in self.options
+        )
 
         return (
-            skip_undoc_member
+            self._hide
+            or skip_undoc_member
             or skip_private_member
             or skip_special_member
             or skip_imported_member
+            or skip_inherited_member
         )
 
     def _ask_ignore(self, skip):  # type: (bool) -> bool
@@ -229,11 +247,10 @@ class PythonMethod(PythonFunction):
         """
 
     def _should_skip(self):  # type: () -> bool
-        skip = super()._should_skip() or self.name in (
+        return super()._should_skip() or self.name in (
             "__new__",
             "__init__",
         )
-        return self._ask_ignore(skip)
 
 
 class PythonProperty(PythonPythonMapper):
@@ -300,14 +317,6 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
     def __init__(self, obj, **kwargs):
         super().__init__(obj, **kwargs)
 
-        self.top_level_object = "." not in self.name
-        """Whether this object is at the very top level (True) or not (False).
-
-        This will be False for subpackages and submodules.
-
-        :type: bool
-        """
-
         self.subpackages = []
         self.submodules = []
         self.all = obj["all"]
@@ -334,6 +343,15 @@ class TopLevelPythonPythonMapper(PythonPythonMapper):
         :type: list(PythonClass)
         """
         return self._children_of_type("class")
+
+    def output_dir(self, root):
+        """The path to the file to render into, without a file suffix."""
+        parts = [root] + self.name.split(".")
+        return pathlib.PurePosixPath(*parts)
+
+    def output_filename(self):
+        """The path to the file to render into, without a file suffix."""
+        return "index"
 
 
 class PythonModule(TopLevelPythonPythonMapper):

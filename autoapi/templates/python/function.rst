@@ -1,20 +1,21 @@
 {% if obj.display %}
-{% if is_own_page %}
-{{ obj.name }}
-{{ "=" * obj.name | length }}
+   {% if is_own_page %}
+:py:func:`{{ obj.id }}`
+==========={{ "=" * obj.id | length }}
 
-{% endif %}
-.. py:function:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
+   {% endif %}
+.. py:function:: {% if is_own_page %}{{ obj.id }}{% else %}{{ obj.short_name }}{% endif %}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
+   {% for (args, return_annotation) in obj.overloads %}
 
-{% for (args, return_annotation) in obj.overloads %}
-                 {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
-
-{% endfor %}
+                 {%+ if is_own_page %}{{ obj.id }}{% else %}{{ obj.short_name }}{% endif %}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
+   {% endfor %}
    {% for property in obj.properties %}
+
    :{{ property }}:
    {% endfor %}
 
    {% if obj.docstring %}
+
    {{ obj.docstring|indent(3) }}
    {% endif %}
 {% endif %}

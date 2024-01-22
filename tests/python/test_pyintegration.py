@@ -1,7 +1,6 @@
 import io
 import os
 import pathlib
-import shutil
 import sys
 from unittest.mock import Mock, call
 
@@ -13,7 +12,6 @@ from autoapi.mappers.python import (
     PythonMethod,
     PythonModule,
 )
-from bs4 import BeautifulSoup
 from packaging import version
 import pytest
 import sphinx
@@ -22,60 +20,6 @@ from sphinx.errors import ExtensionError
 import sphinx.util.logging
 
 sphinx_version = version.parse(sphinx.__version__).release
-
-
-def rebuild(confdir=".", **kwargs):
-    app = Sphinx(
-        srcdir=".",
-        confdir=confdir,
-        outdir="_build/html",
-        doctreedir="_build/.doctrees",
-        buildername="html",
-        **kwargs,
-    )
-    app.build()
-
-
-@pytest.fixture(scope="class")
-def builder():
-    cwd = os.getcwd()
-
-    def build(test_dir, **kwargs):
-        if kwargs.get("warningiserror"):
-            # Add any warnings raised when using `Sphinx` more than once
-            # in a Python session.
-            confoverrides = kwargs.setdefault("confoverrides", {})
-            confoverrides.setdefault("suppress_warnings", [])
-            suppress = confoverrides["suppress_warnings"]
-            suppress.append("app.add_node")
-            suppress.append("app.add_directive")
-            suppress.append("app.add_role")
-
-        os.chdir("tests/python/{0}".format(test_dir))
-        rebuild(**kwargs)
-
-    yield build
-
-    try:
-        shutil.rmtree("_build")
-        if (pathlib.Path("autoapi") / "index.rst").exists():
-            shutil.rmtree("autoapi")
-    finally:
-        os.chdir(cwd)
-
-
-@pytest.fixture(scope="class")
-def parse():
-    cache = {}
-
-    def parser(path):
-        if path not in cache:
-            with io.open(path, encoding="utf8") as file_handle:
-                cache[path] = BeautifulSoup(file_handle, features="html.parser")
-
-        return cache[path]
-
-    yield parser
 
 
 class TestSimpleModule:
@@ -200,7 +144,7 @@ class TestSimpleModule:
     def test_long_signature(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
 
-        summary_row = example_file.find_all(class_="autosummary")[1].find_all("tr")[-1]
+        summary_row = example_file.find_all(class_="autosummary")[-1].find_all("tr")[-1]
         assert summary_row
         cells = summary_row.find_all("td")
         assert (
@@ -670,26 +614,26 @@ class TestSimplePackage:
         builder("pypackageexample", warningiserror=True)
 
     def test_integration_with_package(self, parse):
-        example_file = parse("_build/html/autoapi/example/index.html")
+        example_file = parse("_build/html/autoapi/package/index.html")
 
         entries = example_file.find_all(class_="toctree-l1")
-        assert any(entry.text == "example.foo" for entry in entries)
-        assert example_file.find(id="example.module_level_function")
+        assert any(entry.text == "package.submodule" for entry in entries)
+        assert example_file.find(id="package.function")
 
-        example_foo_file = parse("_build/html/autoapi/example/foo/index.html")
+        example_foo_file = parse("_build/html/autoapi/package/submodule/index.html")
 
-        foo = example_foo_file.find(id="example.foo.Foo")
-        assert foo
-        method_okay = foo.parent.find(id="example.foo.Foo.method_okay")
+        submodule = example_foo_file.find(id="package.submodule.Class")
+        assert submodule
+        method_okay = submodule.parent.find(id="package.submodule.Class.method_okay")
         assert method_okay
 
         index_file = parse("_build/html/index.html")
 
         toctree = index_file.select("li > a")
         assert any(item.text == "API Reference" for item in toctree)
-        assert any(item.text == "example.foo" for item in toctree)
-        assert any(item.text == "Foo" for item in toctree)
-        assert any(item.text == "module_level_function()" for item in toctree)
+        assert any(item.text == "package.submodule" for item in toctree)
+        assert any(item.text == "Class" for item in toctree)
+        assert any(item.text == "function()" for item in toctree)
 
 
 def test_simple_no_false_warnings(builder, caplog):
@@ -738,14 +682,14 @@ def test_hiding_private_members(builder, parse):
     confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
     builder("pypackageexample", warningiserror=True, confoverrides=confoverrides)
 
-    example_file = parse("_build/html/autoapi/example/index.html")
+    example_file = parse("_build/html/autoapi/package/index.html")
 
     entries = example_file.find_all(class_="toctree-l1")
     assert all("private" not in entry.text for entry in entries)
 
-    private_file = parse("_build/html/autoapi/example/_private_module/index.html")
-
-    assert private_file.find(id="example._private_module.PrivateClass.public_method")
+    assert not pathlib.Path(
+        "_build/html/autoapi/package/_private_module/index.html"
+    ).exists()
 
 
 def test_hiding_inheritance(builder, parse):
@@ -1019,7 +963,7 @@ class TestComplexPackageParallel(TestComplexPackage):
         builder("pypackagecomplex", parallel=2)
 
 
-def test_caching(builder):
+def test_caching(builder, rebuild):
     mtimes = (0, 0)
 
     def record_mtime():
@@ -1125,25 +1069,25 @@ def test_string_module_attributes(builder):
         ".. py:data:: code_snippet",
         "   :value: Multiline-String",
         "",
-        "    .. raw:: html",
+        "   .. raw:: html",
         "",
-        "        <details><summary>Show Value</summary>",
+        "      <details><summary>Show Value</summary>",
         "",
-        "    .. code-block:: python",
+        "   .. code-block:: python",
         "",
-        '        """The following is some code:',
-        "        ",  # <--- Line array monstrosity to preserve these leading spaces
-        "        # -*- coding: utf-8 -*-",
-        "        from __future__ import absolute_import, division, print_function, unicode_literals",
-        "        # from future.builtins.disabled import *",
-        "        # from builtins import *",
-        "        ",
-        """        print("chunky o'block")""",
-        '        """',
+        '      """The following is some code:',
+        "      ",  # <--- Line array monstrosity to preserve these leading spaces
+        "      # -*- coding: utf-8 -*-",
+        "      from __future__ import absolute_import, division, print_function, unicode_literals",
+        "      # from future.builtins.disabled import *",
+        "      # from builtins import *",
+        "      ",
+        """      print("chunky o'block")""",
+        '      """',
         "",
-        "    .. raw:: html",
+        "   .. raw:: html",
         "",
-        "        </details>",
+        "      </details>",
     ]
     assert "\n".join(code_snippet_contents) in example_file
 
@@ -1208,298 +1152,3 @@ class TestMemberOrder:
         method_sphinx_docs = example_file.find(id="example.Foo.method_sphinx_docs")
 
         assert method_tricky.sourceline < method_sphinx_docs.sourceline
-
-
-# TODO: This might be easier to understand with its own test case.
-# Eg make a package named "package", subpackage named "subpackage",
-# submodule named "submodule", etc.
-class TestOwnPageLevel:
-    def test_package(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "package"},
-        )
-
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        # subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/index.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/FooError.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/module_level_function.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/method_okay.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/property.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/class_var.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-    def test_module(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "module"},
-        )
-
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        #subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        #subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/FooError.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/module_level_function.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/method_okay.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/property.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/class_var.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-    def test_class(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "class"},
-        )
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        #subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        #subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        #error_path = "_build/html/autoapi/example/foo/FooError.html"
-        #error_file = parse(error_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/Foo.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/module_level_function.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/method_okay.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/property.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/class_var.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-    def test_function(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "function"},
-        )
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        # subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        # error_path = "_build/html/autoapi/example/foo/FooError.html"
-        # error_file = parse(error_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/Foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        func_path = "_build/html/autoapi/example/module_level_function.html"
-        func_file = parse(func_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/method_okay.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/property.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/class_var.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-    def test_method(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "method"},
-        )
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        # subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        error_path = "_build/html/autoapi/example/foo/FooError.html"
-        error_file = parse(error_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/Foo.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        func_path = "_build/html/autoapi/example/foo/module_level_function.html"
-        func_file = parse(func_path)
-
-        # TODO: Look for expected contents
-
-        method_path = "_build/html/autoapi/example/foo/Foo/method_okay.html"
-        method_file = parse(method_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/property.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/Foo/class_var.html")
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-    def test_attribute(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "attribute"},
-        )
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        # subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        error_path = "_build/html/autoapi/example/foo/FooError.html"
-        error_file = parse(error_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/Foo.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        func_path = "_build/html/autoapi/example/foo/module_level_function.html"
-        func_file = parse(func_path)
-
-        # TODO: Look for expected contents
-
-        method_path = "_build/html/autoapi/example/foo/Foo/method_okay.html"
-        method_file = parse(method_path)
-
-        # TODO: Look for expected contents
-
-        property_path = "_build/html/autoapi/example/foo/Foo/property.html"
-        property_file = parse(property_path)
-
-        # TODO: Look for expected contents
-
-        attribute_path = "_build/html/autoapi/example/foo/Foo/class_var.html"
-        attribute_file = parse(attribute_path)
-
-        # TODO: Look for expected contents
-
-        assert not os.path.exists("_build/html/autoapi/example/foo/MODULE_DATA.html")
-
-
-    def test_data(self, builder, parse):
-        builder(
-            "pypackageexample",
-            warningiserror=True,
-            confoverrides={"autoapi_own_page_level": "data"},
-        )
-
-        example_path = "_build/html/autoapi/example/index.html"
-        example_file = parse(example_path)
-
-        # TODO: Look for expected contents
-
-        # subpackage_path = "_build/html/autoapi/example/subpackage/index.html"
-        # subpackage_file = parse(subpackage_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/index.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        error_path = "_build/html/autoapi/example/foo/FooError.html"
-        error_file = parse(error_path)
-
-        # TODO: Look for expected contents
-
-        foo_path = "_build/html/autoapi/example/foo/Foo.html"
-        foo_file = parse(foo_path)
-
-        # TODO: Look for expected contents
-
-        func_path = "_build/html/autoapi/example/foo/module_level_function.html"
-        func_file = parse(func_path)
-
-        # TODO: Look for expected contents
-
-        method_path = "_build/html/autoapi/example/foo/Foo/method_okay.html"
-        method_file = parse(method_path)
-
-        # TODO: Look for expected contents
-
-        property_path = "_build/html/autoapi/example/foo/Foo/property.html"
-        property_file = parse(property_path)
-
-        # TODO: Look for expected contents
-
-        attribute_path = "_build/html/autoapi/example/foo/Foo/class_var.html"
-        attribute_file = parse(attribute_path)
-
-        # TODO: Look for expected contents
-
-        data_path = "_build/html/autoapi/example/foo/MODULE_DATA.html"
-        data_file = parse(data_path)
-
-        # TODO: Look for expected contents

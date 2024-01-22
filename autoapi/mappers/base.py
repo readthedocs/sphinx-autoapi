@@ -1,10 +1,9 @@
-import os
-import fnmatch
 from collections import OrderedDict, namedtuple
+import fnmatch
+import os
+import pathlib
 import re
 
-import anyascii
-from docutils.parsers.rst import convert_directive_function
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
@@ -13,7 +12,7 @@ from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 import sphinx.util.logging
 
-from ..settings import API_ROOT, TEMPLATE_DIR
+from ..settings import TEMPLATE_DIR
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 _OWN_PAGE_LEVELS = [
@@ -24,8 +23,8 @@ _OWN_PAGE_LEVELS = [
     "function",
     "method",
     "property",
-    "attribute",
     "data",
+    "attribute",
 ]
 
 Path = namedtuple("Path", ["absolute", "relative"])
@@ -38,13 +37,9 @@ class PythonMapperBase:
     and map that onto this standard Python object.
     Subclasses may also include language-specific attributes on this object.
 
-    Arguments:
-
     Args:
         obj: JSON object representing this object
         jinja_env: A template environment for rendering this object
-
-    Required attributes:
 
     Attributes:
         id (str): A globally unique identifier for this object.
@@ -55,25 +50,21 @@ class PythonMapperBase:
         children (list): Children of this object
         parameters (list): Parameters to this object
         methods (list): Methods on this object
-
-    Optional attributes:
-
     """
 
     language = "base"
     type = "base"
-    # Create a page in the output for this object.
-    top_level_object = False
     _RENDER_LOG_LEVEL = "VERBOSE"
 
-    def __init__(self, obj, jinja_env, app, options=None):
+    def __init__(self, obj, jinja_env, app, url_root, options=None):
         self.app = app
         self.obj = obj
         self.options = options
         self.jinja_env = jinja_env
-        self.url_root = os.path.join("/", API_ROOT)
+        self.url_root = url_root
 
         self.name = None
+        self.qual_name = None
         self.id = None
 
     def __getstate__(self):
@@ -103,7 +94,7 @@ class PythonMapperBase:
     def get_context_data(self):
         own_page_level = self.app.config.autoapi_own_page_level
         desired_page_level = _OWN_PAGE_LEVELS.index(own_page_level)
-        own_page_types = set(_OWN_PAGE_LEVELS[:desired_page_level+1])
+        own_page_types = set(_OWN_PAGE_LEVELS[: desired_page_level + 1])
 
         return {
             "autoapi_options": self.app.config.autoapi_options,
@@ -127,28 +118,19 @@ class PythonMapperBase:
         """Shorten name property"""
         return self.name.split(".")[-1]
 
-    @property
-    def pathname(self):
-        """Sluggified path for filenames
+    def output_dir(self, root):
+        """The directory to render this object."""
+        module = self.id[: -(len("." + self.qual_name))]
+        parts = [root] + module.split(".")
+        return pathlib.PurePosixPath(*parts)
 
-        Slugs to a filename using the follow steps
+    def output_filename(self):
+        """The name of the file to render into, without a file suffix."""
+        filename = self.qual_name
+        if filename == "index":
+            filename = ".index"
 
-        * Decode unicode to approximate ascii
-        * Remove existing hyphens
-        * Substitute hyphens for non-word characters
-        * Break up the string as paths
-        """
-        slug = self.name
-        slug = anyascii.anyascii(slug)
-        slug = slug.replace("-", "")
-        slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
-        return os.path.join(*slug.split("."))
-
-    def include_dir(self, root):
-        """Return directory of file"""
-        parts = [root]
-        parts.extend(self.pathname.split(os.path.sep))
-        return "/".join(parts)
+        return filename
 
     @property
     def include_path(self):
@@ -157,9 +139,7 @@ class PythonMapperBase:
         This is used in ``toctree`` directives, as Sphinx always expects Unix
         path separators
         """
-        parts = [self.include_dir(root=self.url_root)]
-        parts.append("index")
-        return "/".join(parts)
+        return str(self.output_dir(self.url_root) / self.output_filename())
 
     @property
     def display(self):
@@ -185,7 +165,7 @@ class SphinxMapperBase:
         app: Sphinx application instance
     """
 
-    def __init__(self, app, template_dir=None, url_root=None):
+    def __init__(self, app, template_dir=None, dir_root=None, url_root=None):
         self.app = app
 
         template_paths = [TEMPLATE_DIR]
@@ -209,8 +189,9 @@ class SphinxMapperBase:
 
         own_page_level = self.app.config.autoapi_own_page_level
         desired_page_level = _OWN_PAGE_LEVELS.index(own_page_level)
-        self.own_page_types = set(_OWN_PAGE_LEVELS[:desired_page_level+1])
+        self.own_page_types = set(_OWN_PAGE_LEVELS[: desired_page_level + 1])
 
+        self.dir_root = dir_root
         self.url_root = url_root
 
         # Mapping of {filepath -> raw data}
@@ -298,7 +279,8 @@ class SphinxMapperBase:
         Args:
             obj: Instance of a AutoAPI object
         """
-        if obj.type in self.own_page_types:
+        display = obj.display
+        if display and obj.type in self.own_page_types:
             self.objects_to_render[obj.id] = obj
 
         self.all_objects[obj.id] = obj
@@ -306,6 +288,8 @@ class SphinxMapperBase:
         while child_stack:
             child = child_stack.pop()
             self.all_objects[child.id] = child
+            if display and child.type in self.own_page_types:
+                self.objects_to_render[child.id] = child
             child_stack.extend(getattr(child, "children", ()))
 
     def map(self, options=None):
@@ -327,51 +311,7 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
-    def output_child_rst(self, obj, obj_parent, detail_dir, source_suffix):
-
-        if not obj.display:
-            return
-
-        # Skip nested cases like functions in functions or clases in clases
-        if obj.type == obj_parent.type:
-            return
-
-        obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)
-        desired_page_level = _OWN_PAGE_LEVELS.index(self.app.config.autoapi_own_page_level)
-        is_own_page = obj_child_page_level <= desired_page_level
-        if not is_own_page:
-            return
-
-        obj_child_rst = obj.render(
-            is_own_page=is_own_page,
-        )
-        if not obj_child_rst:
-            return
-
-        function_page_level = _OWN_PAGE_LEVELS.index("function")
-        is_level_beyond_function = function_page_level < desired_page_level
-        if obj.type in ["exception", "class"]:
-            if not is_level_beyond_function:
-                outfile = f"{obj.short_name}{source_suffix}"
-                path = os.path.join(detail_dir, outfile)
-            else:
-                outdir = os.path.join(detail_dir, obj.short_name)
-                ensuredir(outdir)
-                path = os.path.join(outdir, f"index{source_suffix}")
-        else:
-            is_parent_in_detail_dir = detail_dir.endswith(obj_parent.short_name)
-            outdir = detail_dir if is_parent_in_detail_dir else os.path.join(detail_dir, obj_parent.short_name)
-            ensuredir(outdir)
-            path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
-
-        with open(path, "wb+") as obj_child_detail_file:
-            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
-
-        for obj_child in obj.children:
-            child_detail_dir = os.path.join(detail_dir, obj.name)
-            self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
-
-    def output_rst(self, root, source_suffix):
+    def output_rst(self, source_suffix):
         for _, obj in status_iterator(
             self.objects_to_render.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
@@ -379,29 +319,24 @@ class SphinxMapperBase:
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            if not obj.display:
-                continue
-
             rst = obj.render(is_own_page=True)
             if not rst:
                 continue
 
-            detail_dir = obj.include_dir(root=root)
-            ensuredir(detail_dir)
-            path = os.path.join(detail_dir, f"index{source_suffix}")
+            output_dir = obj.output_dir(self.dir_root)
+            ensuredir(output_dir)
+            output_path = output_dir / obj.output_filename()
+            path = f"{output_path}{source_suffix}"
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
-            
-            for child in obj.children:
-                self.output_child_rst(child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
-            self._output_top_rst(root)
+            self._output_top_rst()
 
-    def _output_top_rst(self, root):
+    def _output_top_rst(self):
         # Render Top Index
-        top_level_index = os.path.join(root, "index.rst")
-        pages = self.objects_to_render.values()
+        top_level_index = os.path.join(self.dir_root, "index.rst")
+        pages = [obj for obj in self.objects_to_render.values() if obj.display]
         with open(top_level_index, "wb") as top_level_file:
             content = self.jinja_env.get_template("index.rst")
             top_level_file.write(content.render(pages=pages).encode("utf-8"))
