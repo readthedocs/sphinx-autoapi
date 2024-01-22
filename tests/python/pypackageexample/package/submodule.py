@@ -3,21 +3,36 @@
 This is a description
 """
 
-MODULE_DATA = 42
+from .subpackage.submodule import function as aliased_function
+from .subpackage.submodule import not_in_all_function
+
+__all__ = (
+    "aliased_function",
+    "Class",
+    "DATA",
+    "function",
+    "MyException",
+)
+
+DATA = 42
 
 
-class Foo(object):
-    class_var = 42  #: Class var docstring
+def function(foo, bar):
+    """A module level function"""
 
-    another_class_var = 42
-    """Another class var docstring"""
 
-    class Meta(object):
+class Class(object):
+    """This is a class."""
+
+    class_var = 42
+    """Class var docstring"""
+
+    class NestedClass(object):
         """A nested class just to test things out"""
 
         @classmethod
-        def foo():
-            """The foo class method"""
+        def a_classmethod():
+            """A class method"""
             return True
 
     def method_okay(self, foo=None, bar=None):
@@ -63,3 +78,7 @@ class Foo(object):
             int: The sum of foo and bar.
         """
         return foo + bar
+
+
+class MyException(Exception):
+    """This is an exception."""

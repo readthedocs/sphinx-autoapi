@@ -1,0 +1,1 @@
+Fix emitting ignore event twice for methods.
