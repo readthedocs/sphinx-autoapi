@@ -334,8 +334,12 @@ class SphinxMapperBase:
         if not obj.display:
             return
 
-        # Skip nested cases like functions in functions or clases in clases
-        if obj.type == obj_parent.type:
+        # HACK: skip nested cases like functions in functions or clases in clases
+        # Turns out that exceptions in Python have a property named "args" which
+        # is a "class" type of "BaseException"
+        is_same_type_as_parent = obj.type == obj_parent.type
+        is_class_and_exception = obj.type in ["class", "exception"] and obj_parent.type in ["class", "exception"]
+        if is_same_type_as_parent or is_class_and_exception:
             return
 
         obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)

@@ -104,7 +104,18 @@ Exceptions
    :hidden:
 
                      {% for exception in visible_exceptions %}
+   {# 
+       The set own_page_types sometimes is not ordered! This changes the value of
+       its last element. Thus, the best way to check is to verify if 'function'
+       lies within the list
+       Do -> if 'function' not in own_page_types
+       Instead of -> if "class" == (own_page_types | list | last)
+   #}
+   {% if "method" not in own_page_types %}
+   {{ exception.short_name }}.rst
+   {% else %}
    {{ exception.short_name }}/index.rst
+   {% endif %}
                      {% endfor %}
 
                   {% endif %}
