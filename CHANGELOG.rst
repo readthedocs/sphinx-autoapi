@@ -5,6 +5,25 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.0a3 (2024-02-16)
+---------------------
+
+Bugfixes
+^^^^^^^^
+
+- Rename "single page output" to "own page output". (#226)
+
+- Also added tests for own page output. (#226)
+
+- Fix some inherited members always being rendered. (#226)
+
+- Own page members of an entity are linked to after the docstring
+  of the parent entity. (#226)
+
+- Fix entities below the "class" level that have their own page
+  from rendering incorrectly. (#226)
+
+
 v3.0.0 (2023-09-26)
 -------------------
 
