@@ -5,6 +5,29 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.0a2 (2024-02-16)
+---------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix members inherited from Exception always being displayed (#226)
+
+
+v3.1.0a1 (2024-01-31)
+---------------------
+
+Features
+^^^^^^^^
+
+- Objects can render to their own page (#226)
+
+Misc
+^^^^
+
+- #388
+
+
 v3.0.0 (2023-09-26)
 -------------------
 
