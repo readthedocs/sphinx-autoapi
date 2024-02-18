@@ -2,6 +2,7 @@
 
 This extension allows you to automagically generate API documentation from your project.
 """
+
 import io
 import os
 import shutil

@@ -1,4 +1,5 @@
 """This is a docstring."""
+
 from . import foo
 
 

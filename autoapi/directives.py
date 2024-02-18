@@ -41,7 +41,6 @@ class AutoapiSummary(Autosummary):
 
 
 class NestedParse(Directive):
-
     """Nested parsing to remove the first heading of included rST
 
     This is used to handle the case where we like to remove user supplied

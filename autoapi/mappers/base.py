@@ -20,7 +20,6 @@ Path = namedtuple("Path", ["absolute", "relative"])
 
 
 class PythonMapperBase:
-
     """Base object for JSON -> Python object mapping.
 
     Subclasses of this object will handle their language specific JSON input,
@@ -163,7 +162,6 @@ class PythonMapperBase:
 
 
 class SphinxMapperBase:
-
     """Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     Args:

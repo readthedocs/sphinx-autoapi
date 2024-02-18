@@ -216,7 +216,6 @@ def _link_objs(value):
 
 
 class PythonSphinxMapper(SphinxMapperBase):
-
     """Auto API domain handler for Python
 
     Parses directly from Python files.
