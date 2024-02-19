@@ -1,3 +1,11 @@
+"""
+This heading will be removed
+============================
+
+This docstring will not be removed.
+"""
+
+
 def public_chain():
     """Part of a public resolution chain."""
     return 5

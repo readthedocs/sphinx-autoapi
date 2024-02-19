@@ -58,9 +58,10 @@ class NestedParse(Directive):
         node.document = self.state.document
         nested_parse_with_titles(self.state, self.content, node)
         try:
-            title_node = node[0][0]
-            if isinstance(title_node, nodes.title):
-                del node[0][0]
+            if isinstance(node[0], nodes.section) and isinstance(
+                node[0][0], nodes.title
+            ):
+                node.children = node[0][1:] + node.children[1:]
         except IndexError:
             pass
         return node.children

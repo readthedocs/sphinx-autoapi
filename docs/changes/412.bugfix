@@ -1,0 +1,1 @@
+Fix IndexError when a module docstring contains only a heading

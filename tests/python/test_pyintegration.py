@@ -1005,6 +1005,13 @@ class TestComplexPackage:
 
         assert foo_file.find(id="complex.unicode_data.unicode_str")
 
+    def test_nested_parse_directive(self, parse):
+        package_file = parse("_build/html/autoapi/complex/index.html")
+
+        complex = package_file.find(id="complex")
+        assert "This heading will be removed" not in complex.parent.text
+        assert complex.parent.find("section")["id"] != "this-heading-will-be-removed"
+
 
 class TestComplexPackageParallel(TestComplexPackage):
     @pytest.fixture(autouse=True, scope="class")

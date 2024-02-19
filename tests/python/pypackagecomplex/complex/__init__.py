@@ -1,3 +1,8 @@
+"""
+This heading will be removed
+============================
+"""
+
 from .subpackage import public_chain
 from .subpackage.submodule import public_multiple_imports
 
