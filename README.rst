@@ -28,13 +28,14 @@ In contrast to the traditional `Sphinx autodoc <https://www.sphinx-doc.org/en/ma
 which requires manual authoring and uses code imports,
 AutoAPI finds and generates documentation by parsing source code.
 
+For more information, see `the full documentation <https://sphinx-autoapi.readthedocs.org>`_.
+
 Getting Started
 ---------------
 
 The following steps will walk through how to add AutoAPI to an existing Sphinx project.
 For instructions on how to set up a Sphinx project,
-see Sphinx's documentation on
-`Getting Started <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_.
+see `Sphinx's documentation <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_.
 
 Installation
 ~~~~~~~~~~~~
