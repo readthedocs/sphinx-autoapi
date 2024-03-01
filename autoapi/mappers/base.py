@@ -398,7 +398,12 @@ class SphinxMapperBase:
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
             
-            for child in obj.children:
+            if obj.all:
+                children = [child for child in obj.children if child.short_name in obj.all]
+            else:
+                children = obj.children
+
+            for child in children:
                 self.output_child_rst(child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
