@@ -3,6 +3,8 @@
 This is a description
 """
 
+MODULE_DATA = 42
+
 
 class Foo(object):
     class_var = 42  #: Class var docstring

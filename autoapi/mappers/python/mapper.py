@@ -24,6 +24,7 @@ from .objects import (
     PythonAttribute,
     PythonData,
     PythonException,
+    TopLevelPythonPythonMapper,
 )
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -345,19 +346,20 @@ class PythonSphinxMapper(SphinxMapperBase):
 
         super().map(options)
 
-        parents = {obj.name: obj for obj in self.objects.values()}
-        for obj in self.objects.values():
+        top_level_objects = {obj.id: obj for obj in self.all_objects.values() if isinstance(obj, TopLevelPythonPythonMapper)}
+        parents = {obj.name: obj for obj in top_level_objects.values()}
+        for obj in self.objects_to_render.values():
             parent_name = obj.name.rsplit(".", 1)[0]
             if parent_name in parents and parent_name != obj.name:
                 parent = parents[parent_name]
                 attr = f"sub{obj.type}s"
                 getattr(parent, attr).append(obj)
 
-        for obj in self.objects.values():
+        for obj in top_level_objects.values():
             obj.submodules.sort()
             obj.subpackages.sort()
 
-        self.app.env.autoapi_objects = self.objects
+        self.app.env.autoapi_objects = self.objects_to_render
         self.app.env.autoapi_all_objects = self.all_objects
 
     def create_class(self, data, options=None, **kwargs):

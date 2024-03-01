@@ -4,6 +4,7 @@ from collections import OrderedDict, namedtuple
 import re
 
 import anyascii
+from docutils.parsers.rst import convert_directive_function
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 import sphinx
 import sphinx.util
@@ -15,6 +16,17 @@ import sphinx.util.logging
 from ..settings import API_ROOT, TEMPLATE_DIR
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
+_OWN_PAGE_LEVELS = [
+    "package",
+    "module",
+    "exception",
+    "class",
+    "function",
+    "method",
+    "property",
+    "attribute",
+    "data",
+]
 
 Path = namedtuple("Path", ["absolute", "relative"])
 
@@ -89,10 +101,15 @@ class PythonMapperBase:
         return self.render()
 
     def get_context_data(self):
+        own_page_level = self.app.config.autoapi_own_page_level
+        desired_page_level = _OWN_PAGE_LEVELS.index(own_page_level)
+        own_page_types = set(_OWN_PAGE_LEVELS[:desired_page_level+1])
+
         return {
             "autoapi_options": self.app.config.autoapi_options,
             "include_summaries": self.app.config.autoapi_include_summaries,
             "obj": self,
+            "own_page_types": own_page_types,
             "sphinx_version": sphinx.version_info,
         }
 
@@ -190,18 +207,20 @@ class SphinxMapperBase:
         if self.app.config.autoapi_prepare_jinja_env:
             self.app.config.autoapi_prepare_jinja_env(self.jinja_env)
 
+        own_page_level = self.app.config.autoapi_own_page_level
+        desired_page_level = _OWN_PAGE_LEVELS.index(own_page_level)
+        self.own_page_types = set(_OWN_PAGE_LEVELS[:desired_page_level+1])
+
         self.url_root = url_root
 
         # Mapping of {filepath -> raw data}
         self.paths = OrderedDict()
         # Mapping of {object id -> Python Object}
-        self.objects = OrderedDict()
+        self.objects_to_render = OrderedDict()
         # Mapping of {object id -> Python Object}
         self.all_objects = OrderedDict()
         # Mapping of {namespace id -> Python Object}
         self.namespaces = OrderedDict()
-        # Mapping of {namespace id -> Python Object}
-        self.top_level_objects = OrderedDict()
 
     def load(self, patterns, dirs, ignore=None):
         """Load objects from the filesystem into the ``paths`` dictionary."""
@@ -279,7 +298,9 @@ class SphinxMapperBase:
         Args:
             obj: Instance of a AutoAPI object
         """
-        self.objects[obj.id] = obj
+        if obj.type in self.own_page_types:
+            self.objects_to_render[obj.id] = obj
+
         self.all_objects[obj.id] = obj
         child_stack = list(obj.children)
         while child_stack:
@@ -306,15 +327,66 @@ class SphinxMapperBase:
         """
         raise NotImplementedError
 
+    def output_child_rst(self, obj, obj_parent, detail_dir, source_suffix):
+
+        if not obj.display:
+            return
+
+        # HACK: skip nested cases like functions in functions or clases in clases
+        # Turns out that exceptions in Python have a property named "args" which
+        # is a "class" type of "BaseException"
+        is_same_type_as_parent = obj.type == obj_parent.type
+        is_class_and_exception = obj.type in ["class", "exception"] and obj_parent.type in ["class", "exception"]
+        if is_same_type_as_parent or is_class_and_exception:
+            return
+
+        obj_child_page_level = _OWN_PAGE_LEVELS.index(obj.type)
+        desired_page_level = _OWN_PAGE_LEVELS.index(self.app.config.autoapi_own_page_level)
+        is_own_page = obj_child_page_level <= desired_page_level
+        if not is_own_page:
+            return
+
+        obj_child_rst = obj.render(
+            is_own_page=is_own_page,
+        )
+        if not obj_child_rst:
+            return
+
+        function_page_level = _OWN_PAGE_LEVELS.index("function")
+        is_level_beyond_function = function_page_level < desired_page_level
+        if obj.type in ["exception", "class"]:
+            if not is_level_beyond_function:
+                outfile = f"{obj.short_name}{source_suffix}"
+                path = os.path.join(detail_dir, outfile)
+            else:
+                outdir = os.path.join(detail_dir, obj.short_name)
+                ensuredir(outdir)
+                path = os.path.join(outdir, f"index{source_suffix}")
+        else:
+            is_parent_in_detail_dir = detail_dir.endswith(obj_parent.short_name)
+            outdir = detail_dir if is_parent_in_detail_dir else os.path.join(detail_dir, obj_parent.short_name)
+            ensuredir(outdir)
+            path = os.path.join(outdir, f"{obj.short_name}{source_suffix}")
+
+        with open(path, "wb+") as obj_child_detail_file:
+            obj_child_detail_file.write(obj_child_rst.encode("utf-8"))
+
+        for obj_child in obj.children:
+            child_detail_dir = os.path.join(detail_dir, obj.name)
+            self.output_child_rst(obj_child, obj, child_detail_dir, source_suffix)
+
     def output_rst(self, root, source_suffix):
         for _, obj in status_iterator(
-            self.objects.items(),
+            self.objects_to_render.items(),
             colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
-            length=len(self.objects),
+            length=len(self.objects_to_render),
             verbosity=1,
             stringify_func=(lambda x: x[0]),
         ):
-            rst = obj.render()
+            if not obj.display:
+                continue
+
+            rst = obj.render(is_own_page=True)
             if not rst:
                 continue
 
@@ -323,6 +395,14 @@ class SphinxMapperBase:
             path = os.path.join(detail_dir, f"index{source_suffix}")
             with open(path, "wb+") as detail_file:
                 detail_file.write(rst.encode("utf-8"))
+            
+            if obj.all:
+                children = [child for child in obj.children if child.short_name in obj.all]
+            else:
+                children = obj.children
+
+            for child in children:
+                self.output_child_rst(child, obj, detail_dir, source_suffix)
 
         if self.app.config.autoapi_add_toctree_entry:
             self._output_top_rst(root)
@@ -330,7 +410,7 @@ class SphinxMapperBase:
     def _output_top_rst(self, root):
         # Render Top Index
         top_level_index = os.path.join(root, "index.rst")
-        pages = self.objects.values()
+        pages = self.objects_to_render.values()
         with open(top_level_index, "wb") as top_level_file:
             content = self.jinja_env.get_template("index.rst")
             top_level_file.write(content.render(pages=pages).encode("utf-8"))

@@ -1,4 +1,9 @@
 {%- if obj.display %}
+{% if is_own_page %}
+{{ obj.name }}
+{{ "=" * obj.name | length }}
+
+{% endif %}
 .. py:method:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
 
 {% for (args, return_annotation) in obj.overloads %}
