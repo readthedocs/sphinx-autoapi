@@ -416,7 +416,20 @@ def _resolve_annotation(annotation):
         # astroid.Index was removed in astroid v3
         if hasattr(astroid, "Index") and isinstance(slice_node, astroid.Index):
             slice_node = slice_node.value
-        if isinstance(slice_node, astroid.Tuple):
+        if value == "Literal":
+            if isinstance(slice_node, astroid.Tuple):
+                elts = slice_node.elts
+            else:
+                elts = [slice_node]
+            slice_ = ", ".join(
+                (
+                    elt.as_string()
+                    if isinstance(elt, astroid.Const)
+                    else _resolve_annotation(elt)
+                )
+                for elt in elts
+            )
+        elif isinstance(slice_node, astroid.Tuple):
             slice_ = ", ".join(_resolve_annotation(elt) for elt in slice_node.elts)
         else:
             slice_ = _resolve_annotation(slice_node)
