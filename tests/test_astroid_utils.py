@@ -209,6 +209,9 @@ class TestAstroidUtils:
             ),
             ("a: int, *args, b: str, **kwargs", "a: int, *args, b: str, **kwargs"),
             ("a: 'A'", "a: A"),
+            ("a: Literal[1]", "a: Literal[1]"),
+            ("a: Literal['x']", "a: Literal['x']"),
+            ("a: Literal['x', 'y', 'z']", "a: Literal['x', 'y', 'z']"),
         ],
     )
     def test_format_args(self, signature, expected):
