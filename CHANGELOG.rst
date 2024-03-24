@@ -5,6 +5,27 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.0a4 (2024-03-24)
+---------------------
+
+Bugfixes
+^^^^^^^^
+
+- Children not present in `__all__` are not rendered. (#226)
+- Fix emitting ignore event twice for methods. (#226)
+- Corrected documentation around `imported-members` to reflect that it
+  applies only to objects imported into a package, not modules. (#226)
+- Fix path error on Windows. (#226)
+- Fix submodule with `__init__.pyi` documented as `__init__` instead of submodule name (#398)
+- Fix IndexError when a module docstring contains only a heading (#412)
+
+
+Misc
+^^^^
+
+- #388
+
+
 v3.0.0 (2023-09-26)
 -------------------
 
