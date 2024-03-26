@@ -1,7 +1,8 @@
 import sys
 
 import astroid
-from autoapi.mappers.python import astroid_utils, objects
+from autoapi import _astroid_utils
+from autoapi import _objects
 import pytest
 
 
@@ -70,7 +71,7 @@ class TestAstroidUtils:
             import_, basename
         )
         node = astroid.extract_node(source)
-        basenames = astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
+        basenames = _astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
 
     @pytest.mark.parametrize(
@@ -85,7 +86,7 @@ class TestAstroidUtils:
             import_, basename
         )
         node = astroid.extract_node(source)
-        basenames = astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
+        basenames = _astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
 
     @pytest.mark.parametrize(
@@ -99,7 +100,7 @@ class TestAstroidUtils:
     )
     def test_can_get_assign_values(self, source, expected):
         node = astroid.extract_node(source)
-        value = astroid_utils.get_assign_value(node)
+        value = _astroid_utils.get_assign_value(node)
         assert value == expected
 
     @pytest.mark.parametrize(
@@ -160,7 +161,7 @@ class TestAstroidUtils:
             )
         )
 
-        annotations = astroid_utils.get_args_info(node.args)
+        annotations = _astroid_utils.get_args_info(node.args)
         assert annotations == expected
 
     def test_parse_split_type_comments(self):
@@ -174,7 +175,7 @@ class TestAstroidUtils:
         """
         )
 
-        annotations = astroid_utils.get_args_info(node.args)
+        annotations = _astroid_utils.get_args_info(node.args)
 
         expected = [
             (None, "a", "int", None),
@@ -224,6 +225,6 @@ class TestAstroidUtils:
             )
         )
 
-        args_info = astroid_utils.get_args_info(node.args)
-        formatted = objects._format_args(args_info)
+        args_info = _astroid_utils.get_args_info(node.args)
+        formatted = _objects._format_args(args_info)
         assert formatted == expected

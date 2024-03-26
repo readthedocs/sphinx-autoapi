@@ -55,7 +55,7 @@ Inheritance Diagrams
 
     For example:
 
-    .. autoapi-inheritance-diagram:: autoapi.mappers.python.objects.PythonModule autoapi.mappers.python.objects.PythonPackage
+    .. autoapi-inheritance-diagram:: autoapi._objects.PythonModule autoapi._objects.PythonPackage
         :parts: 1
 
     :mod:`sphinx.ext.inheritance_diagram` makes use of the

@@ -1,15 +1,8 @@
-# coding=utf8
-
 """Test Python parser"""
 
-from io import StringIO
-import sys
-from textwrap import dedent
-
 import astroid
-import pytest
 
-from autoapi.mappers.python.parser import Parser
+from autoapi._parser import Parser
 
 
 class TestPythonParser:

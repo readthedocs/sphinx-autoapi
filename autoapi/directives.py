@@ -6,7 +6,7 @@ from docutils import nodes
 from sphinx.ext.autosummary import Autosummary, mangle_signature
 from sphinx.util.nodes import nested_parse_with_titles
 
-from .mappers.python.objects import PythonFunction
+from ._objects import PythonFunction
 
 
 class AutoapiSummary(Autosummary):

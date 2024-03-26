@@ -1,20 +1,23 @@
 import collections
 import copy
+import fnmatch
 import operator
 import os
 import re
 
+from jinja2 import Environment, FileSystemLoader
+import sphinx
 import sphinx.environment
 from sphinx.errors import ExtensionError
 import sphinx.util
+import sphinx.util.logging
 from sphinx.util.console import colorize
 from sphinx.util.display import status_iterator
 import sphinx.util.docstrings
-import sphinx.util.logging
+from sphinx.util.osutil import ensuredir
 
-from ..base import SphinxMapperBase
-from .parser import Parser
-from .objects import (
+from ._parser import Parser
+from ._objects import (
     PythonClass,
     PythonFunction,
     PythonModule,
@@ -26,6 +29,7 @@ from .objects import (
     PythonException,
     TopLevelPythonPythonMapper,
 )
+from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
@@ -219,13 +223,11 @@ def _link_objs(value):
     return result[:-2]
 
 
-class PythonSphinxMapper(SphinxMapperBase):
-    """AutoAPI domain handler for Python
-
-    Parses directly from Python files.
+class Mapper:
+    """Base class for mapping `PythonMapperBase` objects to Sphinx.
 
     Args:
-        app: Sphinx application passed in as part of the extension
+        app: Sphinx application instance
     """
 
     _OBJ_MAP = {
@@ -244,12 +246,141 @@ class PythonSphinxMapper(SphinxMapperBase):
     }
 
     def __init__(self, app, template_dir=None, dir_root=None, url_root=None):
-        super().__init__(app, template_dir, dir_root, url_root)
+        self.app = app
+
+        template_paths = [TEMPLATE_DIR]
+
+        if template_dir:
+            # Put at the front so it's loaded first
+            template_paths.insert(0, template_dir)
+
+        self.jinja_env = Environment(
+            loader=FileSystemLoader(template_paths),
+            trim_blocks=True,
+            lstrip_blocks=True,
+        )
+
+        def _wrapped_prepare(value):
+            return value
+
+        self.jinja_env.filters["prepare_docstring"] = _wrapped_prepare
+        if self.app.config.autoapi_prepare_jinja_env:
+            self.app.config.autoapi_prepare_jinja_env(self.jinja_env)
+
+        own_page_level = self.app.config.autoapi_own_page_level
+        desired_page_level = OWN_PAGE_LEVELS.index(own_page_level)
+        self.own_page_types = set(OWN_PAGE_LEVELS[: desired_page_level + 1])
+
+        self.dir_root = dir_root
+        self.url_root = url_root
+
+        # Mapping of {filepath -> raw data}
+        self.paths = collections.OrderedDict()
+        # Mapping of {object id -> Python Object}
+        self.objects_to_render = collections.OrderedDict()
+        # Mapping of {object id -> Python Object}
+        self.all_objects = collections.OrderedDict()
+        # Mapping of {namespace id -> Python Object}
+        self.namespaces = collections.OrderedDict()
 
         self.jinja_env.filters["link_objs"] = _link_objs
         self._use_implicit_namespace = (
             self.app.config.autoapi_python_use_implicit_namespaces
         )
+
+    @staticmethod
+    def find_files(patterns, dirs, ignore):
+        if not ignore:
+            ignore = []
+
+        pattern_regexes = []
+        for pattern in patterns:
+            regex = re.compile(fnmatch.translate(pattern).replace(".*", "(.*)"))
+            pattern_regexes.append((pattern, regex))
+
+        for _dir in dirs:
+            for root, _, filenames in os.walk(_dir):
+                seen = set()
+                for pattern, pattern_re in pattern_regexes:
+                    for filename in fnmatch.filter(filenames, pattern):
+                        skip = False
+
+                        match = re.match(pattern_re, filename)
+                        norm_name = match.groups()
+                        if norm_name in seen:
+                            continue
+
+                        # Skip ignored files
+                        for ignore_pattern in ignore:
+                            if fnmatch.fnmatch(
+                                os.path.join(root, filename), ignore_pattern
+                            ):
+                                LOGGER.info(
+                                    colorize("bold", "[AutoAPI] ")
+                                    + colorize(
+                                        "darkgreen", f"Ignoring {root}/{filename}"
+                                    )
+                                )
+                                skip = True
+
+                        if skip:
+                            continue
+
+                        # Make sure the path is full
+                        if not os.path.isabs(filename):
+                            filename = os.path.join(root, filename)
+
+                        yield filename
+                        seen.add(norm_name)
+
+    def add_object(self, obj):
+        """Add object to local and app environment storage
+
+        Args:
+            obj: Instance of a AutoAPI object
+        """
+        display = obj.display
+        if display and obj.type in self.own_page_types:
+            self.objects_to_render[obj.id] = obj
+
+        self.all_objects[obj.id] = obj
+        child_stack = list(obj.children)
+        while child_stack:
+            child = child_stack.pop()
+            self.all_objects[child.id] = child
+            if display and child.type in self.own_page_types:
+                self.objects_to_render[child.id] = child
+            child_stack.extend(getattr(child, "children", ()))
+
+    def output_rst(self, source_suffix):
+        for _, obj in status_iterator(
+            self.objects_to_render.items(),
+            colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
+            length=len(self.objects_to_render),
+            verbosity=1,
+            stringify_func=(lambda x: x[0]),
+        ):
+            rst = obj.render(is_own_page=True)
+            if not rst:
+                continue
+
+            output_dir = obj.output_dir(self.dir_root)
+            ensuredir(output_dir)
+            output_path = output_dir / obj.output_filename()
+            path = f"{output_path}{source_suffix}"
+            with open(path, "wb+") as detail_file:
+                detail_file.write(rst.encode("utf-8"))
+
+        if self.app.config.autoapi_add_toctree_entry:
+            self._output_top_rst()
+
+    def _output_top_rst(self):
+        # Render Top Index
+        top_level_index = os.path.join(self.dir_root, "index.rst")
+        pages = [obj for obj in self.objects_to_render.values() if obj.display]
+        with open(top_level_index, "wb") as top_level_file:
+            content = self.jinja_env.get_template("index.rst")
+            top_level_file.write(content.render(pages=pages).encode("utf-8"))
 
     def _need_to_load(self, files):
         last_files = getattr(self.app.env, "autoapi_source_files", [])
@@ -361,7 +492,14 @@ class PythonSphinxMapper(SphinxMapperBase):
         self._hide_yo_kids()
         self.app.env.autoapi_annotations = {}
 
-        super().map(options)
+        for _, data in status_iterator(
+            self.paths.items(),
+            colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
+            length=len(self.paths),
+            stringify_func=(lambda x: x[0]),
+        ):
+            for obj in self.create_class(data, options=options):
+                self.add_object(obj)
 
         top_level_objects = {
             obj.id: obj
@@ -383,7 +521,7 @@ class PythonSphinxMapper(SphinxMapperBase):
         self.app.env.autoapi_objects = self.objects_to_render
         self.app.env.autoapi_all_objects = self.all_objects
 
-    def create_class(self, data, options=None, **kwargs):
+    def create_class(self, data, options=None):
         """Create a class from the passed in data
 
         Args:
@@ -402,13 +540,10 @@ class PythonSphinxMapper(SphinxMapperBase):
                 jinja_env=self.jinja_env,
                 app=self.app,
                 url_root=self.url_root,
-                **kwargs,
             )
 
             for child_data in data.get("children", []):
-                for child_obj in self.create_class(
-                    child_data, options=options, **kwargs
-                ):
+                for child_obj in self.create_class(child_data, options=options):
                     obj.children.append(child_obj)
 
             # Some objects require children to establish their docstring

@@ -6,7 +6,7 @@ import astroid
 import astroid.builder
 import sphinx.util.docstrings
 
-from . import astroid_utils
+from . import _astroid_utils
 
 
 def _prepare_docstring(doc):
@@ -80,17 +80,17 @@ class Parser:
         type_ = "data"
         if isinstance(
             node.scope(), astroid.nodes.ClassDef
-        ) or astroid_utils.is_constructor(node.scope()):
+        ) or _astroid_utils.is_constructor(node.scope()):
             type_ = "attribute"
 
-        assign_value = astroid_utils.get_assign_value(node)
+        assign_value = _astroid_utils.get_assign_value(node)
         if not assign_value:
             return []
 
         target = assign_value[0]
         value = assign_value[1]
 
-        annotation = astroid_utils.get_assign_annotation(node)
+        annotation = _astroid_utils.get_assign_annotation(node)
 
         data = {
             "type": type_,
@@ -108,10 +108,10 @@ class Parser:
 
     def parse_classdef(self, node, data=None):
         type_ = "class"
-        if astroid_utils.is_exception(node):
+        if _astroid_utils.is_exception(node):
             type_ = "exception"
 
-        basenames = list(astroid_utils.get_full_basenames(node))
+        basenames = list(_astroid_utils.get_full_basenames(node))
 
         data = {
             "type": type_,
@@ -119,7 +119,7 @@ class Parser:
             "qual_name": self._get_qual_name(node.name),
             "full_name": self._get_full_name(node.name),
             "bases": basenames,
-            "doc": _prepare_docstring(astroid_utils.get_class_docstring(node)),
+            "doc": _prepare_docstring(_astroid_utils.get_class_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "children": [],
@@ -140,7 +140,7 @@ class Parser:
             for child in base.get_children():
                 name = getattr(child, "name", None)
                 if isinstance(child, (astroid.Assign, astroid.AnnAssign)):
-                    assign_value = astroid_utils.get_assign_value(child)
+                    assign_value = _astroid_utils.get_assign_value(child)
                     if not assign_value:
                         continue
                     name = assign_value[0]
@@ -164,7 +164,7 @@ class Parser:
         return self.parse_functiondef(node)
 
     def parse_functiondef(self, node):
-        if astroid_utils.is_decorated_with_property_setter(node):
+        if _astroid_utils.is_decorated_with_property_setter(node):
             return []
 
         type_ = "method"
@@ -175,7 +175,7 @@ class Parser:
 
             if isinstance(node, astroid.AsyncFunctionDef):
                 properties.append("async")
-        elif astroid_utils.is_decorated_with_property(node):
+        elif _astroid_utils.is_decorated_with_property(node):
             type_ = "property"
             if node.type == "classmethod":
                 properties.append(node.type)
@@ -195,13 +195,13 @@ class Parser:
             "name": node.name,
             "qual_name": self._get_qual_name(node.name),
             "full_name": self._get_full_name(node.name),
-            "args": astroid_utils.get_args_info(node.args),
-            "doc": _prepare_docstring(astroid_utils.get_func_docstring(node)),
+            "args": _astroid_utils.get_args_info(node.args),
+            "doc": _prepare_docstring(_astroid_utils.get_func_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
-            "return_annotation": astroid_utils.get_return_annotation(node),
+            "return_annotation": _astroid_utils.get_return_annotation(node),
             "properties": properties,
-            "is_overload": astroid_utils.is_decorated_with_overload(node),
+            "is_overload": _astroid_utils.is_decorated_with_overload(node),
             "overloads": [],
         }
 
@@ -220,7 +220,7 @@ class Parser:
 
         for import_name, alias in node.names:
             is_wildcard = (alias or import_name) == "*"
-            original_path = astroid_utils.get_full_import_name(
+            original_path = _astroid_utils.get_full_import_name(
                 node, alias or import_name
             )
             name = original_path if is_wildcard else (alias or import_name)
@@ -259,13 +259,13 @@ class Parser:
             "children": [],
             "file_path": path,
             "encoding": node.file_encoding,
-            "all": astroid_utils.get_module_all(node),
+            "all": _astroid_utils.get_module_all(node),
         }
 
         overloads = {}
         top_name = node.name.split(".", 1)[0]
         for child in node.get_children():
-            if astroid_utils.is_local_import_from(child, top_name):
+            if _astroid_utils.is_local_import_from(child, top_name):
                 child_data = self._parse_local_import_from(child)
             else:
                 child_data = self.parse(child)

@@ -5,7 +5,7 @@ import sys
 from unittest.mock import Mock, call
 
 import autoapi.settings
-from autoapi.mappers.python import (
+from autoapi._objects import (
     PythonClass,
     PythonData,
     PythonFunction,

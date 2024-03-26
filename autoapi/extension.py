@@ -19,7 +19,7 @@ from docutils.parsers.rst import directives
 from . import documenters
 from .directives import AutoapiSummary, NestedParse
 from .inheritance_diagrams import AutoapiInheritanceDiagram
-from .mappers import PythonSphinxMapper
+from ._mapper import Mapper
 from .settings import API_ROOT
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -111,7 +111,7 @@ def run_autoapi(app):
                 "relative to where sphinx-build is run\n",
                 RemovedInAutoAPI3Warning,
             )
-    sphinx_mapper_obj = PythonSphinxMapper(
+    sphinx_mapper_obj = Mapper(
         app, template_dir=template_dir, dir_root=normalized_root, url_root=url_root
     )
 

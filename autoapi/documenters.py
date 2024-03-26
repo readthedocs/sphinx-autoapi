@@ -2,7 +2,7 @@ import re
 
 from sphinx.ext import autodoc
 
-from .mappers.python import (
+from ._objects import (
     PythonFunction,
     PythonClass,
     PythonMethod,

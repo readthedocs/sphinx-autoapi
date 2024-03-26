@@ -4,11 +4,7 @@ import re
 
 import astroid
 import astroid.nodes
-
 import astroid.nodes.node_classes
-import sphinx.util.logging
-
-_LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 def resolve_import_alias(name, import_names):
