@@ -15,7 +15,7 @@ ignore_errors = true
 module = "anyascii"
 ignore_missing_imports = true
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.towncrier]
