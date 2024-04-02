@@ -116,27 +116,39 @@ def get_full_basenames(node):
         yield _resolve_annotation(base)
 
 
-def _get_const_values(node):
-    value = None
+def _get_const_value(node):
+    if isinstance(node, astroid.nodes.Const):
+        if isinstance(node.value, str) and "\n" in node.value:
+            return '"""{0}"""'.format(node.value)
 
-    if isinstance(node, (astroid.nodes.List, astroid.nodes.Tuple)):
-        new_value = []
-        for element in node.elts:
-            if isinstance(element, astroid.nodes.Const):
-                new_value.append(element.value)
-            elif isinstance(element, (astroid.nodes.List, astroid.nodes.Tuple)):
-                new_value.append(_get_const_values(element))
-            else:
-                break
-        else:
-            value = new_value
+    class NotConstException(Exception):
+        pass
 
-        if isinstance(node, astroid.nodes.Tuple):
-            value = tuple(new_value)
-    elif isinstance(node, astroid.nodes.Const):
-        value = node.value
+    def _inner(node):
+        if isinstance(node, (astroid.nodes.List, astroid.nodes.Tuple)):
+            new_value = []
+            for element in node.elts:
+                new_value.append(_inner(element))
 
-    return value
+            if isinstance(node, astroid.nodes.Tuple):
+                return tuple(new_value)
+
+            return new_value
+        elif isinstance(node, astroid.nodes.Const):
+            # Don't allow multi-line strings inside a data structure.
+            if isinstance(node.value, str) and "\n" in node.value:
+                raise NotConstException()
+
+            return node.value
+
+        raise NotConstException()
+
+    try:
+        result = _inner(node)
+    except NotConstException:
+        return None
+
+    return repr(result)
 
 
 def get_assign_value(node):
@@ -149,8 +161,9 @@ def get_assign_value(node):
             to get the assignment value from.
 
     Returns:
-        tuple(str, object or None) or None: The name that is assigned
-        to, and the value assigned to the name (if it can be converted).
+        tuple(str, str or None) or None: The name that is assigned
+        to, and the string representation of the value assigned to the name
+        (if it can be converted).
     """
     try:
         targets = node.targets
@@ -165,7 +178,7 @@ def get_assign_value(node):
             name = target.attrname
         else:
             return None
-        return (name, _get_const_values(node.value))
+        return (name, _get_const_value(node.value))
 
     return None
 

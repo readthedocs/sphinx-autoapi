@@ -11,7 +11,7 @@
    {% endif %}
    {% if obj.value is not none %}
 
-      {% if obj.value is string and obj.value.splitlines()|count > 1 %}
+      {% if obj.value.splitlines()|count > 1 %}
    :value: Multiline-String
 
    .. raw:: html
@@ -20,18 +20,14 @@
 
    .. code-block:: python
 
-      """{{ obj.value|indent(width=6,blank=true) }}"""
+      {{ obj.value|indent(width=6,blank=true) }}
 
    .. raw:: html
 
       </details>
 
       {% else %}
-         {% if obj.value is string %}
-   :value: {{ "%r" % obj.value|string|truncate(100) }}
-         {% else %}
-   :value: {{ obj.value|string|truncate(100) }}
-         {% endif %}
+   :value: {{ obj.value|truncate(100) }}
       {% endif %}
    {% endif %}
 

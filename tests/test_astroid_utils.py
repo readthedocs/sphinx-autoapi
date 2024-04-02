@@ -92,10 +92,17 @@ class TestAstroidUtils:
     @pytest.mark.parametrize(
         ("source", "expected"),
         [
-            ('a = "a"', ("a", "a")),
-            ("a = 1", ("a", 1)),
+            ('a = "a"', ("a", "'a'")),
+            ("a = 1", ("a", "1")),
             ("a, b, c = (1, 2, 3)", None),
             ("a = b = 1", None),
+            ("a = [1, 2, [3, 4]]", ("a", "[1, 2, [3, 4]]")),
+            ("a = [1, 2, variable[subscript]]", ("a", None)),
+            ('a = """multiline\nstring"""', ("a", '"""multiline\nstring"""')),
+            ('a = ["""multiline\nstring"""]', ("a", None)),
+            ("a = (1, 2, 3)", ("a", "(1, 2, 3)")),
+            ("a = (1, 'two', 3)", ("a", "(1, 'two', 3)")),
+            ("a = None", ("a", "None")),
         ],
     )
     def test_can_get_assign_values(self, source, expected):

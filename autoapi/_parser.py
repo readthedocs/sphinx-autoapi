@@ -91,6 +91,8 @@ class Parser:
         value = assign_value[1]
 
         annotation = _astroid_utils.get_assign_annotation(node)
+        if annotation in ("TypeAlias", "typing.TypeAlias"):
+            value = node.value.as_string()
 
         data = {
             "type": type_,
@@ -273,6 +275,35 @@ class Parser:
             data["children"].extend(_parse_child(node, child_data, overloads))
 
         return data
+
+    def parse_typealias(self, node):
+        doc = ""
+        doc_node = node.next_sibling()
+        if isinstance(doc_node, astroid.nodes.Expr) and isinstance(
+            doc_node.value, astroid.nodes.Const
+        ):
+            doc = doc_node.value.value
+
+        if isinstance(node.name, astroid.nodes.AssignName):
+            name = node.name.name
+        elif isinstance(node.name, astroid.nodes.AssignAttr):
+            name = node.name.attrname
+        else:
+            return []
+
+        data = {
+            "type": "data",
+            "name": name,
+            "qual_name": self._get_qual_name(name),
+            "full_name": self._get_full_name(name),
+            "doc": _prepare_docstring(doc),
+            "value": node.value.as_string(),
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
+            "annotation": "TypeAlias",
+        }
+
+        return [data]
 
     def parse(self, node):
         data = {}

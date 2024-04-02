@@ -587,6 +587,34 @@ class TestPipeUnionModule:
         assert links[1].text == "None"
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 12), reason="PEP-695 support requires Python >=3.12"
+)
+class TestPEP695:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("pep695", warningiserror=True)
+
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        alias = example_file.find(id="example.MyTypeAliasA")
+        properties = alias.find_all(class_="property")
+        assert len(properties) == 2
+        annotation = properties[0].text
+        assert annotation == ": TypeAlias"
+        value = properties[1].text
+        assert value == " = tuple[str, int]"
+
+        alias = example_file.find(id="example.MyTypeAliasB")
+        properties = alias.find_all(class_="property")
+        assert len(properties) == 2
+        annotation = properties[0].text
+        assert annotation == ": TypeAlias"
+        value = properties[1].text
+        assert value == " = tuple[str, int]"
+
+
 def test_napoleon_integration_loaded(builder, parse):
     confoverrides = {
         "exclude_patterns": ["manualapi.rst"],

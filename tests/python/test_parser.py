@@ -25,7 +25,7 @@ class TestPythonParser:
         """
         data = self.parse(source)[0]
         assert data["name"] == "__all__"
-        assert data["value"] == ["Foo", 5.0]
+        assert data["value"] == "['Foo', 5.0]"
 
     def test_parses_all_multiline(self):
         source = """
@@ -35,7 +35,7 @@ class TestPythonParser:
         ]
         """
         data = self.parse(source)[0]
-        assert data["value"] == ["foo", "bar"]
+        assert data["value"] == "['foo', 'bar']"
 
     def test_parses_name(self):
         source = "foo.bar"
@@ -43,7 +43,7 @@ class TestPythonParser:
 
     def test_parses_list(self):
         name = "__all__"
-        value = [1, 2, 3, 4]
+        value = "[1, 2, 3, 4]"
         source = "{} = {}".format(name, value)
         data = self.parse(source)[0]
         assert data["name"] == name
@@ -51,7 +51,7 @@ class TestPythonParser:
 
     def test_parses_nested_list(self):
         name = "__all__"
-        value = [[1, 2], [3, 4]]
+        value = "[[1, 2], [3, 4]]"
         source = "{} = {}".format(name, value)
         data = self.parse(source)[0]
         assert data["name"] == name
