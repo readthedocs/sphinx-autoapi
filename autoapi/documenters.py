@@ -1,5 +1,7 @@
 import re
 
+import sphinx.util.logging
+
 from sphinx.ext import autodoc
 
 from ._objects import (
@@ -11,6 +13,9 @@ from ._objects import (
     PythonAttribute,
     PythonException,
 )
+
+
+LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 class AutoapiDocumenter(autodoc.Documenter):
@@ -33,11 +38,18 @@ class AutoapiDocumenter(autodoc.Documenter):
 
         raise AttributeError(name)
 
-    def import_object(self):
+    def import_object(self) -> bool:
+        """Imports and sets the object to be documented.
+
+        The object is searched in the autoapi_objects dict based on the fullname attribute of the documenter.
+
+        Returns:
+            bool: True if the object was successfully imported and set, False otherwise.
+        """
         max_splits = self.fullname.count(".")
+        objects = self.env.autoapi_objects
         for num_splits in range(max_splits, -1, -1):
             path_stack = list(reversed(self.fullname.rsplit(".", num_splits)))
-            objects = self.env.autoapi_objects
             parent = None
             current = objects.get(path_stack.pop())
             while current and path_stack:
@@ -50,6 +62,9 @@ class AutoapiDocumenter(autodoc.Documenter):
                 self._method_parent = parent
                 return True
 
+        # If we get here, the object was not found. Emit a warning as autodoc does.
+        LOGGER.warning("Failed to import %s '%s' [autoapi.import]", self.directivetype, self.fullname, type="autoapi", subtype="import")
+        self.env.note_reread()
         return False
 
     def get_real_modname(self):
