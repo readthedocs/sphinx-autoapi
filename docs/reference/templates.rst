@@ -62,45 +62,41 @@ that you can reliably access.
 	They can be reliably accessed through templates
 	and :event:`autoapi-skip-member` only.
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonPythonMapper
+.. autoapiclass:: autoapi._objects.TopLevelPythonPythonMapper
 	:members:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonFunction
-	:members:
-	:show-inheritance:
-
-.. autoapiclass:: autoapi.mappers.python.objects.PythonMethod
+.. autoapiclass:: autoapi._objects.PythonFunction
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonProperty
+.. autoapiclass:: autoapi._objects.PythonMethod
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonData
+.. autoapiclass:: autoapi._objects.PythonProperty
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonAttribute
+.. autoapiclass:: autoapi._objects.PythonData
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.TopLevelPythonPythonMapper
+.. autoapiclass:: autoapi._objects.PythonAttribute
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonModule
+.. autoapiclass:: autoapi._objects.PythonModule
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonPackage
+.. autoapiclass:: autoapi._objects.PythonPackage
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonClass
+.. autoapiclass:: autoapi._objects.PythonClass
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi.mappers.python.objects.PythonException
+.. autoapiclass:: autoapi._objects.PythonException
 	:members:
 	:show-inheritance:
