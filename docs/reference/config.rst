@@ -283,6 +283,8 @@ Suppressing Warnings
 
    If narrower suppression is wanted, the available subtypes for AutoAPI are:
 
+   * ``import``:
+     Emitted if an autodoc-style directive cannot find the specified object.
    * ``python_import_resolution``:
      Emitted if resolving references to objects in an imported module failed.
      Potential reasons include cyclical imports and missing (parent) modules.

@@ -1,0 +1,15 @@
+templates_path = ["_templates"]
+source_suffix = ".rst"
+master_doc = "index"
+project = "pymissing_import"
+author = "Arwed Starke"
+version = "0.1"
+release = "0.1"
+language = "en"
+exclude_patterns = ["_build"]
+pygments_style = "sphinx"
+html_theme = "alabaster"
+extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
+autoapi_dirs = ["example"]
+autoapi_python_class_content = "both"
+autoapi_generate_api_docs = False

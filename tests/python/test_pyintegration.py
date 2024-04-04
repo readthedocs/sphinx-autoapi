@@ -1360,6 +1360,21 @@ def test_nothing_to_render_raises_warning(builder, caplog):
     )
 
 
+def test_missing_object_raises_warning(builder, caplog):
+    caplog.set_level(logging.WARNING, logger="autoapi._mapper")
+    if sphinx_version >= (8, 1):
+        status = builder("pymissing_import", warningiserror=True)
+        assert status
+    else:
+        with pytest.raises(sphinx.errors.SphinxWarning):
+            builder("pymissing_import", warningiserror=True)
+
+    assert any(
+        "Failed to import module 'nonexisting_module'" in record.message
+        for record in caplog.records
+    )
+
+
 class TestStdLib:
     """Check that modules with standard library names are still documented."""
 
