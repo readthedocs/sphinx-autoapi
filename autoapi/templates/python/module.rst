@@ -1,7 +1,7 @@
 {% if obj.display %}
    {% if is_own_page %}
-:py:mod:`{{ obj.id }}`
-=========={{ "=" * obj.id|length }}
+{{ obj.id }}
+{{ "=" * obj.id|length }}
 
 .. py:module:: {{ obj.name }}
 

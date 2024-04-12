@@ -1,7 +1,7 @@
 {% if obj.display %}
    {% if is_own_page %}
-:py:{{ obj.type|truncate(4, True, "", 0) }}:`{{ obj.id }}`
-==========={{ "=" * obj.id | length }}
+{{ obj.id }}
+{{ "=" * obj.id | length }}
 
    {% endif %}
 .. py:{{ obj.type }}:: {% if is_own_page %}{{ obj.id }}{% else %}{{ obj.name }}{% endif %}
