@@ -5,6 +5,33 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.0.b0 (2024-04-12)
+----------------------
+
+Features
+^^^^^^^^
+
+- Objects can render to their own page (#226)
+- Render PEP-695 type aliases as TypeAlias assignments. (#414)
+
+
+Bugfixes
+^^^^^^^^
+
+- Values are always rendered for TypeAlises and PEP-695 type aliases. (#224)
+- Fix submodule with `__init__.pyi` documented as `__init__` instead of submodule name (#398)
+- Fix IndexError when a module docstring contains only a heading (#412)
+- Preserve strings inside Literal type annotations (#423)
+- Stopped using xrefs in page titles (#427)
+- Fix emitting ignore event twice for methods.
+
+
+Misc
+^^^^
+
+- #388
+
+
 v3.0.0 (2023-09-26)
 -------------------
 
