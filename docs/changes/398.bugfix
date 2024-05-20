@@ -1,1 +1,0 @@
-Fix submodule with `__init__.pyi` documented as `__init__` instead of submodule name
