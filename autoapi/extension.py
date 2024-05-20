@@ -141,6 +141,10 @@ def run_autoapi(app):
         if app.config.autoapi_generate_api_docs:
             sphinx_mapper_obj.output_rst(source_suffix=out_suffix)
 
+    # This function cannot be pickled into the Sphinx cache, so clear it.
+    # We won't need access to it again until a full rebuild is done anyway.
+    app.config.autoapi_prepare_jinja_env = None
+
 
 def build_finished(app, exception):
     if not app.config.autoapi_keep_files and app.config.autoapi_generate_api_docs:

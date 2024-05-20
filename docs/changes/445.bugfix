@@ -1,0 +1,1 @@
+Fix unpickable configuration value warning when using autoapi_prepare_jinja_env
