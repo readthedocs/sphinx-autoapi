@@ -1,6 +1,7 @@
 import collections
 import copy
 import fnmatch
+import itertools
 import operator
 import os
 import re
@@ -27,7 +28,6 @@ from ._objects import (
     PythonAttribute,
     PythonData,
     PythonException,
-    TopLevelPythonPythonMapper,
 )
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
 
@@ -333,25 +333,6 @@ class Mapper:
                         yield filename
                         seen.add(norm_name)
 
-    def add_object(self, obj):
-        """Add object to local and app environment storage
-
-        Args:
-            obj: Instance of a AutoAPI object
-        """
-        display = obj.display
-        if display and obj.type in self.own_page_types:
-            self.objects_to_render[obj.id] = obj
-
-        self.all_objects[obj.id] = obj
-        child_stack = list(obj.children)
-        while child_stack:
-            child = child_stack.pop()
-            self.all_objects[child.id] = child
-            if display and child.type in self.own_page_types:
-                self.objects_to_render[child.id] = child
-            child_stack.extend(getattr(child, "children", ()))
-
     def output_rst(self, source_suffix):
         for _, obj in status_iterator(
             self.objects_to_render.items(),
@@ -499,27 +480,50 @@ class Mapper:
             stringify_func=(lambda x: x[0]),
         ):
             for obj in self.create_class(data, options=options):
-                self.add_object(obj)
+                self.all_objects[obj.id] = obj
 
-        top_level_objects = {
-            obj.id: obj
-            for obj in self.all_objects.values()
-            if isinstance(obj, TopLevelPythonPythonMapper)
-        }
-        parents = {obj.name: obj for obj in top_level_objects.values()}
-        for obj in top_level_objects.values():
-            parent_name = obj.name.rsplit(".", 1)[0]
-            if parent_name in parents and parent_name != obj.name:
-                parent = parents[parent_name]
-                attr = f"sub{obj.type}s"
-                getattr(parent, attr).append(obj)
-
-        for obj in top_level_objects.values():
-            obj.submodules.sort()
-            obj.subpackages.sort()
+        self._create_module_hierarchy()
+        self._render_selection()
 
         self.app.env.autoapi_objects = self.objects_to_render
         self.app.env.autoapi_all_objects = self.all_objects
+
+    def _create_module_hierarchy(self) -> None:
+        """Populate the sub{module,package}s attributes of all top level objects."""
+        for obj in self.all_objects.values():
+            parent_name = obj.name.rsplit(".", 1)[0]
+            if parent_name in self.all_objects and parent_name != obj.name:
+                parent = self.all_objects[parent_name]
+                attr = f"sub{obj.type}s"
+                getattr(parent, attr).append(obj)
+
+        for obj in self.all_objects.values():
+            obj.submodules.sort()
+            obj.subpackages.sort()
+
+    def _render_selection(self):
+        """Propagate display values to children."""
+        for obj in sorted(self.all_objects.values(), key=lambda obj: len(obj.id)):
+            if obj.display:
+                assert obj.type in self.own_page_types
+                self.objects_to_render[obj.id] = obj
+            else:
+                for module in itertools.chain(obj.subpackages, obj.submodules):
+                    module.obj["hide"] = True
+
+        def _inner(parent):
+            for child in parent.children:
+                self.all_objects[child.id] = child
+                if not parent.display:
+                    child.obj["hide"] = True
+
+                if child.display and child.type in self.own_page_types:
+                    self.objects_to_render[child.id] = child
+
+                _inner(child)
+
+        for obj in list(self.all_objects.values()):
+            _inner(obj)
 
     def create_class(self, data, options=None):
         """Create a class from the passed in data

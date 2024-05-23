@@ -76,7 +76,6 @@ class PythonObject:
         """Whether this object was imported from another module."""
         self.inherited: bool = obj.get("inherited", False)
         """Whether this was inherited from an ancestor of the parent class."""
-        self._hide = obj.get("hide", False)
 
         # For later
         self._class_content = class_content
@@ -234,7 +233,7 @@ class PythonObject:
         )
 
         return (
-            self._hide
+            self.obj.get("hide", False)
             or skip_undoc_member
             or skip_private_member
             or skip_special_member
