@@ -5,6 +5,15 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.1 (2024-05-22)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix private subpackages causing orphan pages (#446)
+
+
 v3.1.0 (2024-05-20)
 -------------------
 
