@@ -408,11 +408,17 @@ class PythonModule(TopLevelPythonPythonMapper):
 
     type = "module"
 
+    def _should_skip(self) -> bool:
+        return False
+
 
 class PythonPackage(TopLevelPythonPythonMapper):
     """The representation of a package."""
 
     type = "package"
+
+    def _should_skip(self) -> bool:
+        return False
 
 
 class PythonClass(PythonObject):
