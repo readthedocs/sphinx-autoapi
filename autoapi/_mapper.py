@@ -4,6 +4,7 @@ import fnmatch
 import itertools
 import operator
 import os
+import pathlib
 import re
 
 from jinja2 import Environment, FileSystemLoader
@@ -342,6 +343,19 @@ class Mapper:
             stringify_func=(lambda x: x[0]),
         ):
             rst = obj.render(is_own_page=True)
+            html_static_paths = getattr(self.app.config, "html_static_path")
+
+            for static_path in html_static_paths:
+                if static_path in rst:
+                    nesting_depth = (
+                        len(
+                            pathlib.Path(obj.output_dir(self.dir_root))
+                            .relative_to(self.dir_root)
+                            .parents
+                        )
+                        + 1
+                    )
+                    rst = rst.replace(static_path, f"{'../' * nesting_depth}_static")
             if not rst:
                 continue
 
