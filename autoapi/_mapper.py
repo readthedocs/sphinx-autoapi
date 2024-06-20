@@ -465,7 +465,7 @@ class Mapper:
                         child["hide"] = True
             elif module["type"] == "module":
                 for child in module["children"]:
-                    if child.get("imported"):
+                    if "original_path" in child:
                         child["hide"] = True
 
     def map(self, options=None):

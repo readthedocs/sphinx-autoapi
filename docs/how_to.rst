@@ -19,29 +19,12 @@ when loaded in Python.
 For example if a function is imported from a submodule into a package
 then that function is documented in both the submodule and the package.
 
+.. note::
+
+    The one exception to this rule is that any object imported into a module
+    is not documented by default.
+
 However there are multiple options available for controlling what AutoAPI will document.
-
-
-Connect to the :event:`autoapi-skip-member` event
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The :event:`autoapi-skip-member` event is emitted whenever
-a template has to decide whether a member should be included in the documentation.
-
-For example, to document only packages
--- in other words, to not document submodules --
-you could implement an event handler in your conf.py like the following.
-
-.. code-block:: python
-
-    def skip_submodules(app, what, name, obj, skip, options):
-        if what == "module":
-            skip = True
-        return skip
-
-
-    def setup(sphinx):
-        sphinx.connect("autoapi-skip-member", skip_submodules)
 
 
 Set ``__all__``
@@ -74,9 +57,51 @@ Configure :confval:`autoapi_options`
 
 The :confval:`autoapi_options` configuration value gives some high level control
 over what is documented.
-For example you can hide members that don't have a docstring,
-document private members, and hide magic methods.
+
+For example you could remove ``private-members`` from :confval:`autoapi_options`
+and hide your object definitions in private modules.
+
+.. code-block:: python
+
+    # package/__init__.py
+    from ._submodule import public_function
+
+    # package/_submodule.py
+
+    def public_function():
+        """This public function will be documented only in ``package``."""
+        ...
+
+    def private_function()
+        """This private function won't be documented."""
+        ...
+
+As another example, you could remove ``undoc-members`` from :confval:`autoapi_options`
+and only add docstrings for the modules and other entities that you want to be documented.
+
 See :confval:`autoapi_options` for more information on how to use this option.
+
+
+Connect to the :event:`autoapi-skip-member` event
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :event:`autoapi-skip-member` event is emitted whenever
+a template has to decide whether a member should be included in the documentation.
+
+For example, to document only packages
+-- in other words, to not document submodules --
+you could implement an event handler in your conf.py like the following.
+
+.. code-block:: python
+
+    def skip_submodules(app, what, name, obj, skip, options):
+        if what == "module":
+            skip = True
+        return skip
+
+
+    def setup(sphinx):
+        sphinx.connect("autoapi-skip-member", skip_submodules)
 
 
 Customise the API Documentation Templates
@@ -94,6 +119,12 @@ You can learn how to customise the templates in the next section;
 
 How to Customise Layout Through Templates
 -----------------------------------------
+
+.. warning::
+
+    Templates control a lot of behaviour,
+    so customising templates can mean that you lose out on new functionality
+    until you update your customised templates after a new release of AutoAPI.
 
 You can customise the look of the documentation that AutoAPI generates
 by changing the Jinja2 templates that it uses.

@@ -746,6 +746,14 @@ def test_hiding_imported_members(builder, parse):
     assert not submodule_file.find(id="complex.subpackage.now_public_function")
 
 
+def test_imports_into_modules_always_hidden(builder, parse):
+    confoverrides = {"autoapi_options": ["members", "undoc-members", "imported-members"]}
+    builder("pypackagecomplex", confoverrides=confoverrides)
+
+    submodule_file = parse("_build/html/autoapi/complex/submodule/index.html")
+    assert not submodule_file.find(id="complex.submodule.imported_function")
+
+
 def test_inherited_members(builder, parse):
     confoverrides = {
         "autoapi_options": ["members", "inherited-members", "undoc-members"],
