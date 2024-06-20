@@ -5,6 +5,15 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.1.2 (2024-06-20)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix imported members being rendered in modules (#452)
+
+
 v3.1.1 (2024-05-22)
 -------------------
 
