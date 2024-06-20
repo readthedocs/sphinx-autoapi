@@ -747,7 +747,9 @@ def test_hiding_imported_members(builder, parse):
 
 
 def test_imports_into_modules_always_hidden(builder, parse):
-    confoverrides = {"autoapi_options": ["members", "undoc-members", "imported-members"]}
+    confoverrides = {
+        "autoapi_options": ["members", "undoc-members", "imported-members"]
+    }
     builder("pypackagecomplex", confoverrides=confoverrides)
 
     submodule_file = parse("_build/html/autoapi/complex/submodule/index.html")
