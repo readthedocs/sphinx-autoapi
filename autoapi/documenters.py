@@ -66,15 +66,19 @@ class AutoapiDocumenter(autodoc.Documenter):
         yield ""
 
     def get_object_members(self, want_all):
-        children = ((child.name, child) for child in self.object.children)
+        children = (
+            autodoc.ObjectMember(child.name, child) for child in self.object.children
+        )
 
         if not want_all:
             if not self.options.members:
                 return False, []
 
-            children = (child for child in children if child[0] in self.options.members)
+            children = (
+                child for child in children if child.__name__ in self.options.members
+            )
         elif not self.options.inherited_members:
-            children = (child for child in children if not child[1].inherited)
+            children = (child for child in children if not child.object.inherited)
 
         return False, children
 
