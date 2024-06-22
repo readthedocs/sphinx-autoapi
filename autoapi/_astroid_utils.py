@@ -119,7 +119,7 @@ def get_full_basenames(node):
 def _get_const_value(node):
     if isinstance(node, astroid.nodes.Const):
         if isinstance(node.value, str) and "\n" in node.value:
-            return '"""{0}"""'.format(node.value)
+            return f'"""{node.value}"""'
 
     class NotConstException(Exception):
         pass

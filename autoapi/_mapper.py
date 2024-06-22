@@ -434,7 +434,7 @@ class Mapper:
             else:
                 parsed_data = Parser().parse_file(path)
             return parsed_data
-        except (IOError, TypeError, ImportError):
+        except (OSError, TypeError, ImportError):
             LOGGER.debug("Reason:", exc_info=True)
             LOGGER.warning(
                 f"Unable to read file: {path}",

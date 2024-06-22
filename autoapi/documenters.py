@@ -61,8 +61,7 @@ class AutoapiDocumenter(autodoc.Documenter):
 
     def process_doc(self, docstrings):
         for docstring in docstrings:
-            for line in docstring:
-                yield line
+            yield from docstring
 
         yield ""
 

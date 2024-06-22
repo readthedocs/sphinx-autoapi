@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import functools
 import pathlib
-from typing import List, Optional, Tuple
 
 import sphinx
 import sphinx.util
@@ -66,7 +65,7 @@ class PythonObject:
         This is the same as the fully qualified name of the object.
         """
 
-        self.children: List[PythonObject] = []
+        self.children: list[PythonObject] = []
         """The members of this object.
 
         For example, the classes and functions defined in the parent module.
@@ -79,7 +78,7 @@ class PythonObject:
 
         # For later
         self._class_content = class_content
-        self._display_cache: Optional[bool] = None
+        self._display_cache: bool | None = None
 
     def __getstate__(self):
         """Obtains serialisable data for pickling."""
@@ -248,7 +247,7 @@ class PythonObject:
 
         return ask_result if ask_result is not None else skip
 
-    def _children_of_type(self, type_: str) -> List[PythonObject]:
+    def _children_of_type(self, type_: str) -> list[PythonObject]:
         return list(child for child in self.children if child.type == type_)
 
 
@@ -268,7 +267,7 @@ class PythonFunction(PythonObject):
         self.args: str = _format_args(self.obj["args"], show_annotations)
         """The arguments to this object, formatted as a string."""
 
-        self.return_annotation: Optional[str] = (
+        self.return_annotation: str | None = (
             self.obj["return_annotation"] if show_annotations else None
         )
         """The type annotation for the return type of this function.
@@ -276,12 +275,12 @@ class PythonFunction(PythonObject):
         This will be ``None`` if an annotation
         or annotation comment was not given.
         """
-        self.properties: List[str] = self.obj["properties"]
+        self.properties: list[str] = self.obj["properties"]
         """The properties that describe what type of function this is.
 
         Can be only be: async.
         """
-        self.overloads: List[Tuple[str, str]] = [
+        self.overloads: list[tuple[str, str]] = [
             (_format_args(args), return_annotation)
             for args, return_annotation in self.obj["overloads"]
         ]
@@ -300,7 +299,7 @@ class PythonMethod(PythonFunction):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.properties: List[str] = self.obj["properties"]
+        self.properties: list[str] = self.obj["properties"]
         """The properties that describe what type of method this is.
 
         Can be any of: abstractmethod, async, classmethod, property, staticmethod.
@@ -322,9 +321,9 @@ class PythonProperty(PythonObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.annotation: Optional[str] = self.obj["return_annotation"]
+        self.annotation: str | None = self.obj["return_annotation"]
         """The type annotation of this property."""
-        self.properties: List[str] = self.obj["properties"]
+        self.properties: list[str] = self.obj["properties"]
         """The properties that describe what type of property this is.
 
         Can be any of: abstractmethod, classmethod.
@@ -340,12 +339,12 @@ class PythonData(PythonObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.value: Optional[str] = self.obj.get("value")
+        self.value: str | None = self.obj.get("value")
         """The value of this attribute.
 
         This will be ``None`` if the value is not constant.
         """
-        self.annotation: Optional[str] = self.obj.get("annotation")
+        self.annotation: str | None = self.obj.get("annotation")
         """The type annotation of this attribute.
 
         This will be ``None`` if an annotation
@@ -424,7 +423,7 @@ class PythonClass(PythonObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.bases: List[str] = self.obj["bases"]
+        self.bases: list[str] = self.obj["bases"]
         """The fully qualified names of all base classes."""
 
         self._docstring_resolved: bool = False
@@ -447,7 +446,7 @@ class PythonClass(PythonObject):
         return args
 
     @property
-    def overloads(self) -> List[Tuple[str, str]]:
+    def overloads(self) -> list[tuple[str, str]]:
         overloads = []
 
         if self.constructor:
@@ -503,7 +502,7 @@ class PythonClass(PythonObject):
         return self._children_of_type("class")
 
     @property
-    @functools.lru_cache()
+    @functools.lru_cache
     def constructor(self):
         for child in self.children:
             if child.short_name == "__init__":

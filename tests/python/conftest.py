@@ -41,7 +41,7 @@ def builder(rebuild):
             suppress.append("app.add_directive")
             suppress.append("app.add_role")
 
-        os.chdir("tests/python/{0}".format(test_dir))
+        os.chdir(f"tests/python/{test_dir}")
         rebuild(**kwargs)
 
     yield build
@@ -60,7 +60,7 @@ def parse():
 
     def parser(path):
         if path not in cache:
-            with io.open(path, encoding="utf8") as file_handle:
+            with open(path, encoding="utf8") as file_handle:
                 cache[path] = BeautifulSoup(file_handle, features="html.parser")
 
         return cache[path]

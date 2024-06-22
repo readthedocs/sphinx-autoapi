@@ -19,13 +19,13 @@ def function(foo, bar):
     """A module level function"""
 
 
-class Class(object):
+class Class:
     """This is a class."""
 
     class_var = 42
     """Class var docstring"""
 
-    class NestedClass(object):
+    class NestedClass:
         """A nested class just to test things out"""
 
         @classmethod

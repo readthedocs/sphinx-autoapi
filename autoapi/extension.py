@@ -3,7 +3,6 @@
 This extension allows you to automagically generate API documentation from your project.
 """
 
-import io
 import os
 import shutil
 from typing import Dict, Tuple
@@ -228,10 +227,7 @@ def viewcode_find(app, modname):
             children = getattr(obj, "children", ())
             stack.extend((full_name + ".", gchild) for gchild in children)
 
-    if module.obj["encoding"]:
-        stream = io.open(module.obj["file_path"], encoding=module.obj["encoding"])
-    else:
-        stream = open(module.obj["file_path"], encoding="utf-8")
+    stream = open(module.obj["file_path"], encoding=module.obj.get("encoding", "utf-8"))
 
     with stream as in_f:
         source = in_f.read()

@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 """Example module
 
 This is a description
 """
+
 from functools import cached_property
 
 A_TUPLE = ("a", "b")
@@ -11,7 +11,7 @@ A_LIST = ["c", "d"]
 """A list to be rendered as a list."""
 
 
-class Foo(object):
+class Foo:
     """Can we parse arguments from the class docstring?
 
     :param attr: Set an attribute.
@@ -23,7 +23,7 @@ class Foo(object):
     another_class_var = 42
     """Another class var docstring"""
 
-    class Meta(object):
+    class Meta:
         """A nested class just to test things out"""
 
         @classmethod

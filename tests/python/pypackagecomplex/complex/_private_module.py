@@ -1,4 +1,4 @@
-class PrivateClass(object):
+class PrivateClass:
     """A private class with public facing methods."""
 
     def public_method():

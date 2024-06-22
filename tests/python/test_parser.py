@@ -44,7 +44,7 @@ class TestPythonParser:
     def test_parses_list(self):
         name = "__all__"
         value = "[1, 2, 3, 4]"
-        source = "{} = {}".format(name, value)
+        source = f"{name} = {value}"
         data = self.parse(source)[0]
         assert data["name"] == name
         assert data["value"] == value
@@ -52,7 +52,7 @@ class TestPythonParser:
     def test_parses_nested_list(self):
         name = "__all__"
         value = "[[1, 2], [3, 4]]"
-        source = "{} = {}".format(name, value)
+        source = f"{name} = {value}"
         data = self.parse(source)[0]
         assert data["name"] == name
         assert data["value"] == value

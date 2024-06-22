@@ -9,13 +9,13 @@ from ._subpackage import module_level_function
 __all__ = ["PublicClass", "Foo"]
 
 
-class Foo(object):
+class Foo:
     class_var = 42  #: Class var docstring
 
     another_class_var = 42
     """Another class var docstring"""
 
-    class Meta(object):
+    class Meta:
         """A nested class just to test things out"""
 
         @classmethod

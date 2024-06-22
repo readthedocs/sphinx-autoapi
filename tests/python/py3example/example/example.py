@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 """Example module
 
 This is a description
 """
+
 import asyncio
 import typing
 from typing import ClassVar, Dict, Iterable, Generic, List, TypeVar, Union, overload

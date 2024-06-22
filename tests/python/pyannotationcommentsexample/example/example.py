@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 """Example module
 
 This is a description
 """
+
 from typing import ClassVar, Dict, Iterable, List, Union
 
 max_rating = 10  # type: int

@@ -142,9 +142,9 @@ class TestSimpleModule:
     def test_show_inheritance(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
 
-        foo = example_file.find(id="example.Foo")
-        foo_docstring = foo.parent.find("dd").contents[0]
-        assert foo_docstring.text.startswith("Bases:")
+        bar = example_file.find(id="example.Bar")
+        bar_docstring = bar.parent.find("dd").contents[0]
+        assert bar_docstring.text.startswith("Bases:")
 
     def test_long_signature(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
@@ -818,7 +818,7 @@ class _CompareInstanceType:
         return self.type is type(other)
 
     def __repr__(self):
-        return "<expect type {}>".format(self.type.__name__)
+        return f"<expect type {self.type.__name__}>"
 
 
 def test_skip_members_hook(builder):
@@ -1105,7 +1105,7 @@ def test_string_module_attributes(builder):
     builder("py3example", confoverrides=keep_rst)
 
     example_path = os.path.join("autoapi", "example", "index.rst")
-    with io.open(example_path, encoding="utf8") as example_handle:
+    with open(example_path, encoding="utf8") as example_handle:
         example_file = example_handle.read()
 
     code_snippet_contents = [

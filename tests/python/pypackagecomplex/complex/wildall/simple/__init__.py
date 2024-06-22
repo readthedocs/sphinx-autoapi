@@ -9,12 +9,12 @@ __all__ = [
 ]
 
 
-class SimpleClass(object):
+class SimpleClass:
     def simple_method(self):
         return 5
 
 
-class NotAllClass(object):
+class NotAllClass:
     def not_all_method(self):
         return 5
 

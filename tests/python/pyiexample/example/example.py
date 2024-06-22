@@ -1,2 +1,2 @@
-class DoNotFindThis(object):
+class DoNotFindThis:
     """pyi files should be preferred."""

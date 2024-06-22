@@ -8,52 +8,52 @@ import pytest
 
 def generate_module_names():
     for i in range(1, 5):
-        yield ".".join("module{}".format(j) for j in range(i))
+        yield ".".join(f"module{j}" for j in range(i))
 
     yield "package.repeat.repeat"
 
 
 def imported_basename_cases():
     for module_name in generate_module_names():
-        import_ = "import {}".format(module_name)
-        basename = "{}.ImportedClass".format(module_name)
+        import_ = f"import {module_name}"
+        basename = f"{module_name}.ImportedClass"
         expected = basename
 
         yield (import_, basename, expected)
 
-        import_ = "import {} as aliased".format(module_name)
+        import_ = f"import {module_name} as aliased"
         basename = "aliased.ImportedClass"
 
         yield (import_, basename, expected)
 
         if "." in module_name:
             from_name, attribute = module_name.rsplit(".", 1)
-            import_ = "from {} import {}".format(from_name, attribute)
-            basename = "{}.ImportedClass".format(attribute)
+            import_ = f"from {from_name} import {attribute}"
+            basename = f"{attribute}.ImportedClass"
             yield (import_, basename, expected)
 
             import_ += " as aliased"
             basename = "aliased.ImportedClass"
             yield (import_, basename, expected)
 
-        import_ = "from {} import ImportedClass".format(module_name)
+        import_ = f"from {module_name} import ImportedClass"
         basename = "ImportedClass"
         yield (import_, basename, expected)
 
-        import_ = "from {} import ImportedClass as AliasedClass".format(module_name)
+        import_ = f"from {module_name} import ImportedClass as AliasedClass"
         basename = "AliasedClass"
         yield (import_, basename, expected)
 
 
 def generate_args():
     for i in range(5):
-        yield ", ".join("arg{}".format(j) for j in range(i))
+        yield ", ".join(f"arg{j}" for j in range(i))
 
 
 def imported_call_cases():
     for args in generate_args():
         for import_, basename, expected in imported_basename_cases():
-            basename += "({})".format(args)
+            basename += f"({args})"
             expected += "()"
             yield import_, basename, expected
 

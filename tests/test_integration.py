@@ -8,7 +8,7 @@ from sphinx.application import Sphinx
 
 @contextmanager
 def sphinx_build(test_dir, confoverrides=None):
-    os.chdir("tests/{0}".format(test_dir))
+    os.chdir(f"tests/{test_dir}")
     try:
         app = Sphinx(
             srcdir=".",
@@ -29,7 +29,7 @@ def sphinx_build(test_dir, confoverrides=None):
 class LanguageIntegrationTests:
     def _run_test(self, test_dir, test_file, test_string):
         with sphinx_build(test_dir):
-            with io.open(test_file, encoding="utf8") as fin:
+            with open(test_file, encoding="utf8") as fin:
                 text = fin.read().strip()
                 assert test_string in text
 

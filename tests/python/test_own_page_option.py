@@ -258,7 +258,7 @@ class TestClass:
         class_sig = class_file.find(id="package.Class")
         assert class_sig
         class_ = class_sig.parent
-        docstring = class_.find_all("p")[1]
+        docstring = class_.find_all("p")[0]
         assert docstring.text == "This is a class."
 
         # There should be links to the children with their own page
@@ -472,7 +472,7 @@ class TestFunction:
         class_sig = class_file.find(id="package.Class")
         assert class_sig
         class_ = class_sig.parent
-        docstring = class_.find_all("p")[1]
+        docstring = class_.find_all("p")[0]
         assert docstring.text == "This is a class."
 
         # There should be links to the children with their own page
@@ -662,7 +662,7 @@ class TestMethod:
         class_sig = class_file.find(id="package.Class")
         assert class_sig
         class_ = class_sig.parent
-        docstring = class_.find_all("p")[1]
+        docstring = class_.find_all("p")[0]
         assert docstring.text == "This is a class."
 
         # There should be links to the children with their own page
@@ -857,7 +857,7 @@ class TestAttribute:
         class_sig = class_file.find(id="package.Class")
         assert class_sig
         class_ = class_sig.parent
-        docstring = class_.find_all("p")[1]
+        docstring = class_.find_all("p")[0]
         assert docstring.text == "This is a class."
 
         # There should be links to the children with their own page
