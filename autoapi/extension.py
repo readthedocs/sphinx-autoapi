@@ -6,7 +6,6 @@ This extension allows you to automagically generate API documentation from your 
 import os
 import shutil
 from typing import Dict, Tuple
-import warnings
 
 import sphinx
 from sphinx.util.console import colorize
@@ -45,14 +44,6 @@ _VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
 """Caches a module's parse results for use in viewcode."""
 
 
-class RemovedInAutoAPI3Warning(DeprecationWarning):
-    """Indicates something that will be removed in sphinx-autoapi v3."""
-
-
-if "PYTHONWARNINGS" not in os.environ:
-    warnings.filterwarnings("default", category=RemovedInAutoAPI3Warning)
-
-
 def _normalise_autoapi_dirs(autoapi_dirs, srcdir):
     normalised_dirs = []
 
@@ -72,15 +63,6 @@ def run_autoapi(app):
     if not app.config.autoapi_dirs:
         raise ExtensionError("You must configure an autoapi_dirs setting")
 
-    if app.config.autoapi_include_summaries is not None:
-        warnings.warn(
-            "autoapi_include_summaries has been replaced by "
-            "the show-module-summary AutoAPI option\n",
-            RemovedInAutoAPI3Warning,
-        )
-        if app.config.autoapi_include_summaries:
-            app.config.autoapi_options.append("show-module-summary")
-
     own_page_level = app.config.autoapi_own_page_level
     if own_page_level not in _VALID_PAGE_LEVELS:
         raise ValueError(f"Invalid autoapi_own_page_level '{own_page_level}")
@@ -94,22 +76,14 @@ def run_autoapi(app):
                 "Please check your `autoapi_dirs` setting."
             )
 
+    template_dir = app.config.autoapi_template_dir
+    if template_dir and not os.path.isabs(template_dir):
+        template_dir = os.path.join(app.srcdir, app.config.autoapi_template_dir)
+
     normalized_root = os.path.normpath(
         os.path.join(app.srcdir, app.config.autoapi_root)
     )
     url_root = os.path.join("/", app.config.autoapi_root)
-
-    template_dir = app.config.autoapi_template_dir
-    if template_dir and not os.path.isabs(template_dir):
-        if not os.path.isdir(template_dir):
-            template_dir = os.path.join(app.srcdir, app.config.autoapi_template_dir)
-        elif app.srcdir != os.getcwd():
-            warnings.warn(
-                "autoapi_template_dir will be expected to be "
-                "relative to the Sphinx source directory instead of "
-                "relative to where sphinx-build is run\n",
-                RemovedInAutoAPI3Warning,
-            )
     sphinx_mapper_obj = Mapper(
         app, template_dir=template_dir, dir_root=normalized_root, url_root=url_root
     )
