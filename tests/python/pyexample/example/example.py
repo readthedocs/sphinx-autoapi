@@ -3,6 +3,7 @@
 
 This is a description
 """
+from functools import cached_property
 
 A_TUPLE = ("a", "b")
 """A tuple to be rendered as a tuple."""
@@ -42,6 +43,11 @@ class Foo(object):
     @property
     def property_simple(self) -> int:
         """This property should parse okay."""
+        return 42
+
+    @cached_property
+    def my_cached_property(self) -> int:
+        """This cached property should be a property."""
         return 42
 
     def method_okay(self, foo=None, bar=None):

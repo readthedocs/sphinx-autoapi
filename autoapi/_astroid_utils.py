@@ -233,6 +233,9 @@ def _is_property_decorator(decorator):
         return (
             class_node.name == "property"
             and class_node.root().name == builtins.__name__
+        ) or (
+            class_node.name == "cached_property"
+            and class_node.root().name == "functools"
         )
 
     for inferred in decorator.infer():

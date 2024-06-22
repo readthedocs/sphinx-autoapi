@@ -1,0 +1,1 @@
+functools.cached_property is considered a property

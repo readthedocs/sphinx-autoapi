@@ -95,6 +95,10 @@ class TestSimpleModule:
             == "This property should parse okay."
         )
 
+        my_cached_property = foo.find(id="example.Foo.my_cached_property")
+        assert my_cached_property
+        assert my_cached_property.find(class_="pre").text.strip() == "property"
+
         # Overridden methods without their own docstring
         # should inherit the parent's docstring
         bar_method_okay = example_file.find(id="example.Bar.method_okay")
