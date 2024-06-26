@@ -1195,3 +1195,28 @@ class TestMemberOrder:
         method_sphinx_docs = example_file.find(id="example.Foo.method_sphinx_docs")
 
         assert method_tricky.sourceline < method_sphinx_docs.sourceline
+
+
+class TestPy3ModuleExample:
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder("py3moduleexample")
+
+    def test_integration(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        assert "Initialize self" not in example_file
+        assert "a new type" not in example_file
+
+    def test_files_are_populated_correctly(self, parse):
+        # Assert modules/packages are documented
+        assert pathlib.Path("_build/html/autoapi/example/index.html").exists()
+        assert pathlib.Path("_build/html/autoapi/example2/index.html").exists()
+        assert pathlib.Path("_build/html/autoapi/example3/index.html").exists()
+        assert pathlib.Path("_build/html/autoapi/example3/example3/index.html").exists()
+
+        # Assert private modules/packages aren't shown
+        assert not pathlib.Path(
+            "_build/html/autoapi/_subpackage/_hidden/index.html"
+        ).exists()
+        assert not pathlib.Path("_build/html/autoapi/_hidden/index.html").exists()
