@@ -409,7 +409,11 @@ class PythonModule(TopLevelPythonPythonMapper):
     type = "module"
 
     def _should_skip(self) -> bool:
-        return False
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+
+        return self.obj.get("hide", False) or skip_private_member
 
 
 class PythonPackage(TopLevelPythonPythonMapper):
@@ -418,7 +422,11 @@ class PythonPackage(TopLevelPythonPythonMapper):
     type = "package"
 
     def _should_skip(self) -> bool:
-        return False
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+
+        return self.obj.get("hide", False) or skip_private_member
 
 
 class PythonClass(PythonObject):
