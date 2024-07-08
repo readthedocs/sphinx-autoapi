@@ -657,6 +657,7 @@ class TestPositionalOnlyArgumentsModule:
         assert "f_no_cd(a: int, b: int, /, *, e: float, f: float)" in f_no_cd.text
 
 
+@pytest.mark.network
 @pytest.mark.skipif(
     sys.version_info < (3, 10), reason="Union pipe syntax requires Python >=3.10"
 )
@@ -700,6 +701,7 @@ class TestPipeUnionModule:
         assert links[1].text == "None"
 
 
+@pytest.mark.network
 @pytest.mark.skipif(
     sys.version_info < (3, 12), reason="PEP-695 support requires Python >=3.12"
 )
