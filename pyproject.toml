@@ -10,6 +10,11 @@ ignore_missing_imports = true
 module = "autoapi.documenters"
 ignore_errors = true
 
+[tool.pytest.ini_options]
+markers = [
+    "network: Tests that use network access.",
+]
+
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
