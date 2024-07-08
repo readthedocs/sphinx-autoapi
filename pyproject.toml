@@ -43,6 +43,11 @@ disallow_untyped_defs = true
 # Ignore until astroid is typed (https://github.com/pylint-dev/astroid/issues/2060)
 warn_return_any = false
 
+[tool.pytest.ini_options]
+markers = [
+    "network: Tests that use network access.",
+]
+
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
