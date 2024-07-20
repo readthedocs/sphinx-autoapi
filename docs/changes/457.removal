@@ -1,1 +1,0 @@
-Removed ability for autoapi_template_dir to be relative to cwd. This was supposed to have been retired in v3

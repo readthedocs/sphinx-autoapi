@@ -5,6 +5,35 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.2.0 (2024-07-20)
+-------------------
+
+Features
+^^^^^^^^
+
+- functools.cached_property is considered a property (#436)
+
+
+Bugfixes
+^^^^^^^^
+
+- Gracefully handle no objects being rendered (#448)
+- Fix ignoring undocumented instance attributes (#451)
+
+
+Deprecations and Removals
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Removed ability for autoapi_template_dir to be relative to cwd. This was supposed to have been retired in v3 (#457)
+- Removed autoapi_include_summaries option. This was supposed to have been retired in v3
+
+
+Misc
+^^^^
+
+- #428, #449
+
+
 v3.1.2 (2024-06-20)
 -------------------
 
