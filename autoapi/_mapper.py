@@ -364,9 +364,7 @@ class Mapper:
                 "No modules were rendered. "
                 "Do you need to set autoapi_options to render additional objects?"
             )
-            LOGGER.warning(
-                msg, type="autoapi", subtype="nothing_rendered"
-            )
+            LOGGER.warning(msg, type="autoapi", subtype="nothing_rendered")
             return
 
         with open(top_level_index, "wb") as top_level_file:
