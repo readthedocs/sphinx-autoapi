@@ -273,13 +273,19 @@ Suppressing Warnings
 
    If narrower suppression is wanted, the available subtypes for AutoAPI are:
 
-     * python_import_resolution
-       Used if resolving references to objects in an imported module failed. Potential reasons
-       include cyclical imports and missing (parent) modules.
-     * not_readable
-       Emitted if processing (opening, parsing, ...) an input file failed.
-     * toc_reference
-       Used if a reference to an entry in a table of content cannot be resolved.
+   * ``python_import_resolution``:
+     Emitted if resolving references to objects in an imported module failed.
+     Potential reasons include cyclical imports and missing (parent) modules.
+   * ``not_readable``:
+     Emitted if processing (opening, parsing, ...) an input file failed.
+   * ``toc_reference``:
+     Emitted if a reference to an entry in a table of content cannot be resolved.
+   * ``nothing_rendered``:
+     Emitted if nothing was found to be documented.
+     Potential reasons include no files being found in :confval:`autoapi_dirs`
+     that match :confval:`autoapi_file_patterns`,
+     or all discovered modules and objects being excluded from rendering due to
+     :confval:`autoapi_options` or :ref:`other rendering exclusions <customise-documented-api>`.
 
    So if all AutoAPI warnings concerning unreadable sources and failing Python imports should be
    filtered, but all other warnings should not, the option would be

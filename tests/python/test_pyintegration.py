@@ -1195,3 +1195,10 @@ class TestMemberOrder:
         method_sphinx_docs = example_file.find(id="example.Foo.method_sphinx_docs")
 
         assert method_tricky.sourceline < method_sphinx_docs.sourceline
+
+
+def test_nothing_to_render_raises_warning(builder):
+    with pytest.raises(sphinx.errors.SphinxWarning) as exc_info:
+        builder("pynorender", warningiserror=True)
+
+    assert "No modules were rendered" in str(exc_info.value)

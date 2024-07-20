@@ -359,6 +359,16 @@ class Mapper:
         # Render Top Index
         top_level_index = os.path.join(self.dir_root, "index.rst")
         pages = [obj for obj in self.objects_to_render.values() if obj.display]
+        if not pages:
+            msg = (
+                "No modules were rendered. "
+                "Do you need to set autoapi_options to render additional objects?"
+            )
+            LOGGER.warning(
+                msg, type="autoapi", subtype="nothing_rendered"
+            )
+            return
+
         with open(top_level_index, "wb") as top_level_file:
             content = self.jinja_env.get_template("index.rst")
             top_level_file.write(content.render(pages=pages).encode("utf-8"))

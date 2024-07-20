@@ -124,6 +124,9 @@ def build_finished(app, exception):
         normalized_root = os.path.normpath(
             os.path.join(app.srcdir, app.config.autoapi_root)
         )
+        if not os.path.exists(normalized_root):
+            return
+
         if app.verbosity > 1:
             LOGGER.info(
                 colorize("bold", "[AutoAPI] ")
