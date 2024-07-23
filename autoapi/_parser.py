@@ -131,8 +131,10 @@ class Parser:
         self._full_name_stack.append(node.name)
         overridden = set()
         overloads = {}
+        children = {}
         for base in itertools.chain(iter((node,)), node.ancestors()):
             seen = set()
+            base_children = []
             if base.qname() in (
                 "__builtins__.object",
                 "builtins.object",
@@ -151,12 +153,29 @@ class Parser:
                     continue
                 seen.add(name)
                 child_data = self.parse(child)
-                data["children"].extend(
+                base_children.extend(
                     _parse_child(node, child_data, overloads, base, name)
                 )
 
             overridden.update(seen)
 
+            for base_child in base_children:
+                existing_child = children.get(base_child["name"])
+                if (
+                    existing_child
+                    # If an attribute was assigned to but this class has a property
+                    # with the same name, then the property was assigned to,
+                    # and not an attribute.
+                    and not (
+                        base_child["type"] == "property"
+                        and existing_child["type"] == "attribute"
+                    )
+                ):
+                    continue
+
+                children[base_child["name"]] = base_child
+
+        data["children"].extend(children.values())
         self._qual_name_stack.pop()
         self._full_name_stack.pop()
 

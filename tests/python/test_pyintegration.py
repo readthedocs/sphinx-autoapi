@@ -51,7 +51,10 @@ class TestSimpleModule:
         assert foo.find(id="example.Foo.Meta")
 
         # Check that class attributes are documented
-        assert foo.find(id="example.Foo.attr")
+        attr = foo.find(id="example.Foo.attr")
+        assert attr
+        assert attr.find(class_="pre").text.strip() == "property"
+
         attr2 = foo.find(id="example.Foo.attr2")
         assert "attr2" in attr2.text
         # Check that attribute docstrings are used

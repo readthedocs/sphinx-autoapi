@@ -41,6 +41,14 @@ class Foo:
         """
 
     @property
+    def attr(self):
+        return 5
+
+    @attr.setter
+    def attr(self, value):
+        pass
+
+    @property
     def property_simple(self) -> int:
         """This property should parse okay."""
         return 42
