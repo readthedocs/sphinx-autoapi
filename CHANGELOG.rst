@@ -5,6 +5,15 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.2.1 (2024-07-23)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix error or duplicates when __init__ assigns to a property (#466)
+
+
 v3.2.0 (2024-07-20)
 -------------------
 

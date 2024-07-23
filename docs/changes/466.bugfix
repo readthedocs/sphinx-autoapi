@@ -1,1 +1,0 @@
-Fix error or duplicates when __init__ assigns to a property
