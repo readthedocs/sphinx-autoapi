@@ -1,12 +1,21 @@
 import collections
 import itertools
 import os
+import sys
 
 import astroid
 import astroid.builder
 import sphinx.util.docstrings
 
 from . import _astroid_utils
+
+
+if sys.version_info < (3, 10):  # PY310
+    from stdlib_list import in_stdlib
+else:
+
+    def in_stdlib(module_name: str) -> bool:
+        return module_name in sys.stdlib_module_names
 
 
 def _prepare_docstring(doc):
@@ -135,12 +144,13 @@ class Parser:
         for base in itertools.chain(iter((node,)), node.ancestors()):
             seen = set()
             base_children = []
-            if base.qname() in (
-                "__builtins__.object",
-                "builtins.object",
-                "builtins.type",
-            ):
+
+            # Don't document members inherited from standard library classes
+            # unless that class is abstract.
+            base_module = base.qname().split(".", 1)[0]
+            if in_stdlib(base_module) and not _astroid_utils.is_abstract_class(base):
                 continue
+
             for child in base.get_children():
                 name = getattr(child, "name", None)
                 if isinstance(child, (astroid.Assign, astroid.AnnAssign)):

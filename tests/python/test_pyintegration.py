@@ -277,6 +277,14 @@ class TestPy3Module:
         assert "Initialize self" not in example_file
         assert "a new type" not in example_file
 
+        # Test that members are not inherited from standard library classes.
+        assert example_file.find(id="example.MyException")
+        assert not example_file.find(id="example.MyException.args")
+        # With the exception of abstract base classes.
+        assert example_file.find(id="example.My123")
+        assert example_file.find(id="example.My123.__contains__")
+        assert example_file.find(id="example.My123.index")
+
     def test_annotations(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
 

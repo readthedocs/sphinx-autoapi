@@ -69,6 +69,8 @@ Customisation Options
    * ``members``: Display children of an object
    * ``inherited-members``: Display children of an object
      that have been inherited from a base class.
+     Members from standard library base classes are not included,
+     unless the base class is abstract.
    * ``undoc-members``: Display objects that have no docstring
    * ``private-members``: Display private objects (eg. ``_foo`` in Python)
    * ``special-members``: Display special objects (eg. ``__foo__`` in Python)

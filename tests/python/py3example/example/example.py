@@ -4,6 +4,7 @@ This is a description
 """
 
 import asyncio
+import collections.abc
 import typing
 from typing import ClassVar, Dict, Iterable, Generic, List, TypeVar, Union, overload
 
@@ -169,3 +170,18 @@ global_a: A = A()
 
 
 class SomeMetaclass(type): ...
+
+
+class MyException(Exception):
+    pass
+
+
+class My123(collections.abc.Sequence):
+    def __getitem__(self, i):
+        if i < len(self):
+            return i
+
+        raise IndexError(i)
+
+    def __len__(self):
+        return 3

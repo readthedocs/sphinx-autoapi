@@ -663,3 +663,17 @@ def get_class_docstring(node):
                 return base.doc_node.value
 
     return doc
+
+
+def is_abstract_class(node: astroid.ClassDef) -> bool:
+    metaclass = node.metaclass()
+    if metaclass and metaclass.name == "ABCMeta":
+        return True
+
+    if "abc.ABC" in node.basenames:
+        return True
+
+    if any(method.is_abstract(pass_is_abstract=False) for method in node.methods()):
+        return True
+
+    return False

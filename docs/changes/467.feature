@@ -1,0 +1,1 @@
+Do not document members inherited from standard library classes.
