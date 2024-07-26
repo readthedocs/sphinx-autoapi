@@ -40,7 +40,7 @@ _VALID_PAGE_LEVELS = [
     "method",
     "attribute",
 ]
-_VIEWCODE_CACHE: Dict[str, Tuple[str, Dict]] = {}
+_VIEWCODE_CACHE: Dict[str, tuple[str, dict[str, tuple[str, int, int]]]] = {}
 """Caches a module's parse results for use in viewcode."""
 
 
