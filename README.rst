@@ -83,7 +83,7 @@ You can check your formatting using black's check mode:
 
 .. code-block:: bash
 
-    tox -e formatting
+    tox -e format
 
 You can also get black to format your changes for you:
 
