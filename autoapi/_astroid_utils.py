@@ -1,23 +1,33 @@
+from __future__ import annotations
+
 import builtins
+from collections.abc import Iterable
 import itertools
 import re
+from typing import Any, NamedTuple
 
 import astroid
 import astroid.nodes
-import astroid.nodes.node_classes
 
 
-def resolve_import_alias(name, import_names):
+class ArgInfo(NamedTuple):
+    prefix: str | None
+    name: str | None
+    annotation: str | None
+    default_value: str | None
+
+
+def resolve_import_alias(
+    name: str, import_names: Iterable[tuple[str, str | None]]
+) -> str:
     """Resolve a name from an aliased import to its original name.
 
-    :param name: The potentially aliased name to resolve.
-    :type name: str
-    :param import_names: The pairs of original names and aliases
-        from the import.
-    :type import_names: iterable(tuple(str, str or None))
+    Args:
+        name: The potentially aliased name to resolve.
+        import_names: The pairs of original names and aliases from the import.
 
-    :returns: The original name.
-    :rtype: str
+    Returns:
+        The original name.
     """
     resolved_name = name
 
@@ -31,13 +41,14 @@ def resolve_import_alias(name, import_names):
     return resolved_name
 
 
-def get_full_import_name(import_from, name):
+def get_full_import_name(import_from: astroid.nodes.ImportFrom, name: str) -> str:
     """Get the full path of a name from a ``from x import y`` statement.
 
     Args:
-        import_from (astroid.nodes.ImportFrom): The astroid node to
-            resolve the name of.
-        name (str)
+        import_from: The astroid node to resolve the name of.
+        name: The short name or alias of what was imported.
+            This is ``y`` in ``from x import y``
+            and ``z`` in ``from x import y as z``.
 
     Returns:
         str: The full import path of the name.
@@ -55,15 +66,15 @@ def get_full_import_name(import_from, name):
     return f"{module_name}.{partial_basename}"
 
 
-def resolve_qualname(node, basename):
+def resolve_qualname(node: astroid.nodes.NodeNG, basename: str) -> str:
     """Resolve where a node is defined to get its fully qualified name.
 
     Args:
-        node (astroid.NodeNG): The node representing the base name.
-        basename (str): The partial base name to resolve.
+        node: The node representing the base name.
+        basename: The partial base name to resolve.
 
     Returns:
-        str: The fully resolved base name.
+        The fully resolved base name.
     """
     full_basename = basename
 
@@ -102,21 +113,20 @@ def resolve_qualname(node, basename):
     return full_basename
 
 
-def get_full_basenames(node):
+def get_full_basenames(node: astroid.nodes.ClassDef) -> Iterable[str]:
     """Resolve the partial names of a class' bases to fully qualified names.
 
     Args:
         node: The class definition node to resolve the bases of.
-    :type: astroid.ClassDef
 
     Returns:
-        iterable(str): The full names.
+        The fullly qualified names.
     """
     for base in node.bases:
         yield _resolve_annotation(base)
 
 
-def _get_const_value(node):
+def _get_const_value(node: astroid.nodes.NodeNG) -> str | None:
     if isinstance(node, astroid.nodes.Const):
         if isinstance(node.value, str) and "\n" in node.value:
             return f'"""{node.value}"""'
@@ -124,7 +134,7 @@ def _get_const_value(node):
     class NotConstException(Exception):
         pass
 
-    def _inner(node):
+    def _inner(node: astroid.nodes.NodeNG) -> Any:
         if isinstance(node, (astroid.nodes.List, astroid.nodes.Tuple)):
             new_value = []
             for element in node.elts:
@@ -151,19 +161,19 @@ def _get_const_value(node):
     return repr(result)
 
 
-def get_assign_value(node):
+def get_assign_value(
+    node: astroid.nodes.Assign | astroid.nodes.AnnAssign,
+) -> tuple[str, str | None] | None:
     """Get the name and value of the assignment of the given node.
 
     Assignments to multiple names are ignored, as per PEP 257.
 
     Args:
-        node (astroid.nodes.Assign or astroid.nodes.AnnAssign): The node
-            to get the assignment value from.
+        node: The node to get the assignment value from.
 
     Returns:
-        tuple(str, str or None) or None: The name that is assigned
-        to, and the string representation of the value assigned to the name
-        (if it can be converted).
+        The name that is assigned to, and the string representation of
+        the value assigned to the name (if it can be converted).
     """
     try:
         targets = node.targets
@@ -183,16 +193,16 @@ def get_assign_value(node):
     return None
 
 
-def get_assign_annotation(node):
+def get_assign_annotation(
+    node: astroid.nodes.Assign | astroid.nodes.AnnAssign,
+) -> str | None:
     """Get the type annotation of the assignment of the given node.
 
     Args:
-        node (astroid.nodes.Assign or astroid.nodes.AnnAssign): The node
-            to get the annotation for.
+        node: The node to get the annotation for.
 
     Returns:
-        str or None: The type annotation as a string, or None if one
-        does not exist.
+        The type annotation as a string, or None if one does not exist.
     """
     annotation_node = None
     try:
@@ -203,20 +213,20 @@ def get_assign_annotation(node):
     return format_annotation(annotation_node)
 
 
-def is_decorated_with_property(node):
+def is_decorated_with_property(node: astroid.nodes.FunctionDef) -> bool:
     """Check if the function is decorated as a property.
 
     Args:
-        node (astroid.nodes.FunctionDef): The node to check.
+        node: The node to check.
 
     Returns:
-        bool: True if the function is a property, False otherwise.
+        True if the function is a property, False otherwise.
     """
     if not node.decorators:
         return False
 
     for decorator in node.decorators.nodes:
-        if not isinstance(decorator, astroid.Name):
+        if not isinstance(decorator, astroid.nodes.Name):
             continue
 
         try:
@@ -228,8 +238,8 @@ def is_decorated_with_property(node):
     return False
 
 
-def _is_property_decorator(decorator):
-    def _is_property_class(class_node):
+def _is_property_decorator(decorator: astroid.nodes.Name) -> bool:
+    def _is_property_class(class_node: astroid.nodes.ClassDef) -> bool:
         return (
             class_node.name == "property"
             and class_node.root().name == builtins.__name__
@@ -251,15 +261,14 @@ def _is_property_decorator(decorator):
     return False
 
 
-def is_decorated_with_property_setter(node):
+def is_decorated_with_property_setter(node: astroid.nodes.FunctionDef) -> bool:
     """Check if the function is decorated as a property setter.
 
     Args:
-        node (astroid.nodes.FunctionDef): The node to check.
+        node: The node to check.
 
     Returns:
-        bool: True if the function is a property setter, False
-        otherwise.
+        True if the function is a property setter, False otherwise.
     """
     if not node.decorators:
         return False
@@ -274,21 +283,20 @@ def is_decorated_with_property_setter(node):
     return False
 
 
-def is_decorated_with_overload(node):
+def is_decorated_with_overload(node: astroid.nodes.FunctionDef) -> bool:
     """Check if the function is decorated as an overload definition.
 
     Args:
-        node (astroid.nodes.FunctionDef): The node to check.
+        node: The node to check.
 
     Returns:
-        bool: True if the function is an overload definition, False
-        otherwise.
+        True if the function is an overload definition, False otherwise.
     """
     if not node.decorators:
         return False
 
     for decorator in node.decorators.nodes:
-        if not isinstance(decorator, (astroid.Name, astroid.Attribute)):
+        if not isinstance(decorator, (astroid.nodes.Name, astroid.nodes.Attribute)):
             continue
 
         try:
@@ -300,7 +308,9 @@ def is_decorated_with_overload(node):
     return False
 
 
-def _is_overload_decorator(decorator):
+def _is_overload_decorator(
+    decorator: astroid.nodes.Name | astroid.nodes.Attribute,
+) -> bool:
     for inferred in decorator.infer():
         if not isinstance(inferred, astroid.nodes.FunctionDef):
             continue
@@ -311,14 +321,14 @@ def _is_overload_decorator(decorator):
     return False
 
 
-def is_constructor(node):
+def is_constructor(node: astroid.nodes.FunctionDef) -> bool:
     """Check if the function is a constructor.
 
     Args:
-        node (astroid.nodes.FunctionDef): The node to check.
+        node: The node to check.
 
     Returns:
-        bool: True if the function is a constructor, False otherwise.
+        True if the function is a constructor, False otherwise.
     """
     return (
         node.parent
@@ -327,14 +337,14 @@ def is_constructor(node):
     )
 
 
-def is_exception(node):
+def is_exception(node: astroid.nodes.ClassDef) -> bool:
     """Check if a class is an exception.
 
     Args:
-        node (astroid.nodes.ClassDef): The node to check.
+        node: The node to check.
 
     Returns:
-        bool: True if the class is an exception, False otherwise.
+        True if the class is an exception, False otherwise.
     """
     if node.name in ("Exception", "BaseException") and node.root().name == "builtins":
         return True
@@ -345,18 +355,17 @@ def is_exception(node):
     return any(is_exception(parent) for parent in node.ancestors(recurs=True))
 
 
-def is_local_import_from(node, package_name):
+def is_local_import_from(node: astroid.nodes.NodeNG, package_name: str) -> bool:
     """Check if a node is an import from the local package.
 
     Args:
-        node (astroid.node.NodeNG): The node to check.
-        package_name (str): The name of the local package.
+        node: The node to check.
+        package_name: The name of the local package.
 
     Returns:
-        bool: True if the node is an import from the local package,
-        False otherwise.
+        True if the node is an import from the local package. False otherwise.
     """
-    if not isinstance(node, astroid.ImportFrom):
+    if not isinstance(node, astroid.nodes.ImportFrom):
         return False
 
     return (
@@ -366,15 +375,14 @@ def is_local_import_from(node, package_name):
     )
 
 
-def get_module_all(node):
+def get_module_all(node: astroid.nodes.Module) -> list[str] | None:
     """Get the contents of the ``__all__`` variable from a module.
 
     Args:
-        node (astroid.nodes.Module): The module to get ``__all__`` from.
+        node: The module to get ``__all__`` from.
 
     Returns:
-        list(str) or None: The contents of ``__all__`` if defined.
-        Otherwise None.
+        The contents of ``__all__`` if defined. Otherwise ``None``.
     """
     all_ = None
 
@@ -391,7 +399,7 @@ def get_module_all(node):
                 if elt_name is astroid.Uninferable:
                     continue
 
-                if isinstance(elt_name, astroid.Const) and isinstance(
+                if isinstance(elt_name, astroid.nodes.Const) and isinstance(
                     elt_name.value, str
                 ):
                     all_.append(elt_name.value)
@@ -399,11 +407,14 @@ def get_module_all(node):
     return all_
 
 
-def _is_ellipsis(node):
-    return isinstance(node, astroid.Const) and node.value == Ellipsis
+def _is_ellipsis(node: astroid.nodes.NodeNG) -> bool:
+    return isinstance(node, astroid.nodes.Const) and node.value == Ellipsis
 
 
-def merge_annotations(annotations, comment_annotations):
+def merge_annotations(
+    annotations: Iterable[astroid.nodes.NodeNG],
+    comment_annotations: Iterable[astroid.nodes.NodeNG],
+) -> Iterable[astroid.nodes.NodeNG | None]:
     for ann, comment_ann in itertools.zip_longest(annotations, comment_annotations):
         if ann and not _is_ellipsis(ann):
             yield ann
@@ -413,48 +424,50 @@ def merge_annotations(annotations, comment_annotations):
             yield None
 
 
-def _resolve_annotation(annotation):
-    resolved = None
+def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
+    resolved: str
 
-    if isinstance(annotation, astroid.Const):
+    if isinstance(annotation, astroid.nodes.Const):
         resolved = resolve_qualname(annotation, str(annotation.value))
-    elif isinstance(annotation, astroid.Name):
+    elif isinstance(annotation, astroid.nodes.Name):
         resolved = resolve_qualname(annotation, annotation.name)
-    elif isinstance(annotation, astroid.Attribute):
+    elif isinstance(annotation, astroid.nodes.Attribute):
         resolved = resolve_qualname(annotation, annotation.as_string())
-    elif isinstance(annotation, astroid.Subscript):
+    elif isinstance(annotation, astroid.nodes.Subscript):
         value = _resolve_annotation(annotation.value)
         slice_node = annotation.slice
         # astroid.Index was removed in astroid v3
-        if hasattr(astroid, "Index") and isinstance(slice_node, astroid.Index):
+        if hasattr(astroid.nodes, "Index") and isinstance(
+            slice_node, astroid.nodes.Index
+        ):
             slice_node = slice_node.value
         if value == "Literal":
-            if isinstance(slice_node, astroid.Tuple):
+            if isinstance(slice_node, astroid.nodes.Tuple):
                 elts = slice_node.elts
             else:
                 elts = [slice_node]
             slice_ = ", ".join(
                 (
                     elt.as_string()
-                    if isinstance(elt, astroid.Const)
+                    if isinstance(elt, astroid.nodes.Const)
                     else _resolve_annotation(elt)
                 )
                 for elt in elts
             )
-        elif isinstance(slice_node, astroid.Tuple):
+        elif isinstance(slice_node, astroid.nodes.Tuple):
             slice_ = ", ".join(_resolve_annotation(elt) for elt in slice_node.elts)
         else:
             slice_ = _resolve_annotation(slice_node)
         resolved = f"{value}[{slice_}]"
-    elif isinstance(annotation, astroid.Tuple):
+    elif isinstance(annotation, astroid.nodes.Tuple):
         resolved = (
             "(" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + ")"
         )
-    elif isinstance(annotation, astroid.List):
+    elif isinstance(annotation, astroid.nodes.List):
         resolved = (
             "[" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + "]"
         )
-    elif isinstance(annotation, astroid.BinOp) and annotation.op == "|":
+    elif isinstance(annotation, astroid.nodes.BinOp) and annotation.op == "|":
         left = _resolve_annotation(annotation.left)
         right = _resolve_annotation(annotation.right)
         resolved = f"{left} | {right}"
@@ -473,14 +486,18 @@ def _resolve_annotation(annotation):
     return resolved
 
 
-def format_annotation(annotation):
+def format_annotation(annotation: astroid.nodes.NodeNG | None) -> str | None:
     if annotation:
         return _resolve_annotation(annotation)
 
     return annotation
 
 
-def _iter_args(args, annotations, defaults):
+def _iter_args(
+    args: list[astroid.nodes.AssignName],
+    annotations: list[astroid.nodes.NodeNG | None],
+    defaults: list[astroid.nodes.NodeNG],
+) -> Iterable[tuple[str, str | None, str | None]]:
     default_offset = len(args) - len(defaults)
     packed = itertools.zip_longest(args, annotations)
     for i, (arg, annotation) in enumerate(packed):
@@ -490,15 +507,15 @@ def _iter_args(args, annotations, defaults):
                 default = defaults[i - default_offset].as_string()
 
         name = arg.name
-        if isinstance(arg, astroid.Tuple):
+        if isinstance(arg, astroid.nodes.Tuple):
             argument_names = ", ".join(x.name for x in arg.elts)
             name = f"({argument_names})"
 
         yield (name, format_annotation(annotation), default)
 
 
-def get_args_info(args_node):
-    result = []
+def get_args_info(args_node: astroid.nodes.Arguments) -> list[ArgInfo]:
+    result: list[ArgInfo] = []
     positional_only_defaults = []
     positional_or_keyword_defaults = args_node.defaults
     if args_node.defaults:
@@ -536,9 +553,9 @@ def get_args_info(args_node):
         for arg, annotation, default in _iter_args(
             args_node.posonlyargs, posonlyargs_annotations, positional_only_defaults
         ):
-            result.append((None, arg, annotation, default))
+            result.append(ArgInfo(None, arg, annotation, default))
 
-        result.append(("/", None, None, None))
+        result.append(ArgInfo("/", None, None, None))
 
         if not any(args_node.posonlyargs_annotations):
             annotation_offset += num_args
@@ -550,7 +567,7 @@ def get_args_info(args_node):
             annotations[annotation_offset : annotation_offset + num_args],
             positional_or_keyword_defaults,
         ):
-            result.append((None, arg, annotation, default))
+            result.append(ArgInfo(None, arg, annotation, default))
 
         annotation_offset += num_args
 
@@ -561,11 +578,11 @@ def get_args_info(args_node):
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
             annotation = format_annotation(annotations[annotation_offset])
             annotation_offset += 1
-        result.append(("*", args_node.vararg, annotation, None))
+        result.append(ArgInfo("*", args_node.vararg, annotation, None))
 
     if args_node.kwonlyargs:
         if not args_node.vararg:
-            result.append(("*", None, None, None))
+            result.append(ArgInfo("*", None, None, None))
 
         kwonlyargs_annotations = args_node.kwonlyargs_annotations
         if not any(args_node.kwonlyargs_annotations):
@@ -579,7 +596,7 @@ def get_args_info(args_node):
             kwonlyargs_annotations,
             args_node.kw_defaults,
         ):
-            result.append((None, arg, annotation, default))
+            result.append(ArgInfo(None, arg, annotation, default))
 
         if not any(args_node.kwonlyargs_annotations):
             annotation_offset += num_args
@@ -591,7 +608,7 @@ def get_args_info(args_node):
         elif len(annotations) > annotation_offset and annotations[annotation_offset]:
             annotation = format_annotation(annotations[annotation_offset])
             annotation_offset += 1
-        result.append(("**", args_node.kwarg, annotation, None))
+        result.append(ArgInfo("**", args_node.kwarg, annotation, None))
 
     if args_node.parent.type in ("method", "classmethod") and result:
         result.pop(0)
@@ -599,11 +616,14 @@ def get_args_info(args_node):
     return result
 
 
-def get_return_annotation(node):
+def get_return_annotation(node: astroid.nodes.FunctionDef) -> str | None:
     """Get the return annotation of a node.
 
     Args:
-        node (astroid.nodes.FunctionDef)
+        node: The node to get the return annotation for.
+
+    Returns:
+        The return annotation of the given node.
     """
     return_annotation = None
 
@@ -615,12 +635,15 @@ def get_return_annotation(node):
     return return_annotation
 
 
-def get_func_docstring(node):
+def get_func_docstring(node: astroid.nodes.FunctionDef) -> str:
     """Get the docstring of a node, using a parent docstring if needed.
 
     Args:
-        node (astroid.nodes.FunctionDef): The node to get a docstring
-            for.
+        node: The node to get a docstring for.
+
+    Returns:
+        The docstring of the function, or the empty string if no docstring
+        was found or defined.
     """
     doc = node.doc_node.value if node.doc_node else ""
 
@@ -643,11 +666,15 @@ def get_func_docstring(node):
     return doc
 
 
-def get_class_docstring(node):
+def get_class_docstring(node: astroid.nodes.ClassDef) -> str:
     """Get the docstring of a node, using a parent docstring if needed.
 
     Args:
-        node (astroid.nodes.ClassDef): The node to get a docstring for.
+        node: The node to get a docstring for.
+
+    Returns:
+        The docstring of the class, or the empty string if no docstring
+        was found or defined.
     """
     doc = node.doc_node.value if node.doc_node else ""
 
@@ -665,7 +692,7 @@ def get_class_docstring(node):
     return doc
 
 
-def is_abstract_class(node: astroid.ClassDef) -> bool:
+def is_abstract_class(node: astroid.nodes.ClassDef) -> bool:
     metaclass = node.metaclass()
     if metaclass and metaclass.name == "ABCMeta":
         return True
