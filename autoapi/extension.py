@@ -3,9 +3,10 @@
 This extension allows you to automagically generate API documentation from your project.
 """
 
+from __future__ import annotations
+
 import os
 import shutil
-from typing import Dict, Tuple
 
 import sphinx
 from sphinx.util.console import colorize
@@ -40,7 +41,7 @@ _VALID_PAGE_LEVELS = [
     "method",
     "attribute",
 ]
-_VIEWCODE_CACHE: Dict[str, tuple[str, dict[str, tuple[str, int, int]]]] = {}
+_VIEWCODE_CACHE: dict[str, tuple[str, dict[str, tuple[str, int, int]]]] = {}
 """Caches a module's parse results for use in viewcode."""
 
 

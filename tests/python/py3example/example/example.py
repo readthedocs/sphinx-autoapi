@@ -189,6 +189,7 @@ class My123(collections.abc.Sequence):
 
 class InheritBaseError(Exception):
     """The base exception."""
+
     def __init__(self):
         self.my_message = "one"
         """My message."""
@@ -197,6 +198,7 @@ class InheritBaseError(Exception):
 
 class InheritError(InheritBaseError):
     """The middle exception."""
+
     def __init__(self):
         self.my_other_message = "two"
         """My other message."""
@@ -209,6 +211,7 @@ class SubInheritError(InheritError):
 
 class DuplicateInheritError(InheritBaseError):
     """Not the base exception."""
+
     def __init__(self):
         self.my_message = "three"
         super().__init__()
