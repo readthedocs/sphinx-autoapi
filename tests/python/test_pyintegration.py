@@ -277,6 +277,9 @@ class TestPy3Module:
         assert "Initialize self" not in example_file
         assert "a new type" not in example_file
 
+    def test_inheritance(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
         # Test that members are not inherited from standard library classes.
         assert example_file.find(id="example.MyException")
         assert not example_file.find(id="example.MyException.args")
@@ -284,6 +287,33 @@ class TestPy3Module:
         assert example_file.find(id="example.My123")
         assert example_file.find(id="example.My123.__contains__")
         assert example_file.find(id="example.My123.index")
+
+        # Test that classes inherit instance attributes
+        exc = example_file.find(id="example.InheritError")
+        assert exc
+        message = example_file.find(id="example.InheritError.my_message")
+        assert message
+        message_docstring = message.parent.find("dd").text.strip()
+        assert message_docstring == "My message."
+
+        # Test that classes inherit from the whole mro
+        exc = example_file.find(id="example.SubInheritError")
+        assert exc
+        message = example_file.find(id="example.SubInheritError.my_message")
+        message_docstring = message.parent.find("dd").text.strip()
+        assert message_docstring == "My message."
+        message = example_file.find(id="example.SubInheritError.my_other_message")
+        assert message
+        message_docstring = message.parent.find("dd").text.strip()
+        assert message_docstring == "My other message."
+
+        # Test that inherited instance attributes include the docstring
+        exc = example_file.find(id="example.DuplicateInheritError")
+        assert exc
+        message = example_file.find(id="example.DuplicateInheritError.my_message")
+        assert message
+        message_docstring = message.parent.find("dd").text.strip()
+        assert message_docstring == "My message."
 
     def test_annotations(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")

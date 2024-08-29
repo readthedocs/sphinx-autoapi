@@ -185,3 +185,30 @@ class My123(collections.abc.Sequence):
 
     def __len__(self):
         return 3
+
+
+class InheritBaseError(Exception):
+    """The base exception."""
+    def __init__(self):
+        self.my_message = "one"
+        """My message."""
+        super().__init__(self.my_message)
+
+
+class InheritError(InheritBaseError):
+    """The middle exception."""
+    def __init__(self):
+        self.my_other_message = "two"
+        """My other message."""
+        super().__init__()
+
+
+class SubInheritError(InheritError):
+    """The last exception."""
+
+
+class DuplicateInheritError(InheritBaseError):
+    """Not the base exception."""
+    def __init__(self):
+        self.my_message = "three"
+        super().__init__()

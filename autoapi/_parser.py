@@ -152,20 +152,20 @@ class Parser:
                 continue
 
             for child in base.get_children():
-                name = getattr(child, "name", None)
-                if isinstance(child, (astroid.Assign, astroid.AnnAssign)):
-                    assign_value = _astroid_utils.get_assign_value(child)
-                    if not assign_value:
-                        continue
-                    name = assign_value[0]
+                children_data = self.parse(child)
+                for child_data in children_data:
+                    name = child_data["name"]
 
-                if not name or name in overridden:
-                    continue
-                seen.add(name)
-                child_data = self.parse(child)
-                base_children.extend(
-                    _parse_child(node, child_data, overloads, base, name)
-                )
+                    existing_child = children.get(name)
+                    if existing_child and not existing_child["doc"]:
+                        existing_child["doc"] = child_data["doc"]
+
+                    if name in overridden:
+                        continue
+
+                    seen.add(name)
+                    if _parse_child(node, child_data, overloads, base):
+                        base_children.append(child_data)
 
             overridden.update(seen)
 
@@ -297,11 +297,13 @@ class Parser:
         top_name = node.name.split(".", 1)[0]
         for child in node.get_children():
             if _astroid_utils.is_local_import_from(child, top_name):
-                child_data = self._parse_local_import_from(child)
+                children_data = self._parse_local_import_from(child)
             else:
-                child_data = self.parse(child)
+                children_data = self.parse(child)
 
-            data["children"].extend(_parse_child(node, child_data, overloads))
+            for child_data in children_data:
+                if _parse_child(node, child_data, overloads):
+                    data["children"].append(child_data)
 
         return data
 
@@ -346,28 +348,28 @@ class Parser:
                 data = self.parse(child)
                 if data:
                     break
+
         return data
 
 
-def _parse_child(node, child_data, overloads, base=None, name=None):
-    result = []
-    for single_data in child_data:
-        if single_data["type"] in ("function", "method", "property"):
-            if name is None:
-                name = single_data["name"]
-            if name in overloads:
-                grouped = overloads[name]
-                grouped["doc"] = single_data["doc"]
-                if single_data["is_overload"]:
-                    grouped["overloads"].append(
-                        (single_data["args"], single_data["return_annotation"])
-                    )
-                continue
-            if single_data["is_overload"] and name not in overloads:
-                overloads[name] = single_data
+def _parse_child(node, child_data, overloads, base=None) -> bool:
+    if child_data["type"] in ("function", "method", "property"):
+        name = child_data["name"]
+        if name in overloads:
+            grouped = overloads[name]
+            grouped["doc"] = child_data["doc"]
 
-        if base:
-            single_data["inherited"] = base is not node
-        result.append(single_data)
+            if child_data["is_overload"]:
+                grouped["overloads"].append(
+                    (child_data["args"], child_data["return_annotation"])
+                )
 
-    return result
+            return False
+
+        if child_data["is_overload"] and name not in overloads:
+            overloads[name] = child_data
+
+    if base:
+        child_data["inherited"] = base is not node
+
+    return True
