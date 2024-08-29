@@ -335,7 +335,7 @@ class Parser:
         return [data]
 
     def parse(self, node):
-        data = {}
+        data = []
 
         node_type = node.__class__.__name__.lower()
         parse_func = getattr(self, "parse_" + node_type, None)

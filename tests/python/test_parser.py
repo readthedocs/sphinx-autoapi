@@ -39,7 +39,7 @@ class TestPythonParser:
 
     def test_parses_name(self):
         source = "foo.bar"
-        assert self.parse(source) == {}
+        assert self.parse(source) == []
 
     def test_parses_list(self):
         name = "__all__"
