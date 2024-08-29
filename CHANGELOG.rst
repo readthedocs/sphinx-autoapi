@@ -5,6 +5,29 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.3.0 (2024-08-28)
+-------------------
+
+Features
+^^^^^^^^
+
+- Do not document members inherited from standard library classes. (#467)
+
+
+Bugfixes
+^^^^^^^^
+
+- Fix instance attributes not being documented by inherited-members (#477)
+
+
+Misc
+^^^^
+
+- #425
+- Fix the parser returning a dictionary instead of a list in the empty parse scenario
+- Rename testenvs to all follow similar naming style
+
+
 v3.2.1 (2024-07-23)
 -------------------
 

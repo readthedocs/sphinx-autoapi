@@ -1,1 +1,0 @@
-Fix instance attributes not being documented by inherited-members
