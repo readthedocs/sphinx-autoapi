@@ -111,7 +111,7 @@ Finally, you can configure what gets rendered by customising the templates.
 This is a rather heavy handed approach,
 so it should only be necessary when the other options do not give you
 the control the you need.
-You can learn how to customise the templates in the next section;
+You can learn how to customise the templates in the next section:
 :ref:`customise-templates`.
 
 
@@ -265,7 +265,7 @@ and set :confval:`autodoc_typehints` to ``description`` as normal::
 
 .. note::
 
-    Unless :confval:`autodoc_typehints` is set to ``none``,
+    Unless :confval:`autodoc_typehints` is set to ``None``,
     the type annotations of overloads will always be output in the signature
     and never merged into the description
     because it is impossible to represent all overloads as a list of parameters.

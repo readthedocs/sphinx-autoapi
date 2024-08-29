@@ -173,7 +173,7 @@ Customisation Options
    Default: ``None``
 
    A callback that is called shortly after the Jinja environment is created.
-   It passed the Jinja environment for editing before template rendering begins.
+   The callback is passed the Jinja environment for editing before template rendering begins.
 
    The callback should have the following signature:
 
@@ -189,16 +189,16 @@ Customisation Options
    a single page. Valid levels, in descending order of hierarchy, are as
    follows:
 
-      * ``module``: Packages, modules, subpackages, and submodules.
+   * ``module``: Packages, modules, subpackages, and submodules.
 
-      * ``class``: Classes, exceptions, and all object types mentioned above.
+   * ``class``: Classes, exceptions, and all object types mentioned above.
 
-      * ``function``: Functions, and all object types mentioned above.
+   * ``function``: Functions, and all object types mentioned above.
 
-      * ``method``: Methods, and all object types mentioned above.
+   * ``method``: Methods, and all object types mentioned above.
 
-      * ``attribute``: Class and module level attributes, properties,
-        and all object types mentioned above.
+   * ``attribute``: Class and module level attributes, properties,
+     and all object types mentioned above.
 
 
 Events
