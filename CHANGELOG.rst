@@ -5,6 +5,24 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.3.1 (2024-09-01)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Fix all class members missing when documenting a module with the same name as a standard library module
+
+  Members inherited from the standard library can also have their skip value
+  overridden by autoapi-skip-member. (#478)
+
+
+Misc
+^^^^
+
+- Updated all github actions.
+
+
 v3.3.0 (2024-08-28)
 -------------------
 

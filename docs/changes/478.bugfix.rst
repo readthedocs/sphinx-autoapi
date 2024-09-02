@@ -1,4 +1,0 @@
-Fix all class members missing when documenting a module with the same name as a standard library module
-
-Members inherited from the standard library can also have their skip value
-overridden by autoapi-skip-member.
