@@ -1,21 +1,11 @@
 import collections
-import itertools
 import os
-import sys
 
 import astroid
 import astroid.builder
 import sphinx.util.docstrings
 
 from . import _astroid_utils
-
-
-if sys.version_info < (3, 10):  # PY310
-    from stdlib_list import in_stdlib
-else:
-
-    def in_stdlib(module_name: str) -> bool:
-        return module_name in sys.stdlib_module_names
 
 
 def _prepare_docstring(doc):
@@ -117,55 +107,69 @@ class Parser:
 
         return [data]
 
-    def parse_classdef(self, node, data=None):
+    def _parse_classdef(self, node, use_name_stacks):
+        if use_name_stacks:
+            qual_name = self._get_qual_name(node.name)
+            full_name = self._get_full_name(node.name)
+
+            self._qual_name_stack.append(node.name)
+            self._full_name_stack.append(node.name)
+        else:
+            qual_name = node.qname()[len(node.root().qname()) + 1 :]
+            full_name = node.qname()
+
         type_ = "class"
         if _astroid_utils.is_exception(node):
             type_ = "exception"
 
-        basenames = list(_astroid_utils.get_full_basenames(node))
-
         data = {
             "type": type_,
             "name": node.name,
-            "qual_name": self._get_qual_name(node.name),
-            "full_name": self._get_full_name(node.name),
-            "bases": basenames,
+            "qual_name": qual_name,
+            "full_name": full_name,
+            "bases": list(_astroid_utils.get_full_basenames(node)),
             "doc": _prepare_docstring(_astroid_utils.get_class_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "children": [],
+            "is_abstract": _astroid_utils.is_abstract_class(node),
         }
 
-        self._qual_name_stack.append(node.name)
-        self._full_name_stack.append(node.name)
-        overridden = set()
         overloads = {}
+        for child in node.get_children():
+            children_data = self.parse(child)
+            for child_data in children_data:
+                if _parse_child(child_data, overloads):
+                    data["children"].append(child_data)
+
+        data["children"] = list(self._resolve_inheritance(data))
+
+        return data
+
+    def _resolve_inheritance(self, *mro_data):
+        overridden = set()
         children = {}
-        for base in itertools.chain(iter((node,)), node.ancestors()):
+        for i, cls_data in enumerate(mro_data):
             seen = set()
             base_children = []
+            overloads = {}
 
-            # Don't document members inherited from standard library classes
-            # unless that class is abstract.
-            base_module = base.qname().split(".", 1)[0]
-            if in_stdlib(base_module) and not _astroid_utils.is_abstract_class(base):
-                continue
+            for child_data in cls_data["children"]:
+                name = child_data["name"]
 
-            for child in base.get_children():
-                children_data = self.parse(child)
-                for child_data in children_data:
-                    name = child_data["name"]
+                existing_child = children.get(name)
+                if existing_child and not existing_child["doc"]:
+                    existing_child["doc"] = child_data["doc"]
 
-                    existing_child = children.get(name)
-                    if existing_child and not existing_child["doc"]:
-                        existing_child["doc"] = child_data["doc"]
+                if name in overridden:
+                    continue
 
-                    if name in overridden:
-                        continue
-
-                    seen.add(name)
-                    if _parse_child(node, child_data, overloads, base):
-                        base_children.append(child_data)
+                seen.add(name)
+                if _parse_child(child_data, overloads):
+                    base_children.append(child_data)
+                    child_data["inherited"] = i != 0
+                    if child_data["inherited"]:
+                        child_data["inherited_from"] = cls_data
 
             overridden.update(seen)
 
@@ -185,7 +189,29 @@ class Parser:
 
                 children[base_child["name"]] = base_child
 
-        data["children"].extend(children.values())
+        return children.values()
+
+    def _relevant_ancestors(self, node):
+        for base in node.ancestors():
+            if base.qname() in (
+                "__builtins__.object",
+                "builtins.object",
+                "builtins.type",
+            ):
+                continue
+
+            yield base
+
+    def parse_classdef(self, node):
+        data = self._parse_classdef(node, use_name_stacks=True)
+
+        ancestors = self._relevant_ancestors(node)
+        ancestor_data = [
+            self._parse_classdef(base, use_name_stacks=False) for base in ancestors
+        ]
+        if ancestor_data:
+            data["children"] = list(self._resolve_inheritance(data, *ancestor_data))
+
         self._qual_name_stack.pop()
         self._full_name_stack.pop()
 
@@ -227,7 +253,7 @@ class Parser:
             "qual_name": self._get_qual_name(node.name),
             "full_name": self._get_full_name(node.name),
             "args": _astroid_utils.get_args_info(node.args),
-            "doc": _prepare_docstring(_astroid_utils.get_func_docstring(node)),
+            "doc": _prepare_docstring(node.doc_node.value if node.doc_node else ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
             "return_annotation": _astroid_utils.get_return_annotation(node),
@@ -302,7 +328,7 @@ class Parser:
                 children_data = self.parse(child)
 
             for child_data in children_data:
-                if _parse_child(node, child_data, overloads):
+                if _parse_child(child_data, overloads):
                     data["children"].append(child_data)
 
         return data
@@ -352,7 +378,7 @@ class Parser:
         return data
 
 
-def _parse_child(node, child_data, overloads, base=None) -> bool:
+def _parse_child(child_data, overloads) -> bool:
     if child_data["type"] in ("function", "method", "property"):
         name = child_data["name"]
         if name in overloads:
@@ -368,8 +394,5 @@ def _parse_child(node, child_data, overloads, base=None) -> bool:
 
         if child_data["is_overload"] and name not in overloads:
             overloads[name] = child_data
-
-    if base:
-        child_data["inherited"] = base is not node
 
     return True

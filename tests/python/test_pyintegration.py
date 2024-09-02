@@ -1,4 +1,3 @@
-import io
 import os
 import pathlib
 import sys
@@ -1243,3 +1242,51 @@ def test_nothing_to_render_raises_warning(builder):
         builder("pynorender", warningiserror=True)
 
     assert "No modules were rendered" in str(exc_info.value)
+
+
+class TestStdLib:
+    """Check that modules with standard library names are still documented."""
+
+    @pytest.fixture(autouse=True)
+    def built(self, builder):
+        builder("pystdlib")
+
+    def test_integration(self, parse):
+        ssl_file = parse("_build/html/autoapi/ssl/index.html")
+
+        ssl_mod = ssl_file.find(id="ssl")
+        assert "ssl is the same name" in ssl_mod.parent.text
+
+        assert ssl_file.find(id="ssl.SSLContext")
+        wrap_socket = ssl_file.find(id="ssl.SSLContext.wrap_socket")
+        assert wrap_socket
+        wrap_docstring = wrap_socket.parent.find("dd").text.strip()
+        assert wrap_docstring == "Wrap a socket."
+
+        myssl_file = parse("_build/html/autoapi/myssl/index.html")
+
+        # Find members that are not inherited from local standard library classes.
+        ctx = myssl_file.find(id="myssl.MySSLContext")
+        assert ctx
+        meth = myssl_file.find(id="myssl.MySSLContext.my_method")
+        assert meth
+        meth_docstring = meth.parent.find("dd").text.strip()
+        assert meth_docstring == "This is a method."
+
+        # Find members that are inherited from local standard library classes.
+        wrap_socket = myssl_file.find(id="myssl.MySSLContext.wrap_socket")
+        assert not wrap_socket
+
+        myast_file = parse("_build/html/autoapi/myast/index.html")
+
+        # Find members that are not inherited from standard library classes.
+        visitor = myast_file.find(id="myast.MyVisitor")
+        assert visitor
+        meth = myast_file.find(id="myast.MyVisitor.my_visit")
+        assert meth
+        meth_docstring = meth.parent.find("dd").text.strip()
+        assert meth_docstring == "My visit method."
+
+        # Find members that are inherited from standard library classes.
+        meth = myast_file.find(id="myast.MyVisitor.visit")
+        assert not meth

@@ -5,6 +5,7 @@ import itertools
 import operator
 import os
 import re
+import sys
 
 from jinja2 import Environment, FileSystemLoader
 import sphinx
@@ -30,6 +31,14 @@ from ._objects import (
     PythonException,
 )
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
+
+if sys.version_info < (3, 10):  # PY310
+    from stdlib_list import in_stdlib
+else:
+
+    def in_stdlib(module_name: str) -> bool:
+        return module_name in sys.stdlib_module_names
+
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
@@ -451,6 +460,24 @@ class Mapper:
             )
         return None
 
+    def _skip_if_stdlib(self):
+        documented_modules = {obj["full_name"] for obj in self.paths.values()}
+
+        q = collections.deque(self.paths.values())
+        while q:
+            obj = q.popleft()
+            if "children" in obj:
+                q.extend(obj["children"])
+
+            if obj.get("inherited", False):
+                module = obj["inherited_from"]["full_name"].split(".", 1)[0]
+                if (
+                    in_stdlib(module)
+                    and not obj["inherited_from"]["is_abstract"]
+                    and module not in documented_modules
+                ):
+                    obj["hide"] = True
+
     def _resolve_placeholders(self):
         """Resolve objects that have been imported from elsewhere."""
         modules = {}
@@ -477,6 +504,7 @@ class Mapper:
                         child["hide"] = True
 
     def map(self, options=None):
+        self._skip_if_stdlib()
         self._resolve_placeholders()
         self._hide_yo_kids()
         self.app.env.autoapi_annotations = {}

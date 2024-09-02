@@ -1,8 +1,6 @@
-import io
 import os
 import pathlib
 import shutil
-from unittest.mock import call
 
 from bs4 import BeautifulSoup
 import pytest

@@ -644,36 +644,6 @@ def get_return_annotation(node: astroid.nodes.FunctionDef) -> str | None:
     return return_annotation
 
 
-def get_func_docstring(node: astroid.nodes.FunctionDef) -> str:
-    """Get the docstring of a node, using a parent docstring if needed.
-
-    Args:
-        node: The node to get a docstring for.
-
-    Returns:
-        The docstring of the function, or the empty string if no docstring
-        was found or defined.
-    """
-    doc = node.doc_node.value if node.doc_node else ""
-
-    if not doc and isinstance(node.parent, astroid.nodes.ClassDef):
-        for base in node.parent.ancestors():
-            if node.name in ("__init__", "__new__"):
-                base_module = base.qname().split(".", 1)[0]
-                if in_stdlib(base_module):
-                    continue
-
-            for child in base.get_children():
-                if (
-                    isinstance(child, node.__class__)
-                    and child.name == node.name
-                    and child.doc_node is not None
-                ):
-                    return child.doc_node.value
-
-    return doc
-
-
 def get_class_docstring(node: astroid.nodes.ClassDef) -> str:
     """Get the docstring of a node, using a parent docstring if needed.
 
