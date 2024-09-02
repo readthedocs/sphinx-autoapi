@@ -1,9 +1,9 @@
 """This is a docstring."""
 
-from ssl import SSLContext
+from json import JSONDecoder
 
 
-class MySSLContext(SSLContext):
+class MyJSONDecoder(JSONDecoder):
     """This is a class."""
 
     def my_method(self):

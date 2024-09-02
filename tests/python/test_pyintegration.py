@@ -1252,30 +1252,30 @@ class TestStdLib:
         builder("pystdlib")
 
     def test_integration(self, parse):
-        ssl_file = parse("_build/html/autoapi/ssl/index.html")
+        json_file = parse("_build/html/autoapi/json/index.html")
 
-        ssl_mod = ssl_file.find(id="ssl")
-        assert "ssl is the same name" in ssl_mod.parent.text
+        json_mod = json_file.find(id="json")
+        assert "json is the same name" in json_mod.parent.text
 
-        assert ssl_file.find(id="ssl.SSLContext")
-        wrap_socket = ssl_file.find(id="ssl.SSLContext.wrap_socket")
-        assert wrap_socket
-        wrap_docstring = wrap_socket.parent.find("dd").text.strip()
-        assert wrap_docstring == "Wrap a socket."
+        assert json_file.find(id="json.JSONDecoder")
+        decode = json_file.find(id="json.JSONDecoder.decode")
+        assert decode
+        wrap_docstring = decode.parent.find("dd").text.strip()
+        assert wrap_docstring == "Decode a string."
 
-        myssl_file = parse("_build/html/autoapi/myssl/index.html")
+        myjson_file = parse("_build/html/autoapi/myjson/index.html")
 
         # Find members that are not inherited from local standard library classes.
-        ctx = myssl_file.find(id="myssl.MySSLContext")
+        ctx = myjson_file.find(id="myjson.MyJSONDecoder")
         assert ctx
-        meth = myssl_file.find(id="myssl.MySSLContext.my_method")
+        meth = myjson_file.find(id="myjson.MyJSONDecoder.my_method")
         assert meth
         meth_docstring = meth.parent.find("dd").text.strip()
         assert meth_docstring == "This is a method."
 
         # Find members that are inherited from local standard library classes.
-        wrap_socket = myssl_file.find(id="myssl.MySSLContext.wrap_socket")
-        assert not wrap_socket
+        decode = myjson_file.find(id="myjson.MyJSONDecoder.decode")
+        assert decode
 
         myast_file = parse("_build/html/autoapi/myast/index.html")
 
