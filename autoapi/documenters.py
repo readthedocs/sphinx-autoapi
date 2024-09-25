@@ -98,7 +98,7 @@ class _AutoapiDocstringSignatureMixin:
 
 
 class AutoapiFunctionDocumenter(
-    AutoapiDocumenter, autodoc.FunctionDocumenter, _AutoapiDocstringSignatureMixin
+    AutoapiDocumenter, _AutoapiDocstringSignatureMixin, autodoc.FunctionDocumenter
 ):
     objtype = "apifunction"
     directivetype = "function"
@@ -147,9 +147,7 @@ class AutoapiDecoratorDocumenter(
         return "(" + to_format + ")"
 
 
-class AutoapiClassDocumenter(
-    AutoapiDocumenter, autodoc.ClassDocumenter, _AutoapiDocstringSignatureMixin
-):
+class AutoapiClassDocumenter(AutoapiDocumenter, autodoc.ClassDocumenter):
     objtype = "apiclass"
     directivetype = "class"
     doc_as_attr = False
@@ -174,9 +172,18 @@ class AutoapiClassDocumenter(
                 bases = ", ".join(f":class:`{base}`" for base in self.object.bases)
                 self.add_line(f"   Bases: {bases}", sourcename)
 
+    def format_signature(self, **kwargs):
+        # Set "manual" attributes at the last possible moment.
+        # This is to let a manual entry or docstring searching happen first,
+        # and falling back to the discovered signature only when necessary.
+        if self.args is None:
+            self.args = self.object.args
+
+        return super().format_signature(**kwargs)
+
 
 class AutoapiMethodDocumenter(
-    AutoapiDocumenter, autodoc.MethodDocumenter, _AutoapiDocstringSignatureMixin
+    AutoapiDocumenter, _AutoapiDocstringSignatureMixin, autodoc.MethodDocumenter
 ):
     objtype = "apimethod"
     directivetype = "method"
@@ -230,15 +237,15 @@ class AutoapiPropertyDocumenter(AutoapiDocumenter, autodoc.PropertyDocumenter):
         autodoc.ClassLevelDocumenter.add_directive_header(self, sig)
 
         sourcename = self.get_sourcename()
-        if self.options.annotation and self.options.annotation is not autodoc.SUPPRESS:
-            self.add_line(f"   :type: {self.options.annotation}", sourcename)
-
         for property_type in (
             "abstractmethod",
             "classmethod",
         ):
             if property_type in self.object.properties:
                 self.add_line(f"   :{property_type}:", sourcename)
+
+        if self.object.annotation:
+            self.add_line(f"   :type: {self.object.annotation}", sourcename)
 
 
 class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
@@ -254,13 +261,15 @@ class AutoapiDataDocumenter(AutoapiDocumenter, autodoc.DataDocumenter):
         autodoc.ModuleLevelDocumenter.add_directive_header(self, sig)
         sourcename = self.get_sourcename()
         if not self.options.annotation:
-            # TODO: Change sphinx to allow overriding of object description
             if self.object.value is not None:
-                self.add_line(f"   :annotation: = {self.object.value}", sourcename)
+                self.add_line(f"   :value: {self.object.value}", sourcename)
         elif self.options.annotation is autodoc.SUPPRESS:
             pass
         else:
             self.add_line(f"   :annotation: {self.options.annotation}", sourcename)
+
+        if self.object.annotation:
+            self.add_line(f"   :type: {self.object.annotation}", sourcename)
 
 
 class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter):
@@ -277,13 +286,15 @@ class AutoapiAttributeDocumenter(AutoapiDocumenter, autodoc.AttributeDocumenter)
         autodoc.ClassLevelDocumenter.add_directive_header(self, sig)
         sourcename = self.get_sourcename()
         if not self.options.annotation:
-            # TODO: Change sphinx to allow overriding of object description
             if self.object.value is not None:
-                self.add_line(f"   :annotation: = {self.object.value}", sourcename)
+                self.add_line(f"   :value: {self.object.value}", sourcename)
         elif self.options.annotation is autodoc.SUPPRESS:
             pass
         else:
             self.add_line(f"   :annotation: {self.options.annotation}", sourcename)
+
+        if self.object.annotation:
+            self.add_line(f"   :type: {self.object.annotation}", sourcename)
 
 
 class AutoapiModuleDocumenter(AutoapiDocumenter, autodoc.ModuleDocumenter):

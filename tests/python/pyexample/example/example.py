@@ -3,6 +3,7 @@
 This is a description
 """
 
+from dataclasses import dataclass
 from functools import cached_property
 
 A_TUPLE = ("a", "b")
@@ -171,3 +172,26 @@ def fn_with_long_sig(
     arguments
 ):
     """A function with a long signature."""
+
+
+TYPED_DATA: int = 1
+"""This is TYPED_DATA."""
+
+
+@dataclass
+class TypedAttrs:
+    one: str
+    """This is TypedAttrs.one."""
+    two: int = 1
+    """This is TypedAttrs.two."""
+
+
+class TypedClassInit:
+    """This is TypedClassInit."""
+
+    def __init__(self, one: int = 1) -> None:
+        self._one = one
+
+    def typed_method(self, two: int) -> int:
+        """This is TypedClassInit.typed_method."""
+        return self._one + two

@@ -177,6 +177,74 @@ class TestSimpleModuleManual:
         example_file = parse("_build/html/manualapi.html")
         assert example_file.find(id="example.decorator_okay")
 
+    def test_dataclass(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+
+        typedattrs_sig = example_file.find(id="example.TypedAttrs")
+        assert typedattrs_sig
+
+        typedattrs = typedattrs_sig.parent
+
+        one = typedattrs.find(id="example.TypedAttrs.one")
+        assert one
+        one_value = one.find_all(class_="property")
+        assert one_value[0].text == ": str"
+        one_docstring = one.parent.find("dd").contents[0].text
+        assert one_docstring.strip() == "This is TypedAttrs.one."
+
+        two = typedattrs.find(id="example.TypedAttrs.two")
+        assert two
+        two_value = two.find_all(class_="property")
+        assert two_value[0].text == ": int"
+        assert two_value[1].text == " = 1"
+        two_docstring = two.parent.find("dd").contents[0].text
+        assert two_docstring.strip() == "This is TypedAttrs.two."
+
+    def test_data(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+
+        typed_data = example_file.find(id="example.TYPED_DATA")
+        assert typed_data
+        typed_data_value = typed_data.find_all(class_="property")
+        assert typed_data_value[0].text == ": int"
+        assert typed_data_value[1].text == " = 1"
+
+        typed_data_docstring = typed_data.parent.find("dd").contents[0].text
+        assert typed_data_docstring.strip() == "This is TYPED_DATA."
+
+    def test_class(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+
+        typed_cls = example_file.find(id="example.TypedClassInit")
+        assert typed_cls
+        arg = typed_cls.find(class_="sig-param")
+        assert arg.text == "one: int = 1"
+        typed_cls_docstring = typed_cls.parent.find("dd").contents[0].text
+        assert typed_cls_docstring.strip() == "This is TypedClassInit."
+
+        typed_method = example_file.find(id="example.TypedClassInit.typed_method")
+        assert typed_method
+        arg = typed_method.find(class_="sig-param")
+        assert arg.text == "two: int"
+        return_type = typed_method.find(class_="sig-return-typehint")
+        assert return_type.text == "int"
+        typed_method_docstring = typed_method.parent.find("dd").contents[0].text
+        assert typed_method_docstring.strip() == "This is TypedClassInit.typed_method."
+
+    def test_property(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+
+        foo_sig = example_file.find(id="example.Foo")
+        assert foo_sig
+        foo = foo_sig.parent
+
+        property_simple = foo.find(id="example.Foo.property_simple")
+        assert property_simple
+        property_simple_value = property_simple.find_all(class_="property")
+        assert property_simple_value[-1].text == ": int"
+        property_simple_docstring = property_simple.parent.find("dd").text.strip()
+        assert property_simple_docstring == "This property should parse okay."
+
 
 class TestMovedConfPy(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
