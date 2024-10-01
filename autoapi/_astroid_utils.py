@@ -129,7 +129,7 @@ def get_full_basenames(node: astroid.nodes.ClassDef) -> Iterable[str]:
         node: The class definition node to resolve the bases of.
 
     Returns:
-        The fullly qualified names.
+        The fully qualified names.
     """
     for base in node.bases:
         yield _resolve_annotation(base)
