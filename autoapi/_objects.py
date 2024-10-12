@@ -248,7 +248,7 @@ class PythonObject:
         return ask_result if ask_result is not None else skip
 
     def _children_of_type(self, type_: str) -> list[PythonObject]:
-        return list(child for child in self.children if child.type == type_)
+        return [child for child in self.children if child.type == type_]
 
 
 class PythonFunction(PythonObject):
