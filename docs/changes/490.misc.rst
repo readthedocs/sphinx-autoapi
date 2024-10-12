@@ -1,0 +1,1 @@
+Fix ruff compressions and performance issues, limit new version of sphinx, add Py312,Py313 to trove classifiers
