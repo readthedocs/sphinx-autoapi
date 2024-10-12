@@ -43,7 +43,8 @@ def _import_class(name, currmodule):
 
     if isinstance(target, astroid.Module):
         return [
-            child for child in target.get_children()
+            child
+            for child in target.get_children()
             if isinstance(child, astroid.ClassDef)
         ]
 
