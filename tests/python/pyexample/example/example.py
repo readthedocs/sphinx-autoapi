@@ -169,7 +169,7 @@ def fn_with_long_sig(
     signature,
     many,
     keyword,
-    arguments
+    arguments,
 ):
     """A function with a long signature."""
 
