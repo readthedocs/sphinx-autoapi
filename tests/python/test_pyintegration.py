@@ -459,6 +459,13 @@ class TestPy3Module:
 
         assert example_file.find(id="example.A.instance_var")
 
+        # Locals are excluded
+        assert not example_file.find(id="example.A.local_variable_typed")
+        assert not example_file.find(id="example.A.local_variable_untyped")
+
+        # Assignments to subobjects are excluded
+        assert not example_file.find(id="example.A.subobject_variable")
+
         global_a = example_file.find(id="example.global_a")
         assert global_a
         global_a_value = global_a.find_all(class_="property")
