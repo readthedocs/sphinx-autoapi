@@ -15,6 +15,7 @@
    {% endfor %}
 
    {% if obj.docstring %}
+
    {{ obj.docstring|indent(3) }}
    {% endif %}
 {% endif %}
