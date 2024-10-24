@@ -267,6 +267,23 @@ class Parser:
         if node.name == "__init__":
             for child in node.get_children():
                 if isinstance(child, (astroid.nodes.Assign, astroid.nodes.AnnAssign)):
+                    # Verify we are assigning to self.
+                    if isinstance(child, astroid.nodes.Assign):
+                        targets = child.targets
+                    else:
+                        targets = [child.target]
+
+                    target_ok = True
+                    for target in targets:
+                        if not isinstance(target, astroid.nodes.AssignAttr):
+                            target_ok = False
+                            break
+                        _object = target.expr
+                        if not isinstance(_object, astroid.nodes.Name) or _object.name != "self":
+                            target_ok = False
+                            break
+                    if not target_ok:
+                        continue
                     child_data = self._parse_assign(child)
                     result.extend(data for data in child_data)
 

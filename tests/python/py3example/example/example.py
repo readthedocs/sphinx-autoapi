@@ -92,6 +92,12 @@ class A:
         self.instance_var: bool = True
         """This is an instance_var."""
 
+        self.subobject: object = object()
+        self.subobject.subobject_variable = 1
+
+        local_variable_typed: int = 0
+        local_variable_untyped = 2
+
     async def async_method(self, wait: bool) -> int:
         if wait:
             await asyncio.sleep(1)
