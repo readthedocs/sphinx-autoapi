@@ -279,7 +279,10 @@ class Parser:
                             target_ok = False
                             break
                         _object = target.expr
-                        if not isinstance(_object, astroid.nodes.Name) or _object.name != "self":
+                        if (
+                            not isinstance(_object, astroid.nodes.Name)
+                            or _object.name != "self"
+                        ):
                             target_ok = False
                             break
                     if not target_ok:
