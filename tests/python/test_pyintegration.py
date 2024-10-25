@@ -1,3 +1,4 @@
+import logging
 import os
 import pathlib
 import sys
@@ -1305,11 +1306,18 @@ class TestMemberOrder:
         assert method_tricky.sourceline < method_sphinx_docs.sourceline
 
 
-def test_nothing_to_render_raises_warning(builder):
-    with pytest.raises(sphinx.errors.SphinxWarning) as exc_info:
-        builder("pynorender", warningiserror=True)
+def test_nothing_to_render_raises_warning(builder, caplog):
+    caplog.set_level(logging.WARNING, logger="autoapi._mapper")
+    if sphinx_version >= (8, 1):
+        status = builder("pynorender", warningiserror=True)
+        assert status
+    else:
+        with pytest.raises(sphinx.errors.SphinxWarning):
+            builder("pynorender", warningiserror=True)
 
-    assert "No modules were rendered" in str(exc_info.value)
+    assert any(
+        "No modules were rendered" in record.message for record in caplog.records
+    )
 
 
 class TestStdLib:

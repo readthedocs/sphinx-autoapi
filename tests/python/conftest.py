@@ -9,7 +9,7 @@ from sphinx.application import Sphinx
 
 @pytest.fixture(scope="session")
 def rebuild():
-    def _rebuild(confdir=".", **kwargs):
+    def _rebuild(confdir=".", **kwargs) -> int:
         app = Sphinx(
             srcdir=".",
             confdir=confdir,
@@ -20,6 +20,7 @@ def rebuild():
             **kwargs,
         )
         app.build()
+        return app.statuscode
 
     return _rebuild
 
@@ -28,7 +29,7 @@ def rebuild():
 def builder(rebuild):
     cwd = os.getcwd()
 
-    def build(test_dir, **kwargs):
+    def build(test_dir, **kwargs) -> int:
         if kwargs.get("warningiserror"):
             # Add any warnings raised when using `Sphinx` more than once
             # in a Python session.
@@ -40,7 +41,7 @@ def builder(rebuild):
             suppress.append("app.add_role")
 
         os.chdir(f"tests/python/{test_dir}")
-        rebuild(**kwargs)
+        return rebuild(**kwargs)
 
     yield build
 
