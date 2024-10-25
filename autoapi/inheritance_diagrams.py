@@ -42,11 +42,11 @@ def _import_class(name, currmodule):
         return [target]
 
     if isinstance(target, astroid.Module):
-        classes = []
-        for child in target.get_children():
-            if isinstance(child, astroid.ClassDef):
-                classes.append(child)
-        return classes
+        return [
+            child
+            for child in target.get_children()
+            if isinstance(child, astroid.ClassDef)
+        ]
 
     raise sphinx.ext.inheritance_diagram.InheritanceException(
         f"{name} specified for inheritance diagram is not a class or module"
