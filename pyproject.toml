@@ -1,15 +1,15 @@
 [build-system]
-requires = ["setuptools>=61.2"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
 
 [project]
 name = "sphinx-autoapi"
 authors = [{name = "Eric Holscher", email = "eric@ericholscher.com"}]
 maintainers = [{name = "Ashley Whetter", email = "ashley@awhetter.co.uk"}]
 description = "Sphinx API documentation generator"
-license = {text = "MIT"}
+license = {text = "LICENSE.rst"}
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Plugins",
     "Framework :: Sphinx :: Extension",
     "Intended Audience :: Developers",
@@ -21,6 +21,8 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 requires-python = ">=3.8"
 dependencies = [
@@ -28,7 +30,7 @@ dependencies = [
     'astroid>=3.0.0a1;python_version>="3.12"',
     "Jinja2",
     "PyYAML",
-    "sphinx>=6.1.0,<8.1.0",
+    "sphinx>=6.1.0",
     'stdlib_list;python_version<"3.10"',
 ]
 dynamic = ["version"]
@@ -41,29 +43,8 @@ content-type = "text/x-rst"
 Homepage = "http://github.com/readthedocs/sphinx-autoapi"
 Documentation = "https://sphinx-autoapi.readthedocs.io/en/latest/"
 
-[project.optional-dependencies]
-docs = [
-    "furo",
-    "sphinx",
-    "sphinx_design",
-]
-
-[tool.setuptools]
-include-package-data = true
-license-files = ["LICENSE.rst"]
-
-[tool.setuptools.packages.find]
-include = [
-    "autoapi",
-    "autoapi.*",
-]
-namespaces = false
-
-[tool.setuptools.dynamic]
-version = {attr = "autoapi.__version__"}
-
-[tool.distutils.bdist_wheel]
-universal = 1
+[tool.flit.module]
+name = "autoapi"
 
 [tool.mypy]
 # Start off with these
