@@ -67,9 +67,7 @@ class TestAstroidUtils:
         {}
         class ThisClass({}): #@
             pass
-        """.format(
-            import_, basename
-        )
+        """.format(import_, basename)
         node = astroid.extract_node(source)
         basenames = _astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
@@ -82,9 +80,7 @@ class TestAstroidUtils:
         {}
         class ThisClass({}): #@
             pass
-        """.format(
-            import_, basename
-        )
+        """.format(import_, basename)
         node = astroid.extract_node(source)
         basenames = _astroid_utils.resolve_qualname(node.bases[0], node.basenames[0])
         assert basenames == expected
@@ -163,9 +159,7 @@ class TestAstroidUtils:
             """
             def func({}) -> str: #@
                 pass
-        """.format(
-                signature
-            )
+        """.format(signature)
         )
 
         annotations = _astroid_utils.get_args_info(node.args)
@@ -227,9 +221,7 @@ class TestAstroidUtils:
             """
             def func({}) -> str: #@
                 pass
-        """.format(
-                signature
-            )
+        """.format(signature)
         )
 
         args_info = _astroid_utils.get_args_info(node.args)

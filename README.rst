@@ -17,9 +17,9 @@ Sphinx AutoAPI
     :target: https://pypi.org/project/sphinx-autoapi/
     :alt: Supported Python Versions
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/python/black
-    :alt: Formatted with Black
+.. image:: https://img.shields.io/badge/code%20style-ruff-000000.svg
+    :target: https://docs.astral.sh/ruff/
+    :alt: Formatted with Ruff
 
 Sphinx AutoAPI is a Sphinx extension for generating complete API documentation
 without needing to load, run, or import the project being documented.
@@ -77,27 +77,19 @@ Tests are executed through `tox <https://tox.readthedocs.io/en/latest/>`_.
 Code Style
 ~~~~~~~~~~
 
-Code is formatted using `black <https://github.com/python/black>`_.
+Code is formatted using `ruff <https://docs.astral.sh/ruff>`_.
 
-You can check your formatting using black's check mode:
+You can check your formatting using ruff format's check mode:
 
 .. code-block:: bash
 
     tox -e format
 
-You can also get black to format your changes for you:
+You can also get ruff to format your changes for you:
 
 .. code-block:: bash
 
-    black autoapi/ tests/
-
-You can even get black to format changes automatically when you commit using `pre-commit <https://pre-commit.com/>`_:
-
-
-.. code-block:: bash
-
-    pip install pre-commit
-    pre-commit install
+    ruff format
 
 Release Notes
 ~~~~~~~~~~~~~
