@@ -28,11 +28,9 @@ class TestModule:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        subpackages = package_file.find(id="subpackages")
-        assert subpackages
-        assert subpackages.find("a", string="package.subpackage")
         submodules = package_file.find(id="submodules")
         assert submodules
+        assert submodules.find("a", string="package.subpackage")
         assert submodules.find("a", string="package.submodule")
 
         # There should not be links to the children without their own page
@@ -66,7 +64,6 @@ class TestModule:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        assert not subpackage_file.find(id="subpackages")
         submodules = subpackage_file.find(id="submodules")
         assert submodules
         assert submodules.find("a", string="package.subpackage.submodule")
@@ -98,7 +95,6 @@ class TestModule:
 
         # There should not be links to the children without their own page
         assert not submodule_file.find(id="submodules")
-        assert not submodule_file.find(id="subpackages")
         assert not submodule_file.find(id="attributes")
         assert not submodule_file.find(id="exceptions")
         assert not submodule_file.find(id="classes")
@@ -177,11 +173,9 @@ class TestClass:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        subpackages = package_file.find(id="subpackages")
-        assert subpackages
-        assert subpackages.find("a", string="package.subpackage")
         submodules = package_file.find(id="submodules")
         assert submodules
+        assert submodules.find("a", string="package.subpackage")
         assert submodules.find("a", string="package.submodule")
         exceptions = package_file.find(id="exceptions")
         assert exceptions
@@ -230,7 +224,6 @@ class TestClass:
 
         # There should not be links to the children without their own page
         assert not submodule_file.find(id="submodules")
-        assert not submodule_file.find(id="subpackages")
         assert not submodule_file.find(id="attributes")
         assert not submodule_file.find(id="functions")
 
@@ -388,11 +381,9 @@ class TestFunction:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        subpackages = package_file.find(id="subpackages")
-        assert subpackages
-        assert subpackages.find("a", string="package.subpackage")
         submodules = package_file.find(id="submodules")
         assert submodules
+        assert submodules.find("a", string="package.subpackage")
         assert submodules.find("a", string="package.submodule")
         classes = package_file.find(id="classes")
         assert classes
@@ -445,7 +436,6 @@ class TestFunction:
 
         # There should not be links to the children without their own page
         assert not submodule_file.find(id="submodules")
-        assert not submodule_file.find(id="subpackages")
         assert not submodule_file.find(id="attributes")
 
         # Children without their own page should be rendered on this page,
@@ -578,11 +568,9 @@ class TestMethod:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        subpackages = package_file.find(id="subpackages")
-        assert subpackages
-        assert subpackages.find("a", string="package.subpackage")
         submodules = package_file.find(id="submodules")
         assert submodules
+        assert submodules.find("a", string="package.subpackage")
         assert submodules.find("a", string="package.submodule")
         classes = package_file.find(id="classes")
         assert classes
@@ -635,7 +623,6 @@ class TestMethod:
 
         # There should not be links to the children without their own page
         assert not submodule_file.find(id="submodules")
-        assert not submodule_file.find(id="subpackages")
         assert not submodule_file.find(id="attributes")
 
         # Children without their own page should be rendered on this page,
@@ -792,11 +779,9 @@ class TestAttribute:
         assert docstring.text == "This is a docstring."
 
         # There should be links to the children with their own page
-        subpackages = package_file.find(id="subpackages")
-        assert subpackages
-        assert subpackages.find("a", string="package.subpackage")
         submodules = package_file.find(id="submodules")
         assert submodules
+        assert submodules.find("a", string="package.subpackage")
         assert submodules.find("a", string="package.submodule")
         classes = package_file.find(id="classes")
         assert classes
@@ -843,7 +828,6 @@ class TestAttribute:
 
         # There should not be links to the children without their own page
         assert not submodule_file.find(id="submodules")
-        assert not submodule_file.find(id="subpackages")
 
         # Children without their own page should be rendered on this page,
         # and children with their own page should not be rendered on this page.
