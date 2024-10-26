@@ -158,6 +158,10 @@ class Two(One):
     """Two."""
 
 
+class Three:
+    __init__ = Two.__init__
+
+
 def fn_with_long_sig(
     this,
     *,

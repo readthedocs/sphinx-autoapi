@@ -506,6 +506,9 @@ class PythonClass(PythonObject):
     def constructor(self):
         for child in self.children:
             if child.short_name == "__init__":
+                if not child.type == "method":
+                    break
+
                 return child
 
         return None
