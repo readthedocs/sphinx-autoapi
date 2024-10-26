@@ -91,14 +91,6 @@ You can also get ruff to format your changes for you:
 
     ruff format
 
-You can even get ruff to format changes automatically when you commit using `pre-commit <https://pre-commit.com/>`_:
-
-
-.. code-block:: bash
-
-    pip install pre-commit
-    pre-commit install
-
 Release Notes
 ~~~~~~~~~~~~~
 
