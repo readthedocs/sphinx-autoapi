@@ -1,1 +1,0 @@
-Document packages and modules under a single "submodules" heading

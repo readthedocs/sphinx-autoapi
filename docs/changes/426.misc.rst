@@ -1,3 +1,0 @@
-Switch from setuptools to flit.
-
-Also removed docs extra and placed dependencies in tox.ini.

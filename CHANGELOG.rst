@@ -5,6 +5,23 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.3.3 (2024-10-25)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Document packages and modules under a single "submodules" heading (#450)
+- Fix crash when __init__ is assigned to (#488)
+- Fix documenting incorrect attributes from __init__ (#497)
+
+
+Misc
+^^^^
+
+- #426, #462, #491, #492
+
+
 v3.3.2 (2024-09-25)
 -------------------
 
