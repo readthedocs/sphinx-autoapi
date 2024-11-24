@@ -1,0 +1,1 @@
+Make _need_to_load not assume that file ordering remained the same
