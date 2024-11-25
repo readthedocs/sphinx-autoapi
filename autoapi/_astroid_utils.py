@@ -145,9 +145,7 @@ def _get_const_value(node: astroid.nodes.NodeNG) -> str | None:
 
     def _inner(node: astroid.nodes.NodeNG) -> Any:
         if isinstance(node, (astroid.nodes.List, astroid.nodes.Tuple)):
-            new_value = []
-            for element in node.elts:
-                new_value.append(_inner(element))
+            new_value = [_inner(element) for element in node.elts]
 
             if isinstance(node, astroid.nodes.Tuple):
                 return tuple(new_value)
