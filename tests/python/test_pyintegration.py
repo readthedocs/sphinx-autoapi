@@ -246,6 +246,29 @@ class TestSimpleModuleManual:
         property_simple_docstring = property_simple.parent.find("dd").text.strip()
         assert property_simple_docstring == "This property should parse okay."
 
+    def test_namedtuple(self, parse):
+        example_file = parse("_build/html/manualapi.html")
+
+        uv_sig = example_file.find(id="example.UniqueValue")
+        assert uv_sig
+        assert uv_sig.find(class_="pre").text.strip() == "class"
+
+        value_sig = example_file.find(id="example.UniqueValue.value")
+        assert value_sig
+
+        count_sig = example_file.find(id="example.UniqueValue.count")
+        assert count_sig
+
+        tuv_sig = example_file.find(id="example.TypedUniqueValue")
+        assert tuv_sig
+        assert tuv_sig.find(class_="pre").text.strip() == "class"
+
+        value_sig = example_file.find(id="example.TypedUniqueValue.value")
+        assert value_sig
+
+        count_sig = example_file.find(id="example.TypedUniqueValue.count")
+        assert count_sig
+
 
 class TestMovedConfPy(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")

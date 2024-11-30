@@ -3,8 +3,10 @@
 This is a description
 """
 
+import collections
 from dataclasses import dataclass
 from functools import cached_property
+import typing
 
 A_TUPLE = ("a", "b")
 """A tuple to be rendered as a tuple."""
@@ -199,3 +201,11 @@ class TypedClassInit:
     def typed_method(self, two: int) -> int:
         """This is TypedClassInit.typed_method."""
         return self._one + two
+
+
+UniqueValue = collections.namedtuple("UniqueValue", ("value", "count"))
+
+
+TypedUniqueValue = typing.NamedTuple(
+    "TypedUniqueValue", [("value", str), ("count", int)]
+)

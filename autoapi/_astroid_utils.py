@@ -135,7 +135,18 @@ def get_full_basenames(node: astroid.nodes.ClassDef) -> Iterable[str]:
         yield _resolve_annotation(base)
 
 
-def _get_const_value(node: astroid.nodes.NodeNG) -> str | None:
+def get_const_value(node: astroid.nodes.NodeNG) -> str | None:
+    """Get the string representation of the value represented by a node.
+
+    The value must be a constant or container of constants.
+
+    Args:
+        node: The node to get the representation of.
+
+    Returns:
+        The string representation of the value represented by the node
+        (if it can be converted).
+    """
     if isinstance(node, astroid.nodes.Const):
         if isinstance(node.value, str) and "\n" in node.value:
             return f'"""{node.value}"""'
@@ -168,19 +179,18 @@ def _get_const_value(node: astroid.nodes.NodeNG) -> str | None:
     return repr(result)
 
 
-def get_assign_value(
+def _get_assign_target_node(
     node: astroid.nodes.Assign | astroid.nodes.AnnAssign,
-) -> tuple[str, str | None] | None:
-    """Get the name and value of the assignment of the given node.
+) -> astroid.nodes.NodeNG | None:
+    """Get the target of the given assignment node.
 
-    Assignments to multiple names are ignored, as per PEP 257.
+    Assignments to multiple names are ignored, as per :pep:`257`.
 
     Args:
         node: The node to get the assignment value from.
 
     Returns:
-        The name that is assigned to, and the string representation of
-        the value assigned to the name (if it can be converted).
+        The node representing the name that is assigned to.
     """
     try:
         targets = node.targets
@@ -189,15 +199,40 @@ def get_assign_value(
 
     if len(targets) == 1:
         target = targets[0]
-        if isinstance(target, astroid.nodes.AssignName):
-            name = target.name
-        elif isinstance(target, astroid.nodes.AssignAttr):
-            name = target.attrname
-        else:
-            return None
-        return (name, _get_const_value(node.value))
+        if isinstance(target, (astroid.nodes.AssignName, astroid.nodes.AssignAttr)):
+            return target
 
     return None
+
+
+def get_assign_value(
+    node: astroid.nodes.Assign | astroid.nodes.AnnAssign,
+) -> tuple[str, str | None] | None:
+    """Get the name and value of the assignment of the given node.
+
+    Assignments to multiple names are ignored, as per :pep:`257`.
+
+    Args:
+        node: The node to get the assignment value from.
+
+    Returns:
+        The name that is assigned to, and the string representation of
+        the value assigned to the name (if it can be converted).
+    """
+    target = _get_assign_target_node(node)
+
+    if isinstance(target, astroid.nodes.AssignName):
+        name = target.name
+    elif isinstance(target, astroid.nodes.AssignAttr):
+        name = target.attrname
+    else:
+        return None
+
+    value = next(target.infer())
+    if value is astroid.util.Uninferable:
+        value = None
+
+    return (name, value)
 
 
 def get_assign_annotation(
@@ -680,3 +715,18 @@ def is_abstract_class(node: astroid.nodes.ClassDef) -> bool:
         return True
 
     return False
+
+
+def is_functional_namedtuple(node: astroid.nodes.NodeNG) -> bool:
+    if not isinstance(node, astroid.nodes.Call):
+        return False
+
+    func = node.func
+    if isinstance(func, astroid.nodes.Attribute):
+        name = func.attrname
+    elif isinstance(func, astroid.nodes.Name):
+        name = func.name
+    else:
+        return False
+
+    return name in ("namedtuple", "NamedTuple")

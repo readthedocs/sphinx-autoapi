@@ -87,11 +87,17 @@ class Parser:
             return []
 
         target = assign_value[0]
-        value = assign_value[1]
+        value_node = assign_value[1]
 
         annotation = _astroid_utils.get_assign_annotation(node)
         if annotation in ("TypeAlias", "typing.TypeAlias"):
             value = node.value.as_string()
+        elif isinstance(
+            value_node, astroid.nodes.ClassDef
+        ) and _astroid_utils.is_functional_namedtuple(node.value):
+            return self._parse_namedtuple(value_node)
+        else:
+            value = _astroid_utils.get_const_value(value_node)
 
         data = {
             "type": type_,
@@ -104,6 +110,44 @@ class Parser:
             "to_line_no": node.tolineno,
             "annotation": annotation,
         }
+
+        return [data]
+
+    def _parse_namedtuple(self, node):
+        qual_name = self._get_qual_name(node.name)
+        full_name = self._get_full_name(node.name)
+        self._qual_name_stack.append(node.name)
+        self._full_name_stack.append(node.name)
+
+        data = {
+            "type": "class",
+            "name": node.name,
+            "qual_name": qual_name,
+            "full_name": full_name,
+            "bases": list(_astroid_utils.get_full_basenames(node)),
+            "doc": _prepare_docstring(node.doc_node.value if node.doc_node else ""),
+            "from_line_no": node.fromlineno,
+            "to_line_no": node.tolineno,
+            "children": [],
+            "is_abstract": _astroid_utils.is_abstract_class(node),
+        }
+
+        for child in node.instance_attrs:
+            child_data = {
+                "type": "attribute",
+                "name": child,
+                "qual_name": self._get_qual_name(child),
+                "full_name": self._get_full_name(child),
+                "doc": _prepare_docstring(""),
+                "value": None,
+                "from_line_no": node.fromlineno,
+                "to_line_no": node.tolineno,
+                "annotation": None,
+            }
+            data["children"].append(child_data)
+
+        self._qual_name_stack.pop()
+        self._full_name_stack.pop()
 
         return [data]
 

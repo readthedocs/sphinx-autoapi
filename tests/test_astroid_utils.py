@@ -104,6 +104,8 @@ class TestAstroidUtils:
     def test_can_get_assign_values(self, source, expected):
         node = astroid.extract_node(source)
         value = _astroid_utils.get_assign_value(node)
+        if value:
+            value = (value[0], _astroid_utils.get_const_value(value[1]))
         assert value == expected
 
     @pytest.mark.parametrize(
