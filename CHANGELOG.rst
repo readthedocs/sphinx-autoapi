@@ -5,6 +5,21 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.4.0 (2024-11-29)
+-------------------
+
+Features
+^^^^^^^^
+
+- NamedTuples that have been created with functional syntax are documented as a class (#485)
+
+
+Misc
+^^^^
+
+- #484, #490, #498
+
+
 v3.3.3 (2024-10-25)
 -------------------
 

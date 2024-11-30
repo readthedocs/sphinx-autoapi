@@ -1,1 +1,0 @@
-NamedTuples that have been created with functional syntax are documented as a class

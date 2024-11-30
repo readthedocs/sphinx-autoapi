@@ -1,1 +1,0 @@
-Format Python code with ruff format instead of black.
