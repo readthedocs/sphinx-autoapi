@@ -394,7 +394,9 @@ class Mapper:
         if self.app.env.config_status != sphinx.environment.CONFIG_OK:
             return True
 
-        return last_files != files or not last_mtime or last_mtime < this_mtime
+        return (
+            set(last_files) != set(files) or not last_mtime or last_mtime < this_mtime
+        )
 
     def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:
