@@ -230,6 +230,21 @@ def _link_objs(value):
 
     # Strip off the extra "\ "
     return result[:-2]
+    
+def _path_matches_patterns(path, patterns):
+    """Check if a path matches one of multiple patterns
+
+    Args:
+        path (str): path to a file or directory to check
+        patterns (list): list of patterns for fnmatch
+
+    Returns:
+        bool: Whether or not the path matches a pattern in patterns
+    """
+    for pattern in patterns:
+        if fnmatch.fnmatch(path, pattern):
+            return True
+    return False
 
 
 class Mapper:
@@ -307,12 +322,24 @@ class Mapper:
             regex = re.compile(fnmatch.translate(pattern).replace(".*", "(.*)"))
             pattern_regexes.append((pattern, regex))
 
-        for _dir in dirs:
-            for root, _, filenames in os.walk(_dir):
+        for _dir in dirs:  # iterate autoapi_dirs
+            for root, subdirectories, filenames in os.walk(_dir):
+                # skip directories if needed
+                for sub_dir in subdirectories.copy():  
+                    # iterate copy as we adapt subdirectories during loop
+                    if _path_matches_patterns(os.path.join(root, sub_dir), ignore) == True:
+                        LOGGER.info(
+                            colorize("bold", "[AutoAPI] ")
+                            + colorize(
+                                "darkgreen", f"Ignoring directory: {root}/{sub_dir}/")
+                        )
+                        # adapt original subdirectories inplace
+                        subdirectories.remove(sub_dir)
+                # recurse into remaining directories
                 seen = set()
                 for pattern, pattern_re in pattern_regexes:
                     for filename in fnmatch.filter(filenames, pattern):
-                        skip = False
+                        skip_file = False
 
                         match = re.match(pattern_re, filename)
                         norm_name = match.groups()
@@ -320,19 +347,12 @@ class Mapper:
                             continue
 
                         # Skip ignored files
-                        for ignore_pattern in ignore:
-                            if fnmatch.fnmatch(
-                                os.path.join(root, filename), ignore_pattern
-                            ):
-                                LOGGER.info(
-                                    colorize("bold", "[AutoAPI] ")
-                                    + colorize(
-                                        "darkgreen", f"Ignoring {root}/{filename}"
-                                    )
-                                )
-                                skip = True
-
-                        if skip:
+                        if _path_matches_patterns(os.path.join(root, filename), ignore):
+                            LOGGER.info(
+                                colorize("bold", "[AutoAPI] ")
+                                + colorize(
+                                    "darkgreen", f"Ignoring file: {root}/{filename}")
+                            )
                             continue
 
                         # Make sure the path is full
