@@ -1,1 +1,0 @@
-Can exclude directories from being documented

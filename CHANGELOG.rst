@@ -5,6 +5,29 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.5.0 (2025-02-09)
+-------------------
+
+Features
+^^^^^^^^
+
+- Can exclude directories from being documented (#312)
+
+
+Bugfixes
+^^^^^^^^
+
+- Fix exception when calling a function imported from a wildcard (#508)
+- Remove usage of astroid alpha builds (#512)
+
+
+Misc
+^^^^
+
+- #502, #510, #511
+- Fix formatting failure in tests
+
+
 v3.4.0 (2024-11-29)
 -------------------
 

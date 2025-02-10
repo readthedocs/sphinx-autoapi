@@ -1,1 +1,0 @@
-Fix exception when calling a function imported from a wildcard

@@ -1,1 +1,0 @@
-Fix inclusion of tests in the sdist
