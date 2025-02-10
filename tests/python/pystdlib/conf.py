@@ -18,7 +18,8 @@ autoapi_file_pattern = "*.py"
 autoapi_keep_files = True
 autoapi_options = [
     "members",
-    "undoc-members" "special-members",
+    "undoc-members",
+    "special-members",
     "imported-members",
     "inherited-members",
 ]
