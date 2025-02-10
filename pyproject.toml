@@ -7,7 +7,7 @@ name = "sphinx-autoapi"
 authors = [{name = "Eric Holscher", email = "eric@ericholscher.com"}]
 maintainers = [{name = "Ashley Whetter", email = "ashley@awhetter.co.uk"}]
 description = "Sphinx API documentation generator"
-license = {text = "LICENSE.rst"}
+license = {file = "LICENSE.rst"}
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Plugins",
