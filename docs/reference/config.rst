@@ -90,7 +90,7 @@ Customisation Options
 
    Default: ``['*migrations*']``
 
-   A list of patterns to ignore when finding files.
+   A list of patterns to ignore when finding directories and files to document.
 
 .. confval:: autoapi_root
 

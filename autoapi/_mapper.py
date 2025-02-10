@@ -230,7 +230,8 @@ def _link_objs(value):
 
     # Strip off the extra "\ "
     return result[:-2]
-    
+
+
 def _path_matches_patterns(path, patterns):
     """Check if a path matches one of multiple patterns
 
@@ -325,13 +326,14 @@ class Mapper:
         for _dir in dirs:  # iterate autoapi_dirs
             for root, subdirectories, filenames in os.walk(_dir):
                 # skip directories if needed
-                for sub_dir in subdirectories.copy():  
+                for sub_dir in subdirectories.copy():
                     # iterate copy as we adapt subdirectories during loop
-                    if _path_matches_patterns(os.path.join(root, sub_dir), ignore) == True:
+                    if _path_matches_patterns(os.path.join(root, sub_dir), ignore):
                         LOGGER.info(
                             colorize("bold", "[AutoAPI] ")
                             + colorize(
-                                "darkgreen", f"Ignoring directory: {root}/{sub_dir}/")
+                                "darkgreen", f"Ignoring directory: {root}/{sub_dir}/"
+                            )
                         )
                         # adapt original subdirectories inplace
                         subdirectories.remove(sub_dir)
@@ -339,8 +341,6 @@ class Mapper:
                 seen = set()
                 for pattern, pattern_re in pattern_regexes:
                     for filename in fnmatch.filter(filenames, pattern):
-                        skip_file = False
-
                         match = re.match(pattern_re, filename)
                         norm_name = match.groups()
                         if norm_name in seen:
@@ -351,7 +351,8 @@ class Mapper:
                             LOGGER.info(
                                 colorize("bold", "[AutoAPI] ")
                                 + colorize(
-                                    "darkgreen", f"Ignoring file: {root}/{filename}")
+                                    "darkgreen", f"Ignoring file: {root}/{filename}"
+                                )
                             )
                             continue
 
