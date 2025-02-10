@@ -46,6 +46,9 @@ Documentation = "https://sphinx-autoapi.readthedocs.io/en/latest/"
 [tool.flit.module]
 name = "autoapi"
 
+[tool.flit.sdist]
+include = ["tests/"]
+
 [tool.mypy]
 # Start off with these
 warn_unused_configs = true

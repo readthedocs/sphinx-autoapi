@@ -1,4 +1,0 @@
-recursive-include autoapi *.rst
-include *.rst
-include LICENSE.mit
-recursive-include tests *
