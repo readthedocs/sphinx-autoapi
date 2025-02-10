@@ -228,9 +228,13 @@ def get_assign_value(
     else:
         return None
 
-    value = next(target.infer())
-    if value is astroid.util.Uninferable:
+    try:
+        value = next(target.infer())
+    except astroid.InferenceError:
         value = None
+    else:
+        if value is astroid.util.Uninferable:
+            value = None
 
     return (name, value)
 
