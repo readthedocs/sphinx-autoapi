@@ -5,6 +5,22 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.6.0 (2025-02-17)
+-------------------
+
+Features
+^^^^^^^^
+
+- Render type aliases properly rather than as an assignment (#414)
+
+
+Misc
+^^^^
+
+- Drop support for Python 3.8
+- Fix readthedocs build
+
+
 v3.5.0 (2025-02-09)
 -------------------
 

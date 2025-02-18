@@ -1,1 +1,0 @@
-Render type aliases properly rather than as an assignment
