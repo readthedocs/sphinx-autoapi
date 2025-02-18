@@ -351,6 +351,9 @@ class PythonData(PythonObject):
         or annotation comment was not given.
         """
 
+    def is_type_alias(self):
+        return self.annotation in ("TypeAlias", "typing.TypeAlias")
+
 
 class PythonAttribute(PythonData):
     """An object/class level attribute."""

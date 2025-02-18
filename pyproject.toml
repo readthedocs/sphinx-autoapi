@@ -29,7 +29,7 @@ dependencies = [
     'astroid>=3;python_version>="3.12"',
     "Jinja2",
     "PyYAML",
-    "sphinx>=6.1.0",
+    "sphinx>=7.4.0",
     'stdlib_list;python_version<"3.10"',
 ]
 dynamic = ["version"]

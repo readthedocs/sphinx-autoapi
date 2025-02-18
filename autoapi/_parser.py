@@ -405,6 +405,12 @@ class Parser:
         ):
             doc = doc_node.value.value
 
+        type_ = "data"
+        if isinstance(
+            node.scope(), astroid.nodes.ClassDef
+        ) or _astroid_utils.is_constructor(node.scope()):
+            type_ = "attribute"
+
         if isinstance(node.name, astroid.nodes.AssignName):
             name = node.name.name
         elif isinstance(node.name, astroid.nodes.AssignAttr):
@@ -413,7 +419,7 @@ class Parser:
             return []
 
         data = {
-            "type": "data",
+            "type": type_,
             "name": name,
             "qual_name": self._get_qual_name(name),
             "full_name": self._get_full_name(name),

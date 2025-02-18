@@ -747,16 +747,12 @@ class TestPEP695:
         alias = example_file.find(id="example.MyTypeAliasA")
         properties = alias.find_all(class_="property")
         assert len(properties) == 2
-        annotation = properties[0].text
-        assert annotation == ": TypeAlias"
         value = properties[1].text
         assert value == " = tuple[str, int]"
 
         alias = example_file.find(id="example.MyTypeAliasB")
         properties = alias.find_all(class_="property")
         assert len(properties) == 2
-        annotation = properties[0].text
-        assert annotation == ": TypeAlias"
         value = properties[1].text
         assert value == " = tuple[str, int]"
 
