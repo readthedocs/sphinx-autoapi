@@ -360,7 +360,11 @@ class PythonData(PythonObject):
         """
 
     def is_type_alias(self):
-        return self.annotation in ("TypeAlias", "typing.TypeAlias")
+        return self.annotation in (
+            "TypeAlias",
+            "typing.TypeAlias",
+            "typing_extensions.TypeAlias",
+        )
 
 
 class PythonAttribute(PythonData):

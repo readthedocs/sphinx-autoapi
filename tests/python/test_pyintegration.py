@@ -756,6 +756,18 @@ class TestPEP695:
         value = properties[1].text
         assert value == " = tuple[str, int]"
 
+        alias = example_file.find(id="example.MyTypeAliasC")
+        properties = alias.find_all(class_="property")
+        assert len(properties) == 2
+        value = properties[1].text
+        assert value == " = tuple[str, int]"
+
+        alias = example_file.find(id="example.MyTypeAliasD")
+        properties = alias.find_all(class_="property")
+        assert len(properties) == 2
+        value = properties[1].text
+        assert value == " = tuple[str, int]"
+
 
 def test_napoleon_integration_loaded(builder, parse):
     confoverrides = {

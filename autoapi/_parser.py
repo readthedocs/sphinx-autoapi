@@ -91,7 +91,11 @@ class Parser:
         value_node = assign_value[1]
 
         annotation = _astroid_utils.get_assign_annotation(node)
-        if annotation in ("TypeAlias", "typing.TypeAlias"):
+        if annotation in (
+            "TypeAlias",
+            "typing.TypeAlias",
+            "typing_extensions.TypeAlias",
+        ):
             value = node.value.as_string()
         elif isinstance(
             value_node, astroid.nodes.ClassDef
