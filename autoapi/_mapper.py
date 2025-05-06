@@ -29,6 +29,7 @@ from ._objects import (
     PythonAttribute,
     PythonData,
     PythonException,
+    _trace_visibility,
 )
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
 
@@ -499,6 +500,7 @@ class Mapper:
                     and not obj["inherited_from"]["is_abstract"]
                     and module not in documented_modules
                 ):
+                    _trace_visibility(self.app, f"Hiding {obj['qual_name']} as determined to be Python standard Library (found as {obj['full_name']})", verbose=2)
                     obj["hide"] = True
 
     def _resolve_placeholders(self):
@@ -518,12 +520,18 @@ class Mapper:
         for module in self.paths.values():
             if module["all"] is not None:
                 all_names = set(module["all"])
+                _trace_visibility(self.app, f"{module['full_name']}: Found __all__ =")
+                for n in all_names:
+                    _trace_visibility(self.app, f"    {n}")
                 for child in module["children"]:
                     if child["qual_name"] not in all_names:
+                        _trace_visibility(self.app, f"Hiding {child['full_name']}, as {child['qual_name']} not in __all__")
                         child["hide"] = True
             elif module["type"] == "module":
+                _trace_visibility(self.app, f"Testing if any children of {module['full_name']} have already been documented")
                 for child in module["children"]:
                     if "original_path" in child:
+                        _trace_visibility(self.app, f"Hiding {child['full_name']} as documented at {child['original_path']}")
                         child["hide"] = True
 
     def map(self, options=None):
@@ -567,13 +575,17 @@ class Mapper:
                 assert obj.type in self.own_page_types
                 self.objects_to_render[obj.id] = obj
             else:
+                if obj.subpackages or obj.submodules:
+                    _trace_visibility(self.app, f"Not rendering the following as {obj.id} set to not display:", verbose=2)
                 for module in itertools.chain(obj.subpackages, obj.submodules):
+                    _trace_visibility(self.app, f"    {module.obj['full_name']}", verbose=2)
                     module.obj["hide"] = True
 
         def _inner(parent):
             for child in parent.children:
                 self.all_objects[child.id] = child
                 if not parent.display:
+                    _trace_visibility(self.app, f"Hiding {child.id} as parent {parent.id} will not be displayed", verbose=2)
                     child.obj["hide"] = True
 
                 if child.display and child.type in self.own_page_types:

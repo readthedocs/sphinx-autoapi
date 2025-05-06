@@ -7,9 +7,15 @@ import sphinx
 import sphinx.util
 import sphinx.util.logging
 
+from sphinx.util.console import colorize
+
 from .settings import OWN_PAGE_LEVELS
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
+
+def _trace_visibility(app, msg: str, verbose=1) -> None:
+    if app.config.autoapi_verbose_visibility >= verbose:
+        LOGGER.info(colorize("bold", f"[AutoAPI] [Visibility] {msg}"))
 
 
 def _format_args(args_info, include_annotations=True, ignore_self=None):
@@ -79,6 +85,7 @@ class PythonObject:
         # For later
         self._class_content = class_content
         self._display_cache: bool | None = None
+        self._skip_reason = None
 
     def __getstate__(self):
         """Obtains serialisable data for pickling."""
@@ -199,8 +206,13 @@ class PythonObject:
         This attribute depends on the configuration options given in
         :confval:`autoapi_options` and the result of :event:`autoapi-skip-member`.
         """
+        skip = self._should_skip()
         if self._display_cache is None:
-            self._display_cache = not self._ask_ignore(self._should_skip())
+            self._display_cache = not self._ask_ignore(skip)
+            if self._display_cache is False:
+                _trace_visibility(self.app, self._skip_reason)
+        else:
+            _trace_visibility(self.app, f"Skipping {self.id} due to cache", verbose=2)
 
         return self._display_cache
 
@@ -231,6 +243,22 @@ class PythonObject:
             self.inherited and "inherited-members" not in self.options
         )
 
+        reason = ""
+        if self.obj.get("hide", False):
+            reason = "marked hidden by mapper"
+        elif skip_undoc_member:
+            reason = "is undocumented"
+        elif skip_private_member:
+            reason = "is a private member"
+        elif skip_special_member:
+            reason = "is a special member"
+        elif skip_imported_member:
+            reason = "is an imported member"
+        elif  skip_inherited_member:
+            reason = "is an inherited member"
+
+        self._skip_reason = f"Skipping {self.id} as {reason}"
+
         return (
             self.obj.get("hide", False)
             or skip_undoc_member
@@ -241,10 +269,16 @@ class PythonObject:
         )
 
     def _ask_ignore(self, skip: bool) -> bool:
+
         ask_result = self.app.emit_firstresult(
             "autoapi-skip-member", self.type, self.id, self, skip, self.options
         )
 
+        if ask_result is not None:
+            reason = f"Skipping as 'autoapi-skip-member' returned {ask_result}"
+            if self._skip_reason:
+                reason += f"Passed skip={skip} to 'autoapi-skip-member' as {self._skip_reason}"
+            self._skip_reason = reason
         return ask_result if ask_result is not None else skip
 
     def _children_of_type(self, type_: str) -> list[PythonObject]:
@@ -306,11 +340,13 @@ class PythonMethod(PythonFunction):
         """
 
     def _should_skip(self) -> bool:
-        return super()._should_skip() or self.name in (
+        is_new_or_init = self.name in (
             "__new__",
             "__init__",
         )
-
+        if not super()._should_skip and is_new_or_init:
+            self._skip_reason = f"Skipping method {self.id} as is __new__ or __init__"
+        return super()._should_skip() or is_new_or_init
 
 class PythonProperty(PythonObject):
     """The representation of a property on a class."""
