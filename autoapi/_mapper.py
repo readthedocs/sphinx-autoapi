@@ -44,6 +44,15 @@ else:
 LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
+def _color_info(msg: str) -> None:
+    LOGGER.info(
+        colorize("bold", "[AutoAPI] ")
+        + colorize(
+            "darkgreen", msg
+        )
+    )
+
+
 def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
     """Expand a wildcard placeholder to a sequence of named placeholders.
 
@@ -330,12 +339,7 @@ class Mapper:
                 for sub_dir in subdirectories.copy():
                     # iterate copy as we adapt subdirectories during loop
                     if _path_matches_patterns(os.path.join(root, sub_dir), ignore):
-                        LOGGER.info(
-                            colorize("bold", "[AutoAPI] ")
-                            + colorize(
-                                "darkgreen", f"Ignoring directory: {root}/{sub_dir}/"
-                            )
-                        )
+                        _color_info(f"Ignoring directory: {root}/{sub_dir}/")
                         # adapt original subdirectories inplace
                         subdirectories.remove(sub_dir)
                 # recurse into remaining directories
@@ -349,12 +353,7 @@ class Mapper:
 
                         # Skip ignored files
                         if _path_matches_patterns(os.path.join(root, filename), ignore):
-                            LOGGER.info(
-                                colorize("bold", "[AutoAPI] ")
-                                + colorize(
-                                    "darkgreen", f"Ignoring file: {root}/{filename}"
-                                )
-                            )
+                            _color_info(f"Ignoring file: {root}/{filename}")
                             continue
 
                         # Make sure the path is full
@@ -389,6 +388,14 @@ class Mapper:
     def _output_top_rst(self):
         # Render Top Index
         top_level_index = os.path.join(self.dir_root, "index.rst")
+
+        modules = [obj for obj in self.all_objects.values()
+                   if obj.type == "module" and obj.docstring == ""]
+        if modules and "undoc-members" not in self.app.config.autoapi_options:
+            _color_info("The following modules have no top-level documentation, and so were skipped as undocumented:")
+            for m in modules:
+                _color_info(f"    {m.id}")
+
         pages = [obj for obj in self.objects_to_render.values() if obj.display]
         if not pages:
             msg = (
