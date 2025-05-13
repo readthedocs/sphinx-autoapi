@@ -280,7 +280,7 @@ class PythonFunction(PythonObject):
 
         Can be only be: async.
         """
-        self.overloads: list[tuple[str, str]] = [
+        self.overloads: list[tuple[str, str | None]] = [
             (_format_args(args), return_annotation)
             for args, return_annotation in self.obj["overloads"]
         ]
