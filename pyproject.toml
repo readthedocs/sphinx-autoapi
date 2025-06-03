@@ -104,3 +104,8 @@ filename = "CHANGELOG.rst"
 package = "autoapi"
 title_format = "v{version} ({project_date})"
 underlines = ["-", "^", "\""]
+
+[dependency-groups]
+dev = [
+    "tox>=4.26.0",
+]
