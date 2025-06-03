@@ -30,6 +30,7 @@ from ._objects import (
     PythonData,
     PythonException,
     _trace_visibility,
+    HideReason,
 )
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
 
@@ -45,12 +46,7 @@ LOGGER = sphinx.util.logging.getLogger(__name__)
 
 
 def _color_info(msg: str) -> None:
-    LOGGER.info(
-        colorize("bold", "[AutoAPI] ")
-        + colorize(
-            "darkgreen", msg
-        )
-    )
+    LOGGER.info(colorize("bold", "[AutoAPI] ") + colorize("darkgreen", msg))
 
 
 def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
@@ -389,13 +385,6 @@ class Mapper:
         # Render Top Index
         top_level_index = os.path.join(self.dir_root, "index.rst")
 
-        modules = [obj for obj in self.all_objects.values()
-                   if obj.type == "module" and obj.docstring == ""]
-        if modules and "undoc-members" not in self.app.config.autoapi_options:
-            _color_info("The following modules have no top-level documentation, and so were skipped as undocumented:")
-            for m in modules:
-                _color_info(f"    {m.id}")
-
         pages = [obj for obj in self.objects_to_render.values() if obj.display]
         if not pages:
             msg = (
@@ -507,8 +496,12 @@ class Mapper:
                     and not obj["inherited_from"]["is_abstract"]
                     and module not in documented_modules
                 ):
-                    _trace_visibility(self.app, f"Hiding {obj['qual_name']} as determined to be Python standard Library (found as {obj['full_name']})", verbose=2)
-                    obj["hide"] = True
+                    _trace_visibility(
+                        self.app,
+                        f"Hiding {obj['qual_name']} as determined to be Python standard Library (found as {obj['full_name']})",
+                        verbose=2,
+                    )
+                    obj["hide_reason"] = HideReason.STD_LIBRARY
 
     def _resolve_placeholders(self):
         """Resolve objects that have been imported from elsewhere."""
@@ -527,19 +520,27 @@ class Mapper:
         for module in self.paths.values():
             if module["all"] is not None:
                 all_names = set(module["all"])
-                _trace_visibility(self.app, f"{module['full_name']}: Found __all__ =")
                 for n in all_names:
                     _trace_visibility(self.app, f"    {n}")
                 for child in module["children"]:
                     if child["qual_name"] not in all_names:
-                        _trace_visibility(self.app, f"Hiding {child['full_name']}, as {child['qual_name']} not in __all__")
-                        child["hide"] = True
+                        _trace_visibility(
+                            self.app,
+                            f"Hiding {child['full_name']}, as {child['qual_name']} not in __all__",
+                        )
+                        child["hide_reason"] = HideReason.NOT_IN_ALL
             elif module["type"] == "module":
-                _trace_visibility(self.app, f"Testing if any children of {module['full_name']} have already been documented")
+                _trace_visibility(
+                    self.app,
+                    f"Testing if any children of {module['full_name']} have already been documented",
+                )
                 for child in module["children"]:
                     if "original_path" in child:
-                        _trace_visibility(self.app, f"Hiding {child['full_name']} as documented at {child['original_path']}")
-                        child["hide"] = True
+                        _trace_visibility(
+                            self.app,
+                            f"Hiding {child['full_name']} as it appears to be in your public API at {child['original_path']}",
+                        )
+                        child["hide_reason"] = HideReason.NOT_PUBLIC
 
     def map(self, options=None):
         self._skip_if_stdlib()
@@ -583,17 +584,27 @@ class Mapper:
                 self.objects_to_render[obj.id] = obj
             else:
                 if obj.subpackages or obj.submodules:
-                    _trace_visibility(self.app, f"Not rendering the following as {obj.id} set to not display:", verbose=2)
+                    _trace_visibility(
+                        self.app,
+                        f"Not rendering the following as {obj.id} set to not display because object is {obj.hide_reason}",
+                        verbose=2,
+                    )
                 for module in itertools.chain(obj.subpackages, obj.submodules):
-                    _trace_visibility(self.app, f"    {module.obj['full_name']}", verbose=2)
-                    module.obj["hide"] = True
+                    _trace_visibility(
+                        self.app, f"    {module.obj['full_name']}", verbose=2
+                    )
+                    module.obj["hide_reason"] = HideReason.PARENT_HIDDEN
 
         def _inner(parent):
             for child in parent.children:
                 self.all_objects[child.id] = child
                 if not parent.display:
-                    _trace_visibility(self.app, f"Hiding {child.id} as parent {parent.id} will not be displayed", verbose=2)
-                    child.obj["hide"] = True
+                    _trace_visibility(
+                        self.app,
+                        f"Hiding {child.id} as parent {parent.id} will not be displayed",
+                        verbose=2,
+                    )
+                    child.obj["hide_reason"] = HideReason.PARENT_HIDDEN
 
                 if child.display and child.type in self.own_page_types:
                     self.objects_to_render[child.id] = child
@@ -602,6 +613,18 @@ class Mapper:
 
         for obj in list(self.all_objects.values()):
             _inner(obj)
+
+        modules = [
+            obj
+            for obj in self.all_objects.values()
+            if obj.type == "module" and obj.docstring == ""
+        ]
+        if modules and "undoc-members" not in self.app.config.autoapi_options:
+            _color_info(
+                "The following modules have no top-level documentation, and so were skipped as undocumented:"
+            )
+            for m in modules:
+                _color_info(f"    {m.id}")
 
     def create_class(self, data, options=None):
         """Create a class from the passed in data
