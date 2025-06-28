@@ -522,6 +522,8 @@ def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
 
     if resolved.startswith("typing."):
         return resolved[len("typing.") :]
+    if resolved.startswith("typing_extensions."):
+        return resolved[len("typing_extensions.") :]
 
     # Sphinx is capable of linking anything in the same module
     # without needing a fully qualified path.
