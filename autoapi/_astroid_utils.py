@@ -93,6 +93,11 @@ def resolve_qualname(node: astroid.nodes.NodeNG, basename: str) -> str:
     else:
         lookup_node = node.scope()
 
+    if hasattr(lookup_node, "type_params"):
+        type_params = [x.name for x in lookup_node.type_params]
+    else:
+        type_params = []
+
     assigns = lookup_node.lookup(top_level_name)[1]
 
     for assignment in assigns:
@@ -108,7 +113,10 @@ def resolve_qualname(node: astroid.nodes.NodeNG, basename: str) -> str:
             full_basename = assignment.qname()
             break
         if isinstance(assignment, astroid.nodes.AssignName):
-            full_basename = f"{assignment.scope().qname()}.{assignment.name}"
+            if assignment in type_params:
+                full_basename = assignment.name
+            else:
+                full_basename = f"{assignment.scope().qname()}.{assignment.name}"
 
     if isinstance(node, astroid.nodes.Call):
         full_basename = re.sub(r"\(.*\)", "()", full_basename)
@@ -658,6 +666,33 @@ def get_args_info(args_node: astroid.nodes.Arguments) -> list[ArgInfo]:
 
     if args_node.parent.type in ("method", "classmethod") and result:
         result.pop(0)
+
+    return result
+
+def get_type_params_info(
+        params:list[
+            astroid.nodes.TypeVar | astroid.nodes.ParamSpec | astroid.nodes.TypeVarTuple
+            ],
+        ) -> list[ArgInfo]:
+    """ Extract PEP 695 style type params,
+    eg: def  func[T]() -> T: ...
+    """
+    bound: str | None
+    if not bool(params):
+        return []
+    result: list[ArgInfo] = []
+    for x in params:
+        match x:
+            case astroid.nodes.TypeVar():
+                if x.bound is not None:
+                    bound = _resolve_annotation(x.bound)
+                else:
+                    bound = None
+                result.append(ArgInfo(None, x.name.name, bound, None))
+            case astroid.nodes.TypeVarTuple():
+                result.append(ArgInfo("*", x.name.name, None, None))
+            case astroid.nodes.ParamSpec():
+                result.append(ArgInfo("**", x.name.name, None, None))
 
     return result
 

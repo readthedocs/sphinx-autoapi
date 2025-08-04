@@ -1394,3 +1394,104 @@ class TestStdLib:
         # Find members that are inherited from standard library classes.
         meth = myast_file.find(id="myast.MyVisitor.visit")
         assert not meth
+
+class TestTypeParams:
+    """Check that type params are documented"""
+
+    @pytest.fixture(autouse=True, scope="class")
+    def built(self, builder):
+        builder(
+            "pytypeparams",
+            warningiserror=True,
+            confoverrides={"exclude_patterns": ["manualapi.rst"]},
+        )
+
+    def test_generic_function(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        target = example_file.find(id="example.generic_function")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T", "val: T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "list[T]")
+
+    def test_generic_with_bound(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        target = example_file.find(id="example.generic_with_bound")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T: str", "val: T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "list[T]")
+
+    def test_multiple_var_function(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        target = example_file.find(id="example.multiple_var_function")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T", "X", "val: T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "X")
+
+    def test_variadic_function(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.variadic_generic")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["*T", "val: tuple[*T]"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "list[*T]")
+
+    def test_paramspec_function(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.paramspec_function")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["**I", "val: Callable[I, int]"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "Callable[I, int]")
+
+    def test_simple_generic_class(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.SimpleGenericClass")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+    def test_generic_with_bases(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.GenericWithBases")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+    def test_generic_method(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.ClassWithGenericMethod.simple_generic_method")
+        for param, expect in zip(target.find_all(class_="sig-param"),
+                                 ["T", "val: T"],
+                                 strict=True):
+            assert(param.text == expect)
+
+        ret_type = target.find(class_="sig-return-typehint")
+        assert(ret_type.text == "T")
+
+    def test_generic_attr(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+        target = example_file.find(id="example.ClassWithGenericAttr.values")
+        assert target.text.strip() == "values: list[T]¶"
