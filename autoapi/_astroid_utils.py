@@ -670,11 +670,11 @@ def get_args_info(args_node: astroid.nodes.Arguments) -> list[ArgInfo]:
     return result
 
 def get_type_params_info(
-        params:list[
-            astroid.nodes.TypeVar | astroid.nodes.ParamSpec | astroid.nodes.TypeVarTuple
-            ],
-        ) -> list[ArgInfo]:
-    """ Extract PEP 695 style type params,
+    params: list[
+        astroid.nodes.TypeVar | astroid.nodes.ParamSpec | astroid.nodes.TypeVarTuple
+    ],
+) -> list[ArgInfo]:
+    """Extract PEP 695 style type params,
     eg: def  func[T]() -> T: ...
     """
     bound: str | None
