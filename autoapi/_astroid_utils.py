@@ -669,6 +669,7 @@ def get_args_info(args_node: astroid.nodes.Arguments) -> list[ArgInfo]:
 
     return result
 
+
 def get_type_params_info(
     params: list[
         astroid.nodes.TypeVar | astroid.nodes.ParamSpec | astroid.nodes.TypeVarTuple
@@ -682,17 +683,16 @@ def get_type_params_info(
         return []
     result: list[ArgInfo] = []
     for x in params:
-        match x:
-            case astroid.nodes.TypeVar():
-                if x.bound is not None:
-                    bound = _resolve_annotation(x.bound)
-                else:
-                    bound = None
-                result.append(ArgInfo(None, x.name.name, bound, None))
-            case astroid.nodes.TypeVarTuple():
-                result.append(ArgInfo("*", x.name.name, None, None))
-            case astroid.nodes.ParamSpec():
-                result.append(ArgInfo("**", x.name.name, None, None))
+        if isinstance(x, astroid.nodes.TypeVar):
+            if x.bound is not None:
+                bound = _resolve_annotation(x.bound)
+            else:
+                bound = None
+            result.append(ArgInfo(None, x.name.name, bound, None))
+        elif isinstance(x, astroid.nodes.TypeVarTuple):
+            result.append(ArgInfo("*", x.name.name, None, None))
+        elif isinstance(x, astroid.nodes.ParamSpec):
+            result.append(ArgInfo("**", x.name.name, None, None))
 
     return result
 
