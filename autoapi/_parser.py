@@ -3,7 +3,7 @@ import os
 
 import astroid
 from astroid.builder import AstroidBuilder
-from astroid.manager import AstroidBuilder
+from astroid.manager import AstroidManager
 import sphinx.util.docstrings
 
 from . import _astroid_utils
