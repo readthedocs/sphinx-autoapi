@@ -25,8 +25,8 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    'astroid>=2.7;python_version<"3.12"',
-    'astroid>=3;python_version>="3.12"',
+    'astroid~=3.0;python_version<"3.12"',
+    'astroid~=4.0;python_version>="3.12"',
     "Jinja2",
     "PyYAML",
     "sphinx>=7.4.0",
