@@ -1,0 +1,1 @@
+Update the pin for astroid to avoid breaking changes
