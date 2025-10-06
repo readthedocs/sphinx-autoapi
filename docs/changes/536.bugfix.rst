@@ -1,0 +1,2 @@
+Update the supported versions of astroid.
+Fix the breaking change to Import and pass in the AstroidManager to the AstroidBuilder
