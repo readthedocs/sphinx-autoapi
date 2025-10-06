@@ -5,6 +5,16 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.6.1 (2025-10-06)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Update the supported versions of astroid.
+  Fix the breaking change to Import and pass in the AstroidManager to the AstroidBuilder (#536)
+
+
 v3.6.0 (2025-02-17)
 -------------------
 
