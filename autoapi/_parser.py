@@ -2,7 +2,8 @@ import collections
 import os
 
 import astroid
-import astroid.builder
+from astroid.builder import AstroidBuilder
+from astroid.manager import AstroidManager
 import sphinx.util.docstrings
 
 from . import _astroid_utils
@@ -37,7 +38,7 @@ class Parser:
                 module_parts.appendleft(module_part)
 
         module_name = ".".join(module_parts)
-        node = astroid.builder.AstroidBuilder().file_build(file_path, module_name)
+        node = AstroidBuilder(AstroidManager()).file_build(file_path, module_name)
         return self.parse(node)
 
     def parse_file(self, file_path):
