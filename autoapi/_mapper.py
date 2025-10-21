@@ -345,6 +345,10 @@ class Mapper:
                 for pattern, pattern_re in pattern_regexes:
                     for filename in fnmatch.filter(filenames, pattern):
                         match = re.match(pattern_re, filename)
+                        if match is None:
+                            raise ValueError(
+                                f'Could not match pattern "{pattern_re}" to filename "{filename}".'
+                            )
                         norm_name = match.groups()
                         if norm_name in seen:
                             continue
