@@ -1,0 +1,1 @@
+Handling case where match returns None to fix mypy unit test.
