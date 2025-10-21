@@ -256,6 +256,7 @@ def setup(app):
     app.add_config_value("autoapi_add_toctree_entry", True, "html")
     app.add_config_value("autoapi_template_dir", None, "html")
     app.add_config_value("autoapi_include_summaries", None, "html")
+    app.add_config_value("autoapi_follow_symlinks", False, "html")
     app.add_config_value("autoapi_python_use_implicit_namespaces", False, "html")
     app.add_config_value("autoapi_python_class_content", "class", "html")
     app.add_config_value("autoapi_generate_api_docs", True, "html")
