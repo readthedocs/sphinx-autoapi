@@ -92,6 +92,14 @@ Customisation Options
 
    A list of patterns to ignore when finding directories and files to document.
 
+.. confval:: autoapi_follow_symlinks
+
+   Default: ``False``
+
+   If `True`, then follow symlinks when walking ``autoapi_dirs`` to generate the API 
+   documentation. If `False`, then do not follow symlinks when when walking 
+   ``autoapi_dirs`` to generate the API documentation.
+
 .. confval:: autoapi_root
 
    Default: ``autoapi``
