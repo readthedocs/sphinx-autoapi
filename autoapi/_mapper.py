@@ -312,9 +312,10 @@ class Mapper:
         self._use_implicit_namespace = (
             self.app.config.autoapi_python_use_implicit_namespaces
         )
+        self._follow_symlinks = self.app.config.autoapi_follow_symlinks
 
     @staticmethod
-    def find_files(patterns, dirs, ignore):
+    def find_files(patterns, dirs, ignore, follow_symlinks: bool):
         if not ignore:
             ignore = []
 
@@ -324,7 +325,7 @@ class Mapper:
             pattern_regexes.append((pattern, regex))
 
         for _dir in dirs:  # iterate autoapi_dirs
-            for root, subdirectories, filenames in os.walk(_dir):
+            for root, subdirectories, filenames in os.walk(_dir, followlinks=follow_symlinks):
                 # skip directories if needed
                 for sub_dir in subdirectories.copy():
                     # iterate copy as we adapt subdirectories during loop
@@ -429,7 +430,7 @@ class Mapper:
             ):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
 
-            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore):
+            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore, follow_symlinks=self._follow_symlinks):
                 yield dir_root, path
 
     def load(self, patterns, dirs, ignore=None):
