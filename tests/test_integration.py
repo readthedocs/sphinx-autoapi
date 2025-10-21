@@ -27,7 +27,14 @@ def sphinx_build(test_dir, confoverrides=None):
 
 
 class LanguageIntegrationTests:
-    def _run_test(self, test_dir, test_file, test_string, confoverrides={}, test_missing:bool=False):
+    def _run_test(
+        self,
+        test_dir,
+        test_file,
+        test_string,
+        confoverrides={},
+        test_missing: bool = False,
+    ):
         with sphinx_build(test_dir, confoverrides=confoverrides):
             with open(test_file, encoding="utf8") as fin:
                 text = fin.read().strip()
@@ -65,10 +72,16 @@ class TestTOCTree(LanguageIntegrationTests):
         """
         # Without symlinks, should not contain example_function_2
         self._run_test(
-                "toctreeexample", "_build/text/index.txt", '* "example_function_2()"', test_missing=True
+            "toctreeexample",
+            "_build/text/index.txt",
+            '* "example_function_2()"',
+            test_missing=True,
         )
 
         # With symlinks, should contain example_function_2
         self._run_test(
-                "toctreeexample", "_build/text/index.txt", '* "example_function_2()"', confoverrides={"autoapi_follow_symlinks": True}
+            "toctreeexample",
+            "_build/text/index.txt",
+            '* "example_function_2()"',
+            confoverrides={"autoapi_follow_symlinks": True},
         )

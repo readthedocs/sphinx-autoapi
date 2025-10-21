@@ -325,7 +325,9 @@ class Mapper:
             pattern_regexes.append((pattern, regex))
 
         for _dir in dirs:  # iterate autoapi_dirs
-            for root, subdirectories, filenames in os.walk(_dir, followlinks=follow_symlinks):
+            for root, subdirectories, filenames in os.walk(
+                _dir, followlinks=follow_symlinks
+            ):
                 # skip directories if needed
                 for sub_dir in subdirectories.copy():
                     # iterate copy as we adapt subdirectories during loop
@@ -430,7 +432,12 @@ class Mapper:
             ):
                 dir_root = os.path.abspath(os.path.join(dir_, os.pardir))
 
-            for path in self.find_files(patterns=patterns, dirs=[dir_], ignore=ignore, follow_symlinks=self._follow_symlinks):
+            for path in self.find_files(
+                patterns=patterns,
+                dirs=[dir_],
+                ignore=ignore,
+                follow_symlinks=self._follow_symlinks,
+            ):
                 yield dir_root, path
 
     def load(self, patterns, dirs, ignore=None):
