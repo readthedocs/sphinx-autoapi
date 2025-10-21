@@ -1,0 +1,1 @@
+Adding `autoapi_follow_symlinks`, which allows api to traverse into symlinked directories when generating the API documentation.
