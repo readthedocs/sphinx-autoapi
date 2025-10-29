@@ -1,0 +1,1 @@
+Fix `PythonFunction.overloads` typing when source code overload(s) do not provide a return type
