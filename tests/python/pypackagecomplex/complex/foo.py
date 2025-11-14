@@ -3,10 +3,11 @@
 This is a description
 """
 
+from typing import MutableSequence
 from ._private_module import PrivateClass as PublicClass
 from ._subpackage import module_level_function
 
-__all__ = ["PublicClass", "Foo"]
+__all__ = ["PublicClass", "Foo", "CLASSES_TYPE"]
 
 
 class Foo:
@@ -66,3 +67,6 @@ class Foo:
             int: The sum of foo and bar.
         """
         return foo + bar
+
+
+CLASSES_TYPE = MutableSequence[Foo]
