@@ -1396,6 +1396,9 @@ class TestStdLib:
         assert not meth
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 12), reason="Type params are supported in Python 3.12+"
+)
 class TestTypeParams:
     """Check that type params are documented"""
 

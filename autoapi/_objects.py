@@ -270,7 +270,7 @@ class PythonFunction(PythonObject):
             if "type_params" in self.obj
             else ""
         )
-        """The type params of this object, formatted as a string"""
+        """The :pep:`695` type parameters of this object, formatted as a string."""
 
         self.args: str = _format_args(self.obj["args"], show_annotations)
         """The arguments to this object, formatted as a string."""
@@ -440,6 +440,8 @@ class PythonClass(PythonObject):
         self.type_params: str = (
             _format_args(self.obj["type_params"]) if "type_params" in self.obj else ""
         )
+        """The :pep:`695` type parameters of this class, formatted as a string."""
+
         self._docstring_resolved: bool = False
 
     @property

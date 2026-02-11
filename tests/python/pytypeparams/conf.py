@@ -15,7 +15,6 @@ htmlhelp_basename = "pytypeparams"
 extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_dirs = ["example"]
 autoapi_python_class_content = "both"
-autoapi_template_dir = "template_overrides"
 autoapi_options = [
     "members",
     "undoc-members",  # this is temporary until we add docstrings across the codebase

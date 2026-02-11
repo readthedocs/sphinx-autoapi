@@ -1,6 +1,9 @@
 """Test Python parser"""
 
+import sys
+
 import astroid
+import pytest
 
 from autoapi._parser import Parser
 
@@ -125,6 +128,9 @@ class TestPythonParser:
         data = self.parse(source)[0]
         assert data["name"] == "COLOUR"
 
+    @pytest.mark.skipif(
+        sys.version_info < (3, 12), reason="Type params are supported in Python 3.12+"
+    )
     def test_parses_typeparams(self):
         """Check PEP 695 style type params are parsed"""
         source = """

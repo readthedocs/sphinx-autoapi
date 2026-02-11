@@ -93,10 +93,9 @@ def resolve_qualname(node: astroid.nodes.NodeNG, basename: str) -> str:
     else:
         lookup_node = node.scope()
 
+    type_params: set[str] = set()
     if hasattr(lookup_node, "type_params"):
-        type_params = [x.name for x in lookup_node.type_params]
-    else:
-        type_params = []
+        type_params = {x.name for x in lookup_node.type_params}
 
     assigns = lookup_node.lookup(top_level_name)[1]
 
@@ -675,19 +674,14 @@ def get_type_params_info(
         astroid.nodes.TypeVar | astroid.nodes.ParamSpec | astroid.nodes.TypeVarTuple
     ],
 ) -> list[ArgInfo]:
-    """Extract PEP 695 style type params,
-    eg: def  func[T]() -> T: ...
-    """
-    bound: str | None
-    if not bool(params):
-        return []
+    """Extract information about each given :pep:`695` style type param."""
     result: list[ArgInfo] = []
+
     for x in params:
         if isinstance(x, astroid.nodes.TypeVar):
+            bound: str | None = None
             if x.bound is not None:
                 bound = _resolve_annotation(x.bound)
-            else:
-                bound = None
             result.append(ArgInfo(None, x.name.name, bound, None))
         elif isinstance(x, astroid.nodes.TypeVarTuple):
             result.append(ArgInfo("*", x.name.name, None, None))
