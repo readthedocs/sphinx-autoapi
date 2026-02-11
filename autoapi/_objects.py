@@ -2,14 +2,29 @@ from __future__ import annotations
 
 import functools
 import pathlib
+import sys
+
+if sys.version_info >= (3, 11):
+    from enum import StrEnum
+else:
+    from backports.strenum import StrEnum
+
+from typing import List
 
 import sphinx
 import sphinx.util
 import sphinx.util.logging
 
+from sphinx.util.console import colorize
+
 from .settings import OWN_PAGE_LEVELS
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
+
+
+def _trace_visibility(app, msg: str, verbose=1) -> None:
+    if app.config.autoapi_verbose_visibility >= verbose:
+        LOGGER.info(colorize("bold", f"[AutoAPI] [Visibility] {msg}"))
 
 
 def _format_args(args_info, include_annotations=True, ignore_self=None):
@@ -29,6 +44,21 @@ def _format_args(args_info, include_annotations=True, ignore_self=None):
     return ", ".join(result)
 
 
+class HideReason(StrEnum):
+    NOT_HIDDEN = "not hidden"
+    UNDOC_MEMBER = "undocumented"
+    PRIVATE_MEMBER = "a private member"
+    SPECIAL_MEMBER = "a special member"
+    IMPORTED_MEMBER = "an imported member"
+    INHERITED_MEMBER = "an inherited member"
+    IS_NEW_OR_INIT = "__new__ or __init__"
+    NOT_IN_ALL = "not in __all__ for module"
+    NOT_PUBLIC = "assumed to not be public API"
+    PARENT_HIDDEN = "parent is hidden"
+    STD_LIBRARY = "part of Python standard library"
+    SKIP_MEMBER = "`autoapi-skip-member` returned false for the object"
+
+
 class PythonObject:
     """A class representing an entity from the parsed source code.
 
@@ -44,7 +74,13 @@ class PythonObject:
     type: str
 
     def __init__(
-        self, obj, jinja_env, app, url_root, options=None, class_content="class"
+        self,
+        obj,
+        jinja_env,
+        app,
+        url_root,
+        options: List[str] = [],
+        class_content="class",
     ):
         self.app = app
         self.obj = obj
@@ -78,7 +114,7 @@ class PythonObject:
 
         # For later
         self._class_content = class_content
-        self._display_cache: bool | None = None
+        self._display_cache: HideReason | None = None
 
     def __getstate__(self):
         """Obtains serialisable data for pickling."""
@@ -193,16 +229,64 @@ class PythonObject:
         return self.short_name.startswith("__") and self.short_name.endswith("__")
 
     @property
+    def hide_reason(self) -> HideReason:
+        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
+        skip_private_member = (
+            self.is_private_member and "private-members" not in self.options
+        )
+        skip_special_member = (
+            self.is_special_member and "special-members" not in self.options
+        )
+        skip_imported_member = self.imported and "imported-members" not in self.options
+        skip_inherited_member = (
+            self.inherited and "inherited-members" not in self.options
+        )
+
+        reason = HideReason.NOT_HIDDEN
+        if self.obj.get("hide-reason"):
+            reason = self.obj.get("hide-reason")
+        elif skip_undoc_member:
+            reason = HideReason.UNDOC_MEMBER
+        elif skip_private_member:
+            reason = HideReason.UNDOC_MEMBER
+        elif skip_special_member:
+            reason = HideReason.SPECIAL_MEMBER
+        elif skip_imported_member:
+            reason = HideReason.IMPORTED_MEMBER
+        elif skip_inherited_member:
+            reason = HideReason.INHERITED_MEMBER
+
+        # Allow user to override
+        # If we told the api we were skipping already, keep the reason as originally
+        skip = reason != HideReason.NOT_HIDDEN
+        api_says_skip = self.app.emit_firstresult(
+            "autoapi-skip-member", self.type, self.id, self, skip, self.options
+        )
+        if not skip and api_says_skip:
+            reason = HideReason.SKIP_MEMBER
+
+        return reason
+
+    @property
     def display(self) -> bool:
         """Whether this object should be displayed in documentation.
 
         This attribute depends on the configuration options given in
         :confval:`autoapi_options` and the result of :event:`autoapi-skip-member`.
         """
-        if self._display_cache is None:
-            self._display_cache = not self._ask_ignore(self._should_skip())
 
-        return self._display_cache
+        if self._display_cache is None:
+            self._display_cache = self.hide_reason
+            if self._display_cache != HideReason.NOT_HIDDEN:
+                _trace_visibility(
+                    self.app, f"Skipping {self.id} due to {self.hide_reason}"
+                )
+        else:
+            _trace_visibility(
+                self.app, f"Skipping {self.id} due to {self.hide_reason}", verbose=2
+            )
+
+        return self._display_cache == HideReason.NOT_HIDDEN
 
     @property
     def summary(self) -> str:
@@ -217,35 +301,6 @@ class PythonObject:
                 return line
 
         return ""
-
-    def _should_skip(self) -> bool:
-        skip_undoc_member = self.is_undoc_member and "undoc-members" not in self.options
-        skip_private_member = (
-            self.is_private_member and "private-members" not in self.options
-        )
-        skip_special_member = (
-            self.is_special_member and "special-members" not in self.options
-        )
-        skip_imported_member = self.imported and "imported-members" not in self.options
-        skip_inherited_member = (
-            self.inherited and "inherited-members" not in self.options
-        )
-
-        return (
-            self.obj.get("hide", False)
-            or skip_undoc_member
-            or skip_private_member
-            or skip_special_member
-            or skip_imported_member
-            or skip_inherited_member
-        )
-
-    def _ask_ignore(self, skip: bool) -> bool:
-        ask_result = self.app.emit_firstresult(
-            "autoapi-skip-member", self.type, self.id, self, skip, self.options
-        )
-
-        return ask_result if ask_result is not None else skip
 
     def _children_of_type(self, type_: str) -> list[PythonObject]:
         return [child for child in self.children if child.type == type_]
@@ -313,11 +368,16 @@ class PythonMethod(PythonFunction):
         Can be any of: abstractmethod, async, classmethod, property, staticmethod.
         """
 
-    def _should_skip(self) -> bool:
-        return super()._should_skip() or self.name in (
+    @property
+    def hide_reason(self) -> HideReason:
+        is_new_or_init = self.name in (
             "__new__",
             "__init__",
         )
+        hide_reason = super().hide_reason
+        if hide_reason != HideReason.NOT_HIDDEN and is_new_or_init:
+            return HideReason.IS_NEW_OR_INIT
+        return hide_reason
 
 
 class PythonProperty(PythonObject):
