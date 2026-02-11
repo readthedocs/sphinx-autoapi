@@ -4,19 +4,10 @@ import builtins
 from collections.abc import Iterable
 import itertools
 import re
-import sys
 from typing import Any, NamedTuple
 
 import astroid
 import astroid.nodes
-
-
-if sys.version_info < (3, 10):  # PY310
-    from stdlib_list import in_stdlib
-else:
-
-    def in_stdlib(module_name: str) -> bool:
-        return module_name in sys.stdlib_module_names
 
 
 class ArgInfo(NamedTuple):

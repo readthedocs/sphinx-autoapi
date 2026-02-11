@@ -15,7 +15,6 @@ import sphinx.util
 import sphinx.util.logging
 from sphinx.util.console import colorize
 from sphinx.util.display import status_iterator
-import sphinx.util.docstrings
 from sphinx.util.osutil import ensuredir
 
 from ._parser import Parser
@@ -31,13 +30,6 @@ from ._objects import (
     PythonException,
 )
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
-
-if sys.version_info < (3, 10):  # PY310
-    from stdlib_list import in_stdlib
-else:
-
-    def in_stdlib(module_name: str) -> bool:
-        return module_name in sys.stdlib_module_names
 
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -507,7 +499,7 @@ class Mapper:
             if obj.get("inherited", False):
                 module = obj["inherited_from"]["full_name"].split(".", 1)[0]
                 if (
-                    in_stdlib(module)
+                    module in sys.stdlib_module_names
                     and not obj["inherited_from"]["is_abstract"]
                     and module not in documented_modules
                 ):
