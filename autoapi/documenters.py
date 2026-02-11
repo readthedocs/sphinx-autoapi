@@ -1,5 +1,6 @@
 import re
 
+import sphinx
 from sphinx.ext import autodoc
 
 from ._objects import (
@@ -15,7 +16,10 @@ from ._objects import (
 
 class AutoapiDocumenter(autodoc.Documenter):
     def get_attr(self, obj, name, *defargs):
-        attrgetters = self.env.app.registry.autodoc_attrgettrs
+        if sphinx.version_info >= (9, 0):
+            attrgetters = self.env._registry.autodoc_attrgettrs
+        else:
+            attrgetters = self.env.app.registry.autodoc_attrgettrs
 
         for type_, func in attrgetters.items():
             if isinstance(obj, type_):

@@ -276,7 +276,7 @@ class Parser:
         if node.type == "function":
             type_ = "function"
 
-            if isinstance(node, astroid.AsyncFunctionDef):
+            if isinstance(node, astroid.nodes.AsyncFunctionDef):
                 properties.append("async")
         elif _astroid_utils.is_decorated_with_property(node):
             type_ = "property"
@@ -290,7 +290,7 @@ class Parser:
                 properties.append(node.type)
             if node.is_abstract(pass_is_abstract=False):
                 properties.append("abstractmethod")
-            if isinstance(node, astroid.AsyncFunctionDef):
+            if isinstance(node, astroid.nodes.AsyncFunctionDef):
                 properties.append("async")
 
         data = {
