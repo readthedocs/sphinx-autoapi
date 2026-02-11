@@ -1,1 +1,0 @@
-Render typing_extensions.TypeAlias like other type aliases

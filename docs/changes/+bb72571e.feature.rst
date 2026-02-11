@@ -1,1 +1,0 @@
-Drop support for Python 3.9 and officially support Python 3.14

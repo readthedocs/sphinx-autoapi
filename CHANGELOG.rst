@@ -5,6 +5,32 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.7.0 (2026-02-10)
+-------------------
+
+Features
+^^^^^^^^
+
+- Added autoapi.import warning for when AutoAPI directives are given non-existent objects
+- Adding `autoapi_follow_symlinks`, which allows api to traverse into symlinked directories when generating the API documentation.
+- Drop support for Python 3.9 and officially support Python 3.14
+- Support rendering PEP-695 type parameters
+
+
+Bugfixes
+^^^^^^^^
+
+- Render typing_extensions.TypeAlias like other type aliases (#520)
+- Fix `PythonFunction.overloads` typing when source code overload(s) do not provide a return type (#523)
+
+
+Misc
+^^^^
+
+- Fix deprecation warnings raised by astroid and sphinx
+- Handling case where match returns None to fix mypy unit test.
+
+
 v3.6.1 (2025-10-06)
 -------------------
 
