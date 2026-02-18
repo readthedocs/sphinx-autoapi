@@ -1,0 +1,1 @@
+astroid requirement is consistent across all versions of python
