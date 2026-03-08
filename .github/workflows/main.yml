@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
