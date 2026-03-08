@@ -5,6 +5,21 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.8.0 (2026-03-07)
+-------------------
+
+Features
+^^^^^^^^
+
+- Autodoc-style directives can access members excluded by autoapi_options
+
+
+Misc
+^^^^
+
+- #553
+
+
 v3.7.0 (2026-02-10)
 -------------------
 

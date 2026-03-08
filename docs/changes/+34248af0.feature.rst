@@ -1,1 +1,0 @@
-Autodoc-style directives can access members excluded by autoapi_options
