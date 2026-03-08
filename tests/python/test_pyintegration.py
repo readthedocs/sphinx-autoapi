@@ -1347,7 +1347,8 @@ class TestMemberOrder:
 
 
 def test_nothing_to_render_raises_warning(builder, caplog):
-    caplog.set_level(logging.WARNING, logger="autoapi._mapper")
+    logger = sphinx.util.logging.getLogger("autoapi")
+    logger.logger.addHandler(caplog.handler)
     if sphinx_version >= (8, 1):
         status = builder("pynorender", warningiserror=True)
         assert status
@@ -1361,7 +1362,8 @@ def test_nothing_to_render_raises_warning(builder, caplog):
 
 
 def test_missing_object_raises_warning(builder, caplog):
-    caplog.set_level(logging.WARNING, logger="autoapi._mapper")
+    logger = sphinx.util.logging.getLogger("autoapi")
+    logger.logger.addHandler(caplog.handler)
     if sphinx_version >= (8, 1):
         status = builder("pymissing_import", warningiserror=True)
         assert status
@@ -1369,9 +1371,8 @@ def test_missing_object_raises_warning(builder, caplog):
         with pytest.raises(sphinx.errors.SphinxWarning):
             builder("pymissing_import", warningiserror=True)
 
-    assert any(
-        "Failed to import module 'nonexisting_module'" in record.message
-        for record in caplog.records
+    assert (
+        sum(1 for record in caplog.records if "[autoapi.import]" in record.message) == 1
     )
 
 

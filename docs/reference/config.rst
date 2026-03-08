@@ -243,7 +243,7 @@ The following events allow you to control the behaviour of AutoAPI.
    :param name: The fully qualified name of the object.
    :type name: str
    :param obj: The object itself.
-   :type obj: PythonPythonMapper
+   :type obj: autoapi._objects.PythonObject
    :param skip: Whether AutoAPI will skip this member if the handler
       does not override the decision.
    :type skip: bool

@@ -50,7 +50,7 @@ class AutoapiDocumenter(autodoc.Documenter):
             bool: True if the object was successfully imported and set, False otherwise.
         """
         max_splits = self.fullname.count(".")
-        objects = self.env.autoapi_objects
+        objects = self.env.autoapi_all_objects
         for num_splits in range(max_splits, -1, -1):
             path_stack = list(reversed(self.fullname.rsplit(".", num_splits)))
             parent = None

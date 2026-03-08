@@ -13,3 +13,7 @@ extensions = ["sphinx.ext.autodoc", "autoapi.extension"]
 autoapi_dirs = ["example"]
 autoapi_python_class_content = "both"
 autoapi_generate_api_docs = False
+autoapi_options = [
+    "members",
+    "undoc-members",
+]

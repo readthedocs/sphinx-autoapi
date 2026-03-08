@@ -374,7 +374,7 @@ class PythonAttribute(PythonData):
     member_order = 60
 
 
-class TopLevelPythonPythonMapper(PythonObject):
+class TopLevelPythonObject(PythonObject):
     """A common base class for modules and packages."""
 
     def __init__(self, *args, **kwargs):
@@ -417,13 +417,13 @@ class TopLevelPythonPythonMapper(PythonObject):
         return "index"
 
 
-class PythonModule(TopLevelPythonPythonMapper):
+class PythonModule(TopLevelPythonObject):
     """The representation of a module."""
 
     type = "module"
 
 
-class PythonPackage(TopLevelPythonPythonMapper):
+class PythonPackage(TopLevelPythonObject):
     """The representation of a package."""
 
     type = "package"

@@ -48,7 +48,7 @@ This contains:
   configuration option.
 * ``include_summaries``: The value of the :confval:`autoapi_include_summaries`
   configuration option.
-* ``obj``: A Python object derived from :class:`PythonPythonMapper`.
+* ``obj``: A Python object derived from :class:`PythonObject`.
 * ``own_page_types``: A set of strings that contains the object types that
   render on their own page.
 * ``sphinx_version``: The contents of :attr:`sphinx.version_info`.
@@ -62,7 +62,7 @@ that you can reliably access.
 	They can be reliably accessed through templates
 	and :event:`autoapi-skip-member` only.
 
-.. autoapiclass:: autoapi._objects.PythonPythonMapper
+.. autoapiclass:: autoapi._objects.PythonObject
 	:members:
 
 .. autoapiclass:: autoapi._objects.PythonFunction
@@ -85,7 +85,7 @@ that you can reliably access.
 	:members:
 	:show-inheritance:
 
-.. autoapiclass:: autoapi._objects.TopLevelPythonPythonMapper
+.. autoapiclass:: autoapi._objects.TopLevelPythonObject
 	:members:
 	:show-inheritance:
 
