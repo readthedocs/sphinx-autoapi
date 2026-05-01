@@ -45,6 +45,31 @@ The following directives are available:
     :rst:dir:`automethod`, and :rst:dir:`autoattribute` respectively.
 
 
+Summary Tables
+--------------
+
+.. rst:directive:: autoapisummary
+
+    Render an autosummary-style table from objects found by AutoAPI's
+    static analysis.
+
+    Each content line is the fully qualified AutoAPI object ID.
+    The table displays the object's short name and docstring summary,
+    and functions include their signature when available.
+
+    For example:
+
+    .. code:: rst
+
+        .. autoapisummary::
+
+           package.module.Example
+           package.module.helper
+
+    This directive is used by AutoAPI's default templates and accepts the
+    same options as :rst:dir:`autosummary`.
+
+
 Inheritance Diagrams
 --------------------
 
