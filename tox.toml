@@ -1,0 +1,70 @@
+requires = [
+    "tox>=4.42",
+    "tox-uv",
+]
+# Keep this in sync with .github/workflows/main.yml
+env_list = [
+    "py3.10",
+    "py3.11",
+    "py3.12",
+    "py3.13",
+    "py3.14",
+    "format",
+    "typecheck",
+    "lint",
+    "doc",
+    "release_notes",
+]
+
+[gh.python]
+"3.10" = ["py3.10"]
+"3.11" = ["py3.11"]
+"3.12" = ["py3.12"]
+"3.13" = ["py3.13"]
+"3.14" = ["py3.14", "format", "typecheck", "lint", "doc", "release_notes"]
+
+[env_run_base]
+runner = "uv-venv-runner"
+dependency_groups = [
+    "test",
+]
+commands = [["pytest", { replace = "posargs", extend = true }]]
+
+[env.format]
+skip_install = true
+dependency_groups = [
+    "format",
+]
+commands = [["ruff", "format", "--check"]]
+
+[env.lint]
+dependency_groups = [
+    "lint",
+]
+commands = [["ruff", "check", { replace = "posargs", default = ["src"], extend = true }]]
+
+[env.typecheck]
+dependency_groups = [
+    "typecheck",
+]
+commands = [["mypy", { replace = "posargs", default = ["src"], extend = true }]]
+
+[env.doc]
+dependency_groups = [
+    "doc",
+]
+commands = [
+    [
+        "sphinx-build",
+        "-b", "html",
+        "-d", "{envtmpdir}/doctrees",
+        "doc/source",
+        "doc/build/html",
+    ],
+]
+
+[env.release_notes]
+dependency_groups = [
+    "release_notes",
+]
+commands = [["towncrier", { replace = "posargs", default = ["check"], extend = true }]]

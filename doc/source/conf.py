@@ -55,7 +55,7 @@ html_theme_options = {
 }
 
 # -- Options for AutoAPI extension -------------------------------------------
-autoapi_dirs = ["../autoapi"]
+autoapi_dirs = ["../../src/autoapi"]
 autoapi_generate_api_docs = False
 
 # -- Options for intersphinx extension ---------------------------------------

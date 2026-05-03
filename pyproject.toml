@@ -40,6 +40,37 @@ content-type = "text/x-rst"
 Homepage = "http://github.com/readthedocs/sphinx-autoapi"
 Documentation = "https://sphinx-autoapi.readthedocs.io/en/latest/"
 
+[dependency-groups]
+dev = [
+  {include-group = "test"},
+  {include-group = "format"},
+  {include-group = "lint"},
+  {include-group = "typecheck"},
+  {include-group = "doc"},
+]
+test = [
+    "beautifulsoup4",
+    "pytest",
+]
+format = [
+    "ruff",
+]
+lint = [
+    "ruff",
+]
+typecheck = [
+    "mypy",
+    "types-docutils",
+]
+doc = [
+    "furo",
+    "sphinx",
+    "sphinx-design",
+]
+release_notes = [
+    "towncrier",
+]
+
 [tool.flit.module]
 name = "autoapi"
 
@@ -96,7 +127,7 @@ markers = [
 convention = "google"
 
 [tool.towncrier]
-directory = "docs/changes"
+directory = "doc/changes"
 filename = "CHANGELOG.rst"
 package = "autoapi"
 title_format = "v{version} ({project_date})"
