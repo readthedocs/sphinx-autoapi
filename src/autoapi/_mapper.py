@@ -7,13 +7,13 @@ import os
 import re
 import sys
 
+import griffe
 from jinja2 import Environment, FileSystemLoader
 import sphinx
 import sphinx.environment
 from sphinx.errors import ExtensionError
 import sphinx.util
 import sphinx.util.logging
-from sphinx.util.console import colorize
 from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 
@@ -306,66 +306,10 @@ class Mapper:
         )
         self._follow_symlinks = self.app.config.autoapi_follow_symlinks
 
-    @staticmethod
-    def find_files(patterns, dirs, ignore, follow_symlinks: bool):
-        if not ignore:
-            ignore = []
-
-        pattern_regexes = []
-        for pattern in patterns:
-            regex = re.compile(fnmatch.translate(pattern).replace(".*", "(.*)"))
-            pattern_regexes.append((pattern, regex))
-
-        for _dir in dirs:  # iterate autoapi_dirs
-            for root, subdirectories, filenames in os.walk(
-                _dir, followlinks=follow_symlinks
-            ):
-                # skip directories if needed
-                for sub_dir in subdirectories.copy():
-                    # iterate copy as we adapt subdirectories during loop
-                    if _path_matches_patterns(os.path.join(root, sub_dir), ignore):
-                        LOGGER.info(
-                            colorize("bold", "[AutoAPI] ")
-                            + colorize(
-                                "darkgreen", f"Ignoring directory: {root}/{sub_dir}/"
-                            )
-                        )
-                        # adapt original subdirectories inplace
-                        subdirectories.remove(sub_dir)
-                # recurse into remaining directories
-                seen = set()
-                for pattern, pattern_re in pattern_regexes:
-                    for filename in fnmatch.filter(filenames, pattern):
-                        match = re.match(pattern_re, filename)
-                        if match is None:
-                            raise ValueError(
-                                f'Could not match pattern "{pattern_re}" to filename "{filename}".'
-                            )
-                        norm_name = match.groups()
-                        if norm_name in seen:
-                            continue
-
-                        # Skip ignored files
-                        if _path_matches_patterns(os.path.join(root, filename), ignore):
-                            LOGGER.info(
-                                colorize("bold", "[AutoAPI] ")
-                                + colorize(
-                                    "darkgreen", f"Ignoring file: {root}/{filename}"
-                                )
-                            )
-                            continue
-
-                        # Make sure the path is full
-                        if not os.path.isabs(filename):
-                            filename = os.path.join(root, filename)
-
-                        yield filename
-                        seen.add(norm_name)
-
     def output_rst(self, source_suffix):
         for _, obj in status_iterator(
             self.objects_to_render.items(),
-            colorize("bold", "[AutoAPI] ") + "Rendering Data... ",
+            "[AutoAPI] Rendering Data... ",
             length=len(self.objects_to_render),
             verbosity=1,
             stringify_func=(lambda x: x[0]),
@@ -436,56 +380,36 @@ class Mapper:
             ):
                 yield dir_root, path
 
-    def load(self, patterns, dirs, ignore=None):
+    def load(self, modules: set[str], search_paths: set[str]) -> None:
         """Load objects from the filesystem into the ``paths`` dictionary
 
         Also include an attribute on the object, ``relative_path`` which is the
         shortened, relative path the package/module
         """
+        loader = griffe.GriffeLoader(search_paths=search_paths, allow_inspection=False)
         dir_root_files = list(self._find_files(patterns, dirs, ignore))
         if not dir_root_files:
             raise ExtensionError(f"No source files found in: {','.join(dirs)}")
 
-        if not self._need_to_load(dir_root_files):
+        # TODO: Reimplement
+        if False or not self._need_to_load(dir_root_files):
             LOGGER.debug(
                 "[AutoAPI] Skipping read stage because source files have not changed."
             )
             return False
 
-        for dir_root, path in status_iterator(
-            dir_root_files,
-            colorize("bold", "[AutoAPI] Reading files... "),
-            length=len(dir_root_files),
-            stringify_func=(lambda x: x[1]),
+        loaded = []
+        for module in status_iterator(
+            modules,
+            "[AutoAPI] Reading files...",
+            length=len(modules),
         ):
-            data = self.read_file(path=path, dir_root=dir_root)
-            if data:
-                data["relative_path"] = os.path.relpath(path, dir_root)
-                self.paths[path] = data
+            data = loader.load(module)
+            loaded.append(data)
 
-        return True
-
-    def read_file(self, path, **kwargs):
-        """Read file input into memory, returning deserialized objects
-
-        Args:
-            path: Path of file to read
-        """
-        dir_root = kwargs.get("dir_root")
-        try:
-            if self._use_implicit_namespace:
-                parsed_data = Parser().parse_file_in_namespace(path, dir_root)
-            else:
-                parsed_data = Parser().parse_file(path)
-            return parsed_data
-        except (OSError, TypeError, ImportError):
-            LOGGER.debug("Reason:", exc_info=True)
-            LOGGER.warning(
-                f"Unable to read file: {path}",
-                type="autoapi",
-                subtype="not_readable",
-            )
-        return None
+        # TODO: We used to set "relative_path" on the parsed data here.
+        # Do we need to do that now?
+        self.paths = {path: module for path, module in Parser(loader).parse_many(loaded).items()}
 
     def _skip_if_stdlib(self):
         documented_modules = {obj["full_name"] for obj in self.paths.values()}
@@ -531,14 +455,17 @@ class Mapper:
                         child["hide"] = True
 
     def map(self, options=None):
+        # TODO: Reimplement
+        """
         self._skip_if_stdlib()
         self._resolve_placeholders()
         self._hide_yo_kids()
+        """
         self.app.env.autoapi_annotations = {}
 
         for _, data in status_iterator(
             self.paths.items(),
-            colorize("bold", "[AutoAPI] ") + "Mapping Data... ",
+            "[AutoAPI] Mapping Data...",
             length=len(self.paths),
             stringify_func=(lambda x: x[0]),
         ):

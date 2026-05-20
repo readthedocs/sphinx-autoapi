@@ -26,6 +26,7 @@ classifiers = [
 requires-python = ">=3.10"
 dependencies = [
     "astroid>=3.0",
+    "griffe",
     "Jinja2",
     "PyYAML",
     "sphinx>=7.4.0",
