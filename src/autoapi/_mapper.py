@@ -104,12 +104,25 @@ def _resolve_module_placeholders(modules, module_name, visit_path, resolved):
         if child["type"] != "placeholder":
             continue
 
-        if child["original_path"] in modules:
+        original_path = child.get("original_path")
+
+        if not isinstance(original_path, str) or not original_path:
+            LOGGER.warning(
+                f"Skipping unresolved placeholder in {module_name}: {child}",
+                type="autoapi",
+                subtype="python_import_resolution",
+            )
             module["children"].remove(child)
-            children.pop(child["name"])
+            children.pop(child["name"], None)
             continue
 
-        imported_from, original_name = child["original_path"].rsplit(".", 1)
+        if original_path in modules:
+            module["children"].remove(child)
+            children.pop(child["name"], None)
+            continue
+
+        imported_from, original_name = original_path.rsplit(".", 1)
+
         if imported_from in visit_path:
             visit_str = ", ".join(visit_path)
             msg = f"Cannot resolve cyclic import: {visit_str}, {imported_from}"
