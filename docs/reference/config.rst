@@ -257,6 +257,26 @@ Advanced Options
    AutoAPI will skip parsing the source code and regenerating the API documentation.
 
 
+.. confval:: autoapi_verbose_visibility
+
+   Default: ``0``
+
+   Controls the verbosity of visibility-related log messages,
+   which explain why objects are included in or excluded from the generated documentation.
+   This is useful for debugging when expected objects are missing from the output.
+
+   * ``0``: No visibility logging (the default).
+   * ``1``: Log each decision to hide an object, including the reason
+     (e.g. undocumented member, private member, not in ``__all__``,
+     hidden by :event:`autoapi-skip-member`).
+   * ``2``: Additionally log cache hits and per-module rendering details.
+
+   Messages are prefixed with ``[AutoAPI] [Visibility]`` and emitted at the
+   ``INFO`` log level, so they appear in normal Sphinx output.
+
+   See :ref:`debug-visibility` for a guide on using this option.
+
+
 Suppressing Warnings
 ---------------------
 

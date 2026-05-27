@@ -279,11 +279,11 @@ class PythonObject:
             self._display_cache = self.hide_reason
             if self._display_cache != HideReason.NOT_HIDDEN:
                 _trace_visibility(
-                    self.app, f"Skipping {self.id} due to {self.hide_reason}"
+                    self.app, f"Skipping {self.id} due to {self._display_cache}"
                 )
-        else:
+        elif self._display_cache != HideReason.NOT_HIDDEN:
             _trace_visibility(
-                self.app, f"Skipping {self.id} due to {self.hide_reason}", verbose=2
+                self.app, f"Skipping {self.id} due to {self._display_cache}", verbose=2
             )
 
         return self._display_cache == HideReason.NOT_HIDDEN

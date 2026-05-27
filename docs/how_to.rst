@@ -25,6 +25,7 @@ then that function is documented in both the submodule and the package.
     is not documented by default.
 
 However there are multiple options available for controlling what AutoAPI will document.
+If objects are unexpectedly missing, see :ref:`debug-visibility`.
 
 
 Set ``__all__``
@@ -113,6 +114,38 @@ so it should only be necessary when the other options do not give you
 the control the you need.
 You can learn how to customise the templates in the next section:
 :ref:`customise-templates`.
+
+
+.. _debug-visibility:
+
+How to Debug Visibility of Objects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If objects that you expect to be documented are missing from the output,
+you can use the :confval:`autoapi_verbose_visibility` option to find out why.
+
+Set the option in your ``conf.py``:
+
+.. code-block:: python
+
+    autoapi_verbose_visibility = 1
+
+Then rebuild your documentation.
+AutoAPI will log each decision to hide an object,
+prefixed with ``[AutoAPI] [Visibility]``, along with the reason.
+Common reasons include:
+
+* **Undocumented member**: The object has no docstring
+  and ``undoc-members`` is not in :confval:`autoapi_options`.
+  Adding a docstring to the object (or to the module's ``__init__.py``) will make it visible.
+* **Private member**: The object name starts with ``_``
+  and ``private-members`` is not in :confval:`autoapi_options`.
+* **Not in __all__**: The object is in a package that defines ``__all__``
+  and the object is not listed there.
+* **Skipped by event handler**: An :event:`autoapi-skip-member` handler returned ``True``.
+
+For even more detail, set the option to ``2``
+to additionally see cache hits and per-module rendering information.
 
 
 .. _customise-templates:
