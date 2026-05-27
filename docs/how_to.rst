@@ -80,6 +80,14 @@ and hide your object definitions in private modules.
 As another example, you could remove ``undoc-members`` from :confval:`autoapi_options`
 and only add docstrings for the modules and other entities that you want to be documented.
 
+.. note::
+
+    This also applies to modules and packages.
+    If ``undoc-members`` is not in :confval:`autoapi_options`
+    and a package's ``__init__.py`` has no module-level docstring,
+    then the entire package will be excluded from the documentation.
+    Adding a docstring at the top of ``__init__.py`` is enough to make it visible.
+
 See :confval:`autoapi_options` for more information on how to use this option.
 
 
