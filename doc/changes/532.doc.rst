@@ -1,0 +1,1 @@
+Document how to render ``__init__`` separately from class docstrings.

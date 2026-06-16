@@ -134,6 +134,26 @@ Customisation Options
    docstring is empty and the class defines a ``__new__`` with a docstring,
    the ``__new__`` docstring is used instead of the ``__init__`` docstring.
 
+   .. note::
+
+      AutoAPI skips ``__init__`` as a separately rendered method by default,
+      even when ``special-members`` is enabled in
+      :confval:`autoapi_options`.
+      To use only the class docstring for the class page while also rendering
+      ``__init__`` separately, keep ``autoapi_python_class_content = "class"``
+      and connect to :event:`autoapi-skip-member` to include ``__init__``:
+
+      .. code-block:: python
+         :caption: Example conf.py
+
+         def include_init(app, what, name, obj, skip, options):
+             if what == "method" and name.endswith(".__init__"):
+                 return False
+             return None
+
+         def setup(sphinx):
+             sphinx.connect("autoapi-skip-member", include_init)
+
 .. confval:: autoapi_member_order
 
    Default: ``bysource``
