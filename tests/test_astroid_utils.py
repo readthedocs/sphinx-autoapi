@@ -115,6 +115,17 @@ class TestAstroidUtils:
                 "a: bool, b: int = 5",
                 [(None, "a", "bool", None), (None, "b", "int", "5")],
             ),
+            (
+                "callback: Callable[Concatenate[T, ...], R]",
+                [
+                    (
+                        None,
+                        "callback",
+                        "Callable[Concatenate[T, ...], R]",
+                        None,
+                    )
+                ],
+            ),
             pytest.param(
                 "a: bool, /, b: int, *, c: str",
                 [

@@ -646,6 +646,18 @@ class TestAnnotationCommentsModule:
         assert global_a_value[0].text == ": A"
 
 
+def test_concatenate_ellipsis(builder, parse):
+    builder("pyconcatenate", warningiserror=True)
+
+    example_file = parse("_build/html/autoapi/example/index.html")
+    transform = example_file.find(id="example.transform")
+    assert transform
+    assert (
+        transform.find(class_="sig-param").text
+        == "callback: Callable[Concatenate[T, ...], R]"
+    )
+
+
 @pytest.mark.skipif(
     sys.version_info < (3, 8), reason="Positional only arguments need Python >=3.8"
 )
