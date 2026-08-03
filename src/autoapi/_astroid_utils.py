@@ -474,6 +474,8 @@ def merge_annotations(
 def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
     resolved: str
 
+    if _is_ellipsis(annotation):
+        return "..."
     if isinstance(annotation, astroid.nodes.Const):
         resolved = resolve_qualname(annotation, str(annotation.value))
     elif isinstance(annotation, astroid.nodes.Name):

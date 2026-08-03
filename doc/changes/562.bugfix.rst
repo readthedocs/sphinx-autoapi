@@ -1,0 +1,1 @@
+Preserve ellipsis literals when rendering type annotations.
