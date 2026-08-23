@@ -5,6 +5,28 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.8.1 (2026-08-23)
+-------------------
+
+Bugfixes
+^^^^^^^^
+
+- Preserve ellipsis literals when rendering type annotations. (#562)
+
+
+Improved Documentation
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Document the ``autoapisummary`` directive. (#377)
+
+
+Misc
+^^^^
+
+- #564
+- Switch to tox.toml and reorganise repo structure
+
+
 v3.8.0 (2026-03-07)
 -------------------
 
