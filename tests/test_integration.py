@@ -1,5 +1,6 @@
 import io
 import os
+import pathlib
 import shutil
 from contextlib import contextmanager
 
@@ -70,18 +71,27 @@ class TestTOCTree(LanguageIntegrationTests):
         Test that the example_function_2 gets added to the TOC Tree when running with symlinks
         and that it does not get added when running without them.
         """
-        # Without symlinks, should not contain example_function_2
-        self._run_test(
-            "toctreeexample",
-            "_build/text/index.txt",
-            '* "example_function_2()"',
-            test_missing=True,
+        symlink = (
+            pathlib.Path(__file__).parent / "toctreeexample" / "example" / "example_2"
+        ).absolute()
+        symlink.symlink_to(
+            symlink.parent.parent / "example_2", target_is_directory=True
         )
+        try:
+            # Without symlinks, should not contain example_function_2
+            self._run_test(
+                "toctreeexample",
+                "_build/text/index.txt",
+                '* "example_function_2()"',
+                test_missing=True,
+            )
 
-        # With symlinks, should contain example_function_2
-        self._run_test(
-            "toctreeexample",
-            "_build/text/index.txt",
-            '* "example_function_2()"',
-            confoverrides={"autoapi_follow_symlinks": True},
-        )
+            # With symlinks, should contain example_function_2
+            self._run_test(
+                "toctreeexample",
+                "_build/text/index.txt",
+                '* "example_function_2()"',
+                confoverrides={"autoapi_follow_symlinks": True},
+            )
+        finally:
+            symlink.unlink()
