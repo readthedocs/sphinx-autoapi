@@ -7,32 +7,45 @@ import os
 import re
 import sys
 
-from jinja2 import Environment, FileSystemLoader
 import sphinx
 import sphinx.environment
-from sphinx.errors import ExtensionError
 import sphinx.util
 import sphinx.util.logging
+from jinja2 import Environment, FileSystemLoader
+from sphinx.errors import ExtensionError
 from sphinx.util.console import colorize
 from sphinx.util.display import status_iterator
 from sphinx.util.osutil import ensuredir
 
-from ._parser import Parser
 from ._objects import (
-    PythonClass,
-    PythonFunction,
-    PythonModule,
-    PythonMethod,
-    PythonPackage,
-    PythonProperty,
     PythonAttribute,
+    PythonClass,
     PythonData,
     PythonException,
+    PythonFunction,
+    PythonMethod,
+    PythonModule,
+    PythonPackage,
+    PythonProperty,
 )
+from ._parser import Parser
 from .settings import OWN_PAGE_LEVELS, TEMPLATE_DIR
 
-
 LOGGER = sphinx.util.logging.getLogger(__name__)
+_OBJ_MAP = {
+    cls.type: cls
+    for cls in (
+        PythonClass,
+        PythonFunction,
+        PythonModule,
+        PythonMethod,
+        PythonPackage,
+        PythonProperty,
+        PythonAttribute,
+        PythonData,
+        PythonException,
+    )
+}
 
 
 def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
@@ -246,21 +259,6 @@ class Mapper:
     Args:
         app: Sphinx application instance
     """
-
-    _OBJ_MAP = {
-        cls.type: cls
-        for cls in (
-            PythonClass,
-            PythonFunction,
-            PythonModule,
-            PythonMethod,
-            PythonPackage,
-            PythonProperty,
-            PythonAttribute,
-            PythonData,
-            PythonException,
-        )
-    }
 
     def __init__(self, app, template_dir=None, dir_root=None, url_root=None):
         self.app = app
@@ -595,7 +593,7 @@ class Mapper:
             data: dictionary data of parser output
         """
         try:
-            cls = self._OBJ_MAP[data["type"]]
+            cls = _OBJ_MAP[data["type"]]
         except KeyError:
             # this warning intentionally has no (sub-)type
             LOGGER.warning(f"Unknown type: {data['type']}")

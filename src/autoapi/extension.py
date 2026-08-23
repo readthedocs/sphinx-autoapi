@@ -9,16 +9,16 @@ import os
 import shutil
 
 import sphinx
-from sphinx.util.console import colorize
-from sphinx.addnodes import toctree
-from sphinx.errors import ExtensionError
 import sphinx.util.logging
 from docutils.parsers.rst import directives
+from sphinx.addnodes import toctree
+from sphinx.errors import ExtensionError
+from sphinx.util.console import colorize
 
 from . import documenters
+from ._mapper import Mapper
 from .directives import AutoapiSummary, NestedParse
 from .inheritance_diagrams import AutoapiInheritanceDiagram
-from ._mapper import Mapper
 from .settings import API_ROOT
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
@@ -205,9 +205,9 @@ def viewcode_find(app, modname):
             children = getattr(obj, "children", ())
             stack.extend((full_name + ".", gchild) for gchild in children)
 
-    stream = open(module.obj["file_path"], encoding=module.obj.get("encoding", "utf-8"))
-
-    with stream as in_f:
+    with open(
+        module.obj["file_path"], encoding=module.obj.get("encoding", "utf-8")
+    ) as in_f:
         source = in_f.read()
 
     result = (source, locations)

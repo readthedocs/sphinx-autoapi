@@ -1,8 +1,7 @@
 """AutoAPI directives"""
 
-from docutils.parsers.rst import Directive
 from docutils import nodes
-
+from docutils.parsers.rst import Directive
 from sphinx.ext.autosummary import Autosummary, mangle_signature
 from sphinx.util.nodes import nested_parse_with_titles
 

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import builtins
-from collections.abc import Iterable
 import itertools
 import re
+from collections.abc import Iterable
 from typing import Any, NamedTuple
 
 import astroid
@@ -145,9 +145,12 @@ def get_const_value(node: astroid.nodes.NodeNG) -> str | None:
         The string representation of the value represented by the node
         (if it can be converted).
     """
-    if isinstance(node, astroid.nodes.Const):
-        if isinstance(node.value, str) and "\n" in node.value:
-            return f'"""{node.value}"""'
+    if (
+        isinstance(node, astroid.nodes.Const)
+        and isinstance(node.value, str)
+        and "\n" in node.value
+    ):
+        return f'"""{node.value}"""'
 
     class NotConstException(Exception):
         pass
@@ -548,9 +551,12 @@ def _iter_args(
     packed = itertools.zip_longest(args, annotations)
     for i, (arg, annotation) in enumerate(packed):
         default = None
-        if defaults is not None and i >= default_offset:
-            if defaults[i - default_offset] is not None:
-                default = defaults[i - default_offset].as_string()
+        if (
+            defaults is not None
+            and i >= default_offset
+            and defaults[i - default_offset] is not None
+        ):
+            default = defaults[i - default_offset].as_string()
 
         name = arg.name
         if isinstance(arg, astroid.nodes.Tuple):
@@ -737,10 +743,7 @@ def is_abstract_class(node: astroid.nodes.ClassDef) -> bool:
     if "abc.ABC" in node.basenames:
         return True
 
-    if any(method.is_abstract(pass_is_abstract=False) for method in node.methods()):
-        return True
-
-    return False
+    return any(method.is_abstract(pass_is_abstract=False) for method in node.methods())
 
 
 def is_functional_namedtuple(node: astroid.nodes.NodeNG) -> bool:

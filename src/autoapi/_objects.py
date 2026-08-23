@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import functools
 import pathlib
 
 import sphinx
@@ -522,11 +521,10 @@ class PythonClass(PythonObject):
         return self._children_of_type("class")
 
     @property
-    @functools.lru_cache
     def constructor(self):
         for child in self.children:
             if child.short_name == "__init__":
-                if not child.type == "method":
+                if child.type != "method":
                     break
 
                 return child

@@ -2,9 +2,9 @@ import collections
 import os
 
 import astroid
+import sphinx.util.docstrings
 from astroid.builder import AstroidBuilder
 from astroid.manager import AstroidManager
-import sphinx.util.docstrings
 
 from . import _astroid_utils
 

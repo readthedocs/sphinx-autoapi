@@ -1,19 +1,18 @@
 import re
 
 import sphinx
-from sphinx.ext import autodoc
 import sphinx.util.logging
+from sphinx.ext import autodoc
 
 from ._objects import (
-    PythonFunction,
+    PythonAttribute,
     PythonClass,
+    PythonData,
+    PythonException,
+    PythonFunction,
     PythonMethod,
     PythonProperty,
-    PythonData,
-    PythonAttribute,
-    PythonException,
 )
-
 
 LOGGER = sphinx.util.logging.getLogger(__name__)
 

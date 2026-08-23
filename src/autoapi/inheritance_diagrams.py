@@ -83,7 +83,7 @@ class _AutoapiInheritanceGraph(sphinx.ext.inheritance_diagram.InheritanceGraph):
             if cls.doc_node:
                 doc = cls.doc_node.value.strip().split("\n")[0]
                 if doc:
-                    tooltip = '"%s"' % doc.replace('"', '\\"')
+                    tooltip = '"{}"'.format(doc.replace('"', '\\"'))
 
             baselist = []
             all_classes[cls] = (nodename, fullname, baselist, tooltip or "")
