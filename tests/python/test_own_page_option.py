@@ -5,7 +5,8 @@ import pytest
 
 class TestModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pypackageexample",
             warningiserror=True,
@@ -150,7 +151,8 @@ class TestModule:
 
 class TestClass:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pypackageexample",
             warningiserror=True,
@@ -358,7 +360,8 @@ class TestClass:
 
 class TestFunction:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pypackageexample",
             warningiserror=True,
@@ -545,7 +548,8 @@ class TestFunction:
 
 class TestMethod:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pypackageexample",
             warningiserror=True,
@@ -755,7 +759,8 @@ class TestMethod:
 
 class TestAttribute:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pypackageexample",
             warningiserror=True,

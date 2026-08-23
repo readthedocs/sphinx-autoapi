@@ -24,7 +24,8 @@ sphinx_version = version.parse(sphinx.__version__).release
 
 class TestSimpleModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pyexample",
             warningiserror=True,
@@ -164,7 +165,8 @@ class TestSimpleModule:
 
 class TestSimpleModuleManual:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pyexample",
             warningiserror=True,
@@ -272,7 +274,8 @@ class TestSimpleModuleManual:
 
 class TestMovedConfPy(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pymovedconfpy",
             confdir="confpy",
@@ -283,7 +286,8 @@ class TestMovedConfPy(TestSimpleModule):
 
 class TestSimpleModuleDifferentPrimaryDomain(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pyexample",
             warningiserror=True,
@@ -296,7 +300,8 @@ class TestSimpleModuleDifferentPrimaryDomain(TestSimpleModule):
 
 class TestSimpleStubModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pyiexample", warningiserror=True)
 
     def test_integration(self, parse):
@@ -330,7 +335,8 @@ class TestSimpleStubModule:
 
 class TestSimpleStubModuleNotPreferred:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pyiexample2", warningiserror=True)
 
     def test_integration(self, parse):
@@ -345,7 +351,8 @@ class TestSimpleStubModuleNotPreferred:
 
 class TestStubInitModuleInSubmodule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pyisubmoduleinit", warningiserror=True)
 
     def test_integration(self, parse):
@@ -359,7 +366,8 @@ class TestStubInitModuleInSubmodule:
 
 class TestPy3Module:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("py3example")
 
     def test_integration(self, parse):
@@ -583,7 +591,8 @@ def test_py3_hiding_undoc_overloaded_members(builder, parse):
 
 class TestAnnotationCommentsModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pyannotationcommentsexample", warningiserror=True)
 
     def test_integration(self, parse):
@@ -642,7 +651,8 @@ class TestAnnotationCommentsModule:
 )
 class TestPositionalOnlyArgumentsModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("py38positionalparams", warningiserror=True)
 
     def test_integration(self, parse):
@@ -694,7 +704,8 @@ class TestPositionalOnlyArgumentsModule:
 )
 class TestPipeUnionModule:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("py310unionpipe", warningiserror=True)
 
     def test_integration(self, parse):
@@ -738,7 +749,8 @@ class TestPipeUnionModule:
 )
 class TestPEP695:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pep695", warningiserror=True)
 
     def test_integration(self, parse):
@@ -792,7 +804,8 @@ def test_napoleon_integration_loaded(builder, parse):
 
 class TestSimplePackage:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pypackageexample", warningiserror=True)
 
     def test_integration_with_package(self, parse):
@@ -1065,7 +1078,8 @@ def test_skip_members_hook(builder):
 
 class TestComplexPackage:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         # We don't set warningiserror=True because we test that invalid imports
         # do not fail the build
         builder("pypackagecomplex")
@@ -1151,7 +1165,8 @@ class TestComplexPackage:
 
 class TestComplexPackageParallel(TestComplexPackage):
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pypackagecomplex", parallel=2)
 
 
@@ -1202,7 +1217,8 @@ def test_caching(builder, rebuild):
 
 class TestImplicitNamespacePackage:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         # TODO: Cannot set warningiserror=True because namespaces are not added
         # to the toctree automatically.
         builder("py3implicitnamespace")
@@ -1288,7 +1304,8 @@ class TestAutodocTypehintsPackage:
     """Test integrations with the autodoc.typehints extension."""
 
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder("pyautodoc_typehints", warningiserror=True)
 
     def test_renders_typehint(self, parse):
@@ -1316,7 +1333,8 @@ def test_no_files_found(builder):
 
 class TestMdSource:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pyexample",
             warningiserror=True,
@@ -1326,7 +1344,8 @@ class TestMdSource:
 
 class TestMemberOrder:
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pyexample",
             warningiserror=True,
@@ -1431,7 +1450,8 @@ class TestTypeParams:
     """Check that type params are documented"""
 
     @pytest.fixture(autouse=True, scope="class")
-    def built(self, builder):
+    @classmethod
+    def built(cls, builder):
         builder(
             "pytypeparams",
             warningiserror=True,
