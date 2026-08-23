@@ -1,0 +1,1 @@
+Create directory symlinks used by the test suite at runtime so tests pass from source distributions.

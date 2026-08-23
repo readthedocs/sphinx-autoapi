@@ -276,12 +276,22 @@ class TestMovedConfPy(TestSimpleModule):
     @pytest.fixture(autouse=True, scope="class")
     @classmethod
     def built(cls, builder):
-        builder(
-            "pymovedconfpy",
-            confdir="confpy",
-            warningiserror=True,
-            confoverrides={"exclude_patterns": ["manualapi.rst"]},
+        symlink = (
+            pathlib.Path(__file__).parent / "pymovedconfpy" / "example"
+        ).absolute()
+        symlink.symlink_to(
+            symlink.parent.parent / "pyexample" / "example",
+            target_is_directory=True,
         )
+        try:
+            builder(
+                "pymovedconfpy",
+                confdir="confpy",
+                warningiserror=True,
+                confoverrides={"exclude_patterns": ["manualapi.rst"]},
+            )
+        finally:
+            symlink.unlink()
 
 
 class TestSimpleModuleDifferentPrimaryDomain(TestSimpleModule):
