@@ -18,6 +18,9 @@ class Parser:
         self._qual_name_stack = []
         self._full_name_stack = []
         self._encoding = None
+        # Classes whose inheritance is currently being resolved, used to avoid
+        # infinite recursion when a nested class inherits from an enclosing class.
+        self._resolving_classes = set()
 
     def _get_qual_name(self, name):
         return ".".join(self._qual_name_stack + [name])
@@ -255,12 +258,18 @@ class Parser:
     def parse_classdef(self, node):
         data = self._parse_classdef(node, use_name_stacks=True)
 
-        ancestors = self._relevant_ancestors(node)
-        ancestor_data = [
-            self._parse_classdef(base, use_name_stacks=False) for base in ancestors
-        ]
-        if ancestor_data:
-            data["children"] = list(self._resolve_inheritance(data, *ancestor_data))
+        if node not in self._resolving_classes:
+            self._resolving_classes.add(node)
+            try:
+                ancestors = self._relevant_ancestors(node)
+                ancestor_data = [
+                    self._parse_classdef(base, use_name_stacks=False)
+                    for base in ancestors
+                ]
+            finally:
+                self._resolving_classes.discard(node)
+            if ancestor_data:
+                data["children"] = list(self._resolve_inheritance(data, *ancestor_data))
 
         self._qual_name_stack.pop()
         self._full_name_stack.pop()
