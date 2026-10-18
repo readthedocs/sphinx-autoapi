@@ -162,6 +162,22 @@ class TestSimpleModule:
         )
         assert cells[1].text.strip() == "A function with a long signature."
 
+    def test_summary_with_return_annotation(self, parse):
+        example_file = parse("_build/html/autoapi/example/index.html")
+
+        functions_table = example_file.find_all(class_="autosummary")[-1]
+        summary_row = next(
+            row
+            for row in functions_table.find_all("tr")
+            if "fn_with_return_annotation" in row.text
+        )
+        cells = summary_row.find_all("td")
+        assert (
+            cells[0].text.replace("\xa0", " ")
+            == "fn_with_return_annotation(first, second) → list[str]"
+        )
+        assert cells[1].text.strip() == "A function with a return annotation."
+
 
 class TestSimpleModuleManual:
     @pytest.fixture(autouse=True, scope="class")

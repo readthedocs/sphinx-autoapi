@@ -19,19 +19,18 @@ class AutoapiSummary(Autosummary):
 
         for name in names:
             obj = all_objects[name]
+            sig = ""
             if isinstance(obj, PythonFunction):
                 if obj.overloads:
                     sig = "(\u2026)"
                 else:
-                    sig = f"({obj.args})"
+                    # mangle_signature only strips an ASCII "->" return
+                    # annotation, so mangle the arguments on their own
+                    # and append the return annotation afterwards.
+                    max_sig_chars = max(10, max_item_chars - len(obj.short_name))
+                    sig = mangle_signature(f"({obj.args})", max_chars=max_sig_chars)
                     if obj.return_annotation is not None:
                         sig += f" \u2192 {obj.return_annotation}"
-            else:
-                sig = ""
-
-            if sig:
-                max_sig_chars = max(10, max_item_chars - len(obj.short_name))
-                sig = mangle_signature(sig, max_chars=max_sig_chars)
 
             item = (obj.short_name, sig, obj.summary, obj.id)
             items.append(item)
