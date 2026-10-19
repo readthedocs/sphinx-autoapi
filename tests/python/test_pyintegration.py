@@ -1227,6 +1227,45 @@ def test_caching(builder, rebuild):
     assert mtimes[1] != mtimes[0]
 
 
+def test_caching_by_content(builder, rebuild):
+    confoverrides = {
+        "autoapi_keep_files": True,
+        "autoapi_change_detection": "content",
+    }
+
+    def newest_rst_mtime():
+        return max(
+            path.stat().st_mtime for path in pathlib.Path("autoapi").rglob("*.rst")
+        )
+
+    builder("pypackagecomplex", confoverrides=confoverrides)
+    first_build = newest_rst_mtime()
+
+    for source in pathlib.Path("complex").rglob("*.py"):
+        source.touch()
+
+    rebuild(confoverrides=confoverrides)
+    assert newest_rst_mtime() == first_build
+
+    source = pathlib.Path("complex/foo.py")
+    original = source.read_text()
+    try:
+        source.write_text(original + "\n")
+        rebuild(confoverrides=confoverrides)
+    finally:
+        source.write_text(original)
+
+    assert newest_rst_mtime() != first_build
+
+
+def test_invalid_change_detection(builder):
+    with pytest.raises(ValueError):
+        builder(
+            "pypackagecomplex",
+            confoverrides={"autoapi_change_detection": "not_a_value"},
+        )
+
+
 class TestImplicitNamespacePackage:
     @pytest.fixture(autouse=True, scope="class")
     @classmethod
