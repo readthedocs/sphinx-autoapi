@@ -1,11 +1,13 @@
 import collections
 import copy
 import fnmatch
+import hashlib
 import itertools
 import operator
 import os
 import re
 import sys
+from pathlib import Path
 
 import sphinx
 import sphinx.environment
@@ -46,6 +48,10 @@ _OBJ_MAP = {
         PythonException,
     )
 }
+
+
+def _hash_files(paths):
+    return {path: hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in paths}
 
 
 def _expand_wildcard_placeholder(original_module, originals_map, placeholder):
@@ -402,9 +408,10 @@ class Mapper:
         last_files = getattr(self.app.env, "autoapi_source_files", [])
         self.app.env.autoapi_source_files = files
 
-        last_mtime = getattr(self.app.env, "autoapi_max_mtime", 0)
-        this_mtime = max(os.path.getmtime(file) for _, file in files)
-        self.app.env.autoapi_max_mtime = this_mtime
+        if self.app.config.autoapi_change_detection == "content":
+            sources_changed = self._update_source_hashes(files)
+        else:
+            sources_changed = self._update_max_mtime(files)
 
         if not self.app.config.autoapi_keep_files:
             return True
@@ -412,9 +419,19 @@ class Mapper:
         if self.app.env.config_status != sphinx.environment.CONFIG_OK:
             return True
 
-        return (
-            set(last_files) != set(files) or not last_mtime or last_mtime < this_mtime
-        )
+        return set(last_files) != set(files) or sources_changed
+
+    def _update_max_mtime(self, files):
+        last_mtime = getattr(self.app.env, "autoapi_max_mtime", 0)
+        this_mtime = max(os.path.getmtime(file) for _, file in files)
+        self.app.env.autoapi_max_mtime = this_mtime
+        return not last_mtime or last_mtime < this_mtime
+
+    def _update_source_hashes(self, files):
+        last_hashes = getattr(self.app.env, "autoapi_source_hashes", None)
+        this_hashes = _hash_files(path for _, path in files)
+        self.app.env.autoapi_source_hashes = this_hashes
+        return last_hashes != this_hashes
 
     def _find_files(self, patterns, dirs, ignore):
         for dir_ in dirs:
