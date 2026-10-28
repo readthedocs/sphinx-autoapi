@@ -9,7 +9,7 @@ which requires some manual authoring and uses code imports,
 AutoAPI finds and generates documentation by parsing source code.
 
 
-.. grid:: 2
+.. grid:: 1 2 2 2
     :gutter: 3
 
     .. grid-item-card:: Beginner Guides
