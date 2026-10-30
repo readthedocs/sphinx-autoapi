@@ -405,13 +405,9 @@ class Mapper:
             top_level_file.write(content.render(pages=pages).encode("utf-8"))
 
     def _need_to_load(self, files):
-        last_files = getattr(self.app.env, "autoapi_source_files", [])
-        self.app.env.autoapi_source_files = files
-
-        if self.app.config.autoapi_change_detection == "content":
-            sources_changed = self._update_source_hashes(files)
-        else:
-            sources_changed = self._update_max_mtime(files)
+        last_hashes = getattr(self.app.env, "autoapi_source_hashes", None)
+        this_hashes = _hash_files(path for _, path in files)
+        self.app.env.autoapi_source_hashes = this_hashes
 
         if not self.app.config.autoapi_keep_files:
             return True
@@ -419,18 +415,6 @@ class Mapper:
         if self.app.env.config_status != sphinx.environment.CONFIG_OK:
             return True
 
-        return set(last_files) != set(files) or sources_changed
-
-    def _update_max_mtime(self, files):
-        last_mtime = getattr(self.app.env, "autoapi_max_mtime", 0)
-        this_mtime = max(os.path.getmtime(file) for _, file in files)
-        self.app.env.autoapi_max_mtime = this_mtime
-        return not last_mtime or last_mtime < this_mtime
-
-    def _update_source_hashes(self, files):
-        last_hashes = getattr(self.app.env, "autoapi_source_hashes", None)
-        this_hashes = _hash_files(path for _, path in files)
-        self.app.env.autoapi_source_hashes = this_hashes
         return last_hashes != this_hashes
 
     def _find_files(self, patterns, dirs, ignore):
