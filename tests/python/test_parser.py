@@ -167,3 +167,40 @@ class TestPythonParser:
         assert inner["bases"] == ["Outer"]
         inner_children = {child["name"] for child in inner["children"]}
         assert "method" in inner_children
+
+    @pytest.mark.parametrize(
+        "guard",
+        [
+            'if __name__ == "__main__":',
+            "if __name__ == '__main__':",
+            'if "__main__" == __name__:',
+        ],
+    )
+    def test_ignores_main_guard(self, guard):
+        """Check code under ``if __name__ == "__main__":`` is not documented.
+
+        Regression test for https://github.com/readthedocs/sphinx-autoapi/issues/429
+        """
+        source = f'''
+def normal_function():
+    """Documented."""
+
+{guard}
+    def new_example():
+        """Only runs as a script."""
+
+    this_variable_is_ignored = 52
+'''
+        data = Parser().parse(astroid.parse(source))
+        assert [child["name"] for child in data["children"]] == ["normal_function"]
+
+    def test_keeps_other_conditional_definitions(self):
+        source = '''
+import sys
+
+if sys.version_info >= (3, 8):
+    def versioned():
+        """Documented."""
+'''
+        data = Parser().parse(astroid.parse(source))
+        assert [child["name"] for child in data["children"]] == ["versioned"]

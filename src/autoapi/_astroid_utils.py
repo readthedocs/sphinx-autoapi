@@ -422,6 +422,30 @@ def is_local_import_from(node: astroid.nodes.NodeNG, package_name: str) -> bool:
     )
 
 
+def is_main_guard(node: astroid.nodes.NodeNG) -> bool:
+    """Check if a node is an ``if __name__ == "__main__":`` block.
+
+    Args:
+        node: The node to check.
+
+    Returns:
+        True if the node is a main guard. False otherwise.
+    """
+    if not isinstance(node, astroid.nodes.If):
+        return False
+
+    test = node.test
+    if not isinstance(test, astroid.nodes.Compare):
+        return False
+    if len(test.ops) != 1 or test.ops[0][0] != "==":
+        return False
+
+    operands = (test.left, test.ops[0][1])
+    names = [op.name for op in operands if isinstance(op, astroid.nodes.Name)]
+    values = [op.value for op in operands if isinstance(op, astroid.nodes.Const)]
+    return names == ["__name__"] and values == ["__main__"]
+
+
 def get_module_all(node: astroid.nodes.Module) -> list[str] | None:
     """Get the contents of the ``__all__`` variable from a module.
 
