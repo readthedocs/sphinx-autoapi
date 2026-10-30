@@ -261,27 +261,8 @@ Advanced Options
    Useful for debugging or transitioning to manual documentation.
 
    Keeping files will also allow AutoAPI to use incremental builds.
-   Providing none of the source files have changed,
+   If the content of the source files has not changed since the previous build,
    AutoAPI will skip parsing the source code and regenerating the API documentation.
-
-.. confval:: autoapi_change_detection
-
-   Default: ``"mtime"``
-
-   How AutoAPI detects changed source files during incremental builds.
-   This option has an effect only when :confval:`autoapi_keep_files` is enabled.
-
-   The available values are:
-
-   * ``"mtime"``: A source file has changed when its modification time
-     is newer than in the previous build.
-   * ``"content"``: A source file has changed when its content
-     is different from the previous build.
-
-   Use ``"content"`` when the modification times of source files change
-   without changes to their content.
-   For example, a CI job that restores the Sphinx cache
-   after a fresh checkout of the repository.
 
 
 Suppressing Warnings

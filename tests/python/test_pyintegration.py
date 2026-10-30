@@ -1227,11 +1227,8 @@ def test_caching(builder, rebuild):
     assert mtimes[1] != mtimes[0]
 
 
-def test_caching_by_content(builder, rebuild):
-    confoverrides = {
-        "autoapi_keep_files": True,
-        "autoapi_change_detection": "content",
-    }
+def test_caching_ignores_mtime_changes(builder, rebuild):
+    confoverrides = {"autoapi_keep_files": True}
 
     def newest_rst_mtime():
         return max(
@@ -1256,14 +1253,6 @@ def test_caching_by_content(builder, rebuild):
         source.write_text(original)
 
     assert newest_rst_mtime() != first_build
-
-
-def test_invalid_change_detection(builder):
-    with pytest.raises(ValueError):
-        builder(
-            "pypackagecomplex",
-            confoverrides={"autoapi_change_detection": "not_a_value"},
-        )
 
 
 class TestImplicitNamespacePackage:

@@ -41,7 +41,6 @@ _VALID_PAGE_LEVELS = [
     "method",
     "attribute",
 ]
-_VALID_CHANGE_DETECTIONS = ("mtime", "content")
 _VIEWCODE_CACHE: dict[str, tuple[str, dict[str, tuple[str, int, int]]]] = {}
 """Caches a module's parse results for use in viewcode."""
 
@@ -68,10 +67,6 @@ def run_autoapi(app):
     own_page_level = app.config.autoapi_own_page_level
     if own_page_level not in _VALID_PAGE_LEVELS:
         raise ValueError(f"Invalid autoapi_own_page_level '{own_page_level}")
-
-    change_detection = app.config.autoapi_change_detection
-    if change_detection not in _VALID_CHANGE_DETECTIONS:
-        raise ValueError(f"Invalid autoapi_change_detection '{change_detection}'")
 
     # Make sure the paths are full
     normalised_dirs = _normalise_autoapi_dirs(app.config.autoapi_dirs, app.srcdir)
@@ -258,7 +253,6 @@ def setup(app):
     app.add_config_value("autoapi_file_patterns", None, "html")
     app.add_config_value("autoapi_dirs", [], "html")
     app.add_config_value("autoapi_keep_files", False, "html")
-    app.add_config_value("autoapi_change_detection", "mtime", "env")
     app.add_config_value("autoapi_add_toctree_entry", True, "html")
     app.add_config_value("autoapi_template_dir", None, "html")
     app.add_config_value("autoapi_include_summaries", None, "html")
