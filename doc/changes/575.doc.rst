@@ -1,0 +1,1 @@
+Update the landing page grid layout so that the cards stack on narrow screens
