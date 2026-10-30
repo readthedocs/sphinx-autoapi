@@ -451,6 +451,10 @@ class Parser:
     def parse(self, node):
         data = []
 
+        # Like autodoc, leave out code that only runs when used as a script.
+        if _astroid_utils.is_main_guard(node):
+            return data
+
         node_type = node.__class__.__name__.lower()
         parse_func = getattr(self, "parse_" + node_type, None)
         if parse_func:
