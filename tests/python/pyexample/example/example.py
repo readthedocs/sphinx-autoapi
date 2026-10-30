@@ -164,6 +164,10 @@ class Three:
     __init__ = Two.__init__
 
 
+def fn_with_return_annotation(first: int, second: str) -> list[str]:
+    """A function with a return annotation."""
+
+
 def fn_with_long_sig(
     this,
     *,

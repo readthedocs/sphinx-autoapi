@@ -145,3 +145,25 @@ class TestPythonParser:
         param = data["type_params"][0]
         assert param.name == "T"
         assert param.annotation is None
+
+    def test_parses_nested_subclass_of_outer_class(self):
+        """Check a nested class that inherits from its enclosing class is parsed.
+
+        Regression test for https://github.com/readthedocs/sphinx-autoapi/issues/571
+        """
+        source = """
+        class Outer:
+            def method(self):
+                pass
+
+            class Inner(Outer):
+                pass
+        """
+        data = self.parse(source)[0]
+        assert data["name"] == "Outer"
+        children = {child["name"]: child for child in data["children"]}
+        inner = children["Inner"]
+        assert inner["type"] == "class"
+        assert inner["bases"] == ["Outer"]
+        inner_children = {child["name"] for child in inner["children"]}
+        assert "method" in inner_children
