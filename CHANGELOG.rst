@@ -5,6 +5,30 @@ Versions follow `Semantic Versioning <https://semver.org/>`_ (``<major>.<minor>.
 
 .. towncrier release notes start
 
+v3.9.0 (2026-10-30)
+-------------------
+
+Features
+^^^^^^^^
+
+- Detect source file changes based on content hashing instead of modification time to support caching in CI environments. (#573)
+
+
+Bugfixes
+^^^^^^^^
+
+- Stop documenting code under ``if __name__ == "__main__":``. Only its first definition used to show up, now none of it does, as with autodoc. (#429)
+- Fix ``autoapisummary`` showing only the return annotation of a function, in place of its arguments. (#531)
+- Create directory symlinks used by the test suite at runtime so tests pass from source distributions. (#565)
+- Fix infinite recursion when a nested class inherits from its enclosing class. (#571)
+
+
+Improved Documentation
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Update the landing page grid layout so that the cards stack on narrow screens (#575)
+
+
 v3.8.1 (2026-08-23)
 -------------------
 

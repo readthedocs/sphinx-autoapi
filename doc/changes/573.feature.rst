@@ -1,1 +1,0 @@
-Detect source file changes based on content hashing instead of modification time to support caching in CI environments.

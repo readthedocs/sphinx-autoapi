@@ -1,1 +1,0 @@
-Stop documenting code under ``if __name__ == "__main__":``. Only its first definition used to show up, now none of it does, as with autodoc.

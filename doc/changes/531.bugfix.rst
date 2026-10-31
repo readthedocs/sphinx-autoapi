@@ -1,1 +1,0 @@
-Fix ``autoapisummary`` showing only the return annotation of a function, in place of its arguments.

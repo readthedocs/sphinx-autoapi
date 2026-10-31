@@ -1,1 +1,0 @@
-Fix infinite recursion when a nested class inherits from its enclosing class.
