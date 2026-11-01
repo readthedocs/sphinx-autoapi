@@ -240,3 +240,30 @@ class TestAstroidUtils:
         args_info = _astroid_utils.get_args_info(node.args)
         formatted = _objects._format_args(args_info)
         assert formatted == expected
+
+    @pytest.mark.parametrize(
+        "decorator,signature,expected",
+        [
+            ("", "self, a: int", "a: int"),
+            ("", "self, a, /, b", "a, /, b"),
+            ("", "self, /, a", "a"),
+            ("", "self, /, *args, **kwargs", "*args, **kwargs"),
+            ("", "*args, **kwargs", "*args, **kwargs"),
+            ("", "*, a: int", "*, a: int"),
+            ("@classmethod", "cls, /, a", "a"),
+            ("@staticmethod", "a, /, b", "a, /, b"),
+        ],
+    )
+    def test_format_method_args(self, decorator, signature, expected):
+        node = astroid.extract_node(
+            f"""
+            class A:
+                {decorator}
+                def method({signature}): #@
+                    pass
+        """
+        )
+
+        args_info = _astroid_utils.get_args_info(node.args)
+        formatted = _objects._format_args(args_info)
+        assert formatted == expected

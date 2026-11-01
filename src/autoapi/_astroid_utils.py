@@ -688,8 +688,18 @@ def get_args_info(args_node: astroid.nodes.Arguments) -> list[ArgInfo]:
             annotation_offset += 1
         result.append(ArgInfo("**", args_node.kwarg, annotation, None))
 
-    if args_node.parent.type in ("method", "classmethod") and result:
+    # Only drop the first argument if it is the bound self/cls argument.
+    # A method that starts with ``*args`` or ``*`` has no such argument.
+    if (
+        args_node.parent.type in ("method", "classmethod")
+        and result
+        and result[0].prefix is None
+    ):
         result.pop(0)
+        # Drop the positional-only marker if self/cls was the only
+        # positional-only argument.
+        if result and result[0].prefix == "/":
+            result.pop(0)
 
     return result
 
