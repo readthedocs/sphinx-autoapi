@@ -1,0 +1,1 @@
+Add a bug report issue form that asks for a way to reproduce the problem.
