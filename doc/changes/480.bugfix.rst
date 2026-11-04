@@ -1,0 +1,1 @@
+Fix a build crash with ``AttributeError`` when a package imports a name that shadows the submodule of a class with an inheritance diagram.

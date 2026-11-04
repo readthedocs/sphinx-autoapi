@@ -11,6 +11,7 @@ def _do_import_class(name, currmodule=None):
         target = astroid.MANAGER.ast_from_module_name(currmodule)
         while target and path_stack:
             path_part = path_stack.pop()
+            parent = target
             target = (target.getattr(path_part) or (None,))[0]
             while isinstance(target, (astroid.ImportFrom, astroid.Import)):
                 try:
@@ -19,6 +20,12 @@ def _do_import_class(name, currmodule=None):
                     target = target.do_import_module()
                     target = (target.getattr(path_part) or (None,))[0]
                     break
+            if path_stack and target and not hasattr(target, "getattr"):
+                # This name has no attributes to look up, such as an instance.
+                # In a package, it can be shadowing a submodule that does.
+                target = None
+                if isinstance(parent, astroid.nodes.Module) and parent.package:
+                    target = parent.import_module(path_part, relative_only=True)
     except astroid.AstroidError:
         target = None
 
