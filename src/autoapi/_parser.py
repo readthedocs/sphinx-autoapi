@@ -460,12 +460,30 @@ class Parser:
         if parse_func:
             data = parse_func(node)
         else:
+            # Only one branch of a compound statement is documented, so that
+            # alternative definitions (if/else, try/except) are not duplicated,
+            # but every statement in that branch is.
             for child in node.get_children():
                 data = self.parse(child)
                 if data:
+                    data = list(data)
+                    block = _statement_block(node, child)
+                    index = next(i for i, stmt in enumerate(block) if stmt is child)
+                    for sibling in block[index + 1 :]:
+                        data.extend(self.parse(sibling))
                     break
 
         return data
+
+
+def _statement_block(node, child):
+    """Get the list of statements of ``node`` that ``child`` belongs to."""
+    for field in ("body", "orelse", "finalbody"):
+        block = getattr(node, field, None)
+        if isinstance(block, list) and any(stmt is child for stmt in block):
+            return block
+
+    return [child]
 
 
 def _parse_child(child_data, overloads) -> bool:
