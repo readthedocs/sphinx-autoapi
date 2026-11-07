@@ -1,0 +1,1 @@
+Document every definition in a branch of an ``if``, ``try`` or ``with`` block, not only the first one.

@@ -204,3 +204,53 @@ if sys.version_info >= (3, 8):
 '''
         data = Parser().parse(astroid.parse(source))
         assert [child["name"] for child in data["children"]] == ["versioned"]
+
+    def test_parses_every_statement_in_a_conditional_block(self):
+        """Check that all definitions in one branch are documented.
+
+        Regression test for https://github.com/readthedocs/sphinx-autoapi/issues/264
+        """
+        source = '''
+import sys
+
+if sys.version_info >= (3, 8):
+    def first():
+        """Documented."""
+
+    def second():
+        """Documented."""
+else:
+    def first():
+        """Not documented."""
+
+try:
+    import numpy
+    HAS_NUMPY = True
+
+    def uses_numpy():
+        """Documented."""
+except ImportError:
+    HAS_NUMPY = False
+
+class Klass:
+    if True:
+        def method_one(self):
+            """Documented."""
+
+        def method_two(self):
+            """Documented."""
+'''
+        data = Parser().parse(astroid.parse(source))
+        children = data["children"]
+        assert [child["name"] for child in children] == [
+            "first",
+            "second",
+            "HAS_NUMPY",
+            "uses_numpy",
+            "Klass",
+        ]
+        assert children[0]["doc"].strip() == "Documented."
+        assert [child["name"] for child in children[-1]["children"]] == [
+            "method_one",
+            "method_two",
+        ]
