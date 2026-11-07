@@ -120,17 +120,20 @@ def resolve_qualname(node: astroid.nodes.NodeNG, basename: str) -> str:
     return full_basename
 
 
-def get_full_basenames(node: astroid.nodes.ClassDef) -> Iterable[str]:
-    """Resolve the partial names of a class' bases to fully qualified names.
+def get_full_basenames(
+    node: astroid.nodes.ClassDef, *, qualify_local: bool = False
+) -> Iterable[str]:
+    """Resolve the names of a class' bases.
 
     Args:
         node: The class definition node to resolve the bases of.
+        qualify_local: Keep the module name for bases defined in the same module.
 
     Returns:
-        The fully qualified names.
+        The base names, shortened for same-module references by default.
     """
     for base in node.bases:
-        yield _resolve_annotation(base)
+        yield _resolve_annotation(base, qualify_local=qualify_local)
 
 
 def get_const_value(node: astroid.nodes.NodeNG) -> str | None:
@@ -495,7 +498,9 @@ def merge_annotations(
             yield None
 
 
-def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
+def _resolve_annotation(
+    annotation: astroid.nodes.NodeNG, qualify_local: bool = False
+) -> str:
     resolved: str
 
     if _is_ellipsis(annotation):
@@ -507,14 +512,14 @@ def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
     elif isinstance(annotation, astroid.nodes.Attribute):
         resolved = resolve_qualname(annotation, annotation.as_string())
     elif isinstance(annotation, astroid.nodes.Subscript):
-        value = _resolve_annotation(annotation.value)
+        value = _resolve_annotation(annotation.value, qualify_local)
         slice_node = annotation.slice
         # astroid.Index was removed in astroid v3
         if hasattr(astroid.nodes, "Index") and isinstance(
             slice_node, astroid.nodes.Index
         ):
             slice_node = slice_node.value
-        if value == "Literal":
+        if value in ("Literal", f"{annotation.root().name}.Literal"):
             if isinstance(slice_node, astroid.nodes.Tuple):
                 elts = slice_node.elts
             else:
@@ -523,26 +528,36 @@ def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
                 (
                     elt.as_string()
                     if isinstance(elt, astroid.nodes.Const)
-                    else _resolve_annotation(elt)
+                    else _resolve_annotation(elt, qualify_local)
                 )
                 for elt in elts
             )
         elif isinstance(slice_node, astroid.nodes.Tuple):
-            slice_ = ", ".join(_resolve_annotation(elt) for elt in slice_node.elts)
+            slice_ = ", ".join(
+                _resolve_annotation(elt, qualify_local) for elt in slice_node.elts
+            )
         else:
-            slice_ = _resolve_annotation(slice_node)
+            slice_ = _resolve_annotation(slice_node, qualify_local)
         resolved = f"{value}[{slice_}]"
     elif isinstance(annotation, astroid.nodes.Tuple):
         resolved = (
-            "(" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + ")"
+            "("
+            + ", ".join(
+                _resolve_annotation(elt, qualify_local) for elt in annotation.elts
+            )
+            + ")"
         )
     elif isinstance(annotation, astroid.nodes.List):
         resolved = (
-            "[" + ", ".join(_resolve_annotation(elt) for elt in annotation.elts) + "]"
+            "["
+            + ", ".join(
+                _resolve_annotation(elt, qualify_local) for elt in annotation.elts
+            )
+            + "]"
         )
     elif isinstance(annotation, astroid.nodes.BinOp) and annotation.op == "|":
-        left = _resolve_annotation(annotation.left)
-        right = _resolve_annotation(annotation.right)
+        left = _resolve_annotation(annotation.left, qualify_local)
+        right = _resolve_annotation(annotation.right, qualify_local)
         resolved = f"{left} | {right}"
     else:
         resolved = annotation.as_string()
@@ -553,7 +568,10 @@ def _resolve_annotation(annotation: astroid.nodes.NodeNG) -> str:
         return resolved[len("typing_extensions.") :]
 
     # Sphinx is capable of linking anything in the same module
-    # without needing a fully qualified path.
+    # without needing a fully qualified path unless the class is re-exported.
+    if qualify_local:
+        return resolved
+
     module_prefix = annotation.root().name + "."
     if resolved.startswith(module_prefix):
         return resolved[len(module_prefix) :]

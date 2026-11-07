@@ -961,6 +961,49 @@ def test_imports_into_modules_always_hidden(builder, parse):
     assert not submodule_file.find(id="complex.submodule.imported_function")
 
 
+@pytest.mark.parametrize(
+    ("module", "exports", "base_href"),
+    [
+        ("models", ["Derived"], "models/index.html#example_package.models.Base"),
+        ("_models", ["Base", "Derived"], "#example_package.Base"),
+    ],
+)
+def test_reexported_class_links_to_base(
+    rebuild, parse, tmp_path, monkeypatch, module, exports, base_href
+):
+    package = tmp_path / "example_package"
+    package.mkdir()
+    (package / "__init__.py").write_text(
+        '"""Package entry point."""\n\n'
+        f"from .{module} import {', '.join(exports)}\n\n"
+        f"__all__ = {exports!r}\n",
+        encoding="utf8",
+    )
+    (package / f"{module}.py").write_text(
+        '"""Class definitions."""\n\n'
+        'class Base:\n    """The base class."""\n\n'
+        'class Derived(Base):\n    """The re-exported class."""\n',
+        encoding="utf8",
+    )
+    (tmp_path / "conf.py").touch()
+    (tmp_path / "index.rst").write_text("API\n===\n\n.. toctree::\n", encoding="utf8")
+    monkeypatch.chdir(tmp_path)
+    rebuild(
+        confoverrides={
+            "extensions": ["autoapi.extension"],
+            "autoapi_dirs": ["example_package"],
+            "autoapi_options": ["imported-members", "show-inheritance"],
+            "nitpicky": True,
+        }
+    )
+
+    page = parse("_build/html/autoapi/example_package/index.html")
+    derived = page.find(id="example_package.Derived").parent
+    base_link = derived.find("dd").find("a", href=base_href)
+    assert base_link is not None
+    assert base_link.text == "Base"
+
+
 def test_inherited_members(builder, parse):
     confoverrides = {
         "autoapi_options": ["members", "inherited-members", "undoc-members"],

@@ -1,0 +1,1 @@
+Fix links to base classes in the generated documentation of re-exported classes.
