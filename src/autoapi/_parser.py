@@ -133,6 +133,9 @@ class Parser:
             "qual_name": qual_name,
             "full_name": full_name,
             "bases": list(_astroid_utils.get_full_basenames(node)),
+            "qualified_bases": list(
+                _astroid_utils.get_full_basenames(node, qualify_local=True)
+            ),
             "doc": _prepare_docstring(node.doc_node.value if node.doc_node else ""),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,
@@ -181,6 +184,9 @@ class Parser:
             "full_name": full_name,
             "type_params": _astroid_utils.get_type_params_info(node.type_params),
             "bases": list(_astroid_utils.get_full_basenames(node)),
+            "qualified_bases": list(
+                _astroid_utils.get_full_basenames(node, qualify_local=True)
+            ),
             "doc": _prepare_docstring(_astroid_utils.get_class_docstring(node)),
             "from_line_no": node.fromlineno,
             "to_line_no": node.tolineno,

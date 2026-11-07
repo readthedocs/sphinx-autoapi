@@ -221,15 +221,21 @@ def _resolve_placeholder(placeholder, original):
     placeholder.update(new)
 
 
-def _link_objs(value):
+def _link_objs(value, obj=None, base_index=0):
     result = ""
 
     delims = r"(\s*[\[\]\(\),]\s*)"
     delims_re = re.compile(delims)
-    sub_targets = re.split(delims, value.strip())
+    sub_targets = delims_re.split(value.strip())
+    qualified_targets = sub_targets
+    if obj is not None and (qualified_bases := obj.obj.get("qualified_bases")):
+        targets = delims_re.split(qualified_bases[base_index].strip())
+        if len(targets) == len(sub_targets):
+            qualified_targets = targets
 
-    for sub_target in sub_targets:
+    for sub_target, qualified_target in zip(sub_targets, qualified_targets):
         sub_target = sub_target.strip()
+        qualified_target = qualified_target.strip()
         if delims_re.match(sub_target):
             result += f"{sub_target}"
             if sub_target.endswith(","):
@@ -237,6 +243,11 @@ def _link_objs(value):
             else:
                 result += "\\ "
         elif sub_target:
+            # Keep relative links when the base is documented only as a re-export.
+            if qualified_target != sub_target:
+                base = obj.app.env.autoapi_all_objects.get(qualified_target)
+                if base is not None and base.display:
+                    sub_target = f"{sub_target} <{base.id}>"
             result += f":py:obj:`{sub_target}`\\ "
 
     # Strip off the extra "\ "
