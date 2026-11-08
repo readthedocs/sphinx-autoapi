@@ -400,6 +400,7 @@ class Parser:
         }
 
         overloads = {}
+        children = {}
         top_name = node.name.split(".", 1)[0]
         for child in node.get_children():
             if _astroid_utils.is_local_import_from(child, top_name):
@@ -408,8 +409,20 @@ class Parser:
                 children_data = self.parse(child)
 
             for child_data in children_data:
-                if _parse_child(child_data, overloads):
-                    data["children"].append(child_data)
+                if not _parse_child(child_data, overloads):
+                    continue
+
+                # A name that is defined more than once (for example declared
+                # with a type annotation and assigned later) is documented once,
+                # like members of a class are.
+                existing_child = children.get(child_data["name"])
+                if existing_child:
+                    if not existing_child["doc"]:
+                        existing_child["doc"] = child_data["doc"]
+                    continue
+
+                children[child_data["name"]] = child_data
+                data["children"].append(child_data)
 
         return data
 
