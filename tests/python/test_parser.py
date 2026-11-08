@@ -204,3 +204,41 @@ if sys.version_info >= (3, 8):
 '''
         data = Parser().parse(astroid.parse(source))
         assert [child["name"] for child in data["children"]] == ["versioned"]
+
+    def test_documents_module_level_redefinitions_once(self):
+        """Check a name assigned more than once in a module is documented once.
+
+        Regression test for https://github.com/readthedocs/sphinx-autoapi/issues/387
+        """
+        source = '''
+is_valid: bool
+"""Whether it is valid."""
+if True:
+    is_valid = False
+else:
+    is_valid = True
+
+max_rating = 10
+max_rating = 20
+"""The maximum rating."""
+
+def wrapped():
+    """A wrapped function."""
+
+wrapped = staticmethod(wrapped)
+'''
+        data = Parser().parse(astroid.parse(source))
+        children = data["children"]
+        assert [child["name"] for child in children] == [
+            "is_valid",
+            "max_rating",
+            "wrapped",
+        ]
+
+        is_valid, max_rating, wrapped = children
+        assert is_valid["annotation"] == "bool"
+        assert is_valid["value"] is None
+        assert is_valid["doc"].strip() == "Whether it is valid."
+        assert max_rating["value"] == "10"
+        assert max_rating["doc"].strip() == "The maximum rating."
+        assert wrapped["type"] == "function"

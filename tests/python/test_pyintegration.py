@@ -394,7 +394,7 @@ class TestPy3Module:
     @pytest.fixture(autouse=True, scope="class")
     @classmethod
     def built(cls, builder):
-        builder("py3example")
+        builder("py3example", warningiserror=True)
 
     def test_integration(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
@@ -467,10 +467,18 @@ class TestPy3Module:
         assert max_rating_value[0].text == ": int"
         assert max_rating_value[1].text == " = 10"
 
-        # TODO: This should either not have a value
-        # or should display the value as part of the type declaration.
-        # This prevents setting warningiserror.
-        assert example_file.find(id="example.is_valid")
+        # Declared with a type and assigned later, so it is documented once
+        # and without the value of either conditional assignment.
+        is_valid = example_file.find(id="example.is_valid")
+        assert is_valid
+        is_valid_value = is_valid.find_all(class_="property")
+        assert [value.text for value in is_valid_value] == [": bool"]
+        is_valid_names = [
+            name
+            for name in example_file.find_all(class_="sig-name")
+            if name.text == "is_valid"
+        ]
+        assert len(is_valid_names) == 1
 
         ratings = example_file.find(id="example.ratings")
         assert ratings
