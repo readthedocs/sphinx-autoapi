@@ -129,6 +129,8 @@ Customisation Options
    * ``both``: Use the concatenation of the class docstring and the
      ``__init__`` docstring.
    * ``init``: Use only the ``__init__`` docstring.
+   * ``separate``: Use only the class docstring and render the ``__init__``
+     method separately.
 
    If the class does not have an ``__init__`` or the ``__init__``
    docstring is empty and the class defines a ``__new__`` with a docstring,

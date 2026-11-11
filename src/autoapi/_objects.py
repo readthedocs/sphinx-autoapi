@@ -313,10 +313,11 @@ class PythonMethod(PythonFunction):
         """
 
     def _should_skip(self) -> bool:
-        return super()._should_skip() or self.name in (
-            "__new__",
-            "__init__",
-        )
+        skip_constructor = self.name in ("__new__", "__init__")
+        if self.name == "__init__" and self._class_content == "separate":
+            skip_constructor = False
+
+        return super()._should_skip() or skip_constructor
 
 
 class PythonProperty(PythonObject):
