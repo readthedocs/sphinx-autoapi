@@ -911,6 +911,24 @@ def test_init_class_content(builder, parse):
     _test_class_content(builder, parse, "init")
 
 
+def test_separate_class_content(builder, parse):
+    confoverrides = {
+        "autoapi_python_class_content": "separate",
+        "exclude_patterns": ["manualapi.rst"],
+    }
+    builder("pyexample", warningiserror=True, confoverrides=confoverrides)
+
+    example_file = parse("_build/html/autoapi/example/index.html")
+    foo = example_file.find(id="example.Foo").parent
+    class_docstring = foo.find("dd")
+    assert "Can we parse arguments" in class_docstring.find("p").text
+    assert "Constructor docstring" not in class_docstring.find("p").text
+
+    constructor = example_file.find(id="example.Foo.__init__")
+    assert constructor
+    assert "Constructor docstring" in constructor.parent.find("dd").text
+
+
 def test_hiding_private_members(builder, parse):
     confoverrides = {"autoapi_options": ["members", "undoc-members", "special-members"]}
     builder("pypackageexample", warningiserror=True, confoverrides=confoverrides)

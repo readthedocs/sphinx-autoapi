@@ -1,0 +1,1 @@
+Add a ``separate`` option to render class and ``__init__`` docstrings separately.
