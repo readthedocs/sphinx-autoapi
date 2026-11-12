@@ -1,0 +1,1 @@
+Fix the "not a class or module" warning from an inheritance diagram of a class created by ``namedtuple()``.

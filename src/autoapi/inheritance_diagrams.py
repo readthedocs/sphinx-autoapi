@@ -38,6 +38,17 @@ def _import_class(name, currmodule):
             f"Could not import class or module {name} specified for inheritance diagram"
         )
 
+    if isinstance(target, (astroid.AssignName, astroid.AssignAttr)):
+        # A class can be created by an assignment,
+        # such as ``Point = namedtuple("Point", ["x", "y"])``.
+        try:
+            inferred = next(target.infer())
+        except (astroid.InferenceError, StopIteration):
+            pass
+        else:
+            if isinstance(inferred, astroid.ClassDef):
+                target = inferred
+
     if isinstance(target, astroid.ClassDef):
         return [target]
 
