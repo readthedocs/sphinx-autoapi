@@ -5,6 +5,7 @@ import pathlib
 import sphinx
 import sphinx.util
 import sphinx.util.logging
+from docutils.statemachine import StringList
 
 from .settings import OWN_PAGE_LEVELS
 
@@ -503,6 +504,37 @@ class PythonClass(PythonObject):
     def docstring(self, value: str) -> None:
         self._docstring = value
         self._docstring_resolved = True
+
+    def merge_attribute_docstrings(self) -> None:
+        """Keep class-level attribute descriptions with their rendered members."""
+        directive = ".. attribute:: "
+        if directive not in self.docstring:
+            return
+
+        attributes = {
+            directive + attr.name: attr for attr in self.attributes if attr.display
+        }
+        lines = StringList(self.docstring.splitlines())
+        class_lines = []
+        next_index = 0
+        for index, line in enumerate(lines):
+            if index < next_index:
+                continue
+            member = attributes.get(line)
+            if member is None or (index + 1 < len(lines) and lines[index + 1]):
+                # Leave docstring-only attributes and directives with options intact.
+                class_lines.append(line)
+                continue
+
+            content, _, _ = lines.get_indented(index + 1)
+            description = "\n".join(content).strip("\n")
+            if description:
+                member.docstring = "\n\n".join(
+                    filter(None, (description, member.docstring))
+                )
+            next_index = index + 1 + len(content)
+
+        self.docstring = "\n".join(class_lines)
 
     @property
     def methods(self):
