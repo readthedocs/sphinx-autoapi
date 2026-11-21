@@ -584,6 +584,9 @@ class Mapper:
 
                 _inner(child)
 
+            if isinstance(parent, PythonClass) and parent.display:
+                parent.merge_attribute_docstrings()
+
         for obj in list(self.all_objects.values()):
             _inner(obj)
 

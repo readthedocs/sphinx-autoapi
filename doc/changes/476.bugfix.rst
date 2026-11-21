@@ -1,0 +1,2 @@
+Class attributes described in a Google or NumPy style docstring now have a single
+entry that includes the attribute description and its source annotation.

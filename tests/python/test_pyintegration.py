@@ -1372,7 +1372,7 @@ class TestAutodocTypehintsPackage:
     @pytest.fixture(autouse=True, scope="class")
     @classmethod
     def built(cls, builder):
-        builder("pyautodoc_typehints", warningiserror=True)
+        assert builder("pyautodoc_typehints", warningiserror=True) == 0
 
     def test_renders_typehint(self, parse):
         example_file = parse("_build/html/autoapi/example/index.html")
@@ -1380,6 +1380,25 @@ class TestAutodocTypehintsPackage:
         test = example_file.find(id="example.A.test")
         args = test.parent.select(".field-list > dd")
         assert args[0].text.startswith("a (int)")
+
+    def test_class_docstring_attributes(self, parse):
+        page = parse("_build/html/autoapi/example/index.html")
+        series = page.find(id="example.Series").parent
+        assert len(series.select("dl.attribute")) == 2
+        assert series.find("a", href="#example.Series.values")
+        values = series.find(id="example.Series.values")
+        assert "list[int]" in values.text
+        assert "The original values." in values.parent.dd.text
+        assert "One entry per row." in values.parent.dd.text
+        dynamic = series.find(id="example.Series.dynamic")
+        assert "An attribute supplied at runtime." in dynamic.parent.dd.text
+
+        filtered = page.find(id="example.FilteredSeries").parent
+        assert len(filtered.select("dl.attribute")) == 1
+        inherited = filtered.find(id="example.FilteredSeries.values")
+        assert "The retained values." in inherited.parent.dd.text
+        assert "sequence of positive integers" in inherited.parent.dd.text
+        assert "One entry per row." in inherited.parent.dd.text
 
     def test_renders_typehint_in_second_module(self, parse):
         example2_file = parse("_build/html/autoapi/example2/index.html")
